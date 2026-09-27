@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Periodic Table Explorer</title>
+<style>
+:root{
+  --bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:22px 18px}
+.wrap{max-width:1400px;margin:auto;padding:14px}
+header .wrap{padding:0}
+h1{margin:0;font-size:28px}
+header p{margin:7px 0 0;opacity:.92}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+#search{flex:1;min-width:220px;padding:12px 14px;border:1px solid #b9cbd5;border-radius:11px;font-size:16px;background:#fff}
+#clear{border:0;border-radius:10px;padding:12px 14px;font-weight:750;background:#e6eef2;color:#244b61;cursor:pointer}
+.legend{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 14px}
+.legend button{border:1px solid var(--border);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:750;background:#fff;color:#334f5d;cursor:pointer}
+.legend button.active{outline:3px solid rgba(29,109,146,.2);border-color:#6baac7}
+.table-wrap{overflow-x:auto;padding-bottom:8px}
+.ptable{min-width:1180px;display:grid;grid-template-columns:repeat(18,1fr);grid-template-rows:repeat(9,76px);gap:5px}
+.element{border:1px solid rgba(0,0,0,.09);border-radius:9px;padding:5px 6px;background:var(--card);cursor:pointer;text-align:left;position:relative;min-width:0}
+.element:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.element:focus-visible{outline:3px solid #68b4d5;outline-offset:2px}
+.num{font-size:10px;font-weight:800;opacity:.72}
+.sym{font-size:23px;font-weight:900;line-height:1;margin-top:4px}
+.nm{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
+.mass{font-size:9px;opacity:.72;margin-top:2px}
+.Alkali-metal{background:#f9e6e1}.Alkaline-earth-metal{background:#f8eed6}.Transition-metal{background:#e8edf8}
+.Post-transition-metal{background:#e7f2ed}.Metalloid{background:#e8f4dc}.Nonmetal{background:#e1f4f0}
+.Halogen{background:#e4eefb}.Noble-gas{background:#eee8f8}.Lanthanide{background:#f6e7f0}.Actinide{background:#f5e2e7}.Other{background:#edf1f3}
+.placeholder{border:1px dashed #b9c9d1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);background:#f8fbfc}
+.details{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
+.details h2{margin:0 0 4px;font-size:26px;color:#143f57}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:12px}
+.detail{background:#f7fafb;border:1px solid #e0eaee;border-radius:12px;padding:10px}
+.detail b{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.detail span{font-weight:800}
+.empty{color:var(--muted);font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.hidden{display:none!important}
+@media(max-width:700px){h1{font-size:24px}.wrap{padding:10px}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>⚛️ Periodic Table Explorer</h1>
+    <p>Search, explore, and tap any element to see its basic properties.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search by element name, symbol, or atomic number…" aria-label="Search elements">
+    <button id="clear" type="button">Clear</button>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="table-wrap">
+    <div class="ptable" id="ptable" aria-label="Interactive periodic table"></div>
+  </div>
+  <section class="details" id="details" aria-live="polite">
+    <div class="empty">Tap an element to see its details here.</div>
+  </section>
+</main>
+<footer>A DONCO-BAYCITY™ App</footer>
+<script>
+const elements = [{"z":1,"symbol":"H","name":"Hydrogen","mass":1.008,"family":"Nonmetal","state":"Gas","period":1,"group":1,"row":1,"col":1},{"z":2,"symbol":"He","name":"Helium","mass":4.003,"family":"Noble gas","state":"Gas","period":1,"group":18,"row":1,"col":18},{"z":3,"symbol":"Li","name":"Lithium","mass":6.941,"family":"Alkali metal","state":"Solid","period":2,"group":1,"row":2,"col":1},{"z":4,"symbol":"Be","name":"Beryllium","mass":9.012,"family":"Alkaline earth metal","state":"Solid","period":2,"group":2,"row":2,"col":2},{"z":5,"symbol":"B","name":"Boron","mass":10.812,"family":"Metalloid","state":"Solid","period":2,"group":13,"row":2,"col":13},{"z":6,"symbol":"C","name":"Carbon","mass":12.011,"family":"Nonmetal","state":"Solid","period":2,"group":14,"row":2,"col":14},{"z":7,"symbol":"N","name":"Nitrogen","mass":14.007,"family":"Nonmetal","state":"Gas","period":2,"group":15,"row":2,"col":15},{"z":8,"symbol":"O","name":"Oxygen","mass":15.999,"family":"Nonmetal","state":"Gas","period":2,"group":16,"row":2,"col":16},{"z":9,"symbol":"F","name":"Fluorine","mass":18.998,"family":"Halogen","state":"Gas","period":2,"group":17,"row":2,"col":17},{"z":10,"symbol":"Ne","name":"Neon","mass":20.18,"family":"Noble gas","state":"Gas","period":2,"group":18,"row":2,"col":18},{"z":11,"symbol":"Na","name":"Sodium","mass":22.99,"family":"Alkali metal","state":"Solid","period":3,"group":1,"row":3,"col":1},{"z":12,"symbol":"Mg","name":"Magnesium","mass":24.305,"family":"Alkaline earth metal","state":"Solid","period":3,"group":2,"row":3,"col":2},{"z":13,"symbol":"Al","name":"Aluminium","mass":26.982,"family":"Post-transition metal","state":"Solid","period":3,"group":13,"row":3,"col":13},{"z":14,"symbol":"Si","name":"Silicon","mass":28.086,"family":"Metalloid","state":"Solid","period":3,"group":14,"row":3,"col":14},{"z":15,"symbol":"P","name":"Phosphorus","mass":30.974,"family":"Nonmetal","state":"Solid","period":3,"group":15,"row":3,"col":15},{"z":16,"symbol":"S","name":"Sulfur","mass":32.067,"family":"Nonmetal","state":"Solid","period":3,"group":16,"row":3,"col":16},{"z":17,"symbol":"Cl","name":"Chlorine","mass":35.453,"family":"Halogen","state":"Gas","period":3,"group":17,"row":3,"col":17},{"z":18,"symbol":"Ar","name":"Argon","mass":39.948,"family":"Noble gas","state":"Gas","period":3,"group":18,"row":3,"col":18},{"z":19,"symbol":"K","name":"Potassium","mass":39.098,"family":"Alkali metal","state":"Solid","period":4,"group":1,"row":4,"col":1},{"z":20,"symbol":"Ca","name":"Calcium","mass":40.078,"family":"Alkaline earth metal","state":"Solid","period":4,"group":2,"row":4,"col":2},{"z":21,"symbol":"Sc","name":"Scandium","mass":44.956,"family":"Transition metal","state":"Solid","period":4,"group":3,"row":4,"col":3},{"z":22,"symbol":"Ti","name":"Titanium","mass":47.867,"family":"Transition metal","state":"Solid","period":4,"group":4,"row":4,"col":4},{"z":23,"symbol":"V","name":"Vanadium","mass":50.944,"family":"Transition metal","state":"Solid","period":4,"group":5,"row":4,"col":5},{"z":24,"symbol":"Cr","name":"Chromium","mass":51.996,"family":"Transition metal","state":"Solid","period":4,"group":6,"row":4,"col":6},{"z":25,"symbol":"Mn","name":"Manganese","mass":54.938,"family":"Transition metal","state":"Solid","period":4,"group":7,"row":4,"col":7},{"z":26,"symbol":"Fe","name":"Iron","mass":55.845,"family":"Transition metal","state":"Solid","period":4,"group":8,"row":4,"col":8},{"z":27,"symbol":"Co","name":"Cobalt","mass":58.933,"family":"Transition metal","state":"Solid","period":4,"group":9,"row":4,"col":9},{"z":28,"symbol":"Ni","name":"Nickel","mass":58.693,"family":"Transition metal","state":"Solid","period":4,"group":10,"row":4,"col":10},{"z":29,"symbol":"Cu","name":"Copper","mass":63.546,"family":"Transition metal","state":"Solid","period":4,"group":11,"row":4,"col":11},{"z":30,"symbol":"Zn","name":"Zinc","mass":65.39,"family":"Transition metal","state":"Solid","period":4,"group":12,"row":4,"col":12},{"z":31,"symbol":"Ga","name":"Gallium","mass":69.723,"family":"Post-transition metal","state":"Solid","period":4,"group":13,"row":4,"col":13},{"z":32,"symbol":"Ge","name":"Germanium","mass":72.61,"family":"Metalloid","state":"Solid","period":4,"group":14,"row":4,"col":14},{"z":33,"symbol":"As","name":"Arsenic","mass":74.922,"family":"Metalloid","state":"Solid","period":4,"group":15,"row":4,"col":15},{"z":34,"symbol":"Se","name":"Selenium","mass":78.96,"family":"Nonmetal","state":"Solid","period":4,"group":16,"row":4,"col":16},{"z":35,"symbol":"Br","name":"Bromine","mass":79.904,"family":"Halogen","state":"Liquid","period":4,"group":17,"row":4,"col":17},{"z":36,"symbol":"Kr","name":"Krypton","mass":83.8,"family":"Noble gas","state":"Gas","period":4,"group":18,"row":4,"col":18},{"z":37,"symbol":"Rb","name":"Rubidium","mass":85.468,"family":"Alkali metal","state":"Solid","period":5,"group":1,"row":5,"col":1},{"z":38,"symbol":"Sr","name":"Strontium","mass":87.62,"family":"Alkaline earth metal","state":"Solid","period":5,"group":2,"row":5,"col":2},{"z":39,"symbol":"Y","name":"Yttrium","mass":88.906,"family":"Transition metal","state":"Solid","period":5,"group":3,"row":5,"col":3},{"z":40,"symbol":"Zr","name":"Zirconium","mass":91.224,"family":"Transition metal","state":"Solid","period":5,"group":4,"row":5,"col":4},{"z":41,"symbol":"Nb","name":"Niobium","mass":92.906,"family":"Transition metal","state":"Solid","period":5,"group":5,"row":5,"col":5},{"z":42,"symbol":"Mo","name":"Molybdenum","mass":95.94,"family":"Transition metal","state":"Solid","period":5,"group":6,"row":5,"col":6},{"z":43,"symbol":"Tc","name":"Technetium","mass":98,"family":"Transition metal","state":"Solid","period":5,"group":7,"row":5,"col":7},{"z":44,"symbol":"Ru","name":"Ruthenium","mass":101.07,"family":"Transition metal","state":"Solid","period":5,"group":8,"row":5,"col":8},{"z":45,"symbol":"Rh","name":"Rhodium","mass":102.906,"family":"Transition metal","state":"Solid","period":5,"group":9,"row":5,"col":9},{"z":46,"symbol":"Pd","name":"Palladium","mass":106.42,"family":"Transition metal","state":"Solid","period":5,"group":10,"row":5,"col":10},{"z":47,"symbol":"Ag","name":"Silver","mass":107.868,"family":"Transition metal","state":"Solid","period":5,"group":11,"row":5,"col":11},{"z":48,"symbol":"Cd","name":"Cadmium","mass":112.411,"family":"Transition metal","state":"Solid","period":5,"group":12,"row":5,"col":12},{"z":49,"symbol":"In","name":"Indium","mass":114.818,"family":"Post-transition metal","state":"Solid","period":5,"group":13,"row":5,"col":13},{"z":50,"symbol":"Sn","name":"Tin","mass":118.71,"family":"Post-transition metal","state":"Solid","period":5,"group":14,"row":5,"col":14},{"z":51,"symbol":"Sb","name":"Antimony","mass":121.76,"family":"Metalloid","state":"Solid","period":5,"group":15,"row":5,"col":15},{"z":52,"symbol":"Te","name":"Tellurium","mass":127.6,"family":"Metalloid","state":"Solid","period":5,"group":16,"row":5,"col":16},{"z":53,"symbol":"I","name":"Iodine","mass":126.904,"family":"Halogen","state":"Solid","period":5,"group":17,"row":5,"col":17},{"z":54,"symbol":"Xe","name":"Xenon","mass":131.29,"family":"Noble gas","state":"Gas","period":5,"group":18,"row":5,"col":18},{"z":55,"symbol":"Cs","name":"Cesium","mass":132.905,"family":"Alkali metal","state":"Solid","period":6,"group":1,"row":6,"col":1},{"z":56,"symbol":"Ba","name":"Barium","mass":137.327,"family":"Alkaline earth metal","state":"Solid","period":6,"group":2,"row":6,"col":2},{"z":57,"symbol":"La","name":"Lanthanum","mass":138.906,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":4},{"z":58,"symbol":"Ce","name":"Cerium","mass":140.116,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":5},{"z":59,"symbol":"Pr","name":"Praseodymium","mass":140.908,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":6},{"z":60,"symbol":"Nd","name":"Neodymium","mass":144.24,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":7},{"z":61,"symbol":"Pm","name":"Promethium","mass":145,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":8},{"z":62,"symbol":"Sm","name":"Samarium","mass":150.36,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":9},{"z":63,"symbol":"Eu","name":"Europium","mass":151.964,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":10},{"z":64,"symbol":"Gd","name":"Gadolinium","mass":157.25,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":11},{"z":65,"symbol":"Tb","name":"Terbium","mass":158.925,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":12},{"z":66,"symbol":"Dy","name":"Dysprosium","mass":162.5,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":13},{"z":67,"symbol":"Ho","name":"Holmium","mass":164.93,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":14},{"z":68,"symbol":"Er","name":"Erbium","mass":167.26,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":15},{"z":69,"symbol":"Tm","name":"Thulium","mass":168.934,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":16},{"z":70,"symbol":"Yb","name":"Ytterbium","mass":173.04,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":17},{"z":71,"symbol":"Lu","name":"Lutetium","mass":174.967,"family":"Lanthanide","state":"Solid","period":6,"group":"f-block","row":8,"col":18},{"z":72,"symbol":"Hf","name":"Hafnium","mass":178.49,"family":"Transition metal","state":"Solid","period":6,"group":4,"row":6,"col":4},{"z":73,"symbol":"Ta","name":"Tantalum","mass":180.948,"family":"Transition metal","state":"Solid","period":6,"group":5,"row":6,"col":5},{"z":74,"symbol":"W","name":"Tungsten","mass":183.84,"family":"Transition metal","state":"Solid","period":6,"group":6,"row":6,"col":6},{"z":75,"symbol":"Re","name":"Rhenium","mass":186.207,"family":"Transition metal","state":"Solid","period":6,"group":7,"row":6,"col":7},{"z":76,"symbol":"Os","name":"Osmium","mass":190.23,"family":"Transition metal","state":"Solid","period":6,"group":8,"row":6,"col":8},{"z":77,"symbol":"Ir","name":"Iridium","mass":192.217,"family":"Transition metal","state":"Solid","period":6,"group":9,"row":6,"col":9},{"z":78,"symbol":"Pt","name":"Platinum","mass":195.078,"family":"Transition metal","state":"Solid","period":6,"group":10,"row":6,"col":10},{"z":79,"symbol":"Au","name":"Gold","mass":196.967,"family":"Transition metal","state":"Solid","period":6,"group":11,"row":6,"col":11},{"z":80,"symbol":"Hg","name":"Mercury","mass":200.59,"family":"Transition metal","state":"Liquid","period":6,"group":12,"row":6,"col":12},{"z":81,"symbol":"Tl","name":"Thallium","mass":204.383,"family":"Post-transition metal","state":"Solid","period":6,"group":13,"row":6,"col":13},{"z":82,"symbol":"Pb","name":"Lead","mass":207.2,"family":"Post-transition metal","state":"Solid","period":6,"group":14,"row":6,"col":14},{"z":83,"symbol":"Bi","name":"Bismuth","mass":208.98,"family":"Post-transition metal","state":"Solid","period":6,"group":15,"row":6,"col":15},{"z":84,"symbol":"Po","name":"Polonium","mass":209,"family":"Metalloid","state":"Solid","period":6,"group":16,"row":6,"col":16},{"z":85,"symbol":"At","name":"Astatine","mass":210,"family":"Halogen","state":"Solid","period":6,"group":17,"row":6,"col":17},{"z":86,"symbol":"Rn","name":"Radon","mass":222,"family":"Noble gas","state":"Gas","period":6,"group":18,"row":6,"col":18},{"z":87,"symbol":"Fr","name":"Francium","mass":223,"family":"Alkali metal","state":"Solid","period":7,"group":1,"row":7,"col":1},{"z":88,"symbol":"Ra","name":"Radium","mass":226,"family":"Alkaline earth metal","state":"Solid","period":7,"group":2,"row":7,"col":2},{"z":89,"symbol":"Ac","name":"Actinium","mass":227,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":4},{"z":90,"symbol":"Th","name":"Thorium","mass":232.038,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":5},{"z":91,"symbol":"Pa","name":"Protactinium","mass":231.036,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":6},{"z":92,"symbol":"U","name":"Uranium","mass":238.029,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":7},{"z":93,"symbol":"Np","name":"Neptunium","mass":237,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":8},{"z":94,"symbol":"Pu","name":"Plutonium","mass":244,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":9},{"z":95,"symbol":"Am","name":"Americium","mass":243,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":10},{"z":96,"symbol":"Cm","name":"Curium","mass":247,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":11},{"z":97,"symbol":"Bk","name":"Berkelium","mass":247,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":12},{"z":98,"symbol":"Cf","name":"Californium","mass":251,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":13},{"z":99,"symbol":"Es","name":"Einsteinium","mass":252,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":14},{"z":100,"symbol":"Fm","name":"Fermium","mass":257,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":15},{"z":101,"symbol":"Md","name":"Mendelevium","mass":258,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":16},{"z":102,"symbol":"No","name":"Nobelium","mass":259,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":17},{"z":103,"symbol":"Lr","name":"Lawrencium","mass":262,"family":"Actinide","state":"Solid","period":7,"group":"f-block","row":9,"col":18},{"z":104,"symbol":"Rf","name":"Rutherfordium","mass":267,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":4,"row":7,"col":4},{"z":105,"symbol":"Db","name":"Dubnium","mass":268,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":5,"row":7,"col":5},{"z":106,"symbol":"Sg","name":"Seaborgium","mass":269,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":6,"row":7,"col":6},{"z":107,"symbol":"Bh","name":"Bohrium","mass":270,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":7,"row":7,"col":7},{"z":108,"symbol":"Hs","name":"Hassium","mass":269,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":8,"row":7,"col":8},{"z":109,"symbol":"Mt","name":"Meitnerium","mass":278,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":9,"row":7,"col":9},{"z":110,"symbol":"Ds","name":"Darmstadtium","mass":281,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":10,"row":7,"col":10},{"z":111,"symbol":"Rg","name":"Roentgenium","mass":281,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":11,"row":7,"col":11},{"z":112,"symbol":"Cn","name":"Copernicium","mass":285,"family":"Transition metal","state":"Unknown / predicted","period":7,"group":12,"row":7,"col":12},{"z":113,"symbol":"Nh","name":"Nihonium","mass":284,"family":"Post-transition metal","state":"Unknown / predicted","period":7,"group":13,"row":7,"col":13},{"z":114,"symbol":"Fl","name":"Flerovium","mass":289,"family":"Post-transition metal","state":"Unknown / predicted","period":7,"group":14,"row":7,"col":14},{"z":115,"symbol":"Mc","name":"Moscovium","mass":288,"family":"Post-transition metal","state":"Unknown / predicted","period":7,"group":15,"row":7,"col":15},{"z":116,"symbol":"Lv","name":"Livermorium","mass":293,"family":"Post-transition metal","state":"Unknown / predicted","period":7,"group":16,"row":7,"col":16},{"z":117,"symbol":"Ts","name":"Tennessine","mass":292,"family":"Halogen","state":"Unknown / predicted","period":7,"group":17,"row":7,"col":17},{"z":118,"symbol":"Og","name":"Oganesson","mass":294,"family":"Noble gas","state":"Unknown / predicted","period":7,"group":18,"row":7,"col":18}];
+
+const familyOrder=["Alkali metal","Alkaline earth metal","Transition metal","Post-transition metal","Metalloid","Nonmetal","Halogen","Noble gas","Lanthanide","Actinide"];
+const table=document.getElementById("ptable");
+const details=document.getElementById("details");
+const search=document.getElementById("search");
+const clear=document.getElementById("clear");
+const legend=document.getElementById("legend");
+let activeFamily="All";
+
+function cls(f){return f.replace(/\s+/g,"-");}
+function addPlaceholder(text,row,col){
+  const d=document.createElement("div");
+  d.className="placeholder";
+  d.textContent=text;
+  d.style.gridRow=row;
+  d.style.gridColumn=col;
+  table.appendChild(d);
+}
+addPlaceholder("57–71",6,3);
+addPlaceholder("89–103",7,3);
+
+function renderTable(){
+  table.querySelectorAll(".element").forEach(x=>x.remove());
+  const q=search.value.trim().toLowerCase();
+  elements.forEach(e=>{
+    const hay=(e.name+" "+e.symbol+" "+e.z+" "+e.family).toLowerCase();
+    const matchesSearch=!q||hay.includes(q);
+    const matchesFamily=activeFamily==="All"||e.family===activeFamily;
+    if(!matchesSearch||!matchesFamily) return;
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="element "+cls(e.family);
+    b.style.gridRow=e.row;
+    b.style.gridColumn=e.col;
+    b.setAttribute("aria-label",e.name+", atomic number "+e.z);
+    b.innerHTML='<div class="num">'+e.z+'</div><div class="sym">'+e.symbol+'</div><div class="nm">'+e.name+'</div><div class="mass">'+e.mass+'</div>';
+    b.addEventListener("click",()=>showDetails(e));
+    table.appendChild(b);
+  });
+}
+function showDetails(e){
+  details.innerHTML=
+    '<h2>'+e.symbol+' — '+e.name+'</h2>'+
+    '<div class="empty">Atomic number '+e.z+'</div>'+
+    '<div class="detail-grid">'+
+      '<div class="detail"><b>Atomic mass</b><span>'+e.mass+'</span></div>'+
+      '<div class="detail"><b>Family</b><span>'+e.family+'</span></div>'+
+      '<div class="detail"><b>State at room temp.</b><span>'+e.state+'</span></div>'+
+      '<div class="detail"><b>Period</b><span>'+e.period+'</span></div>'+
+      '<div class="detail"><b>Group</b><span>'+e.group+'</span></div>'+
+      '<div class="detail"><b>Symbol</b><span>'+e.symbol+'</span></div>'+
+    '</div>';
+}
+const allBtn=document.createElement("button");
+allBtn.type="button"; allBtn.textContent="All"; allBtn.className="active";
+allBtn.addEventListener("click",()=>setFamily("All",allBtn));
+legend.appendChild(allBtn);
+
+familyOrder.forEach(f=>{
+  const b=document.createElement("button");
+  b.type="button"; b.textContent=f;
+  b.addEventListener("click",()=>setFamily(f,b));
+  legend.appendChild(b);
+});
+function setFamily(f,btn){
+  activeFamily=f;
+  legend.querySelectorAll("button").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  renderTable();
+}
+search.addEventListener("input",renderTable);
+clear.addEventListener("click",()=>{
+  search.value="";
+  activeFamily="All";
+  legend.querySelectorAll("button").forEach((x,i)=>x.classList.toggle("active",i===0));
+  renderTable();
+  search.focus();
+});
+renderTable();
+</script>
+</body>
+</html>
