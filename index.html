@@ -41,6 +41,14 @@ header p{margin:7px 0 0;opacity:.92}
 .detail b{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
 .detail span{font-weight:800}
 .empty{color:var(--muted);font-size:14px}
+.more-info{margin-top:14px;display:grid;gap:10px}
+.info-block{background:#f7fafb;border:1px solid #e0eaee;border-radius:12px;padding:12px 14px}
+.info-block h3{margin:0 0 6px;font-size:15px;color:#143f57}
+.info-block p{margin:0;color:#405966;line-height:1.55;font-size:14px}
+.source-link{display:inline-block;margin-top:10px;color:#17688e;font-weight:750;text-decoration:none}
+.source-link:hover{text-decoration:underline}
+.data-note{margin-top:10px;font-size:12px;color:var(--muted)}
+.loading{margin-top:10px;font-size:13px;color:#56717f}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 .hidden{display:none!important}
 @media(max-width:700px){h1{font-size:24px}.wrap{padding:10px}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
@@ -50,7 +58,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 <header>
   <div class="wrap">
     <h1>⚛️ Periodic Table Explorer</h1>
-    <p>Search, explore, and tap any element to see its basic properties.</p>
+    <p>Search, explore, and tap any element to see its properties, discovery information, and more.</p>
   </div>
 </header>
 <main class="wrap">
@@ -77,6 +85,9 @@ const search=document.getElementById("search");
 const clear=document.getElementById("clear");
 const legend=document.getElementById("legend");
 let activeFamily="All";
+let extraByZ={};
+let extraLoaded=false;
+const EXTRA_DATA_URL="https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json";
 
 function cls(f){return f.replace(/\s+/g,"-");}
 function addPlaceholder(text,row,col){
@@ -109,18 +120,54 @@ function renderTable(){
     table.appendChild(b);
   });
 }
+function fmtTemp(k){
+  if(k===null||k===undefined||k==="") return "—";
+  const n=Number(k);
+  if(!Number.isFinite(n)) return "—";
+  const c=n-273.15;
+  return Math.round(c*10)/10+" °C";
+}
+function fmtValue(v,suffix=""){
+  if(v===null||v===undefined||v==="") return "—";
+  return v+suffix;
+}
+function esc(s){
+  return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+}
 function showDetails(e){
+  const x=extraByZ[e.z]||{};
+  const discovery=x.discovered_by||"—";
+  const named=x.named_by||"—";
+  const config=x.electron_configuration_semantic||x.electron_configuration||"—";
+  const appearance=x.appearance||"—";
+  const density=x.density==null?"—":x.density+" g/cm³";
+  const source=(x.source&&/^https?:\/\//.test(x.source))?x.source:"";
+  const summary=x.summary||"More detailed information is loading for this element.";
+
   details.innerHTML=
-    '<h2>'+e.symbol+' — '+e.name+'</h2>'+
+    '<h2>'+esc(e.symbol)+' — '+esc(e.name)+'</h2>'+
     '<div class="empty">Atomic number '+e.z+'</div>'+
     '<div class="detail-grid">'+
-      '<div class="detail"><b>Atomic mass</b><span>'+e.mass+'</span></div>'+
-      '<div class="detail"><b>Family</b><span>'+e.family+'</span></div>'+
-      '<div class="detail"><b>State at room temp.</b><span>'+e.state+'</span></div>'+
-      '<div class="detail"><b>Period</b><span>'+e.period+'</span></div>'+
-      '<div class="detail"><b>Group</b><span>'+e.group+'</span></div>'+
-      '<div class="detail"><b>Symbol</b><span>'+e.symbol+'</span></div>'+
-    '</div>';
+      '<div class="detail"><b>Atomic mass</b><span>'+esc(e.mass)+'</span></div>'+
+      '<div class="detail"><b>Family</b><span>'+esc(e.family)+'</span></div>'+
+      '<div class="detail"><b>State at room temp.</b><span>'+esc(e.state)+'</span></div>'+
+      '<div class="detail"><b>Period</b><span>'+esc(e.period)+'</span></div>'+
+      '<div class="detail"><b>Group</b><span>'+esc(e.group)+'</span></div>'+
+      '<div class="detail"><b>Electron configuration</b><span>'+esc(config)+'</span></div>'+
+      '<div class="detail"><b>Density</b><span>'+esc(density)+'</span></div>'+
+      '<div class="detail"><b>Melting point</b><span>'+esc(fmtTemp(x.melt))+'</span></div>'+
+      '<div class="detail"><b>Boiling point</b><span>'+esc(fmtTemp(x.boil))+'</span></div>'+
+      '<div class="detail"><b>Appearance</b><span>'+esc(appearance)+'</span></div>'+
+      '<div class="detail"><b>Discovered by</b><span>'+esc(discovery)+'</span></div>'+
+      '<div class="detail"><b>Named by</b><span>'+esc(named)+'</span></div>'+
+    '</div>'+
+    '<div class="more-info">'+
+      '<div class="info-block"><h3>About '+esc(e.name)+'</h3><p>'+esc(summary)+'</p>'+
+      (source?'<a class="source-link" href="'+esc(source)+'" target="_blank" rel="noopener">Read more about '+esc(e.name)+'</a>':'')+
+      '</div>'+
+    '</div>'+
+    (!extraLoaded?'<div class="loading">Loading expanded element information…</div>':'')+
+    '<div class="data-note">Expanded element details are loaded from the open Periodic-Table-JSON dataset.</div>';
 }
 const allBtn=document.createElement("button");
 allBtn.type="button"; allBtn.textContent="All"; allBtn.className="active";
@@ -148,6 +195,26 @@ clear.addEventListener("click",()=>{
   search.focus();
 });
 renderTable();
+
+fetch(EXTRA_DATA_URL)
+  .then(r=>{if(!r.ok) throw new Error("Could not load expanded data"); return r.json();})
+  .then(data=>{
+    (data.elements||[]).forEach(x=>{extraByZ[x.number]=x;});
+    extraLoaded=true;
+    const heading=details.querySelector("h2");
+    if(heading){
+      const m=heading.textContent.match(/^\S+ — (.+)$/);
+      if(m){
+        const selected=elements.find(e=>e.name===m[1]);
+        if(selected) showDetails(selected);
+      }
+    }
+  })
+  .catch(()=>{
+    extraLoaded=true;
+    const loading=details.querySelector(".loading");
+    if(loading) loading.textContent="Expanded data could not load right now. The basic table still works.";
+  });
 </script>
 </body>
 </html>
