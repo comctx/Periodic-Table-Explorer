@@ -87,7 +87,6 @@ const legend=document.getElementById("legend");
 let activeFamily="All";
 let extraByZ={};
 let extraLoaded=false;
-const EXTRA_DATA_URL="https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json";
 
 function cls(f){return f.replace(/\s+/g,"-");}
 function addPlaceholder(text,row,col){
@@ -196,25 +195,6 @@ clear.addEventListener("click",()=>{
 });
 renderTable();
 
-fetch(EXTRA_DATA_URL)
-  .then(r=>{if(!r.ok) throw new Error("Could not load expanded data"); return r.json();})
-  .then(data=>{
-    (data.elements||[]).forEach(x=>{extraByZ[x.number]=x;});
-    extraLoaded=true;
-    const heading=details.querySelector("h2");
-    if(heading){
-      const m=heading.textContent.match(/^\S+ — (.+)$/);
-      if(m){
-        const selected=elements.find(e=>e.name===m[1]);
-        if(selected) showDetails(selected);
-      }
-    }
-  })
-  .catch(()=>{
-    extraLoaded=true;
-    const loading=details.querySelector(".loading");
-    if(loading) loading.textContent="Expanded data could not load right now. The basic table still works.";
-  });
 </script>
 </body>
 </html>
