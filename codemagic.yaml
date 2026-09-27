@@ -43,9 +43,97 @@ workflows:
           }
           EOF
 
-          cp donco_logo_footer.png /tmp/pte-logo.png
-          sips -Z 760 /tmp/pte-logo.png --out /tmp/pte-logo-small.png >/dev/null
-          sips --padToHeightWidth 1024 1024 --padColor FFFFFF /tmp/pte-logo-small.png --out /tmp/pte-icon-alpha.png >/dev/null
+          cat > /tmp/make_periodic_icon.swift <<'SWIFT'
+          import AppKit
+
+          let size = NSSize(width: 1024, height: 1024)
+          let image = NSImage(size: size)
+          image.lockFocus()
+
+          let context = NSGraphicsContext.current!.cgContext
+          let colorSpace = CGColorSpaceCreateDeviceRGB()
+          let gradient = CGGradient(
+              colorsSpace: colorSpace,
+              colors: [
+                  NSColor(calibratedRed: 0.055, green: 0.184, blue: 0.282, alpha: 1).cgColor,
+                  NSColor(calibratedRed: 0.114, green: 0.427, blue: 0.573, alpha: 1).cgColor
+              ] as CFArray,
+              locations: [0, 1]
+          )!
+          context.drawLinearGradient(
+              gradient,
+              start: CGPoint(x: 512, y: 1024),
+              end: CGPoint(x: 512, y: 0),
+              options: []
+          )
+
+          let tileColors: [NSColor] = [
+              NSColor(calibratedRed: 0.90, green: 0.80, blue: 0.78, alpha: 1),
+              NSColor(calibratedRed: 0.91, green: 0.86, blue: 0.70, alpha: 1),
+              NSColor(calibratedRed: 0.76, green: 0.80, blue: 0.90, alpha: 1),
+              NSColor(calibratedRed: 0.74, green: 0.84, blue: 0.79, alpha: 1),
+              NSColor(calibratedRed: 0.76, green: 0.88, blue: 0.68, alpha: 1),
+              NSColor(calibratedRed: 0.72, green: 0.88, blue: 0.84, alpha: 1),
+              NSColor(calibratedRed: 0.73, green: 0.82, blue: 0.93, alpha: 1),
+              NSColor(calibratedRed: 0.83, green: 0.77, blue: 0.91, alpha: 1)
+          ]
+
+          let tileW: CGFloat = 100
+          let tileH: CGFloat = 100
+          let gap: CGFloat = 18
+          let cols = 6
+          let rows = 5
+          let totalW = CGFloat(cols) * tileW + CGFloat(cols - 1) * gap
+          let totalH = CGFloat(rows) * tileH + CGFloat(rows - 1) * gap
+          let startX = (1024 - totalW) / 2
+          let startY = (1024 - totalH) / 2
+
+          for row in 0..<rows {
+              for col in 0..<cols {
+                  let x = startX + CGFloat(col) * (tileW + gap)
+                  let y = startY + CGFloat(row) * (tileH + gap)
+                  let path = NSBezierPath(
+                      roundedRect: NSRect(x: x, y: y, width: tileW, height: tileH),
+                      xRadius: 18,
+                      yRadius: 18
+                  )
+                  tileColors[(row * cols + col) % tileColors.count].setFill()
+                  path.fill()
+              }
+          }
+
+          NSColor(calibratedRed: 0.063, green: 0.220, blue: 0.314, alpha: 1).setFill()
+          NSBezierPath(ovalIn: NSRect(x: 278, y: 278, width: 468, height: 468)).fill()
+
+          context.setStrokeColor(NSColor.white.cgColor)
+          context.setLineWidth(13)
+          for degrees in [0.0, 60.0, 120.0] {
+              context.saveGState()
+              context.translateBy(x: 512, y: 512)
+              context.rotate(by: degrees * .pi / 180)
+              context.strokeEllipse(in: CGRect(x: -180, y: -58, width: 360, height: 116))
+              context.restoreGState()
+          }
+
+          NSColor.white.setFill()
+          NSBezierPath(ovalIn: NSRect(x: 480, y: 480, width: 64, height: 64)).fill()
+          NSColor(calibratedRed: 0.114, green: 0.427, blue: 0.573, alpha: 1).setFill()
+          NSBezierPath(ovalIn: NSRect(x: 496, y: 496, width: 32, height: 32)).fill()
+
+          image.unlockFocus()
+
+          guard
+              let tiff = image.tiffRepresentation,
+              let bitmap = NSBitmapImageRep(data: tiff),
+              let png = bitmap.representation(using: .png, properties: [:])
+          else {
+              fatalError("Could not create Periodic Table Explorer icon")
+          }
+
+          try png.write(to: URL(fileURLWithPath: "/tmp/pte-icon-alpha.png"))
+          SWIFT
+
+          swift /tmp/make_periodic_icon.swift
           sips -s format jpeg /tmp/pte-icon-alpha.png --out /tmp/pte-icon.jpg >/dev/null
           sips -s format png /tmp/pte-icon.jpg --out "$ICON_DIR/AppIcon1024.png" >/dev/null
 
