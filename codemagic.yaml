@@ -1,0 +1,197 @@
+workflows:
+  periodic-table-testflight:
+    name: Periodic Table Explorer iOS Build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+
+    integrations:
+      app_store_connect: Codemagic
+
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.donaldreckman.periodictableexplorer
+      node: 22
+      xcode: latest
+      cocoapods: default
+      vars:
+        BUNDLE_ID: "com.donaldreckman.periodictableexplorer"
+
+    scripts:
+      - name: Create iOS 18 Periodic Table project
+        script: |
+          set -eu
+
+          npm init -y
+          npm install @capacitor/core@latest @capacitor/cli@latest @capacitor/ios@latest
+
+          rm -rf www ios
+          mkdir -p www/images
+          cp index.html www/index.html
+          cp element.html www/element.html
+          cp elements-data.js www/elements-data.js
+          cp element-photo-data.js www/element-photo-data.js
+          cp donco_logo_footer.png www/donco_logo_footer.png
+          cp -R images/. www/images/
+
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.donaldreckman.periodictableexplorer",
+            "appName": "Periodic Table Explorer",
+            "webDir": "www"
+          }
+          EOF
+
+          npx cap add ios
+          npx cap sync ios
+
+          PLIST="ios/App/App/Info.plist"
+
+          /usr/libexec/PlistBuddy -c "Add :ITSAppUsesNonExemptEncryption bool false" "$PLIST" ||           /usr/libexec/PlistBuddy -c "Set :ITSAppUsesNonExemptEncryption false" "$PLIST"
+
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${PROJECT_BUILD_NUMBER}" "$PLIST"
+
+          /usr/libexec/PlistBuddy -c "Delete :UISupportedInterfaceOrientations" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations array" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:0 string UIInterfaceOrientationPortrait" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:1 string UIInterfaceOrientationLandscapeLeft" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:2 string UIInterfaceOrientationLandscapeRight" "$PLIST"
+
+      - name: Set iPhone only and iOS 18 minimum
+        script: |
+          set -eu
+
+          if ! gem list -i xcodeproj >/dev/null; then
+            gem install xcodeproj --no-document
+          fi
+
+          ruby <<'RUBY'
+          require 'xcodeproj'
+
+          project_path = 'ios/App/App.xcodeproj'
+          project = Xcodeproj::Project.open(project_path)
+          target = project.targets.find { |item| item.name == 'App' }
+          abort 'App target not found' unless target
+
+          project.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+          end
+
+          target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+            config.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
+          end
+
+          project.save
+          RUBY
+
+          echo "Minimum iOS version set to 18.0"
+          echo "Device family set to iPhone only"
+
+      - name: Create Periodic Table app icon
+        script: |
+          set -eu
+
+          ICON_DIR="ios/App/App/Assets.xcassets/AppIcon.appiconset"
+          mkdir -p "$ICON_DIR"
+
+          cp donco_logo_footer.png /tmp/pte-logo.png
+          sips -Z 760 /tmp/pte-logo.png --out /tmp/pte-logo-small.png >/dev/null
+          sips --padToHeightWidth 1024 1024 --padColor FFFFFF /tmp/pte-logo-small.png --out /tmp/pte-icon-alpha.png >/dev/null
+          sips -s format jpeg /tmp/pte-icon-alpha.png --out /tmp/pte-icon.jpg >/dev/null
+          sips -s format png /tmp/pte-icon.jpg --out "$ICON_DIR/AppIcon1024.png" >/dev/null
+
+          sips -z 40 40   "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon20@2x.png" >/dev/null
+          sips -z 60 60   "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon20@3x.png" >/dev/null
+          sips -z 58 58   "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon29@2x.png" >/dev/null
+          sips -z 87 87   "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon29@3x.png" >/dev/null
+          sips -z 80 80   "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon40@2x.png" >/dev/null
+          sips -z 120 120 "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon40@3x.png" >/dev/null
+          sips -z 120 120 "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon60@2x.png" >/dev/null
+          sips -z 180 180 "$ICON_DIR/AppIcon1024.png" --out "$ICON_DIR/AppIcon60@3x.png" >/dev/null
+
+          cat > "$ICON_DIR/Contents.json" <<'EOF'
+          {
+            "images" : [
+              { "filename" : "AppIcon20@2x.png", "idiom" : "iphone", "scale" : "2x", "size" : "20x20" },
+              { "filename" : "AppIcon20@3x.png", "idiom" : "iphone", "scale" : "3x", "size" : "20x20" },
+              { "filename" : "AppIcon29@2x.png", "idiom" : "iphone", "scale" : "2x", "size" : "29x29" },
+              { "filename" : "AppIcon29@3x.png", "idiom" : "iphone", "scale" : "3x", "size" : "29x29" },
+              { "filename" : "AppIcon40@2x.png", "idiom" : "iphone", "scale" : "2x", "size" : "40x40" },
+              { "filename" : "AppIcon40@3x.png", "idiom" : "iphone", "scale" : "3x", "size" : "40x40" },
+              { "filename" : "AppIcon60@2x.png", "idiom" : "iphone", "scale" : "2x", "size" : "60x60" },
+              { "filename" : "AppIcon60@3x.png", "idiom" : "iphone", "scale" : "3x", "size" : "60x60" },
+              { "filename" : "AppIcon1024.png", "idiom" : "ios-marketing", "scale" : "1x", "size" : "1024x1024" }
+            ],
+            "info" : {
+              "author" : "xcode",
+              "version" : 1
+            }
+          }
+          EOF
+
+      - name: Apply Apple signing
+        script: |
+          set -eu
+          cd "$CM_BUILD_DIR/ios/App"
+          xcode-project use-profiles
+
+      - name: Build signed Periodic Table Explorer
+        script: |
+          set -eu
+          cd "$CM_BUILD_DIR/ios/App"
+          xcode-project build-ipa --workspace "App.xcworkspace" --scheme "App"
+
+      - name: Verify finished iPhone app
+        script: |
+          set -eu
+          python3 <<'PY'
+          import glob
+          import plistlib
+          import zipfile
+
+          archives = glob.glob('ios/App/build/ios/ipa/*.ipa')
+          assert len(archives) == 1, 'Expected one IPA'
+
+          with zipfile.ZipFile(archives[0]) as archive:
+              names = archive.namelist()
+              info = next(
+                  n for n in names
+                  if n.startswith('Payload/')
+                  and n.count('/') == 2
+                  and n.endswith('/Info.plist')
+              )
+              root = info.rsplit('/', 1)[0] + '/'
+              metadata = plistlib.loads(archive.read(info))
+
+              assert metadata['CFBundleIdentifier'] == 'com.donaldreckman.periodictableexplorer'
+              minimum = str(metadata.get('MinimumOSVersion', ''))
+              assert minimum.startswith('18.'), f'Expected iOS 18 minimum, got {minimum}'
+              families = metadata.get('UIDeviceFamily', [])
+              assert families == [1] or families == (1,), f'Expected iPhone only, got {families}'
+
+              assert root + 'public/index.html' in names
+              assert root + 'public/element.html' in names
+              element_images = [
+                  n for n in names
+                  if n.startswith(root + 'public/images/elements/')
+                  and n.lower().endswith(('.jpg', '.png'))
+              ]
+              assert len(element_images) >= 118, f'Expected 118 element images, got {len(element_images)}'
+              assert root + 'public/images/bay-city-city-hall.jpg' in names
+
+              print('Verified Periodic Table Explorer IPA')
+              print('Bundle:', metadata['CFBundleIdentifier'])
+              print('Minimum iOS:', minimum)
+              print('iPhone-only device family:', families)
+              print('Element images:', len(element_images))
+          PY
+
+    artifacts:
+      - ios/App/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
