@@ -29,6 +29,7 @@ jobs:
           python - <<'PY'
           import io, json, re, time, urllib.request
           from pathlib import Path
+          from urllib.parse import urljoin, urlparse
           from PIL import Image, ImageOps
 
           DATA_URL = "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json"
@@ -44,7 +45,7 @@ jobs:
               base, a, b, name = m.groups()
               return f"{base}/thumb/{a}/{b}/{name}/{width}px-{name}"
 
-          def get_bytes(url, timeout=45, attempts=4):
+          def get_bytes(url, timeout=30, attempts=2):
               last=None
               for attempt in range(attempts):
                   try:
@@ -54,8 +55,47 @@ jobs:
                   except Exception as ex:
                       last=ex
                       if attempt < attempts-1:
-                          time.sleep(2 + attempt*3)
+                          time.sleep(2)
               raise last
+
+          def source_page_image(source_url, element_name):
+              if not source_url or "images-of-elements.com" not in source_url:
+                  return None
+              try:
+                  html = get_bytes(source_url, timeout=20, attempts=2).decode("utf-8", "ignore")
+              except Exception:
+                  return None
+              urls = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', html, re.I)
+              wanted = re.sub(r"[^a-z0-9]+", "", element_name.lower())
+              candidates=[]
+              for src in urls:
+                  full=urljoin(source_url, src)
+                  parsed=urlparse(full)
+                  if not parsed.netloc.endswith("images-of-elements.com"):
+                      continue
+                  if not re.search(r"\.(?:jpg|jpeg|png)(?:\?|$)", full, re.I):
+                      continue
+                  low=full.lower()
+                  if any(bad in low for bad in ("logo","banner","arrow","button","advert","icon","flag")):
+                      continue
+                  filename=parsed.path.rsplit("/",1)[-1].lower()
+                  compact=re.sub(r"[^a-z0-9]+","",filename)
+                  score=0
+                  if wanted and wanted in compact: score+=100
+                  if "/s/" in parsed.path.lower(): score+=30
+                  if "element" in low: score+=10
+                  candidates.append((score,full))
+              candidates.sort(reverse=True)
+              for _,full in candidates[:8]:
+                  try:
+                      raw=get_bytes(full, timeout=20, attempts=2)
+                      test=Image.open(io.BytesIO(raw))
+                      w,h=test.size
+                      if w>=220 and h>=220:
+                          return raw,full
+                  except Exception:
+                      pass
+              return None
 
           data = json.loads(get_bytes(DATA_URL).decode("utf-8"))
           catalog = {}
@@ -70,14 +110,35 @@ jobs:
                   print(f"{n:03d} {e.get('symbol')}: no image URL")
                   continue
 
+              attribution = str(image.get("attribution") or "")
+              title = str(image.get("title") or e.get("name") or "")
+              source_match = re.search(r"source:\s*(https?://\S+)", attribution, re.I)
+              source_url = source_match.group(1).rstrip("),.;") if source_match else ""
+
               filename = f"{n:03d}-{str(e.get('symbol','')).lower()}.jpg"
               target = OUT / filename
               if target.exists() and target.stat().st_size > 1000:
                   print(f"{n:03d} {e.get('symbol')}: already cached")
               else:
+                  raw=None
+                  actual_url=url
+                  source_pick=source_page_image(source_url, str(e.get("name") or ""))
+                  if source_pick:
+                      raw,actual_url=source_pick
+                      print(f"{n:03d} {e.get('symbol')}: using source-page image {actual_url}")
+                  if raw is None:
+                      try:
+                          if "upload.wikimedia.org" in url:
+                              file_name=url.split("/")[-1]
+                              download_url="https://commons.wikimedia.org/wiki/Special:FilePath/"+file_name+"?width=900"
+                          else:
+                              download_url=url
+                          raw=get_bytes(download_url, attempts=1)
+                          actual_url=download_url
+                      except Exception as ex:
+                          print(f"{n:03d} {e.get('symbol')}: FAILED {ex}")
+                          continue
                   try:
-                      download_url = wikimedia_thumb(url) if "upload.wikimedia.org" in url else url
-                      raw = get_bytes(download_url)
                       im = Image.open(io.BytesIO(raw))
                       im = ImageOps.exif_transpose(im)
                       if im.mode in ("RGBA", "LA"):
@@ -90,15 +151,10 @@ jobs:
                       im.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
                       im.save(target, "JPEG", quality=86, optimize=True, progressive=True)
                       print(f"{n:03d} {e.get('symbol')}: saved {target}")
-                      time.sleep(0.25)
+                      time.sleep(0.15)
                   except Exception as ex:
-                      print(f"{n:03d} {e.get('symbol')}: FAILED {ex}")
+                      print(f"{n:03d} {e.get('symbol')}: FAILED decoding {ex}")
                       continue
-
-              attribution = str(image.get("attribution") or "")
-              title = str(image.get("title") or e.get("name") or "")
-              source_match = re.search(r"source:\s*(https?://\S+)", attribution, re.I)
-              source_url = source_match.group(1).rstrip("),.;") if source_match else ""
               angle_match = re.search(r"<(https?://[^>]+)>", attribution)
               license_url = angle_match.group(1) if angle_match else ""
               if not license_url and "Creative Commons Attribution 3.0" in attribution:
