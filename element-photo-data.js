@@ -1088,6 +1088,17 @@ window.ELEMENT_PHOTOS = {
     "licenseUrl": "",
     "note": "Image resized for Periodic Table Explorer."
   },
+  "100": {
+    "name": "Fermium",
+    "symbol": "Fm",
+    "localUrl": "images/elements/100-fm.jpg",
+    "title": "Fermium was first observed in the fallout from the Ivy Mike nuclear test.",
+    "attribution": "U.S. Department of Energy, Public domain, via Wikimedia Commons",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Ivy_Mike_-_mushroom_cloud.jpg",
+    "sourceUrl": "",
+    "licenseUrl": "",
+    "note": "Image resized for Periodic Table Explorer."
+  },
   "101": {
     "name": "Mendelevium",
     "symbol": "Md",
