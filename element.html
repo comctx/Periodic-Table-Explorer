@@ -27,6 +27,29 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 .brand-footer img{display:block;width:160px;max-width:52vw;height:auto}
 .brand-footer strong{font-size:11px;letter-spacing:.04em}
 @media(max-width:600px){h1{font-size:27px}.symbol-card{width:94px;height:94px}.symbol-card .s{font-size:42px}}
+
+/* Hidden DONCO-BAYCITY easter egg */
+.brand-footer img{cursor:pointer;user-select:none;-webkit-user-drag:none}
+.easter-overlay{position:fixed;inset:0;background:rgba(6,25,38,.88);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.easter-overlay.open{display:flex}
+.easter-card{width:min(760px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.38);overflow-x:hidden}
+.easter-art{position:relative;background:linear-gradient(#8fd2ef 0 58%,#2d7699 58% 100%);min-height:300px;overflow:hidden}
+.easter-art svg{display:block;width:100%;height:300px}
+.easter-badge{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);color:#123d55;padding:7px 10px;border-radius:999px;font-weight:850;font-size:12px;letter-spacing:.04em}
+.atom{position:absolute;right:22px;top:18px;width:68px;height:68px}
+.atom .nucleus{position:absolute;left:29px;top:29px;width:10px;height:10px;border-radius:50%;background:#173f57;box-shadow:0 0 0 4px rgba(255,255,255,.65)}
+.atom .orbit{position:absolute;left:5px;top:27px;width:58px;height:14px;border:2px solid rgba(255,255,255,.92);border-radius:50%;animation:spinAtom 5s linear infinite}
+.atom .orbit.o2{transform:rotate(60deg);animation-duration:4s}
+.atom .orbit.o3{transform:rotate(120deg);animation-duration:6s}
+@keyframes spinAtom{from{rotate:0deg}to{rotate:360deg}}
+.easter-body{padding:20px 22px 22px;text-align:center}
+.easter-body h2{margin:0;color:#143f57;font-size:30px}
+.easter-body .origin{margin:8px auto 0;max-width:580px;color:#526b78;line-height:1.55}
+.secret-fact{margin:16px auto 0;max-width:620px;background:#eef7fb;border:1px solid #cae5f0;border-radius:14px;padding:13px 15px;color:#294f62;line-height:1.5}
+.secret-fact strong{display:block;margin-bottom:4px;color:#143f57}
+.easter-close{margin-top:16px;border:0;border-radius:11px;background:#1d6d92;color:#fff;padding:11px 20px;font-weight:850;font-size:15px;cursor:pointer}
+.easter-credit{margin-top:10px;color:#81919a;font-size:11px}
+
 </style>
 </head>
 <body>
@@ -54,6 +77,64 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
   <img src="donco_logo_footer.png?v=3" alt="DONCO-BAYCITY logo">
   <strong>A DONCO-BAYCITY™ App</strong>
 </footer>
+
+<div class="easter-overlay" id="bayCityEasterEgg" role="dialog" aria-modal="true" aria-labelledby="bayCityTitle">
+  <div class="easter-card">
+    <div class="easter-art">
+      <div class="easter-badge">BAY CITY • MICHIGAN</div>
+      <div class="atom" aria-hidden="true">
+        <span class="nucleus"></span><span class="orbit"></span><span class="orbit o2"></span><span class="orbit o3"></span>
+      </div>
+      <svg viewBox="0 0 760 300" role="img" aria-label="Stylized Bay City riverfront and bridge scene">
+        <defs>
+          <linearGradient id="riverGlow" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#3d8fb3"/>
+            <stop offset="1" stop-color="#1e5d7b"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="62" r="28" fill="#fff6bc" opacity=".92"/>
+        <g fill="#264a5b" opacity=".95">
+          <rect x="25" y="135" width="54" height="40"/><rect x="88" y="119" width="42" height="56"/>
+          <rect x="139" y="130" width="64" height="45"/><rect x="214" y="111" width="48" height="64"/>
+          <rect x="273" y="124" width="57" height="51"/><rect x="340" y="103" width="60" height="72"/>
+          <rect x="411" y="121" width="48" height="54"/><rect x="470" y="112" width="70" height="63"/>
+          <rect x="550" y="129" width="48" height="46"/><rect x="607" y="116" width="54" height="59"/>
+          <rect x="670" y="134" width="58" height="41"/>
+        </g>
+        <g fill="#d8eef7" opacity=".8">
+          <rect x="99" y="130" width="8" height="9"/><rect x="113" y="130" width="8" height="9"/>
+          <rect x="354" y="117" width="9" height="10"/><rect x="374" y="117" width="9" height="10"/>
+          <rect x="491" y="124" width="9" height="9"/><rect x="510" y="124" width="9" height="9"/>
+        </g>
+        <rect x="0" y="175" width="760" height="125" fill="url(#riverGlow)"/>
+        <g stroke="#183f57" stroke-width="7" fill="none" stroke-linecap="round">
+          <path d="M70 193 H690"/>
+          <path d="M178 193 L214 145 L250 193"/>
+          <path d="M510 193 L546 145 L582 193"/>
+          <path d="M214 145 V193 M546 145 V193"/>
+        </g>
+        <g stroke="#d8eef7" stroke-width="2" opacity=".9">
+          <path d="M80 225 C150 214 210 237 280 226 S415 214 485 228 S620 241 690 225"/>
+          <path d="M35 258 C120 247 190 270 275 258 S430 246 515 260 S650 271 735 257"/>
+        </g>
+        <g fill="#f1f5f6">
+          <path d="M618 236 l42 0 l-9 -13 l-25 0 z"/>
+          <rect x="630" y="213" width="4" height="11"/>
+          <path d="M634 214 l15 8 h-15 z"/>
+        </g>
+        <text x="380" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#e9f7fc">SAGINAW RIVER • BAY CITY</text>
+      </svg>
+    </div>
+    <div class="easter-body">
+      <h2 id="bayCityTitle">You found Bay City!</h2>
+      <p class="origin">Bay City, Michigan — a little hometown surprise hidden inside <strong>Periodic Table Explorer</strong> from DONCO-BAYCITY™.</p>
+      <div class="secret-fact" id="secretElementFact"><strong>Secret element fact</strong><span></span></div>
+      <button class="easter-close" id="closeBayCityEgg" type="button">Close</button>
+      <div class="easter-credit">Hidden feature • Tap the DONCO logo five times to return here.</div>
+    </div>
+  </div>
+</div>
+
 
 <script src="elements-data.js"></script>
 <script>
@@ -110,6 +191,49 @@ if(!e){
  if(e.appearance) facts.push("Its appearance is described as "+e.appearance+".");
  document.getElementById("factsText").textContent=facts.join(" ");
 }
+
+
+const secretFacts=[
+  "Helium was first detected in the Sun's spectrum before it was found on Earth.",
+  "Gallium melts at about 29.8 °C, so it can melt in a warm hand.",
+  "Bromine is the only nonmetal that is liquid at ordinary room temperature.",
+  "Tungsten has the highest melting point of any pure metal.",
+  "Technetium was the first element to be produced artificially.",
+  "Carbon can exist as diamond, graphite, graphene, and other allotropes.",
+  "The SI second is defined using a transition in cesium-133 atoms.",
+  "Mercury is the only metallic element that is liquid at ordinary room temperature."
+];
+let doncoTapCount=0;
+let doncoTapTimer=null;
+function openBayCityEgg(){
+  const egg=document.getElementById("bayCityEasterEgg");
+  const fact=document.querySelector("#secretElementFact span");
+  if(fact) fact.textContent=secretFacts[Math.floor(Math.random()*secretFacts.length)];
+  if(egg){egg.classList.add("open");document.body.style.overflow="hidden";}
+}
+function closeBayCityEgg(){
+  const egg=document.getElementById("bayCityEasterEgg");
+  if(egg){egg.classList.remove("open");document.body.style.overflow="";}
+}
+document.querySelectorAll(".brand-footer img").forEach(logo=>{
+  logo.title="DONCO-BAYCITY";
+  logo.addEventListener("click",()=>{
+    doncoTapCount++;
+    clearTimeout(doncoTapTimer);
+    doncoTapTimer=setTimeout(()=>{doncoTapCount=0;},4000);
+    if(doncoTapCount>=5){
+      doncoTapCount=0;
+      clearTimeout(doncoTapTimer);
+      openBayCityEgg();
+    }
+  });
+});
+document.getElementById("closeBayCityEgg")?.addEventListener("click",closeBayCityEgg);
+document.getElementById("bayCityEasterEgg")?.addEventListener("click",e=>{
+  if(e.target===e.currentTarget) closeBayCityEgg();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape") closeBayCityEgg();});
+
 </script>
 </body>
 </html>
