@@ -101,8 +101,8 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 <section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
 <section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
 <section class="card"><h2>About This Information</h2>
-<p>The core element facts on this page are stored inside Periodic Table Explorer itself. Element photographs are loaded from the open Periodic-Table-JSON project and retain their individual image attribution.</p>
-<div class="note">If a photo cannot load, the element facts still remain available.</div>
+<p>The core element facts on this page are stored inside Periodic Table Explorer itself. Element photographs are stored inside this Periodic Table Explorer project and retain their individual image attribution.</p>
+<div class="note">The app does not need to download element photographs from another website when you open an element.</div>
 </section>
 </main>
 <footer class="brand-footer">
@@ -169,20 +169,13 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 
 
 <script src="elements-data.js"></script>
+<script src="element-photo-data.js"></script>
 <script>
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
 function fact(label,value){return '<div class="card fact"><b>'+esc(label)+'</b><span>'+esc(value??"—")+'</span></div>';}
 function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?(Math.round((n-273.15)*10)/10)+" °C":"—";}
 function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
-function extractAngleUrl(s){
-  const m=String(s||"").match(/<(https?:\/\/[^>]+)>/i);
-  return m?m[1]:"";
-}
-function extractSourceUrl(s){
-  const m=String(s||"").match(/source:\s*(https?:\/\/\S+)/i);
-  return m?m[1].replace(/[),.;]+$/,""):"";
-}
-async function loadElementPhoto(number,name){
+function loadElementPhoto(number,name){
   const status=document.getElementById("elementPhotoStatus");
   const wrap=document.getElementById("elementPhotoWrap");
   const img=document.getElementById("elementPhoto");
@@ -191,40 +184,36 @@ async function loadElementPhoto(number,name){
   const original=document.getElementById("elementPhotoOriginal");
   const license=document.getElementById("elementPhotoLicense");
   const source=document.getElementById("elementPhotoSource");
-  try{
-    const response=await fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json");
-    if(!response.ok) throw new Error("Photo data unavailable");
-    const data=await response.json();
-    const item=(data.elements||[]).find(x=>Number(x.number)===Number(number));
-    if(!item || !item.image || !validHttpUrl(item.image.url)) throw new Error("No photo listed");
-    const attribution=String(item.image.attribution||"Image attribution not provided.");
-    img.src=item.image.url;
-    img.alt=(item.image.title||("Photograph of "+name));
-    title.textContent=item.image.title||name;
-    credit.textContent=attribution;
-    original.href=item.image.url;
+  const item=(window.ELEMENT_PHOTOS||{})[String(number)];
 
-    const licenseUrl=extractAngleUrl(attribution);
-    if(validHttpUrl(licenseUrl)){license.href=licenseUrl;license.classList.remove("hidden");}
-    else license.classList.add("hidden");
-
-    const sourceUrl=extractSourceUrl(attribution);
-    if(validHttpUrl(sourceUrl)){source.href=sourceUrl;source.classList.remove("hidden");}
-    else source.classList.add("hidden");
-
-    img.addEventListener("error",()=>{
-      wrap.classList.add("hidden");
-      status.classList.remove("hidden");
-      status.textContent="The photograph for this element could not load right now.";
-    },{once:true});
-
-    status.classList.add("hidden");
-    wrap.classList.remove("hidden");
-  }catch(err){
+  if(!item || !item.localUrl){
     wrap.classList.add("hidden");
     status.classList.remove("hidden");
-    status.textContent="A representative photograph is not available right now. The element facts below still work normally.";
+    status.textContent="A local photograph is not available for this element yet.";
+    return;
   }
+
+  img.src=item.localUrl;
+  img.alt=item.title||("Photograph of "+name);
+  title.textContent=item.title||name;
+  credit.textContent=item.attribution||"Image credit unavailable.";
+  original.href=item.localUrl;
+  original.textContent="Open local image";
+
+  if(validHttpUrl(item.licenseUrl)){license.href=item.licenseUrl;license.classList.remove("hidden");}
+  else license.classList.add("hidden");
+
+  if(validHttpUrl(item.sourceUrl)){source.href=item.sourceUrl;source.classList.remove("hidden");}
+  else source.classList.add("hidden");
+
+  img.addEventListener("error",()=>{
+    wrap.classList.add("hidden");
+    status.classList.remove("hidden");
+    status.textContent="The saved photograph for this element could not load.";
+  },{once:true});
+
+  status.classList.add("hidden");
+  wrap.classList.remove("hidden");
 }
 const z=Math.max(1,Math.min(118,Number(new URLSearchParams(location.search).get("z"))||1));
 const e=(window.PERIODIC_ELEMENTS||[]).find(x=>x.atomicNumber===z);
