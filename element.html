@@ -5,219 +5,105 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Element Details • Periodic Table Explorer</title>
 <style>
-:root{--bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8}
+:root{--bg:#f4f7f9;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:18px}
-.wrap{max-width:1000px;margin:auto;padding:16px}
-header .wrap{padding:0}
-.back{display:inline-block;color:white;text-decoration:none;font-weight:800;margin-bottom:12px}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:18px}
+.wrap{max-width:1000px;margin:auto;padding:16px}header .wrap{padding:0}
+.back{display:inline-block;color:#fff;text-decoration:none;font-weight:800;margin-bottom:12px}
 .hero{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.symbol-card{width:108px;height:108px;border-radius:18px;background:white;color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.symbol-card{width:108px;height:108px;border-radius:18px;background:#fff;color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .symbol-card .n{font-size:13px;font-weight:800;opacity:.65}.symbol-card .s{font-size:48px;font-weight:900;line-height:1}.symbol-card .m{font-size:12px;margin-top:5px;opacity:.75}
 h1{margin:0;font-size:32px}.subtitle{margin-top:5px;opacity:.92}
-.status{background:white;border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;color:var(--muted)}
+.status{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.card{background:white;border:1px solid var(--border);border-radius:16px;padding:15px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:15px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
 .card h2{margin:0 0 10px;color:#143f57;font-size:19px}
-.fact{padding:9px 0;border-bottom:1px solid #edf2f4}
-.fact:last-child{border-bottom:0}
-.fact b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
-.fact span{font-weight:800}
-section.card{margin-top:14px}
-section.card p{line-height:1.6;margin:0;color:#405966}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.tag{background:#eaf3f7;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800;color:#315a70}
-.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.btn{display:inline-block;text-decoration:none;padding:10px 12px;border-radius:10px;font-weight:800}
-.primary{background:var(--blue);color:white}.secondary{background:#e7eff3;color:#264e63}
+.fact b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}.fact span{font-weight:800}
+section.card{margin-top:14px}section.card p{line-height:1.6;margin:0;color:#405966}
+.note{margin-top:10px;font-size:12px;color:var(--muted)}
 footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 @media(max-width:600px){h1{font-size:27px}.symbol-card{width:94px;height:94px}.symbol-card .s{font-size:42px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a class="back" href="index.html">← Back to Periodic Table</a>
-    <div class="hero">
-      <div class="symbol-card">
-        <div class="n" id="atomicNumber">–</div>
-        <div class="s" id="symbol">?</div>
-        <div class="m" id="mass">–</div>
-      </div>
-      <div>
-        <h1 id="name">Loading element…</h1>
-        <div class="subtitle" id="subtitle">Scientific facts, history, and typical uses</div>
-      </div>
-    </div>
-  </div>
-</header>
+<header><div class="wrap">
+<a class="back" href="index.html">← Back to Periodic Table</a>
+<div class="hero">
+<div class="symbol-card"><div class="n" id="atomicNumber">–</div><div class="s" id="symbol">?</div><div class="m" id="mass">–</div></div>
+<div><h1 id="name">Loading element…</h1><div class="subtitle" id="subtitle">Scientific facts, history, and typical uses</div></div>
+</div></div></header>
 
 <main class="wrap">
-  <div class="status" id="status">Loading element information…</div>
+<div class="status" id="status">Loading element information…</div>
+<div class="grid" id="basicGrid"></div>
 
-  <div class="grid" id="basicGrid"></div>
-
-  <section class="card">
-    <h2>Scientific Information</h2>
-    <div class="grid" id="scienceGrid"></div>
-  </section>
-
-  <section class="card">
-    <h2>History & Discovery</h2>
-    <p id="historyText">Loading discovery information…</p>
-  </section>
-
-  <section class="card">
-    <h2>Typical Uses</h2>
-    <p id="usesText">Loading use information…</p>
-  </section>
-
-  <section class="card">
-    <h2>Interesting Facts</h2>
-    <p id="factsText">Loading interesting facts…</p>
-  </section>
-
-  <section class="card">
-    <h2>Learn More</h2>
-    <p>For deeper reading, use the source links below.</p>
-    <div class="links" id="links"></div>
-  </section>
+<section class="card"><h2>Scientific Information</h2><div class="grid" id="scienceGrid"></div></section>
+<section class="card"><h2>History & Discovery</h2><p id="historyText"></p></section>
+<section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
+<section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
+<section class="card"><h2>About This Information</h2>
+<p>The core element information on this page is stored inside Periodic Table Explorer itself. The page does not need an outside reference website to display its data.</p>
+<div class="note">Optional reference links can still be added later without making the app dependent on them.</div>
+</section>
 </main>
-
 <footer>A DONCO-BAYCITY™ App</footer>
 
+<script src="elements-data.js"></script>
 <script>
-const z=Math.max(1,Math.min(118,Number(new URLSearchParams(location.search).get("z"))||1));
-const ptUrl="https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json";
-const pubchemUrl="https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON";
-
-const USES={
-1:"Used in ammonia production, petroleum refining, fuel cells, rocket propellants, and hydrogenation processes.",
-2:"Used in cryogenics, MRI cooling, leak detection, balloons, and controlled atmospheres.",
-3:"Used in rechargeable batteries, ceramics, glass, lubricants, and some medicines.",
-4:"Used in aerospace alloys, X-ray windows, precision instruments, and nuclear applications.",
-5:"Used in borosilicate glass, detergents, semiconductors, fiberglass, and neutron-absorbing materials.",
-6:"Used in steelmaking, graphite electrodes, filtration, diamonds, fuels, plastics, and countless organic compounds.",
-7:"Used to make ammonia and fertilizers, provide inert atmospheres, and preserve foods.",
-8:"Used in medicine, steelmaking, welding, water treatment, and combustion processes.",
-9:"Used mainly in fluorine compounds for refrigerants, fluoropolymers, uranium processing, and dental products.",
-10:"Used in signs, lasers, high-voltage indicators, and specialized lighting.",
-11:"Used in chemicals, street lighting, heat-transfer systems, and production of many sodium compounds.",
-12:"Used in lightweight alloys, flares, fireworks, electronics, and construction materials.",
-13:"Used in aircraft, vehicles, packaging, construction, electrical wiring, and household products.",
-14:"Used in semiconductors, solar cells, glass, concrete, silicones, and many electronic devices.",
-15:"Used in fertilizers, detergents, pesticides, matches, and many biological compounds.",
-16:"Used in sulfuric acid production, fertilizers, rubber processing, fungicides, and chemicals.",
-17:"Used in water disinfection, bleach, PVC production, solvents, and many industrial chemicals.",
-18:"Used in welding, lighting, semiconductor manufacturing, and inert atmospheres.",
-26:"Used extensively in steel, construction, machinery, tools, vehicles, and magnets.",
-29:"Used in electrical wiring, plumbing, electronics, motors, coins, and alloys such as brass and bronze.",
-47:"Used in jewelry, electronics, solar cells, mirrors, photography, antimicrobial products, and electrical contacts.",
-50:"Used in solder, tin plating, alloys, glass production, and some chemical compounds.",
-53:"Used in medicine, disinfectants, photography, and nutrition as an essential trace element.",
-74:"Used in cutting tools, high-temperature alloys, lamp filaments, electronics, and industrial machinery.",
-78:"Used in catalytic converters, jewelry, laboratory equipment, electronics, and medical devices.",
-79:"Used in jewelry, electronics, dentistry, aerospace components, and corrosion-resistant electrical contacts.",
-80:"Historically used in thermometers and switches; still used in some lamps, scientific instruments, and industrial processes under strict controls.",
-82:"Used in lead-acid batteries, radiation shielding, weights, ammunition, and some specialized alloys.",
-92:"Used primarily as nuclear fuel; depleted uranium is also used in shielding and certain industrial applications."
-};
-
-const FACTS={
-1:"Hydrogen is the lightest and most abundant element in the universe.",
-2:"Helium has the lowest boiling point of any element.",
-6:"Carbon can form diamond, graphite, graphene, and many other allotropes.",
-8:"Oxygen makes up about 21% of Earth's atmosphere by volume.",
-14:"Silicon is the second most abundant element in Earth's crust after oxygen.",
-26:"Iron is the main element in steel and is essential to hemoglobin in blood.",
-29:"Copper is one of the best common conductors of electricity and has been used by humans for thousands of years.",
-47:"Silver has the highest electrical conductivity of any element.",
-79:"Gold is extremely malleable and resists corrosion, which helps explain its use in jewelry and electronics.",
-80:"Mercury is the only metallic element that is liquid at typical room temperature.",
-92:"Uranium is naturally radioactive and its isotope uranium-235 can sustain a nuclear fission chain reaction."
-};
-
-function fact(label,value){
-  return '<div class="fact"><b>'+label+'</b><span>'+esc(value??"—")+'</span></div>';
-}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
-function celsius(v){
-  if(v==null||v==="") return "—";
-  const n=Number(v); if(!Number.isFinite(n)) return v;
-  if(n>170) return (Math.round((n-273.15)*10)/10)+" °C";
-  return v+" °C";
+function fact(label,value){return '<div class="card fact"><b>'+esc(label)+'</b><span>'+esc(value??"—")+'</span></div>';}
+function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?(Math.round((n-273.15)*10)/10)+" °C":"—";}
+const z=Math.max(1,Math.min(118,Number(new URLSearchParams(location.search).get("z"))||1));
+const e=(window.PERIODIC_ELEMENTS||[]).find(x=>x.atomicNumber===z);
+
+if(!e){
+ document.getElementById("status").textContent="Element information is unavailable.";
+}else{
+ document.title=e.name+" • Periodic Table Explorer";
+ document.getElementById("atomicNumber").textContent=e.atomicNumber;
+ document.getElementById("symbol").textContent=e.symbol;
+ document.getElementById("mass").textContent=e.atomicMass;
+ document.getElementById("name").textContent=e.name;
+ document.getElementById("subtitle").textContent=e.groupBlock||"Element";
+ document.getElementById("status").textContent="Element "+e.atomicNumber+" of 118 • "+(e.standardState||"State unknown");
+
+ document.getElementById("basicGrid").innerHTML=
+   fact("Atomic number",e.atomicNumber)+
+   fact("Symbol",e.symbol)+
+   fact("Atomic mass",e.atomicMass)+
+   fact("Category",e.groupBlock||"—")+
+   fact("State",e.standardState||"—")+
+   fact("Year discovered",e.yearDiscovered||"—");
+
+ document.getElementById("scienceGrid").innerHTML=
+   fact("Electron configuration",e.electronConfiguration||"—")+
+   fact("Density",e.density==null?"—":e.density+" g/cm³")+
+   fact("Melting point",kelvinToC(e.meltingPoint))+
+   fact("Boiling point",kelvinToC(e.boilingPoint))+
+   fact("Electronegativity",e.electronegativity??"—")+
+   fact("Atomic radius",e.atomicRadius==null?"—":e.atomicRadius+" pm")+
+   fact("Ionization energy",e.ionizationEnergy==null?"—":e.ionizationEnergy+" eV")+
+   fact("Electron affinity",e.electronAffinity==null?"—":e.electronAffinity+" eV")+
+   fact("Oxidation states",e.oxidationStates||"—")+
+   fact("Appearance",e.appearance||"—");
+
+ let history=[];
+ if(e.yearDiscovered==="Ancient") history.push(e.name+" has been known since ancient times.");
+ else if(e.yearDiscovered) history.push(e.name+" was discovered in "+e.yearDiscovered+".");
+ if(e.discoveredBy) history.push("The discovery is credited to "+e.discoveredBy+".");
+ if(e.namedBy) history.push("Its naming is credited to "+e.namedBy+".");
+ document.getElementById("historyText").textContent=history.join(" ")||"Detailed discovery information is not available for this element.";
+
+ document.getElementById("usesText").textContent=e.typicalUses||"No broad everyday use is listed for this element.";
+
+ let facts=[];
+ facts.push(e.name+" has atomic number "+e.atomicNumber+" and the symbol "+e.symbol+".");
+ if(e.groupBlock) facts.push("It is classified as "+e.groupBlock.toLowerCase()+".");
+ if(e.standardState) facts.push("Its standard state is "+e.standardState.toLowerCase()+".");
+ if(e.appearance) facts.push("Its appearance is described as "+e.appearance+".");
+ document.getElementById("factsText").textContent=facts.join(" ");
 }
-function val(v){return v===null||v===undefined||v===""?"—":v;}
-
-Promise.allSettled([
-  fetch(ptUrl).then(r=>r.json()),
-  fetch(pubchemUrl).then(r=>r.json())
-]).then(results=>{
-  const pjson=results[0].status==="fulfilled"?results[0].value:null;
-  const pub=results[1].status==="fulfilled"?results[1].value:null;
-  const e=pjson?.elements?.find(x=>x.number===z);
-  const rows=pub?.Table?.Row||[];
-  const pc=rows.find(r=>Number(r.Cell?.[0])===z);
-  if(!e){
-    document.getElementById("status").textContent="Element information could not be loaded right now.";
-    return;
-  }
-
-  document.title=e.name+" • Periodic Table Explorer";
-  document.getElementById("atomicNumber").textContent=e.number;
-  document.getElementById("symbol").textContent=e.symbol;
-  document.getElementById("mass").textContent=Number(e.atomic_mass).toFixed(3).replace(/0+$/,"").replace(/\.$/,"");
-  document.getElementById("name").textContent=e.name;
-  document.getElementById("subtitle").textContent=e.category?e.category.replace(/(^|\s)\S/g,m=>m.toUpperCase()):"Element "+e.number;
-  document.getElementById("status").textContent="Element "+e.number+" of 118 • "+(e.phase||"Unknown")+" at standard conditions";
-
-  const year=pc?.Cell?.[16]||"—";
-  const groupBlock=pc?.Cell?.[15]||e.category||"—";
-  const oxidation=pc?.Cell?.[13]||"—";
-  const electroneg=pc?.Cell?.[9]||e.electronegativity_pauling||"—";
-  const ionization=pc?.Cell?.[11]||e.ionization_energies?.[0]||"—";
-  const affinity=pc?.Cell?.[12]||e.electron_affinity||"—";
-  const radius=pc?.Cell?.[10]||"—";
-
-  document.getElementById("basicGrid").innerHTML=
-    fact("Atomic number",e.number)+
-    fact("Symbol",e.symbol)+
-    fact("Atomic mass",Number(e.atomic_mass).toFixed(4).replace(/0+$/,"").replace(/\.$/,""))+
-    fact("Category",groupBlock)+
-    fact("Phase",e.phase||"—")+
-    fact("Period",e.period||"—");
-
-  document.getElementById("scienceGrid").innerHTML=
-    fact("Electron configuration",e.electron_configuration_semantic||e.electron_configuration||"—")+
-    fact("Density",e.density==null?"—":e.density+" g/cm³")+
-    fact("Melting point",celsius(e.melt))+
-    fact("Boiling point",celsius(e.boil))+
-    fact("Electronegativity",electroneg)+
-    fact("Ionization energy",ionization)+
-    fact("Electron affinity",affinity)+
-    fact("Atomic radius",radius)+
-    fact("Oxidation states",oxidation)+
-    fact("Appearance",e.appearance||"—");
-
-  let history=[];
-  if(year&&year!=="—") history.push("The reported discovery year is "+year+".");
-  if(e.discovered_by) history.push("It is credited as discovered by "+e.discovered_by+".");
-  if(e.named_by) history.push("The name is credited to "+e.named_by+".");
-  if(e.summary) history.push(e.summary);
-  document.getElementById("historyText").textContent=history.join(" ")||"Discovery information is not available in the current data source.";
-
-  document.getElementById("usesText").textContent=USES[z]||"Common-use information for this element will be expanded in a future update. The scientific and historical information above is already available.";
-  document.getElementById("factsText").textContent=FACTS[z]||e.summary||"More interesting facts will be added for this element.";
-
-  const links=document.getElementById("links");
-  if(e.source){
-    const a=document.createElement("a");a.className="btn primary";a.href=e.source;a.target="_blank";a.rel="noopener";a.textContent="Reference Article";links.appendChild(a);
-  }
-  const p=document.createElement("a");p.className="btn secondary";p.href="https://pubchem.ncbi.nlm.nih.gov/element/"+encodeURIComponent(e.name);p.target="_blank";p.rel="noopener";p.textContent="PubChem Element Page";links.appendChild(p);
-}).catch(()=>{
-  document.getElementById("status").textContent="Element information could not be loaded right now.";
-});
 </script>
 </body>
 </html>
