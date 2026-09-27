@@ -9,17 +9,17 @@
   --bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:22px 18px}
-.wrap{max-width:1400px;margin:auto;padding:14px}
+body{margin:0;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:calc(22px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) 22px calc(18px + env(safe-area-inset-left))}
+.wrap{max-width:1400px;margin:auto;padding:14px max(14px,env(safe-area-inset-right)) 14px max(14px,env(safe-area-inset-left))}
 header .wrap{padding:0}
 h1{margin:0;font-size:28px}
 header p{margin:7px 0 0;opacity:.92}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
-#search{flex:1;min-width:220px;padding:12px 14px;border:1px solid #b9cbd5;border-radius:11px;font-size:16px;background:#fff}
-#clear{border:0;border-radius:10px;padding:12px 14px;font-weight:750;background:#e6eef2;color:#244b61;cursor:pointer}
+#search{flex:1;min-width:220px;min-height:44px;padding:12px 14px;border:1px solid #b9cbd5;border-radius:11px;font-size:16px;background:#fff}
+#clear{border:0;border-radius:10px;min-height:44px;padding:12px 14px;font-weight:750;background:#e6eef2;color:#244b61;cursor:pointer;touch-action:manipulation}
 .legend{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 14px}
-.legend button{border:1px solid var(--border);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:750;background:#fff;color:#334f5d;cursor:pointer}
+.legend button{border:1px solid var(--border);border-radius:999px;min-height:36px;padding:7px 10px;font-size:12px;font-weight:750;background:#fff;color:#334f5d;cursor:pointer;touch-action:manipulation}
 .legend button.active{outline:3px solid rgba(29,109,146,.2);border-color:#6baac7}
 .table-wrap{overflow-x:auto;padding-bottom:8px}
 .ptable{min-width:1180px;display:grid;grid-template-columns:repeat(18,1fr);grid-template-rows:repeat(9,76px);gap:5px}
@@ -49,16 +49,20 @@ header p{margin:7px 0 0;opacity:.92}
 .source-link:hover{text-decoration:underline}
 .data-note{margin-top:10px;font-size:12px;color:var(--muted)}
 .loading{margin-top:10px;font-size:13px;color:#56717f}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.about-panel{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:0 16px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
+.about-panel summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-weight:850;color:#143f57;touch-action:manipulation}
+.about-panel p{margin:0 0 14px;color:#405966;line-height:1.55;font-size:14px}
+.about-panel .small{font-size:12px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 20px calc(20px + env(safe-area-inset-bottom))}
 .brand-footer{display:flex;flex-direction:column;align-items:center;gap:7px}
 .brand-footer img{display:block;width:160px;max-width:52vw;height:auto}
 .brand-footer strong{font-size:11px;letter-spacing:.04em}
 .hidden{display:none!important}
-@media(max-width:700px){h1{font-size:24px}.wrap{padding:10px}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
+@media(max-width:700px){h1{font-size:24px}.wrap{padding:10px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left))}.toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto}.toolbar #search{min-width:0;width:100%}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
 
 /* Hidden DONCO-BAYCITY easter egg */
 .brand-footer img{cursor:pointer;user-select:none;-webkit-user-drag:none}
-.easter-overlay{position:fixed;inset:0;background:rgba(6,25,38,.88);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.easter-overlay{position:fixed;inset:0;background:rgba(6,25,38,.88);display:none;align-items:center;justify-content:center;padding:calc(18px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left));z-index:9999}
 .easter-overlay.open{display:flex}
 .easter-card{width:min(760px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.38);overflow-x:hidden}
 .easter-art{position:relative;background:#d9e1e5;overflow:hidden;text-align:center}
@@ -101,6 +105,12 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
   <section class="details" id="details" aria-live="polite">
     <div class="empty">Tap any element above to open its full detail page.</div>
   </section>
+
+  <details class="about-panel">
+    <summary>About &amp; Photo Credits</summary>
+    <p><strong>Periodic Table Explorer</strong> is a DONCO-BAYCITY™ app covering all 118 recognized elements. Element photographs are saved inside the app so they do not need to be downloaded each time an element is opened.</p>
+    <p class="small">Each element page shows its individual image credit and license when applicable. For elements that are too rare or short-lived for a normal visible sample photograph, the app explains that instead of showing a misleading picture.</p>
+  </details>
 </main>
 <footer class="brand-footer">
   <img src="donco_logo_footer.png?v=3" alt="DONCO-BAYCITY logo">
@@ -111,7 +121,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
   <div class="easter-card">
     <div class="easter-art">
       <img class="easter-photo"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Bay%20City%20MI%20City%20Hall.JPG?width=1400"
+           src="images/bay-city-city-hall.jpg"
            alt="Color photograph of Bay City City Hall in Bay City, Michigan"
            loading="lazy"
            referrerpolicy="no-referrer">
