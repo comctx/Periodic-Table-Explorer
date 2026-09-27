@@ -7,46 +7,48 @@
 <style>
 :root{--bg:#f4f7f9;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8}
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:18px}
-.wrap{max-width:1000px;margin:auto;padding:16px}header .wrap{padding:0}
-.back{display:inline-block;color:#fff;text-decoration:none;font-weight:800;margin-bottom:12px}
-.hero{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+body{margin:0;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:calc(18px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) 18px calc(18px + env(safe-area-inset-left))}
+.wrap{max-width:1000px;margin:auto;padding:16px max(16px,env(safe-area-inset-right)) 16px max(16px,env(safe-area-inset-left))}header .wrap{padding:0}
+.back{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none;font-weight:800;margin-bottom:8px;touch-action:manipulation}
+.hero{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.hero>div:last-child{min-width:0;flex:1 1 240px}
 .symbol-card{width:108px;height:108px;border-radius:18px;background:#fff;color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .symbol-card .n{font-size:13px;font-weight:800;opacity:.65}.symbol-card .s{font-size:48px;font-weight:900;line-height:1}.symbol-card .m{font-size:12px;margin-top:5px;opacity:.75}
-h1{margin:0;font-size:32px}.subtitle{margin-top:5px;opacity:.92}
+h1{margin:0;font-size:32px;overflow-wrap:anywhere}.subtitle{margin-top:5px;opacity:.92;overflow-wrap:anywhere}
 .status{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
 .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:15px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
 .card h2{margin:0 0 10px;color:#143f57;font-size:19px}
-.fact b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}.fact span{font-weight:800}
+.fact b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}.fact span{font-weight:800;overflow-wrap:anywhere}
 section.card{margin-top:14px}section.card p{line-height:1.6;margin:0;color:#405966}
 .note{margin-top:10px;font-size:12px;color:var(--muted)}
 .element-photo-card{margin-top:14px}
 .element-photo-wrap{display:grid;grid-template-columns:minmax(0,520px) minmax(220px,1fr);gap:18px;align-items:center}
 .element-photo-frame{background:#eef3f6;border:1px solid #d7e2e8;border-radius:16px;overflow:hidden;min-height:220px;display:flex;align-items:center;justify-content:center}
 .element-photo-frame img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;object-position:center center}
-.element-photo-copy h3{margin:0 0 8px;color:#143f57;font-size:18px}
+.element-photo-copy h3{margin:0 0 8px;color:#143f57;font-size:18px;overflow-wrap:anywhere}
 .element-photo-copy p{margin:0 0 10px;line-height:1.5;color:#405966}
 .element-photo-credit{font-size:11px;color:var(--muted);line-height:1.45;overflow-wrap:anywhere}
 .element-photo-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .element-photo-links a{display:inline-block;color:#17688e;font-weight:750;text-decoration:none;border:1px solid #cbdde6;border-radius:9px;padding:7px 9px;background:#f7fbfd}
-.element-photo-status{color:var(--muted);font-size:13px;padding:12px 0}
+.element-photo-status{color:var(--muted);font-size:13px;padding:12px 0;line-height:1.55}.element-photo-status.no-sample{background:#f7fafb;border:1px solid #e0eaee;border-radius:12px;padding:14px;color:#405966}
 .hidden{display:none!important}
 @media(max-width:700px){.element-photo-wrap{grid-template-columns:1fr}.element-photo-frame{min-height:180px}}
-footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
+footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(safe-area-inset-bottom));font-size:12px}
 .brand-footer{display:flex;flex-direction:column;align-items:center;gap:7px}
 .brand-footer img{display:block;width:160px;max-width:52vw;height:auto}
 .brand-footer strong{font-size:11px;letter-spacing:.04em}
-@media(max-width:600px){h1{font-size:27px}.symbol-card{width:94px;height:94px}.symbol-card .s{font-size:42px}}
+@media(max-width:600px){h1{font-size:27px}.wrap{padding:12px max(12px,env(safe-area-inset-right)) 12px max(12px,env(safe-area-inset-left))}.hero{align-items:flex-start}.symbol-card{width:94px;height:94px;flex:0 0 94px}.symbol-card .s{font-size:42px}.grid{grid-template-columns:1fr}.element-photo-links a{min-height:44px;display:inline-flex;align-items:center}.easter-badge{font-size:10px}}
 
 /* Hidden DONCO-BAYCITY easter egg */
 .brand-footer img{cursor:pointer;user-select:none;-webkit-user-drag:none}
-.easter-overlay{position:fixed;inset:0;background:rgba(6,25,38,.88);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.easter-overlay{position:fixed;inset:0;background:rgba(6,25,38,.88);display:none;align-items:center;justify-content:center;padding:calc(18px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left));z-index:9999}
 .easter-overlay.open{display:flex}
 .easter-card{width:min(760px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.38);overflow-x:hidden}
-.easter-art{position:relative;background:linear-gradient(#8fd2ef 0 58%,#2d7699 58% 100%);min-height:300px;overflow:hidden}
-.easter-art svg{display:block;width:100%;height:300px}
+.easter-art{position:relative;background:#d9e1e5;overflow:hidden;text-align:center}
+.easter-photo{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;object-position:center center;margin:0 auto;filter:contrast(1.03)}
+.easter-credit a{color:#17688e;font-weight:750;text-decoration:none}
+.easter-credit a:hover{text-decoration:underline}
 .easter-badge{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);color:#123d55;padding:7px 10px;border-radius:999px;font-weight:850;font-size:12px;letter-spacing:.04em}
 .atom{position:absolute;right:22px;top:18px;width:68px;height:68px}
 .atom .nucleus{position:absolute;left:29px;top:29px;width:10px;height:10px;border-radius:50%;background:#173f57;box-shadow:0 0 0 4px rgba(255,255,255,.65)}
@@ -77,7 +79,7 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 <div class="grid" id="basicGrid"></div>
 
 <section class="card element-photo-card" id="elementPhotoCard">
-  <h2>What This Element Looks Like</h2>
+  <h2 id="elementPhotoHeading">What This Element Looks Like</h2>
   <div class="element-photo-status" id="elementPhotoStatus">Loading element photo…</div>
   <div class="element-photo-wrap hidden" id="elementPhotoWrap">
     <div class="element-photo-frame">
@@ -85,7 +87,7 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
     </div>
     <div class="element-photo-copy">
       <h3 id="elementPhotoTitle"></h3>
-      <p>Representative photograph for this element.</p>
+      <p id="elementPhotoDescription">Representative photograph for this element.</p>
       <div class="element-photo-credit" id="elementPhotoCredit"></div>
       <div class="element-photo-links">
         <a id="elementPhotoOriginal" href="#" target="_blank" rel="noopener">Open original image</a>
@@ -100,9 +102,9 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 <section class="card"><h2>History & Discovery</h2><p id="historyText"></p></section>
 <section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
 <section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
-<section class="card"><h2>About This Information</h2>
-<p>The core element facts on this page are stored inside Periodic Table Explorer itself. Element photographs are stored inside this Periodic Table Explorer project and retain their individual image attribution.</p>
-<div class="note">The app does not need to download element photographs from another website when you open an element.</div>
+<section class="card"><h2>About &amp; Photo Credits</h2>
+<p>The core element facts and element photographs are stored inside Periodic Table Explorer. Each available photograph keeps its individual credit and license information above.</p>
+<div class="note">For extremely rare or short-lived elements without a useful direct sample photograph, the app says so instead of showing a generic or misleading placeholder image.</div>
 </section>
 </main>
 <footer class="brand-footer">
@@ -113,56 +115,27 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 <div class="easter-overlay" id="bayCityEasterEgg" role="dialog" aria-modal="true" aria-labelledby="bayCityTitle">
   <div class="easter-card">
     <div class="easter-art">
+      <img class="easter-photo"
+           src="images/bay-city-city-hall.jpg"
+           alt="Color photograph of Bay City City Hall in Bay City, Michigan"
+           loading="lazy">
       <div class="easter-badge">BAY CITY • MICHIGAN</div>
       <div class="atom" aria-hidden="true">
         <span class="nucleus"></span><span class="orbit"></span><span class="orbit o2"></span><span class="orbit o3"></span>
       </div>
-      <svg viewBox="0 0 760 300" role="img" aria-label="Stylized Bay City riverfront and bridge scene">
-        <defs>
-          <linearGradient id="riverGlow" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stop-color="#3d8fb3"/>
-            <stop offset="1" stop-color="#1e5d7b"/>
-          </linearGradient>
-        </defs>
-        <circle cx="100" cy="62" r="28" fill="#fff6bc" opacity=".92"/>
-        <g fill="#264a5b" opacity=".95">
-          <rect x="25" y="135" width="54" height="40"/><rect x="88" y="119" width="42" height="56"/>
-          <rect x="139" y="130" width="64" height="45"/><rect x="214" y="111" width="48" height="64"/>
-          <rect x="273" y="124" width="57" height="51"/><rect x="340" y="103" width="60" height="72"/>
-          <rect x="411" y="121" width="48" height="54"/><rect x="470" y="112" width="70" height="63"/>
-          <rect x="550" y="129" width="48" height="46"/><rect x="607" y="116" width="54" height="59"/>
-          <rect x="670" y="134" width="58" height="41"/>
-        </g>
-        <g fill="#d8eef7" opacity=".8">
-          <rect x="99" y="130" width="8" height="9"/><rect x="113" y="130" width="8" height="9"/>
-          <rect x="354" y="117" width="9" height="10"/><rect x="374" y="117" width="9" height="10"/>
-          <rect x="491" y="124" width="9" height="9"/><rect x="510" y="124" width="9" height="9"/>
-        </g>
-        <rect x="0" y="175" width="760" height="125" fill="url(#riverGlow)"/>
-        <g stroke="#183f57" stroke-width="7" fill="none" stroke-linecap="round">
-          <path d="M70 193 H690"/>
-          <path d="M178 193 L214 145 L250 193"/>
-          <path d="M510 193 L546 145 L582 193"/>
-          <path d="M214 145 V193 M546 145 V193"/>
-        </g>
-        <g stroke="#d8eef7" stroke-width="2" opacity=".9">
-          <path d="M80 225 C150 214 210 237 280 226 S415 214 485 228 S620 241 690 225"/>
-          <path d="M35 258 C120 247 190 270 275 258 S430 246 515 260 S650 271 735 257"/>
-        </g>
-        <g fill="#f1f5f6">
-          <path d="M618 236 l42 0 l-9 -13 l-25 0 z"/>
-          <rect x="630" y="213" width="4" height="11"/>
-          <path d="M634 214 l15 8 h-15 z"/>
-        </g>
-        <text x="380" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#e9f7fc">SAGINAW RIVER • BAY CITY</text>
-      </svg>
     </div>
     <div class="easter-body">
       <h2 id="bayCityTitle">You found Bay City!</h2>
       <p class="origin">Bay City, Michigan — a little hometown surprise hidden inside <strong>Periodic Table Explorer</strong> from DONCO-BAYCITY™.</p>
       <div class="secret-fact" id="secretElementFact"><strong>Secret element fact</strong><span></span></div>
       <button class="easter-close" id="closeBayCityEgg" type="button">Close</button>
-      <div class="easter-credit">Hidden feature • Tap the DONCO logo five times to return here.</div>
+      <div class="easter-credit">
+        Photo by <a href="https://commons.wikimedia.org/wiki/User:Andrew_Jameson" target="_blank" rel="noopener">Andrew Jameson</a>
+        via <a href="https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>
+        • <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+        • Image displayed without modification<br>
+        Hidden feature • Tap the DONCO logo five times to return here.
+      </div>
     </div>
   </div>
 </div>
@@ -178,13 +151,26 @@ function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
 function loadElementPhoto(number,name){
   const status=document.getElementById("elementPhotoStatus");
   const wrap=document.getElementById("elementPhotoWrap");
+  const heading=document.getElementById("elementPhotoHeading");
   const img=document.getElementById("elementPhoto");
   const title=document.getElementById("elementPhotoTitle");
+  const description=document.getElementById("elementPhotoDescription");
   const credit=document.getElementById("elementPhotoCredit");
   const original=document.getElementById("elementPhotoOriginal");
   const license=document.getElementById("elementPhotoLicense");
   const source=document.getElementById("elementPhotoSource");
   const item=(window.ELEMENT_PHOTOS||{})[String(number)];
+  const n=Number(number);
+  const noDirectSample=[84,85,86,87].includes(n) || n>=100;
+
+  if(noDirectSample){
+    wrap.classList.add("hidden");
+    heading.textContent="Element Photograph";
+    status.classList.add("no-sample");
+    status.classList.remove("hidden");
+    status.textContent="A direct photograph of a normal visible sample of "+name+" is not available here. This element is extremely rare, highly radioactive, gaseous, or produced only in tiny quantities, so the app does not show a misleading placeholder picture.";
+    return;
+  }
 
   if(!item || !item.localUrl){
     wrap.classList.add("hidden");
@@ -193,9 +179,12 @@ function loadElementPhoto(number,name){
     return;
   }
 
+  status.classList.remove("no-sample");
+  heading.textContent="What This Element Looks Like";
   img.src=item.localUrl;
   img.alt=item.title||("Photograph of "+name);
   title.textContent=item.title||name;
+  description.textContent="Representative photograph for this element.";
   credit.textContent=item.attribution||"Image credit unavailable.";
   original.href=item.localUrl;
   original.textContent="Open local image";
