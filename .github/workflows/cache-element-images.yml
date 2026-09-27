@@ -182,13 +182,26 @@ jobs:
 
           missing = [n for n in range(1,119) if str(n) not in catalog]
           print(f"Cached {len(catalog)} element photos; missing: {missing}")
+
+          # Cache the Bay City City Hall Easter-egg image locally too.
+          city_target = Path("images/bay-city-city-hall.jpg")
+          if not city_target.exists() or city_target.stat().st_size < 1000:
+              city_url = "https://commons.wikimedia.org/wiki/Special:FilePath/Bay%20City%20MI%20City%20Hall.JPG?width=1400"
+              raw = get_bytes(city_url, timeout=30, attempts=3)
+              im = Image.open(io.BytesIO(raw))
+              im = ImageOps.exif_transpose(im).convert("RGB")
+              im.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
+              im.save(city_target, "JPEG", quality=88, optimize=True, progressive=True)
+              print(f"Saved Bay City Easter-egg image to {city_target}")
+          else:
+              print("Bay City Easter-egg image already cached.")
           PY
 
       - name: Commit local element photos
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images/elements element-photo-data.js
+          git add images/elements images/bay-city-city-hall.jpg element-photo-data.js
           if git diff --cached --quiet; then
             echo "No photo changes to commit."
           else
