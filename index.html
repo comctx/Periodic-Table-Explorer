@@ -58,7 +58,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
 <header>
   <div class="wrap">
     <h1>⚛️ Periodic Table Explorer</h1>
-    <p>Search, explore, and tap any element to see its properties, discovery information, and more.</p>
+    <p>Search, explore, and tap any element to open its full information page.</p>
   </div>
 </header>
 <main class="wrap">
@@ -71,7 +71,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
     <div class="ptable" id="ptable" aria-label="Interactive periodic table"></div>
   </div>
   <section class="details" id="details" aria-live="polite">
-    <div class="empty">Tap an element to see its details here.</div>
+    <div class="empty">Tap any element above to open its full detail page.</div>
   </section>
 </main>
 <footer>A DONCO-BAYCITY™ App</footer>
@@ -116,7 +116,7 @@ function renderTable(){
     b.style.gridColumn=e.col;
     b.setAttribute("aria-label",e.name+", atomic number "+e.z);
     b.innerHTML='<div class="num">'+e.z+'</div><div class="sym">'+e.symbol+'</div><div class="nm">'+e.name+'</div><div class="mass">'+e.mass+'</div>';
-    b.addEventListener("click",()=>showDetails(e));
+    b.addEventListener("click",()=>{window.location.href="element.html?z="+e.z;});
     table.appendChild(b);
   });
 }
