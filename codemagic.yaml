@@ -11,89 +11,37 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.donaldreckman.periodictableexplorer
-      node: 22
       xcode: latest
-      cocoapods: default
       vars:
         BUNDLE_ID: "com.donaldreckman.periodictableexplorer"
 
     scripts:
-      - name: Create iOS 18 Periodic Table project
+      - name: Verify native iPhone project
+        script: |
+          set -eu
+          test -f ios/PeriodicTableExplorer.xcodeproj/project.pbxproj
+          test -f ios/PeriodicTableExplorer/PeriodicTableExplorerApp.swift
+          test -f index.html
+          test -f element.html
+          test -d images/elements
+          echo "Native Periodic Table Explorer project found."
+
+      - name: Create iPhone app icon and finalize iOS settings
         script: |
           set -eu
 
-          npm init -y
-          npm install @capacitor/core@latest @capacitor/cli@latest @capacitor/ios@latest
+          ICON_ROOT="ios/PeriodicTableExplorer/Assets.xcassets"
+          ICON_DIR="$ICON_ROOT/AppIcon.appiconset"
+          mkdir -p "$ICON_DIR"
 
-          rm -rf www ios
-          mkdir -p www/images
-          cp index.html www/index.html
-          cp element.html www/element.html
-          cp elements-data.js www/elements-data.js
-          cp element-photo-data.js www/element-photo-data.js
-          cp donco_logo_footer.png www/donco_logo_footer.png
-          cp -R images/. www/images/
-
-          cat > capacitor.config.json <<'EOF'
+          cat > "$ICON_ROOT/Contents.json" <<'EOF'
           {
-            "appId": "com.donaldreckman.periodictableexplorer",
-            "appName": "Periodic Table Explorer",
-            "webDir": "www"
+            "info" : {
+              "author" : "xcode",
+              "version" : 1
+            }
           }
           EOF
-
-          npx cap add ios
-          npx cap sync ios
-
-          PLIST="ios/App/App/Info.plist"
-
-          /usr/libexec/PlistBuddy -c "Add :ITSAppUsesNonExemptEncryption bool false" "$PLIST" ||           /usr/libexec/PlistBuddy -c "Set :ITSAppUsesNonExemptEncryption false" "$PLIST"
-
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${PROJECT_BUILD_NUMBER}" "$PLIST"
-
-          /usr/libexec/PlistBuddy -c "Delete :UISupportedInterfaceOrientations" "$PLIST" 2>/dev/null || true
-          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations array" "$PLIST"
-          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:0 string UIInterfaceOrientationPortrait" "$PLIST"
-          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:1 string UIInterfaceOrientationLandscapeLeft" "$PLIST"
-          /usr/libexec/PlistBuddy -c "Add :UISupportedInterfaceOrientations:2 string UIInterfaceOrientationLandscapeRight" "$PLIST"
-
-      - name: Set iPhone only and iOS 18 minimum
-        script: |
-          set -eu
-
-          if ! gem list -i xcodeproj >/dev/null; then
-            gem install xcodeproj --no-document
-          fi
-
-          ruby <<'RUBY'
-          require 'xcodeproj'
-
-          project_path = 'ios/App/App.xcodeproj'
-          project = Xcodeproj::Project.open(project_path)
-          target = project.targets.find { |item| item.name == 'App' }
-          abort 'App target not found' unless target
-
-          project.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
-          end
-
-          target.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
-            config.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
-          end
-
-          project.save
-          RUBY
-
-          echo "Minimum iOS version set to 18.0"
-          echo "Device family set to iPhone only"
-
-      - name: Create Periodic Table app icon
-        script: |
-          set -eu
-
-          ICON_DIR="ios/App/App/Assets.xcassets/AppIcon.appiconset"
-          mkdir -p "$ICON_DIR"
 
           cp donco_logo_footer.png /tmp/pte-logo.png
           sips -Z 760 /tmp/pte-logo.png --out /tmp/pte-logo-small.png >/dev/null
@@ -130,17 +78,56 @@ workflows:
           }
           EOF
 
+          if ! gem list -i xcodeproj >/dev/null; then
+            gem install xcodeproj --no-document
+          fi
+
+          ruby <<'RUBY'
+          require 'xcodeproj'
+
+          project = Xcodeproj::Project.open('ios/PeriodicTableExplorer.xcodeproj')
+          target = project.targets.find { |item| item.name == 'PeriodicTableExplorer' }
+          abort 'PeriodicTableExplorer target not found' unless target
+
+          app_group = project.main_group.groups.find { |g| g.path == 'PeriodicTableExplorer' || g.name == 'PeriodicTableExplorer' }
+          abort 'PeriodicTableExplorer group not found' unless app_group
+
+          asset_ref = app_group.files.find { |f| f.path == 'Assets.xcassets' }
+          asset_ref ||= app_group.new_file('Assets.xcassets')
+
+          unless target.resources_build_phase.files_references.include?(asset_ref)
+            target.resources_build_phase.add_file_reference(asset_ref)
+          end
+
+          build_number = ENV.fetch('PROJECT_BUILD_NUMBER', '1')
+
+          project.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+          end
+
+          target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+            config.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
+            config.build_settings['ASSETCATALOG_COMPILER_APPICON_NAME'] = 'AppIcon'
+            config.build_settings['CURRENT_PROJECT_VERSION'] = build_number
+            config.build_settings['VERSIONING_SYSTEM'] = 'apple-generic'
+            config.build_settings['INFOPLIST_KEY_ITSAppUsesNonExemptEncryption'] = 'NO'
+          end
+
+          project.save
+          RUBY
+
+          echo "Configured iOS 18.0 minimum, iPhone-only target, build number, encryption declaration, and app icon."
+
       - name: Apply Apple signing
         script: |
           set -eu
-          cd "$CM_BUILD_DIR/ios/App"
-          xcode-project use-profiles
+          xcode-project use-profiles --project "$CM_BUILD_DIR/ios/PeriodicTableExplorer.xcodeproj"
 
       - name: Build signed Periodic Table Explorer
         script: |
           set -eu
-          cd "$CM_BUILD_DIR/ios/App"
-          xcode-project build-ipa --workspace "App.xcworkspace" --scheme "App"
+          xcode-project build-ipa             --project "$CM_BUILD_DIR/ios/PeriodicTableExplorer.xcodeproj"             --scheme "PeriodicTableExplorer"
 
       - name: Verify finished iPhone app
         script: |
@@ -150,8 +137,10 @@ workflows:
           import plistlib
           import zipfile
 
-          archives = glob.glob('ios/App/build/ios/ipa/*.ipa')
-          assert len(archives) == 1, 'Expected one IPA'
+          archives = glob.glob('build/ios/ipa/*.ipa')
+          if not archives:
+              archives = glob.glob('**/*.ipa', recursive=True)
+          assert len(archives) == 1, f'Expected one IPA, got {archives}'
 
           with zipfile.ZipFile(archives[0]) as archive:
               names = archive.namelist()
@@ -170,15 +159,15 @@ workflows:
               families = metadata.get('UIDeviceFamily', [])
               assert families == [1] or families == (1,), f'Expected iPhone only, got {families}'
 
-              assert root + 'public/index.html' in names
-              assert root + 'public/element.html' in names
+              assert root + 'Web/index.html' in names
+              assert root + 'Web/element.html' in names
               element_images = [
                   n for n in names
-                  if n.startswith(root + 'public/images/elements/')
+                  if n.startswith(root + 'Web/images/elements/')
                   and n.lower().endswith(('.jpg', '.png'))
               ]
               assert len(element_images) >= 118, f'Expected 118 element images, got {len(element_images)}'
-              assert root + 'public/images/bay-city-city-hall.jpg' in names
+              assert root + 'Web/images/bay-city-city-hall.jpg' in names
 
               print('Verified Periodic Table Explorer IPA')
               print('Bundle:', metadata['CFBundleIdentifier'])
@@ -188,8 +177,10 @@ workflows:
           PY
 
     artifacts:
-      - ios/App/build/ios/ipa/*.ipa
+      - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
 
     publishing:
       app_store_connect:
