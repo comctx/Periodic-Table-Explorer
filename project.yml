@@ -1,0 +1,44 @@
+name: PeriodicTableExplorer
+
+options:
+  bundleIdPrefix: com.donaldreckman
+  deploymentTarget:
+    iOS: "18.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+    VERSIONING_SYSTEM: apple-generic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  PeriodicTableExplorer:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: ios/App
+    resources:
+      - path: ios/Web
+        type: folder
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.donaldreckman.periodictableexplorer
+        PRODUCT_NAME: "Periodic Table Explorer"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+    info:
+      path: ios/App/Info.plist
+      properties:
+        CFBundleDisplayName: "Periodic Table Explorer"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIApplicationSupportsIndirectInputEvents: true
