@@ -51,7 +51,7 @@ struct PeriodicTableWebView: UIViewRepresentable {
                 return
             }
 
-            if url.isFile {
+            if url.isFileURL {
                 decisionHandler(.allow)
                 return
             }
