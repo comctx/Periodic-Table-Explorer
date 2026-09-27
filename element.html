@@ -22,6 +22,17 @@ h1{margin:0;font-size:32px}.subtitle{margin-top:5px;opacity:.92}
 .fact b{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}.fact span{font-weight:800}
 section.card{margin-top:14px}section.card p{line-height:1.6;margin:0;color:#405966}
 .note{margin-top:10px;font-size:12px;color:var(--muted)}
+.element-photo-card{margin-top:14px}
+.element-photo-wrap{display:grid;grid-template-columns:minmax(0,520px) minmax(220px,1fr);gap:18px;align-items:center}
+.element-photo-frame{background:#eef3f6;border:1px solid #d7e2e8;border-radius:16px;overflow:hidden;min-height:220px;display:flex;align-items:center;justify-content:center}
+.element-photo-frame img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;object-position:center center}
+.element-photo-copy h3{margin:0 0 8px;color:#143f57;font-size:18px}
+.element-photo-copy p{margin:0 0 10px;line-height:1.5;color:#405966}
+.element-photo-credit{font-size:11px;color:var(--muted);line-height:1.45;overflow-wrap:anywhere}
+.element-photo-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.element-photo-links a{display:inline-block;color:#17688e;font-weight:750;text-decoration:none;border:1px solid #cbdde6;border-radius:9px;padding:7px 9px;background:#f7fbfd}
+.element-photo-status{color:var(--muted);font-size:13px;padding:12px 0}
+@media(max-width:700px){.element-photo-wrap{grid-template-columns:1fr}.element-photo-frame{min-height:180px}}
 footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 .brand-footer{display:flex;flex-direction:column;align-items:center;gap:7px}
 .brand-footer img{display:block;width:160px;max-width:52vw;height:auto}
@@ -64,13 +75,33 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 <div class="status" id="status">Loading element information…</div>
 <div class="grid" id="basicGrid"></div>
 
+<section class="card element-photo-card" id="elementPhotoCard">
+  <h2>What This Element Looks Like</h2>
+  <div class="element-photo-status" id="elementPhotoStatus">Loading element photo…</div>
+  <div class="element-photo-wrap hidden" id="elementPhotoWrap">
+    <div class="element-photo-frame">
+      <img id="elementPhoto" alt="" loading="lazy" referrerpolicy="no-referrer">
+    </div>
+    <div class="element-photo-copy">
+      <h3 id="elementPhotoTitle"></h3>
+      <p>Representative photograph for this element.</p>
+      <div class="element-photo-credit" id="elementPhotoCredit"></div>
+      <div class="element-photo-links">
+        <a id="elementPhotoOriginal" href="#" target="_blank" rel="noopener">Open original image</a>
+        <a id="elementPhotoLicense" class="hidden" href="#" target="_blank" rel="noopener">License</a>
+        <a id="elementPhotoSource" class="hidden" href="#" target="_blank" rel="noopener">Image source</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="card"><h2>Scientific Information</h2><div class="grid" id="scienceGrid"></div></section>
 <section class="card"><h2>History & Discovery</h2><p id="historyText"></p></section>
 <section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
 <section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
 <section class="card"><h2>About This Information</h2>
-<p>The core element information on this page is stored inside Periodic Table Explorer itself. The page does not need an outside reference website to display its data.</p>
-<div class="note">Optional reference links can still be added later without making the app dependent on them.</div>
+<p>The core element facts on this page are stored inside Periodic Table Explorer itself. Element photographs are loaded from the open Periodic-Table-JSON project and retain their individual image attribution.</p>
+<div class="note">If a photo cannot load, the element facts still remain available.</div>
 </section>
 </main>
 <footer class="brand-footer">
@@ -141,6 +172,59 @@ footer{text-align:center;color:var(--muted);padding:22px;font-size:12px}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
 function fact(label,value){return '<div class="card fact"><b>'+esc(label)+'</b><span>'+esc(value??"—")+'</span></div>';}
 function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?(Math.round((n-273.15)*10)/10)+" °C":"—";}
+function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
+function extractAngleUrl(s){
+  const m=String(s||"").match(/<(https?:\/\/[^>]+)>/i);
+  return m?m[1]:"";
+}
+function extractSourceUrl(s){
+  const m=String(s||"").match(/source:\s*(https?:\/\/\S+)/i);
+  return m?m[1].replace(/[),.;]+$/,""):"";
+}
+async function loadElementPhoto(number,name){
+  const status=document.getElementById("elementPhotoStatus");
+  const wrap=document.getElementById("elementPhotoWrap");
+  const img=document.getElementById("elementPhoto");
+  const title=document.getElementById("elementPhotoTitle");
+  const credit=document.getElementById("elementPhotoCredit");
+  const original=document.getElementById("elementPhotoOriginal");
+  const license=document.getElementById("elementPhotoLicense");
+  const source=document.getElementById("elementPhotoSource");
+  try{
+    const response=await fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json");
+    if(!response.ok) throw new Error("Photo data unavailable");
+    const data=await response.json();
+    const item=(data.elements||[]).find(x=>Number(x.number)===Number(number));
+    if(!item || !item.image || !validHttpUrl(item.image.url)) throw new Error("No photo listed");
+    const attribution=String(item.image.attribution||"Image attribution not provided.");
+    img.src=item.image.url;
+    img.alt=(item.image.title||("Photograph of "+name));
+    title.textContent=item.image.title||name;
+    credit.textContent=attribution;
+    original.href=item.image.url;
+
+    const licenseUrl=extractAngleUrl(attribution);
+    if(validHttpUrl(licenseUrl)){license.href=licenseUrl;license.classList.remove("hidden");}
+    else license.classList.add("hidden");
+
+    const sourceUrl=extractSourceUrl(attribution);
+    if(validHttpUrl(sourceUrl)){source.href=sourceUrl;source.classList.remove("hidden");}
+    else source.classList.add("hidden");
+
+    img.addEventListener("error",()=>{
+      wrap.classList.add("hidden");
+      status.classList.remove("hidden");
+      status.textContent="The photograph for this element could not load right now.";
+    },{once:true});
+
+    status.classList.add("hidden");
+    wrap.classList.remove("hidden");
+  }catch(err){
+    wrap.classList.add("hidden");
+    status.classList.remove("hidden");
+    status.textContent="A representative photograph is not available right now. The element facts below still work normally.";
+  }
+}
 const z=Math.max(1,Math.min(118,Number(new URLSearchParams(location.search).get("z"))||1));
 const e=(window.PERIODIC_ELEMENTS||[]).find(x=>x.atomicNumber===z);
 
@@ -154,6 +238,7 @@ if(!e){
  document.getElementById("name").textContent=e.name;
  document.getElementById("subtitle").textContent=e.groupBlock||"Element";
  document.getElementById("status").textContent="Element "+e.atomicNumber+" of 118 • "+(e.standardState||"State unknown");
+ loadElementPhoto(e.atomicNumber,e.name);
 
  document.getElementById("basicGrid").innerHTML=
    fact("Atomic number",e.atomicNumber)+
