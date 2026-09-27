@@ -133,7 +133,7 @@ footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(sa
         Photo by <a href="https://commons.wikimedia.org/wiki/User:Andrew_Jameson" target="_blank" rel="noopener">Andrew Jameson</a>
         via <a href="https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>
         • <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-        • Image displayed without modification<br>
+        • Image resized for this app; derivative remains CC BY-SA 3.0<br>
         Hidden feature • Tap the DONCO logo five times to return here.
       </div>
     </div>
@@ -185,7 +185,7 @@ function loadElementPhoto(number,name){
   img.alt=item.title||("Photograph of "+name);
   title.textContent=item.title||name;
   description.textContent="Representative photograph for this element.";
-  credit.textContent=item.attribution||"Image credit unavailable.";
+  credit.textContent=(item.attribution||"Image credit unavailable.")+(item.note?" • "+item.note:"");
   original.href=item.localUrl;
   original.textContent="Open local image";
 
