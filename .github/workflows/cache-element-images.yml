@@ -1,4 +1,5 @@
 name: Cache element photos locally
+# Local photo cache refresh
 
 on:
   push:
