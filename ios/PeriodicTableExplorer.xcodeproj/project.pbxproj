@@ -132,7 +132,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nWEB_SRC=\"$SRCROOT/..\"\nWEB_DST=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Web\"\nrm -rf \"$WEB_DST\"\nmkdir -p \"$WEB_DST\"\ncp \"$WEB_SRC/index.html\" \"$WEB_DST/index.html\"\ncp \"$WEB_SRC/element.html\" \"$WEB_DST/element.html\"\ncp \"$WEB_SRC/elements-data.js\" \"$WEB_DST/elements-data.js\"\ncp \"$WEB_SRC/element-photo-data.js\" \"$WEB_DST/element-photo-data.js\"\ncp \"$WEB_SRC/donco_logo_footer.png\" \"$WEB_DST/donco_logo_footer.png\"\ncp -R \"$WEB_SRC/images\" \"$WEB_DST/images\"\n";
+			shellScript = "set -e\nWEB_SRC=\"$SRCROOT/..\"\nWEB_DST=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Web\"\nrm -rf \"$WEB_DST\"\nmkdir -p \"$WEB_DST\"\ncp \"$WEB_SRC/index.html\" \"$WEB_DST/index.html\"\ncp \"$WEB_SRC/element.html\" \"$WEB_DST/element.html\"\ncp \"$WEB_SRC/quiz.html\" \"$WEB_DST/quiz.html\"\ncp \"$WEB_SRC/elements-data.js\" \"$WEB_DST/elements-data.js\"\ncp \"$WEB_SRC/element-photo-data.js\" \"$WEB_DST/element-photo-data.js\"\ncp \"$WEB_SRC/donco_logo_footer.png\" \"$WEB_DST/donco_logo_footer.png\"\ncp -R \"$WEB_SRC/images\" \"$WEB_DST/images\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
