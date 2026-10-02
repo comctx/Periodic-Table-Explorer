@@ -23,16 +23,16 @@ header p{margin:7px 0 0;opacity:.92}
 .legend button.active{outline:3px solid rgba(29,109,146,.2);border-color:#6baac7}
 .table-wrap{overflow-x:auto;padding-bottom:8px}
 .ptable{min-width:1180px;display:grid;grid-template-columns:repeat(18,1fr);grid-template-rows:repeat(9,76px);gap:5px}
-.element{border:1px solid rgba(0,0,0,.09);border-radius:9px;padding:5px 6px;background:var(--card);cursor:pointer;text-align:left;position:relative;min-width:0}
+.element{border:1px solid rgba(0,0,0,.16);border-radius:9px;padding:5px 6px;background:var(--card);cursor:pointer;text-align:left;position:relative;min-width:0}
 .element:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
 .element:focus-visible{outline:3px solid #68b4d5;outline-offset:2px}
 .num{font-size:10px;font-weight:800;opacity:.72}
 .sym{font-size:23px;font-weight:900;line-height:1;margin-top:4px}
 .nm{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
 .mass{font-size:9px;opacity:.72;margin-top:2px}
-.Alkali-metal{background:#f9e6e1}.Alkaline-earth-metal{background:#f8eed6}.Transition-metal{background:#e8edf8}
-.Post-transition-metal{background:#e7f2ed}.Metalloid{background:#e8f4dc}.Nonmetal{background:#e1f4f0}
-.Halogen{background:#e4eefb}.Noble-gas{background:#eee8f8}.Lanthanide{background:#f6e7f0}.Actinide{background:#f5e2e7}.Other{background:#edf1f3}
+.Alkali-metal{background:#f4cf4f}.Alkaline-earth-metal{background:#f6e47a}.Transition-metal{background:#f3a28d}
+.Post-transition-metal{background:#93d2df}.Metalloid{background:#84cbb8}.Nonmetal{background:#9fdb78}
+.Halogen{background:#c9df72}.Noble-gas{background:#d8a8e8}.Lanthanide{background:#f2b867}.Actinide{background:#ec9faa}.Other{background:#dbe3e8}
 .placeholder{border:1px dashed #b9c9d1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);background:#f8fbfc}
 .details{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
 .details h2{margin:0 0 4px;font-size:26px;color:#143f57}
@@ -263,6 +263,7 @@ legend.appendChild(allBtn);
 familyOrder.forEach(f=>{
   const b=document.createElement("button");
   b.type="button"; b.textContent=f;
+  b.classList.add(cls(f));
   b.addEventListener("click",()=>setFamily(f,b));
   legend.appendChild(b);
 });
