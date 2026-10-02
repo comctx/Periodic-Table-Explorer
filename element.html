@@ -100,6 +100,7 @@ footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(sa
 
 <section class="card"><h2>Scientific Information</h2><div class="grid" id="scienceGrid"></div></section>
 <section class="card"><h2>History & Discovery</h2><p id="historyText"></p></section>
+<section class="card"><h2>How It Was Discovered</h2><p id="discoveryStoryText"></p><div class="note">Discovery history can be complicated. This is a short, plain-English account rather than a complete scholarly history.</div></section>
 <section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
 <section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
 <section class="card"><h2>About &amp; Photo Credits</h2>
@@ -148,6 +149,49 @@ function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&l
 function fact(label,value){return '<div class="card fact"><b>'+esc(label)+'</b><span>'+esc(value??"—")+'</span></div>';}
 function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?(Math.round((n-273.15)*10)/10)+" °C":"—";}
 function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
+
+const discoveryStories={
+  1:"Henry Cavendish collected the gas released when acids reacted with metals and showed that it was a distinct substance. When the gas burned, it produced water, helping establish hydrogen as an element rather than a form of ordinary air.",
+  2:"Helium was first noticed in the Sun before it was found on Earth. During a solar eclipse in 1868, astronomers saw an unfamiliar yellow spectral line in sunlight; decades later, the same element was isolated from minerals on Earth.",
+  5:"In 1808, Joseph Louis Gay-Lussac and Louis Jacques Thénard in France, and Humphry Davy in England, independently produced impure boron from boron compounds. Much purer boron was obtained only later.",
+  7:"Daniel Rutherford studied air that remained after oxygen and carbon dioxide had been removed. The remaining gas would not support life or combustion, helping identify nitrogen as a distinct part of the atmosphere.",
+  8:"Oxygen emerged from experiments in the 1770s by Carl Wilhelm Scheele and Joseph Priestley, who heated oxygen-rich compounds and collected the gas released. Antoine Lavoisier later explained its role in combustion and helped establish its modern name.",
+  10:"William Ramsay and Morris Travers discovered neon while separating the gases left after liquefied air was distilled. The new gas announced itself dramatically by glowing a brilliant reddish-orange in an electrical discharge tube.",
+  11:"Humphry Davy isolated sodium in 1807 by passing electric current through molten sodium hydroxide. The newly developed technique of electrolysis made it possible to separate several highly reactive metals for the first time.",
+  15:"Hennig Brand discovered phosphorus in 1669 while searching for the philosopher's stone. He processed large quantities of urine and obtained a waxy substance that glowed in the dark and burned brightly.",
+  17:"Carl Wilhelm Scheele produced chlorine gas in 1774 by reacting hydrochloric acid with manganese dioxide. It was first thought to be a compound; Humphry Davy later argued that it was an element.",
+  18:"Lord Rayleigh and William Ramsay noticed that nitrogen taken from air was slightly heavier than nitrogen made from chemical compounds. Chasing that tiny difference led them to a previously unknown, extremely unreactive gas: argon.",
+  19:"Humphry Davy isolated potassium in 1807 using electrolysis on molten potash. Tiny metallic globules appeared at the electrode, revealing a metal so reactive that it quickly reacted with air and water.",
+  31:"Paul-Émile Lecoq de Boisbaudran discovered gallium in 1875 using spectroscopy. Its spectral lines revealed a new element, and its properties closely matched an element Dmitri Mendeleev had predicted earlier.",
+  32:"Clemens Winkler discovered germanium in 1886 while analyzing the mineral argyrodite. Its properties closely matched Mendeleev's predicted 'eka-silicon,' providing striking support for the periodic table.",
+  35:"Antoine Jérôme Balard identified bromine in 1826 while studying residues from salt marsh brines. He isolated a reddish-brown, strongly smelling liquid that proved to be a new halogen element.",
+  43:"Technetium became the first element to be produced artificially. In 1937, Emilio Segrè and Carlo Perrier identified element 43 in molybdenum that had been bombarded in a particle accelerator.",
+  53:"Bernard Courtois discovered iodine in 1811 while processing seaweed ash for saltpeter production. He noticed violet vapors rising from the material; the vapor condensed into dark crystals of a new element.",
+  84:"Marie and Pierre Curie discovered polonium while investigating unusually radioactive pitchblende. The ore was more radioactive than its known uranium content could explain, pointing to previously unknown radioactive elements.",
+  85:"Astatine was first produced in 1940 when Dale Corson, Kenneth MacKenzie, and Emilio Segrè bombarded bismuth with alpha particles. Because its isotopes are short-lived, only tiny amounts can exist at one time.",
+  87:"Marguerite Perey discovered francium in 1939 while studying the radioactive decay of actinium. She detected a decay product with the properties expected for element 87, the last element first discovered in nature.",
+  88:"Marie and Pierre Curie, working with Gustave Bémont, found radium in 1898 while separating highly radioactive substances from pitchblende. It took years of processing large quantities of ore to obtain a small amount of radium compound.",
+  92:"Martin Heinrich Klaproth identified uranium in 1789 while analyzing the mineral pitchblende. He named the new element after the recently discovered planet Uranus; metallic uranium was isolated later.",
+  93:"Edwin McMillan and Philip Abelson identified neptunium in 1940 after bombarding uranium with neutrons. It was the first transuranium element—an element with an atomic number higher than uranium—to be confirmed.",
+  94:"Glenn Seaborg's team produced plutonium in 1940 by bombarding uranium in a cyclotron. The discovery was closely tied to the rapid development of nuclear science during the early 1940s.",
+  118:"Oganesson was created one atom at a time in heavy-ion experiments. Teams at the Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory fused lighter nuclei to produce the superheavy element, whose existence was later officially recognized."
+};
+
+function discoveryStory(e){
+  if(discoveryStories[e.atomicNumber]) return discoveryStories[e.atomicNumber];
+  if(e.yearDiscovered==="Ancient"){
+    const where=e.discoveredBy && !/unknown/i.test(e.discoveredBy) ? " The app's history data associates its early use with "+e.discoveredBy+"." : "";
+    return e.name+" has no single modern discovery moment because people knew and used it long before modern chemistry existed."+where+" Its identity as a chemical element became clearer only as chemistry developed.";
+  }
+  if(e.yearDiscovered && e.discoveredBy){
+    return "The app records "+e.name+" as discovered in "+e.yearDiscovered+", with the discovery credited to "+e.discoveredBy+". The historical process was often more gradual than a single date suggests: scientists had to separate the material, test its properties, and show that it was genuinely different from already known elements.";
+  }
+  if(e.yearDiscovered){
+    return e.name+" is recorded as being discovered in "+e.yearDiscovered+". Establishing a new element generally required scientists to isolate or detect it and then show that its properties could not be explained by any known element.";
+  }
+  return "The exact discovery story for "+e.name+" is not yet detailed in this version of the app. Its identification depended on showing that it had a unique atomic identity and properties different from previously known elements.";
+}
+
 function loadElementPhoto(number,name){
   const status=document.getElementById("elementPhotoStatus");
   const wrap=document.getElementById("elementPhotoWrap");
@@ -245,6 +289,7 @@ if(!e){
  if(e.discoveredBy) history.push("The discovery is credited to "+e.discoveredBy+".");
  if(e.namedBy) history.push("Its naming is credited to "+e.namedBy+".");
  document.getElementById("historyText").textContent=history.join(" ")||"Detailed discovery information is not available for this element.";
+ document.getElementById("discoveryStoryText").textContent=discoveryStory(e);
 
  document.getElementById("usesText").textContent=e.typicalUses||"No broad everyday use is listed for this element.";
 
