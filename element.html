@@ -184,12 +184,12 @@ function discoveryStory(e){
     return e.name+" has no single modern discovery moment because people knew and used it long before modern chemistry existed."+where+" Its identity as a chemical element became clearer only as chemistry developed.";
   }
   if(e.yearDiscovered && e.discoveredBy){
-    return "The app records "+e.name+" as discovered in "+e.yearDiscovered+", with the discovery credited to "+e.discoveredBy+". The historical process was often more gradual than a single date suggests: scientists had to separate the material, test its properties, and show that it was genuinely different from already known elements.";
+    return "The app records "+e.name+" as discovered in "+e.yearDiscovered+", with the discovery credited to "+e.discoveredBy+". A fuller verified account of the exact method used for this element has not been added yet, so the app does not guess at the details.";
   }
   if(e.yearDiscovered){
-    return e.name+" is recorded as being discovered in "+e.yearDiscovered+". Establishing a new element generally required scientists to isolate or detect it and then show that its properties could not be explained by any known element.";
+    return e.name+" is recorded as being discovered in "+e.yearDiscovered+". A fuller verified account of exactly how it was identified has not been added yet.";
   }
-  return "The exact discovery story for "+e.name+" is not yet detailed in this version of the app. Its identification depended on showing that it had a unique atomic identity and properties different from previously known elements.";
+  return "A verified, element-specific discovery story for "+e.name+" has not been added yet. The app leaves the method unspecified rather than using a generic explanation that may not fit this element.";
 }
 
 function loadElementPhoto(number,name){
