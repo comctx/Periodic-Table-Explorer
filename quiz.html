@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#103852">
+<title>Element Quiz • Periodic Table Explorer</title>
+<style>
+:root{--bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;--good:#177245;--bad:#a02b24}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:calc(20px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 20px max(16px,env(safe-area-inset-left))}
+.wrap{max-width:760px;margin:auto;padding:16px max(14px,env(safe-area-inset-right)) 24px max(14px,env(safe-area-inset-left))}
+header .wrap{padding:0}
+h1{margin:0;font-size:27px}
+header p{margin:7px 0 0;opacity:.92;line-height:1.45}
+.topbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:11px;background:#e6eef2;color:#244b61;text-decoration:none;font-weight:800}
+.progress{font-weight:800;color:#37586a}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:var(--blue)}
+.question{font-size:24px;line-height:1.28;margin:8px 0 18px;color:#143f57}
+.answers{display:grid;gap:10px}
+.answer{width:100%;min-height:52px;border:1px solid #cbd9e0;border-radius:13px;background:#fff;color:#193b4e;text-align:left;padding:13px 14px;font-size:16px;font-weight:750;cursor:pointer}
+.answer:disabled{cursor:default;opacity:1}
+.answer.correct{border-color:#80c39a;background:#eaf7ef;color:#126435}
+.answer.wrong{border-color:#dfaaa5;background:#fff0ef;color:#84241f}
+.feedback{display:none;margin-top:16px;border-radius:13px;padding:13px 14px;line-height:1.5}
+.feedback.show{display:block}
+.feedback.good{background:#eaf7ef;border:1px solid #b9dfc6;color:#126435}
+.feedback.bad{background:#fff0ef;border:1px solid #e5bbb7;color:#84241f}
+.next{display:none;width:100%;margin-top:14px;min-height:50px;border:0;border-radius:12px;background:var(--blue);color:#fff;font-size:16px;font-weight:850;cursor:pointer}
+.next.show{display:block}
+.result{text-align:center}
+.result h2{font-size:30px;margin:0 0 8px;color:#143f57}
+.big-score{font-size:54px;font-weight:950;color:var(--blue);line-height:1;margin:12px 0}
+.result p{color:#526b78;line-height:1.55}
+.result-actions{display:grid;gap:10px;margin-top:18px}
+.primary,.secondary{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;text-decoration:none;font-weight:850;font-size:16px}
+.primary{border:0;background:var(--blue);color:#fff;cursor:pointer}
+.secondary{background:#e6eef2;color:#244b61}
+.note{margin-top:14px;color:var(--muted);font-size:13px;line-height:1.5}
+@media(max-width:520px){h1{font-size:24px}.card{padding:16px}.question{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>🧪 Element Quiz</h1>
+    <p>Twenty random questions from Periodic Table Explorer. New rounds avoid questions you have already seen until the full pool is used.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="topbar">
+    <a class="back" href="index.html">← Periodic Table</a>
+    <div class="progress" id="progress">Preparing quiz…</div>
+  </div>
+
+  <section class="card" id="quizCard" aria-live="polite">
+    <div class="kicker" id="category">Element knowledge</div>
+    <div class="question" id="question">Loading your questions…</div>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback"></div>
+    <button class="next" id="nextButton" type="button">Next Question</button>
+  </section>
+
+  <div class="note">Questions are generated from the element information already stored in this app, including symbols, atomic numbers, families, discovery history, typical uses, and selected element facts.</div>
+</main>
+
+<script src="elements-data.js"></script>
+<script>
+"use strict";
+
+const ROUND_SIZE = 20;
+const STORAGE_KEY = "periodic_table_explorer_used_quiz_ids_v1";
+const elements = Array.isArray(window.PERIODIC_ELEMENTS) ? window.PERIODIC_ELEMENTS : [];
+
+const factQuestions = [
+  {
+    id:"fact-helium-sun",
+    category:"Interesting fact",
+    question:"Which element was first detected in the Sun's spectrum before it was found on Earth?",
+    answer:"Helium"
+  },
+  {
+    id:"fact-gallium-hand",
+    category:"Interesting fact",
+    question:"Which element can melt in a warm hand because its melting point is about 29.8 °C?",
+    answer:"Gallium"
+  },
+  {
+    id:"fact-bromine-liquid",
+    category:"Interesting fact",
+    question:"Which element is the only nonmetal that is liquid at ordinary room temperature?",
+    answer:"Bromine"
+  },
+  {
+    id:"fact-tungsten-melting",
+    category:"Interesting fact",
+    question:"Which element has the highest melting point of any pure metal?",
+    answer:"Tungsten"
+  },
+  {
+    id:"fact-technetium-artificial",
+    category:"Interesting fact",
+    question:"Which element was the first to be produced artificially?",
+    answer:"Technetium"
+  },
+  {
+    id:"fact-carbon-allotropes",
+    category:"Interesting fact",
+    question:"Which element can exist as diamond, graphite, graphene, and other allotropes?",
+    answer:"Carbon"
+  },
+  {
+    id:"fact-cesium-second",
+    category:"Interesting fact",
+    question:"The SI second is defined using a transition in atoms of which element?",
+    answer:"Cesium"
+  },
+  {
+    id:"fact-mercury-liquid",
+    category:"Interesting fact",
+    question:"Which metallic element is liquid at ordinary room temperature?",
+    answer:"Mercury"
+  }
+];
+
+function shuffle(items){
+  const a = items.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function unique(values){
+  return [...new Set(values.filter(v=>v!==null&&v!==undefined&&String(v).trim()!=="").map(v=>String(v)))];
+}
+
+function makeChoices(answer,candidates){
+  const a=String(answer);
+  const pool=shuffle(unique(candidates).filter(v=>v!==a));
+  if(pool.length<3) return null;
+  return shuffle([a,pool[0],pool[1],pool[2]]);
+}
+
+function makeQuestion(id,category,question,answer,candidates,explanation){
+  const choices=makeChoices(answer,candidates);
+  if(!choices) return null;
+  return {id,category,question,answer:String(answer),choices,explanation:explanation||""};
+}
+
+function shortUse(text){
+  const s=String(text||"").trim();
+  if(!s || /scientific research only/i.test(s)) return "";
+  const first=s.split(/[;,]/)[0].trim();
+  if(first.length<8) return "";
+  return first.length>90 ? first.slice(0,87)+"…" : first;
+}
+
+function buildQuestionPool(){
+  const pool=[];
+  const names=elements.map(e=>e.name);
+  const symbols=elements.map(e=>e.symbol);
+  const atomicNumbers=elements.map(e=>e.atomicNumber);
+  const families=unique(elements.map(e=>e.groupBlock));
+
+  elements.forEach(e=>{
+    let q;
+
+    q=makeQuestion(
+      "symbol-name-"+e.atomicNumber,
+      "Symbols",
+      "Which element has the symbol "+e.symbol+"?",
+      e.name,
+      names,
+      e.symbol+" is the chemical symbol for "+e.name+"."
+    );
+    if(q) pool.push(q);
+
+    q=makeQuestion(
+      "name-symbol-"+e.atomicNumber,
+      "Symbols",
+      "What is the chemical symbol for "+e.name+"?",
+      e.symbol,
+      symbols,
+      e.name+"'s symbol is "+e.symbol+"."
+    );
+    if(q) pool.push(q);
+
+    q=makeQuestion(
+      "atomic-name-"+e.atomicNumber,
+      "Atomic numbers",
+      "Which element has atomic number "+e.atomicNumber+"?",
+      e.name,
+      names,
+      e.name+" is element "+e.atomicNumber+"."
+    );
+    if(q) pool.push(q);
+
+    q=makeQuestion(
+      "name-atomic-"+e.atomicNumber,
+      "Atomic numbers",
+      "What is the atomic number of "+e.name+"?",
+      e.atomicNumber,
+      atomicNumbers,
+      e.name+" has atomic number "+e.atomicNumber+"."
+    );
+    if(q) pool.push(q);
+
+    if(e.groupBlock){
+      q=makeQuestion(
+        "family-"+e.atomicNumber,
+        "Element families",
+        "Which family is "+e.name+" in?",
+        e.groupBlock,
+        families,
+        e.name+" is classified as "+e.groupBlock+"."
+      );
+      if(q) pool.push(q);
+    }
+
+    if(e.discoveredBy && e.discoveredBy!=="Ancient Egypt" && e.discoveredBy!=="Ancient china" && e.discoveredBy!=="Bronze Age" && e.discoveredBy!=="Middle East" && e.discoveredBy!=="India" && e.discoveredBy!=="5000 BC"){
+      const candidates=elements
+        .filter(x=>x.atomicNumber!==e.atomicNumber && x.discoveredBy && x.discoveredBy!==e.discoveredBy)
+        .map(x=>x.name);
+      q=makeQuestion(
+        "discoverer-"+e.atomicNumber,
+        "History & discovery",
+        "According to this app's history data, which of these elements is listed as discovered by "+e.discoveredBy+"?",
+        e.name,
+        candidates,
+        e.name+" is listed as discovered by "+e.discoveredBy+"."
+      );
+      if(q) pool.push(q);
+    }
+
+    const use=shortUse(e.typicalUses);
+    if(use){
+      q=makeQuestion(
+        "use-"+e.atomicNumber,
+        "Typical uses",
+        "Which element has this typical use listed in the app: "+use+"?",
+        e.name,
+        names,
+        e.name+" is the element associated with that listed use."
+      );
+      if(q) pool.push(q);
+    }
+  });
+
+  factQuestions.forEach(f=>{
+    const q=makeQuestion(
+      f.id,
+      f.category,
+      f.question,
+      f.answer,
+      names,
+      "The app's interesting-facts section identifies "+f.answer+"."
+    );
+    if(q) pool.push(q);
+  });
+
+  return pool;
+}
+
+function getUsedIds(){
+  try{
+    const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");
+    return Array.isArray(parsed) ? parsed : [];
+  }catch(_){
+    return [];
+  }
+}
+
+function saveUsedIds(ids){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(ids));
+  }catch(_){}
+}
+
+const pool=buildQuestionPool();
+let usedIds=getUsedIds().filter(id=>pool.some(q=>q.id===id));
+let available=pool.filter(q=>!usedIds.includes(q.id));
+
+if(available.length<ROUND_SIZE){
+  usedIds=[];
+  available=pool.slice();
+}
+
+const round=shuffle(available).slice(0,Math.min(ROUND_SIZE,available.length));
+saveUsedIds(usedIds.concat(round.map(q=>q.id)));
+
+let currentIndex=0;
+let score=0;
+let answered=false;
+
+const quizCard=document.getElementById("quizCard");
+const progress=document.getElementById("progress");
+const category=document.getElementById("category");
+const question=document.getElementById("question");
+const answers=document.getElementById("answers");
+const feedback=document.getElementById("feedback");
+const nextButton=document.getElementById("nextButton");
+
+function showQuestion(){
+  if(!round.length){
+    progress.textContent="Quiz unavailable";
+    category.textContent="Element quiz";
+    question.textContent="The element data could not be loaded.";
+    answers.innerHTML="";
+    return;
+  }
+
+  answered=false;
+  feedback.className="feedback";
+  feedback.textContent="";
+  nextButton.className="next";
+
+  const q=round[currentIndex];
+  progress.textContent="Question "+(currentIndex+1)+" of "+round.length+" • Score "+score;
+  category.textContent=q.category;
+  question.textContent=q.question;
+  answers.innerHTML="";
+
+  q.choices.forEach(choice=>{
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="answer";
+    b.textContent=choice;
+    b.addEventListener("click",()=>answerQuestion(b,choice));
+    answers.appendChild(b);
+  });
+}
+
+function answerQuestion(button,choice){
+  if(answered) return;
+  answered=true;
+
+  const q=round[currentIndex];
+  const isCorrect=choice===q.answer;
+  if(isCorrect) score++;
+
+  answers.querySelectorAll(".answer").forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===q.answer) b.classList.add("correct");
+  });
+  if(!isCorrect) button.classList.add("wrong");
+
+  feedback.className="feedback show "+(isCorrect?"good":"bad");
+  feedback.textContent=(isCorrect ? "That's right. " : "The correct answer is "+q.answer+". ")+q.explanation;
+  progress.textContent="Question "+(currentIndex+1)+" of "+round.length+" • Score "+score;
+  nextButton.textContent=currentIndex===round.length-1 ? "See My Score" : "Next Question";
+  nextButton.className="next show";
+}
+
+function showResult(){
+  const percent=Math.round((score/round.length)*100);
+  progress.textContent="Round complete";
+  quizCard.innerHTML=
+    '<div class="result">'+
+      '<div class="kicker">20-question round complete</div>'+
+      '<h2>Your Score</h2>'+
+      '<div class="big-score">'+score+' / '+round.length+'</div>'+
+      '<p>You answered '+percent+'% correctly. The next round will pull from questions you have not seen yet, until the full question pool has been used.</p>'+
+      '<div class="result-actions">'+
+        '<button class="primary" id="anotherRound" type="button">Play Another 20</button>'+
+        '<a class="secondary" href="index.html">Back to Periodic Table</a>'+
+      '</div>'+
+    '</div>';
+
+  document.getElementById("anotherRound").addEventListener("click",()=>location.reload());
+}
+
+nextButton.addEventListener("click",()=>{
+  if(!answered) return;
+  if(currentIndex>=round.length-1){
+    showResult();
+    return;
+  }
+  currentIndex++;
+  showQuestion();
+});
+
+showQuestion();
+</script>
+</body>
+</html>
