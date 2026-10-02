@@ -6,7 +6,7 @@
 <title>Periodic Table Explorer</title>
 <style>
 :root{
-  --bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;
+  --bg:#edf4f7;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;
 }
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -64,8 +64,13 @@ header p{margin:7px 0 0;opacity:.92}
 .view-mode.active{background:#1d6d92;color:#fff;border-color:#1d6d92}
 .temp-controls{display:grid;grid-template-columns:48px minmax(180px,1fr) 48px;gap:10px;align-items:center;margin-top:14px}
 .temp-button{min-height:48px;border:0;border-radius:12px;background:#1d6d92;color:#fff;font-size:26px;font-weight:900;cursor:pointer}
-.temp-readout{text-align:center;background:#f4f8fa;border:1px solid #d7e2e8;border-radius:12px;padding:10px 12px;color:#143f57;font-weight:900;font-size:17px}
+.temp-readout{text-align:center;background:#f4f8fa;border:2px solid #c9dce5;border-radius:12px;padding:11px 12px;color:#143f57;font-weight:950;font-size:20px;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.temp-readout.active{background:#103852;color:#fff;border-color:#103852;box-shadow:0 0 0 3px rgba(29,109,146,.12)}
 #tempSlider{width:100%;margin:12px 0 4px;accent-color:#1d6d92}
+.temp-presets{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.temp-preset{min-height:40px;border:1px solid #b9cbd5;border-radius:10px;padding:8px 11px;background:#f7fbfd;color:#294f62;font-weight:800;cursor:pointer;touch-action:manipulation}
+.temp-preset:hover{background:#edf6fa}
+.temp-preset.reset{background:#eef3f6}
 .state-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .state-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid #d7e2e8;border-radius:999px;background:#fff;padding:6px 9px;font-size:12px;font-weight:800;color:#405966}
 .state-dot{width:13px;height:13px;border-radius:4px;border:1px solid rgba(0,0,0,.16)}
@@ -153,6 +158,13 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 20px cal
 
     <input id="tempSlider" type="range" min="-273" max="6000" step="10" value="20" aria-label="Temperature in degrees Celsius">
 
+    <div class="temp-presets" aria-label="Quick temperature presets">
+      <button class="temp-preset" type="button" data-temp-preset="0">Freezing 0°C</button>
+      <button class="temp-preset" type="button" data-temp-preset="20">Room 20°C</button>
+      <button class="temp-preset" type="button" data-temp-preset="100">Boiling 100°C</button>
+      <button class="temp-preset reset" id="tempReset" type="button">Reset</button>
+    </div>
+
     <div class="state-legend" aria-label="State of matter colors">
       <span class="state-chip"><span class="state-dot solid"></span>Solid</span>
       <span class="state-chip"><span class="state-dot liquid"></span>Liquid</span>
@@ -230,6 +242,8 @@ const tempPlus=document.getElementById("tempPlus");
 const tempSlider=document.getElementById("tempSlider");
 const tempReadout=document.getElementById("tempReadout");
 const tempCounts=document.getElementById("tempCounts");
+const tempReset=document.getElementById("tempReset");
+const tempPresets=document.querySelectorAll("[data-temp-preset]");
 let activeFamily="All";
 let colorMode="family";
 let temperatureC=20;
@@ -261,6 +275,7 @@ function updateTemperatureUI(){
 
   familyModeBtn.classList.toggle("active",colorMode==="family");
   temperatureModeBtn.classList.toggle("active",colorMode==="temperature");
+  tempReadout.classList.toggle("active",colorMode==="temperature");
 
   if(colorMode==="temperature"){
     const counts={solid:0,liquid:0,gas:0,unknown:0};
@@ -393,6 +408,15 @@ temperatureModeBtn.addEventListener("click",()=>{
 tempMinus.addEventListener("click",()=>setTemperature(temperatureC-10));
 tempPlus.addEventListener("click",()=>setTemperature(temperatureC+10));
 tempSlider.addEventListener("input",()=>setTemperature(tempSlider.value));
+tempPresets.forEach(btn=>{
+  btn.addEventListener("click",()=>setTemperature(Number(btn.dataset.tempPreset)));
+});
+tempReset.addEventListener("click",()=>{
+  temperatureC=20;
+  colorMode="family";
+  updateTemperatureUI();
+  renderTable();
+});
 
 search.addEventListener("input",renderTable);
 clear.addEventListener("click",()=>{
