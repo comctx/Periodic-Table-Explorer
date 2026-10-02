@@ -50,6 +50,11 @@ header p{margin:7px 0 0;opacity:.92}
 .data-note{margin-top:10px;font-size:12px;color:var(--muted)}
 .loading{margin-top:10px;font-size:13px;color:#56717f}
 .table-hint{display:none}
+.quiz-callout{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:12px 0 14px;padding:14px 15px;background:#eef7fb;border:1px solid #cae5f0;border-radius:14px}
+.quiz-callout strong{display:block;color:#143f57;font-size:16px}
+.quiz-callout span{display:block;margin-top:3px;color:#526b78;font-size:13px;line-height:1.4}
+.quiz-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 15px;border-radius:11px;background:#1d6d92;color:#fff;text-decoration:none;font-weight:850;white-space:nowrap}
+.quiz-link:focus-visible{outline:3px solid rgba(29,109,146,.25);outline-offset:2px}
 .about-panel{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:0 16px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
 .about-panel summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-weight:850;color:#143f57;touch-action:manipulation}
 .about-panel p{margin:0 0 14px;color:#405966;line-height:1.55;font-size:14px}
@@ -59,7 +64,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 20px cal
 .brand-footer img{display:block;width:160px;max-width:52vw;height:auto}
 .brand-footer strong{font-size:11px;letter-spacing:.04em}
 .hidden{display:none!important}
-@media(max-width:700px){h1{font-size:24px}.wrap{padding:10px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left))}.toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto}.toolbar #search{min-width:0;width:100%}.table-hint{display:block;font-size:12px;color:var(--muted);margin:-3px 0 8px}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
+@media(max-width:700px){h1{font-size:24px}.wrap{padding:10px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left))}.toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto}.toolbar #search{min-width:0;width:100%}.quiz-callout{align-items:stretch;flex-direction:column}.quiz-link{width:100%}.table-hint{display:block;font-size:12px;color:var(--muted);margin:-3px 0 8px}.ptable{min-width:1060px;grid-template-rows:repeat(9,70px)}.sym{font-size:20px}.element{padding:4px}}
 
 /* Hidden DONCO-BAYCITY easter egg */
 .brand-footer img{cursor:pointer;user-select:none;-webkit-user-drag:none}
@@ -99,6 +104,15 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 20px cal
     <input id="search" type="search" placeholder="Search by element name, symbol, or atomic number…" aria-label="Search elements">
     <button id="clear" type="button">Clear</button>
   </div>
+
+  <div class="quiz-callout">
+    <div>
+      <strong>How well do you know the elements?</strong>
+      <span>Try 20 random questions. New rounds avoid questions you have already seen until the full pool is used.</span>
+    </div>
+    <a class="quiz-link" href="quiz.html">🧪 Start 20-Question Quiz</a>
+  </div>
+
   <div class="legend" id="legend"></div>
   <div class="table-hint">↔ Swipe left and right to see all element groups.</div>
   <div class="table-wrap">
