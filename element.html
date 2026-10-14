@@ -298,14 +298,23 @@ function loadElementPhoto(number,name){
   const source=document.getElementById("elementPhotoSource");
   const item=(window.ELEMENT_PHOTOS||{})[String(number)];
   const n=Number(number);
+  const photoTitle=String(item?.title||"");
+  const placeholder=/^No Image Found$/i.test(photoTitle) ||
+    /\/s\/transactinoid\.png$/i.test(String(item?.originalUrl||""));
+  const illustration=/only an illustration|not .* itself|unrelated particle/i.test(photoTitle);
+  const rightsUnknown=!!item && !validHttpUrl(item.licenseUrl) &&
+    !/public domain/i.test(String(item.attribution||""));
   const noDirectSample=[84,85,86,87].includes(n) || n>=100;
 
-  if(noDirectSample){
+  if(noDirectSample || placeholder || illustration || rightsUnknown){
     wrap.classList.add("hidden");
-    heading.textContent="Element Photograph";
+    heading.textContent="Element imagery";
     status.classList.add("no-sample");
     status.classList.remove("hidden");
-    status.textContent="A direct photograph of a normal visible sample of "+name+" is not available here. This element is extremely rare, highly radioactive, gaseous, or produced only in tiny quantities, so the app does not show a misleading placeholder picture.";
+    if(placeholder) status.textContent="There is no actual sample photograph for "+name+" in this app. The catalogued image is a generic placeholder.";
+    else if(illustration) status.textContent="The available image is an illustration or a picture of another experiment, not a verified sample photograph of "+name+". It has been withheld.";
+    else if(rightsUnknown) status.textContent="A picture has been catalogued for "+name+", but permission to reuse it has not been established. It has been withheld pending review.";
+    else status.textContent="No verified direct photograph of a visible sample of "+name+" is available here. Extremely rare and short-lived elements may only have illustrative or experimental imagery.";
     return;
   }
 
@@ -321,7 +330,7 @@ function loadElementPhoto(number,name){
   img.src=item.localUrl;
   img.alt=item.title||("Photograph of "+name);
   title.textContent=item.title||name;
-  description.textContent="Representative photograph for this element.";
+  description.textContent="Catalogued image of this element. Image identity and reuse permission have not yet been independently verified for release.";
   credit.textContent=(item.attribution||"Image credit unavailable.")+(item.note?" • "+item.note:"");
   original.href=item.localUrl;
   original.textContent="Open local image";
@@ -366,16 +375,17 @@ if(!e){
    fact("Year discovered",e.yearDiscovered||"—");
 
  document.getElementById("scienceGrid").innerHTML=
-   fact("Electron configuration",e.electronConfiguration||"—")+
+   fact("Electron configuration"+(e.atomicNumber>=104?" (calculated)":""),
+     e.electronConfiguration||"—")+
    fact("Density",e.density==null?"—":e.density+" g/cm³")+
    fact("Melting point",kelvinToC(e.meltingPoint))+
    fact("Boiling point",kelvinToC(e.boilingPoint))+
    (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
-   fact("Electronegativity",e.electronegativity??"—")+
-   fact("Atomic radius",e.atomicRadius==null?"—":e.atomicRadius+" pm")+
-   fact("Ionization energy",e.ionizationEnergy==null?"—":e.ionizationEnergy+" eV")+
-   fact("Electron affinity",e.electronAffinity==null?"—":e.electronAffinity+" eV")+
-   fact("Oxidation states",e.oxidationStates||"—")+
+   fact("Electronegativity (Pauling)",e.electronegativity??"—")+
+   fact("Van der Waals atomic radius",e.atomicRadius==null?"Not available":e.atomicRadius+" pm")+
+   fact("First ionization energy",e.ionizationEnergy==null?"Not available":e.ionizationEnergy+" eV")+
+   fact("Electron affinity (energy released)",e.electronAffinity==null?"Not available":e.electronAffinity+" eV")+
+   fact("Common oxidation states",e.oxidationStates||"Not established")+
    fact("Appearance",e.appearance||"—");
 
  let history=[];
