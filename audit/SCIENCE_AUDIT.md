@@ -478,3 +478,40 @@ Cross-checked RSC source listings and expanded oxidation values for **Cr (24)**,
 - **Nickel #28:** +3, +2 → +3, +2, 0
 
 Source pages: [Cr](https://periodic-table.rsc.org/element/24/chromium), [Mn](https://periodic-table.rsc.org/element/25/manganese), [Fe](https://periodic-table.rsc.org/element/26/iron), [Ni](https://periodic-table.rsc.org/element/28/nickel). Oxidation states of a **free element** are 0; positive/negative values relate to compounds. This is a RSC-aligned list and should not be misconstrued as relative prevalences. No other data were changed.
+
+## Audit session 17 — 2026-10-14: RSC Pauling, oxidation, element-vs-compound applications, elements 31–60
+
+**Method:** Compared *every one of the 30 Pauling electronegativity entries (including missing values)* from Z=31–60 with the Royal Society of Chemistry's individual [periodic table element fact boxes](https://periodic-table.rsc.org/), using the declared Pauling scale. **29 originally matched; #43 technetium differed (app 1.9 vs RSC 2.10)** and is now 2.10. This source-specific match does not establish that all alternative electronegativity scales or estimates agree.
+
+**Praseodymium #59:** RSC lists **+4 and +3** common oxidation states, not only +3. Added +4.
+
+**Descriptions and uses:** Independently cross-checked targeted high-risk wording against RSC's appearance/uses sections: Ga, Ge, Sr, Zr, Tc, Sb, Te, I, Ba, La, and Ce. Removed ambiguities about **elemental gallium versus gallium arsenide/nitride**, **strontium metal versus red-flame strontium salts**, **zirconium metal versus zirconia**, **technetium vs 99mTc compounds**, **antimony compounds vs metal alloys**, **tellurium vs tellurides**, **iodide salts vs iodine**, **barium sulfate imaging vs other toxic soluble barium compounds**, and compounds in optical glass and polishing. Appearance blanks for strontium, tellurium, and barium were replaced by grounded descriptions. No visual assets were copied.
+
+**Corrected fields: 20 across 12 element records**, all on `scientific-audit-2026-10`:
+
+| Element | Field | Before | After |
+|---|---|---|---|
+| 31 Ga | appearance | "silver-white" | "A soft, silvery-white metal." |
+| 31 Ga | typicalUses | "Semiconductors, LEDs, solar cells, low-melting alloys, and thermometers." | "Gallium arsenide and gallium nitride are semiconductors used in LEDs, electronics and some solar cells. Elemental gallium is used in low-melting alloys and specialized thermometers." |
+| 32 Ge | appearance | "grayish-white" | "A brittle, silvery-white metalloid." |
+| 38 Sr | appearance | null | "A soft, silvery metal that reacts with water and readily oxidizes in air." |
+| 38 Sr | typicalUses | "Fireworks, signal flares, ferrite magnets, ceramics, and medical imaging compounds." | "Strontium salts give red colors to fireworks and flares. Strontium ferrite is used in magnets, and strontium compounds are used in ceramics and other specialty materials." |
+| 40 Zr | typicalUses | "Nuclear reactor cladding, ceramics, foundry molds, and corrosion-resistant alloys." | "Zirconium metal alloys are used for nuclear-reactor cladding and corrosion-resistant components. Zirconium dioxide (zirconia) is used in ceramics, foundry products and refractory materials." |
+| 43 Tc | electronegativity | 1.9 | 2.1 |
+| 43 Tc | appearance | "shiny gray metal" | "A radioactive, silvery metal." |
+| 43 Tc | typicalUses | "Medical diagnostic imaging and scientific research." | "Technetium-99m compounds are widely used for medical diagnostic imaging. Other technetium applications are limited by its radioactivity." |
+| 51 Sb | appearance | "silvery lustrous gray" | "In its metallic form, a silvery, hard and brittle metalloid." |
+| 51 Sb | typicalUses | "Flame retardants, alloys, semiconductors, and some specialty materials." | "Antimony metal is used in hardening alloys and some semiconductor devices. Antimony compounds are used in flame-retardant formulations, glass and ceramics; many compounds are toxic." |
+| 52 Te | appearance | null | "A grey metalloid, often obtained as a powder." |
+| 52 Te | typicalUses | "Solar cells, thermoelectric devices, alloys, rubber processing, and optical materials." | "Tellurium is added to copper, steel and lead alloys to alter their properties. Telluride compounds are used in some solar cells and thermoelectric devices; tellurium also has specialized rubber and semiconductor uses." |
+| 53 I | appearance | "lustrous metallic gray, violet as a gas" | "Shiny black crystals that release violet vapor when heated." |
+| 53 I | typicalUses | "Medicine, disinfectants, photography, and nutrition as an essential trace element." | "Iodide salts are used in iodized table salt, medicines, disinfectants and photographic chemistry. Iodine compounds have industrial uses; iodine-131 is used in selected thyroid treatments." |
+| 56 Ba | appearance | null | "A soft, silvery metal that quickly tarnishes in air and reacts with water." |
+| 56 Ba | typicalUses | "Medical imaging compounds, drilling fluids, ceramics, glass, and fireworks." | "Barium sulfate is used in X-ray gastrointestinal imaging and drilling fluids; its very low solubility distinguishes it from toxic soluble barium compounds. Other barium compounds are used in glass, ceramics and green fireworks." |
+| 57 La | typicalUses | "Camera lenses, catalysts, batteries, lighting, and specialty alloys." | "Lanthanum-containing optical glass and catalysts use its compounds. Lanthanum alloys are used in some rechargeable batteries and specialty metals." |
+| 58 Ce | typicalUses | "Catalytic converters, glass polishing, lighter flints, and specialty alloys." | "Cerium oxide is used to polish glass and in catalytic converters. Cerium-containing alloys are used in lighter flints and specialty metal products." |
+| 59 Pr | oxidationStates | "+3" | "+4, +3" |
+
+**Source pages:** [Ga 31](https://periodic-table.rsc.org/element/31/gallium), [Ge 32](https://periodic-table.rsc.org/element/32/germanium), [Sr 38](https://periodic-table.rsc.org/element/38/strontium), [Zr 40](https://periodic-table.rsc.org/element/40/zirconium), [Tc 43](https://periodic-table.rsc.org/element/43/technetium), [Sb 51](https://periodic-table.rsc.org/element/51/antimony), [Te 52](https://periodic-table.rsc.org/element/52/tellurium), [I 53](https://periodic-table.rsc.org/element/53/iodine), [Ba 56](https://periodic-table.rsc.org/element/56/barium), [La 57](https://periodic-table.rsc.org/element/57/lanthanum), [Ce 58](https://periodic-table.rsc.org/element/58/cerium), [Pr 59](https://periodic-table.rsc.org/element/59/praseodymium).
+
+**Scope:** Other oxidation-state fields may deliberately use a broader list of experimentally known states than RSC's narrow 'common' list (e.g. Ge(II) has real chemistry although RSC lists only +4 in that column), so no unsupported deletion was applied. Work remains for broader electronegativity comparison outside this band, further oxidation/use/appearance reviews, image licensing and actual app/browser QA. **No main merge or Store submission.**
