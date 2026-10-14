@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–70 (technetium and promethium have no standard weights)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–80 (technetium and promethium have no standard weights)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–70, including electron configurations for 61–70
+- [x] RSC melting, boiling, and density conventions for elements 21–80, including electron configurations for 61–80
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -235,3 +235,36 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **UI correction:** Replaced the previous **technetium-only** text for an unassigned standard atomic weight with a reusable `standardWeightText(e)` function. On a missing-weight record it consults `referenceMassNumber`, explains the isotope mass-number distinction, and handles both **Tc [98]** and **Pm [145]** without treating either as a standard atomic weight. The existing element details page was already capable of separately labeling `referenceMassNumber`.
 
 **Scope limitations:** Abridged weights omit CIAAW uncertainties; the phase slider uses a simplified pressure-free model. Element uses, radii, electron affinity, ionization, electronegativity, oxidation states, imagery and credits, quiz verification, full browser and Windows package testing remain outstanding. No updates to `main` or Microsoft submission.
+
+## Audit session 8 — 2026-10-14: elements 71–80 (Lu–Hg)
+
+**Review scope:** CIAAW **2024 abridged atomic weights** in both displays; RSC element fact-box melting points (K), boiling points (K), room-temperature density (g/cm³), 20°C state and electron configuration. History credits reviewed against RSC historical accounts. Detailed measurements and discovery accounts have source-convention differences and must not be silently conflated. All edits are confined to `scientific-audit-2026-10`.
+
+| Z | Symbol | CIAAW abridged weight | RSC melting / boiling (K) | RSC density (g/cm³) | Year / milestone | Credit |
+|---:|---|---:|---:|---:|---|---|
+| 71 | Lu | 174.97 | 1936 / 3675 | 9.84 | 1907 | Georges Urbain |
+| 72 | Hf | 178.49 | 2506 / 4873 | 13.3 | 1923 | Dirk Coster and George de Hevesy |
+| 73 | Ta | 180.95 | 3290 / 5728 | 16.4 | 1802 | Anders Gustaf Ekeberg |
+| 74 | W | 183.84 | 3687 / 5828 | 19.3 | 1783 | Juan José Elhuyar and Fausto Elhuyar |
+| 75 | Re | 186.21 | 3458 / 5863 | 20.8 | 1925 | Walter Noddack, Ida Noddack, and Otto Berg |
+| 76 | Os | 190.23 | 3306 / 5281 | 22.5872 | 1803 | Smithson Tennant |
+| 77 | Ir | 192.22 | 2719 / 4701 | 22.5622 | 1803 | Smithson Tennant |
+| 78 | Pt | 195.08 | 2041.4 / 4098 | 21.5 | Ancient | No single discoverer |
+| 79 | Au | 196.97 | 1337.33 / 3109 | 19.3 | Ancient | No single discoverer |
+| 80 | Hg | 200.59 | 234.321 / 629.769 | 13.5336 | Ancient | No single discoverer |
+
+**Historically important revisions:**
+- **71 Lutetium:** CIAAW 2024 revised abridged weight **174.97**; RSC relative mass is 174.967. Urbain reported in **1907**, competing work by Charles James and Carl Auer von Welsbach; pure metal only in 1953.
+- **72 Hafnium:** **Coster and de Hevesy**, rather than Coster alone, identified hafnium via X-ray spectroscopy in **1923**. RSC lists boil **4873 K** (previous app 4876).
+- **73 Tantalum:** Ekeberg, **1802**, worked on an element later confused with niobium; Rose conclusively distinguished the two in 1846. CIAAW mass **180.95**; RSC boil **5728 K**.
+- **74 Tungsten:** credit **Juan José and Fausto Elhuyar** for first metal isolation in **1783**, rather than Scheele; Scheele investigated its oxide in 1781 and Woulfe suspected a new metal in 1779. RSC melt **3687 K**, not the app's 3695 K.
+- **75 Rhenium:** **Ogawa's 1905 spectra** were later reassessed as rhenium but were misidentified and not accepted at the time. Accepted **1925** identification/isolation involved **Walter Noddack, Ida Tacke (later Noddack), and Otto Berg**; the credited year is 1925 and early evidence is preserved in the individualized story. Replaced inaccurate app's `discoveredBy: Masataka Ogawa` alongside `yearDiscovered: 1925`; removed single-person `namedBy: Walter Noddack`. CIAAW weight **186.21**. RSC melt **3458 K**, boil **5863 K**.
+- **76 Osmium:** Tennant, **1803**. RSC density **22.5872**, vs app 22.57; boil **5281 K**.
+- **77 Iridium:** Tennant, **1803**, along with osmium. RSC density **22.5622**, vs app 22.42; CIAAW weight **192.22**.
+- **78 Platinum:** Indigenous South American peoples worked platinum well before Antonio de Ulloa's **1735** description to Europeans; historical evidence also exists in ancient artefacts. Set `yearDiscovered: Ancient` and `discoveredBy: null`; 1735 European reporting is described in the story rather than misrepresented as first-ever discovery. RSC melt **2041.4 K**, density **21.5**; CIAAW weight **195.08**.
+- **79 Gold:** Ancient; no single discoverer or one identifiable region. Replaced `Middle East` discoverer with `null`; RSC boil **3109 K**, density **19.3**. CIAAW weight **196.97**.
+- **80 Mercury:** Ancient; no sole discoverer, so old `unknown, before 2000 BCE` attribution removed. RSC melt **234.321 K**, boil **629.769 K**, density **13.5336** and room-temperature state **Liquid**; CIAAW weight **200.59**.
+
+**Sources:** [CIAAW 2024 abridged table](https://www.ciaaw.org/abridged-atomic-weights.htm); RSC [Lu](https://periodic-table.rsc.org/element/71/lutetium), [Hf](https://periodic-table.rsc.org/element/72/hafnium), [Ta](https://periodic-table.rsc.org/element/73/tantalum), [W](https://periodic-table.rsc.org/element/74/tungsten), [Re](https://periodic-table.rsc.org/element/75/rhenium), [Os](https://periodic-table.rsc.org/element/76/osmium), [Ir](https://periodic-table.rsc.org/element/77/iridium), [Pt](https://periodic-table.rsc.org/element/78/platinum), [Au](https://periodic-table.rsc.org/element/79/gold), [Hg](https://periodic-table.rsc.org/element/80/mercury).
+
+**Unverified:** All other chemistry fields, pressure-dependent phase model, complete quiz question and answer checking, photographs and licensing, manual browser workflows, full Node and packaged Windows app validation. CIAAW abridged values deliberately differ from RSC's sometimes more precise relative masses; CIAAW uncertainties are not displayed. **No merge to main; no Microsoft Store resubmission.**
