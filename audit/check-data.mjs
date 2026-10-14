@@ -33,13 +33,24 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  22.990,24.305,26.982,28.085,30.974,32.06,35.45,39.95,39.098,40.078,
                  44.956,47.867,50.942,51.996,54.938,55.845,58.933,58.693,63.546,65.38,
                  69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.222,
-                 92.906,95.95,null,101.07,102.91,106.42,107.87,112.41,114.82,118.71];
+                 92.906,95.95,null,101.07,102.91,106.42,107.87,112.41,114.82,118.71,
+                 121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  51:{"year":"Ancient","by":null},
+  52:{"year":"1783","by":"Franz Joseph Müller von Reichenstein"},
+  53:{"year":"1811","by":"Bernard Courtois"},
+  54:{"year":"1898","by":"William Ramsay and Morris Travers"},
+  55:{"year":"1860","by":"Robert Bunsen and Gustav Kirchhoff"},
+  56:{"year":"1808","by":"Humphry Davy"},
+  57:{"year":"1839","by":"Carl Gustaf Mosander"},
+  58:{"year":"1803–1804","by":"Jöns Jacob Berzelius and Wilhelm Hisinger; independently Martin Heinrich Klaproth"},
+  59:{"year":"1885","by":"Carl Auer von Welsbach"},
+  60:{"year":"1885","by":"Carl Auer von Welsbach"},
   41:{"year":"1801","by":"Charles Hatchett"},
   42:{"year":"1778","by":"Carl Wilhelm Scheele"},
   43:{"year":"1937","by":"Carlo Perrier and Emilio Segrè"},
@@ -145,10 +156,31 @@ const elementHtml41=readFileSync('element.html','utf8');
 assert.ok(elementHtml41.includes('Reference isotope mass number (not atomic weight)'),'Detail UI Tc explanation');
 for(let z=41;z<=50;z++)assert.ok(elementHtml41.includes('  '+z+':"'),'Discovery story missing '+z);
 
+// RSC fact boxes 51–60: melting/boiling K, room-temperature density g/cm^3 and state.
+const rsc51to60={
+  51:[903.778,1860,6.68,'Solid'],52:[722.66,1261,6.232,'Solid'],
+  53:[386.9,457.6,4.933,'Solid'],54:[161.4,165.051,0.005366,'Gas'],
+  55:[301.7,944,1.873,'Solid'],56:[1000,2118,3.62,'Solid'],
+  57:[1193,3737,6.15,'Solid'],58:[1072,3716,6.77,'Solid'],
+  59:[1204,3793,6.77,'Solid'],60:[1289,3347,7.01,'Solid']
+};
+for(const [z,vals] of Object.entries(rsc51to60)){
+ const e=detailed[Number(z)-1];
+ assert.equal(e.meltingPoint,vals[0],'RSC melting 51-60 '+z);
+ assert.equal(e.boilingPoint,vals[1],'RSC boiling 51-60 '+z);
+ assert.equal(e.density,vals[2],'RSC density 51-60 '+z);
+ assert.equal(e.standardState,vals[3],'RSC phase 51-60 '+z);
+}
+assert.equal(detailed[50].discoveredBy,null,'Antimony: no single known discoverer');
+assert.equal(detailed[55].discoveredBy,'Humphry Davy','Barium metal isolation credit');
+assert.equal(detailed[51].namedBy,'Martin Heinrich Klaproth','Tellurium naming attribution');
+const storyHtml51to60=readFileSync('element.html','utf8');
+for(let z=51;z<=60;z++)assert.ok(storyHtml51to60.includes('  '+z+':"'),'Discovery story missing '+z);
+
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–50 (Tc unassigned); RSC melting/boiling/density 21–50; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–60 (Tc unassigned); RSC melting/boiling/density 21–60; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
