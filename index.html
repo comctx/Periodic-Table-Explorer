@@ -202,7 +202,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 20px cal
       <span class="state-chip"><span class="state-dot unknown"></span>Unknown</span>
     </div>
     <div class="temp-counts" id="tempCounts">Temperature colors are off. Family colors are showing.</div>
-    <div class="temp-note">At extremely high temperatures, real matter can become ionized plasma. This feature intentionally uses a simplified solid / liquid / gas model based on melting and boiling points.</div>
+    <div class="temp-note">Educational approximation based on published phase-change temperatures. Real phase depends on pressure; this simplified model does not fully represent sublimation (such as carbon), helium's unusual behavior, or high-temperature plasma. Elements without enough measured data are shown as Unknown, not assumed to be gases.</div>
   </section>
 
   <div class="legend" id="legend"></div>
@@ -286,10 +286,11 @@ function stateAtTemperature(e){
   const x=thermalByZ[e.z];
   if(!x) return "unknown";
   const k=temperatureC+273.15;
-  const melt=Number(x.meltingPoint);
-  const boil=Number(x.boilingPoint);
-  const hasMelt=Number.isFinite(melt);
-  const hasBoil=Number.isFinite(boil);
+  // Missing measurements are unknown: Number(null) would incorrectly be zero.
+  const hasMelt=x.meltingPoint!=null && x.meltingPoint!=="" && Number.isFinite(Number(x.meltingPoint));
+  const hasBoil=x.boilingPoint!=null && x.boilingPoint!=="" && Number.isFinite(Number(x.boilingPoint));
+  const melt=hasMelt ? Number(x.meltingPoint) : null;
+  const boil=hasBoil ? Number(x.boilingPoint) : null;
 
   if(hasMelt && k<melt) return "solid";
   if(hasBoil && k>=boil) return "gas";
