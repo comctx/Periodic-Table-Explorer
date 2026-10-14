@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check abridged CIAAW 2024 atomic weights for elements 1–30
+- [x] Normalize and cross-check abridged CIAAW 2024 atomic weights for elements 1–40
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–30
+- [x] RSC melting, boiling, and density conventions for elements 21–40
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -155,3 +155,5 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Data caveats:** RSC selenium melting point 494 K and bromine 266/332 K are rounded values; readers should not infer greater precision than published. Arsenic's 889 K transition is an atmospheric-pressure approximation, not a pressure-independent material constant. The temperature slider remains a simplified teaching model. Element photographs, other fields (configuration, radius definitions, electron affinity, oxidation states), and quiz behavior remain **unverified**.
 
 **Code:** Updated `elements-data.js`, `index.html`, `element.html`, and `audit/check-data.mjs` on audit branch. Regression assertions extended to #40; full browser/packaged-app testing still required. No merge or Store submission.
+
+**Post-commit check (session 4):** Re-fetched all five updated files from the audit branch. The exact JavaScript regression assertions in `audit/check-data.mjs` were executed with equivalent assertion and file-read shims in an isolated JavaScript test harness: **PASS**. Inline scripts in `index.html` and `element.html` passed syntax compilation; four direct temperature examples passed (arsenic below/above sublimation, room-temperature bromine and krypton). This is **not** a full Node invocation, actual-browser regression run, app package validation, or photograph/quiz certification. The `main` branch remains unmodified and retains older Ga–Zr values.
