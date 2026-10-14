@@ -18,8 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check abridged CIAAW 2024 atomic weights for elements 1–20
-- [x] Initial historical review for elements 11–20 (not complete property verification)
+- [x] Normalize and cross-check abridged CIAAW 2024 atomic weights for elements 1–30
+- [x] Initial historical review for elements 11–30 (not complete property verification)
+- [x] RSC melting, boiling, and density conventions for elements 21–30
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -101,3 +102,32 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Repeatable checks:** New `audit/check-data.mjs` tests 118-entry uniqueness/numbering, symbol alignment, CIAAW 2024 mass values for 1–20 in both representations, selected corrected history fields, and protection against treating unknown transition data as zero. Run with `node audit/check-data.mjs` from the repository root. These automated checks do **not** certify the remaining chemical information.
 
 **Remaining priority:** Full field-level property verification, pressure-dependent phase model and carbon sublimation; density and electron affinity conventions; quiz disambiguation after historical correction; isotope-mass representation for elements lacking a standard atomic weight; review of all photos and their credits; browser testing; Store build testing. **Do not merge to main yet.**
+
+## Audit session 3 — 2026-10-14: elements 21–30 (Sc–Zn)
+
+**Source standards:** [CIAAW 2024 abridged atomic weights](https://www.ciaaw.org/abridged-atomic-weights.htm) and each of the [Royal Society of Chemistry's element pages](https://periodic-table.rsc.org/). Scientific properties in the detailed records 21–30 were compared to RSC **melting points (K), boiling points (K), density (g/cm³ at room temperature), and room-temperature state**. The numerical values in this *specific set* now use RSC consistently. This does not imply all properties have been checked.
+
+| # | Element | CIAAW mass | RSC history and correction |
+|---:|---|---:|---|
+| 21 | Scandium | 44.956 | Nilson identified a new element in 1879, confirming Mendeleev's prediction; metal isolated much later (1937). Kept discoverer |
+| 22 | Titanium | 47.867 | Gregor recognized it in mineral form in 1791, Klaproth independently named it in 1795; pure metal prepared in 1910. Updated melt/density to chosen RSC table |
+| 23 | Vanadium | 50.942 | Del Río's 1801 discovery was doubted; Sefström rediscovered and named vanadium in 1831. Fixed nonsensical `namedBy: Isotopes of vanadium` |
+| 24 | Chromium | 51.996 | PubChem calls identification 1797 and metallic isolation 1798; RSC's summary dates discovery as 1798. **Kept 1797** for initial identification and documented both milestones |
+| 25 | Manganese | 54.938 | RSC reports Kaim's earlier 1771 claim and Gahn's isolation in 1774; changed single-name discoverer credit from Bergman to Gahn, discussed others |
+| 26 | Iron | 55.845 | Ancient iron has no one discoverer; removed the erroneous `discoveredBy: 5000 BC` |
+| 27 | Cobalt | 58.933 | Georg Brandt studied the ore in the 1730s and published by 1739; retained 1735 approximation, needs closer historical dating if presenting as exact |
+| 28 | Nickel | 58.693 | Cronstedt identified it in 1751, later Bergman produced purer metal; kept attribution |
+| 29 | Copper | 63.546 | Ancient metal with no single discoverer; removed geographical region `Middle East` from the discoverer field |
+| 30 | Zinc | 65.38 | Zinc was refined in India during the medieval period; Marggraf recognized it in Europe in 1746. Kept 1746 as a European milestone; changed discoverer to Marggraf and explained Indian history clearly |
+
+**History reference pages:** [Scandium](https://periodic-table.rsc.org/element/21/scandium), [Titanium](https://periodic-table.rsc.org/element/22/titanium), [Vanadium](https://periodic-table.rsc.org/element/23/vanadium), [Chromium](https://periodic-table.rsc.org/element/24/chromium), [Manganese](https://periodic-table.rsc.org/element/25/manganese), [Iron](https://periodic-table.rsc.org/element/26/iron), [Cobalt](https://periodic-table.rsc.org/element/27/cobalt), [Nickel](https://periodic-table.rsc.org/element/28/nickel), [Copper](https://periodic-table.rsc.org/element/29/copper), [Zinc](https://periodic-table.rsc.org/element/30/zinc); see also [PubChem Chromium](https://pubchem.ncbi.nlm.nih.gov/element/Cr) for the 1797/1798 distinction.
+
+**Code changes saved on audit branch:**
+- `elements-data.js`: CIAAW central values, RSC melting/boiling and densities for 21–30, and corrected historical person/period fields.
+- `index.html`: matching display atomic weights through 30.
+- `element.html`: ten individualized, source-based discovery summaries for 21–30, distinguishing earlier mineral use, initial recognition, rediscovery and metal isolation.
+- `audit/check-data.mjs`: extended regression checks through #30, including detailed physical-data values and selected discovery history.
+
+**Still unverified for elements 21–30:** electron configurations should be compared systematically against NIST (RSC fact boxes were spot-checked); electron affinities and ionization energies require matching unit/measurement conventions; atomic radius definitions may differ substantially by source and must be labeled; all oxidation states, photography, image credits and ambiguous quiz questions remain on the open checklist.
+
+**Release status:** Main branch and the submitted package are unchanged. No merge, no new package, no resubmission until the full audit completes.
