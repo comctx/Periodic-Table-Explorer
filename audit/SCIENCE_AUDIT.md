@@ -424,3 +424,46 @@ Checked another **90 source-defined scientific values** for elements **31–60**
 Extended the three-property PubChem comparison to all remaining elements, **61–118**. PubChem reference tables: [atomic radius (van der Waals, pm)](https://pubchem.ncbi.nlm.nih.gov/periodic-table/atomic-radius/), [first ionization energy (eV)](https://pubchem.ncbi.nlm.nih.gov/periodic-table/ionization-energy/), [electron affinity (eV)](https://pubchem.ncbi.nlm.nih.gov/periodic-table/electron-affinity/). A numeric match was required at PubChem's published rounding, and source-missing values remained `null` rather than zero. **All 354 field slots matched** (3 fields × 118 entries); these fixtures are now part of the automated regression suite.
 
 **Scope caution:** This confirms alignment with PubChem's **particular dataset**, not independent laboratory verification of every entry; the underlying original app also uses values consistent with PubChem so agreement is unsurprising. Atomic-radius definition is specifically van der Waals, not equivalent to other atomic radius conventions. For superheavy elements, missing values are legitimate rather than experimentally established zeros. Scientific fields *not yet reviewed exhaustively* include Pauling electronegativity (the RSC and PubChem differ in which rare-gas values they provide), oxidation states, chemistry examples/uses/appearance, and detailed ground-state configuration provenance for elements 1–60. The photograph-rights and actual app QA release gate remains open; do not merge or submit.
+
+## Audit session 16 — 2026-10-14: verified oxidation states, Pauling gaps, configurations and uses
+
+**Work performed:** Audited selected high-risk chemistry fields using the Royal Society of Chemistry's [element fact boxes, atomic data and uses](https://periodic-table.rsc.org/) and NIST's [neutral-atom ground configurations](https://www.nist.gov/pml/atomic-reference-data-electronic-structure-calculations/atomic-reference-data-electronic-8). 25 scientifically substantive or clarifying **field modifications** across 20 element records, confined to this audit branch.
+
+### Verified updates
+| Element | Property | Previously shown | Corrected value / qualification |
+|---|---|---|---|
+| 8 (O) | oxidationStates | "-2" | "-1, -2" |
+| 17 (Cl) | oxidationStates | "+7, +5, +1, -1" | "+7, +5, +3, +1, -1" |
+| 35 (Br) | oxidationStates | "+5, +1, -1" | "+7, +5, +3, +1, -1" |
+| 36 (Kr) | oxidationStates | "0" | "+2" |
+| 42 (Mo) | oxidationStates | "+6" | "+6, +5, +4, +3, +2, 0" |
+| 44 (Ru) | oxidationStates | "+3" | "+8, +6, +4, +3, +2, 0, -2" |
+| 45 (Rh) | oxidationStates | "+3" | "+5, +4, +3, +2, +1, 0" |
+| 46 (Pd) | oxidationStates | "+3, +2" | "+4, +2, 0" |
+| 47 (Ag) | oxidationStates | "+1" | "+2, +1" |
+| 54 (Xe) | oxidationStates | "0" | "+6, +4, +2" |
+| 6 (C) | appearance | null | "Appearance depends on allotrope: diamond is clear and transparent; graphite is black and shiny; graphene and fullerenes can form dark materials." |
+| 8 (O) | appearance | null | "Colorless, odorless gas at room temperature." |
+| 9 (F) | appearance | null | "Very pale yellow-green, highly reactive gas." |
+| 35 (Br) | appearance | null | "Deep reddish-brown, oily liquid with an irritating vapor; toxic." |
+| 96 (Cm) | appearance | "silvery metallic, glows purple in the dark" | "Silvery radioactive metal that tarnishes in air." |
+| 100 (Fm) | appearance | null | "Radioactive metal produced only in extremely small quantities." |
+| 14 (Si) | typicalUses | "Computer chips, solar cells, glass, concrete, and silicones." | "Elemental silicon is used in semiconductor chips and solar cells; silicon-containing compounds are used in glass, concrete and silicones." |
+| 33 (As) | typicalUses | "Semiconductors, wood preservatives, specialty glass, and some alloys; many arsenic compounds are toxic." | "Arsenic-containing compounds have applications in certain semiconductors, specialty glass and alloys. Historical arsenic wood preservatives face significant restrictions because of toxicity." |
+| 35 (Br) | typicalUses | "Flame retardants, water treatment, pharmaceuticals, photographic chemistry, and industrial compounds." | "Bromine-containing compounds are used in pharmaceuticals, chemical synthesis, some water-treatment applications and some flame retardants; several historical uses have been restricted or phased out." |
+| 95 (Am) | electronegativity | 1.3 | null |
+| 96 (Cm) | electronegativity | 1.3 | null |
+| 97 (Bk) | electronegativity | 1.3 | null |
+| 98 (Cf) | electronegativity | 1.3 | null |
+| 99 (Es) | electronegativity | 1.3 | null |
+| 100 (Fm) | electronegativity | 1.3 | null |
+
+**Oxidation states:** RSC lists common states of oxygen **−1, −2**, including peroxides; chlorine **+7, +5, +3, +1, −1**; bromine **+7, +5, +3, +1, −1**; krypton **+2** (KrF₂ chemistry); xenon **+6, +4, +2** (noble-gas chemistry). Also aligned selected states for molybdenum, ruthenium, rhodium, palladium and silver with RSC fact boxes; these had misleadingly incomplete or different lists. **RSC "common" is a convention, not all possible oxidation states; an uncombined element itself has oxidation state 0.** For source context see RSC [oxygen](https://periodic-table.rsc.org/element/8/oxygen), [chlorine](https://periodic-table.rsc.org/element/17/chlorine), [bromine](https://periodic-table.rsc.org/element/35/bromine), [krypton](https://periodic-table.rsc.org/element/36/krypton), [xenon](https://periodic-table.rsc.org/element/54/xenon), [molybdenum](https://periodic-table.rsc.org/element/42/molybdenum), [ruthenium](https://periodic-table.rsc.org/element/44/ruthenium), [rhodium](https://periodic-table.rsc.org/element/45/rhodium), [palladium](https://periodic-table.rsc.org/element/46/palladium), and [silver](https://periodic-table.rsc.org/element/47/silver).
+
+**Pauling electronegativity:** RSC reports **Unknown** for americium, curium, berkelium, californium, einsteinium and fermium (#95–100). Previously unqualified `1.3` values in the app were not justified by this source: replaced with `null` rather than treating an estimate as a measured datum. RSC [Am](https://periodic-table.rsc.org/element/95/americium), [Cm](https://periodic-table.rsc.org/element/96/curium), [Bk](https://periodic-table.rsc.org/element/97/berkelium), [Cf](https://periodic-table.rsc.org/element/98/californium), [Es](https://periodic-table.rsc.org/element/99/einsteinium), [Fm](https://periodic-table.rsc.org/element/100/fermium). **Source disagreement recorded:** RSC reports 1.3 for neptunium and plutonium, while app has 1.36 and 1.28 respectively (different precision/conventions among tables). Those values were **not silently overwritten**; reconciling source provenance of their Pauling values remains open.
+
+**Appearances and uses:** The old description "curium glows purple in the dark" is not an established visible appearance; replaced with RSC's silvery radioactive metal/tarnishing description. Filled source-confirmed blank appearances for carbon's distinct allotropes, oxygen, fluorine, bromine, and fermium. Specifically differentiated elemental silicon from silicon compounds, industrial bromine compounds and legacy uses, and arsenic applications/restrictions. Revised page heading to say "**Typical Uses (Element and Its Compounds)**", explicitly reminding readers that uses of an element, alloy and chemical compound must not be conflated. These edits do **not** assert all other uses are independently verified. Sources: RSC [carbon](https://periodic-table.rsc.org/element/6/carbon), [oxygen](https://periodic-table.rsc.org/element/8/oxygen), [fluorine](https://periodic-table.rsc.org/element/9/fluorine), [bromine](https://periodic-table.rsc.org/element/35/bromine), [curium](https://periodic-table.rsc.org/element/96/curium), [fermium](https://periodic-table.rsc.org/element/100/fermium).
+
+**Electron configurations:** NIST's list was used to verify the distinctive ground-state configurations of Cr, Cu, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Ce, Pt and Au, accounting for **orbital occupation**, not text token ordering. These 12 checked cases agreed and required no changes. A new structural regression also verifies all **118** configurations sum to the correct number of electrons, have legal subshell capacities, have no duplicate orbitals, and valid notation. This detects malformed configurations but does **not** independently prove the ground-state ordering for every synthetic element; many are calculated.
+
+**Remaining:** Full one-by-one oxidation/Pauling/appearance/use review of all other element records is *not yet finished*. Image license clearance still 0/118; browser, real Node runtime, packaged Store QA, etc., remain open. No main branch merge or Microsoft Store submission.
