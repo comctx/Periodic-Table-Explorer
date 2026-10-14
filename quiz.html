@@ -68,7 +68,7 @@ header p{margin:7px 0 0;opacity:.92;line-height:1.45}
     <button class="next" id="nextButton" type="button">Next Question</button>
   </section>
 
-  <div class="note">Questions are generated from the element information already stored in this app, including symbols, atomic numbers, families, discovery history, typical uses, and selected element facts.</div>
+  <div class="note">Questions are generated from the element information already stored in this app, including symbols, atomic numbers, established families, and selected reviewed element facts.</div>
 </main>
 
 <script src="elements-data.js"></script>
@@ -76,7 +76,7 @@ header p{margin:7px 0 0;opacity:.92;line-height:1.45}
 "use strict";
 
 const ROUND_SIZE = 20;
-const STORAGE_KEY = "periodic_table_explorer_used_quiz_ids_v1";
+const STORAGE_KEY = "periodic_table_explorer_used_quiz_ids_v2";
 const elements = Array.isArray(window.PERIODIC_ELEMENTS) ? window.PERIODIC_ELEMENTS : [];
 
 const factQuestions = [
@@ -127,7 +127,14 @@ const factQuestions = [
     category:"Interesting fact",
     question:"Which metallic element is liquid at ordinary room temperature?",
     answer:"Mercury"
-  }
+  },
+  {id:"history-francium-perey",category:"History & discovery",question:"Which element did Marguerite Perey identify in 1939 while studying actinium decay?",answer:"Francium"},
+  {id:"history-iodine-seaweed",category:"History & discovery",question:"Which element did Bernard Courtois discover in 1811 after observing violet vapours from seaweed ash?",answer:"Iodine"},
+  {id:"history-niobium-columbium",category:"History & discovery",question:"Which element did Charles Hatchett originally call columbium in 1801?",answer:"Niobium"},
+  {id:"history-polonium-poland",category:"History & discovery",question:"Which element did Marie and Pierre Curie name in honour of Poland?",answer:"Polonium"},
+  {id:"history-technetium-irradiated",category:"History & discovery",question:"Which element did Perrier and Segrè identify in irradiated molybdenum in 1937?",answer:"Technetium"},
+  {id:"history-berzelius-thorium",category:"History & discovery",question:"Which element did Berzelius identify in thorite in 1829?",answer:"Thorium"},
+  {id:"science-og-118",category:"Element facts",question:"Which element is number 118 and is named after Yuri Oganessian?",answer:"Oganesson"}
 ];
 
 function shuffle(items){
@@ -214,45 +221,18 @@ function buildQuestionPool(){
     );
     if(q) pool.push(q);
 
-    if(e.groupBlock){
-      q=makeQuestion(
-        "family-"+e.atomicNumber,
-        "Element families",
-        "Which family is "+e.name+" in?",
-        e.groupBlock,
-        families,
-        e.name+" is classified as "+e.groupBlock+"."
-      );
+    // Test only uncontroversial families in a well-established subset.
+    if(e.atomicNumber<=56 &&
+       ["Noble gas","Halogen","Alkali metal","Alkaline earth metal"].includes(e.groupBlock)){
+      q=makeQuestion("family-"+e.atomicNumber,"Element families",
+        "Which family is "+e.name+" in?",e.groupBlock,families,
+        e.name+" belongs to the "+e.groupBlock+" family.");
       if(q) pool.push(q);
     }
 
-    if(e.discoveredBy && e.discoveredBy!=="Ancient Egypt" && e.discoveredBy!=="Ancient china" && e.discoveredBy!=="Bronze Age" && e.discoveredBy!=="Middle East" && e.discoveredBy!=="India" && e.discoveredBy!=="5000 BC"){
-      const candidates=elements
-        .filter(x=>x.atomicNumber!==e.atomicNumber && x.discoveredBy && x.discoveredBy!==e.discoveredBy)
-        .map(x=>x.name);
-      q=makeQuestion(
-        "discoverer-"+e.atomicNumber,
-        "History & discovery",
-        "According to this app's history data, which of these elements is listed as discovered by "+e.discoveredBy+"?",
-        e.name,
-        candidates,
-        e.name+" is listed as discovered by "+e.discoveredBy+"."
-      );
-      if(q) pool.push(q);
-    }
+    // Automatic discoverer/use prompts disabled until individually verified.
+    // Multiple elements share discoverers and many have overlapping uses.
 
-    const use=shortUse(e.typicalUses);
-    if(use){
-      q=makeQuestion(
-        "use-"+e.atomicNumber,
-        "Typical uses",
-        "Which element has this typical use listed in the app: "+use+"?",
-        e.name,
-        names,
-        e.name+" is the element associated with that listed use."
-      );
-      if(q) pool.push(q);
-    }
   });
 
   factQuestions.forEach(f=>{
