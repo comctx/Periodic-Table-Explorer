@@ -481,6 +481,19 @@ for(const question of questionPool){
  assert.equal(question.choices.filter(c=>c===question.answer).length,1,'Unique designated answer '+question.id);
 }
 
+
+// Second-stage PubChem extension: Z=31..60; source units and missing values
+// as detailed in the preceding Z=1..30 numeric fixture.
+const pubchemVdwRadius31to60=[187,211,185,190,183,202,303,249,219,186,207,209,209,207,195,202,172,158,193,217,206,206,198,216,343,268,240,235,239,229];
+const pubchemFirstIonization31to60=[5.999,7.9,9.815,9.752,11.814,14,4.177,5.695,6.217,6.634,6.759,7.092,7.28,7.361,7.459,8.337,7.576,8.994,5.786,7.344,8.64,9.01,10.451,12.13,3.894,5.212,5.577,5.539,5.464,5.525];
+const pubchemElectronAffinity31to60=[0.3,1.35,0.81,2.021,3.365,null,0.468,null,0.307,0.426,0.893,0.746,0.55,1.05,1.137,0.557,1.302,null,0.3,1.2,1.07,1.971,3.059,null,0.472,null,0.5,0.5,null,null];
+for(let i=0;i<30;i++){
+ const z=i+31;
+ assert.equal(detailed[z-1].atomicRadius,pubchemVdwRadius31to60[i],'PubChem van der Waals radius '+z);
+ assert.equal(detailed[z-1].ionizationEnergy,pubchemFirstIonization31to60[i],'PubChem first ionisation '+z);
+ assert.equal(detailed[z-1].electronAffinity,pubchemElectronAffinity31to60[i],'PubChem electron affinity '+z);
+}
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
-console.log('PASS: PubChem 1–30 radius/ionization/affinity, quiz generator, and image provenance guardrails');
+console.log('PASS: PubChem Z=1–60 radius/ionization/affinity fixtures, quiz pool validity and image provenance UI guardrails');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
