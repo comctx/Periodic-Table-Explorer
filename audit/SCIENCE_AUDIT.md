@@ -467,3 +467,14 @@ Extended the three-property PubChem comparison to all remaining elements, **61�
 **Electron configurations:** NIST's list was used to verify the distinctive ground-state configurations of Cr, Cu, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Ce, Pt and Au, accounting for **orbital occupation**, not text token ordering. These 12 checked cases agreed and required no changes. A new structural regression also verifies all **118** configurations sum to the correct number of electrons, have legal subshell capacities, have no duplicate orbitals, and valid notation. This detects malformed configurations but does **not** independently prove the ground-state ordering for every synthetic element; many are calculated.
 
 **Remaining:** Full one-by-one oxidation/Pauling/appearance/use review of all other element records is *not yet finished*. Image license clearance still 0/118; browser, real Node runtime, packaged Store QA, etc., remain open. No main branch merge or Microsoft Store submission.
+
+### Audit session 16 extension — additional transition-metal oxidation values
+
+Cross-checked RSC source listings and expanded oxidation values for **Cr (24)**, **Mn (25)**, **Fe (26)**, and **Ni (28)**. In these cases, RSC includes relatively uncommon but documented states; showing only a short list under "common oxidation states" had concealed chemistry relevant to the source. Exact replacements:
+
+- **Chromium #24:** +6, +3, +2 → +6, +3, +2, 0
+- **Manganese #25:** +7, +4, +3, +2 → +7, +6, +4, +3, +2, 0, -1
+- **Iron #26:** +3, +2 → +6, +3, +2, 0, -2
+- **Nickel #28:** +3, +2 → +3, +2, 0
+
+Source pages: [Cr](https://periodic-table.rsc.org/element/24/chromium), [Mn](https://periodic-table.rsc.org/element/25/manganese), [Fe](https://periodic-table.rsc.org/element/26/iron), [Ni](https://periodic-table.rsc.org/element/28/nickel). Oxidation states of a **free element** are 0; positive/negative values relate to compounds. This is a RSC-aligned list and should not be misconstrued as relative prevalences. No other data were changed.
