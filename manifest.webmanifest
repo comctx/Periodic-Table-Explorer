@@ -1,0 +1,52 @@
+{
+  "id": "./",
+  "name": "Periodic Table Explorer",
+  "short_name": "Periodic Table",
+  "description": "Explore all 118 elements, learn their properties and everyday uses, and test your knowledge with the element quiz.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#edf4f7",
+  "theme_color": "#103852",
+  "orientation": "any",
+  "lang": "en",
+  "categories": [
+    "education",
+    "science"
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Element Quiz",
+      "short_name": "Quiz",
+      "description": "Test your knowledge of chemical elements",
+      "url": "./quiz.html",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Element Details",
+      "short_name": "Elements",
+      "description": "Explore information about the chemical elements",
+      "url": "./index.html"
+    }
+  ]
+}

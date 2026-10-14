@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#103852">
 <title>Element Quiz • Periodic Table Explorer</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png" type="image/png" sizes="192x192">
+<meta name="description" content="Test your knowledge of the elements with the Periodic Table Explorer quiz.">
 <style>
 :root{--bg:#f4f7f9;--card:#fff;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8;--good:#177245;--bad:#a02b24}
 *{box-sizing:border-box}
@@ -386,6 +389,12 @@ nextButton.addEventListener("click",()=>{
 });
 
 showQuestion();
+</script>
+<script>
+/* Supports installation and core lessons/quiz offline in browsers with service workers. */
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
 </script>
 </body>
 </html>

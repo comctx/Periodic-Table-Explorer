@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Element Details • Periodic Table Explorer</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png" type="image/png" sizes="192x192">
+<meta name="description" content="Discover facts, history, photos, and uses for all 118 chemical elements.">
+<meta name="theme-color" content="#103852">
 <style>
 :root{--bg:#f4f7f9;--ink:#18313f;--muted:#6c7e88;--navy:#103852;--blue:#1d6d92;--border:#d7e2e8}
 *{box-sizing:border-box}
@@ -343,6 +347,12 @@ document.getElementById("bayCityEasterEgg")?.addEventListener("click",e=>{
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape") closeBayCityEgg();});
 
+</script>
+<script>
+/* Supports installation and core lessons/quiz offline in browsers with service workers. */
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
 </script>
 </body>
 </html>
