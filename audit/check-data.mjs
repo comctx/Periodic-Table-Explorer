@@ -34,13 +34,24 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  44.956,47.867,50.942,51.996,54.938,55.845,58.933,58.693,63.546,65.38,
                  69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.222,
                  92.906,95.95,null,101.07,102.91,106.42,107.87,112.41,114.82,118.71,
-                 121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24];
+                 121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24,
+                 null,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  61:{year:"1945",by:"Jacob A. Marinsky, Lawrence E. Glendenin, and Charles D. Coryell"},
+  62:{year:"1879",by:"Paul-Émile Lecoq de Boisbaudran"},
+  63:{year:"1901",by:"Eugène-Anatole Demarçay"},
+  64:{year:"1880",by:"Jean Charles Galissard de Marignac"},
+  65:{year:"1843",by:"Carl Gustaf Mosander"},
+  66:{year:"1886",by:"Paul-Émile Lecoq de Boisbaudran"},
+  67:{year:"1878",by:"Marc Delafontaine and Louis Soret; independently Per Teodor Cleve"},
+  68:{year:"1843",by:"Carl Gustaf Mosander"},
+  69:{year:"1879",by:"Per Teodor Cleve"},
+  70:{year:"1878",by:"Jean Charles Galissard de Marignac"},
   51:{"year":"Ancient","by":null},
   52:{"year":"1783","by":"Franz Joseph Müller von Reichenstein"},
   53:{"year":"1811","by":"Bernard Courtois"},
@@ -151,7 +162,7 @@ assert.equal(detailed[42].atomicMass,null,'Tc has no standard weight (details)')
 assert.equal(cells[42].mass,null,'Tc has no standard weight (main)');
 assert.equal(detailed[42].referenceMassNumber,98,'Tc reference mass number 98');
 assert.equal(detailed[47].namedBy,null,'Cadmium invalid attribution removed');
-assert.ok(indexSource.includes('Not assigned (Tc: [98] is a mass number)'),'Main UI Tc explanation');
+assert.ok(indexSource.includes('standardWeightText(e)'),'Main UI isotope weight explanation');
 const elementHtml41=readFileSync('element.html','utf8');
 assert.ok(elementHtml41.includes('Reference isotope mass number (not atomic weight)'),'Detail UI Tc explanation');
 for(let z=41;z<=50;z++)assert.ok(elementHtml41.includes('  '+z+':"'),'Discovery story missing '+z);
@@ -177,10 +188,39 @@ assert.equal(detailed[51].namedBy,'Martin Heinrich Klaproth','Tellurium naming a
 const storyHtml51to60=readFileSync('element.html','utf8');
 for(let z=51;z<=60;z++)assert.ok(storyHtml51to60.includes('  '+z+':"'),'Discovery story missing '+z);
 
+// RSC element fact-box values for 61–70: melt/boil K, density at room temp g/cm³, phase, configuration.
+const rsc61to70={
+  61:[1315,3273,7.26,"Solid","[Xe] 4f5 6s2"],
+  62:[1345,2067,7.52,"Solid","[Xe] 4f6 6s2"],
+  63:[1095,1802,5.24,"Solid","[Xe] 4f7 6s2"],
+  64:[1586,3546,7.9,"Solid","[Xe] 4f7 5d1 6s2"],
+  65:[1632,3503,8.23,"Solid","[Xe] 4f9 6s2"],
+  66:[1685,2840,8.55,"Solid","[Xe] 4f10 6s2"],
+  67:[1745,2973,8.8,"Solid","[Xe] 4f11 6s2"],
+  68:[1802,3141,9.07,"Solid","[Xe] 4f12 6s2"],
+  69:[1818,2223,9.32,"Solid","[Xe] 4f13 6s2"],
+  70:[1097,1469,6.9,"Solid","[Xe] 4f14 6s2"],
+};
+for(const [z,vals] of Object.entries(rsc61to70)){
+ const e=detailed[Number(z)-1];
+ assert.equal(e.meltingPoint,vals[0],'RSC melting mismatch '+z);
+ assert.equal(e.boilingPoint,vals[1],'RSC boiling mismatch '+z);
+ assert.equal(e.density,vals[2],'RSC density mismatch '+z);
+ assert.equal(e.standardState,vals[3],'RSC state mismatch '+z);
+ assert.equal(e.electronConfiguration,vals[4],'RSC configuration mismatch '+z);
+}
+assert.equal(detailed[60].atomicMass,null,'Pm standard weight missing');
+assert.equal(cells[60].mass,null,'Pm main weight missing');
+assert.equal(detailed[60].referenceMassNumber,145,'Pm isotope reference mass number');
+assert.equal(detailed[60].namedBy,'Grace Coryell','Promethium naming');
+assert.equal(detailed[63].namedBy,'Paul-Émile Lecoq de Boisbaudran','Gadolinium naming');
+assert.ok(indexSource.includes('function standardWeightText(e)'),'Generic missing weight helper');
+const detailHtml61=readFileSync('element.html','utf8');
+for(let z=61;z<=70;z++)assert.ok(detailHtml61.includes('  '+z+':"'),'History story missing '+z);
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–60 (Tc unassigned); RSC melting/boiling/density 21–60; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–70 (Tc/Pm unassigned); RSC melting/boiling/density 21–70, configurations 61–70; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
