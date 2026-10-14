@@ -32,13 +32,24 @@ detailed.forEach((entry,index)=>{
 const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.180,
                  22.990,24.305,26.982,28.085,30.974,32.06,35.45,39.95,39.098,40.078,
                  44.956,47.867,50.942,51.996,54.938,55.845,58.933,58.693,63.546,65.38,
-                 69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.222];
+                 69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.222,
+                 92.906,95.95,null,101.07,102.91,106.42,107.87,112.41,114.82,118.71];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  41:{"year":"1801","by":"Charles Hatchett"},
+  42:{"year":"1778","by":"Carl Wilhelm Scheele"},
+  43:{"year":"1937","by":"Carlo Perrier and Emilio Segrè"},
+  44:{"year":"1844","by":"Karl Ernst Claus"},
+  45:{"year":"1803","by":"William Hyde Wollaston"},
+  46:{"year":"1803","by":"William Hyde Wollaston"},
+  47:{"year":"Ancient","by":null},
+  48:{"year":"1817","by":"Friedrich Stromeyer"},
+  49:{"year":"1863","by":"Ferdinand Reich and Hieronymus Richter"},
+  50:{"year":"Ancient","by":null},
   12:{year:'1755',by:'Joseph Black'},
   13:{year:'1825',by:'Hans Christian Ørsted'},
   14:{year:'1824',by:'Jöns Jacob Berzelius'},
@@ -111,10 +122,33 @@ for(let z=31;z<=40;z++){
   assert.ok(elementHtml.includes('  '+z+':"'),'Missing individualized discovery narrative: '+z);
 }
 
+// RSC element fact boxes, 41–50: melt/boil temperatures K, density g/cm^3 at room temperature.
+const rsc41to50={
+  41:[2750,5014,8.57],42:[2895,4912,10.2],43:[2430,4535,11],
+  44:[2606,4420,12.1],45:[2236,3968,12.4],46:[1828,3236,12],
+  47:[1234.93,2435,10.5],48:[594.219,1040,8.69],
+  49:[429.75,2300,7.31],50:[505.078,2859,7.287]
+};
+for(const [z,values] of Object.entries(rsc41to50)){
+ const e=detailed[Number(z)-1];
+ assert.equal(e.meltingPoint,values[0],'RSC melting mismatch '+z);
+ assert.equal(e.boilingPoint,values[1],'RSC boiling mismatch '+z);
+ assert.equal(e.density,values[2],'RSC density mismatch '+z);
+ assert.equal(e.standardState,'Solid','RSC state mismatch '+z);
+}
+assert.equal(detailed[42].atomicMass,null,'Tc has no standard weight (details)');
+assert.equal(cells[42].mass,null,'Tc has no standard weight (main)');
+assert.equal(detailed[42].referenceMassNumber,98,'Tc reference mass number 98');
+assert.equal(detailed[47].namedBy,null,'Cadmium invalid attribution removed');
+assert.ok(indexSource.includes('Not assigned (Tc: [98] is a mass number)'),'Main UI Tc explanation');
+const elementHtml41=readFileSync('element.html','utf8');
+assert.ok(elementHtml41.includes('Reference isotope mass number (not atomic weight)'),'Detail UI Tc explanation');
+for(let z=41;z<=50;z++)assert.ok(elementHtml41.includes('  '+z+':"'),'Discovery story missing '+z);
+
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 masses 1–40; RSC melting/boiling/density 21–40; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–50 (Tc unassigned); RSC melting/boiling/density 21–50; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
