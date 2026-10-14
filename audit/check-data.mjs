@@ -445,5 +445,42 @@ assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not establi
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
+
+// Phase 2: PubChem's directly labelled van der Waals radius (pm), first
+// ionization energy (eV) and electron affinity (eV) for Z=1..30.
+const pubchemVdwRadiusFirst30=[120,140,182,153,192,170,155,152,135,154,227,173,184,210,180,180,175,188,275,231,211,187,179,189,197,194,192,163,140,139];
+const pubchemFirstIonizationFirst30=[13.598,24.587,5.392,9.323,8.298,11.26,14.534,13.618,17.423,21.565,5.139,7.646,5.986,8.152,10.487,10.36,12.968,15.76,4.341,6.113,6.561,6.828,6.746,6.767,7.434,7.902,7.881,7.64,7.726,9.394];
+const pubchemElectronAffinityFirst30=[0.754,null,0.618,null,0.277,1.263,null,1.461,3.339,null,0.548,null,0.441,1.385,0.746,2.077,3.617,null,0.501,null,0.188,0.079,0.525,0.666,null,0.163,0.661,1.156,1.228,null];
+for(let i=0;i<30;i++){
+ assert.equal(detailed[i].atomicRadius,pubchemVdwRadiusFirst30[i],'PubChem van der Waals radius '+(i+1));
+ assert.equal(detailed[i].ionizationEnergy,pubchemFirstIonizationFirst30[i],'PubChem first ionization '+(i+1));
+ assert.equal(detailed[i].electronAffinity,pubchemElectronAffinityFirst30[i],'PubChem electron affinity '+(i+1));
+}
+const catalogRaw=readFileSync('element-photo-data.js','utf8');
+const catalog=JSON.parse(catalogRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
+assert.equal(Object.keys(catalog).length,118,'Photo metadata all 118');
+for(let z=105;z<=118;z++)assert.equal(catalog[String(z)].title,'No Image Found','No sample photo for '+z);
+const detailUi=readFileSync('element.html','utf8');
+assert.ok(detailUi.includes('placeholder || illustration || rightsUnknown'),'Image honesty safeguards');
+assert.ok(detailUi.includes('Van der Waals atomic radius'),'Radius definition in UI');
+assert.ok(detailUi.includes('First ionization energy'),'First ionization in UI');
+assert.ok(detailUi.includes('Common oxidation states'),'Selected oxidation states in UI');
+const quizSource=readFileSync('quiz.html','utf8');
+assert.ok(!quizSource.includes('"discoverer-"+e.atomicNumber'),'Exclude ambiguous discoverer prompts');
+assert.ok(!quizSource.includes('"use-"+e.atomicNumber'),'Exclude overlapping uses prompts');
+const quizCode=[...quizSource.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)]
+ .map(m=>m[1]).find(s=>s.includes('buildQuestionPool'));
+assert.ok(quizCode,'Quiz builder present');
+const poolPrefix=quizCode.slice(0,quizCode.indexOf('const pool=buildQuestionPool();'));
+const questionPool=new Function('window',poolPrefix+'\nreturn buildQuestionPool();')({PERIODIC_ELEMENTS:detailed});
+assert.ok(questionPool.length>=500,'Quiz has at least 500 questions');
+assert.equal(new Set(questionPool.map(q=>q.id)).size,questionPool.length,'Unique question IDs');
+for(const question of questionPool){
+ assert.equal(question.choices.length,4,'Four choices '+question.id);
+ assert.equal(new Set(question.choices).size,4,'No duplicate distractors '+question.id);
+ assert.equal(question.choices.filter(c=>c===question.answer).length,1,'Unique designated answer '+question.id);
+}
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
+console.log('PASS: PubChem 1–30 radius/ionization/affinity, quiz generator, and image provenance guardrails');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
