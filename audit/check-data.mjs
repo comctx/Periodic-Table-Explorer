@@ -494,6 +494,25 @@ for(let i=0;i<30;i++){
  assert.equal(detailed[z-1].electronAffinity,pubchemElectronAffinity31to60[i],'PubChem electron affinity '+z);
 }
 
+
+// Phase 2 completed for these three particular scientific fields: PubChem Z=61..118,
+// van der Waals radius (pm), first ionization energy (eV), electron affinity (eV).
+const pubchemVdwRadius61to90=[236,229,233,237,221,229,216,235,227,242,221,212,217,210,217,216,202,209,166,209,196,202,207,197,202,220,348,283,260,237];
+const pubchemFirstIonization61to90=[5.55,5.644,5.67,6.15,5.864,5.939,6.022,6.108,6.184,6.254,5.426,6.825,7.89,7.98,7.88,8.7,9.1,9,9.226,10.438,6.108,7.417,7.289,8.417,9.5,10.745,3.9,5.279,5.17,6.08];
+const pubchemElectronAffinity61to90=[null,null,null,null,null,null,null,null,null,null,null,null,0.322,0.815,0.15,1.1,1.565,2.128,2.309,null,0.2,0.36,0.946,1.9,2.8,null,0.47,null,null,null];
+const pubchemVdwRadius91to118=[243,240,221,243,244,245,244,245,245,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+const pubchemFirstIonization91to118=[5.89,6.194,6.266,6.06,5.993,6.02,6.23,6.3,6.42,6.5,6.58,6.65,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+const pubchemElectronAffinity91to118=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+for(let z=61;z<=118;z++){
+ const i=z<=90?z-61:z-91;
+ const r=z<=90?pubchemVdwRadius61to90:pubchemVdwRadius91to118;
+ const ie=z<=90?pubchemFirstIonization61to90:pubchemFirstIonization91to118;
+ const ea=z<=90?pubchemElectronAffinity61to90:pubchemElectronAffinity91to118;
+ assert.equal(detailed[z-1].atomicRadius,r[i],'PubChem van der Waals radius '+z);
+ assert.equal(detailed[z-1].ionizationEnergy,ie[i],'PubChem first ionization '+z);
+ assert.equal(detailed[z-1].electronAffinity,ea[i],'PubChem electron affinity '+z);
+}
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
-console.log('PASS: PubChem Z=1–60 radius/ionization/affinity fixtures, quiz pool validity and image provenance UI guardrails');
+console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
