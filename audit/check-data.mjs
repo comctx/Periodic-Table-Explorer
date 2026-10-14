@@ -637,8 +637,23 @@ const verifiedUses31to60={
 for(const [z,v] of Object.entries(verifiedUses31to60))
  assert.equal(detailed[Number(z)-1].typicalUses,v,'Correct elemental/compound uses '+z);
 
+
+// Session 18: source-specific RSC Pauling scale, all Z=61..70
+const rscPauling61to70=[null,1.17,null,1.2,null,1.22,1.23,1.24,1.25,null];
+for(let i=0;i<10;i++)
+ assert.equal(detailed[60+i].electronegativity,rscPauling61to70[i],'RSC Pauling 61-70 '+(i+61));
+assert.equal(detailed[64].oxidationStates,'+4, +3','RSC Tb 4 and 3');
+assert.equal(detailed[68].oxidationStates,'+3, +2','RSC Tm 3 and 2');
+assert.equal(detailed[62].appearance,"A soft, silvery metal that tarnishes quickly and reacts with water.",'RSC Eu appearance');
+assert.equal(detailed[69].appearance,"A soft, silvery metal that gradually develops a protective oxide layer in air.",'RSC Yb appearance');
+assert.equal(detailed[62].typicalUses,"Europium compounds provide light-emitting phosphors for lamps, displays and UV-visible security inks. Europium-containing materials also have specialized laser and neutron-absorption uses.",'RSC-informed uses Z=63');
+assert.equal(detailed[63].typicalUses,"Gadolinium-containing compounds are used as MRI contrast agents; gadolinium-containing alloys are used in magnets and electronics. Its neutron-absorbing properties are useful in nuclear technology.",'RSC-informed uses Z=64');
+assert.equal(detailed[64].typicalUses,"Terbium compounds provide green phosphors for lighting and displays. Terbium-containing alloys are used in some magnetic and electronic materials.",'RSC-informed uses Z=65');
+assert.equal(detailed[69].typicalUses,"Ytterbium compounds and materials are used in certain tunable or fiber lasers and specialty catalysts; other uses remain limited or experimental.",'RSC-informed uses Z=70');
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
 console.log('PASS: RSC Pauling 31–60, Pr oxidation, source-qualified appearance and element/compound uses');
+console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appearances and clarified uses');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
