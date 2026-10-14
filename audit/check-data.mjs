@@ -594,6 +594,14 @@ for(const [z,shells] of Object.entries(nistAnomalousNeutral)){
   JSON.stringify(Object.keys(shells).sort().map(k=>[k,shells[k]])),'NIST anomalous ground state '+z);
 }
 
+
+// Extension: RSC transition metals 24–28. Lists indicate documented source conventions
+// and may include rare but recognized forms, not their relative abundance.
+const rscOxTransition={24:'+6, +3, +2, 0',25:'+7, +6, +4, +3, +2, 0, -1',
+ 26:'+6, +3, +2, 0, -2',28:'+3, +2, 0'};
+for(const [z,states] of Object.entries(rscOxTransition))
+ assert.equal(detailed[Number(z)-1].oxidationStates,states,'RSC transition-metal states '+z);
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
