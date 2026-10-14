@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–80 (technetium and promethium have no standard weights)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–90 (Tc/Pm and Po–Ac unassigned)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–80, including electron configurations for 61–80
+- [x] RSC melting, boiling, and density conventions for elements 21–90, including electron configurations for 61–90
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -268,3 +268,38 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Sources:** [CIAAW 2024 abridged table](https://www.ciaaw.org/abridged-atomic-weights.htm); RSC [Lu](https://periodic-table.rsc.org/element/71/lutetium), [Hf](https://periodic-table.rsc.org/element/72/hafnium), [Ta](https://periodic-table.rsc.org/element/73/tantalum), [W](https://periodic-table.rsc.org/element/74/tungsten), [Re](https://periodic-table.rsc.org/element/75/rhenium), [Os](https://periodic-table.rsc.org/element/76/osmium), [Ir](https://periodic-table.rsc.org/element/77/iridium), [Pt](https://periodic-table.rsc.org/element/78/platinum), [Au](https://periodic-table.rsc.org/element/79/gold), [Hg](https://periodic-table.rsc.org/element/80/mercury).
 
 **Unverified:** All other chemistry fields, pressure-dependent phase model, complete quiz question and answer checking, photographs and licensing, manual browser workflows, full Node and packaged Windows app validation. CIAAW abridged values deliberately differ from RSC's sometimes more precise relative masses; CIAAW uncertainties are not displayed. **No merge to main; no Microsoft Store resubmission.**
+
+## Audit session 9 — 2026-10-14: elements 81–90 (Tl through Th)
+
+**Official standards:** [CIAAW 2024 abridged weights](https://www.ciaaw.org/abridged-atomic-weights.htm) (no standard atomic weights for Po, At, Rn, Fr, Ra, Ac); [Royal Society of Chemistry's element data and historical pages](https://periodic-table.rsc.org/) for melting/boiling temperatures (K), density (g/cm³ at room temperature), 20°C state, electron configuration and discovery credit. CIAAW numeric weights are **abridged**, and isotope mass numbers are not standard weights.
+
+| # | Element | CIAAW weight | RSC melting / boiling (K) | Density (g/cm³) | Discovery milestone |
+|---:|---|---:|---|---:|---|
+| 81 | Thallium | 204.38 | 577 / 1746 | 11.8 | 1861: William Crookes |
+| 82 | Lead | 207.2 | 600.612 / 2022 | 11.3 | Ancient: no sole discoverer |
+| 83 | Bismuth | 208.98 | 544.556 / 1837 | 9.79 | 1753: Claude-François Geoffroy |
+| 84 | Polonium | none; isotope [209] | 527 / 1235 | 9.2 | 1898: Marie Curie and Pierre Curie |
+| 85 | Astatine | none; isotope [210] | 573 / 623 | unknown | 1940: Dale R. Corson, Kenneth Ross MacKenzie, and Emilio Segrè |
+| 86 | Radon | none; isotope [222] | 202 / 211.5 | 0.009074 | 1900: Friedrich Ernst Dorn |
+| 87 | Francium | none; isotope [223] | 294 / 923 | unknown | 1939: Marguerite Perey |
+| 88 | Radium | none; isotope [226] | 969 / 1773 | 5 | 1898: Marie Curie and Pierre Curie |
+| 89 | Actinium | none; isotope [227] | 1323 / 3473 | 10 | 1899: André Debierne |
+| 90 | Thorium | 232.04 | 2023 / 5058 | 11.7 | 1829: Jöns Jakob Berzelius |
+
+**Highlights and attribution nuances:**
+- #81 Thallium: Crookes spectroscopic identification 1861; Lamy independently isolated metal 1862. CIAAW weight 204.38.
+- #82 Lead: ancient metal in multiple cultures, no single discoverer; discard misleading 'Middle East' discoverer. CIAAW weight 207.2, RSC 600.612 K melt and 11.3 g/cm³ density.
+- #83 Bismuth: Geoffroy's 1753 contribution was **recognition as a separate metal**, not first ancient human use. CIAAW 208.98. Extremely slow radioactive decay of ^209Bi does not erase its standard atomic weight.
+- #84 Polonium: **Marie and Pierre Curie**, 1898, not Pierre alone. Weight `null`, isotope reference [209]. RSC 9.20 g/cm³, 527/1235 K.
+- #85 Astatine: **Corson, MacKenzie and Segrè**, confirmed 1940 synthetic production. No standard weight; isotope reference [210]; previously incorrectly assigned measured density 7, now **null (Unknown)**. RSC temperatures 573/623 K are limited estimates for a scarce radioactive element.
+- #86 Radon: Dorn 1900 radium emanation, with 1899 Rutherford/Owens and Curies prior radioactive-gas studies. No standard weight; isotope reference [222]. RSC gas density 0.009074 g/cm³ and 202/211.5 K.
+- #87 Francium: Perey 1939, identified in natural actinium decay. No standard weight; isotope [223]. Density is **Unknown**, RSC gives 294/923 K phase estimates.
+- #88 Radium: **Marie and Pierre Curie**, 1898; Bémont also involved in chemical separations, isolated metal later. No standard weight; isotope [226]. RSC 969/1773 K.
+- #89 Actinium: **André Debierne**, 1899, with Friedrich Oskar Giesel independently investigating related material in 1902. No standard weight; isotope [227]. RSC 1323/3473 K and density 10 g/cm³.
+- #90 Thorium: **Berzelius, 1829** rather than 1828. Despite radioactivity, CIAAW standard atomic weight is 232.04. RSC 2023/5058 K and 11.7 g/cm³.
+
+**Direct RSC fact/history references:** [Tl](https://periodic-table.rsc.org/element/81/thallium), [Pb](https://periodic-table.rsc.org/element/82/lead), [Bi](https://periodic-table.rsc.org/element/83/bismuth), [Po](https://periodic-table.rsc.org/element/84/polonium), [At](https://periodic-table.rsc.org/element/85/astatine), [Rn](https://periodic-table.rsc.org/element/86/radon), [Fr](https://periodic-table.rsc.org/element/87/francium), [Ra](https://periodic-table.rsc.org/element/88/radium), [Ac](https://periodic-table.rsc.org/element/89/actinium), [Th](https://periodic-table.rsc.org/element/90/thorium).
+
+**Display impact:** Main table `standardWeightText` and detail-page `referenceMassNumber` logic already support null standard weights and labeled bracketed isotope numbers. This batch supplies the missing values and reference fields. Unknown density remains `null`, never numerical zero. Browser rendering remains untested.
+
+**Still pending:** Full field-by-field chemistry for prior elements, photographs/license checks, quiz questions and distractor verification, browser integration, full actual Node regression, packaged Microsoft build validation, and elements #91–118. **Do not merge to `main` or resubmit until released by the full audit.**
