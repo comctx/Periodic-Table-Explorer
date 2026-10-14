@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–100 (radioactive elements without a standard atomic weight remain null)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–110 (null where no standard atomic weight)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–100, including electron configurations for 61–100
+- [x] RSC melting, boiling, and density conventions for elements 21–110, including electron configurations for 61–110
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -336,3 +336,38 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **RSC citations:** [Pa](https://periodic-table.rsc.org/element/91/protactinium), [U](https://periodic-table.rsc.org/element/92/uranium), [Np](https://periodic-table.rsc.org/element/93/neptunium), [Pu](https://periodic-table.rsc.org/element/94/plutonium), [Am](https://periodic-table.rsc.org/element/95/americium), [Cm](https://periodic-table.rsc.org/element/96/curium), [Bk](https://periodic-table.rsc.org/element/97/berkelium), [Cf](https://periodic-table.rsc.org/element/98/californium), [Es](https://periodic-table.rsc.org/element/99/einsteinium), [Fm](https://periodic-table.rsc.org/element/100/fermium). Additional: [PubChem protactinium](https://pubchem.ncbi.nlm.nih.gov/element/91), [PubChem fermium](https://pubchem.ncbi.nlm.nih.gov/element/100), [American Chemical Society / Berkeley transuranium history](https://www.acs.org/education/whatischemistry/landmarks/transuranium-elements-at-berkeley-lab.html).
 
 **Release scope:** All ten records have weight convention, RSC melting/boiling/density/state, RSC electron configuration, and separate discovery-history stories reviewed. **This does not certify all fields:** radius definitions, ionization/electron-affinity/electronegativity, oxidation states, isotope selection semantics, photographs and licenses, or quiz wording still need dedicated reviews. The simplified pressure-free temperature slider is not authoritative for scarce synthetic actinides. The regression assertions only check saved data against saved reference fixtures, not live experimental observations. Browser/Windows package validation remains pending. Do not merge to `main` or resubmit to Microsoft until release review passes.
+
+## Audit session 11 — 2026-10-14: elements 101–110 (mendelevium through darmstadtium)
+
+**Method:** Verified all ten records against [CIAAW 2024 abridged atomic weights](https://www.ciaaw.org/abridged-atomic-weights.htm) and individual [Royal Society of Chemistry fact boxes / histories](https://periodic-table.rsc.org/). **Every element from 101 to 110 lacks a CIAAW standard atomic weight**. Clear both numeric weight representations, and store RSC's bracketed isotope reference separately as `referenceMassNumber`. Brackets indicate a **mass number**, not an exact isotope mass in atomic mass units or an abundance-weighted standard atomic weight.
+
+| # | Element | Standard atomic weight | RSC bracket isotope mass # | RSC melting / boiling (K) | Density (g/cm³) | Discovery historical milestone |
+|---:|---|---|---:|---|---|---|
+| 101 | Mendelevium | **none** | [258] | 1100 / Unknown | Unknown | 1955: Albert Ghiorso, Bernard Harvey, Gregory Choppin, Stanley Thompson, and Glenn Seaborg |
+| 102 | Nobelium | **none** | [259] | 1100 / Unknown | Unknown | 1962–1963: Joint Institute for Nuclear Research (Dubna), team led by Georgy Flerov |
+| 103 | Lawrencium | **none** | [262] | 1900 / Unknown | Unknown | 1961: Lawrence Berkeley Laboratory team led by Albert Ghiorso |
+| 104 | Rutherfordium | **none** | [267] | Unknown / Unknown | Unknown | 1964–1969: Joint Institute for Nuclear Research (Dubna) and Lawrence Berkeley Laboratory (Berkeley) |
+| 105 | Dubnium | **none** | [268] | Unknown / Unknown | Unknown | 1968–1970: Joint Institute for Nuclear Research (Dubna) and Lawrence Berkeley Laboratory (Berkeley) |
+| 106 | Seaborgium | **none** | [269] | Unknown / Unknown | Unknown | 1974: Lawrence Berkeley Laboratory and Joint Institute for Nuclear Research teams |
+| 107 | Bohrium | **none** | [270] | Unknown / Unknown | Unknown | 1981: GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg |
+| 108 | Hassium | **none** | [269] | Unknown / Unknown | Unknown | 1984: GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg |
+| 109 | Meitnerium | **none** | [278] | Unknown / Unknown | Unknown | 1982: GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg |
+| 110 | Darmstadtium | **none** | [281] | Unknown / Unknown | Unknown | 1994: GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg |
+
+**Important corrections / scientific cautions:**
+- **101 Mendelevium:** RSC 1955 discovery team **Albert Ghiorso, Bernard Harvey, Gregory Choppin, Stanley Thompson, Glenn Seaborg** (replacing an institutional label). Melting 1100 K; boiling and density unknown. RSC reports ground-state `[Rn] 5f13 7s2`; Pauling electronegativity unknown.
+- **102 Nobelium:** Early Stockholm 1957 and Berkeley 1958 claims were disputed; a Dubna team led by **Georgy Flerov** produced better-supported isotopes **1962–1963**, which IUPAC eventually credited. The app no longer presents 1957 as settled discovery. RSC melting 1100 K; boiling/density unknown.
+- **103 Lawrencium:** Berkeley 1961 work contested by Dubna 1965; IUPAC credited Berkeley. RSC config **`[Rn] 5f14 7s2 7p1`**, not old 6d1. RSC lists 1900 K melting, unknown boiling/density.
+- **104 Rutherfordium:** Dubna 1964 (Georgy Flerov) and Berkeley 1969 (Albert Ghiorso) claims were both considered justified by IUPAC according to RSC. Credit both and show **1964–1969**, rather than treating the first report as final settled credit.
+- **105 Dubnium:** Dubna 1968 versus Berkeley 1970 competing claims; eventually named for Dubna. Credit both and clarify controversy instead of app's 1967 claim.
+- **106 Seaborgium:** Berkeley and Dubna 1974 evidence; RSC also discusses a contested early 1970 Berkeley result. The name honours Glenn Seaborg.
+- **107 Bohrium:** Dubna's 1975 synthesis claim and GSI's 1981 verification/recognition. IUPAC credited **GSI group led by Peter Armbruster and Gottfried Münzenberg**, not 1976 GSI discovery as prior app implied.
+- **108 Hassium:** Earlier Dubna experiments, GSI 1984 accepted synthesis. Credit Armbruster/Münzenberg-led GSI team.
+- **109 Meitnerium:** GSI team detected one atom in 1982 by bismuth + iron fusion. Named after Lise Meitner. RSC isotope reference **[278]**, not the old main table's 278 being an atomic weight.
+- **110 Darmstadtium:** GSI 1994 lead+nickel synthesis accepted for naming amid Dubna claims. Corrected electron configuration to RSC **`[Rn] 5f14 6d9 7s1`**, not the old `6d8 7s2`. Retained qualified display **Expected to be a solid**, because bulk phase has not been experimentally characterized.
+
+**Missing-property policy:** RSC lists melting/boiling/density **Unknown** for #104–110. Keep all as `null`; do not insert density/phase values inferred from theoretical tables. RSC also lists Pauling electronegativity Unknown for #101–103 and common oxidation states Unknown for #104–110; these are left `null` rather than showing former unsourced predicted numbers. **This is a reference-aligned unknown, not evidence the properties are physically absent.** For all synthetic superheavy elements, even RSC's listed room-temperature state is an expected categorization rather than direct observation of macroscopic samples. Calculated electron configurations are not claimed as experimentally measured.
+
+**Primary sources:** [CIAAW 2024](https://www.ciaaw.org/abridged-atomic-weights.htm); RSC [Md](https://periodic-table.rsc.org/element/101/mendelevium), [No](https://periodic-table.rsc.org/element/102/nobelium), [Lr](https://periodic-table.rsc.org/element/103/lawrencium), [Rf](https://periodic-table.rsc.org/element/104/rutherfordium), [Db](https://periodic-table.rsc.org/element/105/dubnium), [Sg](https://periodic-table.rsc.org/element/106/seaborgium), [Bh](https://periodic-table.rsc.org/element/107/bohrium), [Hs](https://periodic-table.rsc.org/element/108/hassium), [Mt](https://periodic-table.rsc.org/element/109/meitnerium), [Ds](https://periodic-table.rsc.org/element/110/darmstadtium).
+
+**Still pending:** Elements 111–118, comprehensive property review for all 118 (radius definitions, first ionization energy, affinities, oxidation states, uses), all photographs and their rights, ambiguous historical quiz answers/distractors, actual browser review, and a complete packaged Windows regression. **Do not merge to `main` or resubmit to Microsoft.**
