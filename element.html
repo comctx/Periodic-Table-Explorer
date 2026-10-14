@@ -155,6 +155,15 @@ function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Nu
 function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
 
 const discoveryStories={
+  41:"Charles Hatchett found evidence of a new element in 1801 while examining columbite in the British Museum. He called it columbium. Heinrich Rose distinguished it from tantalum in 1844 and proposed niobium; pure niobium metal was obtained later.",
+  42:"Carl Wilhelm Scheele distinguished molybdenite from graphite and lead ores in 1778, revealing the chemistry of a new element. Peter Jacob Hjelm later produced molybdenum metal in 1781.",
+  44:"Gottfried Osann proposed the name ruthenium after studying platinum ores during the 1820s, but his early claims were contested. Karl Ernst Claus (Klaus) isolated and characterised the metal, with recognized discovery normally dated to 1844. RSC's historical account also refers to work beginning in 1840.",
+  45:"William Hyde Wollaston discovered rhodium in 1803 while studying dissolved platinum ores. Rose-red rhodium salts led to the element's name, and Wollaston later isolated its metal.",
+  46:"William Hyde Wollaston isolated palladium from platinum ore in 1803. He initially sold small samples without identifying himself, then publicly explained the discovery in 1805. Palladium was named after the asteroid Pallas.",
+  47:"Silver has been known and worked since antiquity, with no identifiable single discoverer. Ancient civilizations mined, refined and used silver for jewellery, trade and coinage.",
+  48:"Friedrich Stromeyer identified and isolated cadmium in 1817 while investigating unusual discoloration in zinc compounds. Karl Samuel Leberecht Hermann independently worked on cadmium-bearing compounds around the same period; exact historical credit is sometimes shared.",
+  49:"Ferdinand Reich detected unexpected lines in the spectrum of a zinc ore in 1863. Because Reich was colour-blind, he worked with Hieronymus Richter, who identified a striking indigo spectral line. Together they isolated the new element, named indium.",
+  50:"Tin was used long before modern chemistry, with no known single discoverer. Alloying tin with copper to make bronze contributed to the Bronze Age, while tin ores such as cassiterite supplied the metal in many ancient societies.",
   1:"Henry Cavendish collected the gas released when acids reacted with metals and showed that it was a distinct substance. When the gas burned, it produced water, helping establish hydrogen as an element rather than a form of ordinary air.",
   2:"In 1868, Pierre Janssen and Norman Lockyer independently observed an unfamiliar yellow spectral line in sunlight, providing the first evidence of helium. The element was identified on Earth in 1895 after investigations of gas released from minerals.",
   9:"Fluorine-containing compounds were known long before the element could be isolated. André-Marie Ampère proposed the name fluorine in 1812. Henri Moissan first successfully isolated elemental fluorine in 1886 by electrolysis, overcoming its extreme reactivity.",
@@ -184,7 +193,7 @@ const discoveryStories={
   31:"In Paris in 1875, Paul-Émile Lecoq de Boisbaudran spotted an unfamiliar violet spectral line while examining zinc-blende material. He isolated gallium later that year. The finding matched Mendeleev's earlier prediction of an element below aluminium.",
   32:"Clemens Winkler identified germanium in 1886 while analysing the silver mineral argyrodite. Its properties closely matched Dmitri Mendeleev's predicted eka-silicon.",
   35:"Antoine-Jérôme Balard publicly reported bromine in 1826 after obtaining a reddish liquid from concentrated brine. Carl Löwig had independently prepared bromine in 1825 but had not published his result before Balard.",
-  43:"Technetium became the first element to be produced artificially. In 1937, Emilio Segrè and Carlo Perrier identified element 43 in molybdenum that had been bombarded in a particle accelerator.",
+  43:"Carlo Perrier and Emilio Segrè identified technetium in 1937 after analysing molybdenum irradiated in a cyclotron. It was the first artificially produced element to be conclusively identified. Its isotopes are radioactive, so it has no standard atomic weight; [98] on some tables is a representative mass number, not an atomic weight.",
   53:"Bernard Courtois discovered iodine in 1811 while processing seaweed ash for saltpeter production. He noticed violet vapors rising from the material; the vapor condensed into dark crystals of a new element.",
   84:"Marie and Pierre Curie discovered polonium while investigating unusually radioactive pitchblende. The ore was more radioactive than its known uranium content could explain, pointing to previously unknown radioactive elements.",
   85:"Astatine was first produced in 1940 when Dale Corson, Kenneth MacKenzie, and Emilio Segrè bombarded bismuth with alpha particles. Because its isotopes are short-lived, only tiny amounts can exist at one time.",
@@ -282,7 +291,7 @@ if(!e){
  document.title=e.name+" • Periodic Table Explorer";
  document.getElementById("atomicNumber").textContent=e.atomicNumber;
  document.getElementById("symbol").textContent=e.symbol;
- document.getElementById("mass").textContent=e.atomicMass;
+ document.getElementById("mass").textContent=e.atomicMass==null?"—":e.atomicMass;
  document.getElementById("name").textContent=e.name;
  document.getElementById("subtitle").textContent=e.groupBlock||"Element";
  document.getElementById("status").textContent="Element "+e.atomicNumber+" of 118 • "+(e.standardState||"State unknown");
@@ -291,7 +300,8 @@ if(!e){
  document.getElementById("basicGrid").innerHTML=
    fact("Atomic number",e.atomicNumber)+
    fact("Symbol",e.symbol)+
-   fact("Atomic mass",e.atomicMass)+
+   fact(e.atomicMass==null?"Standard atomic weight":"Atomic mass",e.atomicMass==null?"Not assigned":e.atomicMass)+
+   (e.referenceMassNumber!=null?fact("Reference isotope mass number (not atomic weight)","["+e.referenceMassNumber+"]"):"")+
    fact("Category",e.groupBlock||"—")+
    fact("State",e.standardState||"—")+
    fact("Year discovered",e.yearDiscovered||"—");
