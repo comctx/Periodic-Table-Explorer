@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–90 (Tc/Pm and Po–Ac unassigned)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–100 (radioactive elements without a standard atomic weight remain null)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–90, including electron configurations for 61–90
+- [x] RSC melting, boiling, and density conventions for elements 21–100, including electron configurations for 61–100
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -303,3 +303,36 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Display impact:** Main table `standardWeightText` and detail-page `referenceMassNumber` logic already support null standard weights and labeled bracketed isotope numbers. This batch supplies the missing values and reference fields. Unknown density remains `null`, never numerical zero. Browser rendering remains untested.
 
 **Still pending:** Full field-by-field chemistry for prior elements, photographs/license checks, quiz questions and distractor verification, browser integration, full actual Node regression, packaged Microsoft build validation, and elements #91–118. **Do not merge to `main` or resubmit until released by the full audit.**
+
+## Audit session 10 — 2026-10-14: elements 91–100 (protactinium through fermium)
+
+**Method:** Verified CIAAW's [2024 abridged standard atomic weights](https://www.ciaaw.org/abridged-atomic-weights.htm) and the [Royal Society of Chemistry's element records](https://periodic-table.rsc.org/) for melting/boiling temperatures in K, densities at room temperature in g/cm³, standard states, electron configurations, and discovery-history milestones. All edits remain on `scientific-audit-2026-10`.
+
+| # | Element | CIAAW 2024 weight | RSC melt / boil (K) | RSC density (g/cm³) | Historical identification |
+|---:|---|---:|---|---:|---|
+| 91 | Protactinium | 231.04 | 1845 / 4273 | 15.4 | 1913 — Kasimir Fajans and Otto Göhring |
+| 92 | Uranium | 238.03 | 1408 / 4404 | 19.1 | 1789 — Martin Heinrich Klaproth |
+| 93 | Neptunium | none; isotope [237] | 917 / 4175 | 20.2 | 1940 — Edwin McMillan and Philip Abelson |
+| 94 | Plutonium | none; isotope [244] | 913 / 3501 | 19.7 | 1940 — Glenn T. Seaborg, Arthur Wahl, Joseph W. Kennedy, and Edwin McMillan |
+| 95 | Americium | none; isotope [243] | 1449 / 2284 | 12 | 1944 — Glenn T. Seaborg, Ralph A. James, Leon O. Morgan, and Albert Ghiorso |
+| 96 | Curium | none; isotope [247] | 1618 / unknown | 13.51 | 1944 — Glenn T. Seaborg, Ralph A. James, and Albert Ghiorso |
+| 97 | Berkelium | none; isotope [247] | 1259 / unknown | 14.78 | 1949 — Stanley G. Thompson, Albert Ghiorso, and Glenn T. Seaborg |
+| 98 | Californium | none; isotope [251] | 1173 / unknown | 15.1 | 1950 — Stanley G. Thompson, Kenneth Street Jr., Albert Ghiorso, and Glenn T. Seaborg |
+| 99 | Einsteinium | none; isotope [252] | 1133 / unknown | unknown | 1952 — Gregory Choppin, Stanley G. Thompson, Albert Ghiorso, and Bernard Harvey |
+| 100 | Fermium | none; isotope [257] | 1800 / unknown | unknown | 1953 — Albert Ghiorso and colleagues (Berkeley, Argonne, and Los Alamos) |
+
+**Specific historical corrections and scientific cautions:**
+- #91 Protactinium: **Kasimir Fajans and Otto Göhring** identified a short-lived form in **1913**; Crookes only separated radioactive material in 1900 without identifying element 91. Longer-lived protactinium-231 was identified by **Lise Meitner and Otto Hahn** and independently **Frederick Soddy and John Cranston** in 1917–18. Use 1913 initial element identification as `yearDiscovered` and describe name/isolated metal separately. CIAAW weight **231.04**; RSC boil **4273 K** (previously absent); density **15.4**.
+- #92 Uranium: Klaproth recognized its oxide in **1789**, Péligot isolated the metal **1841**; Becquerel demonstrated radioactivity in 1896. CIAAW **238.03** despite uranium radioactivity; RSC density **19.1**.
+- #93 Neptunium: **McMillan and Abelson, 1940**, jointly credited. **No standard atomic weight**; isotope [237]. RSC density **20.2**, not 20.25.
+- #94 Plutonium: **Seaborg, Wahl, Kennedy and McMillan** worked on first production **December 1940**, with definitive identification in 1941. No standard weight, reference isotope [244]. RSC density **19.7**, not 19.84.
+- #95 Americium: **Seaborg, James, Morgan and Ghiorso**, produced 1944. No standard weight; isotope [243]. RSC density **12**, not 13.69. Note that the ubiquitous smoke-detector isotope is typically Am-241, distinct from the bracketed reference mass number [243].
+- #96 Curium: **Seaborg, James and Ghiorso**, produced 1944 and publicly disclosed 1945. No standard weight; isotope [247]. RSC boiling point **unknown** (previous file invented 3400 K), now `null`.
+- #97 Berkelium: **Thompson, Ghiorso and Seaborg**, produced 1949. No standard weight; isotope [247]. RSC melting **1259 K** (previous 1323 K), density **14.78**.
+- #98 Californium: **Thompson, Street Jr., Ghiorso and Seaborg**, produced 1950. No standard weight; isotope [251]. RSC density **15.1**, which previous file wrongly left unknown; boiling unknown.
+- #99 Einsteinium: **Choppin, Thompson, Ghiorso and Harvey** identified in thermonuclear-test debris from **1952**, news declassified 1955. No standard weight; isotope [252]. RSC density and boiling **unknown**.
+- #100 Fermium: Produced in 1 November **1952** thermonuclear test debris; RSC assigns **1953** discovery/identification, whereas other histories use 1952 for production/detection. In this record `yearDiscovered:1953`, with production year distinguished explicitly in the story. Identification by Ghiorso and collaborating groups. No standard weight; isotope [257]; density and boiling unknown.
+
+**RSC citations:** [Pa](https://periodic-table.rsc.org/element/91/protactinium), [U](https://periodic-table.rsc.org/element/92/uranium), [Np](https://periodic-table.rsc.org/element/93/neptunium), [Pu](https://periodic-table.rsc.org/element/94/plutonium), [Am](https://periodic-table.rsc.org/element/95/americium), [Cm](https://periodic-table.rsc.org/element/96/curium), [Bk](https://periodic-table.rsc.org/element/97/berkelium), [Cf](https://periodic-table.rsc.org/element/98/californium), [Es](https://periodic-table.rsc.org/element/99/einsteinium), [Fm](https://periodic-table.rsc.org/element/100/fermium). Additional: [PubChem protactinium](https://pubchem.ncbi.nlm.nih.gov/element/91), [PubChem fermium](https://pubchem.ncbi.nlm.nih.gov/element/100), [American Chemical Society / Berkeley transuranium history](https://www.acs.org/education/whatischemistry/landmarks/transuranium-elements-at-berkeley-lab.html).
+
+**Release scope:** All ten records have weight convention, RSC melting/boiling/density/state, RSC electron configuration, and separate discovery-history stories reviewed. **This does not certify all fields:** radius definitions, ionization/electron-affinity/electronegativity, oxidation states, isotope selection semantics, photographs and licenses, or quiz wording still need dedicated reviews. The simplified pressure-free temperature slider is not authoritative for scarce synthetic actinides. The regression assertions only check saved data against saved reference fixtures, not live experimental observations. Browser/Windows package validation remains pending. Do not merge to `main` or resubmit to Microsoft until release review passes.
