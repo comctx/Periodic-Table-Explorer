@@ -536,3 +536,69 @@ RSC explicitly records terbium's selected common oxidation states as **+4 and +3
 | 70 Yb | typicalUses | "Fiber lasers, stainless steel improvement, stress gauges, and atomic-clock research." | "Ytterbium compounds and materials are used in certain tunable or fiber lasers and specialty catalysts; other uses remain limited or experimental." |
 
 These RSC-selected common oxidation states are not exhaustive enumerations of every exotic complex or compound. Photos, other science fields and integrated browser/package QA are still not cleared. Do not merge to main or resubmit.
+
+## Audit session 19 — 2026-10-14: elements 71–90, Pauling / oxidation / appearance / uses
+
+Compared every **Pauling electronegativity** and RSC **common oxidation states** record for #71–90 with the twenty individual [Royal Society of Chemistry element data](https://periodic-table.rsc.org/) pages. 49 changes in 20 records, including 8 electronegativity realignments, 8 oxidation-list corrections, 16 appearance clarifications, and 17 applications clarifications.
+
+**Critical source-convention warning:** RSC publishes some Pauling electronegativity numbers different from other credible chemistry sources. Notably RSC **Lu 1.0** (app's previous 1.27), **W 1.7** (2.36), **Pt 2.2** (2.28), **Au 2.4** (2.54), **Hg 1.9** (2.0), **Tl 1.8** (1.62), **Pb 1.8** (2.33), **Bi 1.9** (2.02). Aligning to RSC **does not establish the previous values as inherently scientifically false**; they are reported by other published Pauling compilations. The app's display now follows the declared RSC reference for this batch and source provenance is documented here. RSC [Lu](https://periodic-table.rsc.org/element/71/lutetium), [W](https://periodic-table.rsc.org/element/74/tungsten), [Pt](https://periodic-table.rsc.org/element/78/platinum), [Au](https://periodic-table.rsc.org/element/79/gold), [Hg](https://periodic-table.rsc.org/element/80/mercury), [Tl](https://periodic-table.rsc.org/element/81/thallium), [Pb](https://periodic-table.rsc.org/element/82/lead), [Bi](https://periodic-table.rsc.org/element/83/bismuth).
+
+**Confirmed oxidation corrections** from the RSC-specific selected-states list: tungsten **+6,+5,+4,+3,+2,0**, rhenium **+7,+6,+4,+2,−1**, osmium **+8,+6,+4,+3,+2,0,−2**, iridium **+6,+4,+3,+2,+1,0,−1**, gold **+5,+4,+3,+2,+1,−1**, polonium **+6,+4,+2**, astatine **+7,+5,+3,+1,−1** (also fix missing plus signs), radon **+2** (rather than simply 0). Other elements' oxidation lists already matched RSC. The existence of 0 for free elements, including radon, is not negated; RSC's compound-oxidation list uses +2 for radon. Relevant source pages: [W](https://periodic-table.rsc.org/element/74/tungsten), [Re](https://periodic-table.rsc.org/element/75/rhenium), [Os](https://periodic-table.rsc.org/element/76/osmium), [Ir](https://periodic-table.rsc.org/element/77/iridium), [Au](https://periodic-table.rsc.org/element/79/gold), [Po](https://periodic-table.rsc.org/element/84/polonium), [At](https://periodic-table.rsc.org/element/85/astatine), [Rn](https://periodic-table.rsc.org/element/86/radon).
+
+**Appearance and uses review:** Corrected misleading descriptions (especially astatine's unobserved macroscopic appearance, radon's unspecified discharge glow, mercury as a liquid, and appearance of bismuth/polonium). In descriptions of hafnium, tungsten, platinum, bismuth and other metals, clarified which actual uses involve metals, alloys, oxides, salts or radioisotopes, including medical uses of lutetium-177 and radium-223. Explicitly noted discontinued/regulated uses of mercury, lead and thallium, and experimental rather than established use of astatine-211 or actinium-225. This does not claim a verified comprehensive taxonomy of all possible applications.
+
+| Element | Changed field | Prior application value | New audited value |
+|---|---|---|---|
+| 71 Lu | electronegativity | 1.27 | 1 |
+| 74 W | electronegativity | 2.36 | 1.7 |
+| 74 W | oxidationStates | "+6" | "+6, +5, +4, +3, +2, 0" |
+| 75 Re | oxidationStates | "+7, +6, +4" | "+7, +6, +4, +2, -1" |
+| 76 Os | oxidationStates | "+4, +3" | "+8, +6, +4, +3, +2, 0, -2" |
+| 77 Ir | oxidationStates | "+4, +3" | "+6, +4, +3, +2, +1, 0, -1" |
+| 78 Pt | electronegativity | 2.28 | 2.2 |
+| 79 Au | electronegativity | 2.54 | 2.4 |
+| 79 Au | oxidationStates | "+3, +1" | "+5, +4, +3, +2, +1, -1" |
+| 80 Hg | electronegativity | 2 | 1.9 |
+| 81 Tl | electronegativity | 1.62 | 1.8 |
+| 82 Pb | electronegativity | 2.33 | 1.8 |
+| 83 Bi | electronegativity | 2.02 | 1.9 |
+| 84 Po | oxidationStates | "+4, +2" | "+6, +4, +2" |
+| 85 At | oxidationStates | "7, 5, 3, 1, -1" | "+7, +5, +3, +1, -1" |
+| 86 Rn | oxidationStates | "0" | "+2" |
+| 71 Lu | appearance | "silvery white" | "A hard, dense, silvery-white metal." |
+| 72 Hf | appearance | "steel gray" | "A shiny, corrosion-resistant silvery metal." |
+| 73 Ta | appearance | "gray blue" | "A shiny, silvery metal that is highly resistant to corrosion." |
+| 74 W | appearance | "grayish white, lustrous" | "A shiny, silvery-white metal with an exceptionally high melting point." |
+| 76 Os | appearance | "silvery, blue cast" | "A shiny, silver metal that resists corrosion; its oxide osmium tetroxide is highly toxic." |
+| 77 Ir | appearance | "silvery white" | "A hard, silvery metal with exceptional corrosion resistance." |
+| 80 Hg | appearance | "silvery" | "A silvery liquid metal at ordinary room temperature; toxic vapor can be released." |
+| 81 Tl | appearance | "silvery white" | "A soft, silvery-white metal that tarnishes easily." |
+| 83 Bi | appearance | "lustrous silver" | "A silvery metal with a pinkish tinge." |
+| 84 Po | appearance | "silvery" | "A silvery-grey, highly radioactive semimetal." |
+| 85 At | appearance | "unknown, probably metallic" | "The bulk appearance of astatine has not been directly established; only very small, highly radioactive quantities have been produced." |
+| 86 Rn | appearance | "colorless gas, occasionally glows green or red in discharge tubes" | "A colourless, odourless, radioactive gas at room temperature." |
+| 87 Fr | appearance | null | "Its bulk appearance has not been observed; the metal is expected to resemble other alkali metals, but available quantities are minute." |
+| 88 Ra | appearance | "silvery white metallic" | "A soft, shiny, silvery radioactive metal." |
+| 89 Ac | appearance | null | "A soft, silvery-white radioactive metal." |
+| 90 Th | appearance | "silvery, often with black tarnish" | "A weakly radioactive, silvery metal that can tarnish." |
+| 71 Lu | typicalUses | "Petroleum-refining catalysts, LED phosphors, detectors, and specialty alloys." | "Lutetium and its compounds have limited industrial use. Lutetium-based catalysts can assist hydrocarbon cracking in petroleum refining, and lutetium-177 is used in certain radiopharmaceutical cancer treatments." |
+| 72 Hf | typicalUses | "Nuclear reactor control materials, superalloys, plasma-cutting electrodes, and microelectronics." | "Hafnium metal is used in neutron-absorbing control rods, high-temperature alloys, and plasma torch electrodes. Hafnium oxide is used as an electrical insulator in microchips." |
+| 73 Ta | typicalUses | "Electronic capacitors, surgical implants, chemical equipment, and high-temperature alloys." | "Tantalum metal is used in compact electronic capacitors, surgical implants, and corrosion-resistant equipment. Its protective oxide film acts as the capacitor dielectric." |
+| 74 W | typicalUses | "Cutting tools, high-temperature alloys, lamp filaments, electronics, and machinery." | "Tungsten metal and its alloys are used in high-temperature electrodes, heating elements and specialty components. Tungsten carbide, a compound of tungsten and carbon, is used in cutting and drilling tools; incandescent lamp filaments are a historical use." |
+| 76 Os | typicalUses | "Hard alloys, electrical contacts, fountain-pen tips, and catalysts." | "Osmium-containing hard alloys have been used in pen tips, instrument pivots and electrical contacts. Some osmium compounds serve as catalysts; osmium tetroxide is volatile and highly toxic." |
+| 77 Ir | typicalUses | "Spark plugs, crucibles, electrical contacts, and corrosion-resistant alloys." | "Iridium and its alloys are used for durable spark-plug electrodes, high-temperature components and corrosion-resistant instruments; iridium compounds have specialist catalytic uses." |
+| 78 Pt | typicalUses | "Catalytic converters, jewelry, laboratory equipment, electronics, and medical devices." | "Platinum metal is used in automotive catalytic converters, jewellery, fuel-cell catalysts and laboratory equipment. Platinum-based compounds are used in certain anticancer medicines." |
+| 80 Hg | typicalUses | "Some lamps, scientific instruments, switches, and industrial processes; its use is tightly controlled because mercury is toxic." | "Mercury was historically used in thermometers, switches, lamps and chemical production. Many of these uses have been restricted or phased out because mercury and some mercury compounds are highly toxic." |
+| 81 Tl | typicalUses | "Electronics, infrared detectors, specialty glass, and certain alloys; thallium compounds are highly toxic." | "Thallium-containing materials have niche electronic, photoelectric and optical-glass applications. Historical uses of highly toxic thallium compounds as rodenticides are prohibited or restricted in many countries." |
+| 82 Pb | typicalUses | "Lead-acid batteries, radiation shielding, weights, and specialized alloys." | "Lead metal and lead-containing compounds are used in lead–acid batteries, radiation shielding and some specialty alloys. Exposure to lead is hazardous, especially for children, and many former uses have been restricted." |
+| 83 Bi | typicalUses | "Medicines, low-melting alloys, fire-safety devices, cosmetics pigments, and laboratory materials." | "Bismuth is used in low-melting metal alloys; bismuth compounds are used in some medicines, pigments, and cosmetics. These applications should not be confused with uses of the pure metal." |
+| 84 Po | typicalUses | "Scientific research, static eliminators, and specialized nuclear applications." | "Polonium-210 has been used as a source of alpha particles in specialized antistatic devices and research. Its radioactivity also produces heat, historically investigated for spacecraft equipment." |
+| 85 At | typicalUses | "Scientific research only; astatine is extremely rare and radioactive." | "Astatine has no established large-scale commercial use. Astatine-211 is being investigated for targeted alpha-particle cancer therapies." |
+| 86 Rn | typicalUses | "Scientific and medical research; radon has no broad commercial use and is a health hazard." | "Radon has no widespread modern practical use. Sealed radon sources were used historically in certain cancer treatments; safer alternatives largely replaced them. Indoor radon exposure is a serious radiation health risk." |
+| 88 Ra | typicalUses | "Scientific research and limited specialized medical applications." | "Radium has few present-day uses because it is highly radioactive. Radium-223 is used in some treatments for prostate cancer involving bone metastases; luminous radium paint is a discontinued hazardous historical use." |
+| 89 Ac | typicalUses | "Scientific research and neutron-source work." | "Actinium is used primarily in scientific research. Actinium-225 is under investigation and development for targeted alpha-particle cancer therapies." |
+| 90 Th | typicalUses | "Potential and limited nuclear-fuel applications, high-temperature materials, and scientific research." | "Thorium is used in certain high-temperature alloys and specialty industrial compounds, including thorium oxide. Thorium-based nuclear fuel cycles have been investigated but are not widely deployed commercially." |
+
+**Reference pages:** [Lu 71](https://periodic-table.rsc.org/element/71/lutetium), [Hf 72](https://periodic-table.rsc.org/element/72/hafnium), [Ta 73](https://periodic-table.rsc.org/element/73/tantalum), [W 74](https://periodic-table.rsc.org/element/74/tungsten), [Re 75](https://periodic-table.rsc.org/element/75/rhenium), [Os 76](https://periodic-table.rsc.org/element/76/osmium), [Ir 77](https://periodic-table.rsc.org/element/77/iridium), [Pt 78](https://periodic-table.rsc.org/element/78/platinum), [Au 79](https://periodic-table.rsc.org/element/79/gold), [Hg 80](https://periodic-table.rsc.org/element/80/mercury), [Tl 81](https://periodic-table.rsc.org/element/81/thallium), [Pb 82](https://periodic-table.rsc.org/element/82/lead), [Bi 83](https://periodic-table.rsc.org/element/83/bismuth), [Po 84](https://periodic-table.rsc.org/element/84/polonium), [At 85](https://periodic-table.rsc.org/element/85/astatine), [Rn 86](https://periodic-table.rsc.org/element/86/radon), [Fr 87](https://periodic-table.rsc.org/element/87/francium), [Ra 88](https://periodic-table.rsc.org/element/88/radium), [Ac 89](https://periodic-table.rsc.org/element/89/actinium), [Th 90](https://periodic-table.rsc.org/element/90/thorium).
+
+**Remaining:** RSC Pauling/oxidation review #91–118; remaining first-30 chemistry and all other fields beyond specifically reviewed sets; rights/licensing of every image; actual browser/quiz testing and package regression. This report documents claims for source validation but is not legal/clinical advice or Store release approval. No merge to main.
