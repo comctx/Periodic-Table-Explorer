@@ -131,3 +131,27 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Still unverified for elements 21–30:** electron configurations should be compared systematically against NIST (RSC fact boxes were spot-checked); electron affinities and ionization energies require matching unit/measurement conventions; atomic radius definitions may differ substantially by source and must be labeled; all oxidation states, photography, image credits and ambiguous quiz questions remain on the open checklist.
 
 **Release status:** Main branch and the submitted package are unchanged. No merge, no new package, no resubmission until the full audit completes.
+
+
+## Audit session 4 — 2026-10-14: elements 31–40 (Ga–Zr)
+
+**Scope:** Both displayed weights aligned to the [CIAAW 2024 abridged standards](https://ciaaw.org/abridged-atomic-weights.htm) for #31–40. Detailed melting/boiling temperatures (kelvin), density (g/cm³), and room-temperature states compared against the [Royal Society of Chemistry](https://periodic-table.rsc.org/) element fact boxes. Discovery milestones compared with RSC histories. This batch does not certify all chemistry, quiz logic, photography, or illustration rights.
+
+| # | Element | CIAAW 2024 abridged central value | Specific historical and scientific notes |
+|---:|---|---:|---|
+| 31 | Gallium | 69.723 | Lecoq de Boisbaudran, 1875; identified by spectroscopy and isolated later that year. Updated boil to RSC 2502 K. |
+| 32 | Germanium | 72.630 | Winkler, 1886; matched predicted eka-silicon. Main-table weight corrected from 72.61. |
+| 33 | Arsenic | 74.922 | Early arsenic compounds were known in antiquity; elemental isolation traditionally attributed to Albertus Magnus in the 13th century. **RSC lists sublimation at 889 K near ordinary pressure**, not an ordinary melting or boiling point. Both ordinary melt/boil fields now `null`; new `sublimationPoint:889` field and labeled detail/UI temperature handling. |
+| 34 | Selenium | 78.971 | Berzelius, 1817. RSC melt 494 K; source weights aligned. |
+| 35 | Bromine | 79.904 | Balard publicly identified in 1826; Löwig obtained independently in 1825 before Balard's publication. RSC room state liquid. |
+| 36 | Krypton | 83.798 | Ramsay **and Travers**, 1898. RSC measured density 0.003425 g/cm³; Pauling electronegativity is **unknown** (not 3). |
+| 37 | Rubidium | 85.468 | Bunsen **and Kirchhoff**, 1861, spectral identification. |
+| 38 | Strontium | 87.62 | Crawford investigated new earth in 1787; Hope showed new element in 1791; Davy isolated metal in 1808. App now uses 1791 recognition milestone. |
+| 39 | Yttrium | 88.906 | Gadolin's oxide discovery, 1794; metal isolated by Wöhler later. |
+| 40 | Zirconium | **91.222** | Klaproth's identification in zirconia, 1789; Berzelius obtained impure metal in 1824. **RSC currently shows 91.224, but CIAAW 2024 abridged standard is 91.222.** The app explicitly follows CIAAW for atomic weights, RSC for phase/density values. |
+
+**RSC history/fact sources:** [31](https://periodic-table.rsc.org/element/31/gallium), [32](https://periodic-table.rsc.org/element/32/germanium), [33](https://periodic-table.rsc.org/element/33/arsenic), [34](https://periodic-table.rsc.org/element/34/selenium), [35](https://periodic-table.rsc.org/element/35/bromine), [36](https://periodic-table.rsc.org/element/36/krypton), [37](https://periodic-table.rsc.org/element/37/rubidium), [38](https://periodic-table.rsc.org/element/38/strontium), [39](https://periodic-table.rsc.org/element/39/yttrium), [40](https://periodic-table.rsc.org/element/40/zirconium).
+
+**Data caveats:** RSC selenium melting point 494 K and bromine 266/332 K are rounded values; readers should not infer greater precision than published. Arsenic's 889 K transition is an atmospheric-pressure approximation, not a pressure-independent material constant. The temperature slider remains a simplified teaching model. Element photographs, other fields (configuration, radius definitions, electron affinity, oxidation states), and quiz behavior remain **unverified**.
+
+**Code:** Updated `elements-data.js`, `index.html`, `element.html`, and `audit/check-data.mjs` on audit branch. Regression assertions extended to #40; full browser/packaged-app testing still required. No merge or Store submission.
