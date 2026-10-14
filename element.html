@@ -181,9 +181,9 @@ const discoveryStories={
   28:"Axel Fredrik Cronstedt identified nickel in 1751 while investigating a mineral believed to contain copper. He publicly named it nickel in the 1750s; Torbern Bergman later prepared purer metal that established its identity.",
   29:"Copper is an ancient metal with no known individual discoverer. Archaeological copper objects are thousands of years old, and copper eventually became central to bronze, made by alloying copper with tin.",
   30:"Zinc was refined as a distinct metal in India centuries before modern European chemistry; historical production also developed in China. In Europe, Andreas Sigismund Marggraf independently investigated and identified zinc as a metal in 1746. That date is not the beginning of worldwide zinc use.",
-  31:"Paul-Émile Lecoq de Boisbaudran discovered gallium in 1875 using spectroscopy. Its spectral lines revealed a new element, and its properties closely matched an element Dmitri Mendeleev had predicted earlier.",
-  32:"Clemens Winkler discovered germanium in 1886 while analyzing the mineral argyrodite. Its properties closely matched Mendeleev's predicted 'eka-silicon,' providing striking support for the periodic table.",
-  35:"Antoine Jérôme Balard identified bromine in 1826 while studying residues from salt marsh brines. He isolated a reddish-brown, strongly smelling liquid that proved to be a new halogen element.",
+  31:"In Paris in 1875, Paul-Émile Lecoq de Boisbaudran spotted an unfamiliar violet spectral line while examining zinc-blende material. He isolated gallium later that year. The finding matched Mendeleev's earlier prediction of an element below aluminium.",
+  32:"Clemens Winkler identified germanium in 1886 while analysing the silver mineral argyrodite. Its properties closely matched Dmitri Mendeleev's predicted eka-silicon.",
+  35:"Antoine-Jérôme Balard publicly reported bromine in 1826 after obtaining a reddish liquid from concentrated brine. Carl Löwig had independently prepared bromine in 1825 but had not published his result before Balard.",
   43:"Technetium became the first element to be produced artificially. In 1937, Emilio Segrè and Carlo Perrier identified element 43 in molybdenum that had been bombarded in a particle accelerator.",
   53:"Bernard Courtois discovered iodine in 1811 while processing seaweed ash for saltpeter production. He noticed violet vapors rising from the material; the vapor condensed into dark crystals of a new element.",
   84:"Marie and Pierre Curie discovered polonium while investigating unusually radioactive pitchblende. The ore was more radioactive than its known uranium content could explain, pointing to previously unknown radioactive elements.",
@@ -194,7 +194,14 @@ const discoveryStories={
   93:"Edwin McMillan and Philip Abelson identified neptunium in 1940 after bombarding uranium with neutrons. It was the first transuranium element—an element with an atomic number higher than uranium—to be confirmed.",
   94:"Glenn Seaborg's team produced plutonium in 1940 by bombarding uranium in a cyclotron. The discovery was closely tied to the rapid development of nuclear science during the early 1940s.",
   118:"Oganesson was created one atom at a time in heavy-ion experiments. Teams at the Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory fused lighter nuclei to produce the superheavy element, whose existence was later officially recognized."
-};
+
+  33:"Arsenic-containing minerals and compounds were known in antiquity, but this is not the same as isolating elemental arsenic. Isolation of the element is traditionally attributed to Albertus Magnus in the 1200s. At near-atmospheric pressure gray arsenic sublimates around 889 K (616 °C), so that temperature is neither its ordinary melting point nor its boiling point.",
+  34:"Jöns Jacob Berzelius identified selenium in 1817 after examining a reddish deposit from a sulfuric-acid factory in Stockholm. He initially suspected tellurium, then determined that the material contained a distinct element.",
+  36:"William Ramsay and Morris Travers isolated krypton in London on 30 May 1898 while separating the components of liquefied air. Its unique spectral lines established that it was a new noble gas.",
+  37:"Robert Bunsen and Gustav Kirchhoff identified rubidium in 1861 while analysing lepidolite using spectroscopy. Two ruby-red spectral lines revealed the new element. Pure rubidium metal was prepared much later.",
+  38:"Adair Crawford identified an unusual earth from a mineral found near Strontian, Scotland, in 1787. Thomas Charles Hope provided stronger evidence that it contained a new element in 1791. Humphry Davy later isolated strontium metal in 1808.",
+  39:"Johan Gadolin reported a previously unknown earth in a mineral from Ytterby in 1794, identifying the material now associated with yttrium. Friedrich Wöhler later isolated yttrium metal in 1828.",
+  40:"Martin Heinrich Klaproth identified zirconia, an oxide of a new element, in zircon in 1789. Jöns Jacob Berzelius obtained impure zirconium metal in 1824; high-purity metal was prepared only in the twentieth century.",};
 
 function discoveryStory(e){
   if(discoveryStories[e.atomicNumber]) return discoveryStories[e.atomicNumber];
@@ -295,6 +302,7 @@ if(!e){
    fact("Density",e.density==null?"—":e.density+" g/cm³")+
    fact("Melting point",kelvinToC(e.meltingPoint))+
    fact("Boiling point",kelvinToC(e.boilingPoint))+
+   (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
    fact("Electronegativity",e.electronegativity??"—")+
    fact("Atomic radius",e.atomicRadius==null?"—":e.atomicRadius+" pm")+
    fact("Ionization energy",e.ionizationEnergy==null?"—":e.ionizationEnergy+" eV")+
