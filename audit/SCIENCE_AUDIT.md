@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–60 (technetium has no standard weight)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–70 (technetium and promethium have no standard weights)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–60
+- [x] RSC melting, boiling, and density conventions for elements 21–70, including electron configurations for 61–70
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -200,3 +200,38 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Authoritative element sources:** [Sb](https://periodic-table.rsc.org/element/51/antimony), [Te](https://periodic-table.rsc.org/element/52/tellurium), [I](https://periodic-table.rsc.org/element/53/iodine), [Xe](https://periodic-table.rsc.org/element/54/xenon), [Cs](https://periodic-table.rsc.org/element/55/caesium), [Ba](https://periodic-table.rsc.org/element/56/barium), [La](https://periodic-table.rsc.org/element/57/lanthanum), [Ce](https://periodic-table.rsc.org/element/58/cerium), [Pr](https://periodic-table.rsc.org/element/59/praseodymium), [Nd](https://periodic-table.rsc.org/element/60/neodymium).
 
 **Scope limit:** This is the atomic-weight, phase-property, and historical-discovery review, **not** a complete review of other chemistry fields. The unresolved list includes oxidation states, radius definitions, electron affinity and ionization energy measurement conventions, image authenticity/license, quiz ambiguity after history edits, and end-to-end browser/packaged Store testing. RSC physical values use specified conventions and measurement precision; CIAAW weights are abridged with uncertainty not represented in the app's numeric fields. No merge or store resubmission.
+
+## Audit session 7 — 2026-10-14: 61–70 (promethium through ytterbium)
+
+**Primary standards:** [CIAAW 2024 abridged standard weights](https://www.ciaaw.org/abridged-atomic-weights.htm) for element weights; [Royal Society of Chemistry (RSC) element fact boxes and histories](https://periodic-table.rsc.org/) for phase, melting and boiling (K), density (g/cm³ at room temperature), ground-state electron configurations, and historical milestones. Physical data and discovery credits for #61–70 were reviewed individually; *all other chemistry and images are not yet certified*.
+
+| # | Element | CIAAW 2024 standard weight | RSC melt / boil (K), density | History / source-based correction |
+|---:|---|---:|---|---|
+| 61 | Promethium | None | 1315 / 3273, 7.26 g/cm³ | 1945: Jacob A. Marinsky, Lawrence E. Glendenin, and Charles D. Coryell |
+| 62 | Samarium | 150.36 | 1345 / 2067, 7.52 g/cm³ | 1879: Paul-Émile Lecoq de Boisbaudran |
+| 63 | Europium | 151.96 | 1095 / 1802, 5.24 g/cm³ | 1901: Eugène-Anatole Demarçay |
+| 64 | Gadolinium | 157.25 | 1586 / 3546, 7.9 g/cm³ | 1880: Jean Charles Galissard de Marignac |
+| 65 | Terbium | 158.93 | 1632 / 3503, 8.23 g/cm³ | 1843: Carl Gustaf Mosander |
+| 66 | Dysprosium | 162.5 | 1685 / 2840, 8.55 g/cm³ | 1886: Paul-Émile Lecoq de Boisbaudran |
+| 67 | Holmium | 164.93 | 1745 / 2973, 8.8 g/cm³ | 1878: Marc Delafontaine and Louis Soret; independently Per Teodor Cleve |
+| 68 | Erbium | 167.26 | 1802 / 3141, 9.07 g/cm³ | 1843: Carl Gustaf Mosander |
+| 69 | Thulium | 168.93 | 1818 / 2223, 9.32 g/cm³ | 1879: Per Teodor Cleve |
+| 70 | Ytterbium | 173.05 | 1097 / 1469, 6.9 g/cm³ | 1878: Jean Charles Galissard de Marignac |
+
+**History and provenance:**
+- **61 Promethium:** RSC credits **Jacob A. Marinsky, Lawrence E. Glendenin, and Charles D. Coryell** for the 1945 production/separation from uranium-fission products at Oak Ridge. The earlier app's `Chien Shiung Wu` discoverer was incorrect. RSC names **Grace Coryell** as proposer of the element's name, not the nonsensical `Isotopes of promethium`. Like technetium it has **no CIAAW standard atomic weight**; the old `144.91276` detailed number represented an isotope mass, and `[145]` is a reference isotope **mass number**. Changed both weight displays to `null`, retained `referenceMassNumber:145` with explicit label.
+- **62 Samarium:** Lecoq de Boisbaudran's 1879 identification; de Marignac observed possible spectroscopic evidence in 1853. Melt 1345 K rather than 1347.
+- **63 Europium:** Demarçay, 1901, after extensive crystallisations.
+- **64 Gadolinium:** de Marignac observed evidence in 1880; Lecoq de Boisbaudran isolated/named it in 1886. Distinguish discovery from naming. **CIAAW 2024** revised standard weight 157.25.
+- **65 Terbium:** Mosander obtained oxide fractions in 1843; melt 1632 K rather than 1629.
+- **66 Dysprosium:** Lecoq de Boisbaudran, 1886; pure samples separated much later.
+- **67 Holmium:** 1878 independent evidence from Delafontaine/Soret and Cleve (previously one scientist); melt 1745 K rather than 1747.
+- **68 Erbium:** Mosander isolated an oxide in 1843; pure metal obtained in 1934.
+- **69 Thulium:** Cleve identified oxide fractions in 1879.
+- **70 Ytterbium:** de Marignac discovered oxide in 1878, purified metal obtained much later. Melt 1097 K rather than 1092, CIAAW weight 173.05 (prior main table 173.04).
+
+**Primary RSC pages:** [Pm](https://periodic-table.rsc.org/element/61/promethium), [Sm](https://periodic-table.rsc.org/element/62/samarium), [Eu](https://periodic-table.rsc.org/element/63/europium), [Gd](https://periodic-table.rsc.org/element/64/gadolinium), [Tb](https://periodic-table.rsc.org/element/65/terbium), [Dy](https://periodic-table.rsc.org/element/66/dysprosium), [Ho](https://periodic-table.rsc.org/element/67/holmium), [Er](https://periodic-table.rsc.org/element/68/erbium), [Tm](https://periodic-table.rsc.org/element/69/thulium), [Yb](https://periodic-table.rsc.org/element/70/ytterbium).
+
+**UI correction:** Replaced the previous **technetium-only** text for an unassigned standard atomic weight with a reusable `standardWeightText(e)` function. On a missing-weight record it consults `referenceMassNumber`, explains the isotope mass-number distinction, and handles both **Tc [98]** and **Pm [145]** without treating either as a standard atomic weight. The existing element details page was already capable of separately labeling `referenceMassNumber`.
+
+**Scope limitations:** Abridged weights omit CIAAW uncertainties; the phase slider uses a simplified pressure-free model. Element uses, radii, electron affinity, ionization, electronegativity, oxidation states, imagery and credits, quiz verification, full browser and Windows package testing remain outstanding. No updates to `main` or Microsoft submission.
