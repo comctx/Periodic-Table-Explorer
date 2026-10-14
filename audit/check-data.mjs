@@ -602,7 +602,43 @@ const rscOxTransition={24:'+6, +3, +2, 0',25:'+7, +6, +4, +3, +2, 0, -1',
 for(const [z,states] of Object.entries(rscOxTransition))
  assert.equal(detailed[Number(z)-1].oxidationStates,states,'RSC transition-metal states '+z);
 
+
+// Audit session 17: Royal Society of Chemistry Pauling electronegativity,
+// all 30 elements Z=31..60. Unknowns are null, not zero.
+const rscPauling31to60=[1.81,2.01,2.18,2.55,2.96,null,0.82,0.95,1.22,1.33,1.6,2.16,2.1,2.2,2.28,2.2,1.93,1.69,1.78,1.96,2.05,2.1,2.66,2.6,0.79,0.89,1.1,1.12,1.13,1.14];
+for(let i=0;i<30;i++)
+ assert.equal(detailed[i+30].electronegativity,rscPauling31to60[i],'RSC Pauling 31–60 '+(i+31));
+const rscOxPraseodymium='+4, +3';
+assert.equal(detailed[58].oxidationStates,rscOxPraseodymium,'RSC Pr common oxidation +4 and +3');
+const verifiedAppearance31to60={
+  31:"A soft, silvery-white metal.",
+  32:"A brittle, silvery-white metalloid.",
+  38:"A soft, silvery metal that reacts with water and readily oxidizes in air.",
+  43:"A radioactive, silvery metal.",
+  51:"In its metallic form, a silvery, hard and brittle metalloid.",
+  52:"A grey metalloid, often obtained as a powder.",
+  53:"Shiny black crystals that release violet vapor when heated.",
+  56:"A soft, silvery metal that quickly tarnishes in air and reacts with water."
+};
+for(const [z,v] of Object.entries(verifiedAppearance31to60))
+ assert.equal(detailed[Number(z)-1].appearance,v,'RSC qualified appearance '+z);
+const verifiedUses31to60={
+  31:"Gallium arsenide and gallium nitride are semiconductors used in LEDs, electronics and some solar cells. Elemental gallium is used in low-melting alloys and specialized thermometers.",
+  38:"Strontium salts give red colors to fireworks and flares. Strontium ferrite is used in magnets, and strontium compounds are used in ceramics and other specialty materials.",
+  40:"Zirconium metal alloys are used for nuclear-reactor cladding and corrosion-resistant components. Zirconium dioxide (zirconia) is used in ceramics, foundry products and refractory materials.",
+  43:"Technetium-99m compounds are widely used for medical diagnostic imaging. Other technetium applications are limited by its radioactivity.",
+  51:"Antimony metal is used in hardening alloys and some semiconductor devices. Antimony compounds are used in flame-retardant formulations, glass and ceramics; many compounds are toxic.",
+  52:"Tellurium is added to copper, steel and lead alloys to alter their properties. Telluride compounds are used in some solar cells and thermoelectric devices; tellurium also has specialized rubber and semiconductor uses.",
+  53:"Iodide salts are used in iodized table salt, medicines, disinfectants and photographic chemistry. Iodine compounds have industrial uses; iodine-131 is used in selected thyroid treatments.",
+  56:"Barium sulfate is used in X-ray gastrointestinal imaging and drilling fluids; its very low solubility distinguishes it from toxic soluble barium compounds. Other barium compounds are used in glass, ceramics and green fireworks.",
+  57:"Lanthanum-containing optical glass and catalysts use its compounds. Lanthanum alloys are used in some rechargeable batteries and specialty metals.",
+  58:"Cerium oxide is used to polish glass and in catalytic converters. Cerium-containing alloys are used in lighter flints and specialty metal products."
+};
+for(const [z,v] of Object.entries(verifiedUses31to60))
+ assert.equal(detailed[Number(z)-1].typicalUses,v,'Correct elemental/compound uses '+z);
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
+console.log('PASS: RSC Pauling 31–60, Pr oxidation, source-qualified appearance and element/compound uses');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
