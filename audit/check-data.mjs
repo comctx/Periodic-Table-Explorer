@@ -35,13 +35,24 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  69.723,72.630,74.922,78.971,79.904,83.798,85.468,87.62,88.906,91.222,
                  92.906,95.95,null,101.07,102.91,106.42,107.87,112.41,114.82,118.71,
                  121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24,
-                 null,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05];
+                 null,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05,
+                 174.97,178.49,180.95,183.84,186.21,190.23,192.22,195.08,196.97,200.59];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  71:{year:"1907",by:"Georges Urbain"},
+  72:{year:"1923",by:"Dirk Coster and George de Hevesy"},
+  73:{year:"1802",by:"Anders Gustaf Ekeberg"},
+  74:{year:"1783",by:"Juan José Elhuyar and Fausto Elhuyar"},
+  75:{year:"1925",by:"Walter Noddack, Ida Noddack, and Otto Berg"},
+  76:{year:"1803",by:"Smithson Tennant"},
+  77:{year:"1803",by:"Smithson Tennant"},
+  78:{year:"Ancient",by:null},
+  79:{year:"Ancient",by:null},
+  80:{year:"Ancient",by:null},
   61:{year:"1945",by:"Jacob A. Marinsky, Lawrence E. Glendenin, and Charles D. Coryell"},
   62:{year:"1879",by:"Paul-Émile Lecoq de Boisbaudran"},
   63:{year:"1901",by:"Eugène-Anatole Demarçay"},
@@ -217,10 +228,40 @@ assert.equal(detailed[63].namedBy,'Paul-Émile Lecoq de Boisbaudran','Gadolinium
 assert.ok(indexSource.includes('function standardWeightText(e)'),'Generic missing weight helper');
 const detailHtml61=readFileSync('element.html','utf8');
 for(let z=61;z<=70;z++)assert.ok(detailHtml61.includes('  '+z+':"'),'History story missing '+z);
+// RSC element fact-box values for 71–80: K, room-temperature density (g/cm3), state and configuration.
+const rsc71to80={
+  71:[1936,3675,9.84,"Solid","[Xe] 4f14 5d1 6s2"],
+  72:[2506,4873,13.3,"Solid","[Xe] 4f14 5d2 6s2"],
+  73:[3290,5728,16.4,"Solid","[Xe] 4f14 5d3 6s2"],
+  74:[3687,5828,19.3,"Solid","[Xe] 4f14 5d4 6s2"],
+  75:[3458,5863,20.8,"Solid","[Xe] 4f14 5d5 6s2"],
+  76:[3306,5281,22.5872,"Solid","[Xe] 4f14 5d6 6s2"],
+  77:[2719,4701,22.5622,"Solid","[Xe] 4f14 5d7 6s2"],
+  78:[2041.4,4098,21.5,"Solid","[Xe] 4f14 5d9 6s1"],
+  79:[1337.33,3109,19.3,"Solid","[Xe] 4f14 5d10 6s1"],
+  80:[234.321,629.769,13.5336,"Liquid","[Xe] 4f14 5d10 6s2"],
+};
+for(const [z,values] of Object.entries(rsc71to80)){
+ const e=detailed[Number(z)-1];
+ assert.equal(e.meltingPoint,values[0],'RSC melting point mismatch '+z);
+ assert.equal(e.boilingPoint,values[1],'RSC boiling point mismatch '+z);
+ assert.equal(e.density,values[2],'RSC density mismatch '+z);
+ assert.equal(e.standardState,values[3],'RSC standard-state mismatch '+z);
+ assert.equal(e.electronConfiguration,values[4],'RSC configuration mismatch '+z);
+}
+assert.equal(detailed[71].discoveredBy,'Dirk Coster and George de Hevesy','Both hafnium discoverers');
+assert.ok(detailed[73].discoveredBy.includes('Elhuyar'),'Tungsten metal-isolation credit');
+assert.ok(detailed[74].discoveredBy.includes('Otto Berg'),'Rhenium attribution includes Berg');
+for(const z of [78,79,80]){
+ assert.equal(detailed[z-1].yearDiscovered,'Ancient','Ancient history year '+z);
+ assert.equal(detailed[z-1].discoveredBy,null,'Ancient history has no sole discoverer '+z);
+}
+const detailHtml71to80=readFileSync('element.html','utf8');
+for(let z=71;z<=80;z++) assert.ok(detailHtml71to80.includes('  '+z+':"'),'Element-specific discovery story missing '+z);
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–70 (Tc/Pm unassigned); RSC melting/boiling/density 21–70, configurations 61–70; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols; CIAAW 2024 weight conventions 1–80 (Tc/Pm unassigned); RSC melting/boiling/density 21–80, configurations 61–80; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
