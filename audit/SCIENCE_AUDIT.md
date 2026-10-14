@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–110 (null where no standard atomic weight)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for all 118 elements (null where unassigned)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–110, including electron configurations for 61–110
+- [x] RSC melting, boiling, and density conventions for elements 21–118, including electron configurations for 61–118
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -371,3 +371,36 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Primary sources:** [CIAAW 2024](https://www.ciaaw.org/abridged-atomic-weights.htm); RSC [Md](https://periodic-table.rsc.org/element/101/mendelevium), [No](https://periodic-table.rsc.org/element/102/nobelium), [Lr](https://periodic-table.rsc.org/element/103/lawrencium), [Rf](https://periodic-table.rsc.org/element/104/rutherfordium), [Db](https://periodic-table.rsc.org/element/105/dubnium), [Sg](https://periodic-table.rsc.org/element/106/seaborgium), [Bh](https://periodic-table.rsc.org/element/107/bohrium), [Hs](https://periodic-table.rsc.org/element/108/hassium), [Mt](https://periodic-table.rsc.org/element/109/meitnerium), [Ds](https://periodic-table.rsc.org/element/110/darmstadtium).
 
 **Still pending:** Elements 111–118, comprehensive property review for all 118 (radius definitions, first ionization energy, affinities, oxidation states, uses), all photographs and their rights, ambiguous historical quiz answers/distractors, actual browser review, and a complete packaged Windows regression. **Do not merge to `main` or resubmit to Microsoft.**
+
+## Audit session 12 — 2026-10-14: elements 111–118 (roentgenium to oganesson)
+
+**Atomic-weight checkpoint COMPLETE (not full science audit):** Compared all 118 elements' atomic-weight conventions with [CIAAW abridged standard atomic weights 2024](https://www.ciaaw.org/abridged-atomic-weights.htm). Elements 111–118 have no standard atomic weights. The application now uses `null` on both tables and separately stores the [Royal Society of Chemistry](https://periodic-table.rsc.org/) bracketed **isotope mass number**, which is *not* an actual standard atomic weight or precision isotope mass.
+
+| Z | Symbol | Standard weight | RSC reference isotope mass number | Discovery / evidence milestone |
+|---:|---|---|---:|---|
+| 111 | Rg | None | [280] | 1994: GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg |
+| 112 | Cn | None | [285] | 1996: GSI Darmstadt team led by Sigurd Hofmann |
+| 113 | Nh | None | [286] | 2004: RIKEN team led by Kosuke Morita (Japan) |
+| 114 | Fl | None | [289] | 1998: JINR Dubna team led by Yuri Oganessian and Vladimir Utyonkov |
+| 115 | Mc | None | [289] | 2003: JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations |
+| 116 | Lv | None | [293] | 2000: JINR Dubna and Lawrence Livermore researchers led by Yuri Oganessian, Vladimir Utyonkov, and Kenton Moody |
+| 117 | Ts | None | [294] | 2010: JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations |
+| 118 | Og | None | [294] | 2006: JINR Dubna and Lawrence Livermore collaboration |
+
+**Reference-based corrections and attribution notes:**
+- #111 Roentgenium: GSI Darmstadt, 1994, Armbruster/Münzenberg team; RIKEN independently confirmed in 2003. Configuration `[Rn] 5f14 6d10 7s1` (not old `6d9 7s2`); RSC isotope **[280]**, not earlier 281 or detailed isotope mass.
+- #112 Copernicium: Sigurd Hofmann/GSI Darmstadt 1996 synthesis of isotope 277; RSC selected mass-number reference **[285]**. Historical evidence and isotope reference are distinct.
+- #113 Nihonium: Kosuke Morita/RIKEN team first synthesis 2004, repeated in 2005/2012; **IUPAC 2015** discovery recognition and **2016** formal naming. RSC reference **[286]** rather than old main-table 284.
+- #114 Flerovium: 1998 synthesis by JINR Dubna Oganessian/Utyonkov; RSC isotope [289].
+- #115 Moscovium: initial 2003 reports; IUPAC officially recognized collaborative JINR/LLNL/ORNL evidence in 2015, naming approved 2016. RSC [289] (not earlier 288).
+- #116 Livermorium: JINR/LLNL 2000 discovery, earlier fabricated 1999 Berkeley claim withdrawn. RSC [293].
+- #117 Tennessine: 2010 JINR/LLNL/ORNL collaboration; IUPAC recognition 2015/naming 2016; RSC reference **[294]** instead of old main-table 292.
+- #118 Oganesson: JINR/LLNL 2006 discovery-qualifying experiments (recognized 2015; name approved 2016), honors Yuri Oganessian, RSC [294].
+
+**Physical state caution:** The RSC fact boxes mark all #111–118 as **solid at 20°C**. Their bulk states have not been empirically characterized; details therefore display `Expected solid (RSC classification; unverified)`, not measured solid. The main table retains `Unknown / predicted`. In particular, the app no longer inaccurately infers that **oganesson is a gas merely because it belongs to group 18**. All eight have no experimental melting/boiling/density in the RSC fact boxes and preserve `null`, so the temperature slider returns **unknown**. Their RSC electron configurations are theoretical rather than measured, so users should not interpret them as experimentally validated.
+
+**Additional unknown values:** RSC lists common oxidation states and Pauling electronegativity as Unknown for these superheavy elements; removed speculative numeric/list values. Unverified ionisation energies are left null. No new photograph or asset from RSC was copied; [RSC image reuse conditions](https://periodic-table.rsc.org/element/111/roentgenium) require separate rights review.
+
+**Primary references:** [CIAAW 2024](https://www.ciaaw.org/abridged-atomic-weights.htm), RSC [Rg](https://periodic-table.rsc.org/element/111/roentgenium), [Cn](https://periodic-table.rsc.org/element/112/copernicium), [Nh](https://periodic-table.rsc.org/element/113/nihonium), [Fl](https://periodic-table.rsc.org/element/114/flerovium), [Mc](https://periodic-table.rsc.org/element/115/moscovium), [Lv](https://periodic-table.rsc.org/element/116/livermorium), [Ts](https://periodic-table.rsc.org/element/117/tennessine), [Og](https://periodic-table.rsc.org/element/118/oganesson), [IUPAC 2015 discoveries](https://iupac.org/discovery-and-assignment-of-elements-with-atomic-numbers-113-115-117-and-118/), [IUPAC 2016 names](https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/).
+
+**RELEASE GATE IS STILL OPEN.** This is only the first cross-check of atomic weights and selected thermal/physical/discovery properties. The remaining work includes chemistry field-by-field verification for all elements (radii definitions, measured and estimated ionization/affinity/oxidation values, actual uses), image-source authenticity/license, quiz-answer/distractor review, full live browser/UI/responsive tests, actual Node/CI tests, and the Microsoft Store packaged app regression. **Do not merge to main or resubmit before these checks.**
