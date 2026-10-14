@@ -38,13 +38,24 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  null,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05,
                  174.97,178.49,180.95,183.84,186.21,190.23,192.22,195.08,196.97,200.59,
                  204.38,207.2,208.98,null,null,null,null,null,null,232.04,
-                 231.04,238.03,null,null,null,null,null,null,null,null];
+                 231.04,238.03,null,null,null,null,null,null,null,null,
+                 null,null,null,null,null,null,null,null,null,null];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  101:{year:"1955",by:"Albert Ghiorso, Bernard Harvey, Gregory Choppin, Stanley Thompson, and Glenn Seaborg"},
+  102:{year:"1962–1963",by:"Joint Institute for Nuclear Research (Dubna), team led by Georgy Flerov"},
+  103:{year:"1961",by:"Lawrence Berkeley Laboratory team led by Albert Ghiorso"},
+  104:{year:"1964–1969",by:"Joint Institute for Nuclear Research (Dubna) and Lawrence Berkeley Laboratory (Berkeley)"},
+  105:{year:"1968–1970",by:"Joint Institute for Nuclear Research (Dubna) and Lawrence Berkeley Laboratory (Berkeley)"},
+  106:{year:"1974",by:"Lawrence Berkeley Laboratory and Joint Institute for Nuclear Research teams"},
+  107:{year:"1981",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  108:{year:"1984",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  109:{year:"1982",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  110:{year:"1994",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
   91:{year:"1913",by:"Kasimir Fajans and Otto Göhring"},
   92:{year:"1789",by:"Martin Heinrich Klaproth"},
   93:{year:"1940",by:"Edwin McMillan and Philip Abelson"},
@@ -354,10 +365,41 @@ assert.equal(detailed[92].discoveredBy,'Edwin McMillan and Philip Abelson','Nept
 const html91to100=readFileSync('element.html','utf8');
 for(let z=91;z<=100;z++)assert.ok(html91to100.includes('  '+z+':"'),'Discovery story missing '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope display helper');
+// CIAAW has no standard atomic weight for elements 101–110.
+// RSC fact boxes: melt/boil K, density g/cm^3, electron configuration.
+const rsc101to110={
+  101:[258,1100,null,null,"Solid","[Rn] 5f13 7s2","+3"],
+  102:[259,1100,null,null,"Solid","[Rn] 5f14 7s2","+3, +2"],
+  103:[262,1900,null,null,"Solid","[Rn] 5f14 7s2 7p1","+3"],
+  104:[267,null,null,null,"Solid","[Rn] 5f14 6d2 7s2",null],
+  105:[268,null,null,null,"Solid","[Rn] 5f14 6d3 7s2",null],
+  106:[269,null,null,null,"Solid","[Rn] 5f14 6d4 7s2",null],
+  107:[270,null,null,null,"Solid","[Rn] 5f14 6d5 7s2",null],
+  108:[269,null,null,null,"Solid","[Rn] 5f14 6d6 7s2",null],
+  109:[278,null,null,null,"Solid","[Rn] 5f14 6d7 7s2",null],
+  110:[281,null,null,null,"Expected to be a solid","[Rn] 5f14 6d9 7s1",null],
+};
+for(const [z,expected] of Object.entries(rsc101to110)){
+ const entry=detailed[Number(z)-1],cell=cells[Number(z)-1];
+ assert.equal(entry.atomicMass,null,'No CIAAW weight '+z);
+ assert.equal(cell.mass,null,'No grid standard weight '+z);
+ assert.equal(entry.referenceMassNumber,expected[0],'Bracket isotope mass number '+z);
+ assert.equal(entry.meltingPoint,expected[1],'RSC melting '+z);
+ assert.equal(entry.boilingPoint,expected[2],'RSC boiling '+z);
+ assert.equal(entry.density,expected[3],'RSC density '+z);
+ assert.equal(entry.standardState,expected[4],'State (RSC; qualified 110) '+z);
+ assert.equal(entry.electronConfiguration,expected[5],'RSC electron configuration '+z);
+ assert.equal(entry.oxidationStates,expected[6],'RSC common oxidation '+z);
+}
+for(let z=101;z<=103;z++)assert.equal(detailed[z-1].electronegativity,null,'Pauling electronegativity unknown '+z);
+for(let z=104;z<=110;z++)assert.equal(detailed[z-1].meltingPoint,null,'Do not invent superheavy melting points '+z);
+const h101to110=readFileSync('element.html','utf8');
+for(let z=101;z<=110;z++)assert.ok(h101to110.includes('  '+z+':"'),'Element-specific story missing '+z);
+assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope mass-number display');
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–100 (Tc/Pm, Po–Ac, Np–Fm unassigned); RSC melting/boiling/density 21–100, configurations 61–100; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–110 (101–110 unassigned); RSC melting/boiling/density 21–110, configurations 61–110; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
