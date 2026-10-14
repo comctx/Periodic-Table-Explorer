@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–50 (technetium has no standard weight)
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–60 (technetium has no standard weight)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–50
+- [x] RSC melting, boiling, and density conventions for elements 21–60
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -179,3 +179,24 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Additional source checks:** [NIST technetium isotopic data](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Tc), [RSC technetium historical podcast](https://periodic-table.rsc.org/podcast/43/technetium), [PubChem ruthenium historical details](https://pubchem.ncbi.nlm.nih.gov/element/44), [PubChem cadmium](https://pubchem.ncbi.nlm.nih.gov/element/48).
 
 **Scope caveats:** CIAAW's *abridged* weights are rounded and not fixed masses of individual isotopes; uncertainties aren't in numeric fields. All other elements with no standard atomic weight (particularly synthetic elements >50) still need the same isotope vs standard-weight policy. The other science fields (atomic radii, ionization energies, electron affinities, oxidation states), each photo's source and license, quiz wording, live browser use, full Node regression, and Windows package validation remain open. Do not merge or resubmit before completing the full scientific review.
+
+## Audit session 6 — 2026-10-14: elements 51–60 (Sb–Nd)
+
+**Source method:** Standard weights follow the [CIAAW 2024 abridged table](https://www.ciaaw.org/abridged-atomic-weights.htm) (five significant figures where applicable). Detailed melting/boiling data in kelvin, density in g/cm³ at room temperature, and state at 20°C follow the [Royal Society of Chemistry (RSC)](https://periodic-table.rsc.org/). History has been individually reviewed against RSC histories. Data edits are confined to `scientific-audit-2026-10`, not published `main`.
+
+| # | Element | CIAAW abridged weight | Key verified properties / historical decisions |
+|---:|---|---:|---|
+| 51 | Antimony | 121.76 | Ancient; no identifiable single discoverer. `discoveredBy` changed from an unsourced pseudo-person to `null`. RSC melting 903.778 K and density 6.68 (rather than 6.685). |
+| 52 | Tellurium | 127.60 | RSC dates Müller's work **1783** (previous entry 1782); Kitaibel found it independently by 1789; Klaproth confirmed and named it. `namedBy` now Klaproth. RSC melt 722.66 K, boil 1261 K, density 6.232. |
+| 53 | Iodine | **126.90** | Courtois discovered in 1811; distinguishing discovery from other chemists' subsequent characterization. RSC melt **386.9 K**, boil **457.6 K**, density **4.933**. Note CIAAW's abridged weight differs from detailed isotope-precision values. |
+| 54 | Xenon | 131.29 | Credit **Ramsay and Travers**, 1898; RSC density **0.005366** g/cm³, melt **161.4 K**, boil **165.051 K**. |
+| 55 | Caesium/Cesium | **132.91** | Credit **Bunsen and Kirchhoff**, 1860, spectroscopic identification; metal isolated later by Setterberg. RSC density **1.873**, melt **301.7 K**; spelling Caesium is British, Cesium is US. |
+| 56 | Barium | 137.33 | Scheele recognized compound chemistry earlier; **Humphry Davy** isolated elemental metal in **1808**. Corrected discoverer field; RSC boiling **2118 K** rather than 2170 K. |
+| 57 | Lanthanum | **138.91** | Mosander recognized it in **1839**, Erdmann also found it in a mineral that year; RSC melting **1193 K** instead of 1191 K. |
+| 58 | Cerium | **140.12** | Independent discovery credited to **Berzelius and Hisinger, and Klaproth**, around winter **1803–1804**; element identified in mineral compounds before the metal was obtained. RSC melt **1072 K**, boil **3716 K**. |
+| 59 | Praseodymium | **140.91** | Auer von Welsbach separated didymium into Pr and Nd oxides in **1885**; pure Pr metal came later. RSC melt 1204 K, boil 3793 K, density 6.77. |
+| 60 | Neodymium | 144.24 | Auer von Welsbach, **1885**, didymium separation; pure Nd metal in 1925. RSC melt **1289 K** instead of 1294 K; boil 3347 K, density 7.01. |
+
+**Authoritative element sources:** [Sb](https://periodic-table.rsc.org/element/51/antimony), [Te](https://periodic-table.rsc.org/element/52/tellurium), [I](https://periodic-table.rsc.org/element/53/iodine), [Xe](https://periodic-table.rsc.org/element/54/xenon), [Cs](https://periodic-table.rsc.org/element/55/caesium), [Ba](https://periodic-table.rsc.org/element/56/barium), [La](https://periodic-table.rsc.org/element/57/lanthanum), [Ce](https://periodic-table.rsc.org/element/58/cerium), [Pr](https://periodic-table.rsc.org/element/59/praseodymium), [Nd](https://periodic-table.rsc.org/element/60/neodymium).
+
+**Scope limit:** This is the atomic-weight, phase-property, and historical-discovery review, **not** a complete review of other chemistry fields. The unresolved list includes oxidation states, radius definitions, electron affinity and ionization energy measurement conventions, image authenticity/license, quiz ambiguity after history edits, and end-to-end browser/packaged Store testing. RSC physical values use specified conventions and measurement precision; CIAAW weights are abridged with uncertainty not represented in the app's numeric fields. No merge or store resubmission.
