@@ -515,3 +515,24 @@ Source pages: [Cr](https://periodic-table.rsc.org/element/24/chromium), [Mn](htt
 **Source pages:** [Ga 31](https://periodic-table.rsc.org/element/31/gallium), [Ge 32](https://periodic-table.rsc.org/element/32/germanium), [Sr 38](https://periodic-table.rsc.org/element/38/strontium), [Zr 40](https://periodic-table.rsc.org/element/40/zirconium), [Tc 43](https://periodic-table.rsc.org/element/43/technetium), [Sb 51](https://periodic-table.rsc.org/element/51/antimony), [Te 52](https://periodic-table.rsc.org/element/52/tellurium), [I 53](https://periodic-table.rsc.org/element/53/iodine), [Ba 56](https://periodic-table.rsc.org/element/56/barium), [La 57](https://periodic-table.rsc.org/element/57/lanthanum), [Ce 58](https://periodic-table.rsc.org/element/58/cerium), [Pr 59](https://periodic-table.rsc.org/element/59/praseodymium).
 
 **Scope:** Other oxidation-state fields may deliberately use a broader list of experimentally known states than RSC's narrow 'common' list (e.g. Ge(II) has real chemistry although RSC lists only +4 in that column), so no unsupported deletion was applied. Work remains for broader electronegativity comparison outside this band, further oxidation/use/appearance reviews, image licensing and actual app/browser QA. **No main merge or Store submission.**
+
+## Audit session 18 — 2026-10-14: lanthanides 61–70, Pauling and oxidation/uses
+
+Checked the ten **Pauling electronegativity** entries (including missing values) against the [Royal Society of Chemistry element pages](https://periodic-table.rsc.org/) for [Pm](https://periodic-table.rsc.org/element/61/promethium), [Sm](https://periodic-table.rsc.org/element/62/samarium), [Eu](https://periodic-table.rsc.org/element/63/europium), [Gd](https://periodic-table.rsc.org/element/64/gadolinium), [Tb](https://periodic-table.rsc.org/element/65/terbium), [Dy](https://periodic-table.rsc.org/element/66/dysprosium), [Ho](https://periodic-table.rsc.org/element/67/holmium), [Er](https://periodic-table.rsc.org/element/68/erbium), [Tm](https://periodic-table.rsc.org/element/69/thulium) and [Yb](https://periodic-table.rsc.org/element/70/ytterbium). **All 10 Pauling values already match** RSC, including the four RSC-unknown slots: Pm, Eu, Tb, Yb. No Pauling values changed.
+
+RSC explicitly records terbium's selected common oxidation states as **+4 and +3** (previous app only +3), and thulium's as **+3 and +2** (previous app only +3). These omissions are corrected. RSC described europium as a soft reactive silvery metal, and ytterbium as a soft silvery metal forming an oxide layer; missing appearances now filled. Uses of europium, gadolinium, terbium and ytterbium have been reworded to distinguish metal, alloys and compounds, without implying the pure metal itself performs every industrial application.
+
+**8 field changes in 5 elements**, committed to scientific-audit branch only.
+
+| Z | Field | Previous | New |
+|---:|---|---|---|
+| 65 Tb | oxidationStates | "+3" | "+4, +3" |
+| 69 Tm | oxidationStates | "+3" | "+3, +2" |
+| 63 Eu | appearance | null | "A soft, silvery metal that tarnishes quickly and reacts with water." |
+| 70 Yb | appearance | null | "A soft, silvery metal that gradually develops a protective oxide layer in air." |
+| 63 Eu | typicalUses | "Red and blue phosphors, anti-counterfeiting inks, lasers, and nuclear control materials." | "Europium compounds provide light-emitting phosphors for lamps, displays and UV-visible security inks. Europium-containing materials also have specialized laser and neutron-absorption uses." |
+| 64 Gd | typicalUses | "MRI contrast compounds, neutron shielding, magnets, and specialty alloys." | "Gadolinium-containing compounds are used as MRI contrast agents; gadolinium-containing alloys are used in magnets and electronics. Its neutron-absorbing properties are useful in nuclear technology." |
+| 65 Tb | typicalUses | "Green phosphors, solid-state devices, lasers, and specialty magnets." | "Terbium compounds provide green phosphors for lighting and displays. Terbium-containing alloys are used in some magnetic and electronic materials." |
+| 70 Yb | typicalUses | "Fiber lasers, stainless steel improvement, stress gauges, and atomic-clock research." | "Ytterbium compounds and materials are used in certain tunable or fiber lasers and specialty catalysts; other uses remain limited or experimental." |
+
+These RSC-selected common oxidation states are not exhaustive enumerations of every exotic complex or compound. Photos, other science fields and integrated browser/package QA are still not cleared. Do not merge to main or resubmit.
