@@ -37,13 +37,24 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  121.76,127.60,126.90,131.29,132.91,137.33,138.91,140.12,140.91,144.24,
                  null,150.36,151.96,157.25,158.93,162.50,164.93,167.26,168.93,173.05,
                  174.97,178.49,180.95,183.84,186.21,190.23,192.22,195.08,196.97,200.59,
-                 204.38,207.2,208.98,null,null,null,null,null,null,232.04];
+                 204.38,207.2,208.98,null,null,null,null,null,null,232.04,
+                 231.04,238.03,null,null,null,null,null,null,null,null];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  91:{year:"1913",by:"Kasimir Fajans and Otto Göhring"},
+  92:{year:"1789",by:"Martin Heinrich Klaproth"},
+  93:{year:"1940",by:"Edwin McMillan and Philip Abelson"},
+  94:{year:"1940",by:"Glenn T. Seaborg, Arthur Wahl, Joseph W. Kennedy, and Edwin McMillan"},
+  95:{year:"1944",by:"Glenn T. Seaborg, Ralph A. James, Leon O. Morgan, and Albert Ghiorso"},
+  96:{year:"1944",by:"Glenn T. Seaborg, Ralph A. James, and Albert Ghiorso"},
+  97:{year:"1949",by:"Stanley G. Thompson, Albert Ghiorso, and Glenn T. Seaborg"},
+  98:{year:"1950",by:"Stanley G. Thompson, Kenneth Street Jr., Albert Ghiorso, and Glenn T. Seaborg"},
+  99:{year:"1952",by:"Gregory Choppin, Stanley G. Thompson, Albert Ghiorso, and Bernard Harvey"},
+  100:{year:"1953",by:"Albert Ghiorso and colleagues (Berkeley, Argonne, and Los Alamos)"},
   81:{year:"1861",by:"William Crookes"},
   82:{year:"Ancient",by:null},
   83:{year:"1753",by:"Claude-François Geoffroy"},
@@ -306,10 +317,47 @@ assert.equal(detailed[88].discoveredBy,'André Debierne','Actinium 1899 credit')
 const newDetailHtml=readFileSync('element.html','utf8');
 for(let z=81;z<=90;z++)assert.ok(newDetailHtml.includes('  '+z+':"'),'Discovery story '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope label on main');
+// RSC fact-box data for 91–100: melting/boiling K, density at room temp (g/cm³), state and electron configuration.
+const rsc91to100={
+  91:[1845,4273,15.4,"Solid","[Rn] 5f2 6d1 7s2"],
+  92:[1408,4404,19.1,"Solid","[Rn] 5f3 6d1 7s2"],
+  93:[917,4175,20.2,"Solid","[Rn] 5f4 6d1 7s2"],
+  94:[913,3501,19.7,"Solid","[Rn] 5f6 7s2"],
+  95:[1449,2284,12,"Solid","[Rn] 5f7 7s2"],
+  96:[1618,null,13.51,"Solid","[Rn] 5f7 6d1 7s2"],
+  97:[1259,null,14.78,"Solid","[Rn] 5f9 7s2"],
+  98:[1173,null,15.1,"Solid","[Rn] 5f10 7s2"],
+  99:[1133,null,null,"Solid","[Rn] 5f11 7s2"],
+  100:[1800,null,null,"Solid","[Rn] 5f12 7s2"],
+};
+for(const [z,expected] of Object.entries(rsc91to100)){
+ const e=detailed[Number(z)-1];
+ assert.equal(e.meltingPoint,expected[0],'RSC melting point '+z);
+ assert.equal(e.boilingPoint,expected[1],'RSC boiling point '+z);
+ assert.equal(e.density,expected[2],'RSC density '+z);
+ assert.equal(e.standardState,expected[3],'RSC state '+z);
+ assert.equal(e.electronConfiguration,expected[4],'RSC electron configuration '+z);
+}
+const isotope91to100={93:237,94:244,95:243,96:247,97:247,98:251,99:252,100:257};
+for(const [z,isotope] of Object.entries(isotope91to100)){
+ const e=detailed[Number(z)-1],t=cells[Number(z)-1];
+ assert.equal(e.atomicMass,null,'Unassigned standard weight (details) '+z);
+ assert.equal(t.mass,null,'Unassigned standard weight (table) '+z);
+ assert.equal(e.referenceMassNumber,isotope,'Representative isotope number '+z);
+}
+assert.equal(detailed[90].atomicMass,231.04,'Pa CIAAW standard weight');
+assert.equal(detailed[91].atomicMass,238.03,'U CIAAW standard weight');
+for(const z of [96,97,98,99,100])assert.equal(detailed[z-1].boilingPoint,null,'Unknown boiling point '+z);
+for(const z of [99,100])assert.equal(detailed[z-1].density,null,'Unknown density '+z);
+assert.equal(detailed[90].discoveredBy,'Kasimir Fajans and Otto Göhring','1913 protactinium credit');
+assert.equal(detailed[92].discoveredBy,'Edwin McMillan and Philip Abelson','Neptunium full discovery team');
+const html91to100=readFileSync('element.html','utf8');
+for(let z=91;z<=100;z++)assert.ok(html91to100.includes('  '+z+':"'),'Discovery story missing '+z);
+assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope display helper');
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–90 (Tc/Pm, Po–Ac unassigned); RSC melting/boiling/density 21–90, configurations 61–90; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–100 (Tc/Pm, Po–Ac, Np–Fm unassigned); RSC melting/boiling/density 21–100, configurations 61–100; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
