@@ -513,6 +513,88 @@ for(let z=61;z<=118;z++){
  assert.equal(detailed[z-1].electronAffinity,ea[i],'PubChem electron affinity '+z);
 }
 
+
+// Session 16, chemistry review, Royal Society of Chemistry:
+// https://periodic-table.rsc.org/element/{Z}/
+// These are the RSC's *selected common oxidation states*, not every possible state.
+const rscAuditedOxidation={
+  8:"-1, -2",
+  17:"+7, +5, +3, +1, -1",
+  35:"+7, +5, +3, +1, -1",
+  36:"+2",
+  42:"+6, +5, +4, +3, +2, 0",
+  44:"+8, +6, +4, +3, +2, 0, -2",
+  45:"+5, +4, +3, +2, +1, 0",
+  46:"+4, +2, 0",
+  47:"+2, +1",
+  54:"+6, +4, +2",
+};
+for(const [z,val] of Object.entries(rscAuditedOxidation))
+ assert.equal(detailed[Number(z)-1].oxidationStates,val,'RSC common oxidation states '+z);
+const rscAuditedAppearance={
+  6:"Appearance depends on allotrope: diamond is clear and transparent; graphite is black and shiny; graphene and fullerenes can form dark materials.",
+  8:"Colorless, odorless gas at room temperature.",
+  9:"Very pale yellow-green, highly reactive gas.",
+  35:"Deep reddish-brown, oily liquid with an irritating vapor; toxic.",
+  96:"Silvery radioactive metal that tarnishes in air.",
+  100:"Radioactive metal produced only in extremely small quantities.",
+};
+for(const [z,val] of Object.entries(rscAuditedAppearance))
+ assert.equal(detailed[Number(z)-1].appearance,val,'Scientifically qualified appearance '+z);
+const sourceQualifiedUses={
+  14:"Elemental silicon is used in semiconductor chips and solar cells; silicon-containing compounds are used in glass, concrete and silicones.",
+  33:"Arsenic-containing compounds have applications in certain semiconductors, specialty glass and alloys. Historical arsenic wood preservatives face significant restrictions because of toxicity.",
+  35:"Bromine-containing compounds are used in pharmaceuticals, chemical synthesis, some water-treatment applications and some flame retardants; several historical uses have been restricted or phased out.",
+};
+for(const [z,val] of Object.entries(sourceQualifiedUses))
+ assert.equal(detailed[Number(z)-1].typicalUses,val,'Element vs compound uses '+z);
+for(const z of [95,96,97,98,99,100])
+ assert.equal(detailed[z-1].electronegativity,null,'RSC Pauling electronegativity unknown '+z);
+const scienceHtml=readFileSync('element.html','utf8');
+assert.ok(scienceHtml.includes('Typical Uses (Element and Its Compounds)'),'Compound-use distinction in interface');
+// Neutral atom electron counts and subshell limits for all 118. Bracketed noble-gas
+// cores are *electron counts*, not a literal zero-electron abbreviation.
+const coreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
+function parseOrbitalConfiguration(raw,z){
+ const src=String(raw);
+ let core=0;
+ const remaining=src.replace(/^\[([A-Za-z]+)\]\s*/,(_,name)=>{
+   assert.ok(Object.prototype.hasOwnProperty.call(coreElectrons,name),'Unknown core '+name+' at '+z);
+   core=coreElectrons[name];return '';
+ });
+ const matches=[...remaining.matchAll(/(\d+)([spdf])(\d+)/g)];
+ assert.ok(matches.length>=1,'Missing orbitals at '+z);
+ assert.equal(remaining.replace(/(\d+)([spdf])(\d+)/g,'').replace(/\s+/g,''),'','Invalid configuration notation at '+z);
+ const caps={s:2,p:6,d:10,f:14},orbitals={},order=[];
+ for(const m of matches){
+   const shell=m[1]+m[2],val=Number(m[3]);
+   assert.ok(val>=1&&val<=caps[m[2]],'Invalid occupancy at '+z+' '+shell);
+   assert.ok(Number(m[1])>=1&&Number(m[1])<=7,'Invalid principal quantum number '+z);
+   assert.ok(!Object.prototype.hasOwnProperty.call(orbitals,shell),'Duplicate subshell '+z+' '+shell);
+   orbitals[shell]=val;order.push(shell);
+ }
+ const electronCount=core+Object.values(orbitals).reduce((sum,num)=>sum+num,0);
+ assert.equal(electronCount,z,'Neutral-atom electron count '+z);
+ return {core,orbitals};
+}
+for(let z=1;z<=118;z++)parseOrbitalConfiguration(detailed[z-1].electronConfiguration,z);
+// NIST neutral ground-state configurations (H–U, source cited in audit), special-case
+// occupancy checks protect against deceptively plausible Aufbau-order mistakes.
+const nistAnomalousNeutral={
+  24:{'3d':5,'4s':1},29:{'3d':10,'4s':1},
+  41:{'4d':4,'5s':1},42:{'4d':5,'5s':1},
+  43:{'4d':5,'5s':2},44:{'4d':7,'5s':1},
+  45:{'4d':8,'5s':1},46:{'4d':10},
+  47:{'4d':10,'5s':1},58:{'4f':1,'5d':1,'6s':2},
+  78:{'4f':14,'5d':9,'6s':1},79:{'4f':14,'5d':10,'6s':1}
+};
+for(const [z,shells] of Object.entries(nistAnomalousNeutral)){
+ const got=parseOrbitalConfiguration(detailed[Number(z)-1].electronConfiguration,Number(z)).orbitals;
+ assert.equal(JSON.stringify(Object.keys(got).sort().map(k=>[k,got[k]])),
+  JSON.stringify(Object.keys(shells).sort().map(k=>[k,shells[k]])),'NIST anomalous ground state '+z);
+}
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
+console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
