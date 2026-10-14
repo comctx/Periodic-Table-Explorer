@@ -39,13 +39,22 @@ const ciaaw2024=[1.0080,4.0026,6.94,9.0122,10.81,12.011,14.007,15.999,18.998,20.
                  174.97,178.49,180.95,183.84,186.21,190.23,192.22,195.08,196.97,200.59,
                  204.38,207.2,208.98,null,null,null,null,null,null,232.04,
                  231.04,238.03,null,null,null,null,null,null,null,null,
-                 null,null,null,null,null,null,null,null,null,null];
+                 null,null,null,null,null,null,null,null,null,
+                 null,null,null,null,null,null,null,null];
 ciaaw2024.forEach((weight,i)=>{
   assert.equal(detailed[i].atomicMass,weight,'CIAAW detailed atomic weight mismatch '+(i+1));
   assert.equal(cells[i].mass,weight,'CIAAW table atomic weight mismatch '+(i+1));
 });
 
 const history={
+  111:{year:"1994",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  112:{year:"1996",by:"GSI Darmstadt team led by Sigurd Hofmann"},
+  113:{year:"2004",by:"RIKEN team led by Kosuke Morita (Japan)"},
+  114:{year:"1998",by:"JINR Dubna team led by Yuri Oganessian and Vladimir Utyonkov"},
+  115:{year:"2003",by:"JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations"},
+  116:{year:"2000",by:"JINR Dubna and Lawrence Livermore researchers led by Yuri Oganessian, Vladimir Utyonkov, and Kenton Moody"},
+  117:{year:"2010",by:"JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations"},
+  118:{year:"2006",by:"JINR Dubna and Lawrence Livermore collaboration"},
   101:{year:"1955",by:"Albert Ghiorso, Bernard Harvey, Gregory Choppin, Stanley Thompson, and Glenn Seaborg"},
   102:{year:"1962–1963",by:"Joint Institute for Nuclear Research (Dubna), team led by Georgy Flerov"},
   103:{year:"1961",by:"Lawrence Berkeley Laboratory team led by Albert Ghiorso"},
@@ -396,10 +405,45 @@ for(let z=104;z<=110;z++)assert.equal(detailed[z-1].meltingPoint,null,'Do not in
 const h101to110=readFileSync('element.html','utf8');
 for(let z=101;z<=110;z++)assert.ok(h101to110.includes('  '+z+':"'),'Element-specific story missing '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope mass-number display');
+// Final eight: CIAAW has no standard atomic weights; RSC mass-number reference and predicted ground-state configurations.
+const rsc111to118={
+  111:[280,"[Rn] 5f14 6d10 7s1","1994","GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"],
+  112:[285,"[Rn] 5f14 6d10 7s2","1996","GSI Darmstadt team led by Sigurd Hofmann"],
+  113:[286,"[Rn] 5f14 6d10 7s2 7p1","2004","RIKEN team led by Kosuke Morita (Japan)"],
+  114:[289,"[Rn] 5f14 6d10 7s2 7p2","1998","JINR Dubna team led by Yuri Oganessian and Vladimir Utyonkov"],
+  115:[289,"[Rn] 5f14 6d10 7s2 7p3","2003","JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations"],
+  116:[293,"[Rn] 5f14 6d10 7s2 7p4","2000","JINR Dubna and Lawrence Livermore researchers led by Yuri Oganessian, Vladimir Utyonkov, and Kenton Moody"],
+  117:[294,"[Rn] 5f14 6d10 7s2 7p5","2010","JINR Dubna, Lawrence Livermore, and Oak Ridge research collaborations"],
+  118:[294,"[Rn] 5f14 6d10 7s2 7p6","2006","JINR Dubna and Lawrence Livermore collaboration"],
+};
+for(const [z,reference] of Object.entries(rsc111to118)){
+ const x=detailed[Number(z)-1],t=cells[Number(z)-1];
+ assert.equal(x.atomicMass,null,'CIAAW standard weight unassigned '+z);
+ assert.equal(t.mass,null,'Grid mass unassigned '+z);
+ assert.equal(x.referenceMassNumber,reference[0],'RSC mass-number reference '+z);
+ assert.equal(x.electronConfiguration,reference[1],'RSC electron configuration '+z);
+ assert.equal(x.yearDiscovered,reference[2],'Discovery year '+z);
+ assert.equal(x.discoveredBy,reference[3],'Discovery attribution '+z);
+ assert.equal(x.meltingPoint,null,'Melting unknown '+z);
+ assert.equal(x.boilingPoint,null,'Boiling unknown '+z);
+ assert.equal(x.density,null,'Density unknown '+z);
+ assert.equal(x.standardState,'Expected solid (RSC classification; unverified)','Qualified predicted state '+z);
+ assert.equal(t.state,'Unknown / predicted','Grid expected-state qualifier '+z);
+ assert.equal(x.oxidationStates,null,'Unknown oxidation '+z);
+ assert.equal(x.electronegativity,null,'Unknown Pauling '+z);
+ assert.equal(x.ionizationEnergy,null,'Unconfirmed ionization energy '+z);
+}
+const finalStories=readFileSync('element.html','utf8');
+for(let z=111;z<=118;z++)assert.ok(finalStories.includes('  '+z+':"'),'Discovery story missing '+z);
+for(let z=1;z<=118;z++){
+ const x=detailed[z-1],cell=cells[z-1];
+ assert.equal(x.atomicMass,cell.mass,'All atomic-weight values aligned '+z);
+ if(x.atomicMass===null)assert.ok(Number.isInteger(x.referenceMassNumber),'Reference isotope needed '+z);
+}
 assert.equal(detailed[22].namedBy,'Nils Gabriel Sefström','Vanadium naming attribution');
 assert.equal(detailed[1].meltingPoint,null,'Helium: phase transition not established at ordinary pressure');
 assert.ok(indexSource.includes('x.meltingPoint!=null') && indexSource.includes('x.boilingPoint!=null'),
           'Missing-value temperature protection was removed');
 
-console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–110 (101–110 unassigned); RSC melting/boiling/density 21–110, configurations 61–110; selected discovery dates; missing-phase safeguards');
+console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
