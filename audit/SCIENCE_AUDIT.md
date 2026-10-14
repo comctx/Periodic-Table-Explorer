@@ -18,9 +18,9 @@
 - [x] Fix `Number(null) === 0` causing 15 entries with unknown melting and boiling points to display falsely as gases in the temperature view.
 - [x] Seven narrow unit-level phase-calculation test cases passed. Browser and full integration tests remain outstanding.
 - [x] Initial *historical discovery review* for elements 1–10 against RSC histories. Several entries corrected in this audit branch.
-- [x] Normalize and cross-check abridged CIAAW 2024 atomic weights for elements 1–40
+- [x] Normalize and cross-check CIAAW 2024 weight conventions for elements 1–50 (technetium has no standard weight)
 - [x] Initial historical review for elements 11–30 (not complete property verification)
-- [x] RSC melting, boiling, and density conventions for elements 21–40
+- [x] RSC melting, boiling, and density conventions for elements 21–50
 - [x] Add a reusable structural / key-source regression test
 - [ ] Complete field-by-field reference review for elements 1–10 (numerical measurements, density conventions, chemistry).
 - [ ] Full field-by-field audit for elements 11–118.
@@ -157,3 +157,25 @@ Next: finish the detailed chemistry/numerical audit for 1–10, validate the 15 
 **Code:** Updated `elements-data.js`, `index.html`, `element.html`, and `audit/check-data.mjs` on audit branch. Regression assertions extended to #40; full browser/packaged-app testing still required. No merge or Store submission.
 
 **Post-commit check (session 4):** Re-fetched all five updated files from the audit branch. The exact JavaScript regression assertions in `audit/check-data.mjs` were executed with equivalent assertion and file-read shims in an isolated JavaScript test harness: **PASS**. Inline scripts in `index.html` and `element.html` passed syntax compilation; four direct temperature examples passed (arsenic below/above sublimation, room-temperature bromine and krypton). This is **not** a full Node invocation, actual-browser regression run, app package validation, or photograph/quiz certification. The `main` branch remains unmodified and retains older Ga–Zr values.
+
+## Audit session 5 — 2026-10-14: elements 41–50 (niobium through tin)
+
+**Method:** Aligned both displayed atomic-weight fields to [CIAAW abridged standard weights 2024](https://ciaaw.org/abridged-atomic-weights.htm), using `null` for technetium, which has *no standard atomic weight*. Checked element-specific melting/boiling values (K), density (g/cm³ at room temperature), phase at 20°C, and discovery stories against [RSC element fact boxes and histories](https://periodic-table.rsc.org/). This is a targeted pass, not exhaustive field-by-field verification.
+
+| # | Element | CIAAW weight | Changes and history decisions |
+|---:|---|---:|---|
+| 41 | Niobium | 92.906 | Hatchett discovered columbium 1801; Rose reidentified/named niobium in 1844. RSC boiling 5014 K (was 5017). |
+| 42 | Molybdenum | 95.95 | Scheele recognized the distinct chemistry 1778; Hjelm isolated metal 1781. RSC melting 2895 K. |
+| 43 | Technetium | **None** | **Segrè and Perrier**, 1937. No stable isotopes or CIAAW standard atomic weight. Former detailed 96.90636 is approximately a **Tc-97 isotope mass**, not a standard weight; table's former 98 is a **representative isotope mass number**. Both weight fields now null. Separately label `referenceMassNumber:98`, which RSC prints as **[98]**. RSC boiling 4535 K. |
+| 44 | Ruthenium | 101.07 | Osann proposed name in 1820s, Claus/Klaus isolated and confirmed metal, generally credited 1844. RSC's paragraph discusses his investigation beginning 1840; other RSC text and PubChem credit 1844. Previous 1827 date removed. RSC 2606/4420 K. |
+| 45 | Rhodium | 102.91 | Wollaston 1803; melting 2236 K. |
+| 46 | Palladium | 106.42 | Wollaston obtained metal in 1803, publicly revealed discovery 1805; melting 1828 K. |
+| 47 | Silver | 107.87 | Ancient, no single discoverer; invalid vague personal attribution removed; density 10.5. |
+| 48 | Cadmium | 112.41 | Stromeyer discovered and isolated 1817; Hermann's independent related work noted in story. Invalid `namedBy: Isotopes of cadmium` removed; melting 594.219 K. RSC lists 112.414 relative mass, CIAAW abridged says 112.41—intentional source convention. |
+| 49 | Indium | 114.82 | Reich and Richter, spectroscopy, 1863; RSC boiling 2300 K. |
+| 50 | Tin | 118.71 | Known since antiquity, no single discoverer; boiling 2859 K. Tin's solid-state allotropes below ~13°C remain outside simple phase model. |
+
+**RSC references:** [41](https://periodic-table.rsc.org/element/41/niobium), [42](https://periodic-table.rsc.org/element/42/molybdenum), [43](https://periodic-table.rsc.org/element/43/technetium), [44](https://periodic-table.rsc.org/element/44/ruthenium), [45](https://periodic-table.rsc.org/element/45/rhodium), [46](https://periodic-table.rsc.org/element/46/palladium), [47](https://periodic-table.rsc.org/element/47/silver), [48](https://periodic-table.rsc.org/element/48/cadmium), [49](https://periodic-table.rsc.org/element/49/indium), [50](https://periodic-table.rsc.org/element/50/tin).
+**Additional source checks:** [NIST technetium isotopic data](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Tc), [RSC technetium historical podcast](https://periodic-table.rsc.org/podcast/43/technetium), [PubChem ruthenium historical details](https://pubchem.ncbi.nlm.nih.gov/element/44), [PubChem cadmium](https://pubchem.ncbi.nlm.nih.gov/element/48).
+
+**Scope caveats:** CIAAW's *abridged* weights are rounded and not fixed masses of individual isotopes; uncertainties aren't in numeric fields. All other elements with no standard atomic weight (particularly synthetic elements >50) still need the same isotope vs standard-weight policy. The other science fields (atomic radii, ionization energies, electron affinities, oxidation states), each photo's source and license, quiz wording, live browser use, full Node regression, and Windows package validation remain open. Do not merge or resubmit before completing the full scientific review.
