@@ -1126,7 +1126,7 @@ window.ELEMENT_PHOTOS = {
     "name": "Berkelium",
     "symbol": "Bk",
     "localUrl": "images/elements/097-bk.jpg",
-    "title": "Berkelium-249 in solution in a research vial at Oak Ridge National Laboratory — not a bulk metal specimen",
+    "title": "Berkelium-249 in dissolved form in a research vial at Oak Ridge National Laboratory — not a bulk metal specimen",
     "attribution": "Oak Ridge National Laboratory (oakridgelabnews), 'Berkelium-249', photo taken June 8, 2009. Original https://www.flickr.com/photos/oakridgelab/4499934514, licensed CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Wikimedia Commons file Berkelium.jpg was cropped by Materialscientist; app image resized/reencoded. The photo shows berkelium in solution, not pure berkelium metal.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Berkelium.jpg",
     "sourceUrl": "https://www.flickr.com/photos/oakridgelab/4499934514",
