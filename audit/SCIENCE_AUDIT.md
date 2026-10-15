@@ -641,3 +641,123 @@ Compared every **Pauling electronegativity** and RSC **common oxidation states**
 **Individual RSC references:** [Pa](https://periodic-table.rsc.org/element/91/protactinium), [U](https://periodic-table.rsc.org/element/92/uranium), [Np](https://periodic-table.rsc.org/element/93/neptunium), [Pu](https://periodic-table.rsc.org/element/94/plutonium), [Am](https://periodic-table.rsc.org/element/95/americium), [Cm](https://periodic-table.rsc.org/element/96/curium), [Bk](https://periodic-table.rsc.org/element/97/berkelium), [Cf](https://periodic-table.rsc.org/element/98/californium), [Es](https://periodic-table.rsc.org/element/99/einsteinium), [Fm](https://periodic-table.rsc.org/element/100/fermium), [Md](https://periodic-table.rsc.org/element/101/mendelevium), [No](https://periodic-table.rsc.org/element/102/nobelium), [Lr](https://periodic-table.rsc.org/element/103/lawrencium), [Rf](https://periodic-table.rsc.org/element/104/rutherfordium), [Db](https://periodic-table.rsc.org/element/105/dubnium), [Sg](https://periodic-table.rsc.org/element/106/seaborgium), [Bh](https://periodic-table.rsc.org/element/107/bohrium), [Hs](https://periodic-table.rsc.org/element/108/hassium), [Mt](https://periodic-table.rsc.org/element/109/meitnerium), [Ds](https://periodic-table.rsc.org/element/110/darmstadtium), [Rg](https://periodic-table.rsc.org/element/111/roentgenium), [Cn](https://periodic-table.rsc.org/element/112/copernicium), [Nh](https://periodic-table.rsc.org/element/113/nihonium), [Fl](https://periodic-table.rsc.org/element/114/flerovium), [Mc](https://periodic-table.rsc.org/element/115/moscovium), [Lv](https://periodic-table.rsc.org/element/116/livermorium), [Ts](https://periodic-table.rsc.org/element/117/tennessine), [Og](https://periodic-table.rsc.org/element/118/oganesson).
 
 **Quality caveats:** RSC's "common oxidation states" convention does not exhaust specialist literature; a missing Pauling value or unobserved bulk appearance is not physically zero. The present review does not certify every historical/use claim in #1–90. Image licensing, browser integration, actual Node/CI runtime and store packaging remain open. Do not merge to `main` or resubmit to Microsoft.
+
+## Audit session 21 — 2026-10-14: final chemistry review #1–30 and first-20 physical properties
+
+**Scope:** Compared all first-30 elements against the [Royal Society of Chemistry element fact boxes](https://periodic-table.rsc.org/) for **Pauling-scale electronegativity** and RSC's selected **common oxidation states**; all 30 Pauling values already matched, so no electronegativity numbers were changed. RSC's *selected common oxidation-state column* is not an exhaustive claim about every compound. It omits states reported in specialized compounds (e.g. nitrogen +1, titanium +2), which are not "impossible." We align the displayed list to this named source and preserve caveats. The RSC leaves helium, neon and argon compound oxidation-state lists blank; the app now stores `null`, **not** 0, for this *compound-data field*. A free element always has oxidation state zero, a separate chemistry rule.
+
+**Oxidation omissions:** Carbon's RSC list includes **+4,+3,+2,+1,0,−1,−2,−3,−4**, rather than only +4,+2,−4. Sulfur includes **+2**. Vanadium includes **0**, cobalt includes **0 and −1**; titanium's RSC selected list is +4,+3, and silicon's is +4,−4, even though additional states appear in specialist chemistry. Nitrogen's RSC selected list is +5,+4,+3,+2,−3; it omits some less typical real states. No unverified new chemistry was invented.
+
+**Physical properties #1–20:** Their previous stored melting and boiling values and, particularly, gas densities followed other sources or measurement conditions (e.g. hydrogen 0.00008988 vs RSC's 0.000082 g/cm³, helium 0.0001785 vs 0.000164, oxygen 0.001429 vs 0.001308). Aligned **20 source-defined phase/density rows** with RSC's **room-temperature density** and Kelvin melting/boiling convention. This does not mean the previous numerical densities were fabricated; gaseous density varies with temperature and pressure. Helium's normal-pressure melting point remains unknown. For carbon, RSC lists **sublimation at 4098 K** at near atmospheric pressure rather than normal melting/boiling values: set `meltingPoint:null`, `boilingPoint:null`, `sublimationPoint:4098`; the temperature slider's existing sublimation branch prevents a fictitious liquid carbon state. Carbon's displayed density is specifically **graphite 2.2 g/cm³** (diamond about **3.513**); phosphorus's 1.823 is marked **white phosphorus** rather than implying all allotropes share that density.
+
+**Appearances and uses:** Source-checked detailed wording for multiple elements to distinguish elemental forms vs compounds, for example lithium-containing medicine versus metal, borates versus boron, nitrogen gas versus fertilizer compounds, fluoride chemicals versus elemental fluorine, phosphate fertilizer versus red phosphorus on safety-match striking surfaces, potassium salts versus very reactive potassium metal, limestone/cement versus pure calcium, and titanium metal versus pigment titanium dioxide. Noble gas discharge colours are shown only under electrical excitation, not as natural gas colours. Safety context is limited to relevant hazards, and no handling recommendations are provided.
+
+**Change tally:** 93 field edits across 30 elements.
+- **meltingPoint: 10**
+- **boilingPoint: 12**
+- **density: 12**
+- **oxidationStates: 10**
+- **sublimationPoint: 1**
+- **densityBasis: 2**
+- **appearance: 19**
+- **typicalUses: 27**
+
+| Element | Property | Previous | New |
+|---|---|---|---|
+| 1 H | meltingPoint | 13.81 | 13.99 |
+| 1 H | boilingPoint | 20.28 | 20.271 |
+| 1 H | density | 0.00008988 | 0.000082 |
+| 2 He | oxidationStates | "0" | null |
+| 2 He | boilingPoint | 4.22 | 4.222 |
+| 2 He | density | 0.0001785 | 0.000164 |
+| 4 Be | boilingPoint | 2744 | 2741 |
+| 5 B | meltingPoint | 2348 | 2350 |
+| 5 B | density | 2.37 | 2.34 |
+| 6 C | oxidationStates | "+4, +2, -4" | "+4, +3, +2, +1, 0, -1, -2, -3, -4" |
+| 6 C | meltingPoint | 3823 | null |
+| 6 C | boilingPoint | 4098 | null |
+| 6 C | density | 2.267 | 2.2 |
+| 7 N | oxidationStates | "+5, +4, +3, +2, +1, -1, -2, -3" | "+5, +4, +3, +2, -3" |
+| 7 N | meltingPoint | 63.15 | 63.2 |
+| 7 N | boilingPoint | 77.36 | 77.355 |
+| 7 N | density | 0.0012506 | 0.001145 |
+| 8 O | boilingPoint | 90.2 | 90.188 |
+| 8 O | density | 0.001429 | 0.001308 |
+| 9 F | meltingPoint | 53.53 | 53.48 |
+| 9 F | boilingPoint | 85.03 | 85.04 |
+| 9 F | density | 0.001696 | 0.001553 |
+| 10 Ne | oxidationStates | "0" | null |
+| 10 Ne | boilingPoint | 27.07 | 27.104 |
+| 10 Ne | density | 0.0008999 | 0.000825 |
+| 11 Na | meltingPoint | 370.95 | 370.944 |
+| 11 Na | boilingPoint | 1156 | 1156.09 |
+| 13 Al | meltingPoint | 933.437 | 933.473 |
+| 14 Si | oxidationStates | "+4, +2, -4" | "+4, -4" |
+| 15 P | boilingPoint | 553.65 | 553.7 |
+| 15 P | density | 1.82 | 1.823 |
+| 16 S | oxidationStates | "+6, +4, -2" | "+6, +4, +2, -2" |
+| 16 S | boilingPoint | 717.75 | 717.76 |
+| 16 S | density | 2.067 | 2.07 |
+| 17 Cl | meltingPoint | 171.65 | 171.7 |
+| 17 Cl | density | 0.003214 | 0.002898 |
+| 18 Ar | oxidationStates | "0" | null |
+| 18 Ar | meltingPoint | 83.8 | 83.81 |
+| 18 Ar | boilingPoint | 87.3 | 87.302 |
+| 18 Ar | density | 0.0017837 | 0.001633 |
+| 19 K | meltingPoint | 336.53 | 336.7 |
+| 22 Ti | oxidationStates | "+4, +3, +2" | "+4, +3" |
+| 23 V | oxidationStates | "+5, +4, +3, +2" | "+5, +4, +3, +2, 0" |
+| 27 Co | oxidationStates | "+3, +2" | "+3, +2, 0, -1" |
+| 6 C | sublimationPoint | null | 4098 |
+| 6 C | densityBasis | null | "graphite (diamond is about 3.513 g/cm³)" |
+| 15 P | densityBasis | null | "white phosphorus" |
+| 1 H | appearance | "colorless gas" | "A colourless, odourless gas at room temperature." |
+| 2 He | appearance | "colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field" | "A colourless, odourless, very unreactive gas. It can glow in an electric discharge, but is colourless under ordinary conditions." |
+| 3 Li | appearance | "silvery-white" | "A soft, silvery metal that reacts vigorously with water." |
+| 4 Be | appearance | "white-gray metallic" | "A silvery-white metal; inhaling beryllium-containing dust or fumes can cause serious disease." |
+| 5 B | appearance | "black-brown" | "Pure amorphous boron is a dark powder; crystalline boron is dark and hard." |
+| 7 N | appearance | "colorless gas, liquid or solid" | "A colourless, odourless gas at room temperature." |
+| 10 Ne | appearance | "colorless gas exhibiting an orange-red glow when placed in a high voltage electric field" | "A colourless, odourless gas that emits reddish-orange light when excited in a discharge tube." |
+| 11 Na | appearance | "silvery white metallic" | "A soft, silvery metal that tarnishes rapidly in air and reacts vigorously with water." |
+| 12 Mg | appearance | "shiny grey solid" | "A lightweight, silvery-white metal that burns with a brilliant white flame when ignited." |
+| 13 Al | appearance | "silvery gray metallic" | "A lightweight, malleable, silvery-white metal." |
+| 15 P | appearance | "colourless, waxy white, yellow, scarlet, red, violet, black" | "White phosphorus is a poisonous, waxy, highly flammable solid; red phosphorus is a more stable solid allotrope." |
+| 16 S | appearance | "lemon yellow sintered microcrystals" | "Most common elemental sulfur is a bright yellow crystalline solid or powder." |
+| 18 Ar | appearance | "colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field" | "A colourless, odourless gas under ordinary conditions." |
+| 19 K | appearance | "silvery gray" | "A soft, silvery metal that rapidly tarnishes in air and reacts vigorously with water." |
+| 20 Ca | appearance | null | "A soft, silvery-white metal that tarnishes rapidly in air and reacts with water." |
+| 21 Sc | appearance | "silvery white" | "A silvery metal that tarnishes in air." |
+| 22 Ti | appearance | "silvery grey-white metallic" | "A hard, strong, shiny silvery metal." |
+| 23 V | appearance | "blue-silver-grey metal" | "A silvery metal that resists corrosion." |
+| 27 Co | appearance | "hard lustrous gray metal" | "A lustrous silvery-blue magnetic metal." |
+| 1 H | typicalUses | "Ammonia production, petroleum refining, fuel cells, and rocket propellants." | "Hydrogen gas is used to manufacture ammonia and other chemicals, remove sulfur from petroleum products, fuel certain fuel cells, and propel liquid-hydrogen rockets." |
+| 2 He | typicalUses | "Cryogenic cooling, MRI systems, leak detection, and balloons." | "Helium gas cools superconducting magnets in MRI machines and scientific equipment. It is also used for leak detection, balloons, and inert atmospheres." |
+| 3 Li | typicalUses | "Rechargeable batteries, glass, ceramics, lubricants, and some medicines." | "Lithium-containing compounds are used in rechargeable batteries, glass and ceramics; lithium stearate in greases, and lithium salts in certain prescribed medicines. Lithium metal is also used in specialist alloys and batteries." |
+| 4 Be | typicalUses | "Aerospace alloys, X-ray windows, precision instruments, and nuclear technology." | "Beryllium metal and beryllium-containing alloys are used in aerospace components, electrical contacts, and X-ray windows. Some beryllium compounds have specialized ceramic and nuclear applications; beryllium dust is hazardous." |
+| 5 B | typicalUses | "Borosilicate glass, fiberglass, detergents, semiconductors, and neutron absorbers." | "Boron-containing compounds are used in borosilicate glass, fiberglass, borates, detergents, and some neutron-absorbing materials. Elemental boron has specialized semiconductor and pyrotechnic applications." |
+| 6 C | typicalUses | "Steelmaking, graphite electrodes, filters, cutting tools, fuels, plastics, and organic chemistry." | "Carbon's graphite form is used in electrodes and lubricants, while diamond is used in cutting tools. Carbon-based fuels, plastics, and filters involve many different compounds or forms of carbon." |
+| 7 N | typicalUses | "Fertilizer production, inert atmospheres, food preservation, and industrial chemistry." | "Nitrogen gas is used for inert atmospheres, food packaging and cryogenic cooling. Nitrogen is also a feedstock for ammonia and fertilizer compounds, which are distinct from elemental nitrogen gas." |
+| 8 O | typicalUses | "Medical oxygen, steelmaking, welding, water treatment, and combustion." | "Oxygen gas supports medical oxygen therapy, steel production, welding and industrial chemical manufacture. Oxygen and oxygen-containing compounds are also used in environmental water-treatment processes." |
+| 9 F | typicalUses | "Fluoropolymers, refrigerant chemistry, uranium processing, and dental compounds." | "Elemental fluorine is used in specialized industrial fluorination and uranium-processing chemistry. Fluorine-containing compounds are used in fluoropolymers, refrigerants, and fluoride-containing dental products." |
+| 10 Ne | typicalUses | "Signs, lasers, high-voltage indicators, and specialized lighting." | "Neon gas is used in reddish-orange advertising signs, discharge indicators and specialized lasers. Other sign colours often use different gases rather than pure neon." |
+| 11 Na | typicalUses | "Chemical manufacturing, sodium-vapor lamps, heat transfer, and sodium compounds." | "Sodium metal is used in some chemical syntheses, sodium-vapour lamps, and specialized heat-transfer systems. Sodium salts, including sodium chloride and sodium carbonate, are used far more widely." |
+| 12 Mg | typicalUses | "Lightweight alloys, flares, fireworks, electronics, and construction materials." | "Magnesium metal and alloys are used for lightweight automotive and aerospace components, and elemental magnesium is used in flares and some fireworks. Magnesium compounds are used in refractory materials, medicines, and industrial chemistry." |
+| 15 P | typicalUses | "Fertilizers, detergents, pesticides, matches, and biological compounds." | "Red phosphorus is used on safety-match striking surfaces. Phosphate compounds are used in fertilizers and some detergents; other phosphorus compounds have specialized industrial and agricultural applications." |
+| 16 S | typicalUses | "Sulfuric acid, fertilizers, rubber processing, fungicides, and chemical manufacturing." | "Elemental sulfur is used to vulcanize rubber and make sulfuric acid. Sulfur-containing compounds are used in fertilizers, fungicides and industrial chemistry." |
+| 17 Cl | typicalUses | "Water disinfection, bleach, PVC, solvents, and industrial chemicals." | "Chlorine gas is used in controlled water disinfection and chemical manufacture. Chlorine-containing compounds are used to make bleach, PVC and many industrial chemicals; chlorine gas itself is highly toxic." |
+| 19 K | typicalUses | "Fertilizers, soaps, glass, and specialized chemical compounds." | "Potassium metal has limited specialized uses. Potassium compounds, including potassium chloride, carbonate and hydroxide, are used in fertilizers, glassmaking, soaps and other chemicals." |
+| 20 Ca | typicalUses | "Cement, plaster, steelmaking, agriculture, and calcium compounds." | "Calcium metal is used in some metal refining and alloy production. Calcium compounds such as calcium carbonate, oxide, hydroxide and sulfate are used in cement, plaster, agriculture and water treatment." |
+| 21 Sc | typicalUses | "Aluminum alloys, high-intensity lamps, and specialized aerospace components." | "Scandium-aluminium alloys have specialized aerospace and sporting-goods applications. Scandium iodide is used in certain high-intensity lamps; most scandium production has limited industrial uses." |
+| 22 Ti | typicalUses | "Aircraft, medical implants, sporting goods, pigments, and corrosion-resistant alloys." | "Titanium metal and alloys are used in aircraft, medical implants and corrosion-resistant equipment. Titanium dioxide, a titanium compound, is used as a white pigment in paints and other products." |
+| 23 V | typicalUses | "High-strength steel alloys, catalysts, tools, and some battery materials." | "Vanadium is added to high-strength steels and some specialty alloys. Vanadium compounds are used as industrial catalysts, in pigments and as electrolytes in vanadium redox-flow batteries." |
+| 24 Cr | typicalUses | "Stainless steel, chrome plating, pigments, and high-temperature alloys." | "Chromium metal is used in stainless steel and chrome plating. Chromium compounds are used in pigments and surface treatment; hexavalent chromium compounds are particularly hazardous." |
+| 25 Mn | typicalUses | "Steelmaking, batteries, pigments, and aluminum alloys." | "Manganese is widely used in steelmaking and metal alloys. Manganese dioxide and other manganese compounds are used in certain batteries, pigments, and industrial processes." |
+| 26 Fe | typicalUses | "Steel, construction, machinery, tools, vehicles, magnets, and countless manufactured products." | "Iron and iron-based steel are used in construction, vehicles, machinery, tools and electrical equipment. Iron compounds are used in pigments, catalysts and other industrial applications." |
+| 27 Co | typicalUses | "Superalloys, magnets, batteries, catalysts, and pigments." | "Cobalt metal and alloys are used in high-temperature turbine parts and certain magnets. Cobalt compounds are used in pigments and battery electrodes, and cobalt-60 is used in specialized radiation applications." |
+| 28 Ni | typicalUses | "Stainless steel, batteries, coins, plating, magnets, and high-temperature alloys." | "Nickel metal and alloys are used in stainless steel, plating, coins and high-temperature equipment. Nickel compounds and nickel-containing electrodes are used in certain rechargeable batteries." |
+| 29 Cu | typicalUses | "Electrical wiring, plumbing, electronics, motors, coins, brass, and bronze." | "Copper metal is used in electrical wiring, motors, plumbing and electronics. Copper alloys include brass and bronze, while copper compounds have specialized chemical and agricultural uses." |
+| 30 Zn | typicalUses | "Galvanizing steel, brass, batteries, die casting, and zinc compounds." | "Zinc metal is used to galvanize steel, in brass and in die-cast components. Zinc compounds are used in batteries, pigments, rubber manufacture and other specialized applications." |
+
+**RSC element pages checked #1–30:** [H](https://periodic-table.rsc.org/element/1/hydrogen), [He](https://periodic-table.rsc.org/element/2/helium), [Li](https://periodic-table.rsc.org/element/3/lithium), [Be](https://periodic-table.rsc.org/element/4/beryllium), [B](https://periodic-table.rsc.org/element/5/boron), [C](https://periodic-table.rsc.org/element/6/carbon), [N](https://periodic-table.rsc.org/element/7/nitrogen), [O](https://periodic-table.rsc.org/element/8/oxygen), [F](https://periodic-table.rsc.org/element/9/fluorine), [Ne](https://periodic-table.rsc.org/element/10/neon), [Na](https://periodic-table.rsc.org/element/11/sodium), [Mg](https://periodic-table.rsc.org/element/12/magnesium), [Al](https://periodic-table.rsc.org/element/13/aluminium), [Si](https://periodic-table.rsc.org/element/14/silicon), [P](https://periodic-table.rsc.org/element/15/phosphorus), [S](https://periodic-table.rsc.org/element/16/sulfur), [Cl](https://periodic-table.rsc.org/element/17/chlorine), [Ar](https://periodic-table.rsc.org/element/18/argon), [K](https://periodic-table.rsc.org/element/19/potassium), [Ca](https://periodic-table.rsc.org/element/20/calcium), [Sc](https://periodic-table.rsc.org/element/21/scandium), [Ti](https://periodic-table.rsc.org/element/22/titanium), [V](https://periodic-table.rsc.org/element/23/vanadium), [Cr](https://periodic-table.rsc.org/element/24/chromium), [Mn](https://periodic-table.rsc.org/element/25/manganese), [Fe](https://periodic-table.rsc.org/element/26/iron), [Co](https://periodic-table.rsc.org/element/27/cobalt), [Ni](https://periodic-table.rsc.org/element/28/nickel), [Cu](https://periodic-table.rsc.org/element/29/copper), [Zn](https://periodic-table.rsc.org/element/30/zinc).
+
+**Science checkpoint:** All 118 records have now had targeted RSC Pauling and common oxidation-state review (with earlier sessions #31–118), and atomic-weight conventions, radius/first ionization/affinity reference comparisons, selected physical/discovery information. This is **not** complete independent scientific certification of every use, all isotope/appearance subtleties, nor image/license and runtime QA. RSC's page images have NOT been copied. No merge to main or Microsoft Store submission is authorized.
