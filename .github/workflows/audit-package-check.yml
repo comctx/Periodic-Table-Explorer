@@ -43,6 +43,13 @@ jobs:
           blocked = {61,84,85,86,87,93,99} | set(range(100,119))
           expected = {root / catalog[str(z)]['localUrl'] for z in range(1,119) if z not in blocked}
           assert set(photo_files) == expected, 'Unexpected or absent photo in staged Web directory'
+          for z in (92, 97):
+              assert (root / catalog[str(z)]['localUrl']).is_file(), f'Restored audited photo {z} missing'
+          assert 'VRT permission ticket 2011070810013625' in catalog['92']['attribution']
+          assert catalog['97']['licenseUrl'] == 'https://creativecommons.org/licenses/by/2.0/'
+          assert 'Oak Ridge National Laboratory' in catalog['97']['attribution']
+          for z in (93, 99):
+              assert 'withholdReason' in catalog[str(z)], f'Explicit exclusion {z} lost'
           for z in blocked:
               assert not (root / catalog[str(z)]['localUrl']).exists(), f'Withheld element {z} was packaged'
           for name in ('index.html','element.html','quiz.html','about.html',
