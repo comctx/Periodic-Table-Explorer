@@ -41,6 +41,16 @@ Added [`verify_distribution_package.py`](verify_distribution_package.py) with it
 
 **These were synthetic archives, not signed Apple or Microsoft packages**. The repository tree contains **no checked-in Windows-specific packager or manifest**, so the actual Windows Store packaging path has **not** been verified or modified. No real .ipa, .msix, signed package, Store-delivered build or nested Windows bundle was tested, and no photo rights have been finally cleared. The checker refuses unsupported/nested bundle layouts rather than guessing.
 
+## PWA offline photo cache — completed automated HTTPS Chromium test
+
+The original `sw.js` core cache included pages/scripts but not the 92 displayed element photos. The new **`pte-core-v3`** installs **all 92 currently stageable element JPEGs**, using the exact `offline-photos.json` list checked by `audit/check_offline_manifest.py`, plus the separate Bay City City Hall photograph and essential pages. **All 26 withheld/placeholder element image files remain excluded** from this cached list and from the isolated staged native resource folder.
+
+The manifest is now in `audit/package_web_assets.py`'s required `CORE_FILES` and its bytes are covered by the general package inspector. `codemagic.yaml` checks that any subsequently built IPA contains `offline-photos.json` matching its exact 92 staged element JPEGs. **These are guards for a future signed build; no real signed IPA was created or inspected in this audit update.**
+
+A real HTTPS Playwright/Chromium test served the **isolated staged Web app**, waited for the PWA worker to control the page and cache **108 files (92 photos)**, then disconnected the network. [**Run 38783188109 succeeded**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38783188109) for all 118 element pages, all 92 JPEGs including first-offline-view cases, all 26 excluded, quiz, search, temperature, credits, and Bay City. For scope and the first test-harness failure see [`OFFLINE_QA.md`](OFFLINE_QA.md).
+
+**This is browser/PWA QA, not actual iOS Safari/WKWebView or a Microsoft Store package test**, nor does caching imply license approval. Preserve all remaining source-rights and signed-device release gates.
+
 ## Still outstanding before release
 
 1. Complete file-by-file commercial redistribution/author/source/derivative-rights review for **all 92 staged candidate images**, including ShareAlike and author name/link requirements.
