@@ -38,9 +38,9 @@ jobs:
           root = Path(os.environ['RUNNER_TEMP']) / 'pte-web/Web'
           photo_root = root / 'images/elements'
           photo_files = sorted(photo_root.glob('*.jpg'))
-          assert len(photo_files) == 90, f'Expected 90, got {len(photo_files)}'
+          assert len(photo_files) == 92, f'Expected 92, got {len(photo_files)}'
           catalog = json.loads((root / 'element-photo-data.js').read_text().split('=',1)[1].strip().rstrip(';'))
-          blocked = {61,84,85,86,87,92,93,97,99} | set(range(100,119))
+          blocked = {61,84,85,86,87,93,99} | set(range(100,119))
           expected = {root / catalog[str(z)]['localUrl'] for z in range(1,119) if z not in blocked}
           assert set(photo_files) == expected, 'Unexpected or absent photo in staged Web directory'
           for z in blocked:
@@ -55,7 +55,7 @@ jobs:
           xcode=Path('ios/PeriodicTableExplorer.xcodeproj/project.pbxproj').read_text()
           assert 'audit/package_web_assets.py' in xcode and 'cp -R' not in xcode
           magic=Path('codemagic.yaml').read_text()
-          assert 'len(element_images) == 90' in magic and 'set(element_images) == expected' in magic
-          print('PASS: exactly 90 app-visible images, 28 excluded, About & Credits and offline assets staged')
+          assert 'len(element_images) == 92' in magic and 'set(element_images) == expected' in magic
+          print('PASS: exactly 92 app-visible images, 26 excluded, About & Credits and offline assets staged')
           print('NOTICE: static checks do not replace actual signed IPA or legal rights review')
           PY
