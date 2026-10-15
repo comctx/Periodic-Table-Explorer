@@ -956,12 +956,12 @@ assert.ok(visualImageReport.includes('**30 of 30 cached JPEGs opened and inspect
 assert.ok(visualImageReport.includes('**22 of 30 have a visible match'), 'Visual matching counted separately from clearance');
 assert.ok(visualImageReport.includes('**8 of 30 do not establish an exact match'), 'Unmapped JPEGs explicitly tracked');
 assert.ok(visualImageReport.includes('**0 of 30 cached photos cleared'), 'Local visual check must not claim redistribution permission');
-assert.match(visualImageReport,/Hydrogenglow\.jpg[\\s\\S]{0,200}match/i, 'Correct hydrogen source correction recorded');
+assert.ok(visualImageReport.includes('Hydrogenglow.jpg') && visualImageReport.includes('unrelated') && visualImageReport.includes('visual match'), 'Correct hydrogen source correction recorded');
 for(const z of [3,4,5,14,15,22,27,30]){
  const m=photoSourceData[String(z)];
  assert.ok(!!m.withholdReason,'Unmatched local image withheld until exact rights verified '+z);
  assert.ok(m.withholdReason.length>40,'Reason provides context for withholding '+z);
- const row=visualImageReport.split('\\n').find(line=>line.startsWith('| '+z+' |'));
+ const row=visualImageReport.split(String.fromCharCode(10)).find(line=>line.startsWith('| '+z+' |'));
  assert.ok(row && row.includes('Not exact / withheld'),'Unmapped local image has matching report row '+z);
 }
 assert.match(photoSourceData['5'].title,/amorphous boron powder/, 'Correct boron allotrope for stored JPG');
