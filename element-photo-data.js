@@ -752,8 +752,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/samarium.jpg",
     "sourceUrl": "https://images-of-elements.com/samarium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/samarium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Samarium-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/samarium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "63": {
     "name": "Europium",
@@ -764,8 +763,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/europium.jpg",
     "sourceUrl": "https://images-of-elements.com/europium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/europium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Europium.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/europium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "64": {
     "name": "Gadolinium",
@@ -776,8 +774,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/gadolinium.jpg",
     "sourceUrl": "https://images-of-elements.com/gadolinium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gadolinium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gadolinium-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gadolinium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "65": {
     "name": "Terbium",
@@ -788,8 +785,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/terbium.jpg",
     "sourceUrl": "https://images-of-elements.com/terbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/terbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Terbium-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/terbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "66": {
     "name": "Dysprosium",
@@ -800,8 +796,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/dysprosium.jpg",
     "sourceUrl": "https://images-of-elements.com/dysprosium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/dysprosium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dysprosium-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/dysprosium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "67": {
     "name": "Holmium",
@@ -812,8 +807,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/holmium.jpg",
     "sourceUrl": "https://images-of-elements.com/holmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/holmium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Holmium2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/holmium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "68": {
     "name": "Erbium",
@@ -848,8 +842,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/ytterbium.jpg",
     "sourceUrl": "https://images-of-elements.com/ytterbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/ytterbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ytterbium-3.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/ytterbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "71": {
     "name": "Lutetium",
@@ -872,8 +865,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/hafnium.jpg",
     "sourceUrl": "https://images-of-elements.com/hafnium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/hafnium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hafnium_(72_Hf).jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/hafnium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "73": {
     "name": "Tantalum",
@@ -884,8 +876,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/tantalum.jpg",
     "sourceUrl": "https://images-of-elements.com/tantalum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/tantalum.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tantalum.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/tantalum.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "74": {
     "name": "Tungsten",
@@ -908,8 +899,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/rhenium.jpg",
     "sourceUrl": "https://images-of-elements.com/rhenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/rhenium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_rhenium_bead,_arc_melted,_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/rhenium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "76": {
     "name": "Osmium",
@@ -932,8 +922,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/iridium.jpg",
     "sourceUrl": "https://images-of-elements.com/iridium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/iridium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iridium-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/iridium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "78": {
     "name": "Platinum",
@@ -956,8 +945,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/gold.jpg",
     "sourceUrl": "https://images-of-elements.com/gold.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gold.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gold_(79_Au).jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gold.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "80": {
     "name": "Mercury",
@@ -968,8 +956,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/mercury.jpg",
     "sourceUrl": "https://images-of-elements.com/mercury.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/mercury.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrargyrum_(80_Hg).jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/mercury.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "81": {
     "name": "Thallium",
@@ -980,8 +967,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/thallium.jpg",
     "sourceUrl": "https://images-of-elements.com/thallium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/thallium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thallium_(81_Tl).jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/thallium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "82": {
     "name": "Lead",
@@ -992,8 +978,7 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://images-of-elements.com/s/lead.jpg",
     "sourceUrl": "https://images-of-elements.com/lead.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/lead.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lead-2.jpg"
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/lead.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "83": {
     "name": "Bismuth",
