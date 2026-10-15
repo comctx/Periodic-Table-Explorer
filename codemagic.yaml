@@ -225,12 +225,23 @@ workflows:
           import glob
           import json
           import plistlib
+          import subprocess
+          import sys
           import zipfile
 
           archives = glob.glob('build/ios/ipa/*.ipa')
           if not archives:
               archives = glob.glob('**/*.ipa', recursive=True)
           assert len(archives) == 1, f'Expected one IPA, got {archives}'
+
+          # IMPORTANT: inspect the ACTUAL signed output IPA, not a synthetic ZIP.
+          # Verify all 92 photos, the exact 26 exclusions, 118-element catalog
+          # and bytes of credits, offline data, logos and Web scripts against
+          # this checked-out audited source. Fail build before TestFlight publish.
+          subprocess.run(
+              [sys.executable, 'audit/verify_distribution_package.py', archives[0]],
+              check=True,
+          )
 
           with zipfile.ZipFile(archives[0]) as archive:
               names = archive.namelist()
