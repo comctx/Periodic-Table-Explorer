@@ -1172,6 +1172,20 @@ assert.ok(indexSource.includes('href="about.html"'),'About page reachable from m
 assert.ok(readFileSync('element.html','utf8').includes('href="about.html"'),'About page reachable from element details');
 assert.ok(offlineSource.includes("'./about.html'"),'About page pre-cached offline');
 assert.ok(offlineSource.includes("pte-core-v2"),'Cache version updated for About page');
+// The hidden Bay City easter egg is an additional packaged third-party photograph
+// OUTSIDE the 118-element catalog. Preserve its own source, author, license and
+// modification notice in BOTH popup locations and the central Credits page.
+const cityHallSource='https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG';
+const cityHallLicense='https://creativecommons.org/licenses/by-sa/3.0/';
+for(const [name,page] of [['index.html',indexSource],['element.html',elementPhotoPage],['about.html',aboutPage]]){
+ assert.ok(page.includes('Andrew Jameson'),'Bay City photo photographer credited on '+name);
+ assert.ok(page.includes(cityHallSource),'Bay City original source linked on '+name);
+ assert.ok(page.includes(cityHallLicense),'Bay City ShareAlike photo license linked on '+name);
+ assert.match(page,/resiz(?:ed|ing)|reencod/i,'Bay City photo changes stated on '+name);
+}
+assert.ok(aboutPage.includes('id="otherImagesTitle"'),'Non-element third-party image credits kept separate');
+assert.ok(aboutPage.includes('118 element images listed above'),'Clarify non-element photo not counted as an element image');
+
 assert.ok(aboutPage.includes('<script src="./element-photo-data.js"></script>'),'Credits reuse existing metadata');
 assert.ok(aboutPage.includes('if(item.withholdReason)info(body,'), 'Credits explain withheld images');
 assert.ok(aboutPage.includes('withheld?" — withheld"'), 'Credits mark withheld image');
