@@ -16,7 +16,7 @@ EXPECTED_EXCLUDED = {61, 84, 85, 86, 87, 93, 99} | set(range(100, 119))
 CORE_FILES = (
     "index.html", "element.html", "quiz.html", "about.html",
     "privacy.html", "support.html", "elements-data.js",
-    "element-photo-data.js", "sw.js", "manifest.webmanifest",
+    "element-photo-data.js", "sw.js", "offline-photos.json", "manifest.webmanifest",
     "donco_logo_footer.png",
 )
 PHOTO_PATH = re.compile(r"images/elements/\d{3}-[a-z]{1,2}\.jpg\Z")
