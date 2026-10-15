@@ -26,6 +26,37 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 **Examples requiring extra care:** #94 plutonium ring's [Wikimedia Commons page](https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg) describes special Los Alamos attribution/notice requirements not captured by the existing vague "Attribution" metadata; #96 curium has a different source and no explicit license statement. #84–87 and #101–104 are described as illustrations or unrelated experiments; #105–118 are generic placeholders.
 
+
+## Phase 2 / Source-page checks — 2026-10-14
+
+**Progress distinction:** **12 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 106 source pages have not yet been individually checked.
+
+- **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
+- **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
+- **#96 Curium:** Its source page explicitly credits © European Union / JRC-ITU for the depicted material and does **not** show an unambiguous license grant for that photograph. Keep withheld unless direct reuse permission or another independently licensed photo is found.
+- **Image-file inventory:** On 2026-10-14, checked the audit-branch GitHub tree: **118/118 expected local JPEG paths exist**, totaling **5,789,878 bytes**. This checks filenames/presence only. **It does not confirm that the local JPEG depicts the intended source**, is a legitimate resize of that image, has the original colors, or meets copyright requirements. Binary fingerprint/visual equivalence must be tested.
+- **UI correction:** The app's “Open original image” control previously linked to `images/elements/...` (its own local copy). It now opens the actual `originalUrl`, and checked records show an additional Commons file-page link for provenance and reuse terms. Existing original publishing-site links remain separate.
+
+| # | Reported subject | External source evidence | Published license/notice | Source-level outcome | Cached photo cleared? |
+|---:|---|---|---|---|---|
+| 1 H | Vial of glowing ultrapure hydrogen, H2. Original size in cm: 1 x 5 | [Source page](https://commons.wikimedia.org/wiki/File:Hydrogenglow.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 2 He | Vial of glowing ultrapure helium. Original size in cm: 1 x 5 | [Source page](https://commons.wikimedia.org/wiki/File:Helium-glow.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 3 Li | 0.5 Grams Lithium under Argon. Original size of the largest piece in cm: 0.3 x 4 | [Source page](https://commons.wikimedia.org/wiki/File:0.5_grams_lithium_under_argon.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 4 Be | Pure Beryllium bead, 2.5 grams. Original size in cm: 1 x 1.5 | [Source page](https://commons.wikimedia.org/wiki/File:Beryllium_(Be).jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 5 B | Pure Crystalline Boron, front and back side. Original size in cm: 2 x 3 | [Source page](https://commons.wikimedia.org/wiki/File:Boron.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 6 C | Element 6 - Carbon | [Source page](https://commons.wikimedia.org/wiki/File:Pure_Carbon.png) | CC BY-SA 4.0 | Source license confirmed CC BY-SA, modification/share-alike obligations remain — NOT CLEARED | No (cached image not matched) |
+| 7 N | Vial of Glowing Ultrapure Nitrogen, N2. Original size in cm: 1 x 5 | [Source page](https://commons.wikimedia.org/wiki/File:Nitrogen-glow.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 8 O | Liquid Oxygen in a Beaker | [Source page](https://commons.wikimedia.org/wiki/File:Liquid_oxygen_in_a_beaker_(cropped_and_retouched).jpg) | US Air Force public domain | US federal government public-domain basis stated on Wikimedia Commons — NOT CLEARED | No (cached image not matched) |
+| 9 F | Liquid Fluorine at -196°C | [Source page](https://commons.wikimedia.org/wiki/File:Fluoro_liquido_a_-196%C2%B0C_1.jpg) | CC BY-SA 3.0 | Source license confirmed CC BY-SA, modification/share-alike obligations remain — NOT CLEARED | No (cached image not matched) |
+| 10 Ne | Vial of Glowing Ultrapure neon. Original size in cm: 1 x 5 | [Source page](https://commons.wikimedia.org/wiki/File:Neon-glow.jpg) | CC BY 3.0 | Source license confirmed CC BY 3.0 with creator attribution obligations — NOT CLEARED | No (cached image not matched) |
+| 94 Pu | Plutonium Ring | [Source page](https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg) | LANL reuse notice | Source permits copying conditionally; full LANL attribution and reuse notice required — KEEP WITHHELD | No (cached image not matched) |
+| 96 Cm | A piece of curium, which emitts strong radiation that makes it glow | [Source page](https://images-of-elements.com/curium.php) | copyright notice, no grant | Source copyright notice; no specific reuse license verified — KEEP WITHHELD | No (cached image not matched) |
+
+**Count check:** The CC BY 3.0 source-licensed entries above are exactly **#1, #2, #3, #4, #5, #7, #10 (7 images)**; with #6 and #9 CC BY-SA (2) and #8 US-federal public domain (1), that covers the first ten. Their current provenance is *source-page checked*, **not** verified local-image identity, license-term compliance or final clearance.
+
+[Creative Commons BY 3.0 deed](https://creativecommons.org/licenses/by/3.0/); [BY-SA 3.0 deed](https://creativecommons.org/licenses/by-sa/3.0/); [BY-SA 4.0 deed](https://creativecommons.org/licenses/by-sa/4.0/). The Creative Commons licenses allow commercial reuse subject to attribution and, for ShareAlike, adaptation conditions. A license can contain additional rights limitations and is not an endorsement.
+
+
 ## Per-element tracking (all unchecked)
 
 | Z | Element | Catalog triage (not clearance) | Current title/subject | Original image | Metadata license | Source page | Verified? |
