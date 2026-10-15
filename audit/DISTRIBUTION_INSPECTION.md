@@ -45,6 +45,14 @@ A **PASS is only byte-level package/source consistency** (and this script does n
 
 **Crucial distinction:** `.ipa`/`.msix` fixture names do not make those ZIP files real signed Apple or Microsoft distributables. **No actual Windows package, real signed IPA, or Store-delivered artifact was examined here.**
 
+## New future signed-IPA hard gate — 2026-10-15
+
+In `codemagic.yaml`, the **existing** signed build's `Verify finished iPhone app` script now calls `audit/verify_distribution_package.py` with the **actual `build/ios/ipa/*.ipa` path** before the existing Info.plist, 92-photo and offline-manifest checks. The read-only inspector compares SHA-256 bytes of all 92 staged element images, each bundled page/credit/source data file, the offline manifest and the separate Bay City photo against audited source; it refuses extra/excluded images. On any failure the Codemagic job stops **before** its configured `submit_to_testflight: true` publishing stage.
+
+**Verified change:** [GitHub Actions **38806534768**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38806534768) concluded **success** and its staging/packaging workflow now asserts the real-IPA inspector invocation is present in `codemagic.yaml`. Earlier synthetic `.ipa`/ZIP fixtures were also tested by the guard.
+
+**NOT performed:** no signed IPA created, no Codemagic job executed, no Apple credentials used, and no TestFlight upload or real-IPA binary inspection occurred. This is **only** a verifiable guard on a later build. The future build/publishing still requires explicit owner approval and remaining copyright review.
+
 ## What is still open
 
 - Actual Windows/Microsoft Store packaging recipe and output artifact **not located in this repo**; import or locate it to verify what the Store package really includes. A generic checker does not change the Windows build.
