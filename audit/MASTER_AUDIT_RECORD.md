@@ -265,6 +265,17 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [x] [Initial run 38783009704](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38783009704) **failed before offline navigation** because the test needed to wait for service-worker page control separately from cache installation. Follow-up amended the test and reran; only [run **38783188109**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38783188109) establishes full offline success.
 - [ ] **Not a release sign-off:** physical iPhone Safari and native `WKWebView`, first-run TestFlight, genuine signed IPA and Windows distribution package, and **final author/licensing rights** for the 92 staged photos and separate Bay City image remain unverified. An HTTPS Chromium worker does not prove all those delivery modes use the same storage semantics.
 
+## 4F. Precisely scoped publisher-original attribution cases — 2026-10-15
+
+**Evidence:** [`PUBLISHER_30_RIGHTS_CLARIFICATION.md`](PUBLISHER_30_RIGHTS_CLARIFICATION.md) lists the **30 exact original publisher-hosted photo URLs**, their app source-page links and author-status cases. Publisher website's own [general CC BY 3.0 licensing statement](https://images-of-elements.com/) requires attribution to each element page and says **"unless otherwise noted"**.
+
+- [x] Verified **30 displayed candidate photos** currently cite originals hosted at `images-of-elements.com`; **every one** has the matching `https://images-of-elements.com/<element>.php` attribution page in `element-photo-data.js`. **No missing element-page source links** were found in that exact group.
+- [x] **29/30 do not have independently documented named individual photographers in this catalog**, whereas **#49 indium has independently verified Jurii / Commons original** from prior specific run 38775178783. This is a **limited authorship-evidence status**, **not proof 29 images lack licenses** or a new source-identity issue.
+- [x] No earlier source-identity/photo comparisons were repeated, no JPEG binaries, element chemistry or exclusions changed. The **92 displayed candidate / 26 withheld** inventory is unchanged.
+- [x] Corrected a stale About & Credits note that still said the **Bay City original-photo identity comparison** had not been performed. The successful visual match **was** recorded in [run 38773309259](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38773309259). This match does **not** establish byte-identical images or final legal signed-package compliance.
+- [x] Prepared **one publisher clarification message** in the new case file asking whether the exact 30 JPEGs fall under the site's CC BY 3.0 offer, whether specific exceptions exist, and whether publisher credit is enough for images without named photographers. **The message was NOT sent. No permission or reply was obtained.**
+- [ ] **Still open**: third-party confirmation or independently defensible item-specific evidence, attribution review and the actual image-derivative/signed-package legal obligations. Do not equate a general publisher license notice or this inventory with 30 individual image clearances.
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
@@ -301,6 +312,7 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [`BROWSER_QA.md`](BROWSER_QA.md) and [`browser-smoke.mjs`](browser-smoke.mjs) — verified real Chromium 118-page/media/quiz/mobile browser tests, with historical test-assertion failures distinguished from production defects.
 - [`OFFLINE_QA.md`](OFFLINE_QA.md), [`offline-browser-smoke.mjs`](offline-browser-smoke.mjs), [`offline-photos.json`](../offline-photos.json) — full **true HTTPS/offline** element/photo/quiz results, source cache allowlist and release caveats.
 - [`IMAGE_RIGHTS_48_49_FOLLOWUP.md`](IMAGE_RIGHTS_48_49_FOLLOWUP.md) — image-specific authorship comparison (indium corroborated / different cadmium Commons original rejected) with [live passing source-test run 38775178783](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775178783).
+- [`PUBLISHER_30_RIGHTS_CLARIFICATION.md`](PUBLISHER_30_RIGHTS_CLARIFICATION.md) — exact publisher original-image inventory and **unsent** clarification request, avoiding repeated image-matching reviews.
 - Current source-of-truth app assets: [`element-photo-data.js`](../element-photo-data.js), [`elements-data.js`](../elements-data.js), [`element.html`](../element.html), [`about.html`](../about.html), [`codemagic.yaml`](../codemagic.yaml).
 
 **Master-record creation changes no chemistry, photos, quiz code or distribution settings.** It documents the audited baseline so that future changes are intentional and verifiable.
