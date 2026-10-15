@@ -988,7 +988,7 @@ assert.ok(secondBatchReport.includes('24/30'),'24 likely image identities descri
 assert.ok(secondBatchReport.includes('6/30'),'Six manual review cases recorded');
 assert.ok(secondBatchReport.includes('**0 of these 30 photographs cleared'),'No premature image license clearance');
 assert.ok(secondBatchReport.includes('38681018215'),'Checkable GitHub Actions workflow run');
-assert.ok(masterImageReview.includes('60/118 actual local JPEGs tested'),'Master audit inspection status updated');
+assert.ok(masterImageReview.includes('90 of 118 actual saved JPEG files have now been inspected'),'Master audit inspection status updated');
 for(const z of [31,44,45,47,50,58]){
  const m=photoSourceData[String(z)];
  assert.ok(m && m.withholdReason?.length>50,'Unresolved cached source withheld '+z);
