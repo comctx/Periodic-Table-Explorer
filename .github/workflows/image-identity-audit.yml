@@ -1,4 +1,4 @@
-name: Replace three attributed images on audit branch
+name: Recover three science images on audit branch
 on:
   push:
     branches:
