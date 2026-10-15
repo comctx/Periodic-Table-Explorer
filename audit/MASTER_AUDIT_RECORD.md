@@ -206,9 +206,22 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 
 **Computed from current catalog and element page visibility logic:** 92 C; 12 W; 14 P; total 118. Excluded atomic numbers: `61, 84, 85, 86, 87, 93, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118`.
 
+## 4A. Non-element media audit — 2026-10-15
+
+**Important inventory clarification:** **92** is the count of candidate `images/elements/*.jpg` specimen/research photos, **NOT** the entire app's picture count. The current Web bundle also includes a separate photographed **Bay City City Hall Easter egg** at `images/bay-city-city-hall.jpg`, plus app icons/branding assets.
+
+- [x] Verified the original [Wikimedia Commons City Hall file](https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG): **Andrew Jameson**, own photograph, **20 February 2012**, [**CC BY-SA 3.0**](https://creativecommons.org/licenses/by-sa/3.0/). This is a **copyrighted, permissively licensed photo**, not public domain.
+- [x] Checked both `index.html` and `element.html`: the secret Bay City overlays **already credited** Andrew Jameson, Commons source, the license, and app resizing. No need to rewrite existing correct popup credits.
+- [x] Added a dedicated **Other Image Credits** section to `about.html`, with author, photo-page link, license link, and an explicit resized/reencoded and ShareAlike note.
+- [x] Updated `audit/check-data.mjs` and the audit staging CI workflow to **fail** if this separately packaged photo or any of the author/source/license links disappears.
+- [ ] **Still pending:** independently match the actual local JPEG binary to Andrew Jameson's original source and complete the adapted-image license obligations; inspect author/usage rights for logo/icon assets. The existence of a Commons license is **not** an approved redistribution package.
+- [ ] Evaluate other app delivery paths (Windows/Microsoft), and inspect signed iOS IPA; this record alone cannot verify final packages.
+
+**No change** to the element photo inventory: 92 candidate / 12 expressly withheld / 14 placeholders. **Do not describe all included image rights as cleared.**
+
 ## 5. Remaining release gates — exact next work only
 
-- [ ] **Licensing / authorship**: For the 92 staged images, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
+- [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
 - [ ] **ShareAlike obligations**: Ensure the actual redistributed adapted JPEGs, their license/credit text, source links and attribution change notices satisfy the specific CC BY-SA version(s), including offline access to appropriate information where needed.
 - [ ] **Source code review**: Confirm image metadata and UI consistently describe actual specimens vs chemical compounds, historical imagery, equipment, products or simulations; ensure “No Image Found” is not misrepresented.
 - [ ] **Independent science QA**: Verify remaining per-element scientific prose/discovery/usage/physical-context nuances against named reference materials and run integrated runtime checks; test critical paths for all 118 rather than redoing already verified data comparisons.
