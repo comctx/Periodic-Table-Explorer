@@ -5,6 +5,7 @@ on:
       - scientific-audit-2026-10
     paths:
       - audit/package_web_assets.py
+      - audit/verify_distribution_package.py
       - audit/check-data.mjs
       - codemagic.yaml
       - element-photo-data.js
@@ -76,4 +77,65 @@ jobs:
           assert 'len(element_images) == 92' in magic and 'set(element_images) == expected' in magic
           print('PASS: exactly 92 app-visible images, 26 excluded, About & Credits and offline assets staged')
           print('NOTICE: static checks do not replace actual signed IPA or legal rights review')
+          PY
+      - name: Verify extracted Web assets and safe ZIP/IPA/MSIX-shaped test archives
+        run: |
+          python3 audit/verify_distribution_package.py "$RUNNER_TEMP/pte-web/Web"
+          python3 - <<'PY'
+          import json
+          import os
+          import shutil
+          import subprocess
+          import sys
+          import zipfile
+          from pathlib import Path
+
+          root=Path(os.environ['RUNNER_TEMP'])/'pte-web'
+          web=root/'Web'
+          catalog=json.loads(Path('element-photo-data.js').read_text().split('=',1)[1].strip().rstrip(';'))
+          inspector=Path('audit/verify_distribution_package.py').resolve()
+          ok_zip=root/'audit-clean.zip'
+          bad_zip=root/'audit-invalid-withheld.zip'
+          with zipfile.ZipFile(ok_zip,'w',compression=zipfile.ZIP_DEFLATED) as out:
+              for p in sorted(web.rglob('*')):
+                  if p.is_file():
+                      out.write(p,'Web/'+p.relative_to(web).as_posix())
+
+          def run(path,expect):
+              result=subprocess.run([sys.executable,str(inspector),str(path)],
+                                    text=True,capture_output=True,timeout=75)
+              if expect:
+                  assert result.returncode==0, f'Expected PASS for {path}: {result.stdout} {result.stderr}'
+                  assert 'exactly 92 matching element JPEGs' in result.stdout
+              else:
+                  assert result.returncode!=0, f'Inspector wrongly accepted invalid package {path}'
+                  assert 'FAIL:' in result.stderr
+              print(('EXPECTED PASS: ' if expect else 'EXPECTED REJECTION: ')+path.name)
+
+          run(ok_zip,True)
+          # .ipa and .msix are ZIP-format containers; this is synthetic QA,
+          # not an actual signed Apple or Windows Store binary.
+          for suffix in ('.ipa','.msix'):
+              candidate=root/('audit-clean'+suffix)
+              shutil.copy2(ok_zip,candidate)
+              run(candidate,True)
+
+          denied=catalog['61']['localUrl']
+          shutil.copy2(ok_zip,bad_zip)
+          with zipfile.ZipFile(bad_zip,'a',compression=zipfile.ZIP_DEFLATED) as out:
+              out.write(denied,'Web/'+denied)
+          run(bad_zip,False)
+
+          stale=root/'Web-stale'
+          shutil.copytree(web,stale)
+          (stale/'about.html').write_text('<html>Lost credits</html>',encoding='utf-8')
+          run(stale,False)
+
+          dirty=root/'Web-dirty'
+          shutil.copytree(web,dirty)
+          forbidden=dirty/denied
+          forbidden.parent.mkdir(parents=True,exist_ok=True)
+          shutil.copy2(denied,forbidden)
+          run(dirty,False)
+          print('PASS: valid staged folder/ZIP/IPA/MSIX accepted; withheld and stale packages rejected')
           PY
