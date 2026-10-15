@@ -6,7 +6,7 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
-## Inventory
+## Initial catalog inventory (historical, before source review)
 
 - **LICENSE CLAIM — verify: 84**
 - **PUBLIC-DOMAIN CLAIM — verify: 10**
@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **100 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 18 source pages have not yet been individually checked.
+**Progress distinction:** **118 of 118 source pages reviewed** for image subject, published credit or license notice, or generic placeholder. **0 of 118 final app image files cleared**. No source records remain in this initial review, but the cached binaries and any rights conditions still require separate release verification.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 100 / 118** = all #1–100 source records. Records #94 (conditional LANL notice) and #96 (EU/JRC-ITU rights unresolved) had already been counted in the earlier batches; **only eight new source records** (#91–93, #95, #97–100) were added this round. **Final release-cleared images: 0 / 118**.
+**Cumulative total source entries reviewed: 118 / 118** = all element-specific publisher/Commons source records, including 14 generic placeholders (#105–118) and non-photographic illustrations (#101–104). This is **source classification and stated-rights review, not final-image identity matching, actual legal clearance, or Store bundle verification**. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -249,7 +249,38 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 
 **Outstanding:** Match `images/elements/091-pa.jpg` through `100-fm.jpg` to published originals, evaluate source work and edit version, complete required credits for allowed photos, resolve the conflicted/conditional image rights, and **exclude unclear binary files from every release artifact**. Images remain in the GitHub tree despite being hidden from the UI. **0/118 final image files cleared**.
 
-## Per-element tracking (all unchecked)
+## Eleventh and final source-record batch — elements 101–118
+
+**Reviewed 2026-10-14:** each of the 18 element-specific publisher pages on [Chemical Elements — A Virtual Museum](https://images-of-elements.com/). The source pages make clear the distinction between illustration, unrelated experimental photograph, and a generic no-image placeholder. Their general image notice states CC BY 3.0 *unless otherwise noted* and requests attribution linking to the corresponding element page. A site-wide claim **does not independently license a third-party copyrighted CERN image**, establish an illustration's individual creator, or clear the cached binary in this repository.
+
+| Z | Source page | Subject of current catalogued image | Source-level result | Local file cleared? |
+|---:|---|---|---|:---:|
+| 101 Md | [Mendelevium](https://images-of-elements.com/mendelevium.php) | Artistic image, not a real mendelevium sample | Publisher explicitly calls it **only an illustration**. Withhold from photo panel; publisher general CC BY 3.0 claim only. | No |
+| 102 No | [Nobelium](https://images-of-elements.com/nobelium.php) | Illustration, not actual nobelium | Publisher explicitly says **only an illustration**. Withhold from photo panel; publisher general CC BY 3.0 claim only. | No |
+| 103 Lr | [Lawrencium](https://images-of-elements.com/lawrencium.php) | Illustration, not a real lawrencium sample | Publisher explicitly says **only an illustration**. Withhold from photo panel; publisher general CC BY 3.0 claim only. | No |
+| 104 Rf | [Rutherfordium](https://images-of-elements.com/rutherfordium.php) | © CERN pion tracks in a spark chamber, **unrelated to rutherfordium** | **Withhold**: not a sample, plus original third-party CERN reuse permission has **not** been established. Removed the misleading file-level CC BY 3.0 license link from app metadata rather than assuming the publisher may license CERN's photograph. | No |
+| 105 Db | [Dubnium](https://images-of-elements.com/dubnium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of dubnium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 106 Sg | [Seaborgium](https://images-of-elements.com/seaborgium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of seaborgium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 107 Bh | [Bohrium](https://images-of-elements.com/bohrium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of bohrium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 108 Hs | [Hassium](https://images-of-elements.com/hassium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of hassium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 109 Mt | [Meitnerium](https://images-of-elements.com/meitnerium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of meitnerium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 110 Ds | [Darmstadtium](https://images-of-elements.com/darmstadtium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of darmstadtium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 111 Rg | [Roentgenium](https://images-of-elements.com/roentgenium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of roentgenium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 112 Cn | [Copernicium](https://images-of-elements.com/copernicium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of copernicium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 113 Nh | [Nihonium](https://images-of-elements.com/nihonium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of nihonium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 114 Fl | [Flerovium](https://images-of-elements.com/flerovium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of flerovium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 115 Mc | [Moscovium](https://images-of-elements.com/moscovium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of moscovium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 116 Lv | [Livermorium](https://images-of-elements.com/livermorium.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of livermorium; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 117 Ts | [Tennessine](https://images-of-elements.com/tenessine.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of tennessine; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+| 118 Og | [Oganesson](https://images-of-elements.com/oganesson.php) | Generic `transactinoid.png` “No Image Found” placeholder | **Not a photograph** of oganesson; same template as the other elements 105–118. Publisher-wide license claim is **not** final app-file clearance. | No |
+
+**Verified classification:** #101–103 are illustrative drawings; #104 is a copyrighted third-party experimental image of a different particle; #105–118 all share the same generic placeholder original. The credits now state these distinctions explicitly. `element.html` already hides images for #100–118, and the added `withholdReason` records identify #101–104 as unfit to show as direct sample photos.
+
+**Important packaging caveat:** Each of the 18 entries still has a local JPEG path under `images/elements/`. Hiding images in the UI does **not** remove those assets from a packaged app, nor does a general Creative Commons statement establish that the actual resized JPEG is a permitted copy. Remove/exclude unapproved assets from the release bundle or substitute properly verified artwork before shipping.
+
+**Record-review stage complete:** **118/118 element-specific source pages inspected; 0/118 actual local photographs or placeholders fully cleared for redistribution.** The next required stage is a binary/image-identity and notice audit plus desktop/mobile/WebView/offline and Store-bundle testing. Do not merge this branch to `main` for release yet.
+
+## Per-element original catalog tracking (final-file clearance all unchecked)
 
 | Z | Element | Catalog triage (not clearance) | Current title/subject | Original image | Metadata license | Source page | Verified? |
 |---:|---|---|---|---|---|---|:---:|
@@ -356,7 +387,7 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 | 101 | Md — Mendelevium | ILLUSTRATION / unrelated image | This is only an illustration, not mendelevium itself. Chemically similar to Thulium, the highly radioactive heavy metal  | [Original](https://images-of-elements.com/s/mendelevium.jpg) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/mendelevium.php) | ☐ |
 | 102 | No — Nobelium | ILLUSTRATION / unrelated image | This is only an illustration, not nobelium itself. Nobelium can only be made in very small amounts and emits strong radi | [Original](https://images-of-elements.com/nobelium.jpg) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/nobelium.php) | ☐ |
 | 103 | Lr — Lawrencium | ILLUSTRATION / unrelated image | This is only an illustration, not lawrencium itself. Lawrencium can only be made in very small amounts and emits strong  | [Original](https://images-of-elements.com/lawrencium.jpg) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/lawrencium.php) | ☐ |
-| 104 | Rf — Rutherfordium | ILLUSTRATION / unrelated image | Decay traces in a spark chamber, not of rutherfordium, but of a pion. This is a completely different, unrelated particle | [Original](https://images-of-elements.com/s/rutherfordium.jpg) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/rutherfordium.php) | ☐ |
+| 104 | Rf — Rutherfordium | ILLUSTRATION / unrelated image | CERN pion tracks; unrelated to the chemical element | [Original](https://images-of-elements.com/s/rutherfordium.jpg) | **CERN reuse rights unverified; site-wide CC license insufficient** | [Source](https://images-of-elements.com/rutherfordium.php) | ☐ |
 | 105 | Db — Dubnium | PLACEHOLDER — not a photo | No Image Found | [Original](https://images-of-elements.com/s/transactinoid.png) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/dubnium.php) | ☐ |
 | 106 | Sg — Seaborgium | PLACEHOLDER — not a photo | No Image Found | [Original](https://images-of-elements.com/s/transactinoid.png) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/seaborgium.php) | ☐ |
 | 107 | Bh — Bohrium | PLACEHOLDER — not a photo | No Image Found | [Original](https://images-of-elements.com/s/transactinoid.png) | [Stated license](https://creativecommons.org/licenses/by/3.0/) | [Source](https://images-of-elements.com/bohrium.php) | ☐ |
