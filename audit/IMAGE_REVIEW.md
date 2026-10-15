@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **92 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 26 source pages have not yet been individually checked.
+**Progress distinction:** **100 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 18 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 92 / 118** = 90 element-source checks (#1–90), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 100 / 118** = all #1–100 source records. Records #94 (conditional LANL notice) and #96 (EU/JRC-ITU rights unresolved) had already been counted in the earlier batches; **only eight new source records** (#91–93, #95, #97–100) were added this round. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -227,6 +227,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Changes to `element-photo-data.js` on audit branch:** six exact Commons source-page links (#81–83, #88–90); correction to thallium creator formatting; source-qualified captions; direct illustration `withholdReason` for #84–87; fixed francium `sourceUrl`; added radium photo retouch credit; explicit thorium CC BY-SA release review.
 
 **No changes to original images:** All cached image binaries remain in the repository. The app hides explicitly withheld artworks from photo display, but a Store build may still package the files; **hiding is not sufficient to resolve redistribution rights**.
+
+## Tenth source-rights batch — elements 91–100
+
+**Source check, 2026-10-14:** original Wikimedia Commons pages for #91–95 and #97–100; the source publisher page for #96. #94 plutonium and #96 curium **were already reviewed and counted**. This batch adds **eight newly reviewed sources**, bringing the unique count to **100 of 118**. No physical app JPEGs were downloaded or image-matched, so **zero are finally licensed/cleared to ship**. Source statements do not substitute for image identity and required notices.
+
+| Z | Original source page checked | Source-page licensing statement | Scientific identity / reuse issue, and resulting catalog action | Cached image cleared? |
+|---:|---|---|---|:---:|
+| 91 Pa | [Commons Protactinium-233.jpg](https://commons.wikimedia.org/wiki/File:Protactinium-233.jpg) | Public domain in U.S. under DOE official-government-work claim; Wikimedia Flickr reviewer confirmed U.S.-government-work tag in 2014. | 1969-era DOE photo of **Pa-233 dark central sample illuminated by emitted radiation**, not a free-standing glowing rock. Added source Flickr link and clearer subject/creator credit. | No |
+| 92 U | [Commons Ames Process uranium biscuit.jpg](https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg) | U.S. federal government public-domain notice; Commons additionally records archived VRT permission correspondence. | Historical **Ames Process uranium metal biscuit, c. 1943**, original individual photographer unknown. Attribution requested: Ames Laboratory, USDOE. Removed double “Unknown authorUnknown author” text. | No |
+| 93 Np | [Commons Neptunium2.jpg](https://commons.wikimedia.org/wiki/File:Neptunium2.jpg), [publisher](https://images-of-elements.com/neptunium.php) | **Both** a U.S. government public-domain tag and a separate CC BY 3.0 publisher statement appear on Commons; LANL named as author. | 6 kg Np-237 sphere. Credited LANL and **documented the overlapping statements** rather than treating one as the only valid grant. Verify whether any additional LANL notice or licensed downstream copy is required. | No |
+| 94 Pu | [Commons Plutonium ring.jpg](https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg) | **Specific Los Alamos Laboratory conditional reuse statement; not an unrestricted generic public-domain grant.** | Already counted previously. Commons specifies reproduction of its **full notice and authorship statement** when copied and describes a 2016 noise-reduction edit. Added explicit `withholdReason` so app UI explains why the photo is not shown. | No |
+| 95 Am | [Commons Americium microscope.jpg](https://commons.wikimedia.org/wiki/File:Americium_microscope.jpg) | **CC BY 3.0**, photographer **Bionerd**, own work. | Small **Am-241 disk seen under a microscope**, not an exposed metal nugget. Updated caption/attribution details. | No |
+| 96 Cm | [Chemical Elements Curium](https://images-of-elements.com/curium.php) | Credits **© European Union / JRC-ITU** for the image; **no specific redistribution grant confirmed**. | Already counted previously. Added specific `withholdReason` explaining lack of commercial redistribution proof; do not conflate generalized website CC notices with EU permissions for this photo. | No |
+| 97 Bk | [Commons Berkelium.jpg](https://commons.wikimedia.org/wiki/File:Berkelium.jpg) | U.S. federal-work public-domain declaration, Oak Ridge National Laboratory / DOE. | Image shows **berkelium in solution, not metal**; made during work to synthesize element 117. Added ORNL source, corrected caption. | No |
+| 98 Cf | [Commons Californium.jpg](https://commons.wikimedia.org/wiki/File:Californium.jpg) | Commons currently tags U.S. DOE/public domain, **but its original upload log explicitly includes a non-free-use rationale** and cites a published Springer book as its source. | **RIGHTS DISPUTED / WITHHELD:** A 10 mg Cf-249 metal disc photo. Do **not** assume the federal work claim resolves the earlier nonfree/copyright notice for the book image. Verify original rights documentation or replace this image. | No |
+| 99 Es | [Commons Einsteinium.jpg](https://commons.wikimedia.org/wiki/File:Einsteinium.jpg) | DOE/government public-domain claim for original; image **cropped, colorized by an unidentified person, then touched up by Materialscientist**. | Quartz vial containing ~300 micrograms of Es-253 with radiation-induced illumination. Accurate caption and editing history recorded; validate version and derivative rights. | No |
+| 100 Fm | [Commons Ivy Mike – mushroom cloud.jpg](https://commons.wikimedia.org/wiki/File:Ivy_Mike_-_mushroom_cloud.jpg) | U.S. government-work public-domain claim, U.S. Department of Energy/NNSA archive. | **HISTORICAL EVENT, NOT FERMium:** Shows **1952 Ivy Mike thermonuclear test**, not a sample of fermium. Explicitly withheld from element photograph panel and titled as a historical context photo. | No |
+
+**Audit-branch catalog changes:** exact file-page provenance links for #91–93, #95, #97–100; separate licensing/status flags for #93, #94, #96, #98; corrections to the Ames historical attribution and image-specific isotope descriptions; explicit image withholding for #94, #96, #98, and #100.
+
+**Outstanding:** Match `images/elements/091-pa.jpg` through `100-fm.jpg` to published originals, evaluate source work and edit version, complete required credits for allowed photos, resolve the conflicted/conditional image rights, and **exclude unclear binary files from every release artifact**. Images remain in the GitHub tree despite being hidden from the UI. **0/118 final image files cleared**.
 
 ## Per-element tracking (all unchecked)
 
