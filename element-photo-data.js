@@ -371,13 +371,14 @@ window.ELEMENT_PHOTOS = {
     "name": "Gallium",
     "symbol": "Ga",
     "localUrl": "images/elements/031-ga.jpg",
-    "title": "Solid gallium, fresh and after some time (2 months) at room temperature",
+    "title": "Gallium metal specimen — specific photograph not yet matched to credited original",
     "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gallium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Solid_gallium_%28Ga%29.jpg",
     "sourceUrl": "https://images-of-elements.com/gallium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Solid_gallium_(Ga).jpg"
+    "note": "Actual saved JPEG compared to original via GitHub Actions audit run 38681018215; no image identity or final redistribution clearance. Gallery may contain an alternative view; do not assume old caption accurately describes this cached image.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Solid_gallium_(Ga).jpg",
+    "withholdReason": "The cached gallium photograph differs significantly from the currently cited 'Solid gallium (Ga).jpg' original (automatic image-hash distance 27). Exact published image and credit must be confirmed."
   },
   "32": {
     "name": "Germanium",
@@ -527,13 +528,14 @@ window.ELEMENT_PHOTOS = {
     "name": "Ruthenium",
     "symbol": "Ru",
     "localUrl": "images/elements/044-ru.jpg",
-    "title": "Ruthenium Crystal, 0.6 grams, 0.6 x 1.3 cm size",
+    "title": "Ruthenium metal sample — image source mapping pending",
     "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/ruthenium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ruthenium_crystal.jpg",
     "sourceUrl": "https://images-of-elements.com/ruthenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ruthenium_crystal.jpg"
+    "note": "Actual image comparison run 38681018215. The photograph looks like ruthenium metal but the exact published original, specimen identity, and redistribution credit have not been confirmed.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ruthenium_crystal.jpg",
+    "withholdReason": "The cached ruthenium JPEG did not closely match the cited 'Ruthenium_crystal.jpg' original in the actual-file audit (dHash distance 21). Hold until the source and specific sample are verified."
   },
   "45": {
     "name": "Rhodium",
@@ -544,8 +546,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rhodium_%28Rh%29.jpg",
     "sourceUrl": "https://images-of-elements.com/rhodium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rhodium_(Rh).jpg"
+    "note": "Actual saved photo was tested against the named source in GitHub Actions run 38681018215. The rhodium bead depiction is plausible, but identity is not established; final rights review still needed.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rhodium_(Rh).jpg",
+    "withholdReason": "The saved rhodium JPEG has a moderate difference from the particular credited 'Rhodium (Rh).jpg' image (dHash distance 10). Could reflect image editing or a different view; investigate before attribution/release."
   },
   "46": {
     "name": "Palladium",
@@ -563,13 +566,14 @@ window.ELEMENT_PHOTOS = {
     "name": "Silver",
     "symbol": "Ag",
     "localUrl": "images/elements/047-ag.jpg",
-    "title": "Natural silver nugget, 1 cm long.",
+    "title": "Sterling silver chain — silver alloy jewelry, not a natural silver nugget",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/silver.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Silver-nugget.jpg",
     "sourceUrl": "https://images-of-elements.com/silver.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg"
+    "note": "Silver publisher page separately depicts a 925 sterling silver chain and natural silver nuggets. Actual-file comparison run 38681018215 shows dHash distance 28; replace with a credited pure-silver sample or supply exact chain-specific credits as a clearly labeled use illustration.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg",
+    "withholdReason": "The stored image shows a chain of silver jewelry, while the cited Commons 'Silver-nugget.jpg' photograph shows a natural silver nugget. This is a different image and an alloy product, so the current element photo and attribution are misleading."
   },
   "48": {
     "name": "Cadmium",
@@ -597,13 +601,14 @@ window.ELEMENT_PHOTOS = {
     "name": "Tin",
     "symbol": "Sn",
     "localUrl": "images/elements/050-sn.jpg",
-    "title": "Tin blob",
+    "title": "Tin metal specimen — source photograph not yet identified",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/tin.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tin-2.jpg",
     "sourceUrl": "https://images-of-elements.com/tin.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tin-2.jpg"
+    "note": "Actual photo comparison in GitHub Actions run 38681018215. The saved image resembles tin, but source-image identity is not established; withhold pending verified replacement or attribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tin-2.jpg",
+    "withholdReason": "The saved tin image differs substantially from the credited 'Tin-2.jpg' original in the file comparison (dHash distance 35). The exact original and its license attribution must be identified."
   },
   "51": {
     "name": "Antimony",
@@ -698,8 +703,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
     "sourceUrl": "https://images-of-elements.com/cerium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Wikimedia Commons lists CC BY 1.0 for this file and an additional CC BY 3.0 notice from the publishing site. Confirm final attribution and applicable license choice.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cerium2.jpg"
+    "note": "The cached photo was compared in GitHub Actions run 38681018215. Commons lists CC BY 1.0 and the publisher site additionally mentions CC BY 3.0; identity and applicable license obligations require separate final review.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cerium2.jpg",
+    "withholdReason": "The saved cerium specimen photograph differs from the specific credited 'Cerium2.jpg' image (dHash distance 15). It may be a different view or photograph; confirm original and license selection before use."
   },
   "59": {
     "name": "Praseodymium",
