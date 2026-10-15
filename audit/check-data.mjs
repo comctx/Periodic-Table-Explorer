@@ -731,13 +731,13 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:60},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:70},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
- if(![26,48,49,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ if(![26,48,49,61,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
 }
@@ -821,6 +821,33 @@ assert.ok(!/yahoo\.dk/i.test(photoSourceData['55'].attribution),'Remove malforme
 assert.equal(photoSourceData['58'].licenseUrl,'https://creativecommons.org/licenses/by/1.0','Cerium recorded file-specific CC BY 1.0');
 assert.match(photoSourceData['58'].note,/CC BY 3.0/,'Cerium separate publisher CC BY 3.0 noted');
 assert.match(photoSourceData['59'].attribution,/DePiep/,'Praseodymium source edit history credited');
+const auditedSourceLicenses61to70={
+ "61":"CC BY 3.0 (publisher claim; file-specific Commons page unverified)",
+ "62":"CC BY 1.0 + publisher CC BY 3.0","63":"CC BY 3.0",
+ "64":"CC BY 3.0","65":"CC BY 1.0 + publisher CC BY 3.0",
+ "66":"CC BY 3.0","67":"CC BY 1.0 + publisher CC BY 3.0",
+ "68":"CC BY 3.0","69":"CC BY 3.0","70":"CC BY 1.0 + publisher CC BY 3.0"
+};
+for(let z=61;z<=70;z++){
+ const m=photoSourceData[String(z)];
+ assert.ok(m && m.localUrl.endsWith('.jpg'),'Cached local image path 61-70 '+z);
+ assert.ok(!!auditedSourceLicenses61to70[String(z)],'Documented source license statement '+z);
+ if(z!==61)assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Verifiable exact Commons source page 62-70 '+z);
+ else assert.equal(m.sourceUrl,'https://images-of-elements.com/promethium.php','Publisher source for unverified Commons image');
+}
+assert.match(photoSourceData['61'].withholdReason,/illustration|photomontage/i,'Promethium montage must be withheld');
+assert.match(photoSourceData['61'].title,/NOT a photograph/,'Promethium imagery title states illustration');
+for(const z of ['62','65','67']){
+ const m=photoSourceData[z];
+ assert.match(m.attribution,/Photographer unidentified/,'No fabricated photo creator '+z);
+ assert.ok(!m.attribution.includes('Unknown authorUnknown author'),'Clean duplicated author text '+z);
+ assert.ok(m.licenseUrl.endsWith('/by/1.0'),'Preserve file-specific CC BY 1.0 '+z);
+ assert.match(m.note,/publisher-wide CC BY 3.0/,'Document alternate licensing terms '+z);
+}
+assert.match(photoSourceData['64'].title,/embedded in acrylic/,'Gadolinium is acrylic-embedded');
+assert.match(photoSourceData['69'].title,/cast in acrylic/,'Thulium is acrylic-embedded');
+assert.match(photoSourceData['69'].note,/cleanup|spot removal/,'Thulium photo edit history documented');
+assert.ok(photoSourceData['70'].licenseUrl.endsWith('/by/1.0'),'Ytterbium source file CC BY 1.0 preserved');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -882,6 +909,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 62 original-image source pages checked for licensing and provenance; edited xenon/praseodymium credited; no cached images fully cleared');
+console.log('PASS: 72 source pages checked, explicit promethium illustration withholding and lanthanide attribution safeguards; no cached photos cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
