@@ -728,6 +728,26 @@ assert.ok(auditFirst30Detail.includes('e.densityBasis'),'Show allotrope-specific
 assert.ok(auditFirst30Index.includes('x.densityBasis'),'Show allotrope-specific density in table details');
 assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mode must be supported');
 
+
+// Initial element-image source-page rights audit; source-license checks are NOT
+// local cached-image approval or permission to release the package.
+const sourcePageReviewed=[1,2,3,4,5,6,7,8,9,10,94,96];
+const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
+const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
+for(const z of sourcePageReviewed){
+ const m=photoSourceData[String(z)];
+ assert.ok(m,'Source-checked photo metadata exists '+z);
+ if(z!==96)assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
+ assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
+}
+assert.ok(!photoSourceData['96'].licenseUrl,'Curium must not be assigned an invented image license');
+assert.ok(!photoSourceData['94'].licenseUrl,'LANL attribution requirements not yet resolved');
+const elementPhotoPage=readFileSync('element.html','utf8');
+assert.ok(elementPhotoPage.includes('original.href=item.originalUrl'),'Open actual original image');
+assert.ok(!elementPhotoPage.includes('original.href=item.localUrl'),'Local asset mislabeled original');
+assert.ok(elementPhotoPage.includes('filePage.href=item.commonsPage'),'Link to Commons reuse conditions');
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
@@ -736,4 +756,5 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
+console.log('PASS: 12 image-source-page source/attribution flags and original image link integrity; no final image release approvals');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
