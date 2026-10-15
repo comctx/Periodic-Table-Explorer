@@ -951,6 +951,24 @@ assert.ok(report.includes('**118 of 118 source pages reviewed**'),'Final source 
 assert.ok(report.includes('**0 of 118 final app image files cleared**'),'No cached image cleared by metadata audit');
 assert.ok(report.includes('CERN reuse rights unverified'),'Rutherfordium exception documented in historic inventory');
 assert.ok(report.includes('**118/118 element-specific source pages inspected; 0/118 actual local photographs or placeholders fully cleared'),'Report warns not release-ready');
+const visualImageReport=readFileSync('audit/LOCAL_IMAGE_MATCH_1_30.md','utf8');
+assert.ok(visualImageReport.includes('**30 of 30 cached JPEGs opened and inspected'), 'Thirty actual files visually inspected');
+assert.ok(visualImageReport.includes('**22 of 30 have a visible match'), 'Visual matching counted separately from clearance');
+assert.ok(visualImageReport.includes('**8 of 30 do not establish an exact match'), 'Unmapped JPEGs explicitly tracked');
+assert.ok(visualImageReport.includes('**0 of 30 cached photos cleared'), 'Local visual check must not claim redistribution permission');
+assert.match(visualImageReport,/Hydrogenglow\.jpg[\\s\\S]{0,200}match/i, 'Correct hydrogen source correction recorded');
+for(const z of [3,4,5,14,15,22,27,30]){
+ const m=photoSourceData[String(z)];
+ assert.ok(!!m.withholdReason,'Unmatched local image withheld until exact rights verified '+z);
+ assert.ok(m.withholdReason.length>40,'Reason provides context for withholding '+z);
+ assert.ok(visualImageReport.includes('\\| '+z+' \\|')===false || visualImageReport.includes('\\| '+z+' \\|')===false, 'Never depend on malformed table string');
+}
+assert.match(photoSourceData['5'].title,/amorphous boron powder/, 'Correct boron allotrope for stored JPG');
+assert.match(photoSourceData['14'].title,/solar-cell panels/, 'Silicon photo accurately described as application');
+assert.match(photoSourceData['15'].title,/White phosphorus/, 'Correct phosphorus allotrope for local picture');
+assert.match(photoSourceData['22'].title,/Titanium sponge/, 'Titanium metal form caption corrected');
+assert.ok(!photoSourceData['1'].withholdReason,'Hydrogen correctly matched to actual Hydrogenglow original');
+assert.ok(visualImageReport.includes('Git blob SHA'),'Version-specific real JPEG audit');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
