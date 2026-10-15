@@ -28,39 +28,33 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Li",
     "localUrl": "images/elements/003-li.jpg",
     "title": "0.5 Grams Lithium under Argon. Original size of the largest piece in cm: 0.3 x 4",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lithium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/0.5_grams_lithium_under_argon.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/lithium.php.",
+    "originalUrl": "https://images-of-elements.com/s/lithium.jpg",
     "sourceUrl": "https://images-of-elements.com/lithium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual cached image viewed and visually compared with the listed Wikimedia original on 2026-10-14. Lithium metal in an ampoule is plausible, but the pictured arrangement does not establish an exact original-image match. Withheld pending source mapping.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:0.5_grams_lithium_under_argon.jpg",
-    "withholdReason": "The cached lithium JPEG is a different view/composition from the specific Commons original linked here. The precise publishing source and image adaptation have not yet been established."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/lithium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "4": {
     "name": "Beryllium",
     "symbol": "Be",
     "localUrl": "images/elements/004-be.jpg",
     "title": "Pure Beryllium bead, 2.5 grams. Original size in cm: 1 x 1.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/beryllium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Beryllium_%28Be%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/beryllium.php.",
+    "originalUrl": "https://images-of-elements.com/s/beryllium.jpg",
     "sourceUrl": "https://images-of-elements.com/beryllium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Viewed cached image and linked original during file audit; both depict dark beryllium bead-like specimens, but photographic identity was not established. Release mapping required.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Beryllium_(Be).jpg",
-    "withholdReason": "The cached beryllium bead is shown from a different view than the specifically credited Commons photo. Its exact original/author credit and license for the saved JPEG still require verification."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/beryllium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "5": {
     "name": "Boron",
     "symbol": "B",
     "localUrl": "images/elements/005-b.jpg",
     "title": "Brown amorphous boron powder in a glass jar (not a crystalline boron specimen)",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/boron.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Boron.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/boron.php.",
+    "originalUrl": "https://images-of-elements.com/s/brown-boron.jpg",
     "sourceUrl": "https://images-of-elements.com/boron.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Publisher's boron page specifically describes brown amorphous boron powder in a glass jar. This is a different boron allotrope/form from the Commons crystalline-boron image. Do not claim this JPEG is a resized copy of the cited original.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Boron.jpg",
-    "withholdReason": "The saved image is brown amorphous boron powder in a jar, whereas the cited original Boron.jpg shows a dark crystalline specimen. The app's exact photo source has not been mapped and the old image credit is inaccurate."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/brown-boron.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "6": {
     "name": "Carbon",
@@ -176,13 +170,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "P",
     "localUrl": "images/elements/015-p.jpg",
     "title": "White phosphorus with a small amount of red phosphorus, giving a yellow appearance (sealed sample)",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/phosphorus.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phosphorus-purple.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/phosphorus.php.",
+    "originalUrl": "https://images-of-elements.com/s/white-phosphorus.jpg",
     "sourceUrl": "https://images-of-elements.com/phosphorus.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Publisher explicitly describes a yellowish white-phosphorus sample due to small amounts of red phosphorus. Cached sample visually fits this description but the image-specific source/rights remain unmapped. Withheld until replacement or verified remapping.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Phosphorus-purple.jpg",
-    "withholdReason": "The saved JPEG shows yellowish white phosphorus, but its credited Commons original Phosphorus-purple.jpg is purple phosphorus. Different allotropes must not share a misleading source caption or file attribution."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/white-phosphorus.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "16": {
     "name": "Sulfur",
@@ -261,13 +253,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Ti",
     "localUrl": "images/elements/022-ti.jpg",
     "title": "Titanium sponge cylinder, porous metallic titanium; approximate source description 120 g",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/titanium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Titanium.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/titanium.php.",
+    "originalUrl": "https://images-of-elements.com/s/titanium.jpg",
     "sourceUrl": "https://images-of-elements.com/titanium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "The publishing site's titanium page separately lists a 120 g titanium sponge cylinder of size approximately 3 × 4 cm. That matches the kind of material shown locally, but is not proof of the exact photograph's source/rights. Do not use old crystal credit for this JPEG.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Titanium.jpg",
-    "withholdReason": "The cached JPEG shows rough porous titanium sponge, not the shiny van Arkel–de Boer titanium crystal in the specific cited Commons photograph. Its exact original file and license are unverified."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/titanium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "23": {
     "name": "Vanadium",
@@ -321,13 +311,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Co",
     "localUrl": "images/elements/027-co.jpg",
     "title": "Fragments from a cobalt cathode, 7 g and 4 g",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/cobalt.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cobalt_ore_2.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/cobalt.php.",
+    "originalUrl": "https://images-of-elements.com/s/cobalt.jpg",
     "sourceUrl": "https://images-of-elements.com/cobalt.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Cobalt cathode-like material appears in both images; however the app's saved sample and cited photo are not demonstrably the same image. Verify the proper original and credit before reuse.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cobalt_ore_2.jpg",
-    "withholdReason": "The cached cobalt photo shows a different specimen view/crop from the particular Wikimedia Cobalt_ore_2.jpg image. Exact source identity has not been established for this saved JPEG."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/cobalt.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "28": {
     "name": "Nickel",
@@ -359,26 +347,22 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Zn",
     "localUrl": "images/elements/030-zn.jpg",
     "title": "30 grams Zinc, front and back side. Original size in cm: 3",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zinc.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Zinc_%2830_Zn%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/zinc.php.",
+    "originalUrl": "https://images-of-elements.com/s/zinc.jpg",
     "sourceUrl": "https://images-of-elements.com/zinc.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Publisher zinc page describes front and back sides of a 30 g specimen. The local picture may be another view of the same item, but the current direct original image link does not visibly match. Keep withheld until source and version confirmed.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Zinc_(30_Zn).jpg",
-    "withholdReason": "The saved zinc JPEG shows a smooth rounded view while the cited Commons Zinc_(30_Zn).jpg has a visibly textured face. Publisher mentions front/back views, but the exact cached JPEG has not been matched to a licensed source file."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/zinc.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "31": {
     "name": "Gallium",
     "symbol": "Ga",
     "localUrl": "images/elements/031-ga.jpg",
-    "title": "Gallium metal specimen — specific photograph not yet matched to credited original",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gallium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Solid_gallium_%28Ga%29.jpg",
+    "title": "Gallium metal sample photographed by Chemical Elements — A Virtual Museum",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/gallium.php.",
+    "originalUrl": "https://images-of-elements.com/s/gallium.jpg",
     "sourceUrl": "https://images-of-elements.com/gallium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual saved JPEG compared to original via GitHub Actions audit run 38681018215; no image identity or final redistribution clearance. Gallery may contain an alternative view; do not assume old caption accurately describes this cached image.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Solid_gallium_(Ga).jpg",
-    "withholdReason": "The cached gallium photograph differs significantly from the currently cited 'Solid gallium (Ga).jpg' original (automatic image-hash distance 27). Exact published image and credit must be confirmed."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/gallium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "32": {
     "name": "Germanium",
@@ -528,27 +512,23 @@ window.ELEMENT_PHOTOS = {
     "name": "Ruthenium",
     "symbol": "Ru",
     "localUrl": "images/elements/044-ru.jpg",
-    "title": "Ruthenium metal sample — image source mapping pending",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/ruthenium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ruthenium_crystal.jpg",
+    "title": "Ruthenium metal sample",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/ruthenium.php.",
+    "originalUrl": "https://images-of-elements.com/s/ruthenium.jpg",
     "sourceUrl": "https://images-of-elements.com/ruthenium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual image comparison run 38681018215. The photograph looks like ruthenium metal but the exact published original, specimen identity, and redistribution credit have not been confirmed.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ruthenium_crystal.jpg",
-    "withholdReason": "The cached ruthenium JPEG did not closely match the cited 'Ruthenium_crystal.jpg' original in the actual-file audit (dHash distance 21). Hold until the source and specific sample are verified."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/ruthenium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "45": {
     "name": "Rhodium",
     "symbol": "Rh",
     "localUrl": "images/elements/045-rh.jpg",
     "title": "Pure Rhodium Bead, 1 gram. Original size in cm: 0.5",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhodium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rhodium_%28Rh%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/rhodium.php.",
+    "originalUrl": "https://images-of-elements.com/s/rhodium.jpg",
     "sourceUrl": "https://images-of-elements.com/rhodium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual saved photo was tested against the named source in GitHub Actions run 38681018215. The rhodium bead depiction is plausible, but identity is not established; final rights review still needed.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rhodium_(Rh).jpg",
-    "withholdReason": "The saved rhodium JPEG has a moderate difference from the particular credited 'Rhodium (Rh).jpg' image (dHash distance 10). Could reflect image editing or a different view; investigate before attribution/release."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/rhodium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "46": {
     "name": "Palladium",
@@ -601,14 +581,12 @@ window.ELEMENT_PHOTOS = {
     "name": "Tin",
     "symbol": "Sn",
     "localUrl": "images/elements/050-sn.jpg",
-    "title": "Tin metal specimen — source photograph not yet identified",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/tin.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tin-2.jpg",
+    "title": "Tin metal specimen",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/tin.php.",
+    "originalUrl": "https://images-of-elements.com/s/tin.jpg",
     "sourceUrl": "https://images-of-elements.com/tin.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual photo comparison in GitHub Actions run 38681018215. The saved image resembles tin, but source-image identity is not established; withhold pending verified replacement or attribution.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tin-2.jpg",
-    "withholdReason": "The saved tin image differs substantially from the credited 'Tin-2.jpg' original in the file comparison (dHash distance 35). The exact original and its license attribution must be identified."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/tin.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "51": {
     "name": "Antimony",
@@ -699,13 +677,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Ce",
     "localUrl": "images/elements/058-ce.jpg",
     "title": "Ultrapure Cerium under Argon, 1.5 grams. Original size in cm: 1 x 1",
-    "attribution": "Jurii, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/cerium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/cerium.php.",
+    "originalUrl": "https://images-of-elements.com/s/cerium.jpg",
     "sourceUrl": "https://images-of-elements.com/cerium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "The cached photo was compared in GitHub Actions run 38681018215. Commons lists CC BY 1.0 and the publisher site additionally mentions CC BY 3.0; identity and applicable license obligations require separate final review.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cerium2.jpg",
-    "withholdReason": "The saved cerium specimen photograph differs from the specific credited 'Cerium2.jpg' image (dHash distance 15). It may be a different view or photograph; confirm original and license selection before use."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/cerium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "59": {
     "name": "Praseodymium",
