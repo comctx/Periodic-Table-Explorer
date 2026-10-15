@@ -76,8 +76,8 @@ try{
     const e=elements[z-1];
     assert.equal(await page.locator('#name').innerText(),e.name,'Element heading #'+z);
     assert.equal((await page.locator('#symbol').innerText()).trim(),e.symbol,'Symbol #'+z);
-    assert.ok((await page.locator('#basicGrid').innerText()).includes('Atomic number'),'Basic details #'+z);
-    assert.ok((await page.locator('#scienceGrid').innerText()).includes('Electron configuration'),'Science #'+z);
+    assert.match(await page.locator('#basicGrid').innerText(),/atomic number/i,'Basic details #'+z);
+    assert.match(await page.locator('#scienceGrid').innerText(),/electron configuration/i,'Science #'+z);
     assert.ok((await page.locator('#usesText').innerText()).length>10,'Uses section #'+z);
     if(blocked.has(z)){
       assert.equal(await page.locator('#elementPhotoWrap:not(.hidden)').count(),0,'Withheld image not displayed #'+z);
