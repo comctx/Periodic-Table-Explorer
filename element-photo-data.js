@@ -487,11 +487,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Mo",
     "localUrl": "images/elements/042-mo.jpg",
     "title": "99.9% pure molybdenum crystal with anodization color, approximately 2 × 3 cm",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/molybdenum.php",
+    "attribution": "Photograph by Jurii, 'Molybdenum.jpg' (9 July 2009), https://commons.wikimedia.org/wiki/File:Molybdenum.jpg, also attributed via https://images-of-elements.com/molybdenum.php. Licensed CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. The cached app image was resized/reencoded; original photographer, file source and change are credited.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Molybdenum.jpg",
     "sourceUrl": "https://images-of-elements.com/molybdenum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "Commons describes a 99.9%-pure molybdenum crystal about 2 × 3 cm with anodization color; do not confuse it with another sample photograph on the publisher gallery page. Prior local dHash comparison for #42 found a likely match to this Commons original (distance 0). Source attribution improved, not final distribution clearance.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Molybdenum.jpg"
   },
   "43": {
@@ -499,11 +499,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Tc",
     "localUrl": "images/elements/043-tc.jpg",
     "title": "Technetium-99 powder electrodeposited on a 6 × 1 mm gold foil inside a sealed argon-filled glass ampoule",
-    "attribution": "Marco Cardin (photographer); cropped by Double sharp from Technetium-sample.jpg; attribution requested: GFDL; CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    "attribution": "Marco Cardin, original photograph 'Technetium-sample.jpg' (13 March 2020), https://commons.wikimedia.org/wiki/File:Technetium-sample.jpg. Cropped by Wikimedia Commons contributor Double sharp on 31 August 2021 as 'Technetium-sample-cropped.jpg', https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg. This app further resized/reencoded the cropped version. The derivative is cited under Creative Commons Attribution-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/; retain creator, cropper, adaptation and ShareAlike notices.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Technetium-sample-cropped.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Source photograph cropped by Double sharp in 2021. The copy used by Periodic Table Explorer was resized; verify its identity and ShareAlike obligations before release.",
+    "note": "Photograph shows technetium-99 powder electrodeposited onto a 6 × 1 mm gold foil in an argon-filled sealed ampoule, not a large piece of bulk metal. Commons expressly documents original photographer Marco Cardin and 2021 crop by Double sharp; the original also offers a GFDL option, while this app records the CC BY-SA 4.0 alternative shown on the cropped file. Prior local-image audit found a likely image match (dHash 0). Exact adapted-JPEG compliance and signed-release package still require final verification.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg"
   },
   "44": {
@@ -533,11 +533,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Pd",
     "localUrl": "images/elements/046-pd.jpg",
     "title": "Palladium Crystal, about 1 gram. Original size in cm: 0.5 x 1",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/palladium.php",
+    "attribution": "'Hi-Res Images of Chemical Elements' (credited publication/creator identity on the Commons file), 'Palladium (46 Pd).jpg', https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg, image from https://images-of-elements.com/palladium.php. Individual photographer not separately named on the Commons source. License cited: CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App version resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/palladium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "Publisher's Palladium element page identifies a palladium crystal about 1 gram, ~0.5 × 1 cm. Commons gives publication-level author credit rather than a separately identified individual photographer; the uploader Stas1995 is not asserted to have taken the picture. Prior local image comparison found a likely source match (dHash 2). Source-level license and attribution corroborated; final exact-file commercial release clearance remains pending.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg"
   },
   "47": {
@@ -615,11 +615,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "I",
     "localUrl": "images/elements/053-i.jpg",
     "title": "Iodine crystals photographed at ordinary conditions",
-    "attribution": "Benjah-bmm27, dedicated to the public domain by the photographer, via Wikimedia Commons",
+    "attribution": "Benjah-bmm27, own photograph 'Iodine-sample.jpg' (16 May 2007), https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg. Wikimedia Commons records an express public-domain release by the original photographer for worldwide reuse, with unconditional reuse permission where public-domain dedication is not legally possible. The stored app photo was resized/reencoded; credit retained for provenance.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Iodine-sample.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "This is a crystalline elemental iodine specimen at ordinary conditions. Original Commons image author Benjah-bmm27 expressly released this photo into the public domain; the app does not claim a Creative Commons license for it. Prior cached image comparison found a likely original match (dHash 0). Public-domain source evidence reviewed, but exact binary/package verification and overall release approval remain separate.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg"
   },
   "54": {
