@@ -1200,7 +1200,18 @@ for(const reference of ["https://periodic-table.rsc.org/","https://ciaaw.org/abr
 assert.ok(indexSource.includes('href="about.html"'),'About page reachable from main table');
 assert.ok(readFileSync('element.html','utf8').includes('href="about.html"'),'About page reachable from element details');
 assert.ok(offlineSource.includes("'./about.html'"),'About page pre-cached offline');
-assert.ok(offlineSource.includes("pte-core-v2"),'Cache version updated for About page');
+assert.ok(offlineSource.includes("pte-core-v3"),'Cache updated for new all-photo offline support');
+assert.ok(offlineSource.includes("precacheApp()"),'Service worker preloads offline image allowlist');
+assert.ok(offlineSource.includes("manifest.photos.length !== 92"),'Service worker refuses partial photo allowlist');
+assert.ok(offlineSource.includes("await cache.addAll(manifest.photos.slice("),'Service worker preloads all staged photos');
+assert.ok(offlineSource.includes("./images/bay-city-city-hall.jpg"),'Bay City Easter egg cached offline');
+const offlineManifest=JSON.parse(readFileSync('offline-photos.json','utf8'));
+assert.equal(offlineManifest.format,'pte-offline-photos-v1','Offline manifest schema');
+assert.equal(offlineManifest.photos.length,92,'Offline manifest 92 pictures');
+const expectedOffline=Array.from({length:118},(_,i)=>i+1).filter(z=>!
+  new Set([61,84,85,86,87,93,99,...Array.from({length:19},(_,i)=>100+i)]).has(z)
+).map(z=>photoSourceData[String(z)].localUrl);
+assert.deepEqual(offlineManifest.photos,expectedOffline,'All offline photos equal exact 92-photo staged allowlist');
 // The hidden Bay City easter egg is an additional packaged third-party photograph
 // OUTSIDE the 118-element catalog. Preserve its own source, author, license and
 // modification notice in BOTH popup locations and the central Credits page.
