@@ -128,7 +128,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Na_%28Sodium%29.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Na_(Sodium).jpg"
   },
   "12": {
     "name": "Magnesium",
@@ -139,7 +140,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Magnesium_crystals.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Magnesium_crystals.jpg"
   },
   "13": {
     "name": "Aluminium",
@@ -150,7 +152,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aluminium.jpg",
     "sourceUrl": "https://images-of-elements.com/aluminium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Aluminium.jpg"
   },
   "14": {
     "name": "Silicon",
@@ -161,7 +164,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Silicon.jpg",
     "sourceUrl": "https://images-of-elements.com/silicon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silicon.jpg"
   },
   "15": {
     "name": "Phosphorus",
@@ -172,7 +176,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phosphorus-purple.jpg",
     "sourceUrl": "https://images-of-elements.com/phosphorus.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Phosphorus-purple.jpg"
   },
   "16": {
     "name": "Sulfur",
@@ -183,7 +188,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Native_sulfur_%28Vodinskoe_Deposit%3B_quarry_near_Samara%2C_Russia%29_9.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Native_sulfur_(Vodinskoe_Deposit%3B_quarry_near_Samara%2C_Russia)_9.jpg"
   },
   "17": {
     "name": "Chlorine",
@@ -194,7 +200,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Chlorine-sample-flip.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Chlorine-sample-flip.jpg"
   },
   "18": {
     "name": "Argon",
@@ -205,7 +212,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Argon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/argon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Argon-glow.jpg"
   },
   "19": {
     "name": "Potassium",
@@ -216,7 +224,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Potassium.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Potassium.JPG"
   },
   "20": {
     "name": "Calcium",
@@ -227,7 +236,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Calcium.jpg",
     "sourceUrl": "https://images-of-elements.com/calcium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Calcium.jpg"
   },
   "21": {
     "name": "Scandium",
