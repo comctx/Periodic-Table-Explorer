@@ -627,11 +627,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Xe",
     "localUrl": "images/elements/054-xe.jpg",
     "title": "Vial of electrically excited glowing ultrapure xenon, approximately 1 × 5 cm",
-    "attribution": "Jurii; Wikimedia Commons file retouched by Papa Lima Whiskey (white speck removed), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/xenon.php",
+    "attribution": "Jurii, original photograph 'Xenon-glow.jpg' (11 August 2009), https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg. Wikimedia Commons contributor Papa Lima Whiskey removed a white speck in the current file version on 16 July 2010. The app's JPEG was subsequently resized/reencoded. Original source https://images-of-elements.com/xenon.php; license Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Changes and source-page attribution are acknowledged.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Xenon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/xenon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Source Commons photo retouched in 2010; local image resized for Periodic Table Explorer. Verify cached file version and changes before release.",
+    "note": "Electrical discharge makes this xenon gas vial glow; it does not imply xenon glows unexcited. Commons history identifies photographer Jurii (2009) and a white-speck removal by Papa Lima Whiskey (16 July 2010). An earlier saved-image dHash audit found a likely source match (distance 0), not byte identity. File rights and exact signed-package credits still need release verification.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg"
   },
   "55": {
@@ -651,11 +651,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Ba",
     "localUrl": "images/elements/056-ba.jpg",
     "title": "Approximately 1.5 g of barium with a grey oxide layer, kept under argon (about 0.7 × 1 cm)",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/barium.php",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Barium (56 Ba).jpg', https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg; credited source page https://images-of-elements.com/barium.php. Wikimedia Commons credits this publisher-level author rather than an independently named individual photographer; uploader Stas1995 is not established as the photographer. Commons and the publisher state Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. App image resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Barium_%2856_Ba%29.jpg",
     "sourceUrl": "https://images-of-elements.com/barium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "Publisher labels this photograph approximately 1.5 g barium with grey oxide layer stored under argon, about 0.7 × 1 cm. Commons records Hi-Res Images of Chemical Elements as author credit, without an individually corroborated photographer. Historical app JPEG comparison reported a likely image match (dHash distance 0). File-specific rights authority, exemptions, attribution, and final signed-package review remain pending.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg"
   },
   "57": {
@@ -663,11 +663,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "La",
     "localUrl": "images/elements/057-la.jpg",
     "title": "Approximately 1 cm piece of pure lanthanum metal",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lanthanum.php",
+    "attribution": "Jurii, own photograph 'Lanthanum.jpg' (28 September 2009), https://commons.wikimedia.org/wiki/File:Lanthanum.jpg, original element page https://images-of-elements.com/lanthanum.php. Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. App photograph resized/reencoded and original image source credited.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Lanthanum.jpg",
     "sourceUrl": "https://images-of-elements.com/lanthanum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "The source photograph is a piece of lanthanum metal roughly 1 cm long, credited and originally uploaded by Jurii, 28 September 2009. The prior local image comparison found a likely match (dHash distance 1). This documents source author/license and an app alteration notice, not final redistribution clearance of the packaged JPEG.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Lanthanum.jpg"
   },
   "58": {
@@ -686,11 +686,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Pr",
     "localUrl": "images/elements/059-pr.jpg",
     "title": "About 1.5 g of praseodymium pieces, approximately 0.5 cm each, stored under argon",
-    "attribution": "Jurii; image cleaned of distracting shadows and borders by DePiep on Wikimedia Commons, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/praseodymium.php",
+    "attribution": "Jurii, original photograph 'Praseodymium.jpg' (11 August 2009), https://commons.wikimedia.org/wiki/File:Praseodymium.jpg; source page https://images-of-elements.com/praseodymium.php. Commons contributor DePiep retouched the photo on 16 September 2012 to remove distracting shadows and borders. The app then resized/reencoded the source version. Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Both earlier editing and app adaptation are disclosed.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg",
     "sourceUrl": "https://images-of-elements.com/praseodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Commons file was retouched by DePiep in 2012. Local image resized for Periodic Table Explorer; verify cached version and alteration credit before release.",
+    "note": "Photograph shows approximately 1.5 g praseodymium pieces under argon, roughly 0.5 cm each. Commons file history documents Jurii's 2009 photograph and DePiep's shadow/border removal in 2012. The prior source-identity review found a likely photograph match (dHash distance 7), not byte-identical certification. Exact derivative chain and final release package rights remain open.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Praseodymium.jpg"
   },
   "60": {
@@ -698,11 +698,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Nd",
     "localUrl": "images/elements/060-nd.jpg",
     "title": "Ultrapure Neodymium under Argon, 5 grams. Original length of the large piece in cm: 1",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/neodymium.php",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Neodymium (60 Nd).jpg', https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg; element page https://images-of-elements.com/neodymium.php. The Commons record identifies the publishing project, not an individual photographer; Stas1995 is a Commons file uploader, not a verified author. The file states Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Stored app image resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Neodymium_%2860_Nd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/neodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "Publisher's neodymium page depicts about 5 grams of neodymium under argon, with a larger piece approximately 1 cm long. Commons identifies the file publisher as Hi-Res Images of Chemical Elements without separately naming an individual photographer. Previously recorded dHash local comparison found a likely match (distance 0); confirmation of publisher's rights-grant authority, any exceptions and exact commercial-release bundle is still pending.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg"
   },
   "61": {
