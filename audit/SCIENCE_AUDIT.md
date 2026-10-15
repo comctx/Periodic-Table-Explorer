@@ -771,3 +771,17 @@ Verified GitHub tree contains **118 local cached element JPGs and no missing tar
 ## Audit session 23 — 2026-10-14: image source pages 11–20 reviewed
 
 Visited the exact [Wikimedia Commons](https://commons.wikimedia.org/) file pages for **Na/Mg/Al/Si/P/S/Cl/Ar/K/Ca**, checking their image descriptions, named authors and license notices. Source notices: #11–12 CC BY-SA 3.0, #13–15 CC BY 3.0, #16 CC BY 2.0, #17 author-dedicated public domain, #18–20 CC BY 3.0. Preserved source and rights-page links as `commonsPage` metadata; app page already exposes such links separately from the original-image URL and license link. Recorded all results and specific derivative/share-alike requirements in [IMAGE_REVIEW.md](./IMAGE_REVIEW.md). **22 of 118 source pages checked**, **0 local image files fully cleared for release**, because we still have to match local cached file visually to original, verify applicable credit and terms, and inspect Store packaged image files. All edits isolated to scientific audit branch; main untouched.
+
+## Audit session 24 — 2026-10-14: centralized About & Credits page
+
+At user request, created an **About & Credits** page linked from the bottom of the main periodic table and from each element's detail page. Included the following **exact user-provided scientific disclaimer**, without editing its wording:
+
+> Every effort has been taken to ensure true and accurate facts concerning the 118 elements throughout this app. The information is believed to be highly accurate, though absolute accuracy cannot be guaranteed.
+
+Added direct links to sources used in the element audit: Royal Society of Chemistry, IUPAC/CIAAW abridged atomic weights 2024, NIST Atomic Spectra Database, and PubChem Periodic Table. This is source transparency, not a claim that the providers endorse the app or certify every element.
+
+Implemented a **searchable list of all 118 catalogued element-image credits** from `element-photo-data.js`, providing titles, existing creator/attribution, original image URLs, image source pages, Commons file notices where known, license link if recorded, and a return link to the element. Entries are marked when they are generic placeholders or illustrations. The code creates DOM nodes and uses `textContent`, not HTML-injection for user-visible strings. It does not automatically convert claimed licenses into release clearance; **0/118 cached images formally cleared** remains accurate. Individual photo credit blocks remain on element pages where a photo is displayed.
+
+Updated service worker precache from `pte-core-v1` to `pte-core-v2` including `./about.html`, so About/credits text is available after an initial successful PWA install (external attribution/reference links still require internet). Syntax checks plus a small in-memory DOM mock verified 118 credit entries render and search filtering works (e.g. "curium"). Actual iPhone/Windows browser and packaged Microsoft Store testing remain necessary.
+
+No changes made to the published `main` branch; do not submit until full science, image licensing and app QA release gates are met.
