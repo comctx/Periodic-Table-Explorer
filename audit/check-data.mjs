@@ -961,7 +961,8 @@ for(const z of [3,4,5,14,15,22,27,30]){
  const m=photoSourceData[String(z)];
  assert.ok(!!m.withholdReason,'Unmatched local image withheld until exact rights verified '+z);
  assert.ok(m.withholdReason.length>40,'Reason provides context for withholding '+z);
- assert.ok(visualImageReport.includes('\\| '+z+' \\|')===false || visualImageReport.includes('\\| '+z+' \\|')===false, 'Never depend on malformed table string');
+ const row=visualImageReport.split('\\n').find(line=>line.startsWith('| '+z+' |'));
+ assert.ok(row && row.includes('Not exact / withheld'),'Unmapped local image has matching report row '+z);
 }
 assert.match(photoSourceData['5'].title,/amorphous boron powder/, 'Correct boron allotrope for stored JPG');
 assert.match(photoSourceData['14'].title,/solar-cell panels/, 'Silicon photo accurately described as application');
