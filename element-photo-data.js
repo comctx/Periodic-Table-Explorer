@@ -364,77 +364,84 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Ga",
     "localUrl": "images/elements/031-ga.jpg",
     "title": "Solid gallium, fresh and after some time (2 months) at room temperature",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gallium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gallium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Solid_gallium_%28Ga%29.jpg",
     "sourceUrl": "https://images-of-elements.com/gallium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Solid_gallium_(Ga).jpg"
   },
   "32": {
     "name": "Germanium",
     "symbol": "Ge",
     "localUrl": "images/elements/032-ge.jpg",
-    "title": "12 Grams Polycrystalline Germanium, 2*3 cm",
+    "title": "12 grams of polycrystalline germanium, approximately 2 × 3 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/germanium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Polycrystalline-germanium.jpg",
     "sourceUrl": "https://images-of-elements.com/germanium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Polycrystalline-germanium.jpg"
   },
   "33": {
     "name": "Arsenic",
     "symbol": "As",
     "localUrl": "images/elements/033-as.jpg",
     "title": "Ultrapure Metallic Arsenic under Argon, 1 - 2 grams. Original size of each piece in cm: 0.5 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/arsenic.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/arsenic.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Arsenic_%2833_As%29.jpg",
     "sourceUrl": "https://images-of-elements.com/arsenic.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Arsenic_(33_As).jpg"
   },
   "34": {
     "name": "Selenium",
     "symbol": "Se",
     "localUrl": "images/elements/034-se.jpg",
     "title": "Ultrapure Black, Amorphous Selenium, 3 - 4 grams. Original size in cm: 2",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/selenium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/selenium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Selenium.jpg",
     "sourceUrl": "https://images-of-elements.com/selenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Selenium.jpg"
   },
   "35": {
     "name": "Bromine",
     "symbol": "Br",
     "localUrl": "images/elements/035-br.jpg",
-    "title": "99.5 % pure liquid Bromine in a 4 x 1 cm big glass ampoule, cast in acrylic",
+    "title": "99.5% pure liquid bromine sealed in a glass ampoule and encased in acrylic",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/bromine.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Bromine-ampoule.jpg",
     "sourceUrl": "https://images-of-elements.com/bromine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Bromine-ampoule.jpg"
   },
   "36": {
     "name": "Krypton",
     "symbol": "Kr",
     "localUrl": "images/elements/036-kr.jpg",
-    "title": "Vial of Glowing Ultrapure Krypton. Original size in cm: 1 x 5.",
+    "title": "Vial of glowing ultrapure krypton under electrical excitation, approximately 1 × 5 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/krypton.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Krypton-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/krypton.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Krypton-glow.jpg"
   },
   "37": {
     "name": "Rubidium",
     "symbol": "Rb",
     "localUrl": "images/elements/037-rb.jpg",
-    "title": "Rubidium Metal Sample",
+    "title": "Rubidium metal sample sealed in an ampoule, with colorful superoxide visible under bright light",
     "attribution": "Dnn87, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Rb5.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rb5.JPG"
   },
   "38": {
     "name": "Strontium",
@@ -445,29 +452,32 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Strontium-1.jpg",
     "sourceUrl": "https://images-of-elements.com/strontium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Strontium-1.jpg"
   },
   "39": {
     "name": "Yttrium",
     "symbol": "Y",
     "localUrl": "images/elements/039-y.jpg",
-    "title": "6,21g Yttrium, Reinheit mindestens 99%.",
+    "title": "6.21 g yttrium metal specimen, at least 99% pure",
     "attribution": "Jan Anskeit, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Piece_of_Yttrium.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Piece_of_Yttrium.jpg"
   },
   "40": {
     "name": "Zirconium",
     "symbol": "Zr",
     "localUrl": "images/elements/040-zr.jpg",
-    "title": "Two pieces of Zirconium, 1 cm each.",
+    "title": "Two zirconium pieces, about 1 cm each",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zirconium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Zirconium-pieces.jpg",
     "sourceUrl": "https://images-of-elements.com/zirconium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Zirconium-pieces.jpg"
   },
   "41": {
     "name": "Niobium",
