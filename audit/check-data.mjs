@@ -815,7 +815,7 @@ assert.match(photoSourceData['28'].attribution,/Materialscientist/,'Nickel creat
 assert.match(photoSourceData['39'].attribution,/Jan Anskeit/,'Yttrium creator');
 assert.match(photoSourceData['26'].title,/92% iron/,'Iron meteorite is not pure Fe');
 assert.match(photoSourceData['26'].attribution,/individual photographer.*not independently verified/i,'Iron publisher photo author not fabricated');
-assert.match(photoSourceData['33'].note,/individual.*not named/i,'Arsenic creator uncertainty preserved');
+assert.match(photoSourceData['33'].attribution,/individual photographer not separately named/i,'Arsenic creator uncertainty preserved');
 assert.match(photoSourceData['34'].title,/amorphous selenium/,'Selenium allotrope noted');
 assert.match(photoSourceData['37'].attribution,/Dnn87/,'Rubidium original photographer');
 assert.match(photoSourceData['37'].note,/temperature-dependent/,'Rubidium phase not overstated');
