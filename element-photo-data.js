@@ -721,100 +721,109 @@ window.ELEMENT_PHOTOS = {
     "name": "Promethium",
     "symbol": "Pm",
     "localUrl": "images/elements/061-pm.jpg",
-    "title": "Photomontage of what promethium metal might look like (it is too radioactive and real images are not available)",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/promethium.php",
+    "title": "Illustration / photomontage imagining promethium metal — NOT a photograph of promethium",
+    "attribution": "Illustration from Chemical Elements — A Virtual Museum (Jumk.de Webprojects); original image creator not established; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/promethium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Promethium.jpg",
     "sourceUrl": "https://images-of-elements.com/promethium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "An illustrative depiction rather than a direct element sample photograph; no matched image binary or redistribution clearance. The claimed Commons file page could not be directly verified.",
+    "withholdReason": "The source explicitly calls this a photomontage/illustration, not a photograph of promethium metal. It is withheld from the element photo panel to avoid misrepresentation."
   },
   "62": {
     "name": "Samarium",
     "symbol": "Sm",
     "localUrl": "images/elements/062-sm.jpg",
     "title": "Ultrapure Sublimated Samarium, 2 grams. Original size in cm: 0.8 x 1.5",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/samarium.php",
+    "attribution": "Photographer unidentified in Wikimedia Commons record; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>; source: https://images-of-elements.com/samarium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/samarium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Samarium-2.jpg"
   },
   "63": {
     "name": "Europium",
     "symbol": "Eu",
     "localUrl": "images/elements/063-eu.jpg",
-    "title": "Weakly Oxidized Europium, hence slightly yellowish. 1.5 grams, large piece 0.6 x 1.6 cm.",
+    "title": "Weakly oxidized europium metal (slightly yellow), about 1.5 g",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/europium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg",
     "sourceUrl": "https://images-of-elements.com/europium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Europium.jpg"
   },
   "64": {
     "name": "Gadolinium",
     "symbol": "Gd",
     "localUrl": "images/elements/064-gd.jpg",
-    "title": "Pure (99.95%) Amorphous Gadolinium, about 12 grams, 2 × 1.5 × 0.5 cm, cast in acrylic glass",
+    "title": "99.95% pure amorphous gadolinium, about 12 g, embedded in acrylic glass",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gadolinium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/gadolinium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gadolinium-2.jpg"
   },
   "65": {
     "name": "Terbium",
     "symbol": "Tb",
     "localUrl": "images/elements/065-tb.jpg",
     "title": "Pure Terbium, 3 grams. Original size: 1 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/terbium.php",
+    "attribution": "Photographer unidentified in Wikimedia Commons record; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>; source: https://images-of-elements.com/terbium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/terbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Terbium-2.jpg"
   },
   "66": {
     "name": "Dysprosium",
     "symbol": "Dy",
     "localUrl": "images/elements/066-dy.jpg",
-    "title": "Pure Dysprosium Dendrites",
+    "title": "Pure dysprosium metal dendrites",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/dysprosium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/dysprosium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dysprosium-2.jpg"
   },
   "67": {
     "name": "Holmium",
     "symbol": "Ho",
     "localUrl": "images/elements/067-ho.jpg",
     "title": "Ultrapure Holmium, 17 grams. Original size in cm: 1.5 x 2.5",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/holmium.php",
+    "attribution": "Photographer unidentified in Wikimedia Commons record; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>; source: https://images-of-elements.com/holmium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg",
     "sourceUrl": "https://images-of-elements.com/holmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Holmium2.jpg"
   },
   "68": {
     "name": "Erbium",
     "symbol": "Er",
     "localUrl": "images/elements/068-er.jpg",
-    "title": "9.5 Gramms Pure Erbium, 2 x 2 cm",
+    "title": "9.5 g of pure erbium metal, approximately 2 × 2 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/erbium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Erbium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/erbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Erbium-2.jpg"
   },
   "69": {
     "name": "Thulium",
     "symbol": "Tm",
     "localUrl": "images/elements/069-tm.jpg",
-    "title": "Ultrapure (99.997%) Crystalline Thulium, 22.3 grams, 3 × 3 × 2 cm in size",
+    "title": "99.997%-pure crystalline thulium obtained by sublimation, 22.3 g, cast in acrylic",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/thulium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Thulium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/thulium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Wikimedia file history records cleanup/spot removal by Jurii in May 2009. Image resized for Periodic Table Explorer; verify the exact downloaded revision and changes before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thulium-2.jpg"
   },
   "70": {
     "name": "Ytterbium",
@@ -825,7 +834,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg",
     "sourceUrl": "https://images-of-elements.com/ytterbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons lists file-specific CC BY 1.0 and publisher CC BY 3.0; final attribution and license election remain unchecked.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ytterbium-3.jpg"
   },
   "71": {
     "name": "Lutetium",
