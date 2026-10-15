@@ -731,13 +731,13 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:20},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:30},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
- if(z!==96)assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ if(z!==96 && z!==26)assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
 }
@@ -749,12 +749,29 @@ for(let z=11;z<=20;z++){
  assert.ok(!!w,'Source license documented for '+z);
  assert.ok(m.localUrl.endsWith('.jpg'),'Cached JPG path '+z);
 }
+const auditedSourceLicenses21to30={
+  "21":"CC BY-SA 3.0","22":"CC BY 3.0","23":"CC BY 3.0",
+  "24":"CC BY 3.0","25":"CC BY-SA 3.0","26":"CC BY 3.0 (publisher page)",
+  "27":"CC BY 3.0","28":"CC BY-SA 3.0","29":"CC BY-SA 2.5","30":"CC BY 3.0"
+};
+for(let z=21;z<=30;z++){
+ const item=photoSourceData[String(z)];
+ assert.ok(item && item.localUrl.endsWith('.jpg'),'Cached photo path '+z);
+ assert.ok(!!auditedSourceLicenses21to30[z],'Source-page license status recorded '+z);
+ if(z!==26)assert.ok(item.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Source page 21–30 '+z);
+ else assert.equal(item.sourceUrl,'https://images-of-elements.com/iron.php','Iron primary source');
+}
+assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
+assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
+assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
 assert.ok(!photoSourceData['96'].licenseUrl,'Curium must not be assigned an invented image license');
 assert.ok(!photoSourceData['94'].licenseUrl,'LANL attribution requirements not yet resolved');
 const elementPhotoPage=readFileSync('element.html','utf8');
 assert.ok(elementPhotoPage.includes('original.href=item.originalUrl'),'Open actual original image');
 assert.ok(!elementPhotoPage.includes('original.href=item.localUrl'),'Local asset mislabeled original');
 assert.ok(elementPhotoPage.includes('filePage.href=item.commonsPage'),'Link to Commons reuse conditions');
+assert.ok(elementPhotoPage.includes('|| withholdReason'), 'Explicitly withheld images must not render');
+assert.ok(elementPhotoPage.includes('else if(withholdReason) status.textContent=withholdReason'), 'Explain withheld images');
 
 
 // About & Credits release-audit regression. Source licenses and local cached image
@@ -771,6 +788,8 @@ assert.ok(readFileSync('element.html','utf8').includes('href="about.html"'),'Abo
 assert.ok(offlineSource.includes("'./about.html'"),'About page pre-cached offline');
 assert.ok(offlineSource.includes("pte-core-v2"),'Cache version updated for About page');
 assert.ok(aboutPage.includes('<script src="./element-photo-data.js"></script>'),'Credits reuse existing metadata');
+assert.ok(aboutPage.includes('if(item.withholdReason)info(body,'), 'Credits explain withheld images');
+assert.ok(aboutPage.includes('withheld?" — withheld"'), 'Credits mark withheld image');
 const aboutMeta=JSON.parse(photoDataSource.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 assert.equal(Object.keys(aboutMeta).length,118,'About credits cover all 118 elements');
 const aboutScripts=aboutPage.split('<script>').slice(1).map(s=>s.split('</script>')[0]).filter(Boolean);
@@ -803,6 +822,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 22 image source-page links/attribution flags, true original image links; no images fully cleared');
+console.log('PASS: 32 image source-page links/attribution flags, withheld disputed copper, true original image links; no images fully cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
