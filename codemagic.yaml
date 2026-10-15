@@ -262,9 +262,9 @@ workflows:
                   if n.startswith(root + 'Web/images/elements/')
                   and n.lower().endswith(('.jpg', '.png'))
               ]
-              assert len(element_images) == 90, f'Expected 90 display-eligible photos, got {len(element_images)}'
+              assert len(element_images) == 92, f'Expected 92 display-eligible photos, got {len(element_images)}'
               catalog = json.loads(archive.read(root + 'Web/element-photo-data.js').decode('utf-8').split('=', 1)[1].strip().rstrip(';'))
-              blocked = {61, 84, 85, 86, 87, 92, 93, 97, 99} | set(range(100, 119))
+              blocked = {61, 84, 85, 86, 87, 93, 99} | set(range(100, 119))
               expected = {root + 'Web/' + catalog[str(z)]['localUrl'] for z in range(1, 119) if z not in blocked}
               assert set(element_images) == expected, 'iPhone package must exclude every blocked/placeholder photo'
               assert root + 'Web/images/bay-city-city-hall.jpg' in names
