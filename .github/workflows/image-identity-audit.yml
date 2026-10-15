@@ -1,4 +1,4 @@
-name: Replace three image candidates on audit branch only
+name: Replace three attributed images on audit branch
 on:
   push:
     branches:
