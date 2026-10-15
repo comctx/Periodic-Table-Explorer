@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **42 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 76 source pages have not yet been individually checked.
+**Progress distinction:** **52 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 66 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 42 / 118** = 40 element-source checks (#1–40), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 52 / 118** = 50 element-source checks (#1–50), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -122,6 +122,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 | 40 Zr | [Commons zirconium](https://commons.wikimedia.org/wiki/File:Zirconium-pieces.jpg) | CC BY 3.0; Jurii | Two pieces of zirconium, about 1 cm each. | No |
 
 **Audit-branch catalog improvements:** Added Commons file-page links for all ten images. Corrected the spelling of three Hi-Res creator credits and clarified image captions for #32, #35–37 and #39–40. Current source-page rights statements have been documented, **not** final-package reuse clearance; no photograph binary was modified.
+
+## Fifth source-rights batch — elements 41–50
+
+**Reviewed 2026-10-14: 10 further published photo source pages.** This is a **source-page review only**, not local JPEG equivalence checking, complete attribution/license compliance, or approval to ship. Local Store bundle image binaries have not yet been cleared. Sources: the individual Wikimedia Commons file description/licensing pages for #41–47 and #50, and the element publisher's image pages for #48–49. Check each source again at final packaging.
+
+| Z | Source page reviewed | Published license / credit evidence | Description, risks, or required work | Final cached image cleared? |
+|---:|---|---|---|:---:|
+| 41 Nb | [Commons: Niobium strips.JPG](https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG) | CC BY-SA 3.0; Mauro Cateb | Exact plural-strips file, **not** the separate 2021 *Niobium strip.jpg* (CC BY-SA 4.0); check cropped JPEG and ShareAlike adaptation conditions. | No |
+| 42 Mo | [Commons: Molybdenum.jpg](https://commons.wikimedia.org/wiki/File:Molybdenum.jpg) | CC BY 3.0; Jurii | 99.9%-pure crystal, approximately 2 × 3 cm; anodization color belongs to the sample's pictured surface. | No |
+| 43 Tc | [Commons: Technetium-sample-cropped.jpg](https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg) | CC BY-SA 4.0; photographed by **Marco Cardin**, cropped by **Double sharp**; source additionally specifies attribution text **GFDL** | **CORRECTED AUTHOR:** The old catalog incorrectly listed “GFDL” as the creator. Photograph represents a sealed argon ampoule with technetium-99 powder electrodeposited on a gold foil, *not* a solid technetium ingot. Preserve special credit/crop history and ShareAlike obligations. | No |
+| 44 Ru | [Commons: Ruthenium crystal.jpg](https://commons.wikimedia.org/wiki/File:Ruthenium_crystal.jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Distinct from Commons' *Ruthenium crystals.jpg* (plural). Corrected creator formatting; verify matching saved photo. | No |
+| 45 Rh | [Commons: Rhodium (Rh).jpg](https://commons.wikimedia.org/wiki/File:Rhodium_(Rh).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Confirmed the *Rhodium (Rh).jpg* file (not a similarly named file). Corrected creator formatting. | No |
+| 46 Pd | [Commons: Palladium (46 Pd).jpg](https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Image title references palladium crystal, approximately 1 g. Corrected creator formatting. | No |
+| 47 Ag | [Commons: Silver-nugget.jpg](https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg) | CC BY 3.0; Jurii | Natural silver nugget approximately 1 cm; normalized publisher link to HTTPS so Credits UI can open it. | No |
+| 48 Cd | [Chemical Elements: Cadmium](https://images-of-elements.com/cadmium.php) | Publisher states CC BY 3.0 on its images unless marked otherwise, **requests attribution linking to the element's page** | Publisher displays several cadmium specimens, including oxidized and pure pieces. The catalog's selected *cadmium-4.jpg* must be individually matched before assigning a specific depiction. Generic caption retained pending verification. | No |
+| 49 In | [Chemical Elements: Indium](https://images-of-elements.com/indium.php) | Publisher states CC BY 3.0 on its images unless marked otherwise, **requests attribution linking to the element's page** | Publisher describes *molten indium* photographed as liquid at 1.5 × 1.5 cm. **Caption clarified**: indium is solid at ordinary room temperature. Check that *indium-2.jpg* is the displayed liquid specimen and not the separate ingot. | No |
+| 50 Sn | [Commons: Tin-2.jpg](https://commons.wikimedia.org/wiki/File:Tin-2.jpg) | CC BY 3.0; Jurii | Tin blob; normalized publisher link to HTTPS. | No |
+
+**Audit-branch changes:** Added eight Wikimedia file-page credits (#41–47, #50), corrected the actual original photographer and cropper for #43, corrected creator formatting for #44–46, improved scientifically important sample descriptions for #42–43 and #49, and updated page credits for #47–50. All changes remain on `scientific-audit-2026-10`.
+
+**Open issues:** Compare all ten cached JPEGs with the exact cited originals; verify that the correct version/crop was cached, how it was resized, the original attribution and license links, rights compliance for #41 and #43 ShareAlike adaptations, and the element-page attribution request for #48–49. No license-status statement alone proves that app distribution is currently cleared.
 
 ## Per-element tracking (all unchecked)
 
