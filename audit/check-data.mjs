@@ -737,7 +737,7 @@ const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
- if(z<=100 && ![26,48,49,61,84,85,86,87,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ if(z<=100 && ![26,48,49,61,62,63,64,65,66,67,70,72,73,75,77,79,80,81,82,84,85,86,87,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
 }
@@ -823,31 +823,34 @@ assert.match(photoSourceData['58'].note,/CC BY 3.0/,'Cerium separate publisher C
 assert.match(photoSourceData['59'].attribution,/DePiep/,'Praseodymium source edit history credited');
 const auditedSourceLicenses61to70={
  "61":"CC BY 3.0 (publisher claim; file-specific Commons page unverified)",
- "62":"CC BY 1.0 + publisher CC BY 3.0","63":"CC BY 3.0",
- "64":"CC BY 3.0","65":"CC BY 1.0 + publisher CC BY 3.0",
- "66":"CC BY 3.0","67":"CC BY 1.0 + publisher CC BY 3.0",
- "68":"CC BY 3.0","69":"CC BY 3.0","70":"CC BY 1.0 + publisher CC BY 3.0"
+ "62":"matching publisher gallery photo CC BY 3.0 claim","63":"CC BY 3.0",
+ "64":"CC BY 3.0","65":"matching publisher gallery photo CC BY 3.0 claim",
+ "66":"CC BY 3.0","67":"matching publisher gallery photo CC BY 3.0 claim",
+ "68":"CC BY 3.0","69":"CC BY 3.0","70":"matching publisher gallery photo CC BY 3.0 claim"
 };
 for(let z=61;z<=70;z++){
  const m=photoSourceData[String(z)];
  assert.ok(m && m.localUrl.endsWith('.jpg'),'Cached local image path 61-70 '+z);
  assert.ok(!!auditedSourceLicenses61to70[String(z)],'Documented source license statement '+z);
- if(z!==61)assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Verifiable exact Commons source page 62-70 '+z);
+ if([62,63,64,65,66,67,70].includes(z)) {
+  assert.equal(m.originalUrl,'https://images-of-elements.com/s/'+m.name.toLowerCase()+'.jpg','Matched publisher gallery photo 62-70 '+z);
+  assert.ok(!m.commonsPage,'Incorrect Commons metadata removed for photo '+z);
+ } else if(z!==61) assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Commons source for unchanged photo '+z);
  else assert.equal(m.sourceUrl,'https://images-of-elements.com/promethium.php','Publisher source for unverified Commons image');
 }
 assert.match(photoSourceData['61'].withholdReason,/illustration|photomontage/i,'Promethium montage must be withheld');
 assert.match(photoSourceData['61'].title,/NOT a photograph/,'Promethium imagery title states illustration');
 for(const z of ['62','65','67']){
  const m=photoSourceData[z];
- assert.match(m.attribution,/Photographer unidentified/,'No fabricated photo creator '+z);
+ assert.match(m.attribution,/individual photographer.*not independently confirmed/i,'No fabricated photo creator '+z);
  assert.ok(!m.attribution.includes('Unknown authorUnknown author'),'Clean duplicated author text '+z);
- assert.ok(m.licenseUrl.endsWith('/by/1.0'),'Preserve file-specific CC BY 1.0 '+z);
- assert.match(m.note,/publisher-wide CC BY 3.0/,'Document alternate licensing terms '+z);
+ assert.ok(m.licenseUrl.includes('/by/3.0'),'Publisher-specific source CC BY 3.0 claim '+z);
+ assert.match(m.note,/previously catalogued Wikimedia original/i,'Old Commons author and license not misapplied '+z);
 }
 assert.match(photoSourceData['64'].title,/embedded in acrylic/,'Gadolinium is acrylic-embedded');
 assert.match(photoSourceData['69'].title,/cast in acrylic/,'Thulium is acrylic-embedded');
 assert.match(photoSourceData['69'].note,/cleanup|spot removal/,'Thulium photo edit history documented');
-assert.ok(photoSourceData['70'].licenseUrl.endsWith('/by/1.0'),'Ytterbium source file CC BY 1.0 preserved');
+assert.ok(photoSourceData['70'].licenseUrl.includes('/by/3.0'),'Ytterbium matching publisher image CC BY 3.0 claim');
 const auditedSourceLicenses71to80={
  "71":"CC BY 3.0","72":"CC BY 3.0","73":"CC BY 3.0",
  "74":"CC BY 1.0 (plus publisher CC BY 3.0)","75":"CC BY 3.0",
@@ -857,7 +860,10 @@ const auditedSourceLicenses71to80={
 for(let z=71;z<=80;z++){
  const item=photoSourceData[String(z)];
  assert.ok(!!auditedSourceLicenses71to80[String(z)],'Source license checked 71–80 '+z);
- assert.ok(item?.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Original Commons file page 71–80 '+z);
+ if([72,73,75,77,79,80].includes(z)){
+  assert.equal(item.originalUrl,'https://images-of-elements.com/s/'+item.name.toLowerCase()+'.jpg','Corrected image-original link 71–80 '+z);
+  assert.ok(!item.commonsPage,'No stale Commons photo link 71–80 '+z);
+ } else assert.ok(item?.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Original Commons file page 71–80 '+z);
  assert.ok(item.localUrl.endsWith('.jpg'),'Saved JPEG entry 71–80 '+z);
 }
 assert.match(photoSourceData['72'].title,/oxidation/,'Hafnium caption includes oxidized sample context');
@@ -865,13 +871,13 @@ assert.match(photoSourceData['74'].note,/CC BY 1.0/,'Tungsten file-specific righ
 assert.match(photoSourceData['74'].note,/CC BY 3.0/,'Tungsten publisher license alternative noted');
 assert.match(photoSourceData['75'].title,/arc-melted/,'Rhenium source subject preserved');
 assert.ok(!/radiation dose/i.test(photoSourceData['75'].title),'Unverified radiation dose not in caption');
-assert.match(photoSourceData['77'].attribution,/Photographer unidentified/,'Iridium creator not invented');
+assert.match(photoSourceData['77'].attribution,/individual photographer.*not independently confirmed/i,'Iridium creator not invented');
 assert.ok(!photoSourceData['77'].attribution.includes('Unknown authorUnknown author'),'Iridium duplicated author removed');
-assert.ok(photoSourceData['77'].licenseUrl.endsWith('/by/1.0'),'Iridium CC BY 1.0 original license');
+assert.ok(photoSourceData['77'].licenseUrl.includes('/by/3.0'),'Iridium matching gallery photo publisher license claim');
 assert.match(photoSourceData['77'].attribution,/CC BY 3.0/,'Iridium publisher license alternative noted');
 assert.match(photoSourceData['78'].attribution,/Periodictableru/,'Platinum original creator');
 assert.match(photoSourceData['78'].attribution,/Materialscientist/,'Platinum crop credit');
-assert.match(photoSourceData['80'].note,/publisher's mercury element page/,'Mercury source attribution requirement');
+assert.match(photoSourceData['80'].attribution,/images-of-elements\.com\/mercury\.php/,'Mercury publisher-page attribution link required');
 const auditedSourceLicenses81to90={
  "81":"CC BY 3.0","82":"CC BY 3.0","83":"CC BY 3.0",
  "84":"Publisher CC BY 3.0 claim; illustration withheld",
@@ -888,6 +894,9 @@ for(let z=81;z<=90;z++){
   assert.match(item.withholdReason,/illustration/,'Non-photo image must be explicitly withheld '+z);
   assert.match(item.title,/illustration/i,'Illustration must not be represented as photo '+z);
   assert.equal(item.sourceUrl,'https://images-of-elements.com/'+item.name.toLowerCase()+'.php','Illustration source page '+z);
+ }else if([81,82].includes(z)){
+  assert.equal(item.originalUrl,'https://images-of-elements.com/s/'+item.name.toLowerCase()+'.jpg','Publisher photo original for 81–82 '+z);
+  assert.ok(!item.commonsPage,'Stale Commons photo page cleared '+z);
  }else assert.ok(item.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Commons source link 81–90 '+z);
 }
 assert.match(photoSourceData['82'].note,/publisher|photographer/i,'Lead credit does not invent photographer');
@@ -1005,6 +1014,21 @@ for(const z of [61,84,85,86,87]){
  assert.ok(photoSourceData[String(z)].withholdReason,'Non-photo illustration not re-enabled '+z);
 }
 assert.ok(readFileSync('audit/IMAGE_REVIEW.md','utf8').includes('90 of 118 actual saved JPEG files have now been inspected'),'Master audit advanced to 90 cached files');
+const recoveredGalleryReport=readFileSync('audit/LOCAL_IMAGE_MATCH_61_90.md','utf8');
+assert.ok(recoveredGalleryReport.includes('38681550877'),'Source-gallery matching run documented');
+assert.ok(recoveredGalleryReport.includes('**15 previously flagged actual element photographs**'),'Fifteen exact publisher photos recovered');
+const matchingPublisherImageRecords=[62,63,64,65,66,67,70,72,73,75,77,79,80,81,82];
+for(const z of matchingPublisherImageRecords){
+ const m=photoSourceData[String(z)];
+ assert.equal(m.originalUrl,'https://images-of-elements.com/s/'+m.name.toLowerCase()+'.jpg','Exact publisher original discovered '+z);
+ assert.equal(m.sourceUrl,'https://images-of-elements.com/'+m.name.toLowerCase()+'.php','Publisher license/source notice link '+z);
+ assert.ok(!m.withholdReason,'Recovered source must not remain withheld solely for old photo mismatch '+z);
+ assert.ok(!m.commonsPage,'Cannot attribute different publisher photograph to outdated Commons image '+z);
+ assert.ok(m.licenseUrl.includes('/by/3.0'),'Publisher source CC BY 3.0 claim recorded '+z);
+ assert.match(m.note,/not yet fully verified|still need final verification/,'Final photo permissions remain unverified '+z);
+}
+assert.equal(photoSourceData['61'].originalUrl,'https://images-of-elements.com/s/promethium.jpg','Broken promethium image URL corrected to publisher illustration');
+assert.ok(!!photoSourceData['61'].withholdReason,'Promethium still withheld as illustration');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].withholdReason,/van Arkel–de Boer/, 'Titanium discrepancy to former crystal photo explicitly explained');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -1068,6 +1092,6 @@ console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioa
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
 console.log('PASS: all 118 image-source entries classified; 101-104 illustrative/CERN excluded, 105-118 generic placeholders; no cached photo cleared');
 console.log('PASS: 60 local photo binaries tested, 24 of batch 31-60 likely matches, six marked withheld, silver chain correctly identified; no final photo clearance');
-console.log('PASS: 90 saved JPEGs inspected; 61-90 found 14 probable source matches, 15 unresolved and one fetch failure; non-photo illustrations still withheld');
+console.log('PASS: 90 saved JPEGs inspected; 15 alternate publisher originals recovered in 61-90, source links repaired, five illustrations remain withheld; no distribution clearance');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
