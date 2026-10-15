@@ -1,0 +1,44 @@
+name: Audit-only live Chromium browser smoke
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - audit/browser-smoke.mjs
+      - .github/workflows/audit-browser-smoke.yml
+      - index.html
+      - element.html
+      - quiz.html
+      - about.html
+      - elements-data.js
+      - element-photo-data.js
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce isolated audit branch
+        run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
+      - name: Install Playwright and real Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Launch real local web server and run browser checks
+        run: |
+          set -eu
+          python3 -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/pte-browser-server.log" 2>&1 &
+          PTE_SERVER_PID=$!
+          trap 'kill "$PTE_SERVER_PID" 2>/dev/null || true' EXIT
+          node audit/browser-smoke.mjs
+      - name: Explain the remaining release gate
+        if: always()
+        run: |
+          echo "Real headless Chromium UI smoke: only the audit branch. No Store build/merge/publishing." >> "$GITHUB_STEP_SUMMARY"
+          echo "External photo rights, actual signed package inspection, and full hands-on device testing remain separate." >> "$GITHUB_STEP_SUMMARY"
