@@ -459,6 +459,27 @@ for(let i=0;i<30;i++){
 const catalogRaw=readFileSync('element-photo-data.js','utf8');
 const catalog=JSON.parse(catalogRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 assert.equal(Object.keys(catalog).length,118,'Photo metadata all 118');
+// First-20 file-specific rights and honest photo-subject regression (Oct 15, 2026).
+// These validate credits/catalogue consistency, NOT a complete legal sign-off.
+assert.match(catalog['6'].title,/Natural graphite \(carbon\)/,'Carbon is a real graphite sample');
+assert.match(catalog['6'].originalUrl,/Native_graphite_Chardonnet_MNHN/,'Carbon now has genuine native graphite photo');
+assert.match(catalog['6'].attribution,/Marie-Lan Taÿ Pamart/,'Graphite museum photographer credited');
+assert.equal(catalog['6'].licenseUrl,'https://creativecommons.org/licenses/by/4.0/','Graphite CC BY 4.0 license');
+assert.match(catalog['8'].attribution,/Nika Glover/,'Oxygen source photographer');
+assert.match(catalog['8'].attribution,/David Levy/,'Oxygen photo crop and retouch author');
+assert.match(catalog['8'].title,/Liquid oxygen/,'Oxygen picture is liquid, not ordinary gas');
+assert.match(catalog['9'].attribution,/Fulvio314/,'Fluorine derivative author');
+assert.match(catalog['9'].licenseUrl,/by-sa\/3\.0/,'Fluorine exact ShareAlike license');
+assert.match(catalog['11'].attribution,/Dnn87/,'Sodium original uploader and creator');
+assert.match(catalog['11'].licenseUrl,/by-sa\/3\.0/,'Sodium exact ShareAlike license');
+assert.match(catalog['12'].attribution,/Warut Roonguthai/,'Magnesium photo creator');
+assert.match(catalog['12'].licenseUrl,/by-sa\/3\.0/,'Magnesium selected ShareAlike license');
+assert.match(catalog['16'].sourceUrl,/flickr\.com\/photos\/47445767/, 'Sulfur original Flickr link');
+assert.match(catalog['16'].licenseUrl,/by\/2\.0/,'Sulfur CC BY 2.0');
+assert.match(catalog['17'].attribution,/Benjah-bmm27/,'Chlorine public-domain photographer');
+assert.match(catalog['17'].attribution,/Materialscientist/,'Chlorine derivative creator credited');
+assert.match(catalog['17'].attribution,/public domain/,'Chlorine PD release preserved');
+
 for(let z=105;z<=118;z++)assert.equal(catalog[String(z)].title,'No Image Found','No sample photo for '+z);
 const detailUi=readFileSync('element.html','utf8');
 assert.ok(detailUi.includes('placeholder || illustration || rightsUnknown'),'Image honesty safeguards');
