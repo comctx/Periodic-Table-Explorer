@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:70},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:80},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -848,6 +848,30 @@ assert.match(photoSourceData['64'].title,/embedded in acrylic/,'Gadolinium is ac
 assert.match(photoSourceData['69'].title,/cast in acrylic/,'Thulium is acrylic-embedded');
 assert.match(photoSourceData['69'].note,/cleanup|spot removal/,'Thulium photo edit history documented');
 assert.ok(photoSourceData['70'].licenseUrl.endsWith('/by/1.0'),'Ytterbium source file CC BY 1.0 preserved');
+const auditedSourceLicenses71to80={
+ "71":"CC BY 3.0","72":"CC BY 3.0","73":"CC BY 3.0",
+ "74":"CC BY 1.0 (plus publisher CC BY 3.0)","75":"CC BY 3.0",
+ "76":"CC BY 3.0","77":"CC BY 1.0 (plus publisher CC BY 3.0)",
+ "78":"CC BY 3.0","79":"CC BY 3.0","80":"CC BY 3.0"
+};
+for(let z=71;z<=80;z++){
+ const item=photoSourceData[String(z)];
+ assert.ok(!!auditedSourceLicenses71to80[String(z)],'Source license checked 71–80 '+z);
+ assert.ok(item?.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Original Commons file page 71–80 '+z);
+ assert.ok(item.localUrl.endsWith('.jpg'),'Saved JPEG entry 71–80 '+z);
+}
+assert.match(photoSourceData['72'].title,/oxidation/,'Hafnium caption includes oxidized sample context');
+assert.match(photoSourceData['74'].note,/CC BY 1.0/,'Tungsten file-specific rights retained');
+assert.match(photoSourceData['74'].note,/CC BY 3.0/,'Tungsten publisher license alternative noted');
+assert.match(photoSourceData['75'].title,/arc-melted/,'Rhenium source subject preserved');
+assert.ok(!/radiation dose/i.test(photoSourceData['75'].title),'Unverified radiation dose not in caption');
+assert.match(photoSourceData['77'].attribution,/Photographer unidentified/,'Iridium creator not invented');
+assert.ok(!photoSourceData['77'].attribution.includes('Unknown authorUnknown author'),'Iridium duplicated author removed');
+assert.ok(photoSourceData['77'].licenseUrl.endsWith('/by/1.0'),'Iridium CC BY 1.0 original license');
+assert.match(photoSourceData['77'].attribution,/CC BY 3.0/,'Iridium publisher license alternative noted');
+assert.match(photoSourceData['78'].attribution,/Periodictableru/,'Platinum original creator');
+assert.match(photoSourceData['78'].attribution,/Materialscientist/,'Platinum crop credit');
+assert.match(photoSourceData['80'].note,/publisher's mercury element page/,'Mercury source attribution requirement');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -909,6 +933,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 72 source pages checked, explicit promethium illustration withholding and lanthanide attribution safeguards; no cached photos cleared');
+console.log('PASS: 82 original-image source pages checked for license claims and credits; local photo binaries not yet cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
