@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **32 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 86 source pages have not yet been individually checked.
+**Progress distinction:** **42 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 76 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 32 / 118** = 30 element-source checks (#1–30), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 42 / 118** = 40 element-source checks (#1–40), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -103,6 +103,25 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Metadata fixes committed on the audit branch:** added nine Commons file-page links (#21–25, #27–30), corrected the titles/credits for #22, #25–27 and #30, and added a withheld-image reason for #29. The About & Credits page identifies #29 as withheld. The original cached JPEGs remain in the repository; none is certified for redistributable Store packaging. The full photo-source chain and, where applicable, original creator/cropping attribution still must be checked.
 
 **Image bundle verification remains blocked:** GitHub's text/metadata interface can list image files but does not compare their actual JPEG pixels to the originals. Confirm this with binary hashes/visual review and test the final Store package before release.
+
+## Fourth source-license batch — elements 31–40
+
+**Reviewed on 2026-10-14:** original Wikimedia Commons file information and licensing sections for each of elements #31–40. Nine file pages state **CC BY 3.0** (#31–38, #40); one states **CC BY-SA 4.0** (#39). These license grants permit reuse subject to their respective conditions; **no cached JPG is cleared for release**. The catalogued `localUrl` bytes still need identity/resize verification against originals, and attribution including author, source, license link and alteration indication needs a final release check. For #39, evaluate compliance with ShareAlike terms for any modified image.
+
+| # | Source page checked | Published rights evidence | Image subject / caution | Cached JPG cleared? |
+|---:|---|---|---|:---:|
+| 31 Ga | [Commons gallium](https://commons.wikimedia.org/wiki/File:Solid_gallium_(Ga).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Two-month comparison of solid gallium, partially melted/merged with another piece; captions should preserve context. | No |
+| 32 Ge | [Commons germanium](https://commons.wikimedia.org/wiki/File:Polycrystalline-germanium.jpg) | CC BY 3.0; Jurii | 12 g polycrystalline germanium, approximately 2 × 3 cm. | No |
+| 33 As | [Commons arsenic](https://commons.wikimedia.org/wiki/File:Arsenic_(33_As).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | The catalog says ultrapure metallic arsenic under argon; final comparison with claimed original still needed. | No |
+| 34 Se | [Commons selenium](https://commons.wikimedia.org/wiki/File:Selenium.jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | The catalog describes black amorphous selenium; verify the cached crop is the same sample photo. | No |
+| 35 Br | [Commons bromine](https://commons.wikimedia.org/wiki/File:Bromine-ampoule.jpg) | CC BY 3.0; Jurii | 99.5% liquid bromine sealed in a glass ampoule and acrylic; clarified caption. | No |
+| 36 Kr | [Commons krypton](https://commons.wikimedia.org/wiki/File:Krypton-glow.jpg) | CC BY 3.0; Jurii | Glowing discharge tube is electrically excited krypton, not its ordinary visual appearance. | No |
+| 37 Rb | [Commons rubidium](https://commons.wikimedia.org/wiki/File:Rb5.JPG) | CC BY 3.0 offered as an alternative to GFDL; Dnn87 | Ampoule shows rubidium and colorful superoxide; Commons captions refer to liquid state. Avoid claiming solid state or room-temperature appearance based on the photograph. | No |
+| 38 Sr | [Commons strontium](https://commons.wikimedia.org/wiki/File:Strontium-1.jpg) | CC BY 3.0; Jurii | Pieces under paraffin oil rather than exposed to air. | No |
+| 39 Y | [Commons yttrium](https://commons.wikimedia.org/wiki/File:Piece_of_Yttrium.jpg) | CC BY-SA 4.0; Jan Anskeit | 6.21 g yttrium, at least 99% pure; extra ShareAlike adaptation/attribution review needed. | No |
+| 40 Zr | [Commons zirconium](https://commons.wikimedia.org/wiki/File:Zirconium-pieces.jpg) | CC BY 3.0; Jurii | Two pieces of zirconium, about 1 cm each. | No |
+
+**Audit-branch catalog improvements:** Added Commons file-page links for all ten images. Corrected the spelling of three Hi-Res creator credits and clarified image captions for #32, #35–37 and #39–40. Current source-page rights statements have been documented, **not** final-package reuse clearance; no photograph binary was modified.
 
 ## Per-element tracking (all unchecked)
 
