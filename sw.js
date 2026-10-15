@@ -1,8 +1,8 @@
 /* Periodic Table Explorer: cache core pages for offline access, refresh from network when online. */
 'use strict';
-const CORE_CACHE = 'pte-core-v1';
+const CORE_CACHE = 'pte-core-v2';
 const CORE_FILES = [
-  './', './index.html', './element.html', './quiz.html',
+  './', './index.html', './element.html', './quiz.html', './about.html',
   './elements-data.js', './element-photo-data.js',
   './privacy.html', './support.html', './donco_logo_footer.png',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'
