@@ -324,6 +324,23 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [ ] **At this record update** native unsigned iPhone Simulator [38825202123](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38825202123) was still **in progress**, not passed; the earlier pre-update iPhone simulator [38824103622](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38824103622) passed but is a different commit. Check actual outcome separately.
 - [ ] Unresolved external rights grant/individual photographer questions for publisher-credited originals and full signed-package ShareAlike obligations stay open. 92 candidate images remain candidates, **not release-cleared**, and no `main` merge or release was authorized.
 
+## 4K. Focused file-specific credit follow-up — 54–60 — 2026-10-15
+
+**Evidence:** [`RIGHTS_54_60_ATTRIBUTION.md`](RIGHTS_54_60_ATTRIBUTION.md), exact current Wikimedia Commons original/derivative file-history and CC BY 3.0 records, related original-publisher pages and prior saved-JPEG comparisons. Five precisely scoped photo candidates, **not a replay of the earlier completed 51–60 photo matching**.
+
+- [x] **#54 xenon:** photographer Jurii original 2009 photo, the specific 2010 white-speck retouch by Papa Lima Whiskey, and the app's re-encoding all identified in displayed photo credits with original-file link and CC BY 3.0.
+- [x] **#56 barium:** publisher-level identity Hi-Res Images of Chemical Elements and exact source/subject recognized; Commons uploader Stas1995 **not assumed to be original photographer**. The individual photographer remains unverified despite source's CC BY 3.0 claim and gallery licensing notice.
+- [x] **#57 lanthanum:** Jurii's 2009 photograph and CC BY 3.0 source link recorded; app resize/reencode notice improved.
+- [x] **#59 praseodymium:** named Jurii's original 2009 photo, DePiep's 2012 shadow/border cleanup and subsequent app re-encoding separately. Commons CC BY 3.0.
+- [x] **#60 neodymium:** publisher-level photo identity and exact Commons/gallery links and source CC BY 3.0 license statement corroborated. As with barium, **the uploader is not a verified photographer**, and personal rights lineage remains unresolved.
+- [x] Existing **#55 cesium** follow-up was **already completed** in Section 4I and [`RIGHTS_41_55_90_ATTRIBUTION.md`](RIGHTS_41_55_90_ATTRIBUTION.md). **#58 cerium** publisher-hosted exact-original recovery and rights uncertainties were **already separately documented**. Those two were **not modified** or newly claimed cleared.
+- [x] Exact code change: `element-photo-data.js` `attribution` and `note` only for **#54 #56 #57 #59 #60**; [metadata commit `319bdb8`](https://github.com/comctx/Periodic-Table-Explorer/commit/319bdb8b372bee67a8e67caa7b38abc09b211d16). No binary JPEGs, paths, licenses, science, quiz, packaging or display selection changed. Remains **92 candidate photos / 26 excluded**.
+- [x] **Completed post-change science/package test succeeded**: [run 38826022767](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38826022767) on metadata commit `319bdb8`.
+- [ ] **At time of this record addition**, post-change real Chromium browser [38826022716](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38826022716), true offline [38826022712](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38826022712) and unsigned iOS Simulator [38826022705](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38826022705) were still running. Do not report as passed before confirming completion.
+- [ ] **Release still blocked:** no newly certified individual photo or package rights, no signed IPA, no real iPhone/TestFlight or Windows Store package, no Apple 4.3 decision, no owner release approval. No merge or submission.
+
+**Late status correction to §4J:** prior native unsigned iPhone simulator [run 38825202123](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38825202123) **completed successfully** on commit `c841617`. That record's earlier "in progress" notation was a truthful historical snapshot, now superseded by actual GitHub run conclusion. It does not establish the later `319bdb8` simulator result.
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
