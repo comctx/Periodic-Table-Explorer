@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **12 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 106 source pages have not yet been individually checked.
+**Progress distinction:** **22 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 96 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -56,6 +56,32 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 [Creative Commons BY 3.0 deed](https://creativecommons.org/licenses/by/3.0/); [BY-SA 3.0 deed](https://creativecommons.org/licenses/by-sa/3.0/); [BY-SA 4.0 deed](https://creativecommons.org/licenses/by-sa/4.0/). The Creative Commons licenses allow commercial reuse subject to attribution and, for ShareAlike, adaptation conditions. A license can contain additional rights limitations and is not an endorsement.
 
+
+
+### Second source-license batch — elements 11–20
+
+Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file is fully cleared for release until the app's cached binary is visually and technically matched, and applicable attributions/ShareAlike and release-packaging conditions have been met.**
+
+| # | Reported subject | External source page | Source licence | Required follow-up | Cached JPG fully cleared? |
+|---:|---|---|---|---|---|
+| 11 Na | Na (Sodium) Metal | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Na_(Sodium).jpg) | CC BY-SA 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 12 Mg | Magnesium crystals | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Magnesium_crystals.jpg) | CC BY-SA 3.0 (also other versions offered) | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 13 Al | Pure aluminium foil. Original size in cm: 5 x 5 | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Aluminium.jpg) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 14 Si | Chunk of Ultrapure Silicon, 2 x 2 cm | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Silicon.jpg) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 15 P | Purple Phosphorus | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Phosphorus-purple.jpg) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 16 S | Native Sulfur From Russia | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Native_sulfur_(Vodinskoe_Deposit%3B_quarry_near_Samara%2C_Russia)_9.jpg) | CC BY 2.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 17 Cl | A Sample of Chlorine | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Chlorine-sample-flip.jpg) | Author dedicated to public domain | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 18 Ar | Vial of glowing ultrapure argon. Original size in cm: 1 x 5 | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Argon-glow.jpg) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 19 K | Potassium Pieces | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Potassium.JPG) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+| 20 Ca | Calcium Grains, grain size about 1 mm | [Wikimedia file](https://commons.wikimedia.org/wiki/File:Calcium.jpg) | CC BY 3.0 | Source license notice found; verify cached resized JPG, attribution and any ShareAlike terms — NOT CLEARED | No |
+
+- Sodium (#11) and magnesium (#12) offer CC BY-SA licensing; the magnesium page additionally lists older license versions. For these two, record a compliant attribution and address the reused/adapted image's ShareAlike terms.
+- The sulfur sample (#16), taken by James St. John, has a Creative Commons BY 2.0 license and a Commons Flickr-license review.
+- Chlorine (#17) has a public-domain author dedication; it is a flipped/derived photo, so document subject and edit history as well.
+- #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
+- **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
+
+**Cumulative total checked (source page/license statement only): 22 / 118** = 20 element-source checks (#1–20), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Per-element tracking (all unchecked)
 
