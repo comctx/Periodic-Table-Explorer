@@ -1,4 +1,4 @@
-name: Image identity triage (audit branch only)
+name: Resolve 14 element photo originals (audit branch)
 on:
   push:
     branches:
@@ -11,20 +11,24 @@ permissions:
   contents: read
 
 jobs:
-  compare-source-photos:
+  recover-photo-origins:
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [early, later]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Check out audit branch only
+      - name: Checkout audit branch
         uses: actions/checkout@v4
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Compare local images with credited originals, 91-118
-        run: python audit/compare_image_identity.py 91 118
-      - name: Publish machine evidence (not rights clearance)
+      - name: Compare existing photos with publisher gallery
+        run: python audit/recover_unresolved_gallery.py ${{ matrix.batch }}
+      - name: Preserve matching evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: image-comparison-91-118
-          path: audit/machine-image-matches-91-118.json
+          name: recovered-originals-${{ matrix.batch }}
+          path: audit/recovered-originals-${{ matrix.batch }}.json
           if-no-files-found: warn
