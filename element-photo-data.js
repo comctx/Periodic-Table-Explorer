@@ -8,7 +8,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Hydrogenglow.jpg",
     "sourceUrl": "https://images-of-elements.com/hydrogen.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrogenglow.jpg"
   },
   "2": {
     "name": "Helium",
@@ -19,7 +20,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Helium-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/helium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Helium-glow.jpg"
   },
   "3": {
     "name": "Lithium",
@@ -30,7 +32,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/0.5_grams_lithium_under_argon.jpg",
     "sourceUrl": "https://images-of-elements.com/lithium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:0.5_grams_lithium_under_argon.jpg"
   },
   "4": {
     "name": "Beryllium",
@@ -41,7 +44,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Beryllium_%28Be%29.jpg",
     "sourceUrl": "https://images-of-elements.com/beryllium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Beryllium_(Be).jpg"
   },
   "5": {
     "name": "Boron",
@@ -52,7 +56,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Boron.jpg",
     "sourceUrl": "https://images-of-elements.com/boron.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Boron.jpg"
   },
   "6": {
     "name": "Carbon",
@@ -63,7 +68,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Pure_Carbon.png",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_Carbon.png"
   },
   "7": {
     "name": "Nitrogen",
@@ -74,7 +80,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Nitrogen-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/nitrogen.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Nitrogen-glow.jpg"
   },
   "8": {
     "name": "Oxygen",
@@ -85,7 +92,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Liquid_oxygen_in_a_beaker_%28cropped_and_retouched%29.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Liquid_oxygen_in_a_beaker_(cropped_and_retouched).jpg"
   },
   "9": {
     "name": "Fluorine",
@@ -96,7 +104,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Fluoro_liquido_a_-196%C2%B0C_1.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fluoro_liquido_a_-196%C2%B0C_1.jpg"
   },
   "10": {
     "name": "Neon",
@@ -107,7 +116,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Neon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/neon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neon-glow.jpg"
   },
   "11": {
     "name": "Sodium",
@@ -1031,7 +1041,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plutonium_ring.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg"
   },
   "95": {
     "name": "Americium",
