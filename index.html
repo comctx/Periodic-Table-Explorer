@@ -391,7 +391,7 @@ function showDetails(e){
   const named=x.named_by||"—";
   const config=x.electron_configuration_semantic||x.electron_configuration||"—";
   const appearance=x.appearance||"—";
-  const density=x.density==null?"—":x.density+" g/cm³";
+  const density=x.density==null?"—":x.density+" g/cm³"+(x.densityBasis?" ("+x.densityBasis+")":"");
   const source=(x.source&&/^https?:\/\//.test(x.source))?x.source:"";
   const summary=x.summary||"More detailed information is loading for this element.";
 
