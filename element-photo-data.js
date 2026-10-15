@@ -841,100 +841,109 @@ window.ELEMENT_PHOTOS = {
     "name": "Lutetium",
     "symbol": "Lu",
     "localUrl": "images/elements/071-lu.jpg",
-    "title": "1 cm Big Piece of Pure Lutetium",
+    "title": "Pure lutetium metal piece, about 1 cm across",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lutetium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Lutetium.jpg",
     "sourceUrl": "https://images-of-elements.com/lutetium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lutetium.jpg"
   },
   "72": {
     "name": "Hafnium",
     "symbol": "Hf",
     "localUrl": "images/elements/072-hf.jpg",
-    "title": "Electrolytic Hafnium, 22 grams. Original size in cm: 1 x 2 x 3",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/hafnium.php",
+    "title": "Electrolytic hafnium sample, about 22 g; its surface may darken due to oxidation",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/hafnium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg",
     "sourceUrl": "https://images-of-elements.com/hafnium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Original Commons source notes surface oxidation after extended air exposure. Image resized for Periodic Table Explorer; compare local JPEG with the original before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hafnium_(72_Hf).jpg"
   },
   "73": {
     "name": "Tantalum",
     "symbol": "Ta",
     "localUrl": "images/elements/073-ta.jpg",
-    "title": "Piece of tantalum, 1 cm in size",
+    "title": "Tantalum metal piece, about 1 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/tantalum.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg",
     "sourceUrl": "https://images-of-elements.com/tantalum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tantalum.jpg"
   },
   "74": {
     "name": "Tungsten",
     "symbol": "W",
     "localUrl": "images/elements/074-w.jpg",
-    "title": "Tungsten rod with oxidised surface, 80 grams. Original size in cm: 1.3 x 3",
+    "title": "Tungsten rod with an oxidized surface, 80 g; about 1.3 × 3 cm",
     "attribution": "Jurii, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/tungsten.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tungsten_rod_with_oxidised_surface.jpg",
     "sourceUrl": "https://images-of-elements.com/tungsten.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons records CC BY 1.0 for the original upload and separately CC BY 3.0 under the photo publisher's terms. The file-specific CC BY 1.0 link is retained. Image resized for Periodic Table Explorer; confirm chosen license and actual source match before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tungsten_rod_with_oxidised_surface.jpg"
   },
   "75": {
     "name": "Rhenium",
     "symbol": "Re",
     "localUrl": "images/elements/075-re.jpg",
-    "title": "Pure Rhenium Bead, arc melted, 21 grams. Original size in cm: 1.5 x 1.7. Measured radiation dose <0.05 μS/h.",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhenium.php",
+    "title": "Pure arc-melted rhenium bead, about 21 g and 1.5 × 1.7 cm",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhenium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg",
     "sourceUrl": "https://images-of-elements.com/rhenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Source page describes an arc-melted rhenium bead. Removed an unverified radiation reading from image caption; no safety inference should be drawn from the photo.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_rhenium_bead,_arc_melted,_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg"
   },
   "76": {
     "name": "Osmium",
     "symbol": "Os",
     "localUrl": "images/elements/076-os.jpg",
-    "title": "Pure Osmium Bead",
+    "title": "Bead of pure osmium metal",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/osmium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Osmium-bead.jpg",
     "sourceUrl": "https://images-of-elements.com/osmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Osmium-bead.jpg"
   },
   "77": {
     "name": "Iridium",
     "symbol": "Ir",
     "localUrl": "images/elements/077-ir.jpg",
     "title": "Pieces of Pure Iridium, 1 gram. Original size: 0.1 - 0.3 cm each",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/iridium.php",
+    "attribution": "Photographer unidentified on Wikimedia Commons; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>; the publisher also offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>. Original source: https://images-of-elements.com/iridium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/iridium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons notes publisher-side CC BY 3.0 and file-specific CC BY 1.0; Commons license review in 2016. Confirm actual author and license selection prior to release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iridium-2.jpg"
   },
   "78": {
     "name": "Platinum",
     "symbol": "Pt",
     "localUrl": "images/elements/078-pt.jpg",
     "title": "Crystals of Pure Platinum grown by gas phase transport",
-    "attribution": "Periodictableru, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    "attribution": "Periodictableru (original photographer); Materialscientist (whitespace crop), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Platinum_crystals.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons history shows Materialscientist cropped whitespace from the original image in March 2010. App image resized; verify local copy matches this version before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Platinum_crystals.jpg"
   },
   "79": {
     "name": "Gold",
     "symbol": "Au",
     "localUrl": "images/elements/079-au.jpg",
     "title": "Ultrapure Gold Leaf",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gold.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gold.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg",
     "sourceUrl": "https://images-of-elements.com/gold.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons identifies Hi-Res Images of Chemical Elements as author and CC BY 3.0. Image resized for Periodic Table Explorer; verify cached photo and any specific caption against the source before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gold_(79_Au).jpg"
   },
   "80": {
     "name": "Mercury",
@@ -945,7 +954,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg",
     "sourceUrl": "https://images-of-elements.com/mercury.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons requires attribution linking to the publisher's mercury element page (https://images-of-elements.com/mercury.php); check local image identity and final offline credits before distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrargyrum_(80_Hg).jpg"
   },
   "81": {
     "name": "Thallium",
