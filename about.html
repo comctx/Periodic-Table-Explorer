@@ -89,13 +89,15 @@ for(const [z,item] of entries){
  const title=String(item.title||"");
  const noImage=title.toLowerCase()==="no image found";
  const illustrative=title.toLowerCase().includes("illustration")||title.toLowerCase().includes("unrelated particle");
+ const withheld=!!item.withholdReason;
  const summary=document.createElement("summary");
- summary.textContent=z+". "+item.name+" ("+item.symbol+")"+(noImage?" — no photograph":illustrative?" — illustration/other image":"");
+ summary.textContent=z+". "+item.name+" ("+item.symbol+")"+(withheld?" — withheld":noImage?" — no photograph":illustrative?" — illustration/other image":"");
  box.appendChild(summary);
  const body=document.createElement("div");body.className="credit-body";
  info(body,"Catalogued subject: "+(title||"Not recorded"));
  info(body,"Creator / attribution: "+(item.attribution||"Not recorded"));
  if(item.note)info(body,item.note);
+ if(item.withholdReason)info(body,"Withheld: "+item.withholdReason);
  if(noImage)info(body,"This is a generic placeholder, not a photograph of the element.");
  if(illustrative)info(body,"This illustration or experimental image is not a verified sample photograph.");
  if(!item.licenseUrl)info(body,"No separate license URL recorded; check the source for reuse terms.");
