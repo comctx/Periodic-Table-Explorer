@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:40},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:50},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -777,6 +777,25 @@ assert.match(photoSourceData['37'].title,/superoxide/i,'Rubidium ampoule specime
 assert.match(photoSourceData['36'].title,/electrical excitation/i,'Krypton discharge visual context');
 assert.match(photoSourceData['39'].title,/99% pure/,'Yttrium purity translated');
 assert.ok(photoSourceData['39'].licenseUrl.includes('by-sa/4.0'),'Yttrium ShareAlike license flag');
+const auditedSourceLicenses41to50={
+ "41":"CC BY-SA 3.0","42":"CC BY 3.0","43":"CC BY-SA 4.0",
+ "44":"CC BY 3.0","45":"CC BY 3.0","46":"CC BY 3.0",
+ "47":"CC BY 3.0","48":"CC BY 3.0 (publisher page)",
+ "49":"CC BY 3.0 (publisher page)","50":"CC BY 3.0"
+};
+for(let z=41;z<=50;z++){
+ const m=photoSourceData[String(z)];
+ assert.ok(m && m.localUrl.endsWith('.jpg'),'Cached element image path '+z);
+ assert.ok(!!auditedSourceLicenses41to50[String(z)],'Photo-source license recorded '+z);
+ if(z!==48 && z!==49)assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Wikimedia file source page '+z);
+ else assert.ok(m.sourceUrl==='https://images-of-elements.com/'+(z===48?'cadmium':'indium')+'.php','Publisher source URL '+z);
+}
+assert.match(photoSourceData['43'].attribution,/Marco Cardin/,'Technetium correctly names its photographer');
+assert.match(photoSourceData['43'].attribution,/Double sharp/,'Technetium identifies photo cropper');
+assert.match(photoSourceData['43'].attribution,/GFDL/,'Technetium retains requested source attribution');
+assert.match(photoSourceData['43'].attribution,/CC BY-SA 4\.0/,'Technetium retains actual source photo license');
+assert.match(photoSourceData['49'].title,/solid at ordinary room temperature/,'Molten indium not portrayed as its normal physical state');
+for(const z of ['47','48','49','50'])assert.ok(photoSourceData[z].sourceUrl.startsWith('https://'),'Secure photo publisher URL '+z);
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -838,6 +857,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 42 image source pages checked for rights claims, metadata/credit safeguards, no images fully cleared');
+console.log('PASS: 52 image source pages checked for rights claims, technetium attribution, molten indium and credit safeguards; no images fully cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
