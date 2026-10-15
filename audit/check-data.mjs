@@ -756,6 +756,45 @@ assert.ok(elementPhotoPage.includes('original.href=item.originalUrl'),'Open actu
 assert.ok(!elementPhotoPage.includes('original.href=item.localUrl'),'Local asset mislabeled original');
 assert.ok(elementPhotoPage.includes('filePage.href=item.commonsPage'),'Link to Commons reuse conditions');
 
+
+// About & Credits release-audit regression. Source licenses and local cached image
+// identities are still checked separately; this is UI/data integrity, not clearance.
+const aboutPage=readFileSync('about.html','utf8');
+const photoDataSource=readFileSync('element-photo-data.js','utf8');
+const offlineSource=readFileSync('sw.js','utf8');
+const aboutDisclaimer="Every effort has been taken to ensure true and accurate facts concerning the 118 elements throughout this app. The information is believed to be highly accurate, though absolute accuracy cannot be guaranteed.";
+assert.ok(aboutPage.includes('<blockquote>'+aboutDisclaimer+'</blockquote>'),'User disclaimer must stay exact');
+for(const reference of ["https://periodic-table.rsc.org/","https://ciaaw.org/abridged-atomic-weights.htm","https://www.nist.gov/pml/atomic-spectra-database","https://pubchem.ncbi.nlm.nih.gov/periodic-table/"])
+ assert.ok(aboutPage.includes(reference),'Scientific source listed '+reference);
+assert.ok(indexSource.includes('href="about.html"'),'About page reachable from main table');
+assert.ok(readFileSync('element.html','utf8').includes('href="about.html"'),'About page reachable from element details');
+assert.ok(offlineSource.includes("'./about.html'"),'About page pre-cached offline');
+assert.ok(offlineSource.includes("pte-core-v2"),'Cache version updated for About page');
+assert.ok(aboutPage.includes('<script src="./element-photo-data.js"></script>'),'Credits reuse existing metadata');
+const aboutMeta=JSON.parse(photoDataSource.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
+assert.equal(Object.keys(aboutMeta).length,118,'About credits cover all 118 elements');
+const aboutScripts=aboutPage.split('<script>').slice(1).map(s=>s.split('</script>')[0]).filter(Boolean);
+assert.equal(aboutScripts.length,2,'About credits script and SW registration');
+for(const s of aboutScripts)new Function(s); // syntax only
+// Small document mock verifies credit generation and interactive text filter.
+function makeCreditNode(tag){
+ return {tag,children:[],hidden:false,value:'',events:{},
+  appendChild(node){this.children.push(node);return node;},
+  addEventListener(ev,fn){this.events[ev]=fn;}};
+}
+const creditsById={};
+const mockDoc={createElement:makeCreditNode,
+ getElementById(id){return creditsById[id]||(creditsById[id]=makeCreditNode(id));}};
+new Function('window','document',aboutScripts[0])({ELEMENT_PHOTOS:aboutMeta},mockDoc);
+assert.equal(creditsById.creditList.children.length,118,'Credits 118 DOM entries');
+assert.equal(creditsById.creditCount.textContent,'118 of 118 catalogued element credits','Credits initial count');
+creditsById.creditSearch.value='curium';
+creditsById.creditSearch.events.input();
+assert.equal(creditsById.creditCount.textContent,'1 of 118 catalogued element credits','Credits keyword filter');
+creditsById.creditSearch.value='';
+creditsById.creditSearch.events.input();
+assert.equal(creditsById.creditCount.textContent,'118 of 118 catalogued element credits','Credits filter reset');
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
@@ -765,4 +804,5 @@ console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearanc
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
 console.log('PASS: 22 image source-page links/attribution flags, true original image links; no images fully cleared');
+console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
