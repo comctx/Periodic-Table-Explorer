@@ -991,6 +991,20 @@ assert.match(photoSourceData['47'].withholdReason,/Silver-nugget\.jpg/,'Silver s
 assert.match(machineAudit,/release_cleared["']?:False/,'Machine verifier must explicitly deny license clearance');
 assert.match(workflowAudit,/contents: read/,'Image verification CI may not modify source repository');
 assert.ok(!workflowAudit.includes('contents: write'),'Image verification workflow cannot write branch contents');
+const thirdBatchReport=readFileSync('audit/LOCAL_IMAGE_MATCH_61_90.md','utf8');
+assert.ok(thirdBatchReport.includes('38681396126'), 'Third batch recorded reproducible GitHub action');
+assert.ok(thirdBatchReport.includes('**14/30 likely same picture**'), 'Third batch same-photo candidate count');
+assert.ok(thirdBatchReport.includes('**15/30 external originals differed'), 'Third batch source mapping investigations');
+assert.ok(thirdBatchReport.includes('**0/30 release-cleared images**'), 'Automated matching never licenses photos');
+assert.ok(thirdBatchReport.includes('promethium source file returns HTTP 404'), 'Promethium source failure documented');
+for(const z of [62,63,64,65,66,67,70,72,73,75,77,79,80,81,82]){
+ const row=thirdBatchReport.split(String.fromCharCode(10)).find(line=>line.startsWith('| '+z+' |'));
+ assert.ok(row&&row.includes('Manual source investigation required'),'Third batch manual match triage reported '+z);
+}
+for(const z of [61,84,85,86,87]){
+ assert.ok(photoSourceData[String(z)].withholdReason,'Non-photo illustration not re-enabled '+z);
+}
+assert.ok(readFileSync('audit/IMAGE_REVIEW.md','utf8').includes('90 of 118 actual saved JPEG files have now been inspected'),'Master audit advanced to 90 cached files');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].withholdReason,/van Arkel–de Boer/, 'Titanium discrepancy to former crystal photo explicitly explained');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -1054,5 +1068,6 @@ console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioa
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
 console.log('PASS: all 118 image-source entries classified; 101-104 illustrative/CERN excluded, 105-118 generic placeholders; no cached photo cleared');
 console.log('PASS: 60 local photo binaries tested, 24 of batch 31-60 likely matches, six marked withheld, silver chain correctly identified; no final photo clearance');
+console.log('PASS: 90 saved JPEGs inspected; 61-90 found 14 probable source matches, 15 unresolved and one fetch failure; non-photo illustrations still withheld');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
