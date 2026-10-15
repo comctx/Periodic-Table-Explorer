@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **52 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 66 source pages have not yet been individually checked.
+**Progress distinction:** **62 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 56 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 52 / 118** = 50 element-source checks (#1–50), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 62 / 118** = 60 element-source checks (#1–60), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -143,6 +143,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Audit-branch changes:** Added eight Wikimedia file-page credits (#41–47, #50), corrected the actual original photographer and cropper for #43, corrected creator formatting for #44–46, improved scientifically important sample descriptions for #42–43 and #49, and updated page credits for #47–50. All changes remain on `scientific-audit-2026-10`.
 
 **Open issues:** Compare all ten cached JPEGs with the exact cited originals; verify that the correct version/crop was cached, how it was resized, the original attribution and license links, rights compliance for #41 and #43 ShareAlike adaptations, and the element-page attribution request for #48–49. No license-status statement alone proves that app distribution is currently cleared.
+
+## Sixth source-rights batch — elements 51–60
+
+**Reviewed 2026-10-14:** original Wikimedia Commons file descriptions, file histories, and stated licenses for all ten source photographs; also inspected the publisher's relevant element-page notices for #51, #52, and #58. This is **source-page review only**. No saved `images/elements/*.jpg` binary was checked against the claimed source or cleared for release, and no image rights compliance has been certified for the Microsoft Store package.
+
+| # | Original source record | Published image license | Source findings and changes needed | Cached JPG cleared? |
+|---:|---|---|---|:---:|
+| 51 Sb | [Commons: Antimony-4.jpg](https://commons.wikimedia.org/wiki/File:Antimony-4.jpg), [publisher](https://images-of-elements.com/antimony.php) | CC BY 3.0 | Crystal (~2 g, 1 cm). Commons lists the photographer **unknown**; corrected duplicate `Unknown authorUnknown author` credit to credit the publisher without fabricating a photographer. Publisher requests link to the relevant element page. | No |
+| 52 Te | [Commons: Tellurium2.jpg](https://commons.wikimedia.org/wiki/File:Tellurium2.jpg), [publisher](https://images-of-elements.com/tellurium.php) | CC BY 3.0 | Metallic tellurium (~3.5 cm). Commons likewise lists photographer **unknown**, although publisher is known; corrected duplicate author text. Publisher requests a page-specific attribution link. | No |
+| 53 I | [Commons: Iodine-sample.jpg](https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg) | Author's public-domain dedication (Benjah-bmm27) | Photo depicts elemental iodine at normal conditions; explicitly recorded that dedication and the photographer. Distinguish this source from unrelated `Iodine_sample.jpg`. | No |
+| 54 Xe | [Commons: Xenon-glow.jpg](https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg) | CC BY 3.0 | Electrically excited glowing xenon in a vial; **not** how xenon gas ordinarily looks. Commons records Jurii original (2009) and white-speck cleanup by Papa Lima Whiskey (2010); credited both and recorded edit history. | No |
+| 55 Cs | [Commons: Cesium.jpg](https://commons.wikimedia.org/wiki/File:Cesium.jpg) | CC BY-SA 3.0 | Original photo by Dnn87 from their collection. Removed malformed personal email string from attribution; keep ShareAlike review and original-versus-resized image match open. This is `Cesium.jpg`, not similarly named `Caesium.jpg`. | No |
+| 56 Ba | [Commons: Barium (56 Ba).jpg](https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg) | CC BY 3.0 | Barium with grey oxide layer under argon; improved caption and publisher's actual credit formatting. | No |
+| 57 La | [Commons: Lanthanum.jpg](https://commons.wikimedia.org/wiki/File:Lanthanum.jpg) | CC BY 3.0 | Jurii's approx. 1 cm pure lanthanum specimen; caption normalized. | No |
+| 58 Ce | [Commons: Cerium2.jpg](https://commons.wikimedia.org/wiki/File:Cerium2.jpg), [publisher](https://images-of-elements.com/cerium.php) | CC BY 1.0 on Commons *and* an additional publisher CC BY 3.0 notice | Jurii's cerium under argon, ~1.5 g. Existing metadata preserves the file-specific CC BY 1.0 link; note documents the alternate publisher license. Final release attribution must use applicable terms correctly. | No |
+| 59 Pr | [Commons: Praseodymium.jpg](https://commons.wikimedia.org/wiki/File:Praseodymium.jpg) | CC BY 3.0 | Jurii source (2009); Commons current file edited by DePiep in 2012 to clean shadows/borders. Added correction-credit/history note; confirm which version the local JPG actually uses. | No |
+| 60 Nd | [Commons: Neodymium (60 Nd).jpg](https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg) | CC BY 3.0 | Neodymium specimen under argon (~5 g). Corrected source credit formatting; final local-file identity check outstanding. | No |
+
+**Metadata changes on audit branch:** added all ten Commons file-page links, corrected author-name duplication (#51–52) without assuming an unknown photographer's name, clarified iodine public-domain dedication (#53), documented alterations by separate Wikimedia contributors (#54 and #59), removed a malformed private-looking email address (#55), and improved accuracy of captions/credits (#56–60).
+
+**Still outstanding:** identify local cached JPEGs as the stated originals or permissible adaptations (including image history), ensure proper attribution/licensing notices and change statements in the app and bundled credits, satisfy #55 ShareAlike requirements if applicable, and check final Store packaging/offline rendering. **All ten images remain NOT CLEARED.**
 
 ## Per-element tracking (all unchecked)
 
