@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 # Fail closed: additional element images require explicit review before shipping.
-EXPECTED_EXCLUDED = {61, 84, 85, 86, 87, 92, 93, 97, 99} | set(range(100, 119))
+EXPECTED_EXCLUDED = {61, 84, 85, 86, 87, 93, 99} | set(range(100, 119))
 CORE_FILES = (
     "index.html", "element.html", "quiz.html", "about.html",
     "privacy.html", "support.html", "elements-data.js",
@@ -97,7 +97,7 @@ def stage(destination):
 
     actual = {p.relative_to(dst).as_posix() for p in (dst / "images/elements").iterdir()}
     expected = {relative for _, relative in safe_photos}
-    if actual != expected or len(actual) != 90:
+    if actual != expected or len(actual) != 92:
         raise ValueError(f"Packaged photo mismatch: {len(actual)} files")
     print(f"Staged {len(actual)} locally displayable element pictures; excluded {len(excluded)} "
           "hidden/placeholder/rights-pending pictures.")
