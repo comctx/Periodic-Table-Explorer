@@ -1013,7 +1013,7 @@ for(const z of [62,63,64,65,66,67,70,72,73,75,77,79,80,81,82]){
 for(const z of [61,84,85,86,87]){
  assert.ok(photoSourceData[String(z)].withholdReason,'Non-photo illustration not re-enabled '+z);
 }
-assert.ok(readFileSync('audit/IMAGE_REVIEW.md','utf8').includes('90 of 118 actual saved JPEG files have now been inspected'),'Master audit advanced to 90 cached files');
+assert.ok(readFileSync('audit/IMAGE_REVIEW.md','utf8').includes('actual cached images inspected: **90/118**'),'Master audit advanced to 90 cached files');
 const recoveredGalleryReport=readFileSync('audit/LOCAL_IMAGE_MATCH_61_90.md','utf8');
 assert.ok(recoveredGalleryReport.includes('38681550877'),'Source-gallery matching run documented');
 assert.ok(recoveredGalleryReport.includes('**15 previously flagged actual element photographs**'),'Fifteen exact publisher photos recovered');
