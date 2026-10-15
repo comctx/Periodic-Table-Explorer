@@ -156,14 +156,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Silicon",
     "symbol": "Si",
     "localUrl": "images/elements/014-si.jpg",
-    "title": "Photovoltaic silicon solar-cell panels (an application, not a photograph of raw elemental silicon)",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/silicon.php",
+    "title": "Chunk of ultrapure elemental silicon, approximately 2 × 2 cm",
+    "attribution": "Jurii, original photograph 'Silicon.jpg', Creative Commons Attribution 3.0 Unported (CC BY 3.0) <https://creativecommons.org/licenses/by/3.0/>; original file https://commons.wikimedia.org/wiki/File:Silicon.jpg; source publisher https://images-of-elements.com/silicon.php.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Silicon.jpg",
     "sourceUrl": "https://images-of-elements.com/silicon.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Actual cached JPEG compared to Commons Silicon.jpg. The publisher's silicon page shows silicon solar cells as a separate application. The source URL for this particular panel image is not established; withhold pending replacement with verified elemental silicon photo.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silicon.jpg",
-    "withholdReason": "The saved JPEG shows finished photovoltaic panels, not the chunk of pure silicon in its credited Commons original. It is inappropriate as the element's sample photograph and its photo-specific attribution is unverified."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Replacement for an unrelated photovoltaic-panel picture. This JPEG was produced from the separately licensed original Silicon.jpg from Wikimedia Commons and downscaled/reencoded for the app. Identify image creator Jurii, file source and CC BY 3.0 license in About & Credits. Final desktop/Store packaging rights audit remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silicon.jpg"
   },
   "15": {
     "name": "Phosphorus",
@@ -546,14 +545,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Silver",
     "symbol": "Ag",
     "localUrl": "images/elements/047-ag.jpg",
-    "title": "Sterling silver chain — silver alloy jewelry, not a natural silver nugget",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/silver.php",
+    "title": "Natural elemental silver nugget, approximately 1 cm long",
+    "attribution": "Jurii, original photograph 'Silver-nugget.jpg', Creative Commons Attribution 3.0 Unported (CC BY 3.0) <https://creativecommons.org/licenses/by/3.0/>; original file https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg; source publisher https://images-of-elements.com/silver.php.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Silver-nugget.jpg",
     "sourceUrl": "https://images-of-elements.com/silver.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Silver publisher page separately depicts a 925 sterling silver chain and natural silver nuggets. Actual-file comparison run 38681018215 shows dHash distance 28; replace with a credited pure-silver sample or supply exact chain-specific credits as a clearly labeled use illustration.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg",
-    "withholdReason": "The stored image shows a chain of silver jewelry, while the cited Commons 'Silver-nugget.jpg' photograph shows a natural silver nugget. This is a different image and an alloy product, so the current element photo and attribution are misleading."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Replacement for a 925 sterling-silver chain (silver alloy jewelry). This JPEG was produced from original Silver-nugget.jpg under CC BY 3.0, resized/reencoded for app. Preserve photographer, license and change statement in About & Credits. Final release packaging/rights review remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg"
   },
   "48": {
     "name": "Cadmium",
