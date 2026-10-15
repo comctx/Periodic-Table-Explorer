@@ -70,6 +70,16 @@ Thank you for any file-specific clarification you can provide.
 
 *This message is a draft only. No external email was sent, no copyright permission was invented, and the photos have not received final release approval.*
 
+## Legal-code cross-check — what does and does not require a new permission request
+
+**Verified against published primary sources on 2026-10-15:**
+
+- [Publisher's licensing statement](https://images-of-elements.com/): the project's images are offered under **CC BY 3.0 Unported unless otherwise noted**, and it explicitly asks for attribution linking to the applicable **element page**. All 30 existing catalog entries already do this. The publisher also names Jumk.de Webprojects.
+- [Creative Commons Attribution 3.0 Unported full legal code](https://creativecommons.org/licenses/by/3.0/legalcode), **§ 1, definition of “Original Author”**: where no creator can be identified, this definition can name the **publisher**. **§ 3** allows copying, adaptation and distribution, including commercial uses subject to the license. **§ 4(a)–(b)** require the license URL, attribution to provided author or attribution party, available work title/source, and changes credit as applicable.
+- **Therefore a separate reply from the publisher is not an automatic condition of using a genuinely CC BY 3.0 licensed image.** Nor is a missing individual's name automatically a license violation where the work supplies only the publisher's attribution identity. **Do not describe the 29 without independently named photographers as 29 categorically forbidden photographs.**
+- But **“unless otherwise noted” matters**: the public grant is applicable only to the specific images covered by it. The catalog cannot independently certify the licensing rights of every JPEG; those image-specific exceptions, rights-holder authority and final offline/package attribution must still be evaluated. A polite publisher inquiry can resolve ambiguity but **is optional unless specific evidence requires it**.
+- The previously drafted email above is **NOT SENT**. This additional legal-code check **does not count as new publisher permission, a signed package, or release clearance**. It does not convert “30 potentially CC BY licensed original JPEGs” into 30 certified rights approvals.
+
 ## Additional context and limitations
 
 The other displayed element photos, including Commons CC BY-SA/CC BY, public-domain, and research-image cases, require separate **file-specific** obligations. Separately packaged Bay City City Hall photo and logo/icon rights also remain release gates. The signed IPA and real Microsoft Store package have not been inspected. Preserving the existing 92/26 staging inventory is **not** final license clearance.
