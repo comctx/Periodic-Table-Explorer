@@ -475,11 +475,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Nb",
     "localUrl": "images/elements/041-nb.jpg",
     "title": "Niobium strips",
-    "attribution": "Mauro Cateb, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Mauro Cateb, own photograph 'Niobium strips.JPG' (11 July 2011), via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG. Licensed CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. The copy used in this app was resized/reencoded; original source, modification notice and ShareAlike conditions apply.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Niobium_strips.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
+    "note": "Real niobium metal strips. Wikimedia Commons records Mauro Cateb as original photographer and CC BY-SA 3.0 as the file license. Prior audit of the cached JPEG found a likely source-photo match (dHash distance 0). This is author/license-source corroboration, not final adapted-file or signed-distribution rights approval.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG"
   },
   "42": {
@@ -639,11 +639,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Cs",
     "localUrl": "images/elements/055-cs.jpg",
     "title": "Cesium/Caesium metal",
-    "attribution": "Dnn87, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Dnn87, original self-photograph 'Cesium.jpg' (12 December 2007), caesium metal from the Dennis S.K. collection, via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Cesium.jpg. The Commons transfer was made by Anrie (not the original photographer). CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. The app's JPEG was resized/reencoded; preserve applicable adaptation and ShareAlike notices.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Cesium.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer; ShareAlike conditions and source-version match remain to be checked.",
+    "note": "The source's original upload log identifies Dnn87 as original photographer in 2007, distinct from the 2008 Commons transfer. Earlier stored-image comparison found a likely image match (dHash distance 0). License and file history checked, but adapted-file rights, source identity in an actual signed build, and packaging remain final release gates.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Cesium.jpg"
   },
   "56": {
@@ -1043,11 +1043,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Th",
     "localUrl": "images/elements/090-th.jpg",
     "title": "Corroded thorium metal specimen inside an ampoule",
-    "attribution": "W. Oelen, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Original photograph by W. Oelen, 'Thorium-1.jpg' (24 July 2007), via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Thorium-1.jpg. The currently published Commons file was retouched by Commons user 'Konto na chwilę' on 2 April 2016. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. App copy resized/reencoded; preserve derivative history, change notice and applicable ShareAlike conditions.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Thorium-1.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer. Original Commons photo by W. Oelen under CC BY-SA 3.0; adapted-image/share-alike obligations and local photo matching remain to be reviewed.",
+    "note": "Corroded thorium metal inside an ampoule, not an unprotected clean metal sample. The Commons file history documents a 2016 retouch by Konto na chwilę of W. Oelen's earlier photo. Prior stored-JPEG comparison found a likely source match (dHash distance 0); final adapted-file and signed-package rights verification is still required.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Thorium-1.jpg"
   },
   "91": {
