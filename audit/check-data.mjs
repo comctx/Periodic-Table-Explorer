@@ -970,6 +970,27 @@ assert.match(photoSourceData['15'].title,/White phosphorus/, 'Correct phosphorus
 assert.match(photoSourceData['22'].title,/Titanium sponge/, 'Titanium metal form caption corrected');
 assert.ok(!photoSourceData['1'].withholdReason,'Hydrogen correctly matched to actual Hydrogenglow original');
 assert.ok(visualImageReport.includes('Git blob SHA'),'Version-specific real JPEG audit');
+const secondBatchReport=readFileSync('audit/LOCAL_IMAGE_MATCH_31_60.md','utf8');
+const masterImageReview=readFileSync('audit/IMAGE_REVIEW.md','utf8');
+const machineAudit=readFileSync('audit/compare_image_identity.py','utf8');
+const workflowAudit=readFileSync('.github/workflows/image-identity-audit.yml','utf8');
+assert.ok(secondBatchReport.includes('30/30 saved JPEGs fetched and compared'),'Original source photos were actually downloaded and compared');
+assert.ok(secondBatchReport.includes('24/30'),'24 likely image identities described');
+assert.ok(secondBatchReport.includes('6/30'),'Six manual review cases recorded');
+assert.ok(secondBatchReport.includes('**0 of these 30 photographs cleared'),'No premature image license clearance');
+assert.ok(secondBatchReport.includes('38681018215'),'Checkable GitHub Actions workflow run');
+assert.ok(masterImageReview.includes('60/118 actual local JPEGs tested'),'Master audit inspection status updated');
+for(const z of [31,44,45,47,50,58]){
+ const m=photoSourceData[String(z)];
+ assert.ok(m && m.withholdReason?.length>50,'Unresolved cached source withheld '+z);
+ const row=secondBatchReport.split(String.fromCharCode(10)).find(line=>line.startsWith('| '+z+' |'));
+ assert.ok(row && row.includes('Manual review required'),'Unresolved original recorded in report '+z);
+}
+assert.match(photoSourceData['47'].title,/Sterling silver chain/,'Silver chain no longer misrepresented as a native silver nugget');
+assert.match(photoSourceData['47'].withholdReason,/Silver-nugget\.jpg/,'Silver source mismatch documented');
+assert.match(machineAudit,/release_cleared["']?:False/,'Machine verifier must explicitly deny license clearance');
+assert.match(workflowAudit,/contents: read/,'Image verification CI may not modify source repository');
+assert.ok(!workflowAudit.includes('contents: write'),'Image verification workflow cannot write branch contents');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].withholdReason,/van Arkel–de Boer/, 'Titanium discrepancy to former crystal photo explicitly explained');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -1032,5 +1053,6 @@ console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearanc
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
 console.log('PASS: all 118 image-source entries classified; 101-104 illustrative/CERN excluded, 105-118 generic placeholders; no cached photo cleared');
+console.log('PASS: 60 local photo binaries tested, 24 of batch 31-60 likely matches, six marked withheld, silver chain correctly identified; no final photo clearance');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
