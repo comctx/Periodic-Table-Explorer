@@ -1081,112 +1081,124 @@ window.ELEMENT_PHOTOS = {
     "name": "Protactinium",
     "symbol": "Pa",
     "localUrl": "images/elements/091-pa.jpg",
-    "title": "This sample of Protactinium-233 (dark circular area in the photo) was photographed in the light from its own radioactive emission (the lighter area) at the National Reactor Testing Station in Idaho.",
-    "attribution": "ENERGY.GOV, Public domain, via Wikimedia Commons",
+    "title": "Protactinium-233 sample (dark central area), illuminated by its radioactive emission; photographed in Idaho around 1969",
+    "attribution": "U.S. Department of Energy (ENERGY.GOV), U.S. federal government work, public domain in the United States, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Protactinium-233.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://www.flickr.com/photos/departmentofenergy/10730945866/",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons confirms DOE official-duty/public-domain basis and reviewed original Flickr source. Local image resized for Periodic Table Explorer; still must be matched to source and cleared for final package.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Protactinium-233.jpg"
   },
   "92": {
     "name": "Uranium",
     "symbol": "U",
     "localUrl": "images/elements/092-u.jpg",
-    "title": "A biscuit of uranium metal after reduction via the Ames Process. c.1943.",
-    "attribution": "Unknown authorUnknown author, Public domain, via Wikimedia Commons",
+    "title": "Historical uranium metal biscuit produced by the Ames Process, circa 1943",
+    "attribution": "Original photographer unidentified; image provided by Ames Laboratory, U.S. Department of Energy. U.S. federal government public-domain statement and Wikimedia VRT permission recorded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Ames_Process_uranium_biscuit.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Source asks for attribution to Ames Laboratory, USDOE. Commons lists federal public-domain grounds and an archived VRT permission confirmation. Local image must still be matched to source before distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg"
   },
   "93": {
     "name": "Neptunium",
     "symbol": "Np",
     "localUrl": "images/elements/093-np.jpg",
-    "title": "Neptunium 237 sphere (6 kg)",
-    "attribution": "Los Alamos National Laboratory,, Public domain, via Wikimedia Commons",
+    "title": "Neptunium-237 metal sphere (reported as 6 kg), Los Alamos National Laboratory",
+    "attribution": "Los Alamos National Laboratory; Wikimedia Commons lists both a U.S. federal public-domain claim and a separate CC BY 3.0 publisher notice (https://creativecommons.org/licenses/by/3.0).",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neptunium2.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://images-of-elements.com/neptunium.php",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The same Commons source page contains U.S. federal public-domain and CC BY 3.0 publisher statements. Resolve exact photograph provenance and any Los Alamos reuse notices, including changes/attribution, before final release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neptunium2.jpg"
   },
   "94": {
     "name": "Plutonium",
     "symbol": "Pu",
     "localUrl": "images/elements/094-pu.jpg",
-    "title": "Plutonium Ring",
-    "attribution": "Los Alamos National Laboratory, Attribution, via Wikimedia Commons",
+    "title": "Electrorefined plutonium metal ring, Los Alamos National Laboratory",
+    "attribution": "Los Alamos National Laboratory; permission conditional on reproducing the laboratory's full notice and authorship statement. See Commons original file page.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plutonium_ring.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg"
+    "note": "Source Commons page identifies a 1995 Los Alamos publication and subsequent noise-reduction edits. The full LANL notice and creator credit must be carried through in permitted redistributions, subject to confirmation. Do not treat this as ordinary unrestricted U.S. government public domain.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg",
+    "withholdReason": "Los Alamos National Laboratory requires its full original reuse notice and authorship statement on copies. Those requirements have not been met and the saved photo has not been matched to the source; image withheld pending clearance."
   },
   "95": {
     "name": "Americium",
     "symbol": "Am",
     "localUrl": "images/elements/095-am.jpg",
-    "title": "A small disc of Am-241 under the microscope.",
+    "title": "Small americium-241 disc photographed under a microscope",
     "attribution": "Bionerd, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Americium_microscope.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Wikimedia Commons identifies Bionerd as original photographer and CC BY 3.0 as the file license. Image resized for Periodic Table Explorer; author, license link, changes and exact photo match still require release verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Americium_microscope.jpg"
   },
   "96": {
     "name": "Curium",
     "symbol": "Cm",
     "localUrl": "images/elements/096-cm.jpg",
-    "title": "A piece of curium, which emitts strong radiation that makes it glow",
-    "attribution": "European Union, The Actinide Group, Institute for Transuranium Elements (JRC-ITU), source: https://images-of-elements.com/curium.php",
+    "title": "Claimed curium sample photographed emitting radiation-induced light — reproduction permission unverified",
+    "attribution": "© European Union / Joint Research Centre, Institute for Transuranium Elements (JRC-ITU), as credited by the original publishing website.",
     "originalUrl": "https://images-of-elements.com/s/curium-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/curium.php",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Publisher image page identifies European Union / JRC-ITU ownership. Do not infer a commercial redistribution grant from the website's general Creative Commons notice. The local image remains uncleared.",
+    "withholdReason": "The publisher credits © European Union / JRC-ITU, but no specific redistribution license or written permission for this photograph has been verified. Withheld until permission is established or a verified replacement is used."
   },
   "97": {
     "name": "Berkelium",
     "symbol": "Bk",
     "localUrl": "images/elements/097-bk.jpg",
-    "title": "It took 250 days to make enough berkelium, shown here (in dissolved state), to synthesize element 117",
-    "attribution": "ORNL, Department of Energy, Public domain, via Wikimedia Commons",
+    "title": "Berkelium in dissolved form, prepared over approximately 250 days for an element-117 experiment — not bulk berkelium metal",
+    "attribution": "Oak Ridge National Laboratory, U.S. Department of Energy; Commons source page identifies this as a U.S. federal government public-domain work.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Berkelium.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://www.flickr.com/photos/oakridgelab/4499934514",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Photograph shows berkelium in solution, NOT a visible metal sample. Photo source is an Oak Ridge National Laboratory government-work image; compare the cached file and verify packaging rights before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Berkelium.jpg"
   },
   "98": {
     "name": "Californium",
     "symbol": "Cf",
     "localUrl": "images/elements/098-cf.jpg",
-    "title": "A disc of californium metal (249Cf, 10 mg). The source implies that the disc has a diameter about twice the thickness of a typical pin, or on the order of 1 mm",
-    "attribution": "United States Department of Energy (see File:Einsteinium.jpg), Public domain, via Wikimedia Commons",
+    "title": "Reported 10 mg disc of californium-249 metal (small historical photograph)",
+    "attribution": "Attributed on Wikimedia Commons to the U.S. Department of Energy; file cites a 2006 Springer book. Original image author/rights chain not independently confirmed.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Wikimedia Commons lists DOE/public-domain status yet retains a 2010 non-free-use rationale in its original upload log. Source cites The Chemistry of the Actinide and Transactinide Elements (Springer, 2006). Resolve this conflict and match the cached binary before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Californium.jpg",
+    "withholdReason": "Copyright status is ambiguous: the current Commons page labels the image public domain, but its original upload history contains a non-free-use rationale citing a published book. Withheld pending independent confirmation of the image's rights."
   },
   "99": {
     "name": "Einsteinium",
     "symbol": "Es",
     "localUrl": "images/elements/099-es.jpg",
-    "title": "300 micrograms of Einsteinium 253, which has a half-life of 20 days.",
-    "attribution": "Haire, R. G., US Department of Energy.Touched up by Materialscientist at en.wikipedia., Public domain, via Wikimedia Commons",
+    "title": "Quartz vial containing about 300 micrograms of einsteinium-253; source describes luminescence caused by radioactive decay",
+    "attribution": "R. G. Haire / U.S. Department of Energy; image touched up by Materialscientist; Commons also notes a cropped and colorized version by an unidentified editor.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Einsteinium.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons lists DOE federal-work public domain, but the file is cropped from EinsteiniumGlow.JPG and colored by an unidentified contributor. Verify alteration provenance and cached JPEG before final clearance.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Einsteinium.jpg"
   },
   "100": {
     "name": "Fermium",
     "symbol": "Fm",
     "localUrl": "images/elements/100-fm.jpg",
-    "title": "Fermium was first observed in the fallout from the Ivy Mike nuclear test.",
-    "attribution": "U.S. Department of Energy, Public domain, via Wikimedia Commons",
+    "title": "Historical Ivy Mike thermonuclear test mushroom cloud (1952) — NOT a photograph of fermium",
+    "attribution": "U.S. Department of Energy, U.S. government public-domain image, via Wikimedia Commons; NNSA Nevada Site Office photo library IVY-52-05.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Ivy_Mike_-_mushroom_cloud.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Historically relevant to the discovery of fermium, but must never be presented as an image of the chemical element itself. Local image binary remains in repository and release-package rights/contents are not cleared.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ivy_Mike_-_mushroom_cloud.jpg",
+    "withholdReason": "This historical photograph shows the Ivy Mike nuclear test, not fermium or a sample of the element. Fermium was discovered in test debris; this unrelated scene is withheld from the element sample-photo panel."
   },
   "101": {
     "name": "Mendelevium",
