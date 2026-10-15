@@ -971,7 +971,7 @@ assert.match(photoSourceData['22'].title,/Titanium sponge/, 'Titanium metal form
 assert.ok(!photoSourceData['1'].withholdReason,'Hydrogen correctly matched to actual Hydrogenglow original');
 assert.ok(visualImageReport.includes('Git blob SHA'),'Version-specific real JPEG audit');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
-assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
+assert.match(photoSourceData['22'].withholdReason,/van Arkel–de Boer/, 'Titanium discrepancy to former crystal photo explicitly explained');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
 assert.ok(!photoSourceData['96'].licenseUrl,'Curium must not be assigned an invented image license');
 assert.ok(!photoSourceData['94'].licenseUrl,'LANL attribution requirements not yet resolved');
