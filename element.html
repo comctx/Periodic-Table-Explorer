@@ -306,15 +306,17 @@ function loadElementPhoto(number,name){
   const illustration=/only an illustration|not .* itself|unrelated particle/i.test(photoTitle);
   const rightsUnknown=!!item && !validHttpUrl(item.licenseUrl) &&
     !/public domain/i.test(String(item.attribution||""));
+  const withholdReason=String(item?.withholdReason||"");
   const noDirectSample=[84,85,86,87].includes(n) || n>=100;
 
-  if(noDirectSample || placeholder || illustration || rightsUnknown){
+  if(noDirectSample || placeholder || illustration || rightsUnknown || withholdReason){
     wrap.classList.add("hidden");
     heading.textContent="Element imagery";
     status.classList.add("no-sample");
     status.classList.remove("hidden");
     if(placeholder) status.textContent="There is no actual sample photograph for "+name+" in this app. The catalogued image is a generic placeholder.";
     else if(illustration) status.textContent="The available image is an illustration or a picture of another experiment, not a verified sample photograph of "+name+". It has been withheld.";
+    else if(withholdReason) status.textContent=withholdReason;
     else if(rightsUnknown) status.textContent="A picture has been catalogued for "+name+", but permission to reuse it has not been established. It has been withheld pending review.";
     else status.textContent="No verified direct photograph of a visible sample of "+name+" is available here. Extremely rare and short-lived elements may only have illustrative or experimental imagery.";
     return;
