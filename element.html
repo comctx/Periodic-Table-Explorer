@@ -97,6 +97,7 @@ footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(sa
         <a id="elementPhotoOriginal" href="#" target="_blank" rel="noopener">Open original image</a>
         <a id="elementPhotoLicense" class="hidden" href="#" target="_blank" rel="noopener">License</a>
         <a id="elementPhotoSource" class="hidden" href="#" target="_blank" rel="noopener">Image source</a>
+        <a id="elementPhotoFilePage" class="hidden" href="#" target="_blank" rel="noopener">File and reuse conditions</a>
       </div>
     </div>
   </div>
@@ -296,6 +297,7 @@ function loadElementPhoto(number,name){
   const original=document.getElementById("elementPhotoOriginal");
   const license=document.getElementById("elementPhotoLicense");
   const source=document.getElementById("elementPhotoSource");
+  const filePage=document.getElementById("elementPhotoFilePage");
   const item=(window.ELEMENT_PHOTOS||{})[String(number)];
   const n=Number(number);
   const photoTitle=String(item?.title||"");
@@ -332,14 +334,23 @@ function loadElementPhoto(number,name){
   title.textContent=item.title||name;
   description.textContent="Catalogued image of this element. Image identity and reuse permission have not yet been independently verified for release.";
   credit.textContent=(item.attribution||"Image credit unavailable.")+(item.note?" • "+item.note:"");
-  original.href=item.localUrl;
-  original.textContent="Open local image";
+  if(validHttpUrl(item.originalUrl)){
+    original.href=item.originalUrl;
+    original.textContent="Open original image";
+    original.classList.remove("hidden");
+  }else{
+    original.href="#";
+    original.classList.add("hidden");
+  }
 
   if(validHttpUrl(item.licenseUrl)){license.href=item.licenseUrl;license.classList.remove("hidden");}
   else license.classList.add("hidden");
 
   if(validHttpUrl(item.sourceUrl)){source.href=item.sourceUrl;source.classList.remove("hidden");}
   else source.classList.add("hidden");
+
+  if(validHttpUrl(item.commonsPage)){filePage.href=item.commonsPage;filePage.classList.remove("hidden");}
+  else filePage.classList.add("hidden");
 
   img.addEventListener("error",()=>{
     wrap.classList.add("hidden");
