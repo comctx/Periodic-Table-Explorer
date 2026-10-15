@@ -1,0 +1,30 @@
+name: Verify Bay City Easter egg photo identity (audit only)
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/verify-bay-city-photo.yml
+      - audit/verify_bay_city_photo.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-photo-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce audit-only run
+        run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
+      - name: Install JPEG comparison dependency
+        run: python -m pip install --quiet Pillow
+      - name: Compare local Easter egg JPEG to real Wikimedia original
+        run: python3 audit/verify_bay_city_photo.py
+      - name: Explain verification scope
+        run: |
+          echo "Computer-assisted source identity only; photographer/license/ShareAlike must be validated separately." >> "$GITHUB_STEP_SUMMARY"
+          echo "This workflow never modifies or publishes app files." >> "$GITHUB_STEP_SUMMARY"
