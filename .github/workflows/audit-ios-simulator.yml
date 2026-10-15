@@ -1,0 +1,97 @@
+name: Audit-only native iPhone simulator build and launch
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-ios-simulator.yml
+      - ios/**
+      - audit/package_web_assets.py
+      - audit/verify_distribution_package.py
+      - element-photo-data.js
+      - elements-data.js
+      - index.html
+      - element.html
+      - quiz.html
+      - about.html
+      - sw.js
+      - offline-photos.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-ios-simulator:
+    runs-on: macos-15
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce isolated audit branch, never sign or publish
+        run: |
+          test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
+          xcodebuild -version
+          xcrun simctl list devices available
+      - name: Build native iPhone simulator binary with code signing disabled
+        run: |
+          set -eu
+          xcodebuild \
+            -project ios/PeriodicTableExplorer.xcodeproj \
+            -scheme PeriodicTableExplorer \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/pte-derived" \
+            CODE_SIGNING_ALLOWED=NO \
+            build > "$RUNNER_TEMP/pte-native-build.log" 2>&1 || {
+              tail -100 "$RUNNER_TEMP/pte-native-build.log"
+              exit 1
+            }
+          echo "PASS: Native iOS Simulator build compiled without signing or publishing"
+      - name: Inspect actual built app resources and bundle identifier
+        run: |
+          set -eu
+          APP="$RUNNER_TEMP/pte-derived/Build/Products/Debug-iphonesimulator/PeriodicTableExplorer.app"
+          test -d "$APP/Web"
+          test -f "$APP/Info.plist"
+          python3 audit/verify_distribution_package.py "$APP/Web"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist" | grep -Fx 'com.donaldreckman.periodictableexplorer'
+          echo "PASS: Built simulator app embeds exact 92 element JPEGs, 26 excludes, full matching credits/data and expected identifier"
+      - name: Boot available iPhone simulator, install and launch app
+        run: |
+          set -eu
+          SIM_ID="$(xcrun simctl list devices available -j | python3 -c '
+          import json,sys
+          d=json.load(sys.stdin)
+          ids=[x["udid"] for group in d["devices"].values() for x in group
+               if x.get("isAvailable",True) and x.get("name","").startswith("iPhone")]
+          print(ids[0] if ids else "")
+          ')"
+          if [ -z "$SIM_ID" ]; then
+            echo "FAIL: macOS runner has no available iPhone simulator; this is NOT a pass"
+            exit 1
+          fi
+          echo "Selected iPhone simulator UDID: $SIM_ID"
+          xcrun simctl boot "$SIM_ID"
+          xcrun simctl bootstatus "$SIM_ID" -b
+          APP="$RUNNER_TEMP/pte-derived/Build/Products/Debug-iphonesimulator/PeriodicTableExplorer.app"
+          xcrun simctl install "$SIM_ID" "$APP"
+          xcrun simctl launch "$SIM_ID" com.donaldreckman.periodictableexplorer | tee "$RUNNER_TEMP/pte-simulator-launch.log"
+          grep -Eq 'com\.donaldreckman\.periodictableexplorer: [0-9]+' "$RUNNER_TEMP/pte-simulator-launch.log"
+          sleep 8
+          xcrun simctl io "$SIM_ID" screenshot "$RUNNER_TEMP/pte-simulator-startup.png"
+          test -s "$RUNNER_TEMP/pte-simulator-startup.png"
+          echo "PASS: App installed and launched in an actual iOS Simulator and screenshot was captured (not a physical device/UI interaction test)"
+      - name: Upload simulator startup image for manual visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pte-audit-ios-simulator-startup
+          path: ${{ runner.temp }}/pte-simulator-startup.png
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Record strictly limited test meaning
+        if: always()
+        run: |
+          echo "Audit-only native iOS Simulator, no signing, TestFlight, App Store upload or main branch modifications." >> "$GITHUB_STEP_SUMMARY"
+          echo "A successful simulator launch does NOT verify the entire native WebKit UI, actual signed IPA, or photograph redistribution licenses." >> "$GITHUB_STEP_SUMMARY"
