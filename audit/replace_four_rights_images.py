@@ -2,7 +2,7 @@
 """Replace three unclear image files with accurately labeled public/CC image originals.
 Only run on scientific-audit-2026-10. NOT a final blanket Microsoft Store clearance.
 """
-import json,io,urllib.request
+import json,io,urllib.request,urllib.error,time
 from pathlib import Path
 from PIL import Image, ImageOps
 from compare_image_identity import decode,distance,mean_luma_difference
@@ -48,8 +48,21 @@ def main():
         item=catalog[z]
         if not item.get("withholdReason"):raise ValueError("Only replace currently withheld "+z)
         url=commons_url(fields["commons_title"])
-        with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"PeriodicTableExplorerAudit/1.0 (attributed archive original)"}),timeout=35) as response:
-            raw=response.read(10000001)
+        raw=None
+        for attempt,delay in enumerate((0,5,12,25,45)):
+            if delay: time.sleep(delay)
+            try:
+                # Wikimedia sometimes appends tracking parameters which defeat CDN caching.
+                direct=url.split("?",1)[0]
+                with urllib.request.urlopen(urllib.request.Request(direct,headers={
+                    "User-Agent":"PeriodicTableExplorerAudit/1.0 (image identity review)",
+                    "Accept":"image/jpeg,image/png,*/*"}),timeout=40) as response:
+                    raw=response.read(10000001)
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code not in (429,500,502,503,504) or attempt==4:raise
+                print(f"Download temporarily rate limited for {z} (HTTP {exc.code}); will retry",flush=True)
+        if raw is None:raise ValueError("Source image not downloaded")
         if len(raw)>10000000 or len(raw)<15000:raise ValueError("Invalid Commons image size for "+z)
         img=decode(raw)
         if img.width<800 or img.height<700:raise ValueError("Insufficient image resolution "+z)
