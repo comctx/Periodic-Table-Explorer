@@ -773,7 +773,7 @@ for(let z=11;z<=20;z++){
 const auditedSourceLicenses21to30={
   "21":"CC BY-SA 3.0","22":"CC BY 3.0","23":"CC BY 3.0",
   "24":"CC BY 3.0","25":"CC BY-SA 3.0","26":"CC BY 3.0 (publisher page)",
-  "27":"CC BY 3.0","28":"CC BY-SA 3.0","29":"CC BY-SA 2.5","30":"CC BY 3.0"
+  "27":"CC BY 3.0","28":"CC BY-SA 3.0","29":"CC BY-SA 3.0 museum replacement","30":"CC BY 3.0"
 };
 for(let z=21;z<=30;z++){
  const item=photoSourceData[String(z)];
@@ -798,6 +798,30 @@ assert.match(photoSourceData['37'].title,/superoxide/i,'Rubidium ampoule specime
 assert.match(photoSourceData['36'].title,/electrical excitation/i,'Krypton discharge visual context');
 assert.match(photoSourceData['39'].title,/99% pure/,'Yttrium purity translated');
 assert.ok(photoSourceData['39'].licenseUrl.includes('by-sa/4.0'),'Yttrium ShareAlike license flag');
+// File-specific photo rights and honest sample labels verified for 21–40.
+for (const z of [21,23,24,25,26,28,32,33,34,35,36,37,38,39,40]) {
+ const m=photoSourceData[String(z)];
+ assert.match(m.attribution,/resiz|reencod/i,'Image change disclosure 21–40 '+z);
+ assert.ok(m.attribution.includes('http'),'Image photographer/publisher/source license link '+z);
+}
+for (const z of [21,25,28,29,39]) {
+ const m=photoSourceData[String(z)];
+ assert.match(m.licenseUrl,/by-sa\/(3\.0|4\.0)/,'Specific ShareAlike source license '+z);
+ assert.match(m.attribution,/ShareAlike|ShareAlike|BY-SA/i,'ShareAlike attribution retained '+z);
+}
+assert.match(photoSourceData['21'].attribution,/JanDerChemiker/,'Scandium creator');
+assert.match(photoSourceData['25'].attribution,/W\. Oelen/,'Manganese creator');
+assert.match(photoSourceData['28'].attribution,/Materialscientist/,'Nickel creator');
+assert.match(photoSourceData['39'].attribution,/Jan Anskeit/,'Yttrium creator');
+assert.match(photoSourceData['26'].title,/92% iron/,'Iron meteorite is not pure Fe');
+assert.match(photoSourceData['26'].attribution,/individual photographer.*not independently verified/i,'Iron publisher photo author not fabricated');
+assert.match(photoSourceData['33'].note,/individual.*not named/i,'Arsenic creator uncertainty preserved');
+assert.match(photoSourceData['34'].title,/amorphous selenium/,'Selenium allotrope noted');
+assert.match(photoSourceData['37'].attribution,/Dnn87/,'Rubidium original photographer');
+assert.match(photoSourceData['37'].note,/temperature-dependent/,'Rubidium phase not overstated');
+const ironPhotoUi=readFileSync('element.html','utf8');
+assert.ok(ironPhotoUi.includes('Iron-Rich Meteorite Photograph'),'Iron picture heading not pure sample');
+assert.ok(ironPhotoUi.includes('92% iron'),'Iron photo context explained in UI');
 const auditedSourceLicenses41to50={
  "41":"CC BY-SA 3.0","42":"CC BY 3.0","43":"CC BY-SA 4.0",
  "44":"CC BY 3.0","45":"CC BY 3.0","46":"CC BY 3.0",
