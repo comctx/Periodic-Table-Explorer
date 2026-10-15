@@ -35,6 +35,12 @@ The original iOS Xcode shell build step copied all 118 `images/elements/*.jpg` f
 - The scientific/credits regression and CI staging guard now also assert **all three screens** contain the named source, photographer, license and packaged photo. Source rights page and **the actual local Bay City JPEG vs Wikimedia original** have now been computer-compared: [audit run 38773309259](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38773309259) passed with dHash distance **0** and grayscale brightness difference **0.1**, local 1468 × 1600 vs original 2400 × 2616. This establishes **strong likely photo identity, not file-level legal clearance**. Final derivative/ShareAlike and signed-package compliance **remain open**.
 - **Do not count this picture as a 93rd element sample.** There remain **92 element-picture candidates plus one separate Easter egg photograph**; all other branding icons/logos are separate media assets requiring their own provenance/ownership checks before Store release.
 
+## Portable package inspection — verified in CI, not a real signed release
+
+Added [`verify_distribution_package.py`](verify_distribution_package.py) with its recorded outcomes in [`DISTRIBUTION_INSPECTION.md`](DISTRIBUTION_INSPECTION.md). [**GitHub Actions 38774165966 passed**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38774165966): it inspected the staged `Web` folder, ZIP, and synthetic ZIP-format `.ipa`/`.msix` fixtures; it **correctly rejected** a ZIP containing excluded #61, a stale/altered Credits page, and a folder containing the withheld file. It hashes all 92 element photos and the separately included Bay City photo/other static resources against the audit-branch source files.
+
+**These were synthetic archives, not signed Apple or Microsoft packages**. The repository tree contains **no checked-in Windows-specific packager or manifest**, so the actual Windows Store packaging path has **not** been verified or modified. No real .ipa, .msix, signed package, Store-delivered build or nested Windows bundle was tested, and no photo rights have been finally cleared. The checker refuses unsupported/nested bundle layouts rather than guessing.
+
 ## Still outstanding before release
 
 1. Complete file-by-file commercial redistribution/author/source/derivative-rights review for **all 92 staged candidate images**, including ShareAlike and author name/link requirements.
