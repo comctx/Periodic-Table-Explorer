@@ -19,12 +19,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Compare local photos with credited originals, 31-60
-        run: python audit/compare_image_identity.py 31 60
+      - name: Compare local photos with credited originals, 61-90
+        run: python audit/compare_image_identity.py 61 90
       - name: Publish machine review evidence (not license clearance)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: image-comparison-31-60
-          path: audit/machine-image-matches-31-60.json
+          name: image-comparison-61-90
+          path: audit/machine-image-matches-61-90.json
           if-no-files-found: warn
