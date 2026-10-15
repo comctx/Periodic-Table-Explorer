@@ -332,7 +332,8 @@ function loadElementPhoto(number,name){
   status.classList.remove("no-sample");
   const researchPhoto=[96,97,98].includes(n);
   const museumExhibitPhoto=n===94;
-  heading.textContent=researchPhoto?"Real Research Imagery":(museumExhibitPhoto?"Historical Element Photograph":"What This Element Looks Like");
+  const alloyMeteoritePhoto=n===26;
+  heading.textContent=researchPhoto?"Real Research Imagery":(museumExhibitPhoto?"Historical Element Photograph":(alloyMeteoritePhoto?"Iron-Rich Meteorite Photograph":"What This Element Looks Like"));
   img.src=item.localUrl;
   img.alt=item.title||("Photograph related to "+name);
   title.textContent=item.title||name;
@@ -340,7 +341,9 @@ function loadElementPhoto(number,name){
     ?"This is a real photograph of scientific equipment or a compound containing "+name+", not a photograph of a bulk sample of the pure element. The title explains exactly what is shown. Final release packaging and credits checks are still pending."
     :(museumExhibitPhoto
       ?"A historical museum display documents a small sample of this element. This is not a typical macroscopic metal specimen; final release packaging and credits checks remain pending."
-      :"Catalogued photo of the element or its sample. Source and license records are maintained in About & Credits; final release-package checks remain pending.");
+      :(alloyMeteoritePhoto
+        ?"This photograph shows fragments of a meteorite reported to contain about 92% iron; the pieces are not chemically pure iron metal. Source and license records are in About & Credits; final release-package checks remain pending."
+        :"Catalogued photo of the element or its sample. Source and license records are maintained in About & Credits; final release-package checks remain pending."));
   credit.textContent=(item.attribution||"Image credit unavailable.")+(item.note?" • "+item.note:"");
   if(validHttpUrl(item.originalUrl)){
     original.href=item.originalUrl;
