@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **22 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 96 source pages have not yet been individually checked.
+**Progress distinction:** **32 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 86 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,28 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 22 / 118** = 20 element-source checks (#1–20), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 32 / 118** = 30 element-source checks (#1–30), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+
+## Third source-license batch — elements 21–30
+
+Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo publisher's iron image page for #26 on 2026-10-14. **This is source-level evidence, not a final license clearance for the JPEGs stored in this repository.** A final release still needs the original and cached files matched, complete license notices, author credit, documented changes, the source-specific attribution language and any ShareAlike adaptation obligations.
+
+| # | Original source | Observed published license | Finding and release action |
+|---:|---|---|---|
+| 21 Sc | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Scandium,_Sc.jpg) | CC BY-SA 3.0 | JanDerChemiker scandium crystal; ShareAlike/attribution follow-up — NOT CLEARED |
+| 22 Ti | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Titanium.jpg) | CC BY 3.0 | Titanium crystal; correct van Arkel–de Boer spelling in catalog — NOT CLEARED |
+| 23 V | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vanadium-pieces.jpg) | CC BY 3.0 | Jurii's vanadium pieces with oxide layer — NOT CLEARED |
+| 24 Cr | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Chromium.jpg) | CC BY 3.0 | Jurii's chromium sample — NOT CLEARED |
+| 25 Mn | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Manganese_element.jpg) | CC BY-SA 3.0 | W. Oelen's two manganese pieces; spelling corrected, ShareAlike review pending — NOT CLEARED |
+| 26 Fe | [Chemical Elements — Iron](https://images-of-elements.com/iron.php) | Site declares CC BY 3.0 for its images unless otherwise stated | Catalog specifically links to an *iron meteorite* image, not a sample of pure iron. Verify exact image and comply with site-specific attribution linking requirements — NOT CLEARED |
+| 27 Co | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cobalt_ore_2.jpg), [publisher](https://images-of-elements.com/cobalt.php) | CC BY 3.0 | Site specifies fragments of a cobalt cathode, 7 g and 4 g; catalog caption corrected — NOT CLEARED |
+| 28 Ni | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nickel_chunk.jpg) | CC BY-SA 3.0 (alternative GFDL) | Materialscientist's nickel chunk; ShareAlike review pending — NOT CLEARED |
+| 29 Cu | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:NatCopper.jpg) | CC BY-SA 2.5 / 3.0 (alternatives listed) | **SUBJECT DISPUTED / WITHHELD:** file history specifically questions whether a previous version shows genuine native copper or melted/recast copper. Until the cached version and what it depicts are verified, do not present it as an authentic native-copper sample. The audit branch now hides the disputed image on the element page while retaining source credits. — NOT CLEARED |
+| 30 Zn | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Zinc_(30_Zn).jpg) | CC BY 3.0 | 30 g zinc specimen from Chemical Elements — NOT CLEARED |
+
+**Metadata fixes committed on the audit branch:** added nine Commons file-page links (#21–25, #27–30), corrected the titles/credits for #22, #25–27 and #30, and added a withheld-image reason for #29. The About & Credits page identifies #29 as withheld. The original cached JPEGs remain in the repository; none is certified for redistributable Store packaging. The full photo-source chain and, where applicable, original creator/cropping attribution still must be checked.
+
+**Image bundle verification remains blocked:** GitHub's text/metadata interface can list image files but does not compare their actual JPEG pixels to the originals. Confirm this with binary hashes/visual review and test the final Store package before release.
 
 ## Per-element tracking (all unchecked)
 
