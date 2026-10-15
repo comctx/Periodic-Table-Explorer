@@ -239,14 +239,28 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [x] [**GitHub Actions scientific, photo-metadata and packaging regression 38775571334 passed**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775571334) on code commit `4e271519cd759cbccad19c5b636c9a1653ed3623`. This is CI evidence, **not** a Store release approval.
 - [ ] Individual photographer remains not independently established for #48's exact image. Neither image's final legal distribution compliance is declared cleared; signed app packages, credits in actual release, and general licensor obligations still require approval.
 
+## 4D. Real Chromium browser QA — 2026-10-15
+
+**Successful audit-branch run:** [GitHub Actions **38776854552**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38776854552), real Playwright Chromium against a locally served copy of the app, source revision `4f93e1ddf6c5b8c9d492bd8637979b3e2eac42c6`. Complete precise scope and earlier test-only failures are in [`BROWSER_QA.md`](BROWSER_QA.md).
+
+- [x] **All 118** actual element detail pages rendered name, symbol, science/uses sections in Chromium.
+- [x] **All 92** included element-photo candidate JPEGs decoded and **all 26** excluded/placeholder records kept hidden with explanatory text.
+- [x] Interactive 20-question quiz ran through answer disabling/correct-answer marking, scoring and round-completion controls.
+- [x] Main-table 118 tiles, search/clear, 20 °C mercury/bromine liquids and oganesson unknown, temperature presets, About & Credits 118 items/search, and Bay City Easter egg confirmed.
+- [x] Simulated 390-pixel iPhone viewport checked six major pages (table, elements 48/49/118, quiz, Credits) without document-level overflow; no unhandled browser JavaScript errors detected.
+- [x] Two earlier test runs failed on **incorrect test assertions**, not verified product bugs: collapsed Indium credit reading (run 38776449781) and CSS-uppercase label comparison (run 38776639609). Assertions were corrected; the full third run passed.
+- [ ] **Still open:** actual HTTPS offline/PWA service worker/network-off testing, real Safari/TestFlight signed IPA, desktop/Android device accessibility and visual QA, actual Microsoft package, final photo/license release sign-off.
+
+**The actual app's science facts, JPEG binaries, and core UI code were unchanged by this browser QA.** Passing automated runtime checks are **not** permission to merge/release.
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
 - [ ] **ShareAlike obligations**: Ensure the actual redistributed adapted JPEGs, their license/credit text, source links and attribution change notices satisfy the specific CC BY-SA version(s), including offline access to appropriate information where needed.
 - [ ] **Source code review**: Confirm image metadata and UI consistently describe actual specimens vs chemical compounds, historical imagery, equipment, products or simulations; ensure “No Image Found” is not misrepresented.
 - [ ] **Independent science QA**: Verify remaining per-element scientific prose/discovery/usage/physical-context nuances against named reference materials and run integrated runtime checks; test critical paths for all 118 rather than redoing already verified data comparisons.
-- [ ] **Quiz / UI QA**: Hands-on test quiz flow, correct-answer selection, navigation, temperature-mode odd cases, narrow-phone/desktop display, keyboard behavior, all 118 detail pages and the complete About & Credits interface.
-- [ ] **Offline / links**: Test local photo loading, local offline navigation/cache behavior and source/license link handling for PWA and native WebView.
+- [x] **Automated Chromium quiz/desktop/mobile smoke**: 118 pages, all 92 JPEGs, 26 withheld, quiz/score, search, temperature modes, Credits and simulated iPhone viewport passed on [run 38776854552](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38776854552). **[ ] Full hands-on Safari/real iPhone, keyboard, screen-reader and additional screen sizes** are separate outstanding gates.
+- [ ] **Offline / links**: All **92 local photos decoded** in Chromium, but **real HTTPS PWA offline navigation and service-worker caching** and the in-app native WebView / external source-link behavior still need independent testing.
 - [ ] **Actual iOS IPA**: Build a *signed* IPA from approved branch/revision, inspect the real ZIP contents including exact 92 JPEGs and 26 exclusions, ensure no remote/network dependency breaks local browsing, and carry out TestFlight device testing. Existing Codemagic config can submit to TestFlight: **do not trigger a build/publishing job without specific authorization**.
 - [ ] **Windows/Microsoft package**: Locate the real desktop packaging route and its **actual** package, make it apply the 92/26 filtering, and run the new archive inspector **against that real result**. A general inspector has been written and passed controlled CI fixtures but cannot change an absent/unidentified Windows build pipeline or certify a Microsoft Store package.
 - [ ] **Owner approval**: Do not merge to `main`, release a new binary or claim finished audit until release rights and QA gates are demonstrably satisfied and owner approves the change.
@@ -272,6 +286,7 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [`GROUP1_RIGHTS_REPLACEMENTS.md`](GROUP1_RIGHTS_REPLACEMENTS.md), [`FOUR_RIGHTS_CASES_92_99.md`](FOUR_RIGHTS_CASES_92_99.md), [`IMAGE_RIGHTS_1_20_FOLLOWUP.md`](IMAGE_RIGHTS_1_20_FOLLOWUP.md), [`IMAGE_RIGHTS_21_40_FOLLOWUP.md`](IMAGE_RIGHTS_21_40_FOLLOWUP.md) — later media source-rights corrections.
 - [`RELEASE_IMAGE_PACKAGING.md`](RELEASE_IMAGE_PACKAGING.md) and [`package_web_assets.py`](package_web_assets.py) — iOS app-image filtering.
 - [`DISTRIBUTION_INSPECTION.md`](DISTRIBUTION_INSPECTION.md) and [`verify_distribution_package.py`](verify_distribution_package.py) — actual-package inspector specification and passing positive/negative synthetic CI fixtures; **not** a real signed-package approval.
+- [`BROWSER_QA.md`](BROWSER_QA.md) and [`browser-smoke.mjs`](browser-smoke.mjs) — verified real Chromium 118-page/media/quiz/mobile browser tests, with historical test-assertion failures distinguished from production defects.
 - [`IMAGE_RIGHTS_48_49_FOLLOWUP.md`](IMAGE_RIGHTS_48_49_FOLLOWUP.md) — image-specific authorship comparison (indium corroborated / different cadmium Commons original rejected) with [live passing source-test run 38775178783](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775178783).
 - Current source-of-truth app assets: [`element-photo-data.js`](../element-photo-data.js), [`elements-data.js`](../elements-data.js), [`element.html`](../element.html), [`about.html`](../about.html), [`codemagic.yaml`](../codemagic.yaml).
 
