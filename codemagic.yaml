@@ -223,6 +223,7 @@ workflows:
           set -eu
           python3 <<'PY'
           import glob
+          import json
           import plistlib
           import zipfile
 
@@ -251,12 +252,21 @@ workflows:
               assert root + 'Web/index.html' in names
               assert root + 'Web/element.html' in names
               assert root + 'Web/quiz.html' in names
+              assert root + 'Web/about.html' in names
+              assert root + 'Web/privacy.html' in names
+              assert root + 'Web/support.html' in names
+              assert root + 'Web/manifest.webmanifest' in names
+              assert root + 'Web/sw.js' in names
               element_images = [
                   n for n in names
                   if n.startswith(root + 'Web/images/elements/')
                   and n.lower().endswith(('.jpg', '.png'))
               ]
-              assert len(element_images) >= 118, f'Expected 118 element images, got {len(element_images)}'
+              assert len(element_images) == 90, f'Expected 90 display-eligible photos, got {len(element_images)}'
+              catalog = json.loads(archive.read(root + 'Web/element-photo-data.js').decode('utf-8').split('=', 1)[1].strip().rstrip(';'))
+              blocked = {61, 84, 85, 86, 87, 92, 93, 97, 99} | set(range(100, 119))
+              expected = {root + 'Web/' + catalog[str(z)]['localUrl'] for z in range(1, 119) if z not in blocked}
+              assert set(element_images) == expected, 'iPhone package must exclude every blocked/placeholder photo'
               assert root + 'Web/images/bay-city-city-hall.jpg' in names
 
               print('Verified Periodic Table Explorer IPA')
