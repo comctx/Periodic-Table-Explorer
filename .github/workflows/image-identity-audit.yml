@@ -1,4 +1,4 @@
-name: Resolve 14 element photo originals (audit branch)
+name: Restore silicon and silver samples (audit branch only)
 on:
   push:
     branches:
@@ -8,27 +8,46 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  recover-photo-origins:
-    strategy:
-      fail-fast: false
-      matrix:
-        batch: [early, later]
+  restore-two-authentic-photos:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
-      - name: Checkout audit branch
+      - name: Check out existing audit branch
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Confirm isolated audit branch
+        run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Compare existing photos with publisher gallery
-        run: python audit/recover_unresolved_gallery.py ${{ matrix.batch }}
-      - name: Preserve matching evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: recovered-originals-${{ matrix.batch }}
-          path: audit/recovered-originals-${{ matrix.batch }}.json
-          if-no-files-found: warn
+      - name: Replace silicon panels and sterling chain with credited element samples
+        run: python audit/restore_two_element_samples.py
+      - name: Assert correct new photo files and credit changes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+          d=json.loads(Path("element-photo-data.js").read_text().split("=",1)[1].strip().rstrip(";"))
+          for z in ("14","47"):
+              x=d[z]
+              assert not x.get("withholdReason") and "Jurii" in x["attribution"]
+              assert x["licenseUrl"]=="https://creativecommons.org/licenses/by/3.0/"
+              assert x["commonsPage"].startswith("https://commons.wikimedia.org/wiki/File:")
+              with Image.open(x["localUrl"]) as im:
+                  im.verify()
+          assert "solar-cell" not in d["14"]["title"].lower()
+          assert "chain" not in d["47"]["title"].lower()
+          print("Both corrected sample images and file-specific credits verified")
+          PY
+      - name: Commit only two replacement JPEGs and their metadata to audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/elements/014-si.jpg images/elements/047-ag.jpg element-photo-data.js
+          git diff --cached --check
+          git commit -m "Restore licensed pure silicon and native silver photos on scientific audit branch"
+          git push origin HEAD:scientific-audit-2026-10
