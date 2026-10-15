@@ -332,14 +332,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Copper",
     "symbol": "Cu",
     "localUrl": "images/elements/029-cu.jpg",
-    "title": "Copper specimen image (description of the material disputed)",
-    "attribution": "Native_Copper_Macro_Digon3.jpg: 'Jonathan Zander (Digon3)' derivative work: Materialscientist, CC BY-SA 2.5 <https://creativecommons.org/licenses/by-sa/2.5>, via Wikimedia Commons",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg",
-    "sourceUrl": "",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:NatCopper.jpg",
-    "withholdReason": "This file's source history disputes whether the depicted sample is native copper. The image is withheld pending verification of what it shows."
+    "title": "Native copper specimen from Michigan, photographed at the Muséum de Toulouse",
+    "attribution": "Pymouss, 'Muséum Toulouse - cuivre natif.JPG', own photograph of a native copper specimen from Michigan held by the Muséum de Toulouse. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. File https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG. Photograph resized/reencoded for this app; photo adaptation remains subject to CC BY-SA 3.0.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "Replaces the old disputed native-copper photo with a museum-catalogued specimen photographed by Pymouss, showing Michigan native copper as part of a mineral matrix. Source photo resized/reencoded, with original credited, link to CC BY-SA 3.0 and ShareAlike adaptation terms. Do not represent non-copper mineral matrix as pure copper. Final release/package license audit remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG"
   },
   "30": {
     "name": "Zinc",
@@ -1115,13 +1114,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Curium",
     "symbol": "Cm",
     "localUrl": "images/elements/096-cm.jpg",
-    "title": "Claimed curium sample photographed emitting radiation-induced light — reproduction permission unverified",
-    "attribution": "© European Union / Joint Research Centre, Institute for Transuranium Elements (JRC-ITU), as credited by the original publishing website.",
-    "originalUrl": "https://images-of-elements.com/s/curium-glow.jpg",
-    "sourceUrl": "https://images-of-elements.com/curium.php",
-    "licenseUrl": "",
-    "note": "Publisher image page identifies European Union / JRC-ITU ownership. Do not infer a commercial redistribution grant from the website's general Creative Commons notice. The local image remains uncleared.",
-    "withholdReason": "The publisher credits © European Union / JRC-ITU, but no specific redistribution license or written permission for this photograph has been verified. Withheld until permission is established or a verified replacement is used."
+    "title": "Curium-248 oxide targets mounted on a RIKEN wheel for a nuclear research experiment — not pure curium metal",
+    "attribution": "RIKEN, 'Curium oxide targets.jpg', target-wheel research photograph; source https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg. CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Photograph resized/reencoded for this app; changes indicated.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Curium_oxide_targets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "This is real research equipment with curium-248 oxide targets used in an experiment investigating element 119, not a chunk of pure curium metal. Replaces an EU/JRC-ITU image whose redistribution permission was unverified. The exact Commons source identifies RIKEN as author and CC BY 4.0. Final image grant, attribution and distribution-package checks remain pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg"
   },
   "97": {
     "name": "Berkelium",
@@ -1139,14 +1138,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Californium",
     "symbol": "Cf",
     "localUrl": "images/elements/098-cf.jpg",
-    "title": "Reported 10 mg disc of californium-249 metal (small historical photograph)",
-    "attribution": "Attributed on Wikimedia Commons to the U.S. Department of Energy; file cites a 2006 Springer book. Original image author/rights chain not independently confirmed.",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg",
-    "sourceUrl": "",
+    "title": "Historical californium-252 neutron-source capsules, U.S. Department of Energy, circa 1972 — not a bare californium-metal sample",
+    "attribution": "U.S. Department of Energy (ENERGY.GOV), circa 1972, 'HD.5A.048 (10348254595) (cropped).jpg', cropped on Wikimedia Commons by KOKUYO. Source https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg. Identified as U.S. federal government public-domain material; this app resized/reencoded the source photograph.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/HD.5A.048_%2810348254595%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg",
     "licenseUrl": "",
-    "note": "Wikimedia Commons lists DOE/public-domain status yet retains a 2010 non-free-use rationale in its original upload log. Source cites The Chemistry of the Actinide and Transactinide Elements (Springer, 2006). Resolve this conflict and match the cached binary before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Californium.jpg",
-    "withholdReason": "Copyright status is ambiguous: the current Commons page labels the image public domain, but its original upload history contains a non-free-use rationale citing a published book. Withheld pending independent confirmation of the image's rights."
+    "note": "Authentic historical photo of californium-252 neutron-source capsules, not a photograph of unencapsulated californium metal. Replaces an older californium-249 metal-disc photo with contradictory Commons public-domain/nonfree historical upload records. U.S. Department of Energy federal employee work is marked public domain on the specific replacement file; physical image package and credits still need final verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg"
   },
   "99": {
     "name": "Einsteinium",
