@@ -48,10 +48,40 @@
 | 89 | Actinium | `db35498a9e49fca6ba6b0861855987f37f3982a2` | 2 | 0.4 | Likely source match (not cleared) | [Original/attribution](https://commons.wikimedia.org/wiki/File:Actinium_sample_(31481701837).png) |
 | 90 | Thorium | `32628e4a75cb3de71aa4504b2bf0b5cd9f79387c` | 0 | 0.1 | Likely source match (not cleared) | [Original/attribution](https://commons.wikimedia.org/wiki/File:Thorium-1.jpg) |
 
-## How the flagged photographs will be evaluated
+## Completed publisher-gallery recovery — image identities resolved for 15 entries
 
-Original image references from the catalog have not been silently replaced. For some of the 15 manual-review cases, the cached file may correspond to a different photograph displayed on the [original publisher's element page](https://images-of-elements.com/) instead of the specific Commons file named in `originalUrl`. The follow-up `audit/find_publisher_image_matches.py` searches that publisher page for *candidate source images* and compares them to the cached JPEGs; this may help resolve identity without discarding an accurate specimen photo. Any newly identified link still needs license/author/rights verification and change attribution.
+A second read-only [GitHub Actions run 38681550877](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38681550877) completed successfully, using `audit/find_publisher_image_matches.py 61 90` to fetch image links from the original element publisher pages and compare each against the saved JPEG.
 
-**Existing scientific safeguards remain:** #61 promethium is explicitly an illustration and withheld; #84–87 polonium, astatine, radon and francium are illustrations and withheld. **Other uncertain photos are not being automatically relabeled or deleted based solely on machine similarity.** A human check will determine whether to correct the link/caption or withhold each image.
+**Result:** All **15 previously flagged actual element photographs** match a *different, specifically identified original* from the publisher's own gallery, with **dHash distance 0–2 and grayscale brightness difference ≤0.2**. The repository's catalog `originalUrl` for each was corrected to the exact matching image URL; the app's `withholdReason` was removed for these identity-resolved picture candidates. The publisher asks for attribution linking to the element page and broadly advertises CC BY 3.0 for site images unless otherwise noted; **individual photographer, image-specific grant, and release packaging compliance are not yet fully verified**. No image was declared approved for Store redistribution.
 
-**Next:** inspect publisher gallery candidates, resolve remaining image identity mismatch, and add explicit `withholdReason` only where original provenance remains unverified after that follow-up. The full licensing and package inventory review still remains for all images. `main` is intentionally unchanged.
+| # | Element | New exact matched gallery photo | dHash distance | Brightness difference | Attribution stage |
+|---:|---|---|---:|---:|---|
+| 62 | Sm | [Publisher image](https://images-of-elements.com/s/samarium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 63 | Eu | [Publisher image](https://images-of-elements.com/s/europium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 64 | Gd | [Publisher image](https://images-of-elements.com/s/gadolinium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 65 | Tb | [Publisher image](https://images-of-elements.com/s/terbium.jpg) | 0 | 0.1 | Photo identified; final permissions still pending |
+| 66 | Dy | [Publisher image](https://images-of-elements.com/s/dysprosium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 67 | Ho | [Publisher image](https://images-of-elements.com/s/holmium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 70 | Yb | [Publisher image](https://images-of-elements.com/s/ytterbium.jpg) | 2 | 0.2 | Photo identified; final permissions still pending |
+| 72 | Hf | [Publisher image](https://images-of-elements.com/s/hafnium.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 73 | Ta | [Publisher image](https://images-of-elements.com/s/tantalum.jpg) | 1 | 0.2 | Photo identified; final permissions still pending |
+| 75 | Re | [Publisher image](https://images-of-elements.com/s/rhenium.jpg) | 1 | 0.2 | Photo identified; final permissions still pending |
+| 77 | Ir | [Publisher image](https://images-of-elements.com/s/iridium.jpg) | 1 | 0.2 | Photo identified; final permissions still pending |
+| 79 | Au | [Publisher image](https://images-of-elements.com/s/gold.jpg) | 1 | 0.2 | Photo identified; final permissions still pending |
+| 80 | Hg | [Publisher image](https://images-of-elements.com/s/mercury.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+| 81 | Tl | [Publisher image](https://images-of-elements.com/s/thallium.jpg) | 1 | 0.2 | Photo identified; final permissions still pending |
+| 82 | Pb | [Publisher image](https://images-of-elements.com/s/lead.jpg) | 0 | 0.2 | Photo identified; final permissions still pending |
+
+**#61 promethium:** the original Commons file returned 404, but the publisher gallery identifies the exact cached file as [promethium.jpg](https://images-of-elements.com/s/promethium.jpg) (dHash 0). This is a **photomontage**, not a real sample photograph. The broken URL was corrected, but the image **remains withheld** from the photo panel.
+
+**#84–87:** Images are source-matched **illustrations** and remain withheld from the actual-sample photo panel. #68–69, #71, #74, #76, #78, #83, #88–90 already had high-confidence original matches from the first comparison; their photo rights are still pending.
+
+**Updated batch identity classification:** **25/30 likely real-element/sample or research images** have a matching source image; **5/30 are illustrated representations** (#61 and #84–87) and not actual element photographs. Thus **30/30 cached-image identities can now be traced to source files at the visual/pHash level**, but **0/30 are finally cleared for distribution**. Scientifically accurate subjects and third-party rights must still be checked.
+
+## Release verification after source recovery
+
+The audit branch now records the 15 publisher-gallery originals that match the actual cached files, replacing mismatched `originalUrl` references. An exact visual/source match is not copyright clearance. Check the individual author's credit, publishing rights statement, CC conditions, required element-page link, photo alterations, and final Store bundle.
+
+**Existing scientific safeguards remain:** #61 promethium is explicitly an illustration and withheld; #84–87 polonium, astatine, radon and francium are illustrations and withheld. The 15 recovered pictures have an identified publisher image but must not be treated as fully licensed until attribution and final release review are complete.
+
+**Next:** review final author/license obligations for the newly identified photos, then compare #91–118. The physical images in every Store bundle still require an offline/permissions audit. `main` remains unchanged.
