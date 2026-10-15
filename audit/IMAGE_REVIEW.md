@@ -6,6 +6,17 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Phase 6 / Two additional photo-source rights cases resolved — 2026-10-15
+
+[Detailed photo-source evidence and remaining blockers](FOUR_RIGHTS_CASES_92_99.md).
+
+- **#92 Uranium:** historical Ames Process uranium-metal biscuit, circa 1943. The exact Commons photo is marked U.S. federal **public domain**, with a recorded Wikimedia VRT permission ticket. Attribution to Ames Laboratory / U.S. DOE and resizing disclosure are preserved. Visible image candidate.
+- **#97 Berkelium:** **berkelium-249 in solution** in a research vial (not a bulk-metal specimen). The official Oak Ridge National Laboratory Flickr original specifies **CC BY 2.0**. Its original source, exact license and the Commons crop are now credited. Visible research image candidate.
+- **#93 Neptunium:** mixed public-domain and CC BY publisher claims do not independently resolve original Los Alamos notice and authorship. Explicitly withheld from UI and staged iPhone app.
+- **#99 Einsteinium:** cropped/colorized derivative with an unidentified editor and laboratory/publication-origin complexities. Explicitly withheld pending complete original/derivative rights verification.
+
+**Latest audit-branch inventory:** **92 visible image candidates** (photographs/research-related images; not fully release cleared), **12 entries explicitly withheld** (#61, #84–87, #93, #99, #100–104) and **14 hidden generic placeholders** (#105–118). **26 entries currently have no displayed image.** The prior phase's 94 images were *potential* candidates before the app-packaging rights gate; 2 remain blocked. A fail-closed iPhone packaging script selects exactly the 92 displayed candidates; the other 26 source files are excluded from the staged app bundle. **The published main branch remains unchanged; neither final rights sign-off nor IPA testing is complete.**
+
 ## Phase 5 / Four rights-and-subject image replacements — COMPLETE
 
 [Detailed evidence and committed JPEG blob SHAs](GROUP1_RIGHTS_REPLACEMENTS.md). Successful audit-only GitHub Actions runs: [Copper/curium/californium 38685174037](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38685174037) and [plutonium museum photo 38685303121](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38685303121). All four stored JPEG files were **physically replaced** and visually inspected; prior binaries with questionable claims are not the current audit-branch files.
@@ -15,7 +26,7 @@ This is a **catalog-based triage**, NOT proof that any image is licensed. It lis
 - **#96 Curium:** actual **RIKEN curium-248 oxide target wheel** used in a research experiment, **CC BY 4.0**. The picture is clearly labeled as curium compound/research equipment, not a pure metal specimen. Replaces EU/JRC-ITU image with no verified individual permission.
 - **#98 Californium:** historical **U.S. DOE californium-252 neutron-source capsules** photographed circa 1972; Commons records public-domain status as a U.S. federal government work. Not unencapsulated californium metal. Replaces an earlier metal-disc image with conflicting Commons copyright history.
 
-**Latest audit-branch inventory:** **94 candidates for displayed photographs/research imagery**, **10 entries explicitly withheld** (#61, #84–87, #100–104), and **14 hidden identical placeholders** (#105–118). **24 entries currently have no displayed image.** All **118 JPEGs** now have correct identified source images at the file-identity level, including the 14 placeholders; this does *not* mean 118 genuine samples. **0/118 final app-wide redistribution clearances** — source licenses and several attributions are recorded, but the offline package, CC requirements and full app testing are not yet complete. Published `main` is unchanged.
+**Historical Phase 5 inventory (superseded by Phase 6 above):** 94 potential sample/research images, 10 withheld subject/rights records and 14 placeholders. This inventory preceded the additional Neptunium/Einsteinium exclusions documented in Phase 6. All 118 source files remain preserved in the audit branch; individual permission evidence and final app-wide release clearance are separate matters.
 
 ## Phase 4 / Recovery of the 14 mismatched source photographs — COMPLETE
 
@@ -30,7 +41,7 @@ The [photo recovery report](PHOTO_RECOVERY_14.md) documents successful recovery 
 - **118 of 118 stored JPEGs inspected or machine-compared** across four batches. **All 118 source metadata pages were reviewed** separately.
 - **118 of 118 saved image files now have a matching identified original image source**: 104 previously matched during 30-element audits, 12 publisher-gallery originals identified and corrected in phase 4, and 2 file-specific CC BY 3.0 Commons sample photos physically installed for silicon/silver. The 118 include **14 generic placeholders**, illustrations and historical/research photographs. This is an **image-identity count**, not a count of 118 actual element sample photos or rights clearances.
 - **0 picture-source mismatches** remain from the 14 previously flagged entries (#3, #4, #5, #14, #15, #22, #27, #30, #31, #44, #45, #47, #50, #58): 12 matching publisher images recovered and two elemental sample photographs physically replaced.
-- **10 metadata entries remain intentionally withheld** because of an illustration, unrelated subject, or unresolved image rights. **14 others (#105–118) remain identical generic placeholders** and are not displayed. Thus **24 entries lack a displayed element photograph** and the remaining **94 are sample/research image candidates**, not finally approved for release.
+- **12 metadata entries are now expressly withheld**, including Neptunium #93 and Einsteinium #99, because of an illustration, unrelated subject, or unresolved image rights. **14 others (#105–118) remain identical generic placeholders** and are not displayed. Thus **26 entries lack a displayed image**, leaving **92 potentially displayable sample/research images**, not finally approved for release.
 - **0/118 cached images are finally approved for Microsoft Store redistribution.** This still requires file-specific authorship and rights verification, attribution/ShareAlike notices, inclusion/exclusion of physical cached files in the released bundle, and app/offline/desktop testing. **Do not merge into main or submit this audit build yet.**
 
 ### Historical fourth stored-file comparison — elements 91–118 (before Phase 5 replacements)
