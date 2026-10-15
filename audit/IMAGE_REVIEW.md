@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **82 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 36 source pages have not yet been individually checked.
+**Progress distinction:** **92 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 26 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 82 / 118** = 80 element-source checks (#1–80), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 92 / 118** = 90 element-source checks (#1–90), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -206,6 +206,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Committed to the audit branch:** ten exact Commons file-page links; source-specific license notes for #74 and #77; clean unknown-author credit for #77; original/cropper attribution for #78; scientifically contextual captions for #71–76 and pending gold caption verification; explicit publisher-attribution requirement for #80.
 
 **Outstanding:** Compare all ten local `images/elements/*.jpg` files against the exact source originals and revision history; verify photographer and license text, source and license links and modifications, and test packaged app display/offline credits. **No binary photos cleared for release.**
+
+## Ninth source-rights batch — elements 81–90
+
+**Source pages opened and reviewed 2026-10-14:** exact Commons file pages for #81–83 and #88–90, and the specific Chemical Elements publisher pages for #84–87. **Ten source records investigated, zero locally cached JPEGs cleared.** Every `localUrl` still requires a binary/crop match and complete license compliance prior to Store release. A source-page license does not establish that the current binary is a permitted or accurate copy.
+
+| Z | Original source consulted | Published rights statement | Subject accuracy, attribution and action | Cached image cleared? |
+|---:|---|---|---|:---:|
+| 81 Tl | [Commons: Thallium (81 Tl).jpg](https://commons.wikimedia.org/wiki/File:Thallium_(81_Tl).jpg) | CC BY 3.0, Hi-Res Images of Chemical Elements | About 8 g of pure thallium protected under argon; adjusted credit spacing and caption. | No |
+| 82 Pb | [Commons: Lead-2.jpg](https://commons.wikimedia.org/wiki/File:Lead-2.jpg) | CC BY 3.0, credited to Chemical Elements | Ultrapure lead bead from two sides; Commons names a publisher rather than an individual photographer. Credit the publisher; do not invent a person. | No |
+| 83 Bi | [Commons: Bismuth-2.jpg](https://commons.wikimedia.org/wiki/File:Bismuth-2.jpg) | CC BY 3.0, Jurii | Actual bismuth crystal. Preserve attribution, source and modification statement. | No |
+| 84 Po | [Chemical Elements: Polonium](https://images-of-elements.com/polonium.php) | Publisher-wide CC BY 3.0 claim; illustration license identity not independently matched | Publisher explicitly identifies the image as **only an illustration, not polonium itself**. App image marked **WITHHELD** with direct explanation; catalog title shortened to avoid an unsupported implication that a particular glowing specimen was photographed. | No |
+| 85 At | [Chemical Elements: Astatine](https://images-of-elements.com/astatine.php) | Publisher-wide CC BY 3.0 claim; original/cached image identity not matched | Publisher explicitly identifies an **illustration**, not a photographed astatine sample. Hypothetical glow, crystal colors or vapor appearance are **not observed visual evidence**. App marks artwork **WITHHELD**. | No |
+| 86 Rn | [Chemical Elements: Radon](https://images-of-elements.com/radon.php) | Publisher-wide CC BY 3.0 claim; original/cached image identity not matched | Depicts imagined discharge-tube appearance; publisher says **only an illustration, not radon itself**. App marks artwork **WITHHELD**. | No |
+| 87 Fr | [Chemical Elements: Francium](https://images-of-elements.com/francium.php) | Publisher-wide CC BY 3.0 claim; original/cached image identity not matched | Publisher says **only an illustration**, not a directly photographed isolated sample of francium. Corrected catalog source URL from a direct JPG to the corresponding informative element page. App marks artwork **WITHHELD**. | No |
+| 88 Ra | [Commons: Radium226.jpg](https://commons.wikimedia.org/wiki/File:Radium226.jpg) | CC BY 3.0; grenadier | Source shows **tiny radium-226 deposit electroplated onto copper foil and covered in polyurethane**, not a bulk radium specimen. File history: Materialscientist applied an unsharp mask to the original. App now credits both. | No |
+| 89 Ac | [Commons: Actinium sample (31481701837).png](https://commons.wikimedia.org/wiki/File:Actinium_sample_(31481701837).png) | CC BY 2.0; Oak Ridge National Laboratory | Shows actinium-225 radioisotope in a medical vial at ORNL; source attributes blue glow to ionization of surrounding air. This **does not depict bulk actinium metal**. Caption clarified without treating the source's glow explanation as independently confirmed. | No |
+| 90 Th | [Commons: Thorium-1.jpg](https://commons.wikimedia.org/wiki/File:Thorium-1.jpg) | CC BY-SA 3.0; W. Oelen | Corroded thorium metal within an ampoule, not a pristine metallic ingot. ShareAlike obligations for modified imagery need specific review. | No |
+
+**Changes to `element-photo-data.js` on audit branch:** six exact Commons source-page links (#81–83, #88–90); correction to thallium creator formatting; source-qualified captions; direct illustration `withholdReason` for #84–87; fixed francium `sourceUrl`; added radium photo retouch credit; explicit thorium CC BY-SA release review.
+
+**No changes to original images:** All cached image binaries remain in the repository. The app hides explicitly withheld artworks from photo display, but a Store build may still package the files; **hiding is not sufficient to resolve redistribution rights**.
 
 ## Per-element tracking (all unchecked)
 
