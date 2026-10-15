@@ -499,7 +499,7 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Tc",
     "localUrl": "images/elements/043-tc.jpg",
     "title": "Technetium-99 powder electrodeposited on a 6 × 1 mm gold foil inside a sealed argon-filled glass ampoule",
-    "attribution": "Marco Cardin, original photograph 'Technetium-sample.jpg' (13 March 2020), https://commons.wikimedia.org/wiki/File:Technetium-sample.jpg. Cropped by Wikimedia Commons contributor Double sharp on 31 August 2021 as 'Technetium-sample-cropped.jpg', https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg. This app further resized/reencoded the cropped version. The derivative is cited under Creative Commons Attribution-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/; retain creator, cropper, adaptation and ShareAlike notices.",
+    "attribution": "Marco Cardin, original photograph 'Technetium-sample.jpg' (13 March 2020), https://commons.wikimedia.org/wiki/File:Technetium-sample.jpg. Cropped by Wikimedia Commons contributor Double sharp on 31 August 2021 as 'Technetium-sample-cropped.jpg', https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg. This app further resized/reencoded the cropped version. The derivative is cited under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), https://creativecommons.org/licenses/by-sa/4.0/; retain creator, cropper, adaptation and ShareAlike notices.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Technetium-sample-cropped.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
