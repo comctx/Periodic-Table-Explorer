@@ -1066,11 +1066,11 @@ window.ELEMENT_PHOTOS = {
     "symbol": "U",
     "localUrl": "images/elements/092-u.jpg",
     "title": "Historical uranium metal biscuit produced by the Ames Process, circa 1943",
-    "attribution": "Original photographer unidentified; image provided by Ames Laboratory, U.S. Department of Energy. U.S. federal government public-domain statement and Wikimedia VRT permission recorded.",
+    "attribution": "Original photographer unidentified; image provided by Ames Laboratory, U.S. Department of Energy. Wikimedia Commons marks this U.S. federal government work public domain and records VRT permission ticket 2011070810013625. Credit requested: Ames Laboratory, USDOE. Image resized/reencoded for this app.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Ames_Process_uranium_biscuit.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg",
     "licenseUrl": "",
-    "note": "Source asks for attribution to Ames Laboratory, USDOE. Commons lists federal public-domain grounds and an archived VRT permission confirmation. Local image must still be matched to source before distribution.",
+    "note": "Photograph of an Ames Process uranium-metal biscuit circa 1943; not a modern uranium fuel pellet. Commons file-specific federal public-domain status and VRT permission checked 2026-10-15. Attribution and local sample identity recorded; still subject to final release-package review.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg"
   },
   "93": {
@@ -1083,7 +1083,8 @@ window.ELEMENT_PHOTOS = {
     "sourceUrl": "https://images-of-elements.com/neptunium.php",
     "licenseUrl": "",
     "note": "The same Commons source page contains U.S. federal public-domain and CC BY 3.0 publisher statements. Resolve exact photograph provenance and any Los Alamos reuse notices, including changes/attribution, before final release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neptunium2.jpg"
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neptunium2.jpg",
+    "withholdReason": "Photo source rights remain ambiguous: Commons simultaneously labels this Los Alamos image public domain and CC BY 3.0 via a republisher, but the original laboratory's exact permission and notice obligations have not been confirmed for this specific photograph. The image is excluded from the release package."
   },
   "94": {
     "name": "Plutonium",
@@ -1125,12 +1126,12 @@ window.ELEMENT_PHOTOS = {
     "name": "Berkelium",
     "symbol": "Bk",
     "localUrl": "images/elements/097-bk.jpg",
-    "title": "Berkelium in dissolved form, prepared over approximately 250 days for an element-117 experiment — not bulk berkelium metal",
-    "attribution": "Oak Ridge National Laboratory, U.S. Department of Energy; Commons source page identifies this as a U.S. federal government public-domain work.",
+    "title": "Berkelium-249 in solution in a research vial at Oak Ridge National Laboratory — not a bulk metal specimen",
+    "attribution": "Oak Ridge National Laboratory (oakridgelabnews), 'Berkelium-249', photo taken June 8, 2009. Original https://www.flickr.com/photos/oakridgelab/4499934514, licensed CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Wikimedia Commons file Berkelium.jpg was cropped by Materialscientist; app image resized/reencoded. The photo shows berkelium in solution, not pure berkelium metal.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Berkelium.jpg",
     "sourceUrl": "https://www.flickr.com/photos/oakridgelab/4499934514",
-    "licenseUrl": "",
-    "note": "Photograph shows berkelium in solution, NOT a visible metal sample. Photo source is an Oak Ridge National Laboratory government-work image; compare the cached file and verify packaging rights before release.",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "note": "The official Oak Ridge National Laboratory Flickr account names berkelium-249 in the greenish fluid near the tip of the vial. Flickr explicitly links to CC BY 2.0, permitting commercial reuse with attribution and modifications noted; Commons additionally lists a federal public-domain rationale. This app conservatively retains Flickr's CC BY 2.0 attribution. License and credit review: 2026-10-15.",
     "commonsPage": "https://commons.wikimedia.org/wiki/File:Berkelium.jpg"
   },
   "98": {
@@ -1155,7 +1156,8 @@ window.ELEMENT_PHOTOS = {
     "sourceUrl": "",
     "licenseUrl": "",
     "note": "Commons lists DOE federal-work public domain, but the file is cropped from EinsteiniumGlow.JPG and colored by an unidentified contributor. Verify alteration provenance and cached JPEG before final clearance.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Einsteinium.jpg"
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Einsteinium.jpg",
+    "withholdReason": "The archived image is a colorized/cropped derivative of a U.S. Department of Energy research photograph; the editor of the color version is unidentified and its derivative provenance has not been conclusively checked. This saved JPEG is excluded from the release package pending verified reuse and alterations."
   },
   "100": {
     "name": "Fermium",
