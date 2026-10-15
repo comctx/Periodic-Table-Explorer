@@ -230,6 +230,14 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [ ] **Not done:** inspect a **real signed iOS IPA**, **real Microsoft/Windows Store package**, or original Windows packaging setup; no such artifact or build workflow was provided or identified in this repository. Test archive filenames `.ipa` and `.msix` were **not** genuine signed distributables. Nested `.msixbundle`/`.appxbundle` formats are intentionally unsupported until their real structure is inspected.
 - [ ] **Not done:** legal permission checks for the 92 image candidates, Bay City photo and branding/icon assets; signed-package presence alone would not establish copyright clearance.
 
+## 4C. Targeted photo-creator correction: #48 Cadmium / #49 Indium — 2026-10-15
+
+- [x] Confirmed there were **already** local-to-publisher original matches and source-page license checks for both #48 and #49. **Did not repeat or reset #41–60** scientific/identity review.
+- [x] Verified independent Commons original for **indium #49**, [`Liquid-indium.jpg`](https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg), photographer **Jurii**, source date **10 August 2009**, CC BY 3.0. Read-only original-to-local image test [**38775178783 (success)**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775178783) found **dHash 0 / grayscale 0.1**, both local and Commons 856 × 856. Updated exact Commons file link and explicit author credit in live **audit-branch** photo catalog.
+- [x] **Did not misattribute cadmium #48:** similarly named separate [Commons `Pure cadmium.jpg`](https://commons.wikimedia.org/wiki/File:Pure_cadmium.jpg) is **not** the saved publisher `cadmium-4.jpg` (dHash **24**, grayscale delta **64.4**). Its author must not be assigned to the app JPEG. Clarified the exact publisher image, original CC BY 3.0 general claim, and unresolved individual photographer and unmeasured sample purity.
+- [x] Added regression checks for both original-photo decisions, preserved 92/26 exclusion and zero physical image changes. See [`IMAGE_RIGHTS_48_49_FOLLOWUP.md`](IMAGE_RIGHTS_48_49_FOLLOWUP.md), [`IMAGE_REVIEW.md` Phase 9](IMAGE_REVIEW.md).
+- [ ] Individual photographer remains not independently established for #48's exact image. Neither image's final legal distribution compliance is declared cleared; signed app packages, credits in actual release, and general licensor obligations still require approval.
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
@@ -263,6 +271,7 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [`GROUP1_RIGHTS_REPLACEMENTS.md`](GROUP1_RIGHTS_REPLACEMENTS.md), [`FOUR_RIGHTS_CASES_92_99.md`](FOUR_RIGHTS_CASES_92_99.md), [`IMAGE_RIGHTS_1_20_FOLLOWUP.md`](IMAGE_RIGHTS_1_20_FOLLOWUP.md), [`IMAGE_RIGHTS_21_40_FOLLOWUP.md`](IMAGE_RIGHTS_21_40_FOLLOWUP.md) — later media source-rights corrections.
 - [`RELEASE_IMAGE_PACKAGING.md`](RELEASE_IMAGE_PACKAGING.md) and [`package_web_assets.py`](package_web_assets.py) — iOS app-image filtering.
 - [`DISTRIBUTION_INSPECTION.md`](DISTRIBUTION_INSPECTION.md) and [`verify_distribution_package.py`](verify_distribution_package.py) — actual-package inspector specification and passing positive/negative synthetic CI fixtures; **not** a real signed-package approval.
+- [`IMAGE_RIGHTS_48_49_FOLLOWUP.md`](IMAGE_RIGHTS_48_49_FOLLOWUP.md) — image-specific authorship comparison (indium corroborated / different cadmium Commons original rejected) with [live passing source-test run 38775178783](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775178783).
 - Current source-of-truth app assets: [`element-photo-data.js`](../element-photo-data.js), [`elements-data.js`](../elements-data.js), [`element.html`](../element.html), [`about.html`](../about.html), [`codemagic.yaml`](../codemagic.yaml).
 
 **Master-record creation changes no chemistry, photos, quiz code or distribution settings.** It documents the audited baseline so that future changes are intentional and verifiable.
