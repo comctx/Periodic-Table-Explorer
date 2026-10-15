@@ -220,6 +220,16 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 
 **No change** to the element photo inventory: 92 candidate / 12 expressly withheld / 14 placeholders. **Do not describe all included image rights as cleared.**
 
+## 4B. Real-package inspection safeguards — 2026-10-15
+
+**Evidence:** [`DISTRIBUTION_INSPECTION.md`](DISTRIBUTION_INSPECTION.md) and [successful GitHub Actions run **38774165966**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38774165966).
+
+- [x] Checked this repository's actual Git tree. An iOS Xcode project and Codemagic pipeline exist, but **no Windows/MSIX/Appx packaging manifest, Windows-specific build script or distributable is checked into this repository**. This does **not** prove a Microsoft Store build does not exist elsewhere.
+- [x] Added `audit/verify_distribution_package.py`, a **read-only, fail-closed byte-level checker** for an extracted `Web` folder or flat ZIP-format `.zip`, `.ipa`, `.msix`, or `.appx` archive. It rejects the 26 known excluded filenames anywhere in the package, unexpected/missing element images, changed credit/science/manifest content, mismatched bytes of the 92 cached photos or Bay City/branding/icon assets, and unsupported embedded bundles.
+- [x] GitHub Actions executed real tests of the checker: a clean staged folder and **synthetic** ZIP/IPA/MSIX-shaped archives passed; deliberately invalid zip with withheld #61, altered About page, and contaminated staged folder were **all rejected**. The previous science regression and 92/26 staging tests also passed.
+- [ ] **Not done:** inspect a **real signed iOS IPA**, **real Microsoft/Windows Store package**, or original Windows packaging setup; no such artifact or build workflow was provided or identified in this repository. Test archive filenames `.ipa` and `.msix` were **not** genuine signed distributables. Nested `.msixbundle`/`.appxbundle` formats are intentionally unsupported until their real structure is inspected.
+- [ ] **Not done:** legal permission checks for the 92 image candidates, Bay City photo and branding/icon assets; signed-package presence alone would not establish copyright clearance.
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
@@ -229,7 +239,7 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [ ] **Quiz / UI QA**: Hands-on test quiz flow, correct-answer selection, navigation, temperature-mode odd cases, narrow-phone/desktop display, keyboard behavior, all 118 detail pages and the complete About & Credits interface.
 - [ ] **Offline / links**: Test local photo loading, local offline navigation/cache behavior and source/license link handling for PWA and native WebView.
 - [ ] **Actual iOS IPA**: Build a *signed* IPA from approved branch/revision, inspect the real ZIP contents including exact 92 JPEGs and 26 exclusions, ensure no remote/network dependency breaks local browsing, and carry out TestFlight device testing. Existing Codemagic config can submit to TestFlight: **do not trigger a build/publishing job without specific authorization**.
-- [ ] **Windows/Microsoft package**: Find the actual desktop packaging route, implement the same exclusion of invalid/unapproved image files, check bundled attribution and QA. Current iOS script alone does not protect a Windows packaging workflow.
+- [ ] **Windows/Microsoft package**: Locate the real desktop packaging route and its **actual** package, make it apply the 92/26 filtering, and run the new archive inspector **against that real result**. A general inspector has been written and passed controlled CI fixtures but cannot change an absent/unidentified Windows build pipeline or certify a Microsoft Store package.
 - [ ] **Owner approval**: Do not merge to `main`, release a new binary or claim finished audit until release rights and QA gates are demonstrably satisfied and owner approves the change.
 
 ## 6. Source-of-truth and evidence policy for all subsequent work
@@ -252,6 +262,7 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [`PHOTO_RECOVERY_14.md`](PHOTO_RECOVERY_14.md) — resolved old mismatched photo sources and the two physically restored element sample photos.
 - [`GROUP1_RIGHTS_REPLACEMENTS.md`](GROUP1_RIGHTS_REPLACEMENTS.md), [`FOUR_RIGHTS_CASES_92_99.md`](FOUR_RIGHTS_CASES_92_99.md), [`IMAGE_RIGHTS_1_20_FOLLOWUP.md`](IMAGE_RIGHTS_1_20_FOLLOWUP.md), [`IMAGE_RIGHTS_21_40_FOLLOWUP.md`](IMAGE_RIGHTS_21_40_FOLLOWUP.md) — later media source-rights corrections.
 - [`RELEASE_IMAGE_PACKAGING.md`](RELEASE_IMAGE_PACKAGING.md) and [`package_web_assets.py`](package_web_assets.py) — iOS app-image filtering.
+- [`DISTRIBUTION_INSPECTION.md`](DISTRIBUTION_INSPECTION.md) and [`verify_distribution_package.py`](verify_distribution_package.py) — actual-package inspector specification and passing positive/negative synthetic CI fixtures; **not** a real signed-package approval.
 - Current source-of-truth app assets: [`element-photo-data.js`](../element-photo-data.js), [`elements-data.js`](../elements-data.js), [`element.html`](../element.html), [`about.html`](../about.html), [`codemagic.yaml`](../codemagic.yaml).
 
 **Master-record creation changes no chemistry, photos, quiz code or distribution settings.** It documents the audited baseline so that future changes are intentional and verifiable.
