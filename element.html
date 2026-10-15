@@ -377,7 +377,7 @@ if(!e){
  document.getElementById("scienceGrid").innerHTML=
    fact("Electron configuration"+(e.atomicNumber>=104?" (calculated)":""),
      e.electronConfiguration||"—")+
-   fact("Density",e.density==null?"—":e.density+" g/cm³")+
+   fact("Density"+(e.densityBasis?" ("+e.densityBasis+")":""),e.density==null?"—":e.density+" g/cm³")+
    fact("Melting point",kelvinToC(e.meltingPoint))+
    fact("Boiling point",kelvinToC(e.boilingPoint))+
    (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
