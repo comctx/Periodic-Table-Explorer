@@ -615,7 +615,7 @@ window.ELEMENT_PHOTOS = {
     "symbol": "I",
     "localUrl": "images/elements/053-i.jpg",
     "title": "Iodine crystals photographed at ordinary conditions",
-    "attribution": "Benjah-bmm27, own photograph 'Iodine-sample.jpg' (16 May 2007), https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg. Wikimedia Commons records an express public-domain release by the original photographer for worldwide reuse, with unconditional reuse permission where public-domain dedication is not legally possible. The stored app photo was resized/reencoded; credit retained for provenance.",
+    "attribution": "Benjah-bmm27, own photograph 'Iodine-sample.jpg' (16 May 2007), https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg. Wikimedia Commons records an express public domain release by the original photographer for worldwide reuse, with unconditional reuse permission where public domain dedication is not legally possible. The stored app photo was resized/reencoded; credit retained for provenance.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Iodine-sample.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg",
     "licenseUrl": "",
