@@ -837,7 +837,7 @@ for(let z=41;z<=50;z++){
 }
 assert.match(photoSourceData['43'].attribution,/Marco Cardin/,'Technetium correctly names its photographer');
 assert.match(photoSourceData['43'].attribution,/Double sharp/,'Technetium identifies photo cropper');
-assert.match(photoSourceData['43'].attribution,/GFDL/,'Technetium retains requested source attribution');
+assert.match(photoSourceData['43'].note,/GFDL/,'Technetium explains alternative original GFDL licensing without conflating the CC BY-SA 4.0 option');
 assert.match(photoSourceData['43'].attribution,/CC BY-SA 4\.0/,'Technetium retains actual source photo license');
 assert.match(photoSourceData['49'].title,/solid at ordinary room temperature/,'Molten indium not portrayed as its normal physical state');
 // This is a follow-up, NOT a repeat of the earlier 41–60 source review.
