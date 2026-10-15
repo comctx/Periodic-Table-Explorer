@@ -909,7 +909,7 @@ const auditedSourceLicenses91to100={
   "91":"DOE official federal public domain","92":"Federal public domain + Commons VRT permission",
    "93":"Federal public domain claim + publisher CC BY 3.0","94":"Daderot historic Pu-239 museum photo CC0",
    "95":"CC BY 3.0 Bionerd","96":"RIKEN curium oxide research targets CC BY 4.0",
-   "97":"Oak Ridge National Laboratory federal public domain","98":"DOE historical Cf-252 neutron source public domain",
+   "97":"Oak Ridge National Laboratory original Flickr CC BY 2.0","98":"DOE historical Cf-252 neutron source public domain",
   "99":"DOE PD; cropped/colorized derivative","100":"DOE public domain historical nuclear test, not fermium"
 };
 for(let z=91;z<=100;z++){
@@ -926,6 +926,13 @@ assert.match(photoSourceData['94'].attribution,/Daderot|CC0/i,'Plutonium museum 
 assert.match(photoSourceData['95'].attribution,/Bionerd/i,'Americium original photographer');
 assert.match(photoSourceData['96'].title,/Curium-248 oxide targets/i,'Research-target compound not labeled pure curium');
 assert.match(photoSourceData['97'].title,/in dissolved form/i,'Berkelium solution distinguished from metal');
+assert.match(photoSourceData['92'].attribution,/public domain/i,'Uranium source is recorded public domain');
+assert.match(photoSourceData['92'].attribution,/VRT permission ticket 2011070810013625/i,'Uranium Wikimedia VRT evidence retained');
+assert.ok(!photoSourceData['92'].withholdReason,'Uranium photo no longer withheld');
+assert.equal(photoSourceData['97'].licenseUrl,'https://creativecommons.org/licenses/by/2.0/','Oak Ridge primary Flickr source CC BY 2.0');
+assert.match(photoSourceData['97'].attribution,/Materialscientist|cropped/i,'Oak Ridge cropped Commons adaptation credited');
+assert.ok(!photoSourceData['97'].withholdReason,'Berkelium photo no longer withheld');
+for(const z of [93,99]) assert.match(photoSourceData[String(z)].withholdReason,/exclude|exclud/i,'Uncertain Np or Es original explicitly excluded '+z);
 assert.match(photoSourceData['98'].title,/californium-252 neutron-source/i,'Cf source capsules not bare element');
 assert.match(photoSourceData['98'].note,/older californium-249 metal-disc/i,'Earlier Cf nonfree concern fixed with different image');
 assert.match(photoSourceData['99'].note,/unknown|unidentified/i,'Einsteinium derivative provenance not assumed');
@@ -1093,12 +1100,12 @@ assert.match(photoSourceData['29'].licenseUrl,/by-sa\/3\.0/,'Copper photo ShareA
 assert.match(photoSourceData['94'].attribution,/Daderot/,'Historic plutonium creator');
 assert.match(photoSourceData['96'].attribution,/RIKEN/,'Real curium research photo creator');
 assert.match(photoSourceData['98'].attribution,/public.domain/i,'DOE public-domain status recorded');
-assert.ok(masterImageReview.includes('**Latest audit-branch inventory:** **94 candidates'),'Master image count advanced to 94');
-assert.ok(masterImageReview.includes('**24 entries currently have no displayed image.**'),'Master missing image count 24');
+assert.ok(masterImageReview.includes('**Latest audit-branch inventory:** **92 visible image candidates'),'Master visible image count advanced to 92');
+assert.ok(masterImageReview.includes('**26 entries currently have no displayed image.**'),'Master missing image count 26');
 const hiddenCount=Object.values(photoSourceData).filter(m=>!!m.withholdReason || m.title==='No Image Found').length;
-assert.equal(hiddenCount,24,'Ten withheld plus fourteen superheavy placeholders');
+assert.equal(hiddenCount,26,'Twelve explicitly withheld plus fourteen superheavy placeholders');
 const elementPhotoPage=readFileSync('element.html','utf8');
-assert.ok(elementPhotoPage.includes('const researchPhoto=[96,98].includes(n);'),'Actual research imagery separately labeled');
+assert.ok(elementPhotoPage.includes('const researchPhoto=[96,97,98].includes(n);'),'Actual research imagery separately labeled');
 assert.ok(elementPhotoPage.includes('Historical Element Photograph'),'Historic plutonium display accurately labeled');
 assert.ok(elementPhotoPage.includes('original.href=item.originalUrl'),'Open actual original image');
 assert.ok(!elementPhotoPage.includes('original.href=item.localUrl'),'Local asset mislabeled original');
@@ -1160,6 +1167,6 @@ console.log('PASS: 60 local photo binaries tested, 24 of batch 31-60 likely matc
 console.log('PASS: 90 saved JPEGs inspected; 15 alternate publisher originals recovered in 61-90, source links repaired, five illustrations remain withheld; no distribution clearance');
 console.log('PASS: all 118 actual cached JPEGs inspected; 91-118 files match credited image sources, 14 superheavy placeholders identical, and 0 images release-cleared');
 console.log('PASS: 14 unresolved source images recovered (12 credited publisher originals + 2 real specimen JPEG replacements); 90 visible candidates; licensing still requires release checks');
-console.log('PASS: copper, plutonium, curium and californium replacements installed with honest subjects and image-specific rights, 94 photo candidates');
+console.log('PASS: copper, plutonium, curium, californium, uranium and berkelium source credits checked; 92 staged image candidates and 26 withheld/placeholder entries');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
