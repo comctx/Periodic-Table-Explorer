@@ -1,4 +1,4 @@
-name: Restore silicon and silver samples (audit branch only)
+name: Replace three image candidates on audit branch only
 on:
   push:
     branches:
@@ -11,43 +11,46 @@ permissions:
   contents: write
 
 jobs:
-  restore-two-authentic-photos:
+  replace-copper-curium-californium:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
-      - name: Check out existing audit branch
+      - name: Check out audit branch only
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Confirm isolated audit branch
+      - name: Guard against other branches
         run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Replace silicon panels and sterling chain with credited element samples
-        run: python audit/restore_two_element_samples.py
-      - name: Assert correct new photo files and credit changes
+      - name: Replace disputed or unclear photos with sourced originals
+        run: python audit/replace_four_rights_images.py
+      - name: Check caption, credit, photograph and exclusions
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           from PIL import Image
           d=json.loads(Path("element-photo-data.js").read_text().split("=",1)[1].strip().rstrip(";"))
-          for z in ("14","47"):
+          for z in ("29","96","98"):
               x=d[z]
-              assert not x.get("withholdReason") and "Jurii" in x["attribution"]
-              assert x["licenseUrl"]=="https://creativecommons.org/licenses/by/3.0/"
               assert x["commonsPage"].startswith("https://commons.wikimedia.org/wiki/File:")
-              with Image.open(x["localUrl"]) as im:
-                  im.verify()
-          assert "solar-cell" not in d["14"]["title"].lower()
-          assert "chain" not in d["47"]["title"].lower()
-          print("Both corrected sample images and file-specific credits verified")
+              assert x["originalUrl"].startswith("https://upload.wikimedia.org/")
+              assert "withholdReason" not in x
+              assert "resized" in (x["note"]+" "+x["attribution"]).lower() or "reencoded" in (x["note"]+" "+x["attribution"]).lower()
+              with Image.open(x["localUrl"]) as image:
+                  image.verify()
+          assert "Michigan" in d["29"]["title"] and "BY-SA 3.0" in d["29"]["attribution"]
+          assert "oxide" in d["96"]["title"] and "not pure curium" in d["96"]["title"]
+          assert "neutron-source" in d["98"]["title"] and "not a bare" in d["98"]["title"]
+          assert d["94"].get("withholdReason"),"Plutonium held pending exact notice"
+          print("Three replacements validated, plutonium rights safeguard unchanged")
           PY
-      - name: Commit only two replacement JPEGs and their metadata to audit branch
+      - name: Commit only corrected JPEGs and metadata to audit branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images/elements/014-si.jpg images/elements/047-ag.jpg element-photo-data.js
+          git add images/elements/029-cu.jpg images/elements/096-cm.jpg images/elements/098-cf.jpg element-photo-data.js
           git diff --cached --check
-          git commit -m "Restore licensed pure silicon and native silver photos on scientific audit branch"
+          git commit -m "Replace disputed copper and rights-unclear curium/californium with credited research photos"
           git push origin HEAD:scientific-audit-2026-10
