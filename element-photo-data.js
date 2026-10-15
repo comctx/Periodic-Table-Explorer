@@ -752,8 +752,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/samarium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Samarium-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Samarium-2.jpg",
+    "withholdReason": "The cached image for Samarium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "63": {
     "name": "Europium",
@@ -764,8 +765,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg",
     "sourceUrl": "https://images-of-elements.com/europium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Europium.jpg"
+    "note": "Image resized for Periodic Table Explorer. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Europium.jpg",
+    "withholdReason": "The cached image for Europium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "64": {
     "name": "Gadolinium",
@@ -776,8 +778,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/gadolinium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gadolinium-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gadolinium-2.jpg",
+    "withholdReason": "The cached image for Gadolinium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "65": {
     "name": "Terbium",
@@ -788,8 +791,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/terbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Terbium-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Terbium-2.jpg",
+    "withholdReason": "The cached image for Terbium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "66": {
     "name": "Dysprosium",
@@ -800,8 +804,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/dysprosium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dysprosium-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dysprosium-2.jpg",
+    "withholdReason": "The cached image for Dysprosium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "67": {
     "name": "Holmium",
@@ -812,8 +817,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg",
     "sourceUrl": "https://images-of-elements.com/holmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Holmium2.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons lists CC BY 1.0 for this file and separately describes publisher-wide CC BY 3.0 terms; confirm attribution, license choice, and cached JPEG version before release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Holmium2.jpg",
+    "withholdReason": "The cached image for Holmium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "68": {
     "name": "Erbium",
@@ -848,8 +854,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg",
     "sourceUrl": "https://images-of-elements.com/ytterbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Commons lists file-specific CC BY 1.0 and publisher CC BY 3.0; final attribution and license election remain unchecked.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ytterbium-3.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons lists file-specific CC BY 1.0 and publisher CC BY 3.0; final attribution and license election remain unchecked. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ytterbium-3.jpg",
+    "withholdReason": "The cached image for Ytterbium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "71": {
     "name": "Lutetium",
@@ -872,20 +879,22 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg",
     "sourceUrl": "https://images-of-elements.com/hafnium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Original Commons source notes surface oxidation after extended air exposure. Image resized for Periodic Table Explorer; compare local JPEG with the original before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hafnium_(72_Hf).jpg"
+    "note": "Original Commons source notes surface oxidation after extended air exposure. Image resized for Periodic Table Explorer; compare local JPEG with the original before release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hafnium_(72_Hf).jpg",
+    "withholdReason": "The cached image for Hafnium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "73": {
     "name": "Tantalum",
     "symbol": "Ta",
     "localUrl": "images/elements/073-ta.jpg",
-    "title": "Tantalum metal piece, about 1 cm",
+    "title": "Tantalum metal fragments — exact source photograph under review",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/tantalum.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg",
     "sourceUrl": "https://images-of-elements.com/tantalum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tantalum.jpg"
+    "note": "Image resized for Periodic Table Explorer. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tantalum.jpg",
+    "withholdReason": "The cached image for Tantalum does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "74": {
     "name": "Tungsten",
@@ -908,8 +917,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg",
     "sourceUrl": "https://images-of-elements.com/rhenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer. Source page describes an arc-melted rhenium bead. Removed an unverified radiation reading from image caption; no safety inference should be drawn from the photo.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_rhenium_bead,_arc_melted,_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg"
+    "note": "Image resized for Periodic Table Explorer. Source page describes an arc-melted rhenium bead. Removed an unverified radiation reading from image caption; no safety inference should be drawn from the photo. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_rhenium_bead,_arc_melted,_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg",
+    "withholdReason": "The cached image for Rhenium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "76": {
     "name": "Osmium",
@@ -932,8 +942,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/iridium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer. Commons notes publisher-side CC BY 3.0 and file-specific CC BY 1.0; Commons license review in 2016. Confirm actual author and license selection prior to release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iridium-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons notes publisher-side CC BY 3.0 and file-specific CC BY 1.0; Commons license review in 2016. Confirm actual author and license selection prior to release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iridium-2.jpg",
+    "withholdReason": "The cached image for Iridium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "78": {
     "name": "Platinum",
@@ -956,8 +967,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg",
     "sourceUrl": "https://images-of-elements.com/gold.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Commons identifies Hi-Res Images of Chemical Elements as author and CC BY 3.0. Image resized for Periodic Table Explorer; verify cached photo and any specific caption against the source before release.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gold_(79_Au).jpg"
+    "note": "Commons identifies Hi-Res Images of Chemical Elements as author and CC BY 3.0. Image resized for Periodic Table Explorer; verify cached photo and any specific caption against the source before release. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gold_(79_Au).jpg",
+    "withholdReason": "The cached image for Gold does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "80": {
     "name": "Mercury",
@@ -968,8 +980,9 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg",
     "sourceUrl": "https://images-of-elements.com/mercury.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer. Commons requires attribution linking to the publisher's mercury element page (https://images-of-elements.com/mercury.php); check local image identity and final offline credits before distribution.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrargyrum_(80_Hg).jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons requires attribution linking to the publisher's mercury element page (https://images-of-elements.com/mercury.php); check local image identity and final offline credits before distribution. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrargyrum_(80_Hg).jpg",
+    "withholdReason": "The cached image for Mercury does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "81": {
     "name": "Thallium",
@@ -980,20 +993,22 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg",
     "sourceUrl": "https://images-of-elements.com/thallium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thallium_(81_Tl).jpg"
+    "note": "Image resized for Periodic Table Explorer. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thallium_(81_Tl).jpg",
+    "withholdReason": "The cached image for Thallium does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "82": {
     "name": "Lead",
     "symbol": "Pb",
     "localUrl": "images/elements/082-pb.jpg",
-    "title": "Ultrapure lead bead shown from two sides, approximately 1.5 × 2 cm",
+    "title": "Lead metal specimen showing a polished face — exact source photograph under review",
     "attribution": "Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lead.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg",
     "sourceUrl": "https://images-of-elements.com/lead.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer. Commons attributes the work to Chemical Elements, rather than naming an individual photographer; confirm the app's cached JPEG matches the cited source before redistribution.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lead-2.jpg"
+    "note": "Image resized for Periodic Table Explorer. Commons attributes the work to Chemical Elements, rather than naming an individual photographer; confirm the app's cached JPEG matches the cited source before redistribution. The local image was compared with its named external original in GitHub Actions run 38681396126; the returned similarity score requires manual review and the image is not yet cleared for distribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lead-2.jpg",
+    "withholdReason": "The cached image for Lead does not closely match the specific originalUrl named in the catalog (actual-file comparison run 38681396126). It may be an alternate photograph of the element, but exact image provenance and corresponding reuse credit are still unverified. Withheld from the element-photo panel pending a verified source mapping."
   },
   "83": {
     "name": "Bismuth",
