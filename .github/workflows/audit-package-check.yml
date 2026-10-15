@@ -6,6 +6,9 @@ on:
     paths:
       - audit/package_web_assets.py
       - audit/verify_distribution_package.py
+      - audit/check_offline_manifest.py
+      - offline-photos.json
+      - sw.js
       - audit/check-data.mjs
       - codemagic.yaml
       - element-photo-data.js
@@ -28,6 +31,10 @@ jobs:
         run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
       - name: Scientific and credits regression checks
         run: node audit/check-data.mjs
+      - name: Validate 92-photo offline allowlist and service worker JavaScript
+        run: |
+          python3 audit/check_offline_manifest.py
+          node --check sw.js
       - name: Build isolated iPhone Web resource staging directory
         run: python3 audit/package_web_assets.py "$RUNNER_TEMP/pte-web/Web"
       - name: Inspect exact staged images and bundled About page
@@ -70,6 +77,14 @@ jobs:
               assert city_license in body, f'Bay City CC BY-SA 3.0 link missing in {html_file}'
           assert (root / 'images/bay-city-city-hall.jpg').is_file(), 'Hidden Bay City local photograph missing'
           assert 'id="otherImagesTitle"' in about, 'Separate Bay City image credit missing'
+          offline=json.loads((root/'offline-photos.json').read_text())
+          assert offline['format']=='pte-offline-photos-v1'
+          assert len(offline['photos'])==92 and len(set(offline['photos']))==92
+          assert {root/n for n in offline['photos']}==expected
+          sw=(root/'sw.js').read_text()
+          assert 'pte-core-v3' in sw and 'precacheApp()' in sw
+          assert 'offline-photos.json' in sw
+
 
           xcode=Path('ios/PeriodicTableExplorer.xcodeproj/project.pbxproj').read_text()
           assert 'audit/package_web_assets.py' in xcode and 'cp -R' not in xcode
