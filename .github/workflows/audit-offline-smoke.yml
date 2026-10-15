@@ -1,0 +1,69 @@
+name: Audit-only genuine HTTPS offline browser test
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-offline-smoke.yml
+      - audit/offline-browser-smoke.mjs
+      - audit/https_test_server.py
+      - audit/check_offline_manifest.py
+      - audit/package_web_assets.py
+      - offline-photos.json
+      - sw.js
+      - element-photo-data.js
+      - index.html
+      - element.html
+      - about.html
+      - quiz.html
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-https-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce audit-only branch
+        run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
+      - name: Check offline manifest and script syntax
+        run: |
+          python3 audit/check_offline_manifest.py
+          node --check sw.js
+          node --check audit/offline-browser-smoke.mjs
+      - name: Stage only 92 locally displayable images, never the 26 excluded
+        run: python3 audit/package_web_assets.py "$RUNNER_TEMP/pte-offline/Web"
+      - name: Install actual Chromium and browser tooling
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Start TLS app and truly disconnect network for all element pages
+        run: |
+          set -eu
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout "$RUNNER_TEMP/pte-test.key" \
+            -out "$RUNNER_TEMP/pte-test.crt" \
+            -subj "/CN=localhost" \
+            -addext "subjectAltName=DNS:localhost,IP:127.0.0.1" >/dev/null 2>&1
+          (
+            cd "$RUNNER_TEMP/pte-offline/Web"
+            python3 "$GITHUB_WORKSPACE/audit/https_test_server.py" \
+              --cert "$RUNNER_TEMP/pte-test.crt" --key "$RUNNER_TEMP/pte-test.key" \
+              --port 9443 > "$RUNNER_TEMP/pte-offline-https-server.log" 2>&1
+          ) &
+          HTTPS_SERVER_PID=$!
+          trap 'kill "$HTTPS_SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl --insecure --silent --fail https://127.0.0.1:9443/sw.js >/dev/null; then break; fi
+            sleep 1
+          done
+          curl --insecure --fail https://127.0.0.1:9443/sw.js >/dev/null
+          node audit/offline-browser-smoke.mjs
+      - name: Define scope of offline QA
+        if: always()
+        run: |
+          echo 'Test uses a local HTTPS PWA with actual Chromium service worker, then deliberately disables the network.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'A signed IPA, native WKWebView/Safari, copyright clearance and Microsoft Store release have NOT been tested here.' >> "$GITHUB_STEP_SUMMARY"
