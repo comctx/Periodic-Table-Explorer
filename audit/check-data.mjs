@@ -1034,6 +1034,32 @@ assert.match(photoSourceData['22'].withholdReason,/van Arkel–de Boer/, 'Titani
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
 assert.ok(!photoSourceData['96'].licenseUrl,'Curium must not be assigned an invented image license');
 assert.ok(!photoSourceData['94'].licenseUrl,'LANL attribution requirements not yet resolved');
+const final28ImageReport=readFileSync('audit/LOCAL_IMAGE_MATCH_91_118.md','utf8');
+assert.ok(final28ImageReport.includes('38682381029'),'Final 28 actual-file GitHub Actions run documented');
+assert.ok(final28ImageReport.includes('**28 of 28 cached files'), 'Every actual last-batch JPEG compared to publisher original');
+assert.ok(final28ImageReport.includes('**0 of 28 images cleared'), 'Photo identity never counts as legal reuse permission');
+assert.ok(final28ImageReport.includes('8b42b435ef79c7becb6a5dea8f49492472fc9564'), '14 identical superheavy placeholders recorded by real blob identifier');
+assert.ok(masterImageReview.includes('**118 of 118 stored JPEGs inspected or machine-compared**'),'Entire local image-file set now inspected');
+assert.ok(masterImageReview.includes('**14 unresolved picture-source mismatches**'),'Unresolved originals never silently cleared');
+assert.ok(masterImageReview.includes('**0/118 cached images are finally approved'),'Still no certified redistribution clearance');
+const rightsWithheld91to118=[94,96,98,100,101,102,103,104];
+for(const z of rightsWithheld91to118){
+ const item=photoSourceData[String(z)];
+ assert.ok(item?.withholdReason?.length>30,'Keep special image excluded '+z);
+}
+for(let z=91;z<=118;z++){
+ const m=photoSourceData[String(z)];
+ const row=final28ImageReport.split(String.fromCharCode(10)).find(line=>line.startsWith('| '+z+' '+m.symbol+' — '));
+ assert.ok(row&&row.includes('Image original'),'Actual stored local JPEG documented with source '+z);
+}
+const superheavyPlaceholders=Array.from({length:14},(_,i)=>i+105);
+for(const z of superheavyPlaceholders){
+ const m=photoSourceData[String(z)];
+ assert.equal(m.title,'No Image Found','Never present a placeholder as a photographed sample '+z);
+ assert.equal(m.originalUrl,'https://images-of-elements.com/s/transactinoid.png','Shared publisher question-mark placeholder '+z);
+}
+const hiddenCount=Object.values(photoSourceData).filter(m=>!!m.withholdReason || m.title==='No Image Found').length;
+assert.equal(hiddenCount,42,'28 withheld plus 14 placeholders correctly absent from photo panel');
 const elementPhotoPage=readFileSync('element.html','utf8');
 assert.ok(elementPhotoPage.includes('original.href=item.originalUrl'),'Open actual original image');
 assert.ok(!elementPhotoPage.includes('original.href=item.localUrl'),'Local asset mislabeled original');
@@ -1093,5 +1119,6 @@ console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/
 console.log('PASS: all 118 image-source entries classified; 101-104 illustrative/CERN excluded, 105-118 generic placeholders; no cached photo cleared');
 console.log('PASS: 60 local photo binaries tested, 24 of batch 31-60 likely matches, six marked withheld, silver chain correctly identified; no final photo clearance');
 console.log('PASS: 90 saved JPEGs inspected; 15 alternate publisher originals recovered in 61-90, source links repaired, five illustrations remain withheld; no distribution clearance');
+console.log('PASS: all 118 actual cached JPEGs inspected; 91-118 files match credited image sources, 14 superheavy placeholders identical, and 0 images release-cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
