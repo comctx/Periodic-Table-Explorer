@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  compare-source-photos:
+  find-publisher-source-images:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -19,12 +19,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Compare local photos with credited originals, 61-90
-        run: python audit/compare_image_identity.py 61 90
-      - name: Publish machine review evidence (not license clearance)
+      - name: Search element publisher photo galleries for matching images 61-90
+        run: python audit/find_publisher_image_matches.py 61 90
+      - name: Publish candidate findings (not rights clearance)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: image-comparison-61-90
-          path: audit/machine-image-matches-61-90.json
+          name: gallery-source-candidates-61-90
+          path: audit/publisher-gallery-matches-61-90.json
           if-no-files-found: warn
