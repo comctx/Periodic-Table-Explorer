@@ -1,0 +1,29 @@
+name: Check cadmium and indium Commons candidates (audit only)
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - audit/compare_cadmium_indium_commons.py
+      - .github/workflows/check-cadmium-indium-originals.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare-commons-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce audit branch only
+        run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
+      - name: Install photograph comparison library
+        run: python3 -m pip install --quiet Pillow
+      - name: Compare stored #48 and #49 JPEGs with named Commons originals
+        run: python3 audit/compare_cadmium_indium_commons.py
+      - name: Keep copyright-clearance gate open
+        run: |
+          echo 'These are read-only machine similarity comparisons. No photos were modified, cleared for commercial use, or shipped.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Read the logged per-element comparison before changing photo metadata.' >> "$GITHUB_STEP_SUMMARY"
