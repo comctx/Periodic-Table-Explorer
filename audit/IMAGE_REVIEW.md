@@ -6,6 +6,15 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Phase 8 / Image-source and reuse-rights follow-up, elements 21–40 — 2026-10-15
+
+[Full 20-image credit and accuracy report](IMAGE_RIGHTS_21_40_FOLLOWUP.md). Inspected the current audit-branch metadata for all elements #21–40 against recorded source-image identity checks and available file-specific Commons/publisher rights information. **Fourteen of the entries** gained updated subject, creator, license and modification-disclosure wording (the iron-rich meteorite additionally gets a dedicated accurate element-detail caption). Sources confirm named photographers and exact Commons licenses for scandium, manganese, nickel, yttrium and several other samples. **Seven publisher-original photographs (#22, #26, #27, #30, #31, #33, #34) still lack independently named individual creators**, and their general publisher rights declarations must not be mistaken for item-level release sign-off.
+
+- **Iron #26 shows meteorite fragments reported by the publisher as ~92% Fe, not pure iron**; element-page heading and description now explicitly say so.
+- **Titanium #22** remains accurately labeled as titanium sponge; **selenium #34** as black amorphous selenium; **bromine #35** as a sealed liquid sample; **krypton #36** as an electrically excited tube; **rubidium #37** as a sealed sample with superoxide; **yttrium #39** as at least 99% pure.
+- **ShareAlike** versions preserved for #21, #25, #28, #29 and #39, with specific author and original links where available. The local photo binaries were not altered in this batch.
+- **Packaging unchanged: 92 candidate displayed images and 26 withheld/placeholder entries**, with the iPhone staging filter and associated audits still in place. Release-specific image grants and signed-IPA/offline browser tests remain pending. Published `main` unchanged.
+
 ## Phase 7 / Carbon authenticity and first-20 photo rights follow-up — 2026-10-15
 
 [Read full image-rights follow-up for 1–20](IMAGE_RIGHTS_1_20_FOLLOWUP.md). The ambiguous carbon source `Pure_Carbon.png` has been physically replaced on the audit branch with a **real museum graphite (carbon allotrope) photograph** from Chardonnet, France by **Marie-Lan Taÿ Pamart**, explicitly CC BY 4.0. The actual JPEG and credits were updated in successful [GitHub Actions run 38687240867](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38687240867). Other credits and scientific-context descriptions were refined for **oxygen (#8), fluorine (#9), sodium (#11), magnesium (#12), sulfur (#16), and chlorine (#17)** after checking the specific original Commons and/or Flickr source file pages.
