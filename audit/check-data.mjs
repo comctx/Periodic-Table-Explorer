@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:30},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:40},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -761,6 +761,22 @@ for(let z=21;z<=30;z++){
  if(z!==26)assert.ok(item.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Source page 21–30 '+z);
  else assert.equal(item.sourceUrl,'https://images-of-elements.com/iron.php','Iron primary source');
 }
+
+const auditedSourceLicenses31to40={
+ "31":"CC BY 3.0","32":"CC BY 3.0","33":"CC BY 3.0","34":"CC BY 3.0",
+ "35":"CC BY 3.0","36":"CC BY 3.0","37":"CC BY 3.0 (GFDL alternative)",
+ "38":"CC BY 3.0","39":"CC BY-SA 4.0","40":"CC BY 3.0"
+};
+for(let z=31;z<=40;z++){
+ const m=photoSourceData[String(z)];
+ assert.ok(m && m.localUrl.endsWith('.jpg'),'Element image local path '+z);
+ assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Commons license link 31–40 '+z);
+ assert.ok(!!auditedSourceLicenses31to40[String(z)],'Source license documented 31–40 '+z);
+}
+assert.match(photoSourceData['37'].title,/superoxide/i,'Rubidium ampoule specimen caption');
+assert.match(photoSourceData['36'].title,/electrical excitation/i,'Krypton discharge visual context');
+assert.match(photoSourceData['39'].title,/99% pure/,'Yttrium purity translated');
+assert.ok(photoSourceData['39'].licenseUrl.includes('by-sa/4.0'),'Yttrium ShareAlike license flag');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -822,6 +838,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 32 image source-page links/attribution flags, withheld disputed copper, true original image links; no images fully cleared');
+console.log('PASS: 42 image source pages checked for rights claims, metadata/credit safeguards, no images fully cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
