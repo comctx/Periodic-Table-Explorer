@@ -1,4 +1,4 @@
-name: Recover three science images on audit branch
+name: Restore CC0 plutonium museum photograph (audit branch)
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  replace-copper-curium-californium:
+  restore-plutonium-museum-photo:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -19,38 +19,34 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Guard against other branches
+      - name: Verify isolated working branch
         run: test "$GITHUB_REF_NAME" = "scientific-audit-2026-10"
       - name: Install Pillow
         run: python -m pip install --quiet pillow
-      - name: Replace disputed or unclear photos with sourced originals
-        run: python audit/replace_four_rights_images.py
-      - name: Check caption, credit, photograph and exclusions
+      - name: Replace special-notice ring photo with CC0 museum specimen
+        run: python audit/replace_plutonium_museum.py
+      - name: Check photo, metadata, image source, license and surrounding safeguards
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           from PIL import Image
           d=json.loads(Path("element-photo-data.js").read_text().split("=",1)[1].strip().rstrip(";"))
-          for z in ("29","96","98"):
-              x=d[z]
-              assert x["commonsPage"].startswith("https://commons.wikimedia.org/wiki/File:")
-              assert x["originalUrl"].startswith("https://upload.wikimedia.org/")
-              assert "withholdReason" not in x
-              assert "resized" in (x["note"]+" "+x["attribution"]).lower() or "reencoded" in (x["note"]+" "+x["attribution"]).lower()
-              with Image.open(x["localUrl"]) as image:
-                  image.verify()
-          assert "Michigan" in d["29"]["title"] and "BY-SA 3.0" in d["29"]["attribution"]
-          assert "oxide" in d["96"]["title"] and "not pure curium" in d["96"]["title"]
-          assert "neutron-source" in d["98"]["title"] and "not a bare" in d["98"]["title"]
-          assert d["94"].get("withholdReason"),"Plutonium held pending exact notice"
-          print("Three replacements validated, plutonium rights safeguard unchanged")
+          pu=d["94"]
+          assert pu["licenseUrl"]=="https://creativecommons.org/publicdomain/zero/1.0/"
+          assert "Daderot" in pu["attribution"] and "Smithsonian" in pu["title"]
+          assert "withholdReason" not in pu
+          assert "fission" in pu["originalUrl"].lower()
+          with Image.open(pu["localUrl"]) as im: im.verify()
+          assert "Michigan" in d["29"]["title"]
+          assert "curium" in d["96"]["title"].lower() and "neutron-source" in d["98"]["title"]
+          print("Plutonium museum image and other three replacements checked")
           PY
-      - name: Commit only corrected JPEGs and metadata to audit branch
+      - name: Commit only Pu photograph and metadata to audit branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images/elements/029-cu.jpg images/elements/096-cm.jpg images/elements/098-cf.jpg element-photo-data.js
+          git add images/elements/094-pu.jpg element-photo-data.js
           git diff --cached --check
-          git commit -m "Replace disputed copper and rights-unclear curium/californium with credited research photos"
+          git commit -m "Use CC0 plutonium-239 museum exhibit photo in place of LANL ring"
           git push origin HEAD:scientific-audit-2026-10
