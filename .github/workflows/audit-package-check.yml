@@ -59,6 +59,17 @@ jobs:
               assert (root / name).is_file(), f'Missing app resource: {name}'
           about=(root/'about.html').read_text()
           assert 'Every effort has been taken' in about and 'creditList' in about
+          # Separate non-element image: hidden Bay City City Hall Easter egg.
+          city_source = 'https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG'
+          city_license = 'https://creativecommons.org/licenses/by-sa/3.0/'
+          for html_file in ('index.html', 'element.html', 'about.html'):
+              body=(root / html_file).read_text()
+              assert 'Andrew Jameson' in body, f'Bay City photographer uncredited in {html_file}'
+              assert city_source in body, f'Bay City original not linked in {html_file}'
+              assert city_license in body, f'Bay City CC BY-SA 3.0 link missing in {html_file}'
+          assert (root / 'images/bay-city-city-hall.jpg').is_file(), 'Hidden Bay City local photograph missing'
+          assert 'id="otherImagesTitle"' in about, 'Separate Bay City image credit missing'
+
           xcode=Path('ios/PeriodicTableExplorer.xcodeproj/project.pbxproj').read_text()
           assert 'audit/package_web_assets.py' in xcode and 'cp -R' not in xcode
           magic=Path('codemagic.yaml').read_text()
