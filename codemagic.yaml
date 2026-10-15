@@ -257,6 +257,7 @@ workflows:
               assert root + 'Web/support.html' in names
               assert root + 'Web/manifest.webmanifest' in names
               assert root + 'Web/sw.js' in names
+              assert root + 'Web/offline-photos.json' in names
               element_images = [
                   n for n in names
                   if n.startswith(root + 'Web/images/elements/')
@@ -267,6 +268,11 @@ workflows:
               blocked = {61, 84, 85, 86, 87, 93, 99} | set(range(100, 119))
               expected = {root + 'Web/' + catalog[str(z)]['localUrl'] for z in range(1, 119) if z not in blocked}
               assert set(element_images) == expected, 'iPhone package must exclude every blocked/placeholder photo'
+              offline = json.loads(archive.read(root + 'Web/offline-photos.json'))
+              assert offline['format'] == 'pte-offline-photos-v1'
+              assert len(offline['photos']) == 92 and len(set(offline['photos'])) == 92
+              assert {root + 'Web/' + item for item in offline['photos']} == expected, 'IPA offline cache manifest must match actual 92 element images'
+              assert 'pte-core-v3' in archive.read(root + 'Web/sw.js').decode('utf-8')
               assert root + 'Web/images/bay-city-city-hall.jpg' in names
 
               print('Verified Periodic Table Explorer IPA')
