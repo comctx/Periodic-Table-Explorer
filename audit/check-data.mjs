@@ -995,7 +995,7 @@ const thirdBatchReport=readFileSync('audit/LOCAL_IMAGE_MATCH_61_90.md','utf8');
 assert.ok(thirdBatchReport.includes('38681396126'), 'Third batch recorded reproducible GitHub action');
 assert.ok(thirdBatchReport.includes('**14/30 likely same picture**'), 'Third batch same-photo candidate count');
 assert.ok(thirdBatchReport.includes('**15/30 external originals differed'), 'Third batch source mapping investigations');
-assert.ok(thirdBatchReport.includes('**0/30 release-cleared images**'), 'Automated matching never licenses photos');
+assert.ok(thirdBatchReport.includes('**0/30 release-cleared images.'), 'Automated matching never licenses photos');
 assert.ok(thirdBatchReport.includes('promethium source file returns HTTP 404'), 'Promethium source failure documented');
 for(const z of [62,63,64,65,66,67,70,72,73,75,77,79,80,81,82]){
  const row=thirdBatchReport.split(String.fromCharCode(10)).find(line=>line.startsWith('| '+z+' |'));
