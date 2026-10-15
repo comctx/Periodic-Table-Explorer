@@ -961,111 +961,121 @@ window.ELEMENT_PHOTOS = {
     "name": "Thallium",
     "symbol": "Tl",
     "localUrl": "images/elements/081-tl.jpg",
-    "title": "8 grams pure thallium under argon. Original size in cm: 0.7 x 1.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/thallium.php",
+    "title": "About 8 g of thallium metal preserved under argon, approximately 0.7 × 1.5 cm",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/thallium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg",
     "sourceUrl": "https://images-of-elements.com/thallium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thallium_(81_Tl).jpg"
   },
   "82": {
     "name": "Lead",
     "symbol": "Pb",
     "localUrl": "images/elements/082-pb.jpg",
-    "title": "Ultrapure Lead Bead from two sides. Original size in cm: 1.5 x 2",
+    "title": "Ultrapure lead bead shown from two sides, approximately 1.5 × 2 cm",
     "attribution": "Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lead.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg",
     "sourceUrl": "https://images-of-elements.com/lead.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Commons attributes the work to Chemical Elements, rather than naming an individual photographer; confirm the app's cached JPEG matches the cited source before redistribution.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lead-2.jpg"
   },
   "83": {
     "name": "Bismuth",
     "symbol": "Bi",
     "localUrl": "images/elements/083-bi.jpg",
-    "title": "Bismuth Crystal",
+    "title": "Crystal of elemental bismuth",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/bismuth.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bismuth-2.jpg",
     "sourceUrl": "https://images-of-elements.com/bismuth.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Bismuth-2.jpg"
   },
   "84": {
     "name": "Polonium",
     "symbol": "Po",
     "localUrl": "images/elements/084-po.jpg",
-    "title": "This is only an illustration, not polonium itself. A silvery, radioactive metal, producing so much heat that it gets liquid and ionizes the surrounding air",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/polonium.php",
+    "title": "Artist's illustration of polonium — not an observed photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/polonium.php",
     "originalUrl": "https://images-of-elements.com/polonium.jpg",
     "sourceUrl": "https://images-of-elements.com/polonium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "85": {
     "name": "Astatine",
     "symbol": "At",
     "localUrl": "images/elements/085-at.jpg",
-    "title": "This is only an illustration, not astatine itself. Crystals similar to iodine, but darker in color than these, which due to the extreme radioactivity glow blue and evaporate to dark purple gas",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/astatine.php",
+    "title": "Artist's illustration of astatine — its appearance is not directly documented by this picture",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/astatine.php",
     "originalUrl": "https://images-of-elements.com/astatine.jpg",
     "sourceUrl": "https://images-of-elements.com/astatine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "86": {
     "name": "Radon",
     "symbol": "Rn",
     "localUrl": "images/elements/086-rn.jpg",
-    "title": "This is only an illustration, not radon itself. Radon is said to glow red in discharge tubes, although it practically is never used for this, due to its strong radioactivity.",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/radon.php",
+    "title": "Artist's illustration of radon gas in a hypothetical discharge tube — not an actual photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/radon.php",
     "originalUrl": "https://images-of-elements.com/radon.jpg",
     "sourceUrl": "https://images-of-elements.com/radon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "87": {
     "name": "Francium",
     "symbol": "Fr",
     "localUrl": "images/elements/087-fr.jpg",
-    "title": "This is only an illustration, not francium itself.",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/francium.jpg",
+    "title": "Artist's illustration of francium — not an actual photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/francium.php",
     "originalUrl": "https://images-of-elements.com/francium.jpg",
-    "sourceUrl": "https://images-of-elements.com/francium.jpg",
+    "sourceUrl": "https://images-of-elements.com/francium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "88": {
     "name": "Radium",
     "symbol": "Ra",
     "localUrl": "images/elements/088-ra.jpg",
-    "title": "Radium electroplated on a very small sample of copper foil and covered with polyurethane to prevent reaction with the air",
-    "attribution": "grenadier, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    "title": "Radium-226 electroplated on a tiny copper foil sample, coated with polyurethane; not a bulk radium specimen",
+    "attribution": "grenadier (original photographer); Materialscientist (unsharp-mask edit), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Radium226.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons records an unsharp-mask edit by Materialscientist to the original photo. Image resized for Periodic Table Explorer; compare the local JPEG to the exact Commons revision before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Radium226.jpg"
   },
   "89": {
     "name": "Actinium",
     "symbol": "Ac",
     "localUrl": "images/elements/089-ac.jpg",
-    "title": "Actinium-225 medical radioisotope held in a v-vial at ORNL. The blue glow comes from the ionization of surrounding air by alpha particles",
+    "title": "Sealed vial containing actinium-225 medical radioisotope at Oak Ridge National Laboratory; blue glow described by source as air ionization",
     "attribution": "Oak Ridge National Laboratory, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons, source: https://www.flickr.com/photos/oakridgelab/31481701837/",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Actinium_sample_%2831481701837%29.png",
     "sourceUrl": "https://www.flickr.com/photos/oakridgelab/31481701837/",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer from an Oak Ridge National Laboratory photo published under CC BY 2.0. The photo depicts a vial, not a freestanding piece of actinium metal. Confirm exact local image version and attribution before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Actinium_sample_(31481701837).png"
   },
   "90": {
     "name": "Thorium",
     "symbol": "Th",
     "localUrl": "images/elements/090-th.jpg",
-    "title": "Thorium Metal in Ampoule, corroded",
+    "title": "Corroded thorium metal specimen inside an ampoule",
     "attribution": "W. Oelen, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Thorium-1.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Original Commons photo by W. Oelen under CC BY-SA 3.0; adapted-image/share-alike obligations and local photo matching remain to be reviewed.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thorium-1.jpg"
   },
   "91": {
     "name": "Protactinium",
