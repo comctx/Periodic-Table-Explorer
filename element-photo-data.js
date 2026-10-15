@@ -1089,14 +1089,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Plutonium",
     "symbol": "Pu",
     "localUrl": "images/elements/094-pu.jpg",
-    "title": "Electrorefined plutonium metal ring, Los Alamos National Laboratory",
-    "attribution": "Los Alamos National Laboratory; permission conditional on reproducing the laboratory's full notice and authorship statement. See Commons original file page.",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plutonium_ring.jpg",
-    "sourceUrl": "",
-    "licenseUrl": "",
-    "note": "Source Commons page identifies a 1995 Los Alamos publication and subsequent noise-reduction edits. The full LANL notice and creator credit must be carried through in permitted redistributions, subject to confirmation. Do not treat this as ordinary unrestricted U.S. government public domain.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg",
-    "withholdReason": "Los Alamos National Laboratory requires its full original reuse notice and authorship statement on copies. Those requirements have not been met and the saved photo has not been matched to the source; image withheld pending clearance."
+    "title": "Historic 1941 plutonium-239 sample displayed at the Smithsonian National Museum of American History — tiny specimen in an exhibit case",
+    "attribution": "Photograph by Daderot (2013), Smithsonian National Museum of American History exhibit of an early 1941 plutonium-239 specimen. Image released by the photographer under CC0 1.0 Universal Public Domain Dedication; source https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG. The app resized/reencoded this photo. This is a museum exhibit, not the former Los Alamos metal-ring photograph.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Plutonium-239%2C_1941%2C_first_sample_in_which_nuclear_fission_was_detected%2C_University_of_California%2C_Berkeley%2C_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "note": "Replaces a Los Alamos plutonium ring photo with conditional attribution/reproduction notice. The new photo is independently made by Daderot (2013) of a Smithsonian historic plutonium-239 specimen and marked CC0 on its exact Commons source page. Its subject is a museum display and tiny original specimen, not a macroscopic plutonium ring. Final package review and app testing still pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG"
   },
   "95": {
     "name": "Americium",
