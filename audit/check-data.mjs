@@ -1225,6 +1225,30 @@ for(const [name,page] of [['index.html',indexSource],['element.html',elementPhot
 }
 assert.ok(aboutPage.includes('id="otherImagesTitle"'),'Non-element third-party image credits kept separate');
 assert.ok(aboutPage.includes('118 element images listed above'),'Clarify non-element photo not counted as an element image');
+assert.ok(aboutPage.includes('38773309259'),'Bay City credits reflect actual completed photo identity test, not stale unresolved comparison');
+assert.ok(!aboutPage.includes('The exact cached binary and final distribution-package compliance still require verification.'),'Do not claim the completed photo identity check is still entirely undone');
+assert.ok(aboutPage.includes('not proof of byte-identical image files or legal reuse clearance'),'Photo credit must preserve identity-vs-rights distinction');
+const publisherPhotoCases=Array.from({length:118},(_,i)=>i+1).filter(z=>{
+ const m=photoSourceData[String(z)];
+ const allowed = !(m.withholdReason||m.title==='No Image Found'||[84,85,86,87].includes(z)||z>=100
+   || (z===61||z===93||z===99));
+ return allowed&&String(m.originalUrl||'').startsWith('https://images-of-elements.com/');
+});
+assert.equal(publisherPhotoCases.length,30,'Publisher-hosted-original case inventory changed; update evidence before changing attribution');
+for(const z of publisherPhotoCases){
+ const item=photoSourceData[String(z)];
+ const exact='https://images-of-elements.com/'+item.name.toLowerCase()+'.php';
+ assert.equal(item.sourceUrl,exact,'Publisher CC BY 3.0 request for element-page attribution '+z);
+}
+const publisherRightsReport=readFileSync('audit/PUBLISHER_30_RIGHTS_CLARIFICATION.md','utf8');
+for(const z of publisherPhotoCases){
+ const item=photoSourceData[String(z)];
+ assert.ok(publisherRightsReport.includes('| '+z+' | '+item.name+' |'),'Publisher open-case record contains '+z);
+ assert.ok(publisherRightsReport.includes(item.originalUrl),'Exact original publisher URL in open-case record '+z);
+}
+assert.ok(publisherRightsReport.includes('NOT SENT'),'Publisher permission query not falsely recorded as sent');
+assert.ok(publisherRightsReport.includes('**29**'),'Actual missing named-photographer cases are not mistaken for resolved rights');
+
 
 assert.ok(aboutPage.includes('<script src="./element-photo-data.js"></script>'),'Credits reuse existing metadata');
 assert.ok(aboutPage.includes('if(item.withholdReason)info(body,'), 'Credits explain withheld images');
