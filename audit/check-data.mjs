@@ -840,6 +840,35 @@ assert.match(photoSourceData['43'].attribution,/Double sharp/,'Technetium identi
 assert.match(photoSourceData['43'].attribution,/GFDL/,'Technetium retains requested source attribution');
 assert.match(photoSourceData['43'].attribution,/CC BY-SA 4\.0/,'Technetium retains actual source photo license');
 assert.match(photoSourceData['49'].title,/solid at ordinary room temperature/,'Molten indium not portrayed as its normal physical state');
+// This is a follow-up, NOT a repeat of the earlier 41–60 source review.
+// Actual Commons JPEG candidates compared in audit-only run 38775178783.
+assert.equal(photoSourceData['48'].originalUrl,'https://images-of-elements.com/cadmium-4.jpg',
+  'Cadmium retains the visually matched exact publisher original');
+assert.ok(!photoSourceData['48'].commonsPage,
+  'Different Pure cadmium.jpg must not be miscredited as the existing cadmium-4.jpg photo');
+assert.match(photoSourceData['48'].attribution,/photographer not independently identified/i,
+  'Do not fabricate a cadmium-4.jpg photo creator');
+assert.match(photoSourceData['48'].note,/dHash 24, delta 64\.4/i,
+  'Explicit evidence that alternate cadmium Commons image failed identity match');
+assert.match(photoSourceData['48'].title,/purity is not independently established/i,
+  'Do not claim unmeasured chemical purity of cadmium image');
+assert.equal(photoSourceData['49'].commonsPage,'https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg',
+  'Indium independently verified matching Commons photo');
+assert.match(photoSourceData['49'].attribution,/Jurii/,
+  'Indium Commons original identifies Jurii as photographer');
+assert.match(photoSourceData['49'].attribution,/CC BY 3\.0/,
+  'Indium independently verified file-specific CC BY 3.0');
+assert.match(photoSourceData['49'].note,/dHash 0; grayscale difference 0\.1/,
+  'Indium real bytes nearly visually identical to Commons original');
+assert.equal(photoSourceData['49'].originalUrl,'https://images-of-elements.com/indium-2.jpg',
+  'Indium publisher-original matching evidence preserved');
+for(const z of ['48','49'])assert.ok(!photoSourceData[z].withholdReason,
+  'Existing image staging unaffected for '+z);
+const rights4849=readFileSync('audit/IMAGE_RIGHTS_48_49_FOLLOWUP.md','utf8');
+assert.match(rights4849,/38775178783/,'Independent original image test linked');
+assert.match(rights4849,/NOT an established match/,'Cadmium unmatched Commons image flagged');
+assert.match(rights4849,/release-rights candidates/,'Neither photo approved for release');
+
 for(const z of ['47','48','49','50'])assert.ok(photoSourceData[z].sourceUrl.startsWith('https://'),'Secure photo publisher URL '+z);
 const auditedSourceLicenses51to60={
  "51":"CC BY 3.0","52":"CC BY 3.0","53":"author public domain dedication",
