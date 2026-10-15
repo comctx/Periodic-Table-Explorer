@@ -6,6 +6,22 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Phase 3 / Local image inspection (first 30) — 2026-10-14
+
+**Actual JPEG-file review has begun.** The [detailed visual-match report](LOCAL_IMAGE_MATCH_1_30.md) records the **Git blob SHA and visual original comparison** for every saved JPEG from #1–30, based on retrieving/rendering each real repository image as a binary/base64 file and opening the corresponding named original. This is more than a metadata/source-page check, but not a pixel-hash proof or legal distribution approval.
+
+- **30/118 saved JPEGs actually inspected.**
+- **22/30 visually match the particular source image** (including #29 copper, whose claimed native-copper identity remains disputed/withheld).
+- **8/30 do not establish an exact match to their cited original:** #3 lithium, #4 beryllium, #5 boron, #14 silicon, #15 phosphorus, #22 titanium, #27 cobalt, and #30 zinc. All eight are now **withheld in `element.html`** using explicit `withholdReason` metadata. Some are other views/forms of the element rather than a wholly wrong substance, but current source URLs and captions do not justify a match.
+- **21/30 visually matching files not explicitly withheld for subject/source reasons**, **9/30 withheld** including copper #29. The initial report was careful not to conflate visual identity with right to redistribute.
+- **0/118 photos finally cleared for Store redistribution.** For every image, confirm complete image-specific authorship/licensing and crop/re-encoding, downstream CC attribution/ShareAlike conditions, publisher page-link requests, and the final app package. Existing hidden JPEGs are still in the repo.
+
+**Key scientific accuracy corrections from the actual files:** #5 is **amorphous brown boron powder** rather than the credited crystalline boron; #14 shows **solar panels**, not raw silicon; #15 shows **yellowish white phosphorus**, not purple phosphorus; #22 shows **titanium sponge**, not van Arkel–de Boer crystal. Publisher descriptions independently corroborate these differences. #3, #4, #27 and #30 may reflect other views or alternate shots from the same publishers, but their exact original URLs have not been established.
+
+**Important recheck:** The hydrogen #1 photo **does match** its actual catalogued source, `Hydrogenglow.jpg`. A preliminary comparison with an unrelated image titled `Hydrogen_discharge_tube.jpg` was an error and was corrected after checking the precise original. The #1 photo is *not* withheld for that reason.
+
+**Next image-file batches:** #31–60, #61–90 and #91–118. Do not merge this audit branch or treat the “118/118 source pages reviewed” metric as “118 release-ready photos.”
+
 ## Initial catalog inventory (historical, before source review)
 
 - **LICENSE CLAIM — verify: 84**
