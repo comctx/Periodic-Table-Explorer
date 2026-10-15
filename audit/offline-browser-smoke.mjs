@@ -24,7 +24,6 @@ try {
   await visit('index.html');
   assert.equal(await page.locator('#ptable button.element').count(),118,'Online install page must load');
   await page.waitForFunction(async() => {
-    if(!navigator.serviceWorker?.controller) return false;
     const records=await caches.keys();
     if(!records.includes('pte-core-v3')) return false;
     const cache=await caches.open('pte-core-v3');
@@ -33,6 +32,12 @@ try {
            urls.some(x=>x.endsWith('/images/bay-city-city-hall.jpg')) &&
            urls.some(x=>x.endsWith('/offline-photos.json'));
   },null,{timeout:150000,polling:500});
+  // Installation and navigation control are distinct lifecycle steps.
+  // Once the full install cache exists, refresh while ONLINE so the active
+  // service worker will control subsequent navigations before the network drops.
+  await visit('index.html');
+  await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller),
+    null, {timeout:60000});
   const cacheReport=await page.evaluate(async()=>{
     const cache=await caches.open('pte-core-v3');
     const keys=await cache.keys();
