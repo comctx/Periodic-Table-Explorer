@@ -669,10 +669,33 @@ const sourceQualifiedUses71to90={"71":"Lutetium and its compounds have limited i
 for(const [z,description] of Object.entries(sourceQualifiedUses71to90))
  assert.equal(detailed[Number(z)-1].typicalUses,description,'Element/compound use accuracy '+z);
 
+
+// Audit 20: RSC-specific Pauling and common oxidation-state fields, 91–118.
+// Unknown does not mean zero; isotope-based uses need explicit qualifiers.
+const rscPauling91to118=[1.5,1.7,1.3,1.3,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+const rscOxidation91to118={"91":"+5, +4","92":"+6, +5, +4, +3","93":"+6, +5, +4, +3","94":"+6, +5, +4, +3","95":"+6, +5, +4, +3","96":"+4, +3","97":"+4, +3","98":"+4, +3","99":"+3","100":"+3","101":"+3","102":"+3, +2","103":"+3","104":null,"105":null,"106":null,"107":null,"108":null,"109":null,"110":null,"111":null,"112":null,"113":null,"114":null,"115":null,"116":null,"117":null,"118":null};
+for(let z=91;z<=118;z++){
+ assert.equal(detailed[z-1].electronegativity,rscPauling91to118[z-91],'RSC Pauling 91–118 '+z);
+ assert.equal(detailed[z-1].oxidationStates,rscOxidation91to118[z],'RSC oxidation 91–118 '+z);
+}
+const revisedAppearance91to100={"91":"A silvery, radioactive metal.","92":"A silvery, radioactive metal.","93":"A radioactive metal, usually described as silvery.","95":"A shiny, silvery radioactive metal.","97":"A rare, silvery radioactive metal.","98":"A radioactive metal; only small amounts have been prepared.","99":"A radioactive metal produced in very small quantities."};
+for(const [z,value] of Object.entries(revisedAppearance91to100))
+ assert.equal(detailed[Number(z)-1].appearance,value,'Appearance, radioactive metal '+z);
+const revisedUses91to100={"92":"Uranium-containing nuclear fuel is used to generate electricity in nuclear reactors. Uranium-235 and uranium-238 have different nuclear properties; uranium metal and depleted uranium have also been used in shielding and specialized industrial applications.","93":"Neptunium has few applications beyond scientific research. Neptunium-237 has been used in neutron-detection equipment.","94":"Plutonium-239 is used as fissile material in some nuclear fuels and nuclear weapons. Plutonium-238 provides heat for radioisotope power systems on spacecraft; uses differ by isotope.","95":"Americium-241 is used in some ionization-type smoke detectors and industrial measuring devices. Proposed radioisotope-power applications remain specialized or developmental.","96":"Curium isotopes have been used in radioisotope-power research and specialized space equipment. Most curium applications involve scientific research and producing or studying heavier elements.","97":"Berkelium has no established commercial use. Small amounts have been used as targets in nuclear research to synthesize heavier elements.","98":"Californium-252 provides strong neutron sources used in specialized materials analysis, oil-well logging, reactor startup, and scientific research.","99":"Einsteinium is prepared in very small quantities for research, including heavy-element chemistry and the synthesis of heavier elements; it has no established commercial applications.","100":"Fermium is produced only in tiny amounts for scientific studies of nuclear properties and chemical behavior; it has no established practical use outside research."};
+for(const [z,value] of Object.entries(revisedUses91to100))
+ assert.equal(detailed[Number(z)-1].typicalUses,value,'Isotope-specific use '+z);
+for(let z=104;z<=118;z++){
+ assert.equal(detailed[z-1].electronegativity,null,'No RSC Pauling value '+z);
+ assert.equal(detailed[z-1].oxidationStates,null,'No RSC oxidation data '+z);
+ assert.equal(detailed[z-1].appearance,null,'Macroscopic appearance not observed '+z);
+ assert.ok(/research/i.test(detailed[z-1].typicalUses),'Research-only use '+z);
+}
+
 console.log('PASS: 118 unique entries, numbering and symbols;  CIAAW 2024 weight conventions 1–118 (null where unassigned); RSC melting/boiling/density 21–118, configurations 61–118; selected discovery dates; missing-phase safeguards');
 console.log('PASS: PubChem Z=1–118 radius, first ionization, electron affinity fixtures (354 slots), quiz pool and image-provenance UI safeguards');
 console.log('PASS: RSC oxidation/appearance/uses subset and unknown Pauling values, NIST exceptional shell occupancy, 118 electron counts');
 console.log('PASS: RSC Pauling 31–60, Pr oxidation, source-qualified appearance and element/compound uses');
 console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appearances and clarified uses');
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
+console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
