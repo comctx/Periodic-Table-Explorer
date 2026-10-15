@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[1,2,3,4,5,6,7,8,9,10,94,96];
+const sourcePageReviewed=[...Array.from({length:20},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -740,6 +740,14 @@ for(const z of sourcePageReviewed){
  if(z!==96)assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
+}
+
+const auditedSourceLicenses11to20={"11":"CC BY-SA 3.0","12":"CC BY-SA 3.0 (also other versions offered)","13":"CC BY 3.0","14":"CC BY 3.0","15":"CC BY 3.0","16":"CC BY 2.0","17":"Author dedicated to public domain","18":"CC BY 3.0","19":"CC BY 3.0","20":"CC BY 3.0"};
+for(let z=11;z<=20;z++){
+ const m=photoSourceData[String(z)],w=auditedSourceLicenses11to20[String(z)];
+ assert.ok(m.commonsPage.includes('/File:'),'Wikimedia file page 11–20 '+z);
+ assert.ok(!!w,'Source license documented for '+z);
+ assert.ok(m.localUrl.endsWith('.jpg'),'Cached JPG path '+z);
 }
 assert.ok(!photoSourceData['96'].licenseUrl,'Curium must not be assigned an invented image license');
 assert.ok(!photoSourceData['94'].licenseUrl,'LANL attribution requirements not yet resolved');
@@ -756,5 +764,5 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 12 image-source-page source/attribution flags and original image link integrity; no final image release approvals');
+console.log('PASS: 22 image source-page links/attribution flags, true original image links; no images fully cleared');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
