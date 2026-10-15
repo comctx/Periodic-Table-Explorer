@@ -6,6 +6,28 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Current status after checking all 118 actual image files
+
+- **118 of 118 stored JPEGs inspected or machine-compared** across four batches. **All 118 source metadata pages were reviewed** separately.
+- **104 of 118 stored image files visually match a specifically identified original**: 22 in #1–30, 24 in #31–60, 30 in #61–90 (after recovering 15 publisher-gallery originals), and **28 of 28** in #91–118. The 104 include **14 generic placeholders**, multiple illustrations and historical/research photographs. This metric is **identity matching, not evidence that the app displays 104 real element-sample photographs**.
+- **14 unresolved picture-source mismatches** remain in the first 60 entries: #3, #4, #5, #14, #15, #22, #27, #30, #31, #44, #45, #47, #50 and #58.
+- **28 metadata entries are intentionally withheld** owing to a misleading description, unavailable original, illustration or unresolved rights. Additionally, **14 entries (#105–118) are the same generic placeholder** and not displayed. In total, **42 element entries lack a displayed element photograph in the audit version**; the remaining **76 are image candidates** and must not be characterized as finally cleared.
+- **0/118 cached images are finally approved for Microsoft Store redistribution.** This still requires file-specific authorship and rights verification, attribution/ShareAlike notices, inclusion/exclusion of physical cached files in the released bundle, and app/offline/desktop testing. **Do not merge into main or submit this audit build yet.**
+
+### Fourth and final stored-file comparison — elements 91–118
+
+The [28-image comparison report](LOCAL_IMAGE_MATCH_91_118.md) is grounded in [successful GitHub Actions run 38682381029](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38682381029). The checked-in JPEGs were retrieved, the original URLs were downloaded and decoded, and image hashes and brightness differences were measured.
+
+- **28/28 closely match the actual credited image files** (dHash distances 0–2). No local source mismatch was found in this batch.
+- **#91–99:** nine real samples/isotope or research photographs; **#94 plutonium**, **#96 curium** and **#98 californium** remain withheld due to conditional/unverified/conflicting copyright notices. #91, #92, #93, #95, #97, #99 are potential real-photograph candidates but still require final clearance.
+- **#100 fermium:** image shows the 1952 Ivy Mike nuclear test, not a fermium sample; remains withheld.
+- **#101–103:** imagined appearances/illustrations, not photographed mendelevium/nobelium/lawrencium samples; remain withheld.
+- **#104:** CERN pion tracks, not a rutherfordium sample; remains withheld and its third-party copyright grant is not established.
+- **#105–118:** all 14 stored JPEGs have identical Git blob SHA `8b42b435ef79c7becb6a5dea8f49492472fc9564`, depicting one generic question-mark placeholder rather than 14 actual chemical-element images. `element.html` already hides these `No Image Found` entries.
+- **No binaries were removed or altered** in this review; release-package cleanup still pending.
+
+**Next phase:** resolve/replace 14 unmatched files in #1–60; determine rights and attribution requirements for all remaining photos; find authentic, licensed experiment or discovery images for elements without macroscopic samples; remove/replace any disallowed binary assets before packaging; and complete browser/device/Store release tests.
+
 ## Third cached-image batch — elements 61–90: source-gallery recovery complete
 
 The [detailed report](LOCAL_IMAGE_MATCH_61_90.md) records two successful GitHub Actions analyses:
