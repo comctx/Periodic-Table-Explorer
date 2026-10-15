@@ -1,0 +1,30 @@
+name: Image identity triage (audit branch only)
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/image-identity-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare-source-photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out audit branch only
+        uses: actions/checkout@v4
+      - name: Install Pillow
+        run: python -m pip install --quiet pillow
+      - name: Compare local photos with credited originals, 31-60
+        run: python audit/compare_image_identity.py 31 60
+      - name: Publish machine review evidence (not license clearance)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-comparison-31-60
+          path: audit/machine-image-matches-31-60.json
+          if-no-files-found: warn
