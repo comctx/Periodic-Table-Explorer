@@ -556,23 +556,24 @@ window.ELEMENT_PHOTOS = {
     "name": "Cadmium",
     "symbol": "Cd",
     "localUrl": "images/elements/048-cd.jpg",
-    "title": "Cadmium sample (exact view must be matched to the source before release)",
-    "attribution": "Chemical Elements — A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/cadmium.php",
+    "title": "Cadmium metal specimen from publisher photograph cadmium-4.jpg; exact purity is not independently established",
+    "attribution": "Chemical Elements — A Virtual Museum (Jumk.de Webprojects); exact cadmium-4.jpg photographer not independently identified. Publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> unless otherwise noted and requests element-page attribution: https://images-of-elements.com/cadmium.php.",
     "originalUrl": "https://images-of-elements.com/cadmium-4.jpg",
     "sourceUrl": "https://images-of-elements.com/cadmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer. Source requests attribution linking to the element page; confirm this exact original and image caption before release."
+    "note": "Current local JPEG was previously compared against the actual publisher original cadmium-4.jpg (dHash 1, grayscale delta 0.1; GitHub run 38681018215). A separately licensed Commons file Pure_cadmium.jpg is a DIFFERENT photograph (dHash 24, delta 64.4 in run 38775178783); do not attach that file's creator/license details to this picture. The publisher page describes both pure and oxidized specimens; the pictured sample's measured composition has not been independently established. Local image cached/resized for the app. Individual source-photo author and final commercial release-rights checks remain open."
   },
   "49": {
     "name": "Indium",
     "symbol": "In",
     "localUrl": "images/elements/049-in.jpg",
     "title": "Molten (liquid) indium sample, about 1.5 × 1.5 cm; indium is solid at ordinary room temperature",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/indium.php",
+    "attribution": "Jurii, original Commons photograph 'Liquid-indium.jpg' (10 August 2009), CC BY 3.0 Unported <https://creativecommons.org/licenses/by/3.0/>. Wikimedia file: https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg; publisher page: https://images-of-elements.com/indium.php.",
     "originalUrl": "https://images-of-elements.com/indium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/indium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer. Site permits CC BY 3.0 reuse with attribution linking to its indium page; verify the local JPEG against the original image."
+    "note": "Both local file 049-in.jpg and the original Wikimedia file are 856 × 856 pixels and are visually equivalent (dHash 0; grayscale difference 0.1 in successful GitHub run 38775178783). The existing publisher-hosted indium-2.jpg was also compared against the local JPEG in run 38681018215 (dHash 0, delta 0.1). The source photographer is Jurii per Wikimedia's original file record. Source images may have been reencoded or otherwise processed; the actual release-bundle attribution and CC BY 3.0 rights obligations remain to be checked.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg"
   },
   "50": {
     "name": "Tin",
