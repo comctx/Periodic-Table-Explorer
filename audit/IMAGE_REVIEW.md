@@ -6,28 +6,28 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
-## Third cached-image batch — elements 61–90
+## Third cached-image batch — elements 61–90: source-gallery recovery complete
 
-The [actual image comparison record](LOCAL_IMAGE_MATCH_61_90.md) is grounded in [GitHub Actions run 38681396126](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38681396126), which completed successfully after downloading the named original URL and comparing all 30 stored JPEGs.
+The [detailed report](LOCAL_IMAGE_MATCH_61_90.md) records two successful GitHub Actions analyses:
 
-- **90 of 118 actual saved JPEG files have now been inspected** across three 30-element batches (the first batch visually, later batches with downloadable-source similarity measurements).
-- **14/30 photos/artworks in this third batch resemble their named source image**, but four of these (#84 polonium, #85 astatine, #86 radon and #87 francium) are **withheld illustrations**, *not real element photographs*. Image identity never overrides their scientific classification.
-- **15/30 images triggered manual source-identity review**, concentrated among the rare-earth metals: #62, #63, #64, #65, #66, #67, #70, #72, #73, #75, #77, #79, #80, #81 and #82. These might be alternative images from the original publisher rather than scientifically inaccurate pictures; do not discard them on an image-hash score alone.
-- **1/30 original links failed:** #61 promethium returned HTTP 404 for its claimed Wikimedia original; the saved image is already properly withheld because it is an illustration, not a real metal photograph.
-- A separate **publisher photo-gallery source-finding check** is being performed. Its results must be independently inspected and linked to credits and terms before a release.
-- **Total prior machine/visual identity candidates: 46 from #1–60**; add 14 source matches from #61–90 = **60 same-picture candidates from the 90 inspected**, including subject-disputed copper #29 and the four withheld non-photos #84–87. The other 30 are flagged for mapping, or an image fetch failed, or remain scientifically withheld.
-- **0/118 photos fully cleared for distribution or Microsoft Store packaging.** No JPEG replacement, deletion, or published `main` change has been made.
+1. [Run 38681396126](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38681396126) compared the actual 30 cached JPEGs with the named `originalUrl`: 14 probable matches, 15 source-image differences and one broken URL.
+2. [Run 38681550877](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38681550877) searched the original element publisher's image galleries. It found **exact alternate source photographs for all 15 mismatched elements** (#62, #63, #64, #65, #66, #67, #70, #72, #73, #75, #77, #79, #80, #81, #82): dHash distances 0–2 and grayscale brightness deltas 0.1–0.2. This establishes a very strong picture-identity match.
 
-**Next:** use any verified gallery image matches to correct source links and captions, withhold pictures whose exact provenance cannot be traced, then inspect the last 28 images (#91–118). Licensing/attribution, ShareAlike conditions and offline/Store bundle checks remain separate release gates.
+**Corrections committed:** Every one of those 15 catalog `originalUrl` values now points to the correctly matching publisher-gallery image. Removed their outdated, misleading Commons-file links and the temporary image-identity `withholdReason` flags. The publisher's actual element-page links are retained, and credits now state that its individual photographer for the matching version still requires verification. Its website generally offers **CC BY 3.0** with element-page attribution, but checking that notice does **not** constitute fully documented release clearance for all 15 adapted images.
+
+**#61 promethium:** the original Commons file returned 404; we identified a matching publisher image and corrected the URL, but kept it **withheld** because it is a photomontage rather than a photographed promethium sample.
+
+**#84–87:** the pictures of polonium, astatine, radon and francium also match their publishers' artwork. All four are **illustrations, remain withheld**, and must not be described as actual sample photographs.
+
+**Updated third-batch picture classification:** 25 image-identity-supported sample/research photographs and 5 illustrated artworks, all 30 traced to matching sources at the visual/computational level. **0/30 photographs finally cleared for Microsoft Store redistribution.** Attribution, specific third-party grants, modification statements, credits and actual package content remain to be verified.
 
 ## Current actual-image inspection status — 90 / 118
 
-- **118/118 source-page records classified** in Phase 2, but published image rights statements do not establish release clearance.
-- **60/118 actual local JPEGs tested against their named external originals:** first 30 visually inspected individually, next 30 inspected and compared using repeatable Pillow/dHash and brightness metrics on the GitHub Actions runner.
-- **46/60 same-photo candidates** (22 from #1–30 visual review, and 24 from #31–60 automated comparison). This number is a photo identity indicator, **not** full rights clearance. Copper #29 remains disputed even though its photo visibly matches.
-- **14/60 source-image mismatches or source ambiguities** now have explicit `withholdReason`: 8 first-batch photos (#3, #4, #5, #14, #15, #22, #27, #30) and 6 second-batch photos (#31, #44, #45, #47, #50, #58).
-- **#29 copper separately withheld** because its specimen classification is disputed. Additional later-element illustrations and permission problems remain withheld from the source-review stage.
-- **0/118 images fully cleared for redistribution.** The cached files remain physically present. Confirm attribution, license version and any ShareAlike obligations, source-image identity, alteration notices, subject accuracy and actual final packaged release contents.
+- **118/118 element source-page records reviewed**; actual cached images inspected: **90/118**.
+- **76/90 stored image files appear to match a specifically identified source:** 22/30 for #1–30, 24/30 for #31–60, and 30/30 for #61–90 after publisher-gallery matching. **This includes five illustrations in #61–90 and the source-matched but scientifically disputed copper #29.**
+- **14/90 unresolved source-image mismatches remain**, all from the first 60 elements. Eight in #1–30 and six in #31–60 are explicitly withheld while matching sources/replacements are investigated.
+- **Copper #29 separately withheld** due to disagreement about whether it depicts native copper. Five illustrations in #61–90 are also withheld and intentionally do not appear as authentic element-sample photos.
+- **0/118 images fully cleared for Store distribution.** No cached JPEG binaries were altered or removed. Final author/license verification and actual app packaging/desktop/offline testing are still needed.
 
 ### Second cached-image batch — elements 31–60
 
