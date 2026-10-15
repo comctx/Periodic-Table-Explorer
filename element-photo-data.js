@@ -488,62 +488,68 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Niobium_strips.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG"
   },
   "42": {
     "name": "Molybdenum",
     "symbol": "Mo",
     "localUrl": "images/elements/042-mo.jpg",
-    "title": "99.9 Pure Molybdenum Crystal, about 2 x 3 cm, with anodisation color",
+    "title": "99.9% pure molybdenum crystal with anodization color, approximately 2 × 3 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/molybdenum.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Molybdenum.jpg",
     "sourceUrl": "https://images-of-elements.com/molybdenum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Molybdenum.jpg"
   },
   "43": {
     "name": "Technetium",
     "symbol": "Tc",
     "localUrl": "images/elements/043-tc.jpg",
-    "title": "Technetium Sample inside a sealed glass ampoule, filled with argon gas. 6x1 mm goldfoil covered with 99Tc powder (electroplated).",
-    "attribution": "GFDL, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    "title": "Technetium-99 powder electrodeposited on a 6 × 1 mm gold foil inside a sealed argon-filled glass ampoule",
+    "attribution": "Marco Cardin (photographer); cropped by Double sharp from Technetium-sample.jpg; attribution requested: GFDL; CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Technetium-sample-cropped.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Source photograph cropped by Double sharp in 2021. The copy used by Periodic Table Explorer was resized; verify its identity and ShareAlike obligations before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg"
   },
   "44": {
     "name": "Ruthenium",
     "symbol": "Ru",
     "localUrl": "images/elements/044-ru.jpg",
     "title": "Ruthenium Crystal, 0.6 grams, 0.6 x 1.3 cm size",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/ruthenium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/ruthenium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ruthenium_crystal.jpg",
     "sourceUrl": "https://images-of-elements.com/ruthenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ruthenium_crystal.jpg"
   },
   "45": {
     "name": "Rhodium",
     "symbol": "Rh",
     "localUrl": "images/elements/045-rh.jpg",
     "title": "Pure Rhodium Bead, 1 gram. Original size in cm: 0.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhodium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhodium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rhodium_%28Rh%29.jpg",
     "sourceUrl": "https://images-of-elements.com/rhodium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rhodium_(Rh).jpg"
   },
   "46": {
     "name": "Palladium",
     "symbol": "Pd",
     "localUrl": "images/elements/046-pd.jpg",
     "title": "Palladium Crystal, about 1 gram. Original size in cm: 0.5 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/palladium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/palladium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/palladium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg"
   },
   "47": {
     "name": "Silver",
@@ -552,31 +558,32 @@ window.ELEMENT_PHOTOS = {
     "title": "Natural silver nugget, 1 cm long.",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/silver.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Silver-nugget.jpg",
-    "sourceUrl": "http://images-of-elements.com/silver.php",
+    "sourceUrl": "https://images-of-elements.com/silver.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg"
   },
   "48": {
     "name": "Cadmium",
     "symbol": "Cd",
     "localUrl": "images/elements/048-cd.jpg",
-    "title": "48 Cd Cadmium",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/cadmium.php",
+    "title": "Cadmium sample (exact view must be matched to the source before release)",
+    "attribution": "Chemical Elements — A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/cadmium.php",
     "originalUrl": "https://images-of-elements.com/cadmium-4.jpg",
     "sourceUrl": "https://images-of-elements.com/cadmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Source requests attribution linking to the element page; confirm this exact original and image caption before release."
   },
   "49": {
     "name": "Indium",
     "symbol": "In",
     "localUrl": "images/elements/049-in.jpg",
-    "title": "1.5 x 1.5 cm liquid indium",
+    "title": "Molten (liquid) indium sample, about 1.5 × 1.5 cm; indium is solid at ordinary room temperature",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/indium.php",
     "originalUrl": "https://images-of-elements.com/indium-2.jpg",
-    "sourceUrl": "http://images-of-elements.com/indium.php",
+    "sourceUrl": "https://images-of-elements.com/indium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Site permits CC BY 3.0 reuse with attribution linking to its indium page; verify the local JPEG against the original image."
   },
   "50": {
     "name": "Tin",
@@ -585,9 +592,10 @@ window.ELEMENT_PHOTOS = {
     "title": "Tin blob",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/tin.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tin-2.jpg",
-    "sourceUrl": "http://images-of-elements.com/tin.php",
+    "sourceUrl": "https://images-of-elements.com/tin.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tin-2.jpg"
   },
   "51": {
     "name": "Antimony",
