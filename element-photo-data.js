@@ -1204,198 +1204,202 @@ window.ELEMENT_PHOTOS = {
     "name": "Mendelevium",
     "symbol": "Md",
     "localUrl": "images/elements/101-md.jpg",
-    "title": "This is only an illustration, not mendelevium itself. Chemically similar to Thulium, the highly radioactive heavy metal emits very energetic α-radiation.",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/mendelevium.php",
+    "title": "Artist's illustration suggesting mendelevium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/mendelevium.php",
     "originalUrl": "https://images-of-elements.com/s/mendelevium.jpg",
     "sourceUrl": "https://images-of-elements.com/mendelevium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of mendelevium. It is withheld from the element-photo panel."
   },
   "102": {
     "name": "Nobelium",
     "symbol": "No",
     "localUrl": "images/elements/102-no.jpg",
-    "title": "This is only an illustration, not nobelium itself. Nobelium can only be made in very small amounts and emits strong radiation of various kinds.",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/nobelium.php",
+    "title": "Artist's illustration suggesting nobelium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/nobelium.php",
     "originalUrl": "https://images-of-elements.com/nobelium.jpg",
     "sourceUrl": "https://images-of-elements.com/nobelium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of nobelium. It is withheld from the element-photo panel."
   },
   "103": {
     "name": "Lawrencium",
     "symbol": "Lr",
     "localUrl": "images/elements/103-lr.jpg",
-    "title": "This is only an illustration, not lawrencium itself. Lawrencium can only be made in very small amounts and emits strong radiation",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/lawrencium.php",
+    "title": "Artist's illustration suggesting lawrencium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/lawrencium.php",
     "originalUrl": "https://images-of-elements.com/lawrencium.jpg",
     "sourceUrl": "https://images-of-elements.com/lawrencium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of lawrencium. It is withheld from the element-photo panel."
   },
   "104": {
     "name": "Rutherfordium",
     "symbol": "Rf",
     "localUrl": "images/elements/104-rf.jpg",
-    "title": "Decay traces in a spark chamber, not of rutherfordium, but of a pion. This is a completely different, unrelated particle, but the decay of rutherfordium would make streaks there, too.",
-    "attribution": "Image © CERN, Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/rutherfordium.php",
+    "title": "CERN photograph of pion tracks in a spark chamber — unrelated to rutherfordium",
+    "attribution": "Original image credited © CERN by Chemical Elements — A Virtual Museum; exact CERN photographer and authorized redistribution conditions not independently verified.",
     "originalUrl": "https://images-of-elements.com/s/rutherfordium.jpg",
     "sourceUrl": "https://images-of-elements.com/rutherfordium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "",
+    "note": "Unrelated scientific apparatus imagery, not an element sample. Do not describe pion tracks as actual rutherfordium decay. File-specific reuse rights, source origin and local binary identity are unresolved.",
+    "withholdReason": "This CERN image depicts pion particle tracks, not rutherfordium. A general CC BY 3.0 notice on the republishing website does not establish permission to reuse CERN's third-party image. Withheld pending separate rights confirmation."
   },
   "105": {
     "name": "Dubnium",
     "symbol": "Db",
     "localUrl": "images/elements/105-db.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/dubnium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/dubnium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/dubnium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of dubnium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of dubnium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "106": {
     "name": "Seaborgium",
     "symbol": "Sg",
     "localUrl": "images/elements/106-sg.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/seaborgium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/seaborgium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/seaborgium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of seaborgium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of seaborgium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "107": {
     "name": "Bohrium",
     "symbol": "Bh",
     "localUrl": "images/elements/107-bh.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/bohrium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/bohrium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/bohrium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of bohrium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of bohrium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "108": {
     "name": "Hassium",
     "symbol": "Hs",
     "localUrl": "images/elements/108-hs.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/hassium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/hassium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/hassium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of hassium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of hassium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "109": {
     "name": "Meitnerium",
     "symbol": "Mt",
     "localUrl": "images/elements/109-mt.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/meitnerium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/meitnerium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/meitnerium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of meitnerium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of meitnerium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "110": {
     "name": "Darmstadtium",
     "symbol": "Ds",
     "localUrl": "images/elements/110-ds.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/darmstadtium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/darmstadtium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/darmstadtium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of darmstadtium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of darmstadtium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "111": {
     "name": "Roentgenium",
     "symbol": "Rg",
     "localUrl": "images/elements/111-rg.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/roentgenium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/roentgenium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/roentgenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of roentgenium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of roentgenium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "112": {
     "name": "Copernicium",
     "symbol": "Cn",
     "localUrl": "images/elements/112-cn.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/copernicium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/copernicium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/copernicium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of copernicium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of copernicium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "113": {
     "name": "Nihonium",
     "symbol": "Nh",
     "localUrl": "images/elements/113-nh.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/nihonium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/nihonium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/nihonium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of nihonium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of nihonium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "114": {
     "name": "Flerovium",
     "symbol": "Fl",
     "localUrl": "images/elements/114-fl.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/flerovium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/flerovium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/flerovium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of flerovium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of flerovium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "115": {
     "name": "Moscovium",
     "symbol": "Mc",
     "localUrl": "images/elements/115-mc.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/moscovium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/moscovium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/moscovium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of moscovium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of moscovium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "116": {
     "name": "Livermorium",
     "symbol": "Lv",
     "localUrl": "images/elements/116-lv.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/livermorium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/livermorium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/livermorium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of livermorium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of livermorium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "117": {
     "name": "Tennessine",
     "symbol": "Ts",
     "localUrl": "images/elements/117-ts.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/tenessine.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/tenessine.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/tenessine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of tennessine is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of tennessine. The local JPEG and exact asset license/compliance remain unverified."
   },
   "118": {
     "name": "Oganesson",
     "symbol": "Og",
     "localUrl": "images/elements/118-og.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/oganesson.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/oganesson.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/oganesson.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of oganesson is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of oganesson. The local JPEG and exact asset license/compliance remain unverified."
   }
 };
