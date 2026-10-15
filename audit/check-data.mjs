@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:90},(_,i)=>i+1),94,96];
+const sourcePageReviewed=Array.from({length:100},(_,i)=>i+1);
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -896,6 +896,33 @@ assert.match(photoSourceData['88'].title,/copper foil/,'Radium deposit on substr
 assert.match(photoSourceData['89'].title,/vial/,'Actinium depicts vial, not bulk metal');
 assert.ok(photoSourceData['89'].licenseUrl.endsWith('/by/2.0'),'Actinium CC BY 2.0');
 assert.ok(photoSourceData['90'].licenseUrl.endsWith('/by-sa/3.0'),'Thorium share-alike noted');
+const auditedSourceLicenses91to100={
+  "91":"DOE official federal public domain","92":"Federal public domain + Commons VRT permission",
+  "93":"Federal public domain claim + publisher CC BY 3.0","94":"Conditional Los Alamos notice",
+  "95":"CC BY 3.0 Bionerd","96":"EU / JRC-ITU rights unknown; withhold",
+  "97":"Oak Ridge National Laboratory federal public domain","98":"Current Commons PD / historical non-free rationale conflict",
+  "99":"DOE PD; cropped/colorized derivative","100":"DOE public domain historical nuclear test, not fermium"
+};
+for(let z=91;z<=100;z++){
+ const item=photoSourceData[String(z)];
+ assert.ok(!!auditedSourceLicenses91to100[String(z)],'Documented source licensing outcome '+z);
+ assert.ok(item && item.localUrl.endsWith('.jpg'),'Local image entry '+z);
+ if(z!==96)assert.ok(item.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Commons source page 91–100 '+z);
+ else assert.equal(item.sourceUrl,'https://images-of-elements.com/curium.php','EU curium publisher source');
+}
+assert.match(photoSourceData['91'].attribution,/Department of Energy/,'Protactinium government credit');
+assert.match(photoSourceData['92'].attribution,/photographer unidentified/i,'Ames uranium unknown creator');
+assert.ok(!photoSourceData['92'].attribution.includes('Unknown authorUnknown author'),'No duplicate uranium unknown author');
+assert.match(photoSourceData['93'].note,/public-domain and CC BY 3\.0/,'Neptunium mixed rights recorded');
+assert.match(photoSourceData['94'].withholdReason,/Los Alamos/i,'LANL image withheld pending notice');
+assert.match(photoSourceData['95'].attribution,/Bionerd/i,'Americium original photographer');
+assert.match(photoSourceData['96'].withholdReason,/European Union|JRC-ITU/i,'Curium rights unresolved');
+assert.match(photoSourceData['97'].title,/in dissolved form/i,'Berkelium solution distinguished from metal');
+assert.match(photoSourceData['98'].withholdReason,/non-free-use rationale/i,'Californium conflicting rights withheld');
+assert.match(photoSourceData['98'].note,/Springer/i,'Californium book provenance noted');
+assert.match(photoSourceData['99'].note,/unknown|unidentified/i,'Einsteinium derivative provenance not assumed');
+assert.match(photoSourceData['100'].title,/NOT a photograph of fermium/,'Fermium mushroom cloud not sample photograph');
+assert.match(photoSourceData['100'].withholdReason,/nuclear test/i,'Fermium historical image withheld');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -957,6 +984,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 92 source pages checked, withheld illustrations 84-87 and isotope-vial provenance verified; no local JPG cleared');
+console.log('PASS: 100 unique source pages checked; conditional LANL and EU claims, californium non-free history, and misleading fermium photo flagged; no local JPG cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
