@@ -731,7 +731,7 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:50},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:60},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
@@ -796,6 +796,31 @@ assert.match(photoSourceData['43'].attribution,/GFDL/,'Technetium retains reques
 assert.match(photoSourceData['43'].attribution,/CC BY-SA 4\.0/,'Technetium retains actual source photo license');
 assert.match(photoSourceData['49'].title,/solid at ordinary room temperature/,'Molten indium not portrayed as its normal physical state');
 for(const z of ['47','48','49','50'])assert.ok(photoSourceData[z].sourceUrl.startsWith('https://'),'Secure photo publisher URL '+z);
+const auditedSourceLicenses51to60={
+ "51":"CC BY 3.0","52":"CC BY 3.0","53":"author public domain dedication",
+ "54":"CC BY 3.0","55":"CC BY-SA 3.0","56":"CC BY 3.0",
+ "57":"CC BY 3.0","58":"CC BY 1.0 and CC BY 3.0 publisher","59":"CC BY 3.0","60":"CC BY 3.0"
+};
+for(let z=51;z<=60;z++){
+ const m=photoSourceData[String(z)];
+ assert.ok(!!auditedSourceLicenses51to60[z],'Photo license source check 51–60 '+z);
+ assert.ok(m && m.localUrl.endsWith('.jpg'),'Cached image path 51–60 '+z);
+ assert.ok(m.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Wikimedia file source page 51–60 '+z);
+ assert.ok(m.originalUrl.startsWith('https://'),'Original image URL 51–60 '+z);
+}
+for(const z of ['51','52']){
+ assert.ok(/Photographer not identified/.test(photoSourceData[z].attribution),'Unknown author retained without false identification '+z);
+ assert.ok(!/Unknown authorUnknown author/.test(photoSourceData[z].attribution),'Duplicated unknown-author metadata fixed '+z);
+}
+assert.match(photoSourceData['53'].attribution,/public domain/,'Iodine creator dedication credited');
+assert.ok(!photoSourceData['53'].licenseUrl,'Iodine public-domain dedication must not be assigned invented CC license');
+assert.match(photoSourceData['54'].attribution,/Papa Lima Whiskey/,'Xenon photo editor credited');
+assert.match(photoSourceData['54'].title,/electrically excited/,'Xenon discharge not ordinary appearance');
+assert.match(photoSourceData['55'].licenseUrl,/by-sa\/3\.0/,'Cesium ShareAlike source');
+assert.ok(!/yahoo\.dk/i.test(photoSourceData['55'].attribution),'Remove malformed email from public credits');
+assert.equal(photoSourceData['58'].licenseUrl,'https://creativecommons.org/licenses/by/1.0','Cerium recorded file-specific CC BY 1.0');
+assert.match(photoSourceData['58'].note,/CC BY 3.0/,'Cerium separate publisher CC BY 3.0 noted');
+assert.match(photoSourceData['59'].attribution,/DePiep/,'Praseodymium source edit history credited');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -857,6 +882,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 52 image source pages checked for rights claims, technetium attribution, molten indium and credit safeguards; no images fully cleared');
+console.log('PASS: 62 original-image source pages checked for licensing and provenance; edited xenon/praseodymium credited; no cached images fully cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
