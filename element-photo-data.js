@@ -1138,7 +1138,7 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Cf",
     "localUrl": "images/elements/098-cf.jpg",
     "title": "Historical californium-252 neutron-source capsules, U.S. Department of Energy, circa 1972 — not a bare californium-metal sample",
-    "attribution": "U.S. Department of Energy (ENERGY.GOV), circa 1972, 'HD.5A.048 (10348254595) (cropped).jpg', cropped on Wikimedia Commons by KOKUYO. Source https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg. Identified as U.S. federal government public-domain material; this app resized/reencoded the source photograph.",
+    "attribution": "U.S. Department of Energy (ENERGY.GOV), circa 1972, 'HD.5A.048 (10348254595) (cropped).jpg', cropped on Wikimedia Commons by KOKUYO. Source https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg. Identified as U.S. federal government public domain material; this app resized/reencoded the source photograph.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/HD.5A.048_%2810348254595%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg",
     "licenseUrl": "",
