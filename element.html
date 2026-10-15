@@ -330,7 +330,7 @@ function loadElementPhoto(number,name){
   }
 
   status.classList.remove("no-sample");
-  const researchPhoto=[96,98].includes(n);
+  const researchPhoto=[96,97,98].includes(n);
   const museumExhibitPhoto=n===94;
   heading.textContent=researchPhoto?"Real Research Imagery":(museumExhibitPhoto?"Historical Element Photograph":"What This Element Looks Like");
   img.src=item.localUrl;
