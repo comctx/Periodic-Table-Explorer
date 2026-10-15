@@ -214,7 +214,8 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [x] Checked both `index.html` and `element.html`: the secret Bay City overlays **already credited** Andrew Jameson, Commons source, the license, and app resizing. No need to rewrite existing correct popup credits.
 - [x] Added a dedicated **Other Image Credits** section to `about.html`, with author, photo-page link, license link, and an explicit resized/reencoded and ShareAlike note.
 - [x] Updated `audit/check-data.mjs` and the audit staging CI workflow to **fail** if this separately packaged photo or any of the author/source/license links disappears.
-- [ ] **Still pending:** independently match the actual local JPEG binary to Andrew Jameson's original source and complete the adapted-image license obligations; inspect author/usage rights for logo/icon assets. The existence of a Commons license is **not** an approved redistribution package.
+- [x] **Source photo identity checked against the actual archived local JPEG** in [successful GitHub Actions run 38773309259](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38773309259): visual dHash difference **0**, grayscale brightness difference **0.1**, 1468 × 1600 local against 2400 × 2616 original. Classification: **likely same photograph, not copyright-cleared**.
+- [ ] **Still pending:** independently confirm final adapted-image attribution/ShareAlike terms in the actual signed package, and inspect author/usage rights for logo/icon assets. A strong binary visual match is **not** a complete legal redistribution certification.
 - [ ] Evaluate other app delivery paths (Windows/Microsoft), and inspect signed iOS IPA; this record alone cannot verify final packages.
 
 **No change** to the element photo inventory: 92 candidate / 12 expressly withheld / 14 placeholders. **Do not describe all included image rights as cleared.**
