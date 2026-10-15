@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **62 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 56 source pages have not yet been individually checked.
+**Progress distinction:** **72 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 46 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 62 / 118** = 60 element-source checks (#1–60), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 72 / 118** = 70 element-source checks (#1–70), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -164,6 +164,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Metadata changes on audit branch:** added all ten Commons file-page links, corrected author-name duplication (#51–52) without assuming an unknown photographer's name, clarified iodine public-domain dedication (#53), documented alterations by separate Wikimedia contributors (#54 and #59), removed a malformed private-looking email address (#55), and improved accuracy of captions/credits (#56–60).
 
 **Still outstanding:** identify local cached JPEGs as the stated originals or permissible adaptations (including image history), ensure proper attribution/licensing notices and change statements in the app and bundled credits, satisfy #55 ShareAlike requirements if applicable, and check final Store packaging/offline rendering. **All ten images remain NOT CLEARED.**
+
+## Seventh source-rights batch — elements 61–70
+
+**Reviewed 2026-10-14:** exact Wikimedia Commons file pages for #62–70 and the publisher's promethium image page for #61. The Commons `File:Promethium.jpg` page was not accessible for independent confirmation; publisher states the selected image is an **illustration**, not a photograph. Original-image identity and final rights of the local JPEG remain unverified. **These are source-page checks, not permission to ship any cached image.**
+
+| Z | Source page reviewed | Published license evidence | Source and release concerns | Cached JPEG cleared? |
+|---:|---|---|---|:---:|
+| 61 Pm | [Chemical Elements: Promethium](https://images-of-elements.com/promethium.php); [claimed Commons image](https://commons.wikimedia.org/wiki/File:Promethium.jpg) (page not independently accessible) | Publisher site states CC BY 3.0 for its images, unless otherwise noted; **file-specific Commons grant unverified** | **ILLUSTRATION / WITHHELD.** Publisher explicitly says picture is *only an illustration, not promethium itself*. Catalogued photomontage must never be shown as an authentic metal-sample photograph. Added explicit `withholdReason`; the element-page photo panel honors it. Do not conflate this image with a different historical promethium photograph. | No |
+| 62 Sm | [Commons: Samarium-2.jpg](https://commons.wikimedia.org/wiki/File:Samarium-2.jpg) | File-specific CC BY 1.0; publisher CC BY 3.0 additionally offered | Original lists **unknown author**, despite a known image-publishing website. Replaced duplicate “Unknown authorUnknown author” without fabricating photographer. The publisher/license choice and local file copy still need review. | No |
+| 63 Eu | [Commons: Europium.jpg](https://commons.wikimedia.org/wiki/File:Europium.jpg) | CC BY 3.0; Jurii | Slightly yellow appearance due to surface oxidation; do not portray this as its always-true color. Transferred-file upload description mentions different palladium imagery, so check provenance/cached identity before release. | No |
+| 64 Gd | [Commons: Gadolinium-2.jpg](https://commons.wikimedia.org/wiki/File:Gadolinium-2.jpg) | CC BY 3.0; Jurii | 99.95% pure amorphous gadolinium is **embedded in acrylic**, not freely exposed metal; caption clarified. Different similarly named `Gadolinium_2.jpg` is a separate file with a separate license. | No |
+| 65 Tb | [Commons: Terbium-2.jpg](https://commons.wikimedia.org/wiki/File:Terbium-2.jpg) | File-specific CC BY 1.0; publisher CC BY 3.0 also listed | Unknown photographer; duplicate unknown-author string replaced with truthful publisher attribution. Do not confuse with `Terbium2.jpg` or `Terbium.jpg` (other photos with different licensing). | No |
+| 66 Dy | [Commons: Dysprosium-2.jpg](https://commons.wikimedia.org/wiki/File:Dysprosium-2.jpg) | CC BY 3.0; Jurii | Pure dendritic dysprosium metal; distinguished from separate `Dysprosium2.jpg` CC BY-SA file. | No |
+| 67 Ho | [Commons: Holmium2.jpg](https://commons.wikimedia.org/wiki/File:Holmium2.jpg) | File-specific CC BY 1.0; publisher CC BY 3.0 also offered | Original author not identified; removed duplicate unknown-author label, preserving publisher and original page links. | No |
+| 68 Er | [Commons: Erbium-2.jpg](https://commons.wikimedia.org/wiki/File:Erbium-2.jpg) | CC BY 3.0; Jurii | Approximately 9.5 g pure erbium, about 2 × 2 cm. Corrected “Gramms” typo. Do not mix with similarly named `Erbium2.jpg` (separate licensing). | No |
+| 69 Tm | [Commons: Thulium-2.jpg](https://commons.wikimedia.org/wiki/File:Thulium-2.jpg) | CC BY 3.0; Jurii | Sublimated crystalline thulium **cast in acrylic block**; catalog title clarified. Commons history notes photo cleanup/spot removal by Jurii in May 2009; local cached revision still unknown. | No |
+| 70 Yb | [Commons: Ytterbium-3.jpg](https://commons.wikimedia.org/wiki/File:Ytterbium-3.jpg) | File-specific CC BY 1.0; publisher CC BY 3.0 also listed | Jurii's small ytterbium sample; catalog preserves file-specific 1.0 and notes alternate publisher 3.0. Need verify exact license selection and original-versus-cached image. | No |
+
+**Changes committed on audit branch:** Added nine exact Commons file-page links (#62–70), corrected duplicated unknown authors (#62, #65, #67), preserved dual license notices (#62, #65, #67, #70), improved sample-specific captions (#63, #64, #66, #68, #69), and **withheld the misleading photomontage for #61**. The original JPEG binary is still present in the repository and could still be included by a release packaging workflow.
+
+**Required next stage:** Compare local JPEGs to the originals, including pixel identity and crop history; check exact attribution and which alternative license is elected, do not treat a published license alone as release approval, and inspect the packaged offline app for still-bundled unapproved image assets. **Final image clearances: zero.**
 
 ## Per-element tracking (all unchecked)
 
