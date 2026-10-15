@@ -731,13 +731,13 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=Array.from({length:100},(_,i)=>i+1);
+const sourcePageReviewed=Array.from({length:118},(_,i)=>i+1);
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
- if(![26,48,49,61,84,85,86,87,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ if(z<=100 && ![26,48,49,61,84,85,86,87,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
 }
@@ -923,6 +923,34 @@ assert.match(photoSourceData['98'].note,/Springer/i,'Californium book provenance
 assert.match(photoSourceData['99'].note,/unknown|unidentified/i,'Einsteinium derivative provenance not assumed');
 assert.match(photoSourceData['100'].title,/NOT a photograph of fermium/,'Fermium mushroom cloud not sample photograph');
 assert.match(photoSourceData['100'].withholdReason,/nuclear test/i,'Fermium historical image withheld');
+const sourceBatch101to118=Array.from({length:18},(_,i)=>i+101);
+assert.equal(sourceBatch101to118.length,18,'Final source records must include all 18 elements');
+for(const z of sourceBatch101to118){
+ const m=photoSourceData[String(z)];
+ assert.ok(!!m,'Final batch photo metadata exists '+z);
+ assert.equal(m.sourceUrl,'https://images-of-elements.com/'+(z===117?'tenessine':m.name.toLowerCase())+'.php','Publisher page for final 18 '+z);
+ assert.ok(m.localUrl.endsWith('.jpg'),'Saved local JPEG metadata still tracked '+z);
+ if(z<=103){
+  assert.match(m.title,/illustration/i,'Illustrative art labeled for '+z);
+  assert.match(m.withholdReason,/illustration/i,'Illustrative art withheld '+z);
+  assert.match(m.attribution,/Individual illustrator not independently identified/,'Do not invent illustrator '+z);
+ }else if(z===104){
+  assert.match(m.title,/pion tracks/,'CERN picture is of pion tracks');
+  assert.match(m.withholdReason,/CERN/i,'CERN copyright and subject notice');
+  assert.equal(m.licenseUrl,'','Unverified CERN file copyright not assigned CC BY grant');
+ }else{
+  assert.equal(m.title,'No Image Found','Generic placeholder is never called sample '+z);
+  assert.equal(m.originalUrl,'https://images-of-elements.com/s/transactinoid.png','All 14 reference same template '+z);
+  assert.match(m.note,/generic transactinoid placeholder/,'Template not element-specific photo '+z);
+  assert.ok(!m.commonsPage,'Do not fabricate Wikimedia original for template '+z);
+ }
+}
+assert.ok(photoSourceData['101'].localUrl!==photoSourceData['102'].localUrl,'Cached paths still distinct despite illustrator unknown');
+const report=readFileSync('audit/IMAGE_REVIEW.md','utf8');
+assert.ok(report.includes('**118 of 118 source pages reviewed**'),'Final source review total');
+assert.ok(report.includes('**0 of 118 final app image files cleared**'),'No cached image cleared by metadata audit');
+assert.ok(report.includes('CERN reuse rights unverified'),'Rutherfordium exception documented in historic inventory');
+assert.ok(report.includes('**118/118 element-specific source pages inspected; 0/118 actual local photographs or placeholders fully cleared'),'Report warns not release-ready');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -984,6 +1012,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 100 unique source pages checked; conditional LANL and EU claims, californium non-free history, and misleading fermium photo flagged; no local JPG cleared');
+console.log('PASS: all 118 image-source entries classified; 101-104 illustrative/CERN excluded, 105-118 generic placeholders; no cached photo cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
