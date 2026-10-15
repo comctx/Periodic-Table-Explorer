@@ -64,7 +64,8 @@ try{
   assert.equal(await about.locator('#creditList details').count(),118,'All credits generated');
   await about.locator('#creditSearch').fill('indium');
   assert.equal(await about.locator('#creditList details:not([hidden])').count(),1,'Indium photo credit search');
-  assert.match(await about.locator('#creditList details:not([hidden])').innerText(),/Jurii/);
+  await about.locator('#creditList details:not([hidden]) summary').click();
+  assert.match(await about.locator('#creditList details:not([hidden]) .credit-body').innerText(),/Jurii/);
   assert.match(await about.locator('#otherImagesTitle').innerText(),/Other Image Credits/);
   assert.ok(await about.locator('a[href*="Bay_City_MI_City_Hall"]').count()>0,'Non-element photo credited');
 
