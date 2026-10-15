@@ -28,6 +28,8 @@ New `audit/compare_cadmium_indium_commons.py` downloaded the original bytes thro
 - Added the **correct Commons original file page** to `commonsPage`, kept original URL pointing to the matched publisher image, and credited Jurii from the Commons original instead of relying on inherited scraped metadata. Preserved the important **indium is solid at normal room temperature** caption.
 - Attribution should retain original photographer, source and license links and possible alteration/reencoding notice. **Actual Store packaging, licence notices and final derivative compliance remain open.**
 
+**Automated regression and staging tests:** [GitHub Actions run 38775571334 — completed successfully](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38775571334) on code commit `4e271519cd759cbccad19c5b636c9a1653ed3623`. Confirms exact indium Commons metadata, correct cadmium unresolved status, 92/26 packaging and required source/credits checks.
+
 ## Remaining tasks / release gate
 
 - [x] Prior publisher-original file identity checks preserved.
