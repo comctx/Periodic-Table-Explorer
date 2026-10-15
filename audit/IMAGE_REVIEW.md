@@ -6,12 +6,20 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Phase 4 / Recovery of the 14 mismatched source photographs — COMPLETE
+
+The [photo recovery report](PHOTO_RECOVERY_14.md) documents successful recovery of **all 14** images that had incorrect/unmatched source attributions. The first 12 had their original publisher-gallery image URLs and CC BY 3.0 publisher attribution corrected; **two actual JPEG binaries** were replaced with file-specific CC BY 3.0 photos of *pure silicon* and a *natural silver nugget*. GitHub Actions [source recovery run 38683282141](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38683282141) and [image replacement run 38683490522](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38683490522) both succeeded.
+
+**Current inventory:** 118/118 cached images have an identified visual source file (including illustrations, placeholders and research imagery); **0 unmatched source-image identities remain**; **14 explicitly withheld**, **14 generic placeholders hidden**, **90 entries available for photograph display** on the audit branch. These counts replace the earlier *historical* initial-batch numbers below, which remain for provenance. **0/118 final Store-license clearances; main unchanged.**
+
+**Important next step:** A correct image-source match is not sufficient legal clearance. Evaluate each source-specific photographer and rights grant, display credits, other ShareAlike/public-domain restrictions, and eliminate unauthorized cached image binaries from release packages. Also finish desktop/browser/quiz/offline testing and don't submit to Microsoft until checks pass.
+
 ## Current status after checking all 118 actual image files
 
 - **118 of 118 stored JPEGs inspected or machine-compared** across four batches. **All 118 source metadata pages were reviewed** separately.
-- **104 of 118 stored image files visually match a specifically identified original**: 22 in #1–30, 24 in #31–60, 30 in #61–90 (after recovering 15 publisher-gallery originals), and **28 of 28** in #91–118. The 104 include **14 generic placeholders**, multiple illustrations and historical/research photographs. This metric is **identity matching, not evidence that the app displays 104 real element-sample photographs**.
-- **14 unresolved picture-source mismatches** remain in the first 60 entries: #3, #4, #5, #14, #15, #22, #27, #30, #31, #44, #45, #47, #50 and #58.
-- **28 metadata entries are intentionally withheld** owing to a misleading description, unavailable original, illustration or unresolved rights. Additionally, **14 entries (#105–118) are the same generic placeholder** and not displayed. In total, **42 element entries lack a displayed element photograph in the audit version**; the remaining **76 are image candidates** and must not be characterized as finally cleared.
+- **118 of 118 saved image files now have a matching identified original image source**: 104 previously matched during 30-element audits, 12 publisher-gallery originals identified and corrected in phase 4, and 2 file-specific CC BY 3.0 Commons sample photos physically installed for silicon/silver. The 118 include **14 generic placeholders**, illustrations and historical/research photographs. This is an **image-identity count**, not a count of 118 actual element sample photos or rights clearances.
+- **0 picture-source mismatches** remain from the 14 previously flagged entries (#3, #4, #5, #14, #15, #22, #27, #30, #31, #44, #45, #47, #50, #58): 12 matching publisher images recovered and two elemental sample photographs physically replaced.
+- **14 metadata entries remain intentionally withheld** because of a scientific-subject issue, illustration, or unresolved image rights. **14 others (#105–118) remain identical generic placeholders** and are not displayed. Thus **28 entries lack a displayed element photograph** and the remaining **90 are image candidates**, not finally approved for release.
 - **0/118 cached images are finally approved for Microsoft Store redistribution.** This still requires file-specific authorship and rights verification, attribution/ShareAlike notices, inclusion/exclusion of physical cached files in the released bundle, and app/offline/desktop testing. **Do not merge into main or submit this audit build yet.**
 
 ### Fourth and final stored-file comparison — elements 91–118
@@ -26,7 +34,7 @@ The [28-image comparison report](LOCAL_IMAGE_MATCH_91_118.md) is grounded in [su
 - **#105–118:** all 14 stored JPEGs have identical Git blob SHA `8b42b435ef79c7becb6a5dea8f49492472fc9564`, depicting one generic question-mark placeholder rather than 14 actual chemical-element images. `element.html` already hides these `No Image Found` entries.
 - **No binaries were removed or altered** in this review; release-package cleanup still pending.
 
-**Next phase:** resolve/replace 14 unmatched files in #1–60; determine rights and attribution requirements for all remaining photos; find authentic, licensed experiment or discovery images for elements without macroscopic samples; remove/replace any disallowed binary assets before packaging; and complete browser/device/Store release tests.
+**Next phase:** image origins for those 14 have been recovered/replaced; now verify full rights and attribution of all remaining photographs, seek permitted research/discovery pictures for entries without macroscopic samples, remove/exclude disallowed binary files from the release package, and complete browser/device/Store testing.
 
 ## Third cached-image batch — elements 61–90: source-gallery recovery complete
 
