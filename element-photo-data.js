@@ -60,13 +60,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Carbon",
     "symbol": "C",
     "localUrl": "images/elements/006-c.jpg",
-    "title": "Dark carbon specimen image (source labels it 'Element 6 - Carbon'; the allotrope and purity are not independently identified)",
-    "attribution": "Texas Lane, 'Pure Carbon.png' (13 July 2022), own work, Wikimedia Commons; CC BY-SA 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/. Original https://commons.wikimedia.org/wiki/File:Pure_Carbon.png. App JPEG resized/reencoded from the source image; ShareAlike applies to adaptations.",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Pure_Carbon.png",
-    "sourceUrl": "",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Source file describes only 'Element 6 - Carbon'; it does not document a tested pure-carbon specimen, identifiable allotrope or analytical purity. Do not claim the image proves any of these. Photo-vs-render status needs human visual review before release; original author's CC BY-SA 4.0 license applies to reuse.",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pure_Carbon.png"
+    "title": "Natural graphite (carbon) from Chardonnet, Haute-Savoie, France, photographed in the Paris Museum of Natural History mineralogy gallery",
+    "attribution": "Photograph by Marie-Lan Taÿ Pamart (Wikimedia uploader Jastrow), 30 January 2020. Natural graphite specimen from Chardonnet, Haute-Savoie, France, held by the Muséum national d'histoire naturelle, Paris. Original https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg. Licensed CC BY 4.0 International, https://creativecommons.org/licenses/by/4.0/. The app photo is resized/reencoded; changes indicated.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "Real photograph of naturally occurring graphite, one of carbon's elemental allotropes, from a museum mineral specimen. Not a representation of all carbon forms. Replaces a dark unverified 'Pure Carbon.png' depiction whose exact sample identity/allotrope was not documented. License grants reuse with named author, original photo link and change notice; image release-package review remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg"
   },
   "7": {
     "name": "Nitrogen",
