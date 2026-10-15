@@ -29,7 +29,7 @@ The 14 "No Image Found" images (#105–118) all point to the same `transactinoid
 
 ## Phase 2 / Source-page checks — 2026-10-14
 
-**Progress distinction:** **72 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 46 source pages have not yet been individually checked.
+**Progress distinction:** **82 of 118 source pages checked** for published author, image subject and license/rights notice; **0 of 118 final app image files cleared**. These stages are different. The remaining 36 source pages have not yet been individually checked.
 
 - **Ten source pages #1–10 reviewed:** Commons file page/source records support **seven** CC BY 3.0 image permissions (#1–5, #7, #10), **two CC BY-SA** (#6 CC BY-SA 4.0 and #9 CC BY-SA 3.0) and **one public-domain federal work** (#8). CC attribution requires creator, original source and license links and stating that files were resized. ShareAlike derivative obligations for #6 and #9 require a separate downstream compliance check. **No images are approved for release solely by finding a reusable license on a source page.**
 - **#94 Plutonium:** The Wikimedia file page documents Los Alamos National Laboratory permission **conditional on reproducing its full notice and authorship statement**; the existing catalog has only vague “Attribution,” so keep withheld pending compliant notices and asset verification.
@@ -81,7 +81,7 @@ Reviewed the actual Wikimedia Commons file pages for all ten subjects. **No file
 - #13–15 and #18–20 are CC BY 3.0 on their file pages (creator/source/license links required).
 - **For all 20 reviewed ordinary element images, avoid mislabeling the depicted allotrope or state** (e.g., photographed liquid oxygen/fluorine, a glowing discharge vial, purple phosphorus) as what the element always looks like at room temperature. The title on the photo card is important context.
 
-**Cumulative total checked (source page/license statement only): 72 / 118** = 70 element-source checks (#1–70), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
+**Cumulative total checked (source page/license statement only): 82 / 118** = 80 element-source checks (#1–80), #94 special LANL permission, and #96 EU copyright notice lacking a verified specific reuse grant. **Final release-cleared images: 0 / 118**.
 
 ## Third source-license batch — elements 21–30
 
@@ -185,6 +185,27 @@ Reviewed the actual Commons file pages for #21–25 and #27–30, and the photo 
 **Changes committed on audit branch:** Added nine exact Commons file-page links (#62–70), corrected duplicated unknown authors (#62, #65, #67), preserved dual license notices (#62, #65, #67, #70), improved sample-specific captions (#63, #64, #66, #68, #69), and **withheld the misleading photomontage for #61**. The original JPEG binary is still present in the repository and could still be included by a release packaging workflow.
 
 **Required next stage:** Compare local JPEGs to the originals, including pixel identity and crop history; check exact attribution and which alternative license is elected, do not treat a published license alone as release approval, and inspect the packaged offline app for still-bundled unapproved image assets. **Final image clearances: zero.**
+
+## Eighth source-rights batch — elements 71–80
+
+**Reviewed 2026-10-14:** opened the original Wikimedia Commons file-description and license pages for all ten entries, including file history and creator/attribution notices where available. These checks establish *published source-page license claims only*, **not** the identity of locally cached JPEGs, compliance with all attribution/adaptation terms, or a license to redistribute the app as currently packaged. None of the ten local image binaries is cleared for release.
+
+| # | Original Commons record | Source-page license and creator | Finding / required next step | Cached image cleared? |
+|---:|---|---|---|:---:|
+| 71 Lu | [Lutetium.jpg](https://commons.wikimedia.org/wiki/File:Lutetium.jpg) | CC BY 3.0; Jurii | ~1 cm pure lutetium specimen. Added exact Commons link; verify saved crop and appropriate modification disclosure. | No |
+| 72 Hf | [Hafnium (72 Hf).jpg](https://commons.wikimedia.org/wiki/File:Hafnium_(72_Hf).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Publisher notes hafnium metal develops a darker, less glossy oxidized surface after long exposure to air. Corrected attribution formatting and noted oxidation in caption. | No |
+| 73 Ta | [Tantalum.jpg](https://commons.wikimedia.org/wiki/File:Tantalum.jpg) | CC BY 3.0; Jurii | Original is a ~1 cm tantalum metal specimen. Simplified caption, added source page. | No |
+| 74 W | [Tungsten rod with oxidised surface.jpg](https://commons.wikimedia.org/wiki/File:Tungsten_rod_with_oxidised_surface.jpg) | **CC BY 1.0 from original Wikipedia upload; separate CC BY 3.0 publisher notice**; Jurii | Keep both notices distinguishable; catalog preserves file-specific CC BY 1.0 link and describes publisher's CC BY 3.0 statement. Rod has oxidized exterior, not a pristine shiny metal finish. | No |
+| 75 Re | [Pure rhenium bead, arc melted, 21 grams](https://commons.wikimedia.org/wiki/File:Pure_rhenium_bead,_arc_melted,_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Source depicts a pure arc-melted rhenium bead. Removed an unverified radiation-dose number from photo caption; preserve source author and crop/license obligations. | No |
+| 76 Os | [Osmium-bead.jpg](https://commons.wikimedia.org/wiki/File:Osmium-bead.jpg) | CC BY 3.0; Jurii | Pure osmium bead; image is not an osmium compound or osmium tetroxide. | No |
+| 77 Ir | [Iridium-2.jpg](https://commons.wikimedia.org/wiki/File:Iridium-2.jpg) | **CC BY 1.0 on file; separate publisher CC BY 3.0 notice**; photographer not identified | Commons itself repeats "Unknown author". Replaced duplicate name with an honest unspecified-photographer/publisher credit. A Commons license reviewer confirmed publisher-side status in June 2016, but the local JPEG has not been matched. | No |
+| 78 Pt | [Platinum crystals.jpg](https://commons.wikimedia.org/wiki/File:Platinum_crystals.jpg) | CC BY 3.0; **Periodictableru** (original), **Materialscientist** (whitespace crop) | Original photo shows platinum crystals grown by gas-phase transport. Current Commons version was cropped in March 2010; credit both original creator and cropper. | No |
+| 79 Au | [Gold (79 Au).jpg](https://commons.wikimedia.org/wiki/File:Gold_(79_Au).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Added precise Commons source and corrected creator formatting; validate the "ultrapure gold leaf" catalog title against the actual matched image before release. | No |
+| 80 Hg | [Hydrargyrum (80 Hg).jpg](https://commons.wikimedia.org/wiki/File:Hydrargyrum_(80_Hg).jpg) | CC BY 3.0; Hi-Res Images of Chemical Elements | Photo describes 6 g of mercury in an inner 2 cm disc. **Source specifically requests attribution linking to the publisher's mercury element page**; retained that URL and flagged release-side credit validation. | No |
+
+**Committed to the audit branch:** ten exact Commons file-page links; source-specific license notes for #74 and #77; clean unknown-author credit for #77; original/cropper attribution for #78; scientifically contextual captions for #71–76 and pending gold caption verification; explicit publisher-attribution requirement for #80.
+
+**Outstanding:** Compare all ten local `images/elements/*.jpg` files against the exact source originals and revision history; verify photographer and license text, source and license links and modifications, and test packaged app display/offline credits. **No binary photos cleared for release.**
 
 ## Per-element tracking (all unchecked)
 
