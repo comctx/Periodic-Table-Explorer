@@ -26,6 +26,15 @@ The original iOS Xcode shell build step copied all 118 `images/elements/*.jpg` f
 - `audit/package_web_assets.py` fails closed if the display inventory changes, source metadata is malformed, a required image is missing, or a source path does not match the expected safe element-image naming format.
 - A build-verified IPA and its archived byte-level contents **must** still be inspected before TestFlight or Microsoft Store distribution. This GitHub Actions check is a packaging dry run, not a signed IPA.
 
+## Additional included non-element photograph — Bay City City Hall
+
+**The 92 count covers only `images/elements/*.jpg`**, not every image in the staged Web assets. One **additional separate photograph** is packaged as `images/bay-city-city-hall.jpg`, shown after the hidden five-tap logo Easter egg. Other graphics include icons and the DONCO footer logo.
+
+- Specific Commons source: [Bay City MI City Hall.JPG](https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG), **photo by Andrew Jameson, 20 February 2012**. Commons states **[CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/)**, self-published by the photographer.
+- Both Easter egg overlays (**`index.html` and `element.html`**) **already contained** the named photographer, source and license link. The missing **central About & Credits entry** has now been added in `about.html`, explicitly stating the resizing/reencoding and ShareAlike requirement. Do not incorrectly report that the overlays lacked photographer credits.
+- The scientific/credits regression and CI staging guard now also assert **all three screens** contain the named source, photographer, license and packaged photo. Source rights page verified; a byte-level *actual local Bay City JPEG vs Wikimedia original* identity check and final derivative/commercial distribution compliance **remain open**. Do not call this image release-cleared.
+- **Do not count this picture as a 93rd element sample.** There remain **92 element-picture candidates plus one separate Easter egg photograph**; all other branding icons/logos are separate media assets requiring their own provenance/ownership checks before Store release.
+
 ## Still outstanding before release
 
 1. Complete file-by-file commercial redistribution/author/source/derivative-rights review for **all 92 staged candidate images**, including ShareAlike and author name/link requirements.
