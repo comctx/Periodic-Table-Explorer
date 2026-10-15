@@ -602,77 +602,84 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Sb",
     "localUrl": "images/elements/051-sb.jpg",
     "title": "Antimony crystal, 2 grams, 1 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/antimony.php",
+    "attribution": "Photographer not identified on Wikimedia Commons; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/antimony.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg",
     "sourceUrl": "https://images-of-elements.com/antimony.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Antimony-4.jpg"
   },
   "52": {
     "name": "Tellurium",
     "symbol": "Te",
     "localUrl": "images/elements/052-te.jpg",
     "title": "Metallic tellurium, diameter 3.5 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/tellurium.php",
+    "attribution": "Photographer not identified on Wikimedia Commons; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/tellurium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Tellurium2.jpg",
     "sourceUrl": "https://images-of-elements.com/tellurium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tellurium2.jpg"
   },
   "53": {
     "name": "Iodine",
     "symbol": "I",
     "localUrl": "images/elements/053-i.jpg",
-    "title": "Iodine Sample",
-    "attribution": "Benjah-bmm27, Public domain, via Wikimedia Commons",
+    "title": "Iodine crystals photographed at ordinary conditions",
+    "attribution": "Benjah-bmm27, dedicated to the public domain by the photographer, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Iodine-sample.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg"
   },
   "54": {
     "name": "Xenon",
     "symbol": "Xe",
     "localUrl": "images/elements/054-xe.jpg",
-    "title": "Vial of glowing ultrapure xenon. Original size in cm: 1 x 5",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/xenon.php",
+    "title": "Vial of electrically excited glowing ultrapure xenon, approximately 1 × 5 cm",
+    "attribution": "Jurii; Wikimedia Commons file retouched by Papa Lima Whiskey (white speck removed), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/xenon.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Xenon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/xenon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Source Commons photo retouched in 2010; local image resized for Periodic Table Explorer. Verify cached file version and changes before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg"
   },
   "55": {
     "name": "Cesium",
     "symbol": "Cs",
     "localUrl": "images/elements/055-cs.jpg",
     "title": "Cesium/Caesium metal",
-    "attribution": "Dnn87 Contact email: Dnn87yahoo.dk, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Dnn87, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Cesium.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer; ShareAlike conditions and source-version match remain to be checked.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cesium.jpg"
   },
   "56": {
     "name": "Barium",
     "symbol": "Ba",
     "localUrl": "images/elements/056-ba.jpg",
-    "title": "1.5 Grams Barium with a Grey Oxide Layer under Argon. Original size in cm: 0.7 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/barium.php",
+    "title": "Approximately 1.5 g of barium with a grey oxide layer, kept under argon (about 0.7 × 1 cm)",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/barium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Barium_%2856_Ba%29.jpg",
     "sourceUrl": "https://images-of-elements.com/barium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg"
   },
   "57": {
     "name": "Lanthanum",
     "symbol": "La",
     "localUrl": "images/elements/057-la.jpg",
-    "title": "1 cm Big Piece of Pure Lanthanum",
+    "title": "Approximately 1 cm piece of pure lanthanum metal",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lanthanum.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Lanthanum.jpg",
     "sourceUrl": "https://images-of-elements.com/lanthanum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lanthanum.jpg"
   },
   "58": {
     "name": "Cerium",
@@ -683,29 +690,32 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
     "sourceUrl": "https://images-of-elements.com/cerium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer. Wikimedia Commons lists CC BY 1.0 for this file and an additional CC BY 3.0 notice from the publishing site. Confirm final attribution and applicable license choice.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cerium2.jpg"
   },
   "59": {
     "name": "Praseodymium",
     "symbol": "Pr",
     "localUrl": "images/elements/059-pr.jpg",
-    "title": "1.5 Grams Praseodymium under Argon, 0.5 cm big pieces",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/praseodymium.php",
+    "title": "About 1.5 g of praseodymium pieces, approximately 0.5 cm each, stored under argon",
+    "attribution": "Jurii; image cleaned of distracting shadows and borders by DePiep on Wikimedia Commons, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/praseodymium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg",
     "sourceUrl": "https://images-of-elements.com/praseodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons file was retouched by DePiep in 2012. Local image resized for Periodic Table Explorer; verify cached version and alteration credit before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Praseodymium.jpg"
   },
   "60": {
     "name": "Neodymium",
     "symbol": "Nd",
     "localUrl": "images/elements/060-nd.jpg",
     "title": "Ultrapure Neodymium under Argon, 5 grams. Original length of the large piece in cm: 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/neodymium.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/neodymium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Neodymium_%2860_Nd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/neodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg"
   },
   "61": {
     "name": "Promethium",
