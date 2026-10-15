@@ -90,6 +90,8 @@ jobs:
           assert 'audit/package_web_assets.py' in xcode and 'cp -R' not in xcode
           magic=Path('codemagic.yaml').read_text()
           assert 'len(element_images) == 92' in magic and 'set(element_images) == expected' in magic
+          assert "'audit/verify_distribution_package.py', archives[0]" in magic, 'Future Codemagic IPA must run byte-for-byte package inspector on actual built archive'
+          assert 'subprocess.run(' in magic and 'check=True' in magic, 'IPA verification must fail build on mismatches'
           print('PASS: exactly 92 app-visible images, 26 excluded, About & Credits and offline assets staged')
           print('NOTICE: static checks do not replace actual signed IPA or legal rights review')
           PY
