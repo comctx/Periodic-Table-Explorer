@@ -6,6 +6,28 @@
 
 This is a **catalog-based triage**, NOT proof that any image is licensed. It lists what the current repository metadata *claims*, which original pages to inspect, and which entries are not photographs of elements. **None of the 118 images has been independently certified for this release.** The actual cached binary must be matched against its claimed original photo and a rights statement; source-side changes and cropping need checking.
 
+## Current actual-image inspection status — 60 / 118
+
+- **118/118 source-page records classified** in Phase 2, but published image rights statements do not establish release clearance.
+- **60/118 actual local JPEGs tested against their named external originals:** first 30 visually inspected individually, next 30 inspected and compared using repeatable Pillow/dHash and brightness metrics on the GitHub Actions runner.
+- **46/60 same-photo candidates** (22 from #1–30 visual review, and 24 from #31–60 automated comparison). This number is a photo identity indicator, **not** full rights clearance. Copper #29 remains disputed even though its photo visibly matches.
+- **14/60 source-image mismatches or source ambiguities** now have explicit `withholdReason`: 8 first-batch photos (#3, #4, #5, #14, #15, #22, #27, #30) and 6 second-batch photos (#31, #44, #45, #47, #50, #58).
+- **#29 copper separately withheld** because its specimen classification is disputed. Additional later-element illustrations and permission problems remain withheld from the source-review stage.
+- **0/118 images fully cleared for redistribution.** The cached files remain physically present. Confirm attribution, license version and any ShareAlike obligations, source-image identity, alteration notices, subject accuracy and actual final packaged release contents.
+
+### Second cached-image batch — elements 31–60
+
+The [per-file machine comparison report](LOCAL_IMAGE_MATCH_31_60.md) records the Git blob SHA and source URL for all 30 inspected files, calculated 64-bit dHash distances and normalized image brightness differences, and links to the actual [successful GitHub Actions run](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38681018215).
+
+- **24 likely matched source photographs**, supported by very close computational similarity to fetched original files; no release clearances granted.
+- **6 manual-review cases:** #31 gallium, #44 ruthenium, #45 rhodium, #47 silver, #50 tin and #58 cerium. All six are now withheld pending source-image mapping.
+- **#47 silver:** cached file shows a **sterling silver chain**, while the credited `Silver-nugget.jpg` source is a **natural silver nugget**. These are different items and a sterling chain is an alloy jewelry product, not a pure-silver sample. Updated the metadata title, and hid it from the element sample-photo panel.
+- **#45 rhodium and #58 cerium:** moderate dHash differences could reflect a changed photo view/lighting/cropping. Withholding is precautionary, not proof of false content.
+- **#31, #44 and #50:** stronger mismatches needing the exact file/source photo found or a replacement.
+- **Workflow safeguards:** CI has `contents: read` permission, runs only on the audit branch, fetches originals only from Wikimedia upload and the image publisher's domain, does not edit JPEGs, and marks all identity candidates as *not cleared*.
+
+**Next:** photos #61–90 and #91–118, plus source-fixing/replacement for flagged photos. The full scientific, attribution/license, offline app and Microsoft Store package checks remain pending.
+
 ## Phase 3 / Local image inspection (first 30) — 2026-10-14
 
 **Actual JPEG-file review has begun.** The [detailed visual-match report](LOCAL_IMAGE_MATCH_1_30.md) records the **Git blob SHA and visual original comparison** for every saved JPEG from #1–30, based on retrieving/rendering each real repository image as a binary/base64 file and opening the corresponding named original. This is more than a metadata/source-page check, but not a pixel-hash proof or legal distribution approval.
