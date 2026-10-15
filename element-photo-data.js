@@ -248,18 +248,20 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Scandium%2C_Sc.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Scandium,_Sc.jpg"
   },
   "22": {
     "name": "Titanium",
     "symbol": "Ti",
     "localUrl": "images/elements/022-ti.jpg",
-    "title": "Titanium Crystal made with the van Arkel-de Booer Process. 87 grams, Original size in cm: 2.5 x 4",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/titanium.php",
+    "title": "Titanium crystal produced by the van Arkel–de Boer process, 87 g",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/titanium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Titanium.jpg",
     "sourceUrl": "https://images-of-elements.com/titanium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Titanium.jpg"
   },
   "23": {
     "name": "Vanadium",
@@ -270,7 +272,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Vanadium-pieces.jpg",
     "sourceUrl": "https://images-of-elements.com/vanadium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Vanadium-pieces.jpg"
   },
   "24": {
     "name": "Chromium",
@@ -281,25 +284,27 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Chromium.jpg",
     "sourceUrl": "https://images-of-elements.com/chromium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Chromium.jpg"
   },
   "25": {
     "name": "Manganese",
     "symbol": "Mn",
     "localUrl": "images/elements/025-mn.jpg",
-    "title": "Two Oieces of Manganese Metal",
+    "title": "Two pieces of manganese metal",
     "attribution": "W. Oelen, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Manganese_element.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Manganese_element.jpg"
   },
   "26": {
     "name": "Iron",
     "symbol": "Fe",
     "localUrl": "images/elements/026-fe.jpg",
     "title": "Fragments of an iron meteorite, about 92% iron. Original size of the single pieces in cm: 0.4 - 0.8",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/iron.php",
+    "attribution": "Chemical Elements — A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/iron.php",
     "originalUrl": "https://images-of-elements.com/iron-2.jpg",
     "sourceUrl": "https://images-of-elements.com/iron.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
@@ -309,12 +314,13 @@ window.ELEMENT_PHOTOS = {
     "name": "Cobalt",
     "symbol": "Co",
     "localUrl": "images/elements/027-co.jpg",
-    "title": "Fractions from a cobalt, 7 and 4 grams. Original size in cm: 2 x 2",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/cobalt.php",
+    "title": "Fragments from a cobalt cathode, 7 g and 4 g",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/cobalt.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cobalt_ore_2.jpg",
     "sourceUrl": "https://images-of-elements.com/cobalt.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cobalt_ore_2.jpg"
   },
   "28": {
     "name": "Nickel",
@@ -325,29 +331,33 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Nickel_chunk.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Nickel_chunk.jpg"
   },
   "29": {
     "name": "Copper",
     "symbol": "Cu",
     "localUrl": "images/elements/029-cu.jpg",
-    "title": "Macro of Native Copper about 1 ½ inches (4 cm) in size",
+    "title": "Copper specimen image (description of the material disputed)",
     "attribution": "Native_Copper_Macro_Digon3.jpg: 'Jonathan Zander (Digon3)' derivative work: Materialscientist, CC BY-SA 2.5 <https://creativecommons.org/licenses/by-sa/2.5>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:NatCopper.jpg",
+    "withholdReason": "This file's source history disputes whether the depicted sample is native copper. The image is withheld pending verification of what it shows."
   },
   "30": {
     "name": "Zinc",
     "symbol": "Zn",
     "localUrl": "images/elements/030-zn.jpg",
     "title": "30 grams Zinc, front and back side. Original size in cm: 3",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zinc.php",
+    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zinc.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Zinc_%2830_Zn%29.jpg",
     "sourceUrl": "https://images-of-elements.com/zinc.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Zinc_(30_Zn).jpg"
   },
   "31": {
     "name": "Gallium",
