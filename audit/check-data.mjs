@@ -731,13 +731,13 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 
 // Initial element-image source-page rights audit; source-license checks are NOT
 // local cached-image approval or permission to release the package.
-const sourcePageReviewed=[...Array.from({length:80},(_,i)=>i+1),94,96];
+const sourcePageReviewed=[...Array.from({length:90},(_,i)=>i+1),94,96];
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
- if(![26,48,49,61,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
+ if(![26,48,49,61,84,85,86,87,96].includes(z))assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(m.commonsPage),'Commons source-page link '+z);
  assert.ok(m.originalUrl.startsWith('https://'),'Original image URL '+z);
  assert.ok(m.localUrl.startsWith('images/elements/'),'Retain local image path '+z);
 }
@@ -872,6 +872,30 @@ assert.match(photoSourceData['77'].attribution,/CC BY 3.0/,'Iridium publisher li
 assert.match(photoSourceData['78'].attribution,/Periodictableru/,'Platinum original creator');
 assert.match(photoSourceData['78'].attribution,/Materialscientist/,'Platinum crop credit');
 assert.match(photoSourceData['80'].note,/publisher's mercury element page/,'Mercury source attribution requirement');
+const auditedSourceLicenses81to90={
+ "81":"CC BY 3.0","82":"CC BY 3.0","83":"CC BY 3.0",
+ "84":"Publisher CC BY 3.0 claim; illustration withheld",
+ "85":"Publisher CC BY 3.0 claim; illustration withheld",
+ "86":"Publisher CC BY 3.0 claim; illustration withheld",
+ "87":"Publisher CC BY 3.0 claim; illustration withheld",
+ "88":"CC BY 3.0","89":"CC BY 2.0","90":"CC BY-SA 3.0"
+};
+for(let z=81;z<=90;z++){
+ const item=photoSourceData[String(z)];
+ assert.ok(item && item.localUrl.endsWith('.jpg'),'Saved JPEG metadata 81–90 '+z);
+ assert.ok(!!auditedSourceLicenses81to90[z],'Source rights reviewed 81–90 '+z);
+ if([84,85,86,87].includes(z)){
+  assert.match(item.withholdReason,/illustration/,'Non-photo image must be explicitly withheld '+z);
+  assert.match(item.title,/illustration/i,'Illustration must not be represented as photo '+z);
+  assert.equal(item.sourceUrl,'https://images-of-elements.com/'+item.name.toLowerCase()+'.php','Illustration source page '+z);
+ }else assert.ok(item.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),'Commons source link 81–90 '+z);
+}
+assert.match(photoSourceData['82'].note,/publisher|photographer/i,'Lead credit does not invent photographer');
+assert.match(photoSourceData['88'].attribution,/Materialscientist/,'Radium edited version credited');
+assert.match(photoSourceData['88'].title,/copper foil/,'Radium deposit on substrate accurately described');
+assert.match(photoSourceData['89'].title,/vial/,'Actinium depicts vial, not bulk metal');
+assert.ok(photoSourceData['89'].licenseUrl.endsWith('/by/2.0'),'Actinium CC BY 2.0');
+assert.ok(photoSourceData['90'].licenseUrl.endsWith('/by-sa/3.0'),'Thorium share-alike noted');
 assert.match(photoSourceData['29'].withholdReason,/disputes|disputed/i,'Copper image must be withheld pending source review');
 assert.match(photoSourceData['22'].title,/de Boer/,'Titanium process caption corrected');
 assert.match(photoSourceData['27'].title,/cobalt cathode/,'Cobalt cathode caption corrected');
@@ -933,6 +957,6 @@ console.log('PASS: RSC Pauling 61–70, Tb and Tm oxidation states, Eu/Yb appear
 console.log('PASS: RSC Pauling and oxidation fixtures 71–90; careful appearances and element/compound uses');
 console.log('PASS: RSC 91–118 Pauling/oxidation fields and conservative radioactive appearances/uses');
 console.log('PASS: Final Z1–30 RSC Pauling, compound oxidation, Z1–20 phase/density, allotrope notes, appearance and uses');
-console.log('PASS: 82 original-image source pages checked for license claims and credits; local photo binaries not yet cleared');
+console.log('PASS: 92 source pages checked, withheld illustrations 84-87 and isotope-vial provenance verified; no local JPG cleared');
 console.log('PASS: About & Credits exact disclaimer, four references, 118 filterable credits, navigation and offline cache');
 console.log('NOTICE: These internal consistency checks do NOT certify all chemistry, history, photography or quiz accuracy.');
