@@ -56,3 +56,30 @@ The state-source wording was **not discarded**: RSC's solid category remains ide
 - Regression [GitHub Actions 38829220578](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829220578) **completed success**, with corrected assertions. Earlier transitional failures were real and should remain visible: the RSC-only old fixture expected “Solid”, an in-progress edit temporarily had a JavaScript quote typo, and an assertion's regex did not match its equivalent correct wording. These were repaired before successful science regression, rather than labeling incomplete runs as passes.
 - [Chromium browser smoke 38829205412](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829205412) and [real HTTPS offline smoke 38829205545](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829205545) **completed success** on final HTML app fix. The latest native unsigned simulator run [38829205431](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829205431) was still underway at this document's creation and requires an actual completed conclusion before claiming pass.
 - No JPEGs, external rights, signed release package, `main` merge, Apple or Microsoft Store submission changed. Independent verification of the **remaining free-text appearance, uses and discovery narratives** remains open and should be reviewed as a distinct targeted content step, not redone numeric batch audits.
+
+## Follow-up: all six alkali transition values reconciled with the same 2024 NIST review
+
+After the original Francium-specific check, the entire group was checked against **the same evaluated [NIST TN 2273](https://doi.org/10.6028/NIST.TN.2273), Table 2 (printed p. 5)**. Using NIST for Fr alone would have left mixed source conventions. Source explicitly evaluates normal melting/boiling at **1 atm** and publishes expanded uncertainties (about 95% coverage). It is legitimate for RSC tabulated values to differ slightly; these updates select one source's recommended figures consistently rather than treating all older entries as scientific blunders.
+
+| Element (atomic number) | Previously stored melt/boil (K) | NIST 2024 selected melt/boil (K) | NIST expanded uncertainties (K) |
+|---|---|---|---|
+| Li #3 | 453.65 / 1615 | **453.61 / 1617.2** | ±0.14 / ±3.3 |
+| Na #11 | 370.944 / 1156.09 | **370.93 / 1156.09** | ±0.06 / ±0.19 |
+| K #19 | 336.7 / 1032 | **336.84 / 1030.87** | ±0.24 / ±0.7 |
+| Rb #37 | 312.45 / 961 | **312.46 / 960** | ±0.18 / ±2 |
+| Cs #55 | 301.7 / 944 | **301.66 / 941.4** | ±0.20 / ±0.4 |
+| Fr #87 | 294 / 923 (before earlier correction) | **300 / 936** | ±3 / ±6 (**estimates**, no bulk measurement) |
+
+The five *other* elements (#3, #11, #19, #37, #55) had their actual `meltingPoint` and `boilingPoint` data updated. A new **`temperatureReference`** data field on each includes NIST name, year, both temperatures, expanded uncertainties, normal pressure and DOI. On the element detail screen the evidence is displayed as **“Temperature reference”**. This is deliberately **separate from `phaseNote`** so experimentally characterized alkali metals are not misleadingly labeled as if they too had unobserved phases.
+
+Regression data sources for Li, Na, K, Rb and Cs were updated only for the changed phase numbers, retaining existing independent CIAAW weight, PubChem, RSC density/electronegativity, NIST configurations and historical checks. The automation also asserts all six NIST benchmark values and evidence notes exactly.
+
+**Evidence from actual GitHub Actions runs:**
+
+- Science and packaging [run **38829702240**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829702240): **completed success**, after complete six-element fixture update [commit `41912d5`](https://github.com/comctx/Periodic-Table-Explorer/commit/41912d527b2828c9b05fc0427c77ff8f3760c3a0).
+- Live Chromium browser [38829660872](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829660872): **completed success**, and genuine HTTPS/offline Chromium [38829660847](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829660847): **completed success**, on final runtime app update [`c9e41fe`](https://github.com/comctx/Periodic-Table-Explorer/commit/c9e41fe42be36d21b53c5d3f1c962d611ce4b32f).
+- [Unsigned iOS simulator **38829660857**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829660857) was still **in progress** at this source record's update. No assumption of pass or signed iPhone IPA.
+- Intermediate [package/science run **38829660864**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829660864) failed because the earlier RSC fixture expected older temperatures before the NIST fixture update; that run was superseded by the green package/science result. The failure remains in history, not erased.
+- The earlier rare-phase unsigned simulator [38829205431](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38829205431) subsequently **completed success**, but it predates five additional alkali temperature changes.
+
+**Limit:** These are selected revised **source-recommended values**, not an independent experimental replication, and do not imply the rest of the 118-element free-text audit is complete. Nothing was merged or submitted.
