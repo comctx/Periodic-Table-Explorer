@@ -18,6 +18,27 @@ These three identity strings must be **copied exactly** into the real Windows pa
 
 **Status:** Product identity gate **complete**. Still missing: the authorized HTTPS deployment of this **updated audit branch**, resolved third-party commercial image reuse rights, a genuine PWABuilder Windows MSIX package with those precise identity fields, installed-Windows testing, and final Store submission. `main` and the public app **remain unchanged** pending explicit release approval.
 
+## Corrected app release path prepared with offline migration — 2026-10-15
+
+The release issue is no longer building another MSIX: the owner's existing Edge PWA wrapper points to the **current GitHub Pages URL**. Updated HTML/JS/data can be delivered from that origin without changing the `manifest.webmanifest` (the web manifest is byte-identical between audit and `main`). Source: [Microsoft Edge PWA Store updates](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store#make-updates-to-your-app).
+
+**Release-specific correction already committed:** `sw.js` now rotates the offline service-worker cache from `pte-core-v3` to `pte-core-v4`. This allows old cached content to be retired when the audited website is approved and deployed. GitHub's [true HTTPS network-off upgrade test run **38846162466**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38846162466) concluded **success** and seeded an old v3 cache before installing v4. It then checked that **v3 was gone**, the new v4 cache held the corrected **CIAAW standard atomic weight terminology, Sigurd Hofmann GSI histories and uncertain superheavy states**, and the app still worked with 118 element pages, quiz and 92 eligible photos while fully offline. Science and packaging run [38846117454](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38846117454) also **passed** after coordinated v4 source/test updates.
+
+**Manual controlled deployment prepared, NOT ACTIVATED:** [`.github/workflows/ms-publish-audited-pages.yml`](../.github/workflows/ms-publish-audited-pages.yml) can build a **website** from the **audit branch** (not `main`), remove **all 26 withheld element JPEGs** from the resulting Pages artifact and keep the selected 92 and Bay City photo only after documented release clearance. It uses `audit/package_web_assets.py`, the pre-existing 118-element scientific regression, offline manifest check, `check_ms_pwa.py`, byte-for-byte source inspector and GitHub Pages upload. It is **not a Windows package rebuild**, does **not** submit to Partner Center, and it has **not run**. Unlike blindly merging the entire audit branch into `main`, the deploy artifact contains only reviewed app assets, not audit research/unused images.
+
+**Explicit deployment lock remains OFF:** `audit/ms-public-release-approval.json` currently has **all three approvals `false`**:
+- `photo_and_attribution_rights_reviewed`: false
+- `bay_city_image_and_logo_rights_reviewed`: false
+- `owner_approved_public_deployment`: false
+
+The workflow's `audit/check_ms_release_gate.py` refuses publication without all three explicit `true` values, a nonempty reviewer/date and a substantive on-repo rights-evidence document. Only a **verified rights review plus the owner's explicit yes to public deployment** can allow those values to change. The workflow can be triggered by a push changing the approval file on `scientific-audit-2026-10`, without requiring the workflow file to be committed to the old `main` branch. This is deliberately **not** an automatic publication from ordinary science or packaging commits.
+
+**One owner-side configuration prerequisite for this method:** In GitHub repository **Settings → Pages → Build and deployment**, Pages must be configured to source **GitHub Actions** before `actions/deploy-pages` can replace the current branch-based website, if it is not already configured that way. **Do not change this now**: changing live-site settings before legal release clearance could interrupt the existing site. The deployment workflow itself does not control this setting.
+
+**Follow-through after authorized deployment:** Validate the public URL and the **existing installed Windows Store PWA**: corrected source visible, new v4 cache activation and offline behavior, 118 elements, quiz, credits, published privacy/support pages, 26 withheld images absent from the deployed site; then submit Partner Center draft only after handling the `runFullTrust` warning.
+
+**Restricted capability warning:** Uploaded app's `runFullTrust` is real. Microsoft's [restricted capability documentation](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations) states that full-trust medium-integrity Windows apps may require it, and [submission options guidance](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/manage-submission-options) explains the review process. It is a **warning pending approval**, not proof of rejection. Do not edit/remove it from the bundled APPX without establishing which Edge-PWA packaging features require the declaration.
+
 ## Uploaded 1.0.1.0 bundle verified — executable package, website-driven content
 
 **Actual nested bundle inspection:** [`ACTUAL_MSIXBUNDLE_INSPECTION_2026_10.md`](ACTUAL_MSIXBUNDLE_INSPECTION_2026_10.md).
