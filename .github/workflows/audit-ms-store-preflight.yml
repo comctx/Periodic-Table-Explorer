@@ -1,0 +1,81 @@
+name: Microsoft Store PWA candidate preflight (audit only)
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-ms-store-preflight.yml
+      - audit/check_ms_pwa.py
+      - audit/package_web_assets.py
+      - audit/verify_distribution_package.py
+      - audit/check_offline_manifest.py
+      - audit/check-data.mjs
+      - manifest.webmanifest
+      - sw.js
+      - offline-photos.json
+      - index.html
+      - element.html
+      - quiz.html
+      - about.html
+      - privacy.html
+      - support.html
+      - element-photo-data.js
+      - elements-data.js
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Audit branch only (never publish or change main)
+        shell: bash
+        run: |
+          test "${GITHUB_REF_NAME}" = "scientific-audit-2026-10"
+          echo "STAGING/ENGINEERING ONLY: no Microsoft Store package is built here."
+      - name: Previous scientific regressions
+        run: node audit/check-data.mjs
+      - name: Validate service worker and staged photo manifest
+        run: |
+          node --check sw.js
+          python3 audit/check_offline_manifest.py
+      - name: Stage exact audited PWA content, excluding 26 withheld pictures
+        run: python3 audit/package_web_assets.py "${RUNNER_TEMP}/pte-ms-store/Web"
+      - name: Microsoft Store PWA manifest / content readiness
+        run: python3 audit/check_ms_pwa.py "${RUNNER_TEMP}/pte-ms-store/Web"
+      - name: Inspect actual staged PWA source byte-for-byte
+        run: python3 audit/verify_distribution_package.py "${RUNNER_TEMP}/pte-ms-store/Web"
+      - name: Prepare engineering-only source archive and check it
+        shell: bash
+        run: |
+          cd "${RUNNER_TEMP}/pte-ms-store"
+          zip -qr pte-ms-audit-web-source.zip Web
+          cd "${GITHUB_WORKSPACE}"
+          python3 audit/verify_distribution_package.py "${RUNNER_TEMP}/pte-ms-store/pte-ms-audit-web-source.zip"
+      - name: Upload build candidate sources for hosted-HTTPS testing only
+        uses: actions/upload-artifact@v4
+        with:
+          name: PTE-Microsoft-PWA-ENGINEERING-NOT-MSIX
+          path: ${{ runner.temp }}/pte-ms-store/pte-ms-audit-web-source.zip
+          if-no-files-found: error
+          retention-days: 7
+      - name: Explicit submission blockers
+        shell: bash
+        run: |
+          {
+            echo "### Microsoft Store candidate PWA: engineering stage only"
+            echo ""
+            echo "- Source from audit branch only. Public main branch unchanged."
+            echo "- Verified core PWA files, quiz, icons and 92-photo source candidate allowlist."
+            echo "- **NOT a Windows MSIX/MSIXBUNDLE.** No Store submission took place."
+            echo "- Do **NOT** publicly distribute engineering artifact; photo and Bay City image rights are not fully cleared."
+            echo "- To create real Microsoft Store MSIX: approve and host audited version on HTTPS, obtain reserved product Package ID, Publisher ID and Publisher display name in Partner Center, and generate via PWABuilder."
+            echo "- Review actual Windows package and complete rights sign-off before Store submission."
+          } >> "${GITHUB_STEP_SUMMARY}"
