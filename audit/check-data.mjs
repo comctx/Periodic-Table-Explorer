@@ -1102,6 +1102,32 @@ assert.ok(auditFirst30Index.includes('x.sublimationPoint!=null'),'Sublimation mo
 const sourcePageReviewed=Array.from({length:118},(_,i)=>i+1);
 const photoSourceRaw=readFileSync('element-photo-data.js','utf8');
 const photoSourceData=JSON.parse(photoSourceRaw.replace(/^window\.ELEMENT_PHOTOS\s*=\s*/, '').replace(/;\s*$/, ''));
+// Six selected images use file-specific public-domain evidence, not Creative
+// Commons. Missing CC licenseUrl must NOT be treated as missing permission
+// or "fixed" by adding a fabricated CC license. Verify a source reference and
+// source's documented public-domain basis before rights review.
+const publicDomainCandidateZ=[8,17,53,91,92,98];
+const eligiblePhotoZ=Array.from({length:118},(_,i)=>i+1)
+ .filter(z=>![61,84,85,86,87,93,99,...Array.from({length:19},(_,i)=>100+i)].includes(z));
+assert.equal(eligiblePhotoZ.length,92,'Exactly 92 engineering photo candidates');
+assert.deepEqual(eligiblePhotoZ.filter(z=>!photoSourceData[String(z)].licenseUrl),
+  publicDomainCandidateZ,
+  'Only the six known public-domain candidates lack a Creative Commons URL');
+for(const z of publicDomainCandidateZ){
+ const entry=photoSourceData[String(z)];
+ assert.match(entry.attribution,/public domain/i,
+  'Individual public-domain rationale must be visible in app credits #'+z);
+ assert.ok(entry.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),
+  'Traceable Wikimedia Commons original source for public-domain #'+z);
+ assert.ok(entry.attribution.includes('resiz')||entry.attribution.includes('resize'),
+  'Public-domain local derivative/transcode recorded in credits #'+z);
+}
+for(const z of [91,92]){
+ const info=photoSourceData[String(z)];
+ assert.ok(info.attribution.includes(info.commonsPage),
+  'DOE historical-photo credits must link to exact Commons original #'+z);
+}
+
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
  assert.ok(m,'Source-checked photo metadata exists '+z);
