@@ -2,6 +2,22 @@
 
 **Prepared:** 2026-10-15. **Live source:** `scientific-audit-2026-10` only. **Publication:** NOT started, NOT authorized to merge `main`, and no app has yet been uploaded to Microsoft Store.
 
+## Confirmed Partner Center product identity — owner screenshot 2026-10-15
+
+The user opened the **existing draft product** in Microsoft Partner Center (product overview / Product Identity page). This is **not a new Store listing**, so **do not create a duplicate app**. The three package-manifest identity values shown in the authenticated Product Identity screen are:
+
+| Windows package manifest field | Exact Microsoft-issued value |
+|---|---|
+| `Package/Identity/Name` | `DONCO-BAYCITY.1765894576CC2` |
+| `Package/Identity/Publisher` | `CN=BAF22FEF-6032-45F6-883B-4445F530E5ED` |
+| `Package/Properties/PublisherDisplayName` | `DONCO-BAYCITY` |
+
+**Microsoft Store product listing:** `Periodic Table Explorer`, existing status **In draft** (user's Partner Center screenshot). Existing Store product URL contains product identifier `9NMBLNHWTSDW`; keep it associated with this same listing.
+
+These three identity strings must be **copied exactly** into the real Windows package generated for the existing listing. The public web app's `manifest.webmanifest` is not an MSIX `AppxManifest.xml`; **do not** insert `CN=...` identity into web-manifest fields or pretend the MSIX already exists.
+
+**Status:** Product identity gate **complete**. Still missing: the authorized HTTPS deployment of this **updated audit branch**, resolved third-party commercial image reuse rights, a genuine PWABuilder Windows MSIX package with those precise identity fields, installed-Windows testing, and final Store submission. `main` and the public app **remain unchanged** pending explicit release approval.
+
 ## Current verified engineering status — DO NOT CONFUSE WITH MSIX
 
 - Existing app is a Progressive Web App with `manifest.webmanifest`, 192/512 pixel icons, secure/offline service worker, HTML pages for all 118 elements, quiz, About & Credits, support and privacy pages.
@@ -73,7 +89,7 @@ The app includes scientific references, an About & Credits page, privacy informa
 - Scientific references, credits, privacy and support
 
 **Release metadata still required, not guessed:**
-- Product reservation / Partner Center identity
+- ~~Product reservation / Partner Center identity~~ — confirmed above from existing draft product
 - Owner's chosen price, markets, and age-rating answers
 - Privacy policy **live public URL**, not merely `privacy.html` in the repository
 - Support page **live URL** or contact email from app (`comctx@icloud.com`, verify in Store draft)
