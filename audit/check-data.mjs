@@ -306,9 +306,9 @@ const rsc81to90={
   82:[600.612,2022,11.3,"Solid","[Xe] 4f14 5d10 6s2 6p2"],
   83:[544.556,1837,9.79,"Solid","[Xe] 4f14 5d10 6s2 6p3"],
   84:[527,1235,9.2,"Solid","[Xe] 4f14 5d10 6s2 6p4"],
-  85:[573,623,null,"Solid","[Xe] 4f14 5d10 6s2 6p5"],
+  85:[573,623,null,"Expected solid (RSC classification; unverified)","[Xe] 4f14 5d10 6s2 6p5"],
   86:[202,211.5,0.009074,"Gas","[Xe] 4f14 5d10 6s2 6p6"],
-  87:[294,923,null,"Solid","[Rn] 7s1"],
+  87:[300,936,null,"Expected solid (RSC classification; unverified)","[Rn] 7s1"],
   88:[969,1773,5,"Solid","[Rn] 7s2"],
   89:[1323,3473,10,"Solid","[Rn] 6d1 7s2"],
   90:[2023,5058,11.7,"Solid","[Rn] 6d2 7s2"],
@@ -348,7 +348,7 @@ const rsc91to100={
   97:[1259,null,14.78,"Solid","[Rn] 5f9 7s2"],
   98:[1173,null,15.1,"Solid","[Rn] 5f10 7s2"],
   99:[1133,null,null,"Solid","[Rn] 5f11 7s2"],
-  100:[1800,null,null,"Solid","[Rn] 5f12 7s2"],
+  100:[1800,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f12 7s2"],
 };
 for(const [z,expected] of Object.entries(rsc91to100)){
  const e=detailed[Number(z)-1];
@@ -377,9 +377,9 @@ assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope display
 // CIAAW has no standard atomic weight for elements 101–110.
 // RSC fact boxes: melt/boil K, density g/cm^3, electron configuration.
 const rsc101to110={
-  101:[258,1100,null,null,"Solid","[Rn] 5f13 7s2","+3"],
-  102:[259,1100,null,null,"Solid","[Rn] 5f14 7s2","+3, +2"],
-  103:[262,1900,null,null,"Solid","[Rn] 5f14 7s2 7p1","+3"],
+  101:[258,1100,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f13 7s2","+3"],
+  102:[259,1100,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 7s2","+3, +2"],
+  103:[262,1900,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 7s2 7p1","+3"],
   104:[267,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d2 7s2",null],
   105:[268,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d3 7s2",null],
   106:[269,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d4 7s2",null],
@@ -523,6 +523,47 @@ assert.equal(((-273)+273.15).toFixed(2),'0.15',
   'BIPM offset: -273 C remains 0.15 K');
 assert.equal((20+273.15).toFixed(2),'293.15',
   'BIPM offset: 20 C equals 293.15 K');
+
+// Explicit separation of measured values, tabulated classifications and estimated properties:
+// NIST TN 2273 (2024), pp. 25 & 49 (PDF indices 31 and 55), recommends
+// Fr Tm=300+/-3 K and Tb=936+/-6 K at 1 atm. Not direct measurements.
+// https://doi.org/10.6028/NIST.TN.2273
+assert.equal(detailed[86].meltingPoint,300,'NIST 2024 estimated francium melt in K');
+assert.equal(detailed[86].boilingPoint,936,'NIST 2024 estimated francium boiling in K');
+assert.match(detailed[86].phaseNote,/300 ± 3 K/,'Disclose NIST melting uncertainty');
+assert.match(detailed[86].phaseNote,/936 ± 6 K/,'Disclose NIST boiling uncertainty');
+assert.match(detailed[86].phaseNote,/not been observed/i,'No direct Francium bulk measurement');
+for(const z of [85,87,100,101,102,103,104,105,106,107,108,109]){
+  assert.match(detailed[z-1].standardState,/^Expected solid/,
+    'The rare-element bulk phase is classified/predicted, not measured '+z);
+  assert.equal(cells[z-1].state,'Unknown / predicted',
+    'Do not portray classified rare-element phase as certain '+z);
+}
+for(const z of [85,87,100,101,102,103]){
+  assert.ok(detailed[z-1].phaseNote && /not|unverified|few atoms|microgram/i.test(detailed[z-1].phaseNote),
+    'Specific source-limited phase caveat '+z);
+}
+assert.ok(indexSource.includes('if(/^Expected/i.test(x.standardState)) return "unknown";'),
+  'Temperature viewer must not turn predicted phases into experimentally certain colours');
+assert.ok(detailUi.includes('Phase / temperature evidence'),
+  'Detail view must show the specific source/uncertainty caveat');
+assert.ok(detailUi.includes(' (estimated)'),
+  'Detail phase temperatures clearly distinguish estimates from measurements');
+{
+  const phaseStart=indexSource.indexOf('function stateAtTemperature(e){');
+  const phaseEnd=indexSource.indexOf('function updateTemperatureUI(){',phaseStart);
+  assert.ok(phaseStart>0 && phaseEnd>phaseStart,'Phase-view function extractable for real execution');
+  const fn=new Function('thermalByZ','temperatureC',
+    indexSource.slice(phaseStart,phaseEnd)+'\\nreturn stateAtTemperature;');
+  const state20=fn(Object.fromEntries(detailed.map(e=>[e.atomicNumber,e])),20);
+  for(const z of [85,87,100,101,102,103,104,105,106,107,108,109]){
+    assert.equal(state20({z}), 'unknown','Real 20°C phase function not falsely certain for '+z);
+  }
+  assert.equal(state20({z:35}),'liquid','Bromine 20°C liquid');
+  assert.equal(state20({z:80}),'liquid','Mercury 20°C liquid');
+  assert.equal(state20({z:1}),'gas','Hydrogen 20°C gas');
+  assert.equal(state20({z:29}),'solid','Copper 20°C solid');
+}
 
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
