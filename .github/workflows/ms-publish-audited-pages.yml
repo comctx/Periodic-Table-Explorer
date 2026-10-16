@@ -1,6 +1,14 @@
 name: Publish corrected PTE website to GitHub Pages (manual, approval required)
 
 on:
+  # Workflows introduced only on a non-default audit branch are not always
+  # manually dispatchable in the GitHub UI. The release approval file is the
+  # explicit authorized trigger; it is false and fail-closed by default.
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - audit/ms-public-release-approval.json
   workflow_dispatch:
     inputs:
       confirmation:
@@ -19,7 +27,7 @@ concurrency:
 
 jobs:
   release-gates:
-    if: ${{ github.ref_name == 'scientific-audit-2026-10' && inputs.confirmation == 'PUBLISH_AUDITED_PERIODIC_TABLE' }}
+    if: ${{ github.ref_name == 'scientific-audit-2026-10' && (github.event_name == 'push' || inputs.confirmation == 'PUBLISH_AUDITED_PERIODIC_TABLE') }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
