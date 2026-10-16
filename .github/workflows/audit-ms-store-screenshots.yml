@@ -1,0 +1,86 @@
+name: Microsoft Store listing screenshots (audit review only)
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-ms-store-screenshots.yml
+      - audit/capture_ms_store_screens.mjs
+      - audit/package_web_assets.py
+      - index.html
+      - element.html
+      - quiz.html
+      - about.html
+      - manifest.webmanifest
+      - elements-data.js
+      - element-photo-data.js
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify audit branch, never release
+        run: test "${GITHUB_REF_NAME}" = "scientific-audit-2026-10"
+      - name: Install Chromium screenshot dependencies
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          python3 -m pip install --user pillow
+      - name: Stage accurate audited PWA, with denied pictures excluded
+        shell: bash
+        run: |
+          python3 audit/package_web_assets.py "${RUNNER_TEMP}/pte-ms-screenshot/Web"
+          python3 audit/check_ms_pwa.py "${RUNNER_TEMP}/pte-ms-screenshot/Web"
+          python3 audit/verify_distribution_package.py "${RUNNER_TEMP}/pte-ms-screenshot/Web"
+      - name: Screenshot exactly what reviewed desktop PWA renders
+        shell: bash
+        run: |
+          set -eu
+          mkdir -p "${RUNNER_TEMP}/pte-ms-store-assets/screenshots"
+          python3 -m http.server 8769 --bind 127.0.0.1 --directory "${RUNNER_TEMP}/pte-ms-screenshot/Web" > "${RUNNER_TEMP}/pte-ms-screenshot-server.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          AUDIT_BASE_URL=http://127.0.0.1:8769 PTE_STORE_SHOTS_DIR="${RUNNER_TEMP}/pte-ms-store-assets/screenshots" node audit/capture_ms_store_screens.mjs
+      - name: Prepare authentic Store tile icon and verify image dimensions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          from PIL import Image
+          root=Path(os.environ['RUNNER_TEMP'])/'pte-ms-store-assets'
+          screenshots=sorted((root/'screenshots').glob('*.png'))
+          assert len(screenshots)==6, f'Expected six actual app screenshots, got {len(screenshots)}'
+          for p in screenshots:
+              with Image.open(p) as im:
+                  assert im.size==(1366,768), f'{p.name} has incorrect desktop dimensions: {im.size}'
+                  assert im.format=='PNG'
+          with Image.open('icons/icon-512.png') as im:
+              out=im.convert('RGBA').resize((300,300),Image.Resampling.LANCZOS)
+              out.save(root/'store-icon-300.png',format='PNG',optimize=True)
+          with Image.open(root/'store-icon-300.png') as im:
+              assert im.size==(300,300) and im.format=='PNG'
+          print('PASS: six desktop app screenshots 1366x768 and 300x300 PNG Store tile, engineering only')
+          PY
+      - name: Upload review-only authentic screenshots (NOT SUBMITTED)
+        uses: actions/upload-artifact@v4
+        with:
+          name: PTE-MS-STORE-SCREENSHOTS-REVIEW-ONLY
+          path: ${{ runner.temp }}/pte-ms-store-assets/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Explicit caveats
+        if: always()
+        run: |
+          echo "Screenshots are of **updated audited PWA**, not of a Windows MSIX installation." >> "${GITHUB_STEP_SUMMARY}"
+          echo "Commercial picture rights still need sign-off; do NOT publicly distribute screenshot artifacts yet." >> "${GITHUB_STEP_SUMMARY}"
+          echo "Only audit branch was tested. Main and Store account were not changed." >> "${GITHUB_STEP_SUMMARY}"
