@@ -21,6 +21,18 @@ async function visit(path){
   assert.ok(response?.ok(), 'Offline navigation did not return a cached document: '+path+' '+response?.status());
 }
 try {
+  // Model a student who already installed the earlier Store PWA (v3). The
+  // privacy page does not register a service worker, so we can seed a stale
+  // science-data cache before the updated index starts registration.
+  await visit('privacy.html');
+  await page.evaluate(async()=>{
+    const previous=await caches.open('pte-core-v3');
+    await previous.put('./elements-data.js',
+      new Response('OLD_SCIENCE_DATA_SHOULD_NEVER_SURVIVE_UPGRADE',
+        {headers:{'Content-Type':'application/javascript'}}));
+  });
+  assert.ok((await page.evaluate(()=>caches.keys())).includes('pte-core-v3'),
+    'Test setup must simulate an existing old v3 cache');
   await visit('index.html');
   assert.equal(await page.locator('#ptable button.element').count(),118,'Online install page must load');
   await page.waitForFunction(async() => {
@@ -45,6 +57,27 @@ try {
       photos:keys.map(x=>new URL(x.url).pathname).filter(x=>x.includes('/images/elements/')),
       all:keys.length};
   });
+  // During the v4 service-worker activation, outdated v3 science files must
+  // disappear. A student installing the update cannot be left offline with the
+  // old GitHub main-branch details/atomic weight wording.
+  await page.waitForFunction(async()=>{
+    const keys=await caches.keys();
+    return keys.includes('pte-core-v4') && !keys.includes('pte-core-v3');
+  },null,{timeout:20000,polling:500});
+  const latestScience=await page.evaluate(async()=>{
+    const upgraded=await caches.open('pte-core-v4');
+    const detail=await upgraded.match('./element.html');
+    const data=await upgraded.match('./elements-data.js');
+    return {detail:detail?await detail.text():'', data:data?await data.text():''};
+  });
+  assert.ok(latestScience.detail.includes('Standard atomic weight (CIAAW 2024, abridged)'),
+    'New offline science cache must contain the audited CIAAW labels');
+  assert.ok(latestScience.detail.includes('Sigurd Hofmann'),
+    'New offline science cache must include corrected GSI history');
+  assert.ok(latestScience.data.includes('Expected solid (RSC classification; unverified)'),
+    'New offline science cache must preserve uncertain superheavy state');
+  assert.ok(!latestScience.data.includes('OLD_SCIENCE_DATA_SHOULD_NEVER_SURVIVE_UPGRADE'),
+    'Outdated science data must not survive offline cache migration');
   assert.ok(cacheReport.controlled,'HTTPS PWA registration did not take control');
   assert.equal(cacheReport.photos.length,92,'Initial install must cache all 92 photos');
   for(const z of excluded) {
