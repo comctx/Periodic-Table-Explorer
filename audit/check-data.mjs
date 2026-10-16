@@ -47,7 +47,7 @@ ciaaw2024.forEach((weight,i)=>{
 });
 
 const history={
-  111:{year:"1994",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  111:{year:"1994",by:"GSI Darmstadt team led by Sigurd Hofmann, including Peter Armbruster and Gottfried Münzenberg"},
   112:{year:"1996",by:"GSI Darmstadt team led by Sigurd Hofmann"},
   113:{year:"2004",by:"RIKEN team led by Kosuke Morita (Japan)"},
   114:{year:"1998",by:"JINR Dubna team led by Yuri Oganessian and Vladimir Utyonkov"},
@@ -64,7 +64,7 @@ const history={
   107:{year:"1981",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
   108:{year:"1984",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
   109:{year:"1982",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
-  110:{year:"1994",by:"GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"},
+  110:{year:"1994",by:"GSI Darmstadt team led by Sigurd Hofmann, including Peter Armbruster and Gottfried Münzenberg"},
   91:{year:"1913",by:"Kasimir Fajans and Otto Göhring"},
   92:{year:"1789",by:"Martin Heinrich Klaproth"},
   93:{year:"1940",by:"Edwin McMillan and Philip Abelson"},
@@ -411,12 +411,30 @@ for(let z=104;z<=109;z++){
     'Main table must distinguish classified bulk phase from direct measurement '+z);
 }
 
+// GSI's original 1994 110/111 history and IUPAC's 2003 JWP discovery priority
+// credit the international group led by Sigurd Hofmann; Armbruster and
+// Münzenberg are correctly retained as named collaborators.
+// References: https://www.gsi.de/en/about_us/50_years_gsi/timeline_1969_2019
+// https://www.gsi.de/en/work/forschung/nustarenna/nustarenna_divisions/she_physik/research/super_heavy_elements/element_110
+// https://publications.iupac.org/news/archives/2004/naming111.html
+for(const z of [110,111]){
+ const credit=detailed[z-1].discoveredBy;
+ assert.ok(credit.includes('led by Sigurd Hofmann')&&credit.includes('Peter Armbruster')&&credit.includes('Gottfried Münzenberg'),
+  'GSI leadership and collaborators properly distinguished '+z);
+}
+const gsiDiscoveryStories=readFileSync('element.html','utf8');
+for(const z of [110,111]){
+ const story=gsiDiscoveryStories.split('  '+z+':"')[1]?.split('"')[0]||'';
+ assert.ok(story.includes('led by Sigurd Hofmann'),
+  'GSI discovery narrative correctly names team leader '+z);
+ assert.ok(story.includes('2003'),'IUPAC recognition year in GSI discovery narrative '+z);
+}
 const h101to110=readFileSync('element.html','utf8');
 for(let z=101;z<=110;z++)assert.ok(h101to110.includes('  '+z+':"'),'Element-specific story missing '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope mass-number display');
 // Final eight: CIAAW has no standard atomic weights; RSC mass-number reference and predicted ground-state configurations.
 const rsc111to118={
-  111:[280,"[Rn] 5f14 6d10 7s1","1994","GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg"],
+  111:[280,"[Rn] 5f14 6d10 7s1","1994","GSI Darmstadt team led by Sigurd Hofmann, including Peter Armbruster and Gottfried Münzenberg"],
   112:[285,"[Rn] 5f14 6d10 7s2","1996","GSI Darmstadt team led by Sigurd Hofmann"],
   113:[286,"[Rn] 5f14 6d10 7s2 7p1","2004","RIKEN team led by Kosuke Morita (Japan)"],
   114:[289,"[Rn] 5f14 6d10 7s2 7p2","1998","JINR Dubna team led by Yuri Oganessian and Vladimir Utyonkov"],
