@@ -653,6 +653,43 @@ for(const [z,requirements] of Object.entries(usesSourceDistinctions)){
   }
 }
 
+// Independently source-checked 15-use follow-up on specific element vs. material claims.
+// Source: https://periodic-table.rsc.org/element/{atomic-number}, as documented
+// individually in audit/SCIENCE_USES_RSC_15_FOLLOWUP_2026_10.md
+const rscUses15={
+  13: ["aluminum metal","aluminum alloys","pure aluminum"],
+  18: ["argon gas","welding","inert atmospheres"],
+  36: ["krypton gas","krypton fluoride","excimer lasers"],
+  37: ["rubidium-87 atoms","atomic clocks","photoelectric cells"],
+  44: ["ruthenium metal","ruthenium-containing compounds","ruthenium oxide"],
+  45: ["rhodium metal","catalytic converters","rhodium-containing compounds"],
+  46: ["palladium metal","hydrogen to diffuse","palladium compounds"],
+  47: ["silver metal","silver halides","silver nanoparticles"],
+  48: ["nickel-cadmium","cadmium sulfide","toxicity"],
+  50: ["tin metal","coat steel","tin oxides"],
+  54: ["xenon gas","ion thrusters","xenon difluoride"],
+  62: ["samarium-cobalt alloys","laser","neutrons"],
+  66: ["neodymium-based magnet alloys","dysprosium iodide","dysprosium oxide"],
+  67: ["holmium ions","ho:yag","pure holmium metal"],
+  69: ["thulium-170","thulium-doped","pure thulium metal"],
+};
+assert.equal(Object.keys(rscUses15).length,15,
+  'Fifteen RSC-based element-use distinctions retained');
+for(const [z,requirements] of Object.entries(rscUses15)){
+  const e=detailed[Number(z)-1];
+  assert.equal(e.atomicNumber,Number(z),'Review item atomic number');
+  for(const phrase of requirements){
+    assert.ok(e.typicalUses.toLowerCase().includes(phrase.toLowerCase()),
+      'RSC element vs. compound / isotope description: '+z+' '+phrase);
+  }
+}
+for(const z of [36,54]){
+  const appearance=detailed[z-1].appearance;
+  assert.ok(appearance.includes('at ordinary conditions')
+      && appearance.includes('electrically excited'),
+    'Noble-gas appearance at ordinary conditions differs from discharge colour: '+z);
+}
+
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
 const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
