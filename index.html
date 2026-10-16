@@ -309,7 +309,7 @@ function stateAtTemperature(e){
 function updateTemperatureUI(){
   const f=temperatureC*9/5+32;
   const k=Math.max(0,temperatureC+273.15);
-  tempReadout.textContent=Math.round(temperatureC)+" °C • "+Math.round(f)+" °F • "+Math.round(k)+" K";
+  tempReadout.textContent=Math.round(temperatureC)+" °C • "+f.toFixed(1)+" °F • "+k.toFixed(2)+" K";
   tempSlider.value=String(temperatureC);
 
   familyModeBtn.classList.toggle("active",colorMode==="family");
