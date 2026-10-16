@@ -45,7 +45,7 @@ def check(root: Path) -> None:
                  and ".." not in str(icon.get("src", ""))]
         if not found or not (root / found[0]["src"][2:]).is_file():
             raise AssertionError(f"PWA missing required {size} icon")
-        if (root / found[0]["src"][2:]).read_bytes()[:8] != b"\\x89PNG\\r\\n\\x1a\\n":
+        if (root / found[0]["src"][2:]).read_bytes()[:8] != b"\x89PNG\r\n\x1a\n":
             raise AssertionError(f"PWA {size} icon is not a PNG")
 
     html = (root / "index.html").read_text(encoding="utf-8")
