@@ -690,6 +690,21 @@ for(const z of [36,54]){
     'Noble-gas appearance at ordinary conditions differs from discharge colour: '+z);
 }
 
+// CIAAW abbreviation vs atomic-mass UI distinction:
+// https://ciaaw.org/abridged-atomic-weights.htm
+// https://www.ciaaw.org/info.htm -- atomic mass applies to an atom; standard
+// atomic weight applies to isotopic-average normal material and is dimensionless.
+const ciaawUiLabel='Standard atomic weight (CIAAW 2024, abridged)';
+assert.ok(indexSource.includes(ciaawUiLabel),
+  'Quick-details view must not call an isotopic standard weight an individual atom mass');
+const elementDetailUiForWeights=readFileSync('element.html','utf8');
+assert.ok(elementDetailUiForWeights.includes(ciaawUiLabel),
+  'Element detail view must label the source and abridged weight convention');
+assert.ok(!elementDetailUiForWeights.includes('e.atomicMass==null?"Standard atomic weight":"Atomic mass"'),
+  'Reject stale atomic-mass label ternary in details');
+assert.ok(!indexSource.includes("e.mass==null?'Standard atomic weight':'Atomic mass'"),
+  'Reject stale atomic-mass label ternary in quick-details');
+
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
 const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
