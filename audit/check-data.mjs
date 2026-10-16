@@ -1127,6 +1127,23 @@ for(const z of [91,92]){
  assert.ok(info.attribution.includes(info.commonsPage),
   'DOE historical-photo credits must link to exact Commons original #'+z);
 }
+// ShareAlike adapted-file credit safeguards for Store candidates.
+// Checks only metadata quality; legal application of ShareAlike to a final
+// redistributed derivative still requires human file-specific review.
+const shareAlikeCandidateZ=[9,11,12,21,25,28,29,39,41,43,55,90];
+assert.equal(shareAlikeCandidateZ.length,12,'Expected 12 CC BY-SA engineering candidates');
+for(const z of shareAlikeCandidateZ){
+ const entry=photoSourceData[String(z)];
+ assert.match(entry.licenseUrl,/^https:\/\/creativecommons\.org\/licenses\/by-sa\/(3\.0|4\.0)\/?$/,
+  'CC BY-SA image uses exact license-version URL #'+z);
+ assert.match(entry.attribution,/sharealike|share-alike/i,
+  'ShareAlike obligation disclosed in visible credit #'+z);
+ assert.match(entry.attribution,/resiz|reencod/i,
+  'Adapted JPEG change notice present #'+z);
+ assert.ok(entry.commonsPage?.startsWith('https://commons.wikimedia.org/wiki/File:'),
+  'Exact original creator/source file traceable #'+z);
+}
+
 
 for(const z of sourcePageReviewed){
  const m=photoSourceData[String(z)];
