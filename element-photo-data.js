@@ -333,7 +333,7 @@ window.ELEMENT_PHOTOS = {
     "symbol": "Cu",
     "localUrl": "images/elements/029-cu.jpg",
     "title": "Native copper specimen from Michigan, photographed at the Muséum de Toulouse",
-    "attribution": "Pymouss, 'Muséum Toulouse - cuivre natif.JPG', own photograph of a native copper specimen from Michigan held by the Muséum de Toulouse. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. File https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG. Photograph resized/reencoded for this app; photo adaptation remains subject to CC BY-SA 3.0.",
+    "attribution": "Pymouss, 'Muséum Toulouse - cuivre natif.JPG', own photograph of a native copper specimen from Michigan held by the Muséum de Toulouse. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. File https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG. Photograph resized/reencoded for this app; the adapted photograph remains subject to the CC BY-SA 3.0 ShareAlike conditions.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
