@@ -8,7 +8,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Hydrogenglow.jpg",
     "sourceUrl": "https://images-of-elements.com/hydrogen.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hydrogenglow.jpg"
   },
   "2": {
     "name": "Helium",
@@ -19,51 +20,53 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Helium-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/helium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Helium-glow.jpg"
   },
   "3": {
     "name": "Lithium",
     "symbol": "Li",
     "localUrl": "images/elements/003-li.jpg",
     "title": "0.5 Grams Lithium under Argon. Original size of the largest piece in cm: 0.3 x 4",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lithium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/0.5_grams_lithium_under_argon.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/lithium.php.",
+    "originalUrl": "https://images-of-elements.com/s/lithium.jpg",
     "sourceUrl": "https://images-of-elements.com/lithium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/lithium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "4": {
     "name": "Beryllium",
     "symbol": "Be",
     "localUrl": "images/elements/004-be.jpg",
     "title": "Pure Beryllium bead, 2.5 grams. Original size in cm: 1 x 1.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/beryllium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Beryllium_%28Be%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/beryllium.php.",
+    "originalUrl": "https://images-of-elements.com/s/beryllium.jpg",
     "sourceUrl": "https://images-of-elements.com/beryllium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/beryllium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "5": {
     "name": "Boron",
     "symbol": "B",
     "localUrl": "images/elements/005-b.jpg",
-    "title": "Pure Crystalline Boron, front and back side. Original size in cm: 2 x 3",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/boron.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Boron.jpg",
+    "title": "Brown amorphous boron powder in a glass jar (not a crystalline boron specimen)",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/boron.php.",
+    "originalUrl": "https://images-of-elements.com/s/brown-boron.jpg",
     "sourceUrl": "https://images-of-elements.com/boron.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/brown-boron.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "6": {
     "name": "Carbon",
     "symbol": "C",
     "localUrl": "images/elements/006-c.jpg",
-    "title": "Element 6 - Carbon",
-    "attribution": "Texas Lane, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Pure_Carbon.png",
-    "sourceUrl": "",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "title": "Natural graphite (carbon) from Chardonnet, Haute-Savoie, France, photographed in the Paris Museum of Natural History mineralogy gallery",
+    "attribution": "Photograph by Marie-Lan Taÿ Pamart (Wikimedia uploader Jastrow), 30 January 2020. Natural graphite specimen from Chardonnet, Haute-Savoie, France, held by the Muséum national d'histoire naturelle, Paris. Original https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg. Licensed CC BY 4.0 International, https://creativecommons.org/licenses/by/4.0/. The app photo is resized/reencoded; changes indicated.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "Real photograph of naturally occurring graphite, one of carbon's elemental allotropes, from a museum mineral specimen. Not a representation of all carbon forms. Replaces a dark unverified 'Pure Carbon.png' depiction whose exact sample identity/allotrope was not documented. License grants reuse with named author, original photo link and change notice; image release-package review remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Native_graphite_Chardonnet_MNHN_Min%C3%A9ralogie.jpg"
   },
   "7": {
     "name": "Nitrogen",
@@ -74,29 +77,32 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Nitrogen-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/nitrogen.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Nitrogen-glow.jpg"
   },
   "8": {
     "name": "Oxygen",
     "symbol": "O",
     "localUrl": "images/elements/008-o.jpg",
-    "title": "Liquid Oxygen in a Beaker",
-    "attribution": "Staff Sgt. Nika Glover, U.S. Air Force, Public domain, via Wikimedia Commons",
+    "title": "Liquid oxygen (O2) in a laboratory beaker, from a U.S. Air Force photograph",
+    "attribution": "U.S. Air Force photograph by Staff Sgt. Nika Glover (October 2010), published as U.S. federal government public domain in the United States. Original https://commons.wikimedia.org/wiki/File:Liquid_oxygen_in_a_beaker.jpg. Wikimedia Commons cropped-and-retouched derivative credited to David Levy; this app resized/reencoded that derivative.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Liquid_oxygen_in_a_beaker_%28cropped_and_retouched%29.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "This photograph depicts liquid molecular oxygen, not ozone. The app uses the cropped and retouched version, https://commons.wikimedia.org/wiki/File:Liquid_oxygen_in_a_beaker_(cropped_and_retouched).jpg. The original Air Force photo is identified as a U.S. federal government work and public domain in the United States.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Liquid_oxygen_in_a_beaker_(cropped_and_retouched).jpg"
   },
   "9": {
     "name": "Fluorine",
     "symbol": "F",
     "localUrl": "images/elements/009-f.jpg",
-    "title": "Liquid Fluorine at -196°C",
-    "attribution": "Fulvio314, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Liquid fluorine at −196 °C in a research container",
+    "attribution": "Fulvio314, 'Fluoro liquido a -196°C 1.jpg', after 'Fluoro liquido a -196°C.jpg', Wikimedia Commons; CC BY-SA 3.0 Unported https://creativecommons.org/licenses/by-sa/3.0/. Original file https://commons.wikimedia.org/wiki/File:Fluoro_liquido_a_-196%C2%B0C_1.jpg; app JPEG resized/reencoded under the source image's ShareAlike conditions.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Fluoro_liquido_a_-196%C2%B0C_1.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "File-specific Commons page lists CC BY-SA 3.0 and identifies the file as a derivative of an earlier fluorine photograph. Preserve author, exact source image and ShareAlike license when distributing. The depicted −196 °C cryogenic state is not fluorine's ordinary room-temperature appearance.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fluoro_liquido_a_-196%C2%B0C_1.jpg"
   },
   "10": {
     "name": "Neon",
@@ -107,29 +113,32 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Neon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/neon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neon-glow.jpg"
   },
   "11": {
     "name": "Sodium",
     "symbol": "Na",
     "localUrl": "images/elements/011-na.jpg",
-    "title": "Na (Sodium) Metal",
-    "attribution": "The original uploader was Dnn87 at English Wikipedia., CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Sodium metal sample (Dennis S.K. collection)",
+    "attribution": "Dnn87, original photographer/uploader to English Wikipedia, 'Na (Sodium).jpg' (12 December 2007), sodium metal from the Dennis S.K. collection, via Wikimedia Commons. CC BY-SA 3.0 Unported https://creativecommons.org/licenses/by-sa/3.0/. Source https://commons.wikimedia.org/wiki/File:Na_(Sodium).jpg. App JPEG resized/reencoded; preserve ShareAlike terms for adaptations.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Na_%28Sodium%29.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons original uploader documents this as a self-made photograph of sodium metal from their collection. Include photographer name, image source, license link and modification notice; image adaptation subject to CC BY-SA 3.0.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Na_(Sodium).jpg"
   },
   "12": {
     "name": "Magnesium",
     "symbol": "Mg",
     "localUrl": "images/elements/012-mg.jpg",
-    "title": "Magnesium crystals",
-    "attribution": "Warut Roonguthai, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Vapor-deposited magnesium crystals produced by the Pidgeon process",
+    "attribution": "Warut Roonguthai, 'Magnesium crystals.jpg' (4 November 2007), own work, Wikimedia Commons https://commons.wikimedia.org/wiki/File:Magnesium_crystals.jpg. Licensed under CC BY-SA 3.0 Unported (source also offers other CC BY-SA versions and GFDL); this app uses CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/. JPEG resized/reencoded and adaptation remains subject to chosen ShareAlike terms.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Magnesium_crystals.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Real magnesium crystal aggregate, approximately 24 cm at its largest dimension, from a refinery in China, produced by vapor deposition using the Pidgeon process. Commons offers multiple CC BY-SA and GFDL license options; this app cites the CC BY-SA 3.0 option.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Magnesium_crystals.jpg"
   },
   "13": {
     "name": "Aluminium",
@@ -140,51 +149,55 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aluminium.jpg",
     "sourceUrl": "https://images-of-elements.com/aluminium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Aluminium.jpg"
   },
   "14": {
     "name": "Silicon",
     "symbol": "Si",
     "localUrl": "images/elements/014-si.jpg",
-    "title": "Chunk of Ultrapure Silicon, 2 x 2 cm",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/silicon.php",
+    "title": "Chunk of ultrapure elemental silicon, approximately 2 × 2 cm",
+    "attribution": "Jurii, original photograph 'Silicon.jpg', Creative Commons Attribution 3.0 Unported (CC BY 3.0) <https://creativecommons.org/licenses/by/3.0/>; original file https://commons.wikimedia.org/wiki/File:Silicon.jpg; source publisher https://images-of-elements.com/silicon.php.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Silicon.jpg",
     "sourceUrl": "https://images-of-elements.com/silicon.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Replacement for an unrelated photovoltaic-panel picture. This JPEG was produced from the separately licensed original Silicon.jpg from Wikimedia Commons and downscaled/reencoded for the app. Identify image creator Jurii, file source and CC BY 3.0 license in About & Credits. Final desktop/Store packaging rights audit remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silicon.jpg"
   },
   "15": {
     "name": "Phosphorus",
     "symbol": "P",
     "localUrl": "images/elements/015-p.jpg",
-    "title": "Purple Phosphorus",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/phosphorus.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phosphorus-purple.jpg",
+    "title": "White phosphorus with a small amount of red phosphorus, giving a yellow appearance (sealed sample)",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/phosphorus.php.",
+    "originalUrl": "https://images-of-elements.com/s/white-phosphorus.jpg",
     "sourceUrl": "https://images-of-elements.com/phosphorus.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/white-phosphorus.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "16": {
     "name": "Sulfur",
     "symbol": "S",
     "localUrl": "images/elements/016-s.jpg",
-    "title": "Native Sulfur From Russia",
-    "attribution": "James St. John, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons",
+    "title": "Natural crystalline sulfur from the Vodinskoe deposit near Samara, Russia",
+    "attribution": "James St. John, 'Native sulfur (Vodinskoe Deposit; quarry near Samara, Russia) 9.jpg' (2022), via Wikimedia Commons. Original Flickr photo https://www.flickr.com/photos/47445767@N05/51939544144/; CC BY 2.0 Generic https://creativecommons.org/licenses/by/2.0/. Wikimedia Flickr-license review completed 15 March 2022; app JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Native_sulfur_%28Vodinskoe_Deposit%3B_quarry_near_Samara%2C_Russia%29_9.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://www.flickr.com/photos/47445767@N05/51939544144/",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The photographer identifies a native sulfur mineral specimen containing visible crystals, not an industrial powder. Original Flickr source and CC BY 2.0 license documented by Commons Flickr reviewer; resizing/reencoding disclosed.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Native_sulfur_(Vodinskoe_Deposit%3B_quarry_near_Samara%2C_Russia)_9.jpg"
   },
   "17": {
     "name": "Chlorine",
     "symbol": "Cl",
     "localUrl": "images/elements/017-cl.jpg",
-    "title": "A Sample of Chlorine",
-    "attribution": "Benjah-bmm27, Public domain, via Wikimedia Commons",
+    "title": "Chlorine sample (photograph flipped and cropped from its original)",
+    "attribution": "Benjah-bmm27, original 'Chlorine-sample.jpg' (2007), freely dedicated to the public domain; derivative 'Chlorine-sample-flip.jpg' flipped and cropped by Materialscientist (2009), both on Wikimedia Commons. File https://commons.wikimedia.org/wiki/File:Chlorine-sample-flip.jpg. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Chlorine-sample-flip.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Source Commons file records author Benjah-bmm27's public-domain dedication, and explicitly identifies Materialscientist's flip and crop. These edits and app resizing are disclosed; chlorine shown is a contained laboratory sample, not free chlorine in the open air.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Chlorine-sample-flip.jpg"
   },
   "18": {
     "name": "Argon",
@@ -195,7 +208,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Argon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/argon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Argon-glow.jpg"
   },
   "19": {
     "name": "Potassium",
@@ -206,7 +220,8 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Potassium.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Potassium.JPG"
   },
   "20": {
     "name": "Calcium",
@@ -217,1084 +232,1147 @@ window.ELEMENT_PHOTOS = {
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Calcium.jpg",
     "sourceUrl": "https://images-of-elements.com/calcium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Calcium.jpg"
   },
   "21": {
     "name": "Scandium",
     "symbol": "Sc",
     "localUrl": "images/elements/021-sc.jpg",
-    "title": "Crystal of Scandium. About 1g",
-    "attribution": "JanDerChemiker, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Approximately 1 g scandium crystal, photographed by JanDerChemiker",
+    "attribution": "JanDerChemiker, own work, 'Scandium, Sc.jpg' (2010), https://commons.wikimedia.org/wiki/File:Scandium,_Sc.jpg. Creative Commons Attribution–ShareAlike 3.0 Unported (CC BY-SA 3.0), https://creativecommons.org/licenses/by-sa/3.0/ . Photo resized and reencoded for this app; derivative-image ShareAlike terms must be respected.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Scandium%2C_Sc.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The Commons file describes approximately 1 gram of crystalline scandium and lists CC BY-SA 3.0 or GFDL; this app chooses the CC BY-SA 3.0 option and credits the named creator.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Scandium,_Sc.jpg"
   },
   "22": {
     "name": "Titanium",
     "symbol": "Ti",
     "localUrl": "images/elements/022-ti.jpg",
-    "title": "Titanium Crystal made with the van Arkel-de Booer Process. 87 grams, Original size in cm: 2.5 x 4",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/titanium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Titanium.jpg",
+    "title": "Titanium sponge cylinder, porous metallic titanium; approximate source description 120 g",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/titanium.php.",
+    "originalUrl": "https://images-of-elements.com/s/titanium.jpg",
     "sourceUrl": "https://images-of-elements.com/titanium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/titanium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "23": {
     "name": "Vanadium",
     "symbol": "V",
     "localUrl": "images/elements/023-v.jpg",
-    "title": "Pieces of Pure Vanadium with Oxide Layer",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/vanadium.php",
+    "title": "Pieces of vanadium metal with an oxide surface layer",
+    "attribution": "Jurii, 'Vanadium-pieces.jpg' (28 September 2009), from Chemical Elements — A Virtual Museum, https://commons.wikimedia.org/wiki/File:Vanadium-pieces.jpg; CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Vanadium-pieces.jpg",
     "sourceUrl": "https://images-of-elements.com/vanadium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The source explicitly describes a thin oxide layer on the vanadium; this is not evidence of a perfectly pristine unoxidized surface.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Vanadium-pieces.jpg"
   },
   "24": {
     "name": "Chromium",
     "symbol": "Cr",
     "localUrl": "images/elements/024-cr.jpg",
-    "title": "Piece of Chromium Metal",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/chromium.php",
+    "title": "Piece of elemental chromium metal",
+    "attribution": "Jurii, 'Chromium.jpg' (22 May 2009), https://commons.wikimedia.org/wiki/File:Chromium.jpg; publisher Chemical Elements — A Virtual Museum. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Chromium.jpg",
     "sourceUrl": "https://images-of-elements.com/chromium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "A physical chromium metal sample according to the original file, not chrome-plated steel.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Chromium.jpg"
   },
   "25": {
     "name": "Manganese",
     "symbol": "Mn",
     "localUrl": "images/elements/025-mn.jpg",
-    "title": "Two Oieces of Manganese Metal",
-    "attribution": "W. Oelen, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Two specimens of manganese metal",
+    "attribution": "W. Oelen, 'Manganese element.jpg' (20 September 2005), https://commons.wikimedia.org/wiki/File:Manganese_element.jpg; CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. Photo resized/reencoded; ShareAlike adaptation terms must be followed.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Manganese_element.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The Commons file identifies two manganese metal pieces and the original photographer W. Oelen, rather than an unidentified ore.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Manganese_element.jpg"
   },
   "26": {
     "name": "Iron",
     "symbol": "Fe",
     "localUrl": "images/elements/026-fe.jpg",
-    "title": "Fragments of an iron meteorite, about 92% iron. Original size of the single pieces in cm: 0.4 - 0.8",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/iron.php",
+    "title": "Fragments of an iron meteorite containing about 92% iron — not a pure iron sample",
+    "attribution": "Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Iron', https://images-of-elements.com/iron.php. Source describes iron-rich meteorite fragments approximately 92% iron, with the remaining material consisting of other elements. Publisher states CC BY 3.0 Unported for its images unless excepted, https://creativecommons.org/licenses/by/3.0/, and requests a credit link to the element page. Individual photographer of this exact file not independently verified; app JPEG resized/reencoded.",
     "originalUrl": "https://images-of-elements.com/iron-2.jpg",
     "sourceUrl": "https://images-of-elements.com/iron.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "These are fragments of a naturally occurring iron-rich meteorite, not pure Fe metal; the reported iron content is approximately 92%. The cached JPEG source identity was previously checked against the publisher's iron-2.jpg. Image-specific author/grant and the final commercial redistribution package still need sign-off."
   },
   "27": {
     "name": "Cobalt",
     "symbol": "Co",
     "localUrl": "images/elements/027-co.jpg",
-    "title": "Fractions from a cobalt, 7 and 4 grams. Original size in cm: 2 x 2",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/cobalt.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cobalt_ore_2.jpg",
+    "title": "Fragments from a cobalt cathode, 7 g and 4 g",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/cobalt.php.",
+    "originalUrl": "https://images-of-elements.com/s/cobalt.jpg",
     "sourceUrl": "https://images-of-elements.com/cobalt.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/cobalt.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "28": {
     "name": "Nickel",
     "symbol": "Ni",
     "localUrl": "images/elements/028-ni.jpg",
-    "title": "Nickel Chunk",
-    "attribution": "Materialscientist at English Wikipedia, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Approximately 3 cm nickel metal chunk",
+    "attribution": "Materialscientist (English Wikipedia), own photograph 'Nickel chunk.jpg' (10 November 2009), https://commons.wikimedia.org/wiki/File:Nickel_chunk.jpg; CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. App JPEG resized/reencoded; preserve photographer/source/ShareAlike terms for any derivative.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Nickel_chunk.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The original file describes a nickel sample about 3 cm across; its creator offers CC BY-SA 3.0 as an applicable license.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Nickel_chunk.jpg"
   },
   "29": {
     "name": "Copper",
     "symbol": "Cu",
     "localUrl": "images/elements/029-cu.jpg",
-    "title": "Macro of Native Copper about 1 ½ inches (4 cm) in size",
-    "attribution": "Native_Copper_Macro_Digon3.jpg: 'Jonathan Zander (Digon3)' derivative work: Materialscientist, CC BY-SA 2.5 <https://creativecommons.org/licenses/by-sa/2.5>, via Wikimedia Commons",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg",
-    "sourceUrl": "",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-    "note": "Image resized for Periodic Table Explorer."
+    "title": "Native copper specimen from Michigan, photographed at the Muséum de Toulouse",
+    "attribution": "Pymouss, 'Muséum Toulouse - cuivre natif.JPG', own photograph of a native copper specimen from Michigan held by the Muséum de Toulouse. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. File https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG. Photograph resized/reencoded for this app; the adapted photograph remains subject to the CC BY-SA 3.0 ShareAlike conditions.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "Replaces the old disputed native-copper photo with a museum-catalogued specimen photographed by Pymouss, showing Michigan native copper as part of a mineral matrix. Source photo resized/reencoded, with original credited, link to CC BY-SA 3.0 and ShareAlike adaptation terms. Do not represent non-copper mineral matrix as pure copper. Final release/package license audit remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_Toulouse_-_cuivre_natif.JPG"
   },
   "30": {
     "name": "Zinc",
     "symbol": "Zn",
     "localUrl": "images/elements/030-zn.jpg",
     "title": "30 grams Zinc, front and back side. Original size in cm: 3",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zinc.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Zinc_%2830_Zn%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/zinc.php.",
+    "originalUrl": "https://images-of-elements.com/s/zinc.jpg",
     "sourceUrl": "https://images-of-elements.com/zinc.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/zinc.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "31": {
     "name": "Gallium",
     "symbol": "Ga",
     "localUrl": "images/elements/031-ga.jpg",
-    "title": "Solid gallium, fresh and after some time (2 months) at room temperature",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gallium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Solid_gallium_%28Ga%29.jpg",
+    "title": "Gallium metal sample photographed by Chemical Elements — A Virtual Museum",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/gallium.php.",
+    "originalUrl": "https://images-of-elements.com/s/gallium.jpg",
     "sourceUrl": "https://images-of-elements.com/gallium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/gallium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "32": {
     "name": "Germanium",
     "symbol": "Ge",
     "localUrl": "images/elements/032-ge.jpg",
-    "title": "12 Grams Polycrystalline Germanium, 2*3 cm",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/germanium.php",
+    "title": "12 grams of polycrystalline germanium, approximately 2 × 3 cm",
+    "attribution": "Jurii, 'Polycrystalline-germanium.jpg' (21 October 2009), https://commons.wikimedia.org/wiki/File:Polycrystalline-germanium.jpg; original Chemical Elements — A Virtual Museum, https://images-of-elements.com/germanium.php. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Polycrystalline-germanium.jpg",
     "sourceUrl": "https://images-of-elements.com/germanium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Original photograph describes a 12-gram piece of polycrystalline germanium approximately 2 × 3 cm.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Polycrystalline-germanium.jpg"
   },
   "33": {
     "name": "Arsenic",
     "symbol": "As",
     "localUrl": "images/elements/033-as.jpg",
-    "title": "Ultrapure Metallic Arsenic under Argon, 1 - 2 grams. Original size of each piece in cm: 0.5 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/arsenic.php",
+    "title": "Grey metallic arsenic specimen sealed under argon (source describes 1–2 g)",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Arsenic (33 As).jpg', https://commons.wikimedia.org/wiki/File:Arsenic_(33_As).jpg; CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded; individual photographer not separately named on the Commons file.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Arsenic_%2833_As%29.jpg",
     "sourceUrl": "https://images-of-elements.com/arsenic.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The source describes metallic grey arsenic. This picture is of the elemental specimen, not arsenic trioxide; arsenic and many of its compounds are hazardous. Commons names the photo publisher rather than an individual photographer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Arsenic_(33_As).jpg"
   },
   "34": {
     "name": "Selenium",
     "symbol": "Se",
     "localUrl": "images/elements/034-se.jpg",
-    "title": "Ultrapure Black, Amorphous Selenium, 3 - 4 grams. Original size in cm: 2",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/selenium.php",
+    "title": "Black amorphous selenium sample (not grey crystalline selenium)",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Selenium.jpg', https://commons.wikimedia.org/wiki/File:Selenium.jpg; CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded; individual photographer not independently named on the Commons file.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Selenium.jpg",
     "sourceUrl": "https://images-of-elements.com/selenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The element has different allotropes: this source identifies black amorphous selenium, not grey trigonal crystalline selenium. Publisher credited on the original Commons file, but individual image creator is not named.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Selenium.jpg"
   },
   "35": {
     "name": "Bromine",
     "symbol": "Br",
     "localUrl": "images/elements/035-br.jpg",
-    "title": "99.5 % pure liquid Bromine in a 4 x 1 cm big glass ampoule, cast in acrylic",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/bromine.php",
+    "title": "99.5%-pure liquid bromine in a sealed glass ampoule set in acrylic",
+    "attribution": "Jurii, 'Bromine-ampoule.jpg' (8 May 2009), https://commons.wikimedia.org/wiki/File:Bromine-ampoule.jpg; Chemical Elements — A Virtual Museum, https://images-of-elements.com/bromine.php. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. Resized/reencoded for this app.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Bromine-ampoule.jpg",
     "sourceUrl": "https://images-of-elements.com/bromine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Original describes a 4 × 1 cm glass ampoule containing 99.5%-pure liquid bromine, sealed in acrylic. The photo should not suggest that bromine is safe to handle outside containment.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Bromine-ampoule.jpg"
   },
   "36": {
     "name": "Krypton",
     "symbol": "Kr",
     "localUrl": "images/elements/036-kr.jpg",
-    "title": "Vial of Glowing Ultrapure Krypton. Original size in cm: 1 x 5.",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/krypton.php",
+    "title": "Vial of glowing ultrapure krypton under electrical excitation, approximately 1 × 5 cm",
+    "attribution": "Jurii, 'Krypton-glow.jpg' (23 July 2009), https://commons.wikimedia.org/wiki/File:Krypton-glow.jpg; Chemical Elements — A Virtual Museum, https://images-of-elements.com/krypton.php. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Krypton-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/krypton.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The glow occurs in an electrically excited discharge tube. This is not how krypton appears in normal lighting.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Krypton-glow.jpg"
   },
   "37": {
     "name": "Rubidium",
     "symbol": "Rb",
     "localUrl": "images/elements/037-rb.jpg",
-    "title": "Rubidium Metal Sample",
-    "attribution": "Dnn87, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    "title": "Rubidium sample in a sealed ampoule with visible colorful superoxide",
+    "attribution": "Dnn87, self-photographed 'Rb5.JPG' (20 December 2007), sample from the Dennis S.K. collection, https://commons.wikimedia.org/wiki/File:Rb5.JPG. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/ (original also offers GFDL). App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Rb5.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Original file identifies rubidium and colorful superoxide visible under bright light inside the ampoule. The multilingual Commons captions call the sample liquid; phase in the photo is temperature-dependent, so this app does not assert ordinary-room-temperature liquid rubidium.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rb5.JPG"
   },
   "38": {
     "name": "Strontium",
     "symbol": "Sr",
     "localUrl": "images/elements/038-sr.jpg",
-    "title": "Strontium Pieces under Paraffin Oil.",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/strontium.php",
+    "title": "Strontium metal pieces kept under paraffin oil",
+    "attribution": "Jurii, 'Strontium-1.jpg' (23 August 2009), https://commons.wikimedia.org/wiki/File:Strontium-1.jpg, original Chemical Elements — A Virtual Museum, https://images-of-elements.com/strontium.php; CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Strontium-1.jpg",
     "sourceUrl": "https://images-of-elements.com/strontium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Strontium is stored under paraffin oil in the source photograph to reduce air/moisture exposure; the oil is not part of the element.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Strontium-1.jpg"
   },
   "39": {
     "name": "Yttrium",
     "symbol": "Y",
     "localUrl": "images/elements/039-y.jpg",
-    "title": "6,21g Yttrium, Reinheit mindestens 99%.",
-    "attribution": "Jan Anskeit, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    "title": "6.21 g yttrium metal specimen, at least 99% pure",
+    "attribution": "Jan Anskeit, own photograph 'Piece of Yttrium.jpg' (30 August 2019), https://commons.wikimedia.org/wiki/File:Piece_of_Yttrium.jpg. CC BY-SA 4.0 International, https://creativecommons.org/licenses/by-sa/4.0/. App photo resized/reencoded; preserve credit, file link and ShareAlike obligations for adaptations.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Piece_of_Yttrium.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The original German description states a mass of 6.21 grams and purity of at least 99%; 99% is a lower bound, not a precise assay.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Piece_of_Yttrium.jpg"
   },
   "40": {
     "name": "Zirconium",
     "symbol": "Zr",
     "localUrl": "images/elements/040-zr.jpg",
-    "title": "Two pieces of Zirconium, 1 cm each.",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/zirconium.php",
+    "title": "Two zirconium metal pieces, approximately 1 cm each",
+    "attribution": "Jurii, 'Zirconium-pieces.jpg' (21 October 2009), https://commons.wikimedia.org/wiki/File:Zirconium-pieces.jpg; original publisher Chemical Elements — A Virtual Museum, https://images-of-elements.com/zirconium.php. CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App JPEG resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Zirconium-pieces.jpg",
     "sourceUrl": "https://images-of-elements.com/zirconium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Source identifies two pieces of zirconium metal approximately 1 cm each.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Zirconium-pieces.jpg"
   },
   "41": {
     "name": "Niobium",
     "symbol": "Nb",
     "localUrl": "images/elements/041-nb.jpg",
     "title": "Niobium strips",
-    "attribution": "Mauro Cateb, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Mauro Cateb, own photograph 'Niobium strips.JPG' (11 July 2011), via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG. Licensed CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. The copy used in this app was resized/reencoded; original source, modification notice and ShareAlike conditions apply.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Niobium_strips.JPG",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Real niobium metal strips. Wikimedia Commons records Mauro Cateb as original photographer and CC BY-SA 3.0 as the file license. Prior audit of the cached JPEG found a likely source-photo match (dHash distance 0). This is author/license-source corroboration, not final adapted-file or signed-distribution rights approval.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Niobium_strips.JPG"
   },
   "42": {
     "name": "Molybdenum",
     "symbol": "Mo",
     "localUrl": "images/elements/042-mo.jpg",
-    "title": "99.9 Pure Molybdenum Crystal, about 2 x 3 cm, with anodisation color",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/molybdenum.php",
+    "title": "99.9% pure molybdenum crystal with anodization color, approximately 2 × 3 cm",
+    "attribution": "Photograph by Jurii, 'Molybdenum.jpg' (9 July 2009), https://commons.wikimedia.org/wiki/File:Molybdenum.jpg, also attributed via https://images-of-elements.com/molybdenum.php. Licensed CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. The cached app image was resized/reencoded; original photographer, file source and change are credited.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Molybdenum.jpg",
     "sourceUrl": "https://images-of-elements.com/molybdenum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons describes a 99.9%-pure molybdenum crystal about 2 × 3 cm with anodization color; do not confuse it with another sample photograph on the publisher gallery page. Prior local dHash comparison for #42 found a likely match to this Commons original (distance 0). Source attribution improved, not final distribution clearance.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Molybdenum.jpg"
   },
   "43": {
     "name": "Technetium",
     "symbol": "Tc",
     "localUrl": "images/elements/043-tc.jpg",
-    "title": "Technetium Sample inside a sealed glass ampoule, filled with argon gas. 6x1 mm goldfoil covered with 99Tc powder (electroplated).",
-    "attribution": "GFDL, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons",
+    "title": "Technetium-99 powder electrodeposited on a 6 × 1 mm gold foil inside a sealed argon-filled glass ampoule",
+    "attribution": "Marco Cardin, original photograph 'Technetium-sample.jpg' (13 March 2020), https://commons.wikimedia.org/wiki/File:Technetium-sample.jpg. Cropped by Wikimedia Commons contributor Double sharp on 31 August 2021 as 'Technetium-sample-cropped.jpg', https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg. This app further resized/reencoded the cropped version. The derivative is cited under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), https://creativecommons.org/licenses/by-sa/4.0/; retain creator, cropper, adaptation and ShareAlike notices.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Technetium-sample-cropped.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Photograph shows technetium-99 powder electrodeposited onto a 6 × 1 mm gold foil in an argon-filled sealed ampoule, not a large piece of bulk metal. Commons expressly documents original photographer Marco Cardin and 2021 crop by Double sharp; the original also offers a GFDL option, while this app records the CC BY-SA 4.0 alternative shown on the cropped file. Prior local-image audit found a likely image match (dHash 0). Exact adapted-JPEG compliance and signed-release package still require final verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Technetium-sample-cropped.jpg"
   },
   "44": {
     "name": "Ruthenium",
     "symbol": "Ru",
     "localUrl": "images/elements/044-ru.jpg",
-    "title": "Ruthenium Crystal, 0.6 grams, 0.6 x 1.3 cm size",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/ruthenium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ruthenium_crystal.jpg",
+    "title": "Ruthenium metal sample",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/ruthenium.php.",
+    "originalUrl": "https://images-of-elements.com/s/ruthenium.jpg",
     "sourceUrl": "https://images-of-elements.com/ruthenium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/ruthenium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "45": {
     "name": "Rhodium",
     "symbol": "Rh",
     "localUrl": "images/elements/045-rh.jpg",
     "title": "Pure Rhodium Bead, 1 gram. Original size in cm: 0.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhodium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rhodium_%28Rh%29.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/rhodium.php.",
+    "originalUrl": "https://images-of-elements.com/s/rhodium.jpg",
     "sourceUrl": "https://images-of-elements.com/rhodium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/rhodium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "46": {
     "name": "Palladium",
     "symbol": "Pd",
     "localUrl": "images/elements/046-pd.jpg",
     "title": "Palladium Crystal, about 1 gram. Original size in cm: 0.5 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/palladium.php",
+    "attribution": "'Hi-Res Images of Chemical Elements' (credited publication/creator identity on the Commons file), 'Palladium (46 Pd).jpg', https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg, image from https://images-of-elements.com/palladium.php. Individual photographer not separately named on the Commons source. License cited: CC BY 3.0 Unported, https://creativecommons.org/licenses/by/3.0/. App version resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/palladium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Publisher's Palladium element page identifies a palladium crystal about 1 gram, ~0.5 × 1 cm. Commons gives publication-level author credit rather than a separately identified individual photographer; the uploader Stas1995 is not asserted to have taken the picture. Prior local image comparison found a likely source match (dHash 2). Source-level license and attribution corroborated; final exact-file commercial release clearance remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Palladium_(46_Pd).jpg"
   },
   "47": {
     "name": "Silver",
     "symbol": "Ag",
     "localUrl": "images/elements/047-ag.jpg",
-    "title": "Natural silver nugget, 1 cm long.",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/silver.php",
+    "title": "Natural elemental silver nugget, approximately 1 cm long",
+    "attribution": "Jurii, original photograph 'Silver-nugget.jpg', Creative Commons Attribution 3.0 Unported (CC BY 3.0) <https://creativecommons.org/licenses/by/3.0/>; original file https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg; source publisher https://images-of-elements.com/silver.php.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Silver-nugget.jpg",
-    "sourceUrl": "http://images-of-elements.com/silver.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "sourceUrl": "https://images-of-elements.com/silver.php",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Replacement for a 925 sterling-silver chain (silver alloy jewelry). This JPEG was produced from original Silver-nugget.jpg under CC BY 3.0, resized/reencoded for app. Preserve photographer, license and change statement in About & Credits. Final release packaging/rights review remains pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Silver-nugget.jpg"
   },
   "48": {
     "name": "Cadmium",
     "symbol": "Cd",
     "localUrl": "images/elements/048-cd.jpg",
-    "title": "48 Cd Cadmium",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/cadmium.php",
+    "title": "Cadmium metal specimen from publisher photograph cadmium-4.jpg; exact purity is not independently established",
+    "attribution": "Chemical Elements — A Virtual Museum (Jumk.de Webprojects); exact cadmium-4.jpg photographer not independently identified. Publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> unless otherwise noted and requests element-page attribution: https://images-of-elements.com/cadmium.php.",
     "originalUrl": "https://images-of-elements.com/cadmium-4.jpg",
     "sourceUrl": "https://images-of-elements.com/cadmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Current local JPEG was previously compared against the actual publisher original cadmium-4.jpg (dHash 1, grayscale delta 0.1; GitHub run 38681018215). A separately licensed Commons file Pure_cadmium.jpg is a DIFFERENT photograph (dHash 24, delta 64.4 in run 38775178783); do not attach that file's creator/license details to this picture. The publisher page describes both pure and oxidized specimens; the pictured sample's measured composition has not been independently established. Local image cached/resized for the app. Individual source-photo author and final commercial release-rights checks remain open."
   },
   "49": {
     "name": "Indium",
     "symbol": "In",
     "localUrl": "images/elements/049-in.jpg",
-    "title": "1.5 x 1.5 cm liquid indium",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/indium.php",
+    "title": "Molten (liquid) indium sample, about 1.5 × 1.5 cm; indium is solid at ordinary room temperature",
+    "attribution": "Jurii, original Commons photograph 'Liquid-indium.jpg' (10 August 2009), CC BY 3.0 Unported <https://creativecommons.org/licenses/by/3.0/>. Wikimedia file: https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg; publisher page: https://images-of-elements.com/indium.php.",
     "originalUrl": "https://images-of-elements.com/indium-2.jpg",
-    "sourceUrl": "http://images-of-elements.com/indium.php",
+    "sourceUrl": "https://images-of-elements.com/indium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Both local file 049-in.jpg and the original Wikimedia file are 856 × 856 pixels and are visually equivalent (dHash 0; grayscale difference 0.1 in successful GitHub run 38775178783). The existing publisher-hosted indium-2.jpg was also compared against the local JPEG in run 38681018215 (dHash 0, delta 0.1). The source photographer is Jurii per Wikimedia's original file record. Source images may have been reencoded or otherwise processed; the actual release-bundle attribution and CC BY 3.0 rights obligations remain to be checked.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Liquid-indium.jpg"
   },
   "50": {
     "name": "Tin",
     "symbol": "Sn",
     "localUrl": "images/elements/050-sn.jpg",
-    "title": "Tin blob",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: http://images-of-elements.com/tin.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tin-2.jpg",
-    "sourceUrl": "http://images-of-elements.com/tin.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "title": "Tin metal specimen",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/tin.php.",
+    "originalUrl": "https://images-of-elements.com/s/tin.jpg",
+    "sourceUrl": "https://images-of-elements.com/tin.php",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/tin.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "51": {
     "name": "Antimony",
     "symbol": "Sb",
     "localUrl": "images/elements/051-sb.jpg",
     "title": "Antimony crystal, 2 grams, 1 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/antimony.php",
+    "attribution": "Photographer not identified on Wikimedia Commons; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/antimony.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg",
     "sourceUrl": "https://images-of-elements.com/antimony.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Antimony-4.jpg"
   },
   "52": {
     "name": "Tellurium",
     "symbol": "Te",
     "localUrl": "images/elements/052-te.jpg",
     "title": "Metallic tellurium, diameter 3.5 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/tellurium.php",
+    "attribution": "Photographer not identified on Wikimedia Commons; published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/tellurium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Tellurium2.jpg",
     "sourceUrl": "https://images-of-elements.com/tellurium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tellurium2.jpg"
   },
   "53": {
     "name": "Iodine",
     "symbol": "I",
     "localUrl": "images/elements/053-i.jpg",
-    "title": "Iodine Sample",
-    "attribution": "Benjah-bmm27, Public domain, via Wikimedia Commons",
+    "title": "Iodine crystals photographed at ordinary conditions",
+    "attribution": "Benjah-bmm27, own photograph 'Iodine-sample.jpg' (16 May 2007), https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg. Wikimedia Commons records an express public domain release by the original photographer for worldwide reuse, with unconditional reuse permission where public domain dedication is not legally possible. The stored app photo was resized/reencoded; credit retained for provenance.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Iodine-sample.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "This is a crystalline elemental iodine specimen at ordinary conditions. Original Commons image author Benjah-bmm27 expressly released this photo into the public domain; the app does not claim a Creative Commons license for it. Prior cached image comparison found a likely original match (dHash 0). Public-domain source evidence reviewed, but exact binary/package verification and overall release approval remain separate.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Iodine-sample.jpg"
   },
   "54": {
     "name": "Xenon",
     "symbol": "Xe",
     "localUrl": "images/elements/054-xe.jpg",
-    "title": "Vial of glowing ultrapure xenon. Original size in cm: 1 x 5",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/xenon.php",
+    "title": "Vial of electrically excited glowing ultrapure xenon, approximately 1 × 5 cm",
+    "attribution": "Jurii, original photograph 'Xenon-glow.jpg' (11 August 2009), https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg. Wikimedia Commons contributor Papa Lima Whiskey removed a white speck in the current file version on 16 July 2010. The app's JPEG was subsequently resized/reencoded. Original source https://images-of-elements.com/xenon.php; license Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Changes and source-page attribution are acknowledged.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Xenon-glow.jpg",
     "sourceUrl": "https://images-of-elements.com/xenon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Electrical discharge makes this xenon gas vial glow; it does not imply xenon glows unexcited. Commons history identifies photographer Jurii (2009) and a white-speck removal by Papa Lima Whiskey (16 July 2010). An earlier saved-image dHash audit found a likely source match (distance 0), not byte identity. File rights and exact signed-package credits still need release verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Xenon-glow.jpg"
   },
   "55": {
     "name": "Cesium",
     "symbol": "Cs",
     "localUrl": "images/elements/055-cs.jpg",
     "title": "Cesium/Caesium metal",
-    "attribution": "Dnn87 Contact email: Dnn87yahoo.dk, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "attribution": "Dnn87, original self-photograph 'Cesium.jpg' (12 December 2007), caesium metal from the Dennis S.K. collection, via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Cesium.jpg. The Commons transfer was made by Anrie (not the original photographer). CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. The app's JPEG was resized/reencoded; preserve applicable adaptation and ShareAlike notices.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Cesium.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The source's original upload log identifies Dnn87 as original photographer in 2007, distinct from the 2008 Commons transfer. Earlier stored-image comparison found a likely image match (dHash distance 0). License and file history checked, but adapted-file rights, source identity in an actual signed build, and packaging remain final release gates.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cesium.jpg"
   },
   "56": {
     "name": "Barium",
     "symbol": "Ba",
     "localUrl": "images/elements/056-ba.jpg",
-    "title": "1.5 Grams Barium with a Grey Oxide Layer under Argon. Original size in cm: 0.7 x 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/barium.php",
+    "title": "Approximately 1.5 g of barium with a grey oxide layer, kept under argon (about 0.7 × 1 cm)",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Barium (56 Ba).jpg', https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg; credited source page https://images-of-elements.com/barium.php. Wikimedia Commons credits this publisher-level author rather than an independently named individual photographer; uploader Stas1995 is not established as the photographer. Commons and the publisher state Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. App image resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Barium_%2856_Ba%29.jpg",
     "sourceUrl": "https://images-of-elements.com/barium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Publisher labels this photograph approximately 1.5 g barium with grey oxide layer stored under argon, about 0.7 × 1 cm. Commons records Hi-Res Images of Chemical Elements as author credit, without an individually corroborated photographer. Historical app JPEG comparison reported a likely image match (dHash distance 0). File-specific rights authority, exemptions, attribution, and final signed-package review remain pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Barium_(56_Ba).jpg"
   },
   "57": {
     "name": "Lanthanum",
     "symbol": "La",
     "localUrl": "images/elements/057-la.jpg",
-    "title": "1 cm Big Piece of Pure Lanthanum",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lanthanum.php",
+    "title": "Approximately 1 cm piece of pure lanthanum metal",
+    "attribution": "Jurii, own photograph 'Lanthanum.jpg' (28 September 2009), https://commons.wikimedia.org/wiki/File:Lanthanum.jpg, original element page https://images-of-elements.com/lanthanum.php. Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. App photograph resized/reencoded and original image source credited.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Lanthanum.jpg",
     "sourceUrl": "https://images-of-elements.com/lanthanum.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The source photograph is a piece of lanthanum metal roughly 1 cm long, credited and originally uploaded by Jurii, 28 September 2009. The prior local image comparison found a likely match (dHash distance 1). This documents source author/license and an app alteration notice, not final redistribution clearance of the packaged JPEG.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lanthanum.jpg"
   },
   "58": {
     "name": "Cerium",
     "symbol": "Ce",
     "localUrl": "images/elements/058-ce.jpg",
     "title": "Ultrapure Cerium under Argon, 1.5 grams. Original size in cm: 1 x 1",
-    "attribution": "Jurii, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/cerium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
+    "attribution": "Image published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). The individual photographer for this exact version has not been independently verified. The publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/cerium.php.",
+    "originalUrl": "https://images-of-elements.com/s/cerium.jpg",
     "sourceUrl": "https://images-of-elements.com/cerium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "The app's stored JPEG closely matches https://images-of-elements.com/s/cerium.jpg (dHash distance 0 for most, at most 1; grayscale brightness difference 0.1–0.2), verified against actual source image bytes in GitHub Actions run 38683282141. Its previously cited Commons photograph was different, so the old Commons-file credit was removed. This is a resized/reencoded photograph. Confirm individual photographer, any image-specific exceptions, full CC attribution and final release bundle before commercial publication."
   },
   "59": {
     "name": "Praseodymium",
     "symbol": "Pr",
     "localUrl": "images/elements/059-pr.jpg",
-    "title": "1.5 Grams Praseodymium under Argon, 0.5 cm big pieces",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/praseodymium.php",
+    "title": "About 1.5 g of praseodymium pieces, approximately 0.5 cm each, stored under argon",
+    "attribution": "Jurii, original photograph 'Praseodymium.jpg' (11 August 2009), https://commons.wikimedia.org/wiki/File:Praseodymium.jpg; source page https://images-of-elements.com/praseodymium.php. Commons contributor DePiep retouched the photo on 16 September 2012 to remove distracting shadows and borders. The app then resized/reencoded the source version. Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Both earlier editing and app adaptation are disclosed.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg",
     "sourceUrl": "https://images-of-elements.com/praseodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Photograph shows approximately 1.5 g praseodymium pieces under argon, roughly 0.5 cm each. Commons file history documents Jurii's 2009 photograph and DePiep's shadow/border removal in 2012. The prior source-identity review found a likely photograph match (dHash distance 7), not byte-identical certification. Exact derivative chain and final release package rights remain open.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Praseodymium.jpg"
   },
   "60": {
     "name": "Neodymium",
     "symbol": "Nd",
     "localUrl": "images/elements/060-nd.jpg",
     "title": "Ultrapure Neodymium under Argon, 5 grams. Original length of the large piece in cm: 1",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/neodymium.php",
+    "attribution": "Hi-Res Images of Chemical Elements / Chemical Elements — A Virtual Museum (Jumk.de Webprojects), 'Neodymium (60 Nd).jpg', https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg; element page https://images-of-elements.com/neodymium.php. The Commons record identifies the publishing project, not an individual photographer; Stas1995 is a Commons file uploader, not a verified author. The file states Creative Commons Attribution 3.0 Unported (CC BY 3.0), https://creativecommons.org/licenses/by/3.0/. Stored app image resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Neodymium_%2860_Nd%29.jpg",
     "sourceUrl": "https://images-of-elements.com/neodymium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Publisher's neodymium page depicts about 5 grams of neodymium under argon, with a larger piece approximately 1 cm long. Commons identifies the file publisher as Hi-Res Images of Chemical Elements without separately naming an individual photographer. Previously recorded dHash local comparison found a likely match (distance 0); confirmation of publisher's rights-grant authority, any exceptions and exact commercial-release bundle is still pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neodymium_(60_Nd).jpg"
   },
   "61": {
     "name": "Promethium",
     "symbol": "Pm",
     "localUrl": "images/elements/061-pm.jpg",
-    "title": "Photomontage of what promethium metal might look like (it is too radioactive and real images are not available)",
-    "attribution": "Unknown authorUnknown author, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/promethium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Promethium.jpg",
+    "title": "Illustration / photomontage imagining promethium metal — NOT a photograph of promethium",
+    "attribution": "Illustration from Chemical Elements — A Virtual Museum (Jumk.de Webprojects); original image creator not established; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, source: https://images-of-elements.com/promethium.php",
+    "originalUrl": "https://images-of-elements.com/s/promethium.jpg",
     "sourceUrl": "https://images-of-elements.com/promethium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Publisher-gallery URL was found to match the cached image (GitHub Actions run 38681550877). This remains an illustration/photomontage, not a photograph of promethium, and must be withheld from element-photo display. The unrelated/unavailable claimed Wikimedia original has been replaced with the actual publisher art link; redistribution clearance remains pending.",
+    "withholdReason": "The source explicitly calls this a photomontage/illustration, not a photograph of promethium metal. It is withheld from the element photo panel to avoid misrepresentation."
   },
   "62": {
     "name": "Samarium",
     "symbol": "Sm",
     "localUrl": "images/elements/062-sm.jpg",
     "title": "Ultrapure Sublimated Samarium, 2 grams. Original size in cm: 0.8 x 1.5",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/samarium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/samarium.php.",
+    "originalUrl": "https://images-of-elements.com/s/samarium.jpg",
     "sourceUrl": "https://images-of-elements.com/samarium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/samarium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "63": {
     "name": "Europium",
     "symbol": "Eu",
     "localUrl": "images/elements/063-eu.jpg",
-    "title": "Weakly Oxidized Europium, hence slightly yellowish. 1.5 grams, large piece 0.6 x 1.6 cm.",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/europium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg",
+    "title": "Weakly oxidized europium metal (slightly yellow), about 1.5 g",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/europium.php.",
+    "originalUrl": "https://images-of-elements.com/s/europium.jpg",
     "sourceUrl": "https://images-of-elements.com/europium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/europium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "64": {
     "name": "Gadolinium",
     "symbol": "Gd",
     "localUrl": "images/elements/064-gd.jpg",
-    "title": "Pure (99.95%) Amorphous Gadolinium, about 12 grams, 2 × 1.5 × 0.5 cm, cast in acrylic glass",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gadolinium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg",
+    "title": "99.95% pure amorphous gadolinium, about 12 g, embedded in acrylic glass",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/gadolinium.php.",
+    "originalUrl": "https://images-of-elements.com/s/gadolinium.jpg",
     "sourceUrl": "https://images-of-elements.com/gadolinium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gadolinium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/c2/Gadolinium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "65": {
     "name": "Terbium",
     "symbol": "Tb",
     "localUrl": "images/elements/065-tb.jpg",
     "title": "Pure Terbium, 3 grams. Original size: 1 cm",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/terbium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/terbium.php.",
+    "originalUrl": "https://images-of-elements.com/s/terbium.jpg",
     "sourceUrl": "https://images-of-elements.com/terbium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/terbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "66": {
     "name": "Dysprosium",
     "symbol": "Dy",
     "localUrl": "images/elements/066-dy.jpg",
-    "title": "Pure Dysprosium Dendrites",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/dysprosium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg",
+    "title": "Pure dysprosium metal dendrites",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/dysprosium.php.",
+    "originalUrl": "https://images-of-elements.com/s/dysprosium.jpg",
     "sourceUrl": "https://images-of-elements.com/dysprosium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/dysprosium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Dysprosium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "67": {
     "name": "Holmium",
     "symbol": "Ho",
     "localUrl": "images/elements/067-ho.jpg",
     "title": "Ultrapure Holmium, 17 grams. Original size in cm: 1.5 x 2.5",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/holmium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/holmium.php.",
+    "originalUrl": "https://images-of-elements.com/s/holmium.jpg",
     "sourceUrl": "https://images-of-elements.com/holmium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/holmium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "68": {
     "name": "Erbium",
     "symbol": "Er",
     "localUrl": "images/elements/068-er.jpg",
-    "title": "9.5 Gramms Pure Erbium, 2 x 2 cm",
+    "title": "9.5 g of pure erbium metal, approximately 2 × 2 cm",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/erbium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Erbium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/erbium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Erbium-2.jpg"
   },
   "69": {
     "name": "Thulium",
     "symbol": "Tm",
     "localUrl": "images/elements/069-tm.jpg",
-    "title": "Ultrapure (99.997%) Crystalline Thulium, 22.3 grams, 3 × 3 × 2 cm in size",
+    "title": "99.997%-pure crystalline thulium obtained by sublimation, 22.3 g, cast in acrylic",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/thulium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Thulium-2.jpg",
     "sourceUrl": "https://images-of-elements.com/thulium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Wikimedia file history records cleanup/spot removal by Jurii in May 2009. Image resized for Periodic Table Explorer; verify the exact downloaded revision and changes before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thulium-2.jpg"
   },
   "70": {
     "name": "Ytterbium",
     "symbol": "Yb",
     "localUrl": "images/elements/070-yb.jpg",
     "title": "Ytterbium, 0.5 x 1 cm",
-    "attribution": "Jurii, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/ytterbium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/ytterbium.php.",
+    "originalUrl": "https://images-of-elements.com/s/ytterbium.jpg",
     "sourceUrl": "https://images-of-elements.com/ytterbium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/ytterbium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "71": {
     "name": "Lutetium",
     "symbol": "Lu",
     "localUrl": "images/elements/071-lu.jpg",
-    "title": "1 cm Big Piece of Pure Lutetium",
+    "title": "Pure lutetium metal piece, about 1 cm across",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lutetium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Lutetium.jpg",
     "sourceUrl": "https://images-of-elements.com/lutetium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lutetium.jpg"
   },
   "72": {
     "name": "Hafnium",
     "symbol": "Hf",
     "localUrl": "images/elements/072-hf.jpg",
-    "title": "Electrolytic Hafnium, 22 grams. Original size in cm: 1 x 2 x 3",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/hafnium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg",
+    "title": "Electrolytic hafnium sample, about 22 g; its surface may darken due to oxidation",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/hafnium.php.",
+    "originalUrl": "https://images-of-elements.com/s/hafnium.jpg",
     "sourceUrl": "https://images-of-elements.com/hafnium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/hafnium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/1/17/Hafnium_%2872_Hf%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "73": {
     "name": "Tantalum",
     "symbol": "Ta",
     "localUrl": "images/elements/073-ta.jpg",
-    "title": "Piece of tantalum, 1 cm in size",
-    "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/tantalum.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg",
+    "title": "Tantalum metal fragments — exact source photograph under review",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/tantalum.php.",
+    "originalUrl": "https://images-of-elements.com/s/tantalum.jpg",
     "sourceUrl": "https://images-of-elements.com/tantalum.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/tantalum.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/61/Tantalum.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "74": {
     "name": "Tungsten",
     "symbol": "W",
     "localUrl": "images/elements/074-w.jpg",
-    "title": "Tungsten rod with oxidised surface, 80 grams. Original size in cm: 1.3 x 3",
+    "title": "Tungsten rod with an oxidized surface, 80 g; about 1.3 × 3 cm",
     "attribution": "Jurii, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/tungsten.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tungsten_rod_with_oxidised_surface.jpg",
     "sourceUrl": "https://images-of-elements.com/tungsten.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons records CC BY 1.0 for the original upload and separately CC BY 3.0 under the photo publisher's terms. The file-specific CC BY 1.0 link is retained. Image resized for Periodic Table Explorer; confirm chosen license and actual source match before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tungsten_rod_with_oxidised_surface.jpg"
   },
   "75": {
     "name": "Rhenium",
     "symbol": "Re",
     "localUrl": "images/elements/075-re.jpg",
-    "title": "Pure Rhenium Bead, arc melted, 21 grams. Original size in cm: 1.5 x 1.7. Measured radiation dose <0.05 μS/h.",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/rhenium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg",
+    "title": "Pure arc-melted rhenium bead, about 21 g and 1.5 × 1.7 cm",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/rhenium.php.",
+    "originalUrl": "https://images-of-elements.com/s/rhenium.jpg",
     "sourceUrl": "https://images-of-elements.com/rhenium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/rhenium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/d/d9/Pure_rhenium_bead%2C_arc_melted%2C_21_grams._Original_size_in_cm_-_1.5_x_1.7.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "76": {
     "name": "Osmium",
     "symbol": "Os",
     "localUrl": "images/elements/076-os.jpg",
-    "title": "Pure Osmium Bead",
+    "title": "Bead of pure osmium metal",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/osmium.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Osmium-bead.jpg",
     "sourceUrl": "https://images-of-elements.com/osmium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Osmium-bead.jpg"
   },
   "77": {
     "name": "Iridium",
     "symbol": "Ir",
     "localUrl": "images/elements/077-ir.jpg",
     "title": "Pieces of Pure Iridium, 1 gram. Original size: 0.1 - 0.3 cm each",
-    "attribution": "Unknown authorUnknown author, CC BY 1.0 <https://creativecommons.org/licenses/by/1.0>, via Wikimedia Commons, source: https://images-of-elements.com/iridium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/iridium.php.",
+    "originalUrl": "https://images-of-elements.com/s/iridium.jpg",
     "sourceUrl": "https://images-of-elements.com/iridium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/1.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/iridium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "78": {
     "name": "Platinum",
     "symbol": "Pt",
     "localUrl": "images/elements/078-pt.jpg",
     "title": "Crystals of Pure Platinum grown by gas phase transport",
-    "attribution": "Periodictableru, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    "attribution": "Periodictableru (original photographer); Materialscientist (whitespace crop), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Platinum_crystals.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons history shows Materialscientist cropped whitespace from the original image in March 2010. App image resized; verify local copy matches this version before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Platinum_crystals.jpg"
   },
   "79": {
     "name": "Gold",
     "symbol": "Au",
     "localUrl": "images/elements/079-au.jpg",
     "title": "Ultrapure Gold Leaf",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/gold.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/gold.php.",
+    "originalUrl": "https://images-of-elements.com/s/gold.jpg",
     "sourceUrl": "https://images-of-elements.com/gold.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/gold.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/8/8a/Gold_%2879_Au%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "80": {
     "name": "Mercury",
     "symbol": "Hg",
     "localUrl": "images/elements/080-hg.jpg",
     "title": "6 grams pure mercury. Diameter of the inner disc: 2 cm",
-    "attribution": "Hi-Res Images of Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/mercury.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/mercury.php.",
+    "originalUrl": "https://images-of-elements.com/s/mercury.jpg",
     "sourceUrl": "https://images-of-elements.com/mercury.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/mercury.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/b/be/Hydrargyrum_%2880_Hg%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "81": {
     "name": "Thallium",
     "symbol": "Tl",
     "localUrl": "images/elements/081-tl.jpg",
-    "title": "8 grams pure thallium under argon. Original size in cm: 0.7 x 1.5",
-    "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/thallium.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg",
+    "title": "About 8 g of thallium metal preserved under argon, approximately 0.7 × 1.5 cm",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/thallium.php.",
+    "originalUrl": "https://images-of-elements.com/s/thallium.jpg",
     "sourceUrl": "https://images-of-elements.com/thallium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/thallium.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/5/55/Thallium_%2881_Tl%29.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "82": {
     "name": "Lead",
     "symbol": "Pb",
     "localUrl": "images/elements/082-pb.jpg",
-    "title": "Ultrapure Lead Bead from two sides. Original size in cm: 1.5 x 2",
-    "attribution": "Chemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/lead.php",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg",
+    "title": "Lead metal specimen showing a polished face — exact source photograph under review",
+    "attribution": "Photograph published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); individual photographer for this version not independently confirmed. Publisher offers CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for its images unless noted otherwise, and requests attribution linking to https://images-of-elements.com/lead.php.",
+    "originalUrl": "https://images-of-elements.com/s/lead.jpg",
     "sourceUrl": "https://images-of-elements.com/lead.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "note": "Exact publisher-gallery image URL https://images-of-elements.com/s/lead.jpg closely matches this app's cached JPEG (dHash 0–2, low brightness difference in GitHub Actions run 38681550877). The previously catalogued Wikimedia original https://upload.wikimedia.org/wikipedia/commons/6/63/Lead-2.jpg is a different image or view; do not use its author/license statements for this app JPEG without further investigation. Local photo is a resized/reencoded adaptation. Source-page license notice, individual creator, applicable permissions, modification/ShareAlike requirements and release package still need final verification."
   },
   "83": {
     "name": "Bismuth",
     "symbol": "Bi",
     "localUrl": "images/elements/083-bi.jpg",
-    "title": "Bismuth Crystal",
+    "title": "Crystal of elemental bismuth",
     "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/bismuth.php",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bismuth-2.jpg",
     "sourceUrl": "https://images-of-elements.com/bismuth.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Bismuth-2.jpg"
   },
   "84": {
     "name": "Polonium",
     "symbol": "Po",
     "localUrl": "images/elements/084-po.jpg",
-    "title": "This is only an illustration, not polonium itself. A silvery, radioactive metal, producing so much heat that it gets liquid and ionizes the surrounding air",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/polonium.php",
+    "title": "Artist's illustration of polonium — not an observed photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/polonium.php",
     "originalUrl": "https://images-of-elements.com/polonium.jpg",
     "sourceUrl": "https://images-of-elements.com/polonium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "85": {
     "name": "Astatine",
     "symbol": "At",
     "localUrl": "images/elements/085-at.jpg",
-    "title": "This is only an illustration, not astatine itself. Crystals similar to iodine, but darker in color than these, which due to the extreme radioactivity glow blue and evaporate to dark purple gas",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/astatine.php",
+    "title": "Artist's illustration of astatine — its appearance is not directly documented by this picture",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/astatine.php",
     "originalUrl": "https://images-of-elements.com/astatine.jpg",
     "sourceUrl": "https://images-of-elements.com/astatine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "86": {
     "name": "Radon",
     "symbol": "Rn",
     "localUrl": "images/elements/086-rn.jpg",
-    "title": "This is only an illustration, not radon itself. Radon is said to glow red in discharge tubes, although it practically is never used for this, due to its strong radioactivity.",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/radon.php",
+    "title": "Artist's illustration of radon gas in a hypothetical discharge tube — not an actual photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/radon.php",
     "originalUrl": "https://images-of-elements.com/radon.jpg",
     "sourceUrl": "https://images-of-elements.com/radon.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "87": {
     "name": "Francium",
     "symbol": "Fr",
     "localUrl": "images/elements/087-fr.jpg",
-    "title": "This is only an illustration, not francium itself.",
-    "attribution": "Chemical ELements A Virtual Museum, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0> source: https://images-of-elements.com/francium.jpg",
+    "title": "Artist's illustration of francium — not an actual photograph",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Creator of artwork not independently identified. Publisher advertises CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>; source: https://images-of-elements.com/francium.php",
     "originalUrl": "https://images-of-elements.com/francium.jpg",
-    "sourceUrl": "https://images-of-elements.com/francium.jpg",
+    "sourceUrl": "https://images-of-elements.com/francium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only. Do not treat as evidence of an experimentally observed sample, glow or appearance. The exact artwork's licensing and the cached local JPEG have not been independently cleared for redistribution.",
+    "withholdReason": "The original publisher identifies this as an illustration, not a photograph of the element. It is withheld from the element photo panel to avoid misrepresenting a hypothetical appearance as an observed sample."
   },
   "88": {
     "name": "Radium",
     "symbol": "Ra",
     "localUrl": "images/elements/088-ra.jpg",
-    "title": "Radium electroplated on a very small sample of copper foil and covered with polyurethane to prevent reaction with the air",
-    "attribution": "grenadier, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
+    "title": "Radium-226 electroplated on a tiny copper foil sample, coated with polyurethane; not a bulk radium specimen",
+    "attribution": "grenadier (original photographer); Materialscientist (unsharp-mask edit), CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Radium226.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons records an unsharp-mask edit by Materialscientist to the original photo. Image resized for Periodic Table Explorer; compare the local JPEG to the exact Commons revision before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Radium226.jpg"
   },
   "89": {
     "name": "Actinium",
     "symbol": "Ac",
     "localUrl": "images/elements/089-ac.jpg",
-    "title": "Actinium-225 medical radioisotope held in a v-vial at ORNL. The blue glow comes from the ionization of surrounding air by alpha particles",
+    "title": "Sealed vial containing actinium-225 medical radioisotope at Oak Ridge National Laboratory; blue glow described by source as air ionization",
     "attribution": "Oak Ridge National Laboratory, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons, source: https://www.flickr.com/photos/oakridgelab/31481701837/",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Actinium_sample_%2831481701837%29.png",
     "sourceUrl": "https://www.flickr.com/photos/oakridgelab/31481701837/",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Image resized for Periodic Table Explorer from an Oak Ridge National Laboratory photo published under CC BY 2.0. The photo depicts a vial, not a freestanding piece of actinium metal. Confirm exact local image version and attribution before release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Actinium_sample_(31481701837).png"
   },
   "90": {
     "name": "Thorium",
     "symbol": "Th",
     "localUrl": "images/elements/090-th.jpg",
-    "title": "Thorium Metal in Ampoule, corroded",
-    "attribution": "W. Oelen, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons",
+    "title": "Corroded thorium metal specimen inside an ampoule",
+    "attribution": "Original photograph by W. Oelen, 'Thorium-1.jpg' (24 July 2007), via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Thorium-1.jpg. The currently published Commons file was retouched by Commons user 'Konto na chwilę' on 2 April 2016. CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/. App copy resized/reencoded; preserve derivative history, change notice and applicable ShareAlike conditions.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Thorium-1.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Corroded thorium metal inside an ampoule, not an unprotected clean metal sample. The Commons file history documents a 2016 retouch by Konto na chwilę of W. Oelen's earlier photo. Prior stored-JPEG comparison found a likely source match (dHash distance 0); final adapted-file and signed-package rights verification is still required.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thorium-1.jpg"
   },
   "91": {
     "name": "Protactinium",
     "symbol": "Pa",
     "localUrl": "images/elements/091-pa.jpg",
-    "title": "This sample of Protactinium-233 (dark circular area in the photo) was photographed in the light from its own radioactive emission (the lighter area) at the National Reactor Testing Station in Idaho.",
-    "attribution": "ENERGY.GOV, Public domain, via Wikimedia Commons",
+    "title": "Protactinium-233 sample (dark central area), illuminated by its radioactive emission; photographed in Idaho around 1969",
+    "attribution": "U.S. Department of Energy (ENERGY.GOV), U.S. federal government work identified as public domain in the United States, via Wikimedia Commons; original https://commons.wikimedia.org/wiki/File:Protactinium-233.jpg. Local app photograph resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Protactinium-233.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://www.flickr.com/photos/departmentofenergy/10730945866/",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons confirms DOE official-duty/public-domain basis and reviewed original Flickr source. Local image resized for Periodic Table Explorer; still must be matched to source and cleared for final package.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Protactinium-233.jpg"
   },
   "92": {
     "name": "Uranium",
     "symbol": "U",
     "localUrl": "images/elements/092-u.jpg",
-    "title": "A biscuit of uranium metal after reduction via the Ames Process. c.1943.",
-    "attribution": "Unknown authorUnknown author, Public domain, via Wikimedia Commons",
+    "title": "Historical uranium metal biscuit produced by the Ames Process, circa 1943",
+    "attribution": "Original photographer unidentified; image provided by Ames Laboratory, U.S. Department of Energy. Wikimedia Commons identifies this U.S. federal government work as public domain and records VRT permission ticket 2011070810013625. Requested credit: Ames Laboratory, USDOE. File https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg. App image resized/reencoded.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Ames_Process_uranium_biscuit.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Photograph of an Ames Process uranium-metal biscuit circa 1943; not a modern uranium fuel pellet. Commons file-specific federal public-domain status and VRT permission checked 2026-10-15. Attribution and local sample identity recorded; still subject to final release-package review.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ames_Process_uranium_biscuit.jpg"
   },
   "93": {
     "name": "Neptunium",
     "symbol": "Np",
     "localUrl": "images/elements/093-np.jpg",
-    "title": "Neptunium 237 sphere (6 kg)",
-    "attribution": "Los Alamos National Laboratory,, Public domain, via Wikimedia Commons",
+    "title": "Neptunium-237 metal sphere (reported as 6 kg), Los Alamos National Laboratory",
+    "attribution": "Los Alamos National Laboratory; Wikimedia Commons lists both a U.S. federal public-domain claim and a separate CC BY 3.0 publisher notice (https://creativecommons.org/licenses/by/3.0).",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neptunium2.jpg",
-    "sourceUrl": "",
+    "sourceUrl": "https://images-of-elements.com/neptunium.php",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "The same Commons source page contains U.S. federal public-domain and CC BY 3.0 publisher statements. Resolve exact photograph provenance and any Los Alamos reuse notices, including changes/attribution, before final release.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Neptunium2.jpg",
+    "withholdReason": "Photo source rights remain ambiguous: Commons simultaneously labels this Los Alamos image public domain and CC BY 3.0 via a republisher, but the original laboratory's exact permission and notice obligations have not been confirmed for this specific photograph. The image is excluded from the release package."
   },
   "94": {
     "name": "Plutonium",
     "symbol": "Pu",
     "localUrl": "images/elements/094-pu.jpg",
-    "title": "Plutonium Ring",
-    "attribution": "Los Alamos National Laboratory, Attribution, via Wikimedia Commons",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plutonium_ring.jpg",
-    "sourceUrl": "",
-    "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "title": "Historic 1941 plutonium-239 sample displayed at the Smithsonian National Museum of American History — tiny specimen in an exhibit case",
+    "attribution": "Photograph by Daderot (2013), Smithsonian National Museum of American History exhibit of an early 1941 plutonium-239 specimen. Image released by the photographer under CC0 1.0 Universal Public Domain Dedication; source https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG. The app resized/reencoded this photo. This is a museum exhibit, not the former Los Alamos metal-ring photograph.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Plutonium-239%2C_1941%2C_first_sample_in_which_nuclear_fission_was_detected%2C_University_of_California%2C_Berkeley%2C_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "note": "Replaces a Los Alamos plutonium ring photo with conditional attribution/reproduction notice. The new photo is independently made by Daderot (2013) of a Smithsonian historic plutonium-239 specimen and marked CC0 on its exact Commons source page. Its subject is a museum display and tiny original specimen, not a macroscopic plutonium ring. Final package review and app testing still pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Plutonium-239,_1941,_first_sample_in_which_nuclear_fission_was_detected,_University_of_California,_Berkeley,_gift_of_Glenn_T._Seabort_and_Emilio_Segre_-_National_Museum_of_American_History_-_DSC06250.JPG"
   },
   "95": {
     "name": "Americium",
     "symbol": "Am",
     "localUrl": "images/elements/095-am.jpg",
-    "title": "A small disc of Am-241 under the microscope.",
+    "title": "Small americium-241 disc photographed under a microscope",
     "attribution": "Bionerd, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Americium_microscope.jpg",
     "sourceUrl": "",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Wikimedia Commons identifies Bionerd as original photographer and CC BY 3.0 as the file license. Image resized for Periodic Table Explorer; author, license link, changes and exact photo match still require release verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Americium_microscope.jpg"
   },
   "96": {
     "name": "Curium",
     "symbol": "Cm",
     "localUrl": "images/elements/096-cm.jpg",
-    "title": "A piece of curium, which emitts strong radiation that makes it glow",
-    "attribution": "European Union, The Actinide Group, Institute for Transuranium Elements (JRC-ITU), source: https://images-of-elements.com/curium.php",
-    "originalUrl": "https://images-of-elements.com/s/curium-glow.jpg",
-    "sourceUrl": "https://images-of-elements.com/curium.php",
-    "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "title": "Curium-248 oxide targets mounted on a RIKEN wheel for a nuclear research experiment — not pure curium metal",
+    "attribution": "RIKEN, 'Curium oxide targets.jpg', target-wheel research photograph; source https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg. CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Photograph resized/reencoded for this app; changes indicated.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Curium_oxide_targets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "note": "This is real research equipment with curium-248 oxide targets used in an experiment investigating element 119, not a chunk of pure curium metal. Replaces an EU/JRC-ITU image whose redistribution permission was unverified. The exact Commons source identifies RIKEN as author and CC BY 4.0. Final image grant, attribution and distribution-package checks remain pending.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Curium_oxide_targets.jpg"
   },
   "97": {
     "name": "Berkelium",
     "symbol": "Bk",
     "localUrl": "images/elements/097-bk.jpg",
-    "title": "It took 250 days to make enough berkelium, shown here (in dissolved state), to synthesize element 117",
-    "attribution": "ORNL, Department of Energy, Public domain, via Wikimedia Commons",
+    "title": "Berkelium-249 in dissolved form in a research vial at Oak Ridge National Laboratory — not a bulk metal specimen",
+    "attribution": "Oak Ridge National Laboratory (oakridgelabnews), 'Berkelium-249', photo taken June 8, 2009. Original https://www.flickr.com/photos/oakridgelab/4499934514, licensed CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Wikimedia Commons file Berkelium.jpg was cropped by Materialscientist; app image resized/reencoded. The photo shows berkelium in solution, not pure berkelium metal.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Berkelium.jpg",
-    "sourceUrl": "",
-    "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "sourceUrl": "https://www.flickr.com/photos/oakridgelab/4499934514",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "note": "The official Oak Ridge National Laboratory Flickr account names berkelium-249 in the greenish fluid near the tip of the vial. Flickr explicitly links to CC BY 2.0, permitting commercial reuse with attribution and modifications noted; Commons additionally lists a federal public-domain rationale. This app conservatively retains Flickr's CC BY 2.0 attribution. License and credit review: 2026-10-15.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Berkelium.jpg"
   },
   "98": {
     "name": "Californium",
     "symbol": "Cf",
     "localUrl": "images/elements/098-cf.jpg",
-    "title": "A disc of californium metal (249Cf, 10 mg). The source implies that the disc has a diameter about twice the thickness of a typical pin, or on the order of 1 mm",
-    "attribution": "United States Department of Energy (see File:Einsteinium.jpg), Public domain, via Wikimedia Commons",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg",
-    "sourceUrl": "",
+    "title": "Historical californium-252 neutron-source capsules, U.S. Department of Energy, circa 1972 — not a bare californium-metal sample",
+    "attribution": "U.S. Department of Energy (ENERGY.GOV), circa 1972, 'HD.5A.048 (10348254595) (cropped).jpg', cropped on Wikimedia Commons by KOKUYO. Source https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg. Identified as U.S. federal government public domain material; this app resized/reencoded the source photograph.",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/HD.5A.048_%2810348254595%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Authentic historical photo of californium-252 neutron-source capsules, not a photograph of unencapsulated californium metal. Replaces an older californium-249 metal-disc photo with contradictory Commons public-domain/nonfree historical upload records. U.S. Department of Energy federal employee work is marked public domain on the specific replacement file; physical image package and credits still need final verification.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:HD.5A.048_(10348254595)_(cropped).jpg"
   },
   "99": {
     "name": "Einsteinium",
     "symbol": "Es",
     "localUrl": "images/elements/099-es.jpg",
-    "title": "300 micrograms of Einsteinium 253, which has a half-life of 20 days.",
-    "attribution": "Haire, R. G., US Department of Energy.Touched up by Materialscientist at en.wikipedia., Public domain, via Wikimedia Commons",
+    "title": "Quartz vial containing about 300 micrograms of einsteinium-253; source describes luminescence caused by radioactive decay",
+    "attribution": "R. G. Haire / U.S. Department of Energy; image touched up by Materialscientist; Commons also notes a cropped and colorized version by an unidentified editor.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Einsteinium.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Commons lists DOE federal-work public domain, but the file is cropped from EinsteiniumGlow.JPG and colored by an unidentified contributor. Verify alteration provenance and cached JPEG before final clearance.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Einsteinium.jpg",
+    "withholdReason": "The archived image is a colorized/cropped derivative of a U.S. Department of Energy research photograph; the editor of the color version is unidentified and its derivative provenance has not been conclusively checked. This saved JPEG is excluded from the release package pending verified reuse and alterations."
   },
   "100": {
     "name": "Fermium",
     "symbol": "Fm",
     "localUrl": "images/elements/100-fm.jpg",
-    "title": "Fermium was first observed in the fallout from the Ivy Mike nuclear test.",
-    "attribution": "U.S. Department of Energy, Public domain, via Wikimedia Commons",
+    "title": "Historical Ivy Mike thermonuclear test mushroom cloud (1952) — NOT a photograph of fermium",
+    "attribution": "U.S. Department of Energy, U.S. government public-domain image, via Wikimedia Commons; NNSA Nevada Site Office photo library IVY-52-05.",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Ivy_Mike_-_mushroom_cloud.jpg",
     "sourceUrl": "",
     "licenseUrl": "",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Historically relevant to the discovery of fermium, but must never be presented as an image of the chemical element itself. Local image binary remains in repository and release-package rights/contents are not cleared.",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ivy_Mike_-_mushroom_cloud.jpg",
+    "withholdReason": "This historical photograph shows the Ivy Mike nuclear test, not fermium or a sample of the element. Fermium was discovered in test debris; this unrelated scene is withheld from the element sample-photo panel."
   },
   "101": {
     "name": "Mendelevium",
     "symbol": "Md",
     "localUrl": "images/elements/101-md.jpg",
-    "title": "This is only an illustration, not mendelevium itself. Chemically similar to Thulium, the highly radioactive heavy metal emits very energetic α-radiation.",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/mendelevium.php",
+    "title": "Artist's illustration suggesting mendelevium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/mendelevium.php",
     "originalUrl": "https://images-of-elements.com/s/mendelevium.jpg",
     "sourceUrl": "https://images-of-elements.com/mendelevium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of mendelevium. It is withheld from the element-photo panel."
   },
   "102": {
     "name": "Nobelium",
     "symbol": "No",
     "localUrl": "images/elements/102-no.jpg",
-    "title": "This is only an illustration, not nobelium itself. Nobelium can only be made in very small amounts and emits strong radiation of various kinds.",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/nobelium.php",
+    "title": "Artist's illustration suggesting nobelium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/nobelium.php",
     "originalUrl": "https://images-of-elements.com/nobelium.jpg",
     "sourceUrl": "https://images-of-elements.com/nobelium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of nobelium. It is withheld from the element-photo panel."
   },
   "103": {
     "name": "Lawrencium",
     "symbol": "Lr",
     "localUrl": "images/elements/103-lr.jpg",
-    "title": "This is only an illustration, not lawrencium itself. Lawrencium can only be made in very small amounts and emits strong radiation",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/lawrencium.php",
+    "title": "Artist's illustration suggesting lawrencium — not a photograph of the element",
+    "attribution": "Illustration published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects). Individual illustrator not independently identified; publisher states CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/> for site images unless otherwise noted. Source: https://images-of-elements.com/lawrencium.php",
     "originalUrl": "https://images-of-elements.com/lawrencium.jpg",
     "sourceUrl": "https://images-of-elements.com/lawrencium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "Illustration only; not an observed appearance or direct sample photograph. Local cached JPEG and any adaptation/redistribution obligations remain unchecked.",
+    "withholdReason": "The publisher explicitly labels this an illustration, not a real photograph of lawrencium. It is withheld from the element-photo panel."
   },
   "104": {
     "name": "Rutherfordium",
     "symbol": "Rf",
     "localUrl": "images/elements/104-rf.jpg",
-    "title": "Decay traces in a spark chamber, not of rutherfordium, but of a pion. This is a completely different, unrelated particle, but the decay of rutherfordium would make streaks there, too.",
-    "attribution": "Image © CERN, Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/rutherfordium.php",
+    "title": "CERN photograph of pion tracks in a spark chamber — unrelated to rutherfordium",
+    "attribution": "Original image credited © CERN by Chemical Elements — A Virtual Museum; exact CERN photographer and authorized redistribution conditions not independently verified.",
     "originalUrl": "https://images-of-elements.com/s/rutherfordium.jpg",
     "sourceUrl": "https://images-of-elements.com/rutherfordium.php",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "licenseUrl": "",
+    "note": "Unrelated scientific apparatus imagery, not an element sample. Do not describe pion tracks as actual rutherfordium decay. File-specific reuse rights, source origin and local binary identity are unresolved.",
+    "withholdReason": "This CERN image depicts pion particle tracks, not rutherfordium. A general CC BY 3.0 notice on the republishing website does not establish permission to reuse CERN's third-party image. Withheld pending separate rights confirmation."
   },
   "105": {
     "name": "Dubnium",
     "symbol": "Db",
     "localUrl": "images/elements/105-db.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/dubnium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/dubnium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/dubnium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of dubnium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of dubnium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "106": {
     "name": "Seaborgium",
     "symbol": "Sg",
     "localUrl": "images/elements/106-sg.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/seaborgium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/seaborgium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/seaborgium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of seaborgium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of seaborgium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "107": {
     "name": "Bohrium",
     "symbol": "Bh",
     "localUrl": "images/elements/107-bh.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/bohrium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/bohrium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/bohrium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of bohrium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of bohrium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "108": {
     "name": "Hassium",
     "symbol": "Hs",
     "localUrl": "images/elements/108-hs.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/hassium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/hassium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/hassium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of hassium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of hassium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "109": {
     "name": "Meitnerium",
     "symbol": "Mt",
     "localUrl": "images/elements/109-mt.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/meitnerium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/meitnerium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/meitnerium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of meitnerium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of meitnerium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "110": {
     "name": "Darmstadtium",
     "symbol": "Ds",
     "localUrl": "images/elements/110-ds.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/darmstadtium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/darmstadtium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/darmstadtium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of darmstadtium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of darmstadtium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "111": {
     "name": "Roentgenium",
     "symbol": "Rg",
     "localUrl": "images/elements/111-rg.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/roentgenium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/roentgenium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/roentgenium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of roentgenium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of roentgenium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "112": {
     "name": "Copernicium",
     "symbol": "Cn",
     "localUrl": "images/elements/112-cn.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/copernicium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/copernicium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/copernicium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of copernicium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of copernicium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "113": {
     "name": "Nihonium",
     "symbol": "Nh",
     "localUrl": "images/elements/113-nh.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/nihonium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/nihonium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/nihonium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of nihonium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of nihonium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "114": {
     "name": "Flerovium",
     "symbol": "Fl",
     "localUrl": "images/elements/114-fl.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/flerovium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/flerovium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/flerovium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of flerovium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of flerovium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "115": {
     "name": "Moscovium",
     "symbol": "Mc",
     "localUrl": "images/elements/115-mc.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/moscovium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/moscovium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/moscovium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of moscovium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of moscovium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "116": {
     "name": "Livermorium",
     "symbol": "Lv",
     "localUrl": "images/elements/116-lv.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/livermorium.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/livermorium.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/livermorium.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of livermorium is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of livermorium. The local JPEG and exact asset license/compliance remain unverified."
   },
   "117": {
     "name": "Tennessine",
     "symbol": "Ts",
     "localUrl": "images/elements/117-ts.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/tenessine.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/tenessine.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/tenessine.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of tennessine is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of tennessine. The local JPEG and exact asset license/compliance remain unverified."
   },
   "118": {
     "name": "Oganesson",
     "symbol": "Og",
     "localUrl": "images/elements/118-og.jpg",
     "title": "No Image Found",
-    "attribution": "Chemical Elements A Virtual Museum under a Creative Commons Attribution 3.0 Unported License, source: https://images-of-elements.com/oganesson.php",
+    "attribution": "Generic \"No Image Found\" placeholder published by Chemical Elements — A Virtual Museum (Jumk.de Webprojects); site-wide CC BY 3.0 claim <https://creativecommons.org/licenses/by/3.0/>, source: https://images-of-elements.com/oganesson.php",
     "originalUrl": "https://images-of-elements.com/s/transactinoid.png",
     "sourceUrl": "https://images-of-elements.com/oganesson.php",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "note": "Image resized for Periodic Table Explorer."
+    "note": "No photographed sample of oganesson is provided. This entry is a generic transactinoid placeholder shared by elements 105–118, not a depiction of oganesson. The local JPEG and exact asset license/compliance remain unverified."
   }
 };

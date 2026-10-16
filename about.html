@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About &amp; Credits • Periodic Table Explorer</title>
+<meta name="theme-color" content="#103852">
+<meta name="description" content="Scientific accuracy disclaimer, references and image credits for Periodic Table Explorer.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png" type="image/png" sizes="192x192">
+<style>
+:root{--bg:#edf4f7;--ink:#18313f;--border:#d7e2e8;--blue:#1d6d92;--navy:#103852}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:calc(20px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 20px max(16px,env(safe-area-inset-left))}
+.wrap{max-width:950px;margin:auto;padding:15px max(16px,env(safe-area-inset-right)) 24px max(16px,env(safe-area-inset-left))}
+header .wrap{padding:0}h1{margin:0;font-size:28px}header p{margin:7px 0 0;opacity:.9}
+.back{display:inline-flex;min-height:44px;align-items:center;padding:10px 14px;background:#e6eef2;color:#244b61;text-decoration:none;border-radius:10px;font-weight:800}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:16px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
+h2{font-size:20px;color:#143f57;margin:0 0 12px}p,li{line-height:1.65;color:#405966}p{margin:10px 0}.small{font-size:13px;color:#607681}
+blockquote{margin:12px 0;padding:14px 16px;background:#eef7fb;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;font-size:16px;line-height:1.65}
+li{margin:9px 0}a{color:#17688e}a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #8bcce8;outline-offset:2px}
+#creditSearch{width:100%;min-height:46px;font-size:16px;padding:10px 13px;border:1px solid #b9cbd5;border-radius:10px}
+label{font-weight:800;color:#244b61;display:block;margin-top:16px;margin-bottom:7px}
+#creditCount{font-size:13px;color:#607681;margin:10px 0}
+.credit{border:1px solid #d6e3e9;border-radius:12px;background:#f9fcfd;margin-top:9px;overflow:hidden}
+.credit[hidden]{display:none}
+.credit summary{cursor:pointer;min-height:48px;padding:13px 15px;font-weight:800;color:#244b61}
+.credit-body{border-top:1px solid #dce7eb;padding:10px 15px 15px;overflow-wrap:anywhere}
+.credit-body p{font-size:13px;margin:7px 0}
+.credit-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.credit-links a{display:inline-flex;min-height:40px;align-items:center;border-radius:9px;border:1px solid #cadbe5;padding:8px 11px;text-decoration:none;font-size:13px;font-weight:750}
+footer{text-align:center;color:#607681;font-size:12px;padding:18px 16px calc(22px + env(safe-area-inset-bottom))}
+footer img{display:block;margin:0 auto 8px;max-width:52vw;width:140px;height:auto}
+@media(max-width:600px){h1{font-size:24px}.card{padding:15px}.credit-links a{flex:1 1 auto;justify-content:center}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>About &amp; Credits</h1>
+<p>Periodic Table Explorer • A DONCO-BAYCITY™ App</p>
+</div></header>
+<main class="wrap">
+<a class="back" href="./index.html">← Periodic Table</a>
+<section class="card" aria-labelledby="disclaimerTitle">
+<h2 id="disclaimerTitle">Scientific Accuracy Disclaimer</h2>
+<blockquote>Every effort has been taken to ensure true and accurate facts concerning the 118 elements throughout this app. The information is believed to be highly accurate, though absolute accuracy cannot be guaranteed.</blockquote>
+<p class="small">Reference values can differ with source conventions, measurement conditions and new discoveries.</p>
+</section>
+<section class="card" aria-labelledby="referencesTitle">
+<h2 id="referencesTitle">Scientific References</h2>
+<p>Scientific sources consulted for element information include:</p>
+<ul>
+<li><a href="https://periodic-table.rsc.org/" target="_blank" rel="noopener noreferrer">Royal Society of Chemistry — Periodic Table</a>: chemical properties, uses and discovery histories.</li>
+<li><a href="https://ciaaw.org/abridged-atomic-weights.htm" target="_blank" rel="noopener noreferrer">IUPAC/CIAAW — Abridged Standard Atomic Weights 2024</a>: recommended standard atomic weights.</li>
+<li><a href="https://www.nist.gov/pml/atomic-spectra-database" target="_blank" rel="noopener noreferrer">NIST — Atomic Spectra Database</a>: atomic structure and ionization information.</li>
+<li><a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/" target="_blank" rel="noopener noreferrer">PubChem — Periodic Table</a>: reference element properties.</li>
+</ul>
+<p class="small">External reference links need an internet connection and may reflect different scientific conventions.</p>
+</section>
+<section class="card" aria-labelledby="creditsTitle">
+<h2 id="creditsTitle">Image Credits &amp; Licenses</h2>
+<p>These credits describe the images currently catalogued for the 118 elements. Not every catalogued image is displayed: some are illustrations or placeholders, and some have unresolved reuse permissions. Listing an image here does not establish permission to redistribute it.</p>
+<p class="small">Saved images may have been resized for the app. Review each original file, photographer credit, license and applicable restrictions before the final release.</p>
+<label for="creditSearch">Search by element, symbol or photographer</label>
+<input id="creditSearch" type="search" placeholder="Search element or author…" autocomplete="off">
+<p id="creditCount" role="status" aria-live="polite">Loading credits…</p>
+<div id="creditList"></div>
+</section>
+<section class="card" aria-labelledby="otherImagesTitle">
+<h2 id="otherImagesTitle">Other Image Credits</h2>
+<p>The Bay City City Hall photograph in the hidden Bay City feature is separate from the 118 element images listed above.</p>
+<p><strong>Bay City City Hall, Bay City, Michigan.</strong> Original photograph by
+<a href="https://commons.wikimedia.org/wiki/User:Andrew_Jameson" target="_blank" rel="noopener noreferrer">Andrew Jameson</a>,
+20 February 2012. Source:
+<a href="https://commons.wikimedia.org/wiki/File:Bay_City_MI_City_Hall.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons — Bay City MI City Hall.JPG</a>.
+License:
+<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 3.0 Unported</a>.</p>
+<p class="small">The app's cached version was resized/reencoded. A visual comparison of the saved JPEG against the Wikimedia original found a strong photographic match (GitHub audit run <a href="https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38773309259" target="_blank" rel="noopener noreferrer">38773309259</a>); this is not proof of byte-identical image files or legal reuse clearance. Applicable attribution, ShareAlike and final signed-package compliance still require release verification.</p>
+</section>
+</main>
+<footer><img src="./donco_logo_footer.png?v=3" alt="DONCO-BAYCITY logo"><strong>A DONCO-BAYCITY™ App</strong></footer>
+<script src="./element-photo-data.js"></script>
+<script>
+(function(){
+"use strict";
+const list=document.getElementById("creditList");
+const input=document.getElementById("creditSearch");
+const counter=document.getElementById("creditCount");
+const entries=Object.entries(window.ELEMENT_PHOTOS||{}).sort((a,b)=>Number(a[0])-Number(b[0]));
+const items=[];
+function info(root,message){const p=document.createElement("p");p.textContent=message;root.appendChild(p);}
+function link(root,url,label){
+ if(typeof url!=="string"||!url.startsWith("https://"))return;
+ const a=document.createElement("a");a.href=url;a.textContent=label;
+ a.target="_blank";a.rel="noopener noreferrer";root.appendChild(a);
+}
+for(const [z,item] of entries){
+ const box=document.createElement("details");box.className="credit";
+ const title=String(item.title||"");
+ const noImage=title.toLowerCase()==="no image found";
+ const illustrative=title.toLowerCase().includes("illustration")||title.toLowerCase().includes("unrelated particle");
+ const withheld=!!item.withholdReason;
+ const summary=document.createElement("summary");
+ summary.textContent=z+". "+item.name+" ("+item.symbol+")"+(withheld?" — withheld":noImage?" — no photograph":illustrative?" — illustration/other image":"");
+ box.appendChild(summary);
+ const body=document.createElement("div");body.className="credit-body";
+ info(body,"Catalogued subject: "+(title||"Not recorded"));
+ info(body,"Creator / attribution: "+(item.attribution||"Not recorded"));
+ if(item.note)info(body,item.note);
+ if(item.withholdReason)info(body,"Withheld: "+item.withholdReason);
+ if(noImage)info(body,"This is a generic placeholder, not a photograph of the element.");
+ if(illustrative)info(body,"This illustration or experimental image is not a verified sample photograph.");
+ if(!item.licenseUrl)info(body,"No separate license URL recorded; check the source for reuse terms.");
+ const links=document.createElement("div");links.className="credit-links";
+ link(links,item.commonsPage,"File & conditions");
+ link(links,item.sourceUrl,"Source page");
+ link(links,item.originalUrl,"Original image");
+ link(links,item.licenseUrl,"Recorded license");
+ const details=document.createElement("a");
+ details.href="element.html?z="+encodeURIComponent(z);
+ details.textContent="Element details";links.appendChild(details);
+ body.appendChild(links);box.appendChild(body);list.appendChild(box);
+ items.push({node:box,text:[z,item.name,item.symbol,item.title,item.attribution].join(" ").toLowerCase()});
+}
+function render(){
+ const query=input.value.trim().toLowerCase();let visible=0;
+ for(const x of items){const hit=!query||x.text.includes(query);x.node.hidden=!hit;if(hit)visible++;}
+ counter.textContent=visible+" of "+items.length+" catalogued element credits";
+}
+input.addEventListener("input",render);render();
+})();
+</script>
+<script>
+if("serviceWorker" in navigator && location.protocol==="https:"){
+ window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>

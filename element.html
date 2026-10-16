@@ -97,6 +97,7 @@ footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(sa
         <a id="elementPhotoOriginal" href="#" target="_blank" rel="noopener">Open original image</a>
         <a id="elementPhotoLicense" class="hidden" href="#" target="_blank" rel="noopener">License</a>
         <a id="elementPhotoSource" class="hidden" href="#" target="_blank" rel="noopener">Image source</a>
+        <a id="elementPhotoFilePage" class="hidden" href="#" target="_blank" rel="noopener">File and reuse conditions</a>
       </div>
     </div>
   </div>
@@ -105,11 +106,11 @@ footer{text-align:center;color:var(--muted);padding:22px 22px calc(22px + env(sa
 <section class="card"><h2>Scientific Information</h2><div class="grid" id="scienceGrid"></div></section>
 <section class="card"><h2>History & Discovery</h2><p id="historyText"></p></section>
 <section class="card"><h2>How It Was Discovered</h2><p id="discoveryStoryText"></p><div class="note">Discovery history can be complicated. This is a short, plain-English account rather than a complete scholarly history.</div></section>
-<section class="card"><h2>Typical Uses</h2><p id="usesText"></p></section>
+<section class="card"><h2>Typical Uses (Element and Its Compounds)</h2><p id="usesText"></p><div class="note">Uses may involve the element itself, its compounds, or alloys; they are not interchangeable. Some historical uses are restricted or no longer current.</div></section>
 <section class="card"><h2>Interesting Facts</h2><p id="factsText"></p></section>
-<section class="card"><h2>About &amp; Photo Credits</h2>
-<p>The core element facts and element photographs are stored inside Periodic Table Explorer. Each available photograph keeps its individual credit and license information above.</p>
-<div class="note">For extremely rare or short-lived elements without a useful direct sample photograph, the app says so instead of showing a generic or misleading placeholder image.</div>
+<section class="card"><h2>About &amp; Credits</h2>
+<p>Each displayed photograph retains its source and credit information above. For exceptionally rare elements, the app explains when no direct sample photograph is available.</p>
+<p style="margin-top:12px"><a href="about.html">Scientific disclaimer, references and full image credits →</a></p>
 </section>
 </main>
 <footer class="brand-footer">
@@ -155,31 +156,124 @@ function kelvinToC(v){if(v===null||v===undefined||v==="")return "—";const n=Nu
 function validHttpUrl(v){return typeof v==="string" && /^https?:\/\//i.test(v);}
 
 const discoveryStories={
-  1:"Henry Cavendish collected the gas released when acids reacted with metals and showed that it was a distinct substance. When the gas burned, it produced water, helping establish hydrogen as an element rather than a form of ordinary air.",
-  2:"Helium was first noticed in the Sun before it was found on Earth. During a solar eclipse in 1868, astronomers saw an unfamiliar yellow spectral line in sunlight; decades later, the same element was isolated from minerals on Earth.",
+  3:"Johan August Arfvedson identified a previously unknown alkali metal in the mineral petalite in Sweden in 1817. He named it lithium from the Greek word for stone, but did not isolate the metal. William Brande obtained a small quantity in 1821; Robert Bunsen and Augustus Matthiessen prepared larger amounts by electrolysing molten lithium chloride in 1855. Discovery of lithium in a mineral and isolation of the pure metal are different milestones.",
+  4:"Nicolas-Louis Vauquelin recognised a new element in the minerals beryl and emerald in 1798 and initially called it glaucinium. The name beryllium, after beryl, later prevailed. Friedrich Wöhler in Berlin and Antoine Bussy in Paris independently isolated beryllium metal in 1828 by reacting beryllium chloride with potassium. The original mineral analysis did not itself produce a sample of the pure metal.",
+  6:"People used charcoal, soot and natural graphite long before modern chemistry, and diamond was also known in antiquity; carbon therefore has no single discoverer. Investigators gradually established that these different-looking substances contained the same element. In 1796 Smithson Tennant demonstrated that burning diamond produced carbon dioxide, helping establish diamond as a form of carbon rather than a separate substance.",
+  16:"Elemental sulfur has been known since antiquity, when it was used for fumigation and in other practical processes, so no single discoverer can be named. Antoine Lavoisier regarded sulfur as an element, but its identity was still debated. In 1809 Joseph Louis Gay-Lussac and Louis Jacques Thénard showed that sulfur was elemental, resolving Humphry Davy's earlier conclusion from an impure sample.",
+  111:"In December 1994 at GSI Darmstadt, an international team led by Sigurd Hofmann, including Peter Armbruster and Gottfried Münzenberg, produced element 111 by bombarding bismuth with nickel ions. The GSI team repeated its measurements in 2002; a joint IUPAC–IUPAP working party recognised the discovery in 2003, with independent RIKEN confirmation also reported. IUPAC officially approved the name roentgenium in 2004, honouring Wilhelm Conrad Röntgen. RSC's [280] is a reference isotope mass number, not a standard atomic weight.",
+  112:"Sigurd Hofmann's team at GSI Darmstadt made the first atoms of element 112 in 1996, bombarding a lead target with zinc. The first isotope produced was copernicium-277; the RSC now uses [285] as an isotope reference. Named for Nicolaus Copernicus, the element has not been studied in macroscopic form.",
+  113:"Kosuke Morita's RIKEN team first synthesised element 113 in July 2004 and observed further atoms in 2005 and 2012. IUPAC awarded discovery priority to the RIKEN group in 2015 and formally approved nihonium in 2016. The name relates to a Japanese word for Japan. The reference [286] is not a standard atomic weight.",
+  114:"In 1998 Yuri Oganessian and Vladimir Utyonkov led a Dubna team that made flerovium by bombarding plutonium with calcium. Flerovium was named after the Flerov Laboratory and Georgy Flerov. RSC uses [289] as a reference isotope mass number. Its bulk physical state and phase-change temperatures remain experimentally unverified.",
+  115:"Element 115 was first reported in 2003 in work at Dubna involving Lawrence Livermore collaborators. IUPAC later credited the JINR–Lawrence Livermore–Oak Ridge collaboration based on additional confirming evidence and approved the name moscovium in 2016. The RSC isotope reference [289] does not denote a standard atomic weight.",
+  116:"JINR and Lawrence Livermore researchers led by Yuri Oganessian, Vladimir Utyonkov and Kenton Moody established element 116 in 2000 using accelerated calcium and curium. A 1999 Berkeley discovery announcement was subsequently withdrawn due to fabricated data. Livermorium honours Lawrence Livermore; [293] is an isotope mass number.",
+  117:"JINR Dubna, Lawrence Livermore, Oak Ridge and other scientists produced element 117 in 2010 by bombarding a berkelium target with calcium. IUPAC recognised their discovery in 2015 and officially named tennessine in 2016 to honour work in Tennessee. The bracketed [294] is an isotope mass number rather than an atomic weight.",
+  118:"A Dubna–Lawrence Livermore collaboration reported convincing experiments on element 118 in 2006. IUPAC recognised the discovery in 2015 and formally approved the name oganesson in 2016, honouring Yuri Oganessian. Though it occupies noble-gas group 18, its state has never been measured in bulk; RSC lists solid at 20°C, best presented as a prediction. The reference [294] is an isotope mass number.",
+  101:"In 1955 Albert Ghiorso, Bernard Harvey, Gregory Choppin, Stanley Thompson, and Glenn Seaborg reported synthesising mendelevium at Berkeley, detecting a few atoms after bombarding einsteinium-253 with alpha particles. It was named in honour of Dmitri Mendeleev. The bracketed [258] is a reference isotope mass number, not a standard atomic weight.",
+  102:"Nobelium has a disputed discovery history. A Soviet group reported unpublished work in 1956, a Stockholm group announced a claim in 1957, and Berkeley announced a further claim in 1958. More substantiated work by the Dubna Joint Institute for Nuclear Research in 1962–1963 was ultimately credited by IUPAC. The Stockholm-proposed name nobelium was retained. [259] is an isotope mass number, not a standard atomic weight.",
+  103:"A Berkeley group led by Albert Ghiorso announced the synthesis of element 103 in 1961, but the exact isotope assignment was disputed. Soviet experiments at Dubna in 1965 challenged the early claim; IUPAC eventually credited Berkeley. The element was named for cyclotron pioneer Ernest Lawrence. A ground-state 7p electron distinguishes its RSC electron configuration from the older 6d1 entry. [262] is an isotope mass number.",
+  104:"A Dubna team led by Georgy Flerov reported element 104 in 1964 and confirmed its experiments in 1966. Berkeley scientists led by Albert Ghiorso independently reported synthesis routes in 1969. IUPAC later recognised both teams' claims; its name rutherfordium honours Ernest Rutherford. [267] is a reference isotope mass number, not a standard atomic weight.",
+  105:"Dubnium was disputed between the Dubna Joint Institute for Nuclear Research, which announced results around 1968, and the Berkeley group, which reported element 105 around 1970. Different proposed names reflected the long dispute over discovery credit. IUPAC eventually approved dubnium, named for Dubna. Its isotope reference [268] is not a standard atomic weight.",
+  106:"Groups at Dubna, including Georgy Flerov and Yuri Oganessian, and at Berkeley, led by Albert Ghiorso, reported evidence for element 106 in 1974; RSC also mentions an earlier Berkeley experiment in 1970. The approved name honours Glenn Seaborg. Only a few atoms have been created, so its bulk phase-change temperatures and density are not established. [269] denotes an isotope mass number.",
+  107:"A team led by Yuri Oganessian at Dubna reported early synthesis of element 107 in 1975 and published in 1976. A 1981 experiment at GSI Darmstadt led by Peter Armbruster and Gottfried Münzenberg produced a more credibly documented identification. IUPAC awarded the discovery claim to GSI, while acknowledging the possibility of earlier Dubna synthesis. Bohrium honours Niels Bohr; [270] is an isotope mass number.",
+  108:"Dubna groups attempted synthesis of element 108 in the late 1970s and early 1980s. In 1984 the GSI Darmstadt group led by Peter Armbruster and Gottfried Münzenberg produced isotope 265 with stronger supporting evidence and was awarded naming rights. Hassium is named after the German state of Hesse. The bracketed [269] is an isotope mass number, not a standard atomic weight.",
+  109:"In 1982 a GSI Darmstadt team led by Peter Armbruster and Gottfried Münzenberg bombarded bismuth with iron ions and detected a single atom of element 109. The new element was named meitnerium in honour of physicist Lise Meitner. Its bracketed [278] is a reference isotope mass number rather than a standard atomic weight; its bulk properties remain largely unknown.",
+  110:"In November 1994 the GSI Darmstadt team led by Sigurd Hofmann, with Peter Armbruster, Gottfried Münzenberg and other collaborators, synthesised element 110 by bombarding lead with nickel. IUPAC recognised the GSI team's discovery in 2003. A Dubna experiment also reported isotope 273 that year, but the GSI results were accepted for naming. Darmstadtium honours the city of Darmstadt. The RSC lists a calculated 6d9 7s1 arrangement and [281] as an isotope mass number; bulk phase-change and density measurements remain unknown.",
+  91:"William Crookes separated a radioactive substance from uranium in 1900 but did not establish it as a new element. Kasimir Fajans and Otto Göhring identified the short-lived element 91 in 1913 and called it brevium. Otto Hahn and Lise Meitner, and independently Frederick Soddy and John Cranston, identified the longer-lived isotope protactinium-231 in 1917–1918. Meitner proposed the longer-lived-isotope name, later standardized as protactinium. Aristid von Grosse produced the metal in 1934.",
+  92:"Martin Heinrich Klaproth identified uranium in pitchblende in 1789, although he isolated an oxide rather than pure metal. Eugène-Melchior Péligot isolated metallic uranium in 1841. Henri Becquerel identified uranium's radioactivity in 1896. Uranium occurs naturally as several long-lived isotopes and has a CIAAW standard atomic weight.",
+  93:"Edwin McMillan and Philip Abelson discovered neptunium in 1940 by bombarding uranium with neutrons and identifying its beta-decay products. Earlier 1930s claims for transuranium elements were unconfirmed. The element has no standard atomic weight; [237] denotes a representative isotope mass number, not an abundance-weighted atomic weight.",
+  94:"Glenn Seaborg, Arthur Wahl, Joseph Kennedy, and Edwin McMillan created plutonium at Berkeley in December 1940 by bombarding uranium with deuterons. Plutonium was conclusively identified by its chemistry in early 1941. Its isotope label [244] must not be mistaken for a standard atomic weight, which is not assigned.",
+  95:"Glenn Seaborg, Ralph James, Leon Morgan, and Albert Ghiorso produced americium in 1944 by neutron bombardment of plutonium at the University of Chicago. The discovery was initially kept secret during World War II. It has no standard atomic weight, and the bracketed [243] is an isotope mass number.",
+  96:"Glenn Seaborg, Ralph James, and Albert Ghiorso made curium in 1944 by bombarding plutonium-239 with alpha particles. Curium was chemically separated and identified at Chicago, but public announcement was delayed until 1945. The RSC boiling point remains unknown and must not be invented; [247] is an isotope mass number.",
+  97:"Stanley Thompson, Albert Ghiorso, and Glenn Seaborg produced berkelium in 1949 at Berkeley by bombarding americium-241 with alpha particles. The discovery sample consisted of extremely small quantities of a short-lived isotope. Pure, macroscopic samples and chemical compounds were prepared much later. [247] indicates a reference isotope mass number, not an atomic weight.",
+  98:"Stanley Thompson, Kenneth Street Jr., Albert Ghiorso, and Glenn Seaborg synthesized californium in 1950 by bombarding curium-242 with alpha particles. The yield consisted of only a few thousand atoms, enough to establish a new element. Its representative [251] is an isotope mass number, not a standard atomic weight.",
+  99:"Einsteinium was generated in the November 1952 Ivy Mike thermonuclear test. Gregory Choppin, Stanley Thompson, Albert Ghiorso, and Bernard Harvey analyzed radioactive debris and identified the new element soon afterward; the discovery remained classified until 1955. The bracketed [252] is an isotope mass number, not a standard atomic weight.",
+  100:"Fermium formed in fallout from the November 1952 Ivy Mike test, and was identified by Albert Ghiorso and a wider group of collaborating scientists during 1952–1953. The RSC dates the discovery to 1953, while some sources assign 1952 from production and initial recognition; this record uses the identification milestone. Discovery was not announced publicly until 1955. The bracketed [257] is an isotope mass number.",
+  81:"William Crookes saw a new bright green spectral line in impure sulfuric acid and announced thallium in 1861. Claude-Auguste Lamy independently investigated it and isolated enough metal to cast an ingot in 1862, leading to a dispute over discovery credit.",
+  82:"Lead was mined and worked in many ancient societies throughout the world. Its use predates the modern scientific record, so no single discoverer or one region can be identified. Lead and many of its compounds are toxic.",
+  83:"People worked bismuth long before it was identified as a separate element; it was often confused with lead or tin. Claude-François Geoffroy established that it was a distinct metal in 1753. That is the recognition milestone used here, not the first human use of bismuth.",
+  84:"Marie and Pierre Curie discovered polonium in 1898 while investigating pitchblende's unexpectedly high radioactivity. It was named for Marie's homeland, Poland. No standard atomic weight exists for polonium; [209] is an isotope mass number.",
+  85:"Dale R. Corson, Kenneth Ross MacKenzie and Emilio Segrè produced astatine at the University of California in 1940 by bombarding bismuth with alpha particles. Earlier claims were unconfirmed. Its density has not been established; [210] denotes an isotope mass number, not a standard atomic weight.",
+  86:"Ernest Rutherford and Robert Owens observed a thorium emanation in 1899, while Marie and Pierre Curie observed gas from radium. Friedrich Ernst Dorn described the radium emanation in 1900, the credit used here. [222] is a radon isotope mass number rather than a standard atomic weight.",
+  87:"Marguerite Perey identified francium in Paris in 1939 by studying the decay products of actinium. It was the last element first discovered in nature. Francium has no standard atomic weight; [223] denotes a reference isotope mass number.",
+  88:"Marie and Pierre Curie discovered radium in 1898 while separating highly radioactive pitchblende fractions; Gustave Bémont assisted in the chemical work. Marie Curie and André Debierne later isolated the metal. [226] is a representative isotope mass number, not a standard atomic weight.",
+  89:"André Debierne discovered actinium in 1899 while examining uranium ore. Friedrich Oskar Giesel independently detected related radioactive material in 1902, calling it emanium. The isotope label [227] must not be confused with a standard atomic weight.",
+  90:"Jöns Jakob Berzelius identified thorium in 1829 from the mineral now called thorite and prepared a sample of impure metal. Gerhard Schmidt and Marie Curie showed its radioactivity in 1898. Thorium is radioactive but does have a standard atomic weight, 232.04.",
+  71:"Georges Urbain separated a new component of ytterbium in 1907 and announced lutetium, named after the Latin name for Paris. Charles James independently worked on the same rare-earth separation but published later. Pure lutetium metal was not prepared until 1953.",
+  72:"Dirk Coster and George de Hevesy identified hafnium in 1923 using X-ray spectroscopy on zirconium-bearing minerals in Copenhagen. Georges Urbain had made an earlier incorrect claim. Pure hafnium metal was prepared in 1925. Hafnium was named after Hafnia, the Latin name for Copenhagen.",
+  73:"Anders Gustaf Ekeberg identified tantalum in 1802, but William Hyde Wollaston later mistook it for niobium. Heinrich Rose established that tantalum and niobium were distinct elements in 1846. Werner von Bolton prepared much purer tantalum in 1903.",
+  74:"In 1781 Carl Wilhelm Scheele showed that scheelite contained the oxide of an unknown metal; earlier, Peter Woulfe had suspected one. Juan José and Fausto Elhuyar isolated metallic tungsten in 1783 by reducing tungsten oxide with carbon. The year listed marks isolation of the metal, not the first observation of tungsten compounds.",
+  75:"Masataka Ogawa observed spectra in 1905 that were later reinterpreted as evidence of rhenium, but he misidentified the element and his claim was not accepted. In 1925 Walter Noddack, Ida Tacke (later Noddack), and Otto Berg identified rhenium, with isolation attributed to the Noddacks' work. The discovery date shown is the accepted 1925 identification; the 1905 evidence is a distinct retrospective attribution.",
+  76:"Smithson Tennant identified osmium in 1803 while treating the insoluble residue remaining after platinum ore was dissolved in aqua regia. He separated osmium and iridium from the residue. Osmium was named for the strong odour of some of its compounds, notably the toxic oxide.",
+  77:"Smithson Tennant discovered iridium in 1803 alongside osmium while investigating residue left by dissolving platinum ore in aqua regia. He named iridium after the rainbow colours of some of its compounds.",
+  78:"People in the Americas worked platinum long before it entered European scientific literature, and ancient artefacts also contain the metal. Antonio de Ulloa encountered platinum in South America in 1735 and described it to European scientists, but he was not its first discoverer. The record therefore says 'Ancient' rather than treating a European report as the global discovery date.",
+  79:"Gold has been used since prehistoric times and can occur naturally as nuggets or particles in stream beds. Many cultures independently worked it long before modern chemistry, so no single individual or region can be named as the discoverer. Egyptians mined it by about 2000 BCE.",
+  80:"Mercury-bearing cinnabar was used as a red pigment in prehistoric times, and people later obtained liquid mercury by heating the mineral. Mercury's ancient history has no identifiable single discoverer. It is a liquid metal at ordinary room temperature, and its vapour and many compounds are toxic.",
+  61:"Jacob A. Marinsky, Lawrence E. Glendenin and Charles D. Coryell identified promethium at Oak Ridge in 1945 by separating uranium-fission products with ion-exchange techniques. Earlier claims for element 61 were unconfirmed. Grace Coryell suggested its name after Prometheus. The bracketed isotope mass number [145] is not a standard atomic weight: promethium has no stable isotopes.",
+  62:"Paul-Émile Lecoq de Boisbaudran separated a samarium-containing fraction in 1879 while investigating rare-earth minerals and recognized its spectrum. Jean Charles Galissard de Marignac had seen characteristic absorption lines earlier, in 1853. Recognition of the element and production of pure metal are different milestones.",
+  63:"Eugène-Anatole Demarçay separated europium in 1901 after painstaking crystallisation of samarium compounds. Earlier spectroscopic observations had suggested another element, but isolating these chemically similar rare-earth substances required repeated separation.",
+  64:"Jean Charles Galissard de Marignac first found evidence for gadolinium in rare-earth mixtures in 1880. Paul-Émile Lecoq de Boisbaudran isolated its oxide and named it gadolinium in 1886, honouring Johan Gadolin. Pure gadolinium metal was produced much later.",
+  65:"Carl Gustaf Mosander separated terbium-containing and erbium-containing oxides from yttrium-bearing material in 1843. Because early rare-earth oxide samples contained impurities, more reliable separation techniques were needed before their metallic elements could be purified.",
+  66:"Paul-Émile Lecoq de Boisbaudran identified dysprosium in 1886 by repeatedly separating fractions of impure holmium compounds. Truly pure dysprosium samples were difficult to obtain until improved techniques became available around 1950.",
+  67:"Marc Delafontaine and Louis Soret in Geneva, and independently Per Teodor Cleve in Sweden, found evidence for holmium in 1878 while investigating rare-earth mixtures. Early products were not completely pure, and dysprosium was later separated from material once attributed to holmium.",
+  68:"Carl Gustaf Mosander isolated erbium-containing oxide from yttrium-bearing minerals in 1843. His oxide preparations were not completely pure. Wilhelm Klemm and Heinrich Bommer obtained pure erbium metal in 1934.",
+  69:"Per Teodor Cleve identified thulium as a new rare-earth component in 1879 by separating oxides associated with erbium. The initial identification involved compounds, while pure elemental metal was obtained much later.",
+  70:"Jean Charles Galissard de Marignac separated ytterbium-containing oxide from erbium compounds in 1878. The material later yielded another element, lutetium. Impure ytterbium metal appeared in 1937 and pure metal in 1953.",
+  51:"Antimony and antimony-containing minerals were used in ancient societies, including the use of stibnite as an eye pigment. There is no known single discoverer of elemental antimony. Knowing a compound and isolating the metal are different milestones.",
+  52:"Franz Joseph Müller von Reichenstein investigated an unusual mineral from Transylvania, establishing evidence of tellurium by 1783. Paul Kitaibel independently encountered the element in 1789. Martin Heinrich Klaproth later confirmed the discovery and supplied the name tellurium in the 1790s.",
+  53:"Bernard Courtois discovered iodine in 1811 while processing seaweed ash for saltpetre. Adding sulfuric acid released violet vapours that condensed into dark crystals. Other chemists, including Gay-Lussac and Davy, later helped establish its elemental identity; Courtois deserves initial discovery credit.",
+  54:"William Ramsay and Morris Travers discovered xenon at University College London in 1898 by repeatedly separating gases obtained from liquefied air. Spectroscopy and an electrical discharge revealed a new gas. Neil Bartlett later demonstrated xenon's chemical reactivity in 1962.",
+  55:"Robert Bunsen and Gustav Kirchhoff identified caesium in 1860 by examining the spectrum of mineral water; its unfamiliar blue lines indicated a new element. They prepared caesium compounds, but Carl Theodor Setterberg isolated the metal later.",
+  56:"Carl Wilhelm Scheele recognised in the eighteenth century that barite contained an unfamiliar substance, but did not isolate barium metal. Humphry Davy produced the metal by electrolysis in 1808. The date and discoverer listed here refer specifically to metal isolation.",
+  57:"Carl Gustaf Mosander identified lanthanum in 1839 while investigating impurities in cerium oxide. Axel Erdmann independently found it in a mineral that same year. Mosander later showed that supposed didymium was a separate mixture rather than one simple element.",
+  58:"Jöns Jacob Berzelius and Wilhelm Hisinger identified cerium in Sweden during the winter of 1803–1804; Martin Heinrich Klaproth independently identified it around the same time. These early identifications were of a new element in minerals and compounds; pure metallic cerium was prepared much later.",
+  59:"Carl Auer von Welsbach separated the supposed element didymium into the distinct rare-earth elements praseodymium and neodymium in 1885, first obtaining their oxides. Pure praseodymium metal was not prepared until 1931.",
+  60:"Carl Auer von Welsbach discovered neodymium in 1885 when spectroscopy and separation showed didymium was a mixture containing praseodymium and neodymium. The pure metal was first prepared in 1925.",
+  41:"Charles Hatchett found evidence of a new element in 1801 while examining columbite in the British Museum. He called it columbium. Heinrich Rose distinguished it from tantalum in 1844 and proposed niobium; pure niobium metal was obtained later.",
+  42:"Carl Wilhelm Scheele distinguished molybdenite from graphite and lead ores in 1778, revealing the chemistry of a new element. Peter Jacob Hjelm later produced molybdenum metal in 1781.",
+  44:"Gottfried Osann proposed the name ruthenium after studying platinum ores during the 1820s, but his early claims were contested. Karl Ernst Claus (Klaus) isolated and characterised the metal, with recognized discovery normally dated to 1844. RSC's historical account also refers to work beginning in 1840.",
+  45:"William Hyde Wollaston discovered rhodium in 1803 while studying dissolved platinum ores. Rose-red rhodium salts led to the element's name, and Wollaston later isolated its metal.",
+  46:"William Hyde Wollaston isolated palladium from platinum ore in 1803. He initially sold small samples without identifying himself, then publicly explained the discovery in 1805. Palladium was named after the asteroid Pallas.",
+  47:"Silver has been known and worked since antiquity, with no identifiable single discoverer. Ancient civilizations mined, refined and used silver for jewellery, trade and coinage.",
+  48:"Friedrich Stromeyer identified and isolated cadmium in 1817 while investigating unusual discoloration in zinc compounds. Karl Samuel Leberecht Hermann independently worked on cadmium-bearing compounds around the same period; exact historical credit is sometimes shared.",
+  49:"Ferdinand Reich detected unexpected lines in the spectrum of a zinc ore in 1863. Because Reich was colour-blind, he worked with Hieronymus Richter, who identified a striking indigo spectral line. Together they isolated the new element, named indium.",
+  50:"Tin was used long before modern chemistry, with no known single discoverer. Alloying tin with copper to make bronze contributed to the Bronze Age, while tin ores such as cassiterite supplied the metal in many ancient societies.",
+  1:"In 1766 Henry Cavendish collected the flammable gas formed when acids reacted with metals and showed that it differed from other known gases. He later demonstrated that burning this gas produces water, helping establish that water is a compound rather than an element. Antoine Lavoisier subsequently named the gas hydrogen, meaning water-former. Earlier chemists had observed flammable bubbles but had not established their identity.",
+  2:"In 1868, Pierre Janssen and Norman Lockyer independently observed an unfamiliar yellow spectral line in sunlight, providing the first evidence of helium. The element was identified on Earth in 1895 after investigations of gas released from minerals.",
+  9:"Fluorine-containing compounds were known long before the element could be isolated. André-Marie Ampère proposed the name fluorine in 1812. Henri Moissan first successfully isolated elemental fluorine in 1886 by electrolysis, overcoming its extreme reactivity.",
   5:"In 1808, Joseph Louis Gay-Lussac and Louis Jacques Thénard in France, and Humphry Davy in England, independently produced impure boron from boron compounds. Much purer boron was obtained only later.",
-  7:"Daniel Rutherford studied air that remained after oxygen and carbon dioxide had been removed. The remaining gas would not support life or combustion, helping identify nitrogen as a distinct part of the atmosphere.",
-  8:"Oxygen emerged from experiments in the 1770s by Carl Wilhelm Scheele and Joseph Priestley, who heated oxygen-rich compounds and collected the gas released. Antoine Lavoisier later explained its role in combustion and helped establish its modern name.",
-  10:"William Ramsay and Morris Travers discovered neon while separating the gases left after liquefied air was distilled. The new gas announced itself dramatically by glowing a brilliant reddish-orange in an electrical discharge tube.",
+  7:"Henry Cavendish and Joseph Priestley had prepared oxygen-depleted air in the 1760s, but did not recognise its remaining gas as a distinct element. In his September 1772 Edinburgh doctoral thesis, Daniel Rutherford studied the residual gas after removing oxygen and carbon dioxide; it would not support combustion or respiration. His publication is the discovery milestone recorded here.",
+  8:"Carl Wilhelm Scheele produced oxygen gas in June 1771 but did not publish his work until 1777. Joseph Priestley independently prepared oxygen in 1774 by heating mercuric oxide and was the first to publish his finding. Antoine Lavoisier later explained oxygen's role in combustion and helped establish it as an element. These distinct production, publication and interpretation milestones explain the 1771–1774 discovery range.",
+  10:"William Ramsay and Morris Travers identified neon in London in 1898 while separating the gases obtained from liquefied air. After collecting a fraction enriched in the new gas, they observed its distinctive brilliant reddish-orange light in an electrical discharge tube; neon is colourless without this excitation. The name comes from the Greek word for new.",
   11:"Humphry Davy isolated sodium in 1807 by passing electric current through molten sodium hydroxide. The newly developed technique of electrolysis made it possible to separate several highly reactive metals for the first time.",
+  12:"Joseph Black distinguished magnesia from lime in 1755, recognizing evidence for a distinct element. Impure magnesium metal was produced later, and Humphry Davy isolated a small amount in 1808 by electrolysis. Those are different milestones in magnesium's discovery.",
+  13:"Aluminium compounds were known long before the metal could be separated. Hans Christian Ørsted first produced impure aluminium metal in 1825 by reacting aluminium chloride with potassium; Friedrich Wöhler improved the isolation in 1827.",
+  14:"Silicon compounds such as silica were used since antiquity, but that is not the same as isolating silicon. Jöns Jacob Berzelius produced elemental silicon in 1824 by reducing potassium fluorosilicate with potassium; earlier attempts yielded impure material.",
   15:"Hennig Brand discovered phosphorus in 1669 while searching for the philosopher's stone. He processed large quantities of urine and obtained a waxy substance that glowed in the dark and burned brightly.",
   17:"Carl Wilhelm Scheele produced chlorine gas in 1774 by reacting hydrochloric acid with manganese dioxide. It was first thought to be a compound; Humphry Davy later argued that it was an element.",
-  18:"Lord Rayleigh and William Ramsay noticed that nitrogen taken from air was slightly heavier than nitrogen made from chemical compounds. Chasing that tiny difference led them to a previously unknown, extremely unreactive gas: argon.",
+  18:"In 1894 Lord Rayleigh and William Ramsay explained why nitrogen extracted from air was slightly denser than nitrogen prepared from chemical compounds, isolating and identifying a previously unknown, very unreactive gas: argon. Henry Cavendish had obtained a small unreactive remainder of air in 1785 but had not identified it as a separate element. The app's 1894 date refers to the established identification.",
   19:"Humphry Davy isolated potassium in 1807 using electrolysis on molten potash. Tiny metallic globules appeared at the electrode, revealing a metal so reactive that it quickly reacted with air and water.",
-  31:"Paul-Émile Lecoq de Boisbaudran discovered gallium in 1875 using spectroscopy. Its spectral lines revealed a new element, and its properties closely matched an element Dmitri Mendeleev had predicted earlier.",
-  32:"Clemens Winkler discovered germanium in 1886 while analyzing the mineral argyrodite. Its properties closely matched Mendeleev's predicted 'eka-silicon,' providing striking support for the periodic table.",
-  35:"Antoine Jérôme Balard identified bromine in 1826 while studying residues from salt marsh brines. He isolated a reddish-brown, strongly smelling liquid that proved to be a new halogen element.",
-  43:"Technetium became the first element to be produced artificially. In 1937, Emilio Segrè and Carlo Perrier identified element 43 in molybdenum that had been bombarded in a particle accelerator.",
-  53:"Bernard Courtois discovered iodine in 1811 while processing seaweed ash for saltpeter production. He noticed violet vapors rising from the material; the vapor condensed into dark crystals of a new element.",
-  84:"Marie and Pierre Curie discovered polonium while investigating unusually radioactive pitchblende. The ore was more radioactive than its known uranium content could explain, pointing to previously unknown radioactive elements.",
-  85:"Astatine was first produced in 1940 when Dale Corson, Kenneth MacKenzie, and Emilio Segrè bombarded bismuth with alpha particles. Because its isotopes are short-lived, only tiny amounts can exist at one time.",
-  87:"Marguerite Perey discovered francium in 1939 while studying the radioactive decay of actinium. She detected a decay product with the properties expected for element 87, the last element first discovered in nature.",
-  88:"Marie and Pierre Curie, working with Gustave Bémont, found radium in 1898 while separating highly radioactive substances from pitchblende. It took years of processing large quantities of ore to obtain a small amount of radium compound.",
-  92:"Martin Heinrich Klaproth identified uranium in 1789 while analyzing the mineral pitchblende. He named the new element after the recently discovered planet Uranus; metallic uranium was isolated later.",
-  93:"Edwin McMillan and Philip Abelson identified neptunium in 1940 after bombarding uranium with neutrons. It was the first transuranium element—an element with an atomic number higher than uranium—to be confirmed.",
-  94:"Glenn Seaborg's team produced plutonium in 1940 by bombarding uranium in a cyclotron. The discovery was closely tied to the rapid development of nuclear science during the early 1940s.",
-  118:"Oganesson was created one atom at a time in heavy-ion experiments. Teams at the Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory fused lighter nuclei to produce the superheavy element, whose existence was later officially recognized."
-};
+  20:"Calcium compounds such as lime and limestone have been used for thousands of years. The metallic element was isolated in 1808 by Humphry Davy, who first obtained a calcium-mercury amalgam and then removed the mercury.",
+  21:"Dmitri Mendeleev predicted a missing element resembling boron. In 1879 Lars Fredrik Nilson identified scandium while studying rare-earth minerals; the new element closely matched the prediction. Pure scandium metal was not prepared until 1937.",
+  22:"William Gregor recognized an unknown metal in Cornish mineral sand in 1791. Martin Heinrich Klaproth independently identified the element in another mineral in 1795 and named it titanium. Preparation of pure metal came much later.",
+  23:"Andrés Manuel del Río identified what proved to be vanadium in a Mexican mineral in 1801, but an incorrect evaluation caused his discovery to be doubted. Nils Gabriel Sefström independently rediscovered and named the element in 1831; Henry Roscoe later prepared pure vanadium metal.",
+  24:"Nicolas-Louis Vauquelin identified a new element while examining crocoite from Siberia in 1797. He isolated metallic chromium the following year, 1798. Some historical references therefore give different discovery dates depending on the milestone.",
+  25:"Manganese-bearing minerals were used long before the metal was identified. Ignatius Kaim reported producing the metal in 1771; the Swedish chemists around Torbern Bergman investigated it, and Johan Gottlieb Gahn isolated manganese in 1774.",
+  26:"Iron has no single known discoverer: people worked meteoritic iron in ancient times, including in Egypt by about 3500 BCE. Smelting iron from ore developed much later, and the metal became fundamental to tools and construction.",
+  27:"Cobalt-containing compounds coloured glass and ceramics long before the metal was identified. Georg Brandt investigated the blue-producing ores from about 1730 and isolated cobalt metal around 1735, the discovery milestone recorded here. He published his conclusions in 1739; other chemists disputed whether his metal was a new element before its identity was accepted.",
+  28:"Axel Fredrik Cronstedt identified nickel in 1751 while investigating a mineral believed to contain copper. He publicly named it nickel in the 1750s; Torbern Bergman later prepared purer metal that established its identity.",
+  29:"Copper is an ancient metal with no known individual discoverer. Archaeological copper objects are thousands of years old, and copper eventually became central to bronze, made by alloying copper with tin.",
+  30:"Zinc was refined as a distinct metal in India centuries before modern European chemistry; historical production also developed in China. In Europe, Andreas Sigismund Marggraf independently investigated and identified zinc as a metal in 1746. That date is not the beginning of worldwide zinc use.",
+  31:"In Paris in 1875, Paul-Émile Lecoq de Boisbaudran spotted an unfamiliar violet spectral line while examining zinc-blende material. He isolated gallium later that year. The finding matched Mendeleev's earlier prediction of an element below aluminium.",
+  32:"Clemens Winkler identified germanium in 1886 while analysing the silver mineral argyrodite. Its properties closely matched Dmitri Mendeleev's predicted eka-silicon.",
+  35:"Antoine-Jérôme Balard publicly reported bromine in 1826 after obtaining a reddish liquid from concentrated brine. Carl Löwig had independently prepared bromine in 1825 but had not published his result before Balard.",
+  43:"Carlo Perrier and Emilio Segrè identified technetium in 1937 after analysing molybdenum irradiated in a cyclotron. It was the first artificially produced element to be conclusively identified. Its isotopes are radioactive, so it has no standard atomic weight; [98] on some tables is a representative mass number, not an atomic weight.",
+  33:"Arsenic-containing minerals and compounds were known in antiquity, but this is not the same as isolating elemental arsenic. Isolation of the element is traditionally attributed to Albertus Magnus in the 1200s. At near-atmospheric pressure gray arsenic sublimates around 889 K (616 °C), so that temperature is neither its ordinary melting point nor its boiling point.",
+  34:"Jöns Jacob Berzelius identified selenium in 1817 after examining a reddish deposit from a sulfuric-acid factory in Stockholm. He initially suspected tellurium, then determined that the material contained a distinct element.",
+  36:"William Ramsay and Morris Travers isolated krypton in London on 30 May 1898 while separating the components of liquefied air. Its unique spectral lines established that it was a new noble gas.",
+  37:"Robert Bunsen and Gustav Kirchhoff identified rubidium in 1861 while analysing lepidolite using spectroscopy. Two ruby-red spectral lines revealed the new element. Pure rubidium metal was prepared much later.",
+  38:"Adair Crawford identified an unusual earth from a mineral found near Strontian, Scotland, in 1787. Thomas Charles Hope provided stronger evidence that it contained a new element in 1791. Humphry Davy later isolated strontium metal in 1808.",
+  39:"Johan Gadolin reported a previously unknown earth in a mineral from Ytterby in 1794, identifying the material now associated with yttrium. Friedrich Wöhler later isolated yttrium metal in 1828.",
+  40:"Martin Heinrich Klaproth identified zirconia, an oxide of a new element, in zircon in 1789. Jöns Jacob Berzelius obtained impure zirconium metal in 1824; high-purity metal was prepared only in the twentieth century.",};
 
 function discoveryStory(e){
   if(discoveryStories[e.atomicNumber]) return discoveryStories[e.atomicNumber];
@@ -207,16 +301,28 @@ function loadElementPhoto(number,name){
   const original=document.getElementById("elementPhotoOriginal");
   const license=document.getElementById("elementPhotoLicense");
   const source=document.getElementById("elementPhotoSource");
+  const filePage=document.getElementById("elementPhotoFilePage");
   const item=(window.ELEMENT_PHOTOS||{})[String(number)];
   const n=Number(number);
+  const photoTitle=String(item?.title||"");
+  const placeholder=/^No Image Found$/i.test(photoTitle) ||
+    /\/s\/transactinoid\.png$/i.test(String(item?.originalUrl||""));
+  const illustration=/only an illustration|not .* itself|unrelated particle/i.test(photoTitle);
+  const rightsUnknown=!!item && !validHttpUrl(item.licenseUrl) &&
+    !/public domain/i.test(String(item.attribution||""));
+  const withholdReason=String(item?.withholdReason||"");
   const noDirectSample=[84,85,86,87].includes(n) || n>=100;
 
-  if(noDirectSample){
+  if(noDirectSample || placeholder || illustration || rightsUnknown || withholdReason){
     wrap.classList.add("hidden");
-    heading.textContent="Element Photograph";
+    heading.textContent="Element imagery";
     status.classList.add("no-sample");
     status.classList.remove("hidden");
-    status.textContent="A direct photograph of a normal visible sample of "+name+" is not available here. This element is extremely rare, highly radioactive, gaseous, or produced only in tiny quantities, so the app does not show a misleading placeholder picture.";
+    if(placeholder) status.textContent="There is no actual sample photograph for "+name+" in this app. The catalogued image is a generic placeholder.";
+    else if(illustration) status.textContent="The available image is an illustration or a picture of another experiment, not a verified sample photograph of "+name+". It has been withheld.";
+    else if(withholdReason) status.textContent=withholdReason;
+    else if(rightsUnknown) status.textContent="A picture has been catalogued for "+name+", but permission to reuse it has not been established. It has been withheld pending review.";
+    else status.textContent="No verified direct photograph of a visible sample of "+name+" is available here. Extremely rare and short-lived elements may only have illustrative or experimental imagery.";
     return;
   }
 
@@ -228,20 +334,38 @@ function loadElementPhoto(number,name){
   }
 
   status.classList.remove("no-sample");
-  heading.textContent="What This Element Looks Like";
+  const researchPhoto=[96,97,98].includes(n);
+  const museumExhibitPhoto=n===94;
+  const alloyMeteoritePhoto=n===26;
+  heading.textContent=researchPhoto?"Real Research Imagery":(museumExhibitPhoto?"Historical Element Photograph":(alloyMeteoritePhoto?"Iron-Rich Meteorite Photograph":"What This Element Looks Like"));
   img.src=item.localUrl;
-  img.alt=item.title||("Photograph of "+name);
+  img.alt=item.title||("Photograph related to "+name);
   title.textContent=item.title||name;
-  description.textContent="Representative photograph for this element.";
+  description.textContent=researchPhoto
+    ?"This is a real photograph of scientific equipment or a compound containing "+name+", not a photograph of a bulk sample of the pure element. The title explains exactly what is shown. Final release packaging and credits checks are still pending."
+    :(museumExhibitPhoto
+      ?"A historical museum display documents a small sample of this element. This is not a typical macroscopic metal specimen; final release packaging and credits checks remain pending."
+      :(alloyMeteoritePhoto
+        ?"This photograph shows fragments of a meteorite reported to contain about 92% iron; the pieces are not chemically pure iron metal. Source and license records are in About & Credits; final release-package checks remain pending."
+        :"Catalogued photo of the element or its sample. Source and license records are maintained in About & Credits; final release-package checks remain pending."));
   credit.textContent=(item.attribution||"Image credit unavailable.")+(item.note?" • "+item.note:"");
-  original.href=item.localUrl;
-  original.textContent="Open local image";
+  if(validHttpUrl(item.originalUrl)){
+    original.href=item.originalUrl;
+    original.textContent="Open original image";
+    original.classList.remove("hidden");
+  }else{
+    original.href="#";
+    original.classList.add("hidden");
+  }
 
   if(validHttpUrl(item.licenseUrl)){license.href=item.licenseUrl;license.classList.remove("hidden");}
   else license.classList.add("hidden");
 
   if(validHttpUrl(item.sourceUrl)){source.href=item.sourceUrl;source.classList.remove("hidden");}
   else source.classList.add("hidden");
+
+  if(validHttpUrl(item.commonsPage)){filePage.href=item.commonsPage;filePage.classList.remove("hidden");}
+  else filePage.classList.add("hidden");
 
   img.addEventListener("error",()=>{
     wrap.classList.add("hidden");
@@ -261,7 +385,7 @@ if(!e){
  document.title=e.name+" • Periodic Table Explorer";
  document.getElementById("atomicNumber").textContent=e.atomicNumber;
  document.getElementById("symbol").textContent=e.symbol;
- document.getElementById("mass").textContent=e.atomicMass;
+ document.getElementById("mass").textContent=e.atomicMass==null?"—":e.atomicMass;
  document.getElementById("name").textContent=e.name;
  document.getElementById("subtitle").textContent=e.groupBlock||"Element";
  document.getElementById("status").textContent="Element "+e.atomicNumber+" of 118 • "+(e.standardState||"State unknown");
@@ -270,21 +394,26 @@ if(!e){
  document.getElementById("basicGrid").innerHTML=
    fact("Atomic number",e.atomicNumber)+
    fact("Symbol",e.symbol)+
-   fact("Atomic mass",e.atomicMass)+
+   fact("Standard atomic weight (CIAAW 2024, abridged)",e.atomicMass==null?"Not assigned":e.atomicMass)+
+   (e.referenceMassNumber!=null?fact("Reference isotope mass number (not atomic weight)","["+e.referenceMassNumber+"]"):"")+
    fact("Category",e.groupBlock||"—")+
    fact("State",e.standardState||"—")+
    fact("Year discovered",e.yearDiscovered||"—");
 
  document.getElementById("scienceGrid").innerHTML=
-   fact("Electron configuration",e.electronConfiguration||"—")+
-   fact("Density",e.density==null?"—":e.density+" g/cm³")+
-   fact("Melting point",kelvinToC(e.meltingPoint))+
-   fact("Boiling point",kelvinToC(e.boilingPoint))+
-   fact("Electronegativity",e.electronegativity??"—")+
-   fact("Atomic radius",e.atomicRadius==null?"—":e.atomicRadius+" pm")+
-   fact("Ionization energy",e.ionizationEnergy==null?"—":e.ionizationEnergy+" eV")+
-   fact("Electron affinity",e.electronAffinity==null?"—":e.electronAffinity+" eV")+
-   fact("Oxidation states",e.oxidationStates||"—")+
+   fact("Electron configuration"+(e.atomicNumber>=104?" (calculated)":""),
+     e.electronConfiguration||"—")+
+   fact("Density"+(e.densityBasis?" ("+e.densityBasis+")":""),e.density==null?"—":e.density+" g/cm³")+
+   fact("Melting point"+(e.phaseNote&&e.meltingPoint!=null?" (estimated)":""),kelvinToC(e.meltingPoint))+
+   fact("Boiling point"+(e.phaseNote&&e.boilingPoint!=null?" (estimated)":""),kelvinToC(e.boilingPoint))+
+   (e.phaseNote?fact("Phase / temperature evidence",e.phaseNote):"")+
+   (e.temperatureReference?fact("Temperature reference",e.temperatureReference):"")+
+   (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
+   fact("Electronegativity (Pauling)",e.electronegativity??"—")+
+   fact("Van der Waals atomic radius",e.atomicRadius==null?"Not available":e.atomicRadius+" pm")+
+   fact("First ionization energy",e.ionizationEnergy==null?"Not available":e.ionizationEnergy+" eV")+
+   fact("Electron affinity (energy released)",e.electronAffinity==null?"Not available":e.electronAffinity+" eV")+
+   fact("Common oxidation states",e.oxidationStates||"Not established")+
    fact("Appearance",e.appearance||"—");
 
  let history=[];
@@ -300,7 +429,10 @@ if(!e){
  let facts=[];
  facts.push(e.name+" has atomic number "+e.atomicNumber+" and the symbol "+e.symbol+".");
  if(e.groupBlock) facts.push("It is classified as "+e.groupBlock.toLowerCase()+".");
- if(e.standardState) facts.push("Its standard state is "+e.standardState.toLowerCase()+".");
+ if(e.standardState){
+   if(/^Expected/i.test(e.standardState)) facts.push("Its bulk physical state has not been established by direct measurement; the listed state is a prediction or periodic-table classification.");
+   else facts.push("Its standard state is "+e.standardState.toLowerCase()+".");
+ }
  if(e.appearance) facts.push("Its appearance is described as "+e.appearance+".");
  document.getElementById("factsText").textContent=facts.join(" ");
 }
