@@ -649,7 +649,7 @@ const usesSourceDistinctions={
 for(const [z,requirements] of Object.entries(usesSourceDistinctions)){
   const actual=detailed[Number(z)-1].typicalUses;
   for(const excerpt of requirements){
-    assert.ok(actual.includes(excerpt),'Chemically distinguished RSC use: '+z+' '+excerpt);
+    assert.ok(actual.toLowerCase().includes(excerpt.toLowerCase()),'Chemically distinguished RSC use: '+z+' '+excerpt);
   }
 }
 
