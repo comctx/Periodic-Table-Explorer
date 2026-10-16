@@ -178,7 +178,7 @@ const rsc31to40={
   31:[302.9146,2502,5.91,'Solid'],32:[1211.4,3106,5.3234,'Solid'],
   33:[null,null,5.75,'Solid'],34:[494,958,4.809,'Solid'],
   35:[266,332,3.1028,'Liquid'],36:[115.78,119.735,0.003425,'Gas'],
-  37:[312.45,961,1.53,'Solid'],38:[1050,1650,2.64,'Solid'],
+  37:[312.46,960,1.53,'Solid'],38:[1050,1650,2.64,'Solid'],
   39:[1795,3618,4.47,'Solid'],40:[2127,4679,6.52,'Solid']
 };
 for(const [z,values] of Object.entries(rsc31to40)){
@@ -224,7 +224,7 @@ for(let z=41;z<=50;z++)assert.ok(elementHtml41.includes('  '+z+':"'),'Discovery 
 const rsc51to60={
   51:[903.778,1860,6.68,'Solid'],52:[722.66,1261,6.232,'Solid'],
   53:[386.9,457.6,4.933,'Solid'],54:[161.4,165.051,0.005366,'Gas'],
-  55:[301.7,944,1.873,'Solid'],56:[1000,2118,3.62,'Solid'],
+  55:[301.66,941.4,1.873,'Solid'],56:[1000,2118,3.62,'Solid'],
   57:[1193,3737,6.15,'Solid'],58:[1072,3716,6.77,'Solid'],
   59:[1204,3793,6.77,'Solid'],60:[1289,3347,7.01,'Solid']
 };
@@ -565,6 +565,35 @@ assert.ok(detailUi.includes(' (estimated)'),
   assert.equal(state20({z:29}),'solid','Copper 20°C solid');
 }
 
+// NIST TN 2273 (2024), Table 2, evaluated recommended 1-atm phase temperatures;
+// accepted across all six group-1 alkali metals to avoid mixing source conventions.
+// The expanded uncertainties are given in the source at approximately 95% coverage.
+// Francium remains an *estimate* with no direct bulk measurement.
+const nistAlkaliPhase2024={
+  3:[453.61,1617.2,0.14,3.3],
+  11:[370.93,1156.09,0.06,0.19],
+  19:[336.84,1030.87,0.24,0.7],
+  37:[312.46,960,0.18,2],
+  55:[301.66,941.4,0.20,0.4],
+  87:[300,936,3,6]
+};
+for(const [z,values] of Object.entries(nistAlkaliPhase2024)){
+  const e=detailed[Number(z)-1];
+  assert.equal(e.meltingPoint,values[0],'NIST 2024 group-1 melting '+z);
+  assert.equal(e.boilingPoint,values[1],'NIST 2024 group-1 boiling '+z);
+  const sourceNote=Number(z)===87?e.phaseNote:e.temperatureReference;
+  assert.ok(sourceNote?.includes('NIST') && sourceNote.includes('2024'),
+    'NIST source is visible in scientific details '+z);
+  assert.ok(sourceNote.includes(String(values[0])) &&
+    sourceNote.includes(String(values[1])),
+    'NIST numerical values appear with context '+z);
+  assert.ok(sourceNote.includes(String(values[2])) &&
+    sourceNote.includes(String(values[3])),
+    'NIST published expanded uncertainty values retained '+z);
+}
+assert.ok(detailUi.includes('Temperature reference'),
+  'Element page visibly links measured alkali NIST source evidence');
+
 // Curated factual quiz questions (not the automatic name/symbol/Z questions):
 // independently checked against the RSC element-history/uses pages and BIPM.
 // Details/sources in audit/SCIENCE_RARE_PHASES_AND_QUIZ_2026_10_15.md.
@@ -886,7 +915,7 @@ for(let i=0;i<30;i++){
  assert.equal(detailed[i].electronegativity,rscPauling1to30[i],'RSC Pauling 1–30 '+z);
  assert.equal(detailed[i].oxidationStates,rscSelectedOxidation1to30[i],'RSC selected oxidation states 1–30 '+z);
 }
-const rscPhase1to20=[[13.99,20.271,0.000082,"Gas"],[null,4.222,0.000164,"Gas"],[453.65,1615,0.534,"Solid"],[1560,2741,1.85,"Solid"],[2350,4273,2.34,"Solid"],[null,null,2.2,"Solid"],[63.2,77.355,0.001145,"Gas"],[54.36,90.188,0.001308,"Gas"],[53.48,85.04,0.001553,"Gas"],[24.56,27.104,0.000825,"Gas"],[370.944,1156.09,0.97,"Solid"],[923,1363,1.74,"Solid"],[933.473,2792,2.7,"Solid"],[1687,3538,2.3296,"Solid"],[317.3,553.7,1.823,"Solid"],[388.36,717.76,2.07,"Solid"],[171.7,239.11,0.002898,"Gas"],[83.81,87.302,0.001633,"Gas"],[336.7,1032,0.89,"Solid"],[1115,1757,1.54,"Solid"]];
+const rscPhase1to20=[[13.99,20.271,0.000082,"Gas"],[null,4.222,0.000164,"Gas"],[453.61,1617.2,0.534,"Solid"],[1560,2741,1.85,"Solid"],[2350,4273,2.34,"Solid"],[null,null,2.2,"Solid"],[63.2,77.355,0.001145,"Gas"],[54.36,90.188,0.001308,"Gas"],[53.48,85.04,0.001553,"Gas"],[24.56,27.104,0.000825,"Gas"],[370.93,1156.09,0.97,"Solid"],[923,1363,1.74,"Solid"],[933.473,2792,2.7,"Solid"],[1687,3538,2.3296,"Solid"],[317.3,553.7,1.823,"Solid"],[388.36,717.76,2.07,"Solid"],[171.7,239.11,0.002898,"Gas"],[83.81,87.302,0.001633,"Gas"],[336.84,1030.87,0.89,"Solid"],[1115,1757,1.54,"Solid"]];
 for(let i=0;i<20;i++){
  const e=detailed[i],values=rscPhase1to20[i],z=i+1;
  assert.equal(e.meltingPoint,values[0],'RSC melting 1–20 '+z);
