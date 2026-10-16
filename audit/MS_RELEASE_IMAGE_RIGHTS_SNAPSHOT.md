@@ -33,6 +33,12 @@ Rather than repeat original-file matching, we checked whether the **12 selected 
 - Actual final code+photo metadata regression [**38847177506**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38847177506), Microsoft PWA candidate preflight [**38847177616**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38847177616), real Chromium browser [**38847177480**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38847177480), and genuine offline [**38847177489**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38847177489) each completed with conclusion **success** on the corrected app source.
 - A passing credit-string test is **not legal certification** of each adapted image's redistribution status. The final actual 92-image distribution and Bay City/source credit sign-off remains blocked. This change does **not** alter images, scientific data or published app.
 
+## DONCO logo — owner-authorship confirmed, not a blocker on its own
+
+On **2026-10-15**, the user explicitly stated **“its my design”** in response to whether the **DONCO logo used in Periodic Table Explorer** was their own design or commercially licensed. This is a **direct owner assertion** of original creation of the DONCO logo, which supports their right to use that artwork commercially provided it includes no separate third-party components. No need to ask the user for a Creative Commons license to reuse their own logo.
+
+**Do not confuse this with other images:** The **Bay City City Hall photograph** is separately credited to **Andrew Jameson** under CC BY-SA 3.0 in `about.html`; the **92 selected element photographs** have separate per-file licenses and adaptation duties. The Microsoft Store tile icon may be separately sourced/constructed and is not automatically covered by the owner's statement about the DONCO logo. Therefore the combined `bay_city_image_and_logo_rights_reviewed` release approval remains **false**, not silently marked certified. No store submission, merge or release approval was requested here.
+
 ## Remaining conditions before public audited site deployment
 
 1. Validate whether each chosen candidate's **actual original file** falls under the claimed CC/public-domain status; do not rely solely on a generic publisher homepage or uploader identity if conflicting evidence appears. This can be done from the existing image/source review ledger, **not another 118-element source audit**.
