@@ -640,7 +640,11 @@ const usesSourceDistinctions={
   49:['Indium tin oxide','Indium semiconductor compounds','Indium metal and alloys'],
   59:['Praseodymium salts','Praseodymium is used','magnesium alloys'],
   68:['Erbium-doped optical fibres','Erbium oxide','elemental erbium'],
-  75:['nickel-based superalloys','Rhenium-containing catalysts','thermocouples']
+  75:['nickel-based superalloys','Rhenium-containing catalysts','thermocouples'],
+  41:['pipeline steels','niobium-titanium','MRI machines'],
+  42:['Molybdenum disulfide (MoS2)','compound rather than the pure metal','industrial catalysts'],
+  55:['Caesium-133','hyperfine transition','caesium formate'],
+  60:['Neodymium-iron-boron','Nd:YAG','laser']
 };
 for(const [z,requirements] of Object.entries(usesSourceDistinctions)){
   const actual=detailed[Number(z)-1].typicalUses;
