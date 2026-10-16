@@ -423,7 +423,10 @@ if(!e){
  let facts=[];
  facts.push(e.name+" has atomic number "+e.atomicNumber+" and the symbol "+e.symbol+".");
  if(e.groupBlock) facts.push("It is classified as "+e.groupBlock.toLowerCase()+".");
- if(e.standardState) facts.push("Its standard state is "+e.standardState.toLowerCase()+".");
+ if(e.standardState){
+   if(/^Expected/i.test(e.standardState)) facts.push("Its bulk physical state has not been established by direct measurement; the listed state is a prediction or periodic-table classification.");
+   else facts.push("Its standard state is "+e.standardState.toLowerCase()+".");
+ }
  if(e.appearance) facts.push("Its appearance is described as "+e.appearance+".");
  document.getElementById("factsText").textContent=facts.join(" ");
 }
