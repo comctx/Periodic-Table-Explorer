@@ -435,7 +435,7 @@ for(const z of [110,111]){
 // https://periodic-table.rsc.org/element/6/carbon
 // https://periodic-table.rsc.org/element/16/sulfur
 const historySection=readFileSync('element.html','utf8').split('const discoveryStories={')[1]?.split('function discoveryStory(e)')[0]||'';
-const narrativeNumbers=[...historySection.matchAll(/^\\s+(\\d{1,3}):"/gm)].map(m=>Number(m[1]));
+const narrativeNumbers=[...historySection.matchAll(/^\s+(\d{1,3}):"/gm)].map(m=>Number(m[1]));
 assert.equal(narrativeNumbers.length,118,'All 118 distinct history entries must have a verified individual story');
 assert.equal(new Set(narrativeNumbers).size,118,'No duplicate individual history keys');
 assert.deepEqual(narrativeNumbers.slice().sort((a,b)=>a-b),Array.from({length:118},(_,i)=>i+1),
