@@ -624,6 +624,31 @@ for(const [id,correct] of Object.entries(curatedFactAnswerKeys)){
   assert.ok(matches[0].question.length>=28,'Curated question is substantive '+id);
 }
 
+// Source-specific chemistry wording safeguards for remaining short application summaries.
+// The RSC sources explicitly distinguish elemental metal, alloys, oxides and dopants.
+// References: https://periodic-table.rsc.org/element/32/germanium
+// https://periodic-table.rsc.org/element/34/selenium
+// https://periodic-table.rsc.org/element/39/yttrium
+// https://periodic-table.rsc.org/element/49/indium
+// https://periodic-table.rsc.org/element/59/praseodymium
+// https://periodic-table.rsc.org/element/68/erbium
+// https://periodic-table.rsc.org/element/75/rhenium
+const usesSourceDistinctions={
+  32:['Elemental germanium','Germanium dioxide','fibre-optic'],
+  34:['Elemental selenium','Selenium compounds','excess intake is toxic'],
+  39:['Yttrium metal','Yttrium-containing compounds','superconducting'],
+  49:['Indium tin oxide','Indium semiconductor compounds','Indium metal and alloys'],
+  59:['Praseodymium salts','Praseodymium is used','magnesium alloys'],
+  68:['Erbium-doped optical fibres','Erbium oxide','elemental erbium'],
+  75:['nickel-based superalloys','Rhenium-containing catalysts','thermocouples']
+};
+for(const [z,requirements] of Object.entries(usesSourceDistinctions)){
+  const actual=detailed[Number(z)-1].typicalUses;
+  for(const excerpt of requirements){
+    assert.ok(actual.includes(excerpt),'Chemically distinguished RSC use: '+z+' '+excerpt);
+  }
+}
+
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
 const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
