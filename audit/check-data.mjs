@@ -532,7 +532,7 @@ assert.equal(detailed[86].meltingPoint,300,'NIST 2024 estimated francium melt in
 assert.equal(detailed[86].boilingPoint,936,'NIST 2024 estimated francium boiling in K');
 assert.match(detailed[86].phaseNote,/300 ± 3 K/,'Disclose NIST melting uncertainty');
 assert.match(detailed[86].phaseNote,/936 ± 6 K/,'Disclose NIST boiling uncertainty');
-assert.match(detailed[86].phaseNote,/not been observed/i,'No direct Francium bulk measurement');
+assert.match(detailed[86].phaseNote,/neither transition has been observed/i,'No direct Francium bulk measurement');
 for(const z of [85,87,100,101,102,103,104,105,106,107,108,109]){
   assert.match(detailed[z-1].standardState,/^Expected solid/,
     'The rare-element bulk phase is classified/predicted, not measured '+z);
@@ -554,7 +554,7 @@ assert.ok(detailUi.includes(' (estimated)'),
   const phaseEnd=indexSource.indexOf('function updateTemperatureUI(){',phaseStart);
   assert.ok(phaseStart>0 && phaseEnd>phaseStart,'Phase-view function extractable for real execution');
   const fn=new Function('thermalByZ','temperatureC',
-    indexSource.slice(phaseStart,phaseEnd)+'\\nreturn stateAtTemperature;');
+    indexSource.slice(phaseStart,phaseEnd)+'\nreturn stateAtTemperature;');
   const state20=fn(Object.fromEntries(detailed.map(e=>[e.atomicNumber,e])),20);
   for(const z of [85,87,100,101,102,103,104,105,106,107,108,109]){
     assert.equal(state20({z}), 'unknown','Real 20°C phase function not falsely certain for '+z);
