@@ -429,6 +429,29 @@ for(const z of [110,111]){
   'GSI discovery narrative correctly names team leader '+z);
  assert.ok(story.includes('2003'),'IUPAC recognition year in GSI discovery narrative '+z);
 }
+// Full individualized history coverage, not just a generic date/discoverer fallback.
+// Individual RSC historical accounts: https://periodic-table.rsc.org/element/3/lithium
+// https://periodic-table.rsc.org/element/4/beryllium
+// https://periodic-table.rsc.org/element/6/carbon
+// https://periodic-table.rsc.org/element/16/sulfur
+const historySection=readFileSync('element.html','utf8').split('const discoveryStories={')[1]?.split('function discoveryStory(e)')[0]||'';
+const narrativeNumbers=[...historySection.matchAll(/^\\s+(\\d{1,3}):"/gm)].map(m=>Number(m[1]));
+assert.equal(narrativeNumbers.length,118,'All 118 distinct history entries must have a verified individual story');
+assert.equal(new Set(narrativeNumbers).size,118,'No duplicate individual history keys');
+assert.deepEqual(narrativeNumbers.slice().sort((a,b)=>a-b),Array.from({length:118},(_,i)=>i+1),
+  'Every element has its own authored history account');
+const newHistories={
+  3:['Arfvedson','1817','Brande','1855'],
+  4:['Vauquelin','1798','Wöhler','Bussy','1828'],
+  6:['antiquity','Tennant','1796','carbon dioxide'],
+  16:['antiquity','Lavoisier','Gay-Lussac','Thénard','1809']
+};
+for(const [z,parts] of Object.entries(newHistories)){
+ const story=historySection.split('  '+z+':"')[1]?.split('"')[0]||'';
+ for(const expected of parts){
+  assert.ok(story.includes(expected),'RSC source-specific history '+z+': '+expected);
+ }
+}
 const h101to110=readFileSync('element.html','utf8');
 for(let z=101;z<=110;z++)assert.ok(h101to110.includes('  '+z+':"'),'Element-specific story missing '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope mass-number display');
