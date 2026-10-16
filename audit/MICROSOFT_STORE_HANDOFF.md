@@ -18,13 +18,25 @@ These three identity strings must be **copied exactly** into the real Windows pa
 
 **Status:** Product identity gate **complete**. Still missing: the authorized HTTPS deployment of this **updated audit branch**, resolved third-party commercial image reuse rights, a genuine PWABuilder Windows MSIX package with those precise identity fields, installed-Windows testing, and final Store submission. `main` and the public app **remain unchanged** pending explicit release approval.
 
+## Existing Microsoft Store submission package — user-verified (2026-10-15)
+
+The **Packages** screen for the already-created product (Submission 1, In draft) visibly displays **`Periodic Table Explorer.msixbundle`, 1.3 MB**, and the overview marked its Packages section **Complete / Validated**. **Correction to earlier repository-only status:** a *real-looking uploaded package exists in Partner Center*, even though we have **not retrieved, inspected, installed or matched its contents** and there is no Windows packaging source/recipe currently checked in to this repository. Do not falsely claim that Partner Center has no package or that the uploaded bundle contains the latest audited corrections.
+
+**Warning on the actual screen:** `Package acceptance validation warning: The following restricted capabilities require approval before you can use them in your app: runFullTrust.` This is not a confirmed rejection, nor proof it has been approved. Microsoft's [restricted capability policy](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations) explains that if a Store package declares `runFullTrust`, the publisher must explain the business/functional need under **Submission options**, and Microsoft's certification team decides whether to approve it. Do not remove the capability blindly: a full-trust Windows app may require it; first identify the actual package's runtime and whether a PWA packaging route can avoid it.
+
+**Next essential actions:**
+1. Recover the **existing** `.msixbundle` source file from the user's Downloads/build output or builder, if available. Inspect its actual manifest, Publisher/Name/version, startup URL, runtime type, and `runFullTrust` declaration. The Store screenshot alone proves neither its package version nor that it launches the current audit branch.
+2. Ensure a *new* Store package is made from the updated scientific audit build, with exactly the existing Product Identity information recorded above. Avoid assuming the older 1.3 MB bundle contains revised HTML: a PWA package may simply load a separately hosted URL, which must serve the corrected content.
+3. Resolve photo and Bay City copyright uncertainty, ensure audited public HTTPS hosting, then test **installed real Windows package**, including scientific pages, quiz, offline and links. If `runFullTrust` truly required, justify it accurately in Submission options, otherwise use a legitimate packaging mode without it.
+4. **Do not click Submit for certification** on the older package while source/version/capability/rights are unverified.
+
 ## Current verified engineering status — DO NOT CONFUSE WITH MSIX
 
 - Existing app is a Progressive Web App with `manifest.webmanifest`, 192/512 pixel icons, secure/offline service worker, HTML pages for all 118 elements, quiz, About & Credits, support and privacy pages.
 - Added `audit/check_ms_pwa.py`: validates PWA source manifest, standalone scope/start_url, PNG icons, core paths, offline allowlist, current 92 candidate images, support/privacy, and the current scientific disclaimer.
 - New manual/push GitHub Actions workflow: [`audit-ms-store-preflight.yml`](../.github/workflows/audit-ms-store-preflight.yml), restricted to the `scientific-audit-2026-10` branch. It stages audited app files, runs science/offline/photo checks, checks exact source hashes, and uploads an **ENGINEERING-ONLY** ZIP of the PWA's `Web/` source. No Windows binaries, Store API calls, branch merge or public-site deployment.
 - **Verified GitHub Actions success:** [run 38833258437](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38833258437), source commit [`7543e57`](https://github.com/comctx/Periodic-Table-Explorer/commit/7543e570aacda410bff13245c225cd8c4f7b5698). Job steps included `Microsoft Store PWA manifest / content readiness`, `Inspect actual staged PWA source byte-for-byte`, `Prepare engineering-only source archive and check it`, and `Upload build candidate sources` — all **success**. This is **not a real MSIX, .msixbundle, appx, signed Store deliverable, or an installed Windows test**.
-- GitHub repository previously contained no actual MS Store Windows package recipe. This workflow is the PWA *source preparation* route, not a false claim to have compiled Windows binaries.
+- GitHub repository previously contained no Windows Store packaging recipe; this source workflow does not build binaries. **However, user's existing Partner Center draft DOES show an uploaded 1.3 MB MSIX bundle with a `runFullTrust` warning. Its precise contents/build generation are not yet verified.**
 
 ## Authentic Microsoft Store screenshot assets — now generated
 
