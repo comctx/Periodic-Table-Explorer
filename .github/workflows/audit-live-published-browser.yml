@@ -1,0 +1,33 @@
+name: Test the LIVE published Periodic Table Explorer in Chromium
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-live-published-browser.yml
+
+permissions:
+  contents: read
+
+jobs:
+  live-published-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      AUDIT_BASE_URL: https://comctx.github.io/Periodic-Table-Explorer
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Playwright and Chromium for authentic hosted web testing
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Verify actual public website across 118 elements, quiz, photos, mobile UI
+        run: node audit/browser-smoke.mjs
+      - name: Define verification scope
+        if: always()
+        run: |
+          echo 'Uses PUBLIC GitHub Pages URL, not a local copy. All 118 pages, images, quiz, credits, search and narrow-screen behavior are checked in headless Chromium.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Not a Microsoft-installed MSIX runtime test; ongoing source accuracy and third-party photo rights remain separate questions.' >> "$GITHUB_STEP_SUMMARY"
