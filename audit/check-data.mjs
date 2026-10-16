@@ -380,12 +380,12 @@ const rsc101to110={
   101:[258,1100,null,null,"Solid","[Rn] 5f13 7s2","+3"],
   102:[259,1100,null,null,"Solid","[Rn] 5f14 7s2","+3, +2"],
   103:[262,1900,null,null,"Solid","[Rn] 5f14 7s2 7p1","+3"],
-  104:[267,null,null,null,"Solid","[Rn] 5f14 6d2 7s2",null],
-  105:[268,null,null,null,"Solid","[Rn] 5f14 6d3 7s2",null],
-  106:[269,null,null,null,"Solid","[Rn] 5f14 6d4 7s2",null],
-  107:[270,null,null,null,"Solid","[Rn] 5f14 6d5 7s2",null],
-  108:[269,null,null,null,"Solid","[Rn] 5f14 6d6 7s2",null],
-  109:[278,null,null,null,"Solid","[Rn] 5f14 6d7 7s2",null],
+  104:[267,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d2 7s2",null],
+  105:[268,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d3 7s2",null],
+  106:[269,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d4 7s2",null],
+  107:[270,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d5 7s2",null],
+  108:[269,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d6 7s2",null],
+  109:[278,null,null,null,"Expected solid (RSC classification; unverified)","[Rn] 5f14 6d7 7s2",null],
   110:[281,null,null,null,"Expected to be a solid","[Rn] 5f14 6d9 7s1",null],
 };
 for(const [z,expected] of Object.entries(rsc101to110)){
@@ -396,12 +396,21 @@ for(const [z,expected] of Object.entries(rsc101to110)){
  assert.equal(entry.meltingPoint,expected[1],'RSC melting '+z);
  assert.equal(entry.boilingPoint,expected[2],'RSC boiling '+z);
  assert.equal(entry.density,expected[3],'RSC density '+z);
- assert.equal(entry.standardState,expected[4],'State (RSC; qualified 110) '+z);
+ assert.equal(entry.standardState,expected[4],'State (RSC classification with bulk caveat for 104–110) '+z);
  assert.equal(entry.electronConfiguration,expected[5],'RSC electron configuration '+z);
  assert.equal(entry.oxidationStates,expected[6],'RSC common oxidation '+z);
 }
 for(let z=101;z<=103;z++)assert.equal(detailed[z-1].electronegativity,null,'Pauling electronegativity unknown '+z);
 for(let z=104;z<=110;z++)assert.equal(detailed[z-1].meltingPoint,null,'Do not invent superheavy melting points '+z);
+for(let z=104;z<=109;z++){
+  // RSC's 'Solid' at 20 C is a classification; it is not a measured bulk state.
+  // Its own element articles describe production of only a few atoms.
+  assert.equal(detailed[z-1].standardState,'Expected solid (RSC classification; unverified)',
+    'No unqualified claim of observed superheavy bulk phase '+z);
+  assert.equal(cells[z-1].state,'Unknown / predicted',
+    'Main table must distinguish classified bulk phase from direct measurement '+z);
+}
+
 const h101to110=readFileSync('element.html','utf8');
 for(let z=101;z<=110;z++)assert.ok(h101to110.includes('  '+z+':"'),'Element-specific story missing '+z);
 assert.ok(indexSource.includes('standardWeightText(e)'),'Generic isotope mass-number display');
@@ -502,6 +511,77 @@ for(const question of questionPool){
  assert.equal(question.choices.filter(c=>c===question.answer).length,1,'Unique designated answer '+question.id);
 }
 
+
+
+// Final scientific cross-field safeguards (not a second source audit).
+// Correct electron totals alone can hide impossible subshell occupancies.
+const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
+const subshellCapacity={s:2,p:6,d:10,f:14,g:18};
+for(const entry of detailed){
+  const config=entry.electronConfiguration;
+  const coreMatch=/^\\[([A-Za-z]+)\\]/.exec(config);
+  let total=0;
+  let rest=config;
+  if(coreMatch){
+    assert.ok(Object.hasOwn(nobleCoreElectrons,coreMatch[1]),
+      'Recognized noble gas shorthand '+entry.atomicNumber);
+    total+=nobleCoreElectrons[coreMatch[1]];
+    rest=rest.slice(coreMatch[0].length).trim();
+  }
+  const terms=[...rest.matchAll(/(\\d+)([spdfg])(\\d+)/g)];
+  assert.ok(terms.length,'Electron subshells for '+entry.atomicNumber);
+  for(const part of terms){
+    const occupants=Number(part[3]);
+    assert.ok(occupants>=1&&occupants<=subshellCapacity[part[2]],
+      'Valid electron subshell occupancy '+entry.atomicNumber+' '+part[0]);
+    total+=occupants;
+  }
+  const leftovers=rest.replace(/(\\d+)([spdfg])(\\d+)/g,'').trim();
+  assert.equal(leftovers,'','No unparsed configuration notation '+entry.atomicNumber);
+  assert.equal(total,entry.atomicNumber,
+    'Neutral-atom electron total '+entry.atomicNumber);
+  if(entry.referenceMassNumber!=null){
+    assert.equal(entry.atomicMass,null,
+      'Reference isotope mass must not be mistaken for atomic weight '+entry.atomicNumber);
+    assert.ok(Number.isInteger(entry.referenceMassNumber)&&entry.referenceMassNumber>=entry.atomicNumber,
+      'Valid reference isotope mass number '+entry.atomicNumber);
+  }
+  if(entry.meltingPoint!=null&&entry.boilingPoint!=null){
+    assert.ok(entry.meltingPoint<entry.boilingPoint,
+      'Ordered phase temperatures '+entry.atomicNumber);
+    if(['Solid','Liquid','Gas'].includes(entry.standardState)){
+      const tK=293.15;
+      const inferred=tK<entry.meltingPoint?'Solid':tK<entry.boilingPoint?'Liquid':'Gas';
+      assert.equal(entry.standardState,inferred,
+        '20 C state and temperature values must agree '+entry.atomicNumber);
+    }
+  }
+}
+// Quiz fact premises with direct external scientific references:
+// BIPM SI second: https://www.bipm.org/en/si-base-units/second
+// RSC tungsten: https://periodic-table.rsc.org/element/74/tungsten
+// RSC gallium: https://periodic-table.rsc.org/element/31/gallium
+const quizById=new Map(questionPool.map(x=>[x.id,x]));
+assert.equal(quizById.get('fact-cesium-second')?.answer,'Cesium',
+  'BIPM definition depends on caesium-133');
+assert.equal(quizById.get('fact-tungsten-melting')?.answer,'Tungsten',
+  'RSC confirms tungsten metal melting record');
+assert.equal(detailed[73].meltingPoint,
+  Math.max(...detailed.filter(e=>e.groupBlock && e.meltingPoint!=null && e.atomicNumber!==6)
+    .map(e=>e.meltingPoint)),
+  'W highest listed non-carbon elemental melting point');
+assert.ok(Math.abs(detailed[30].meltingPoint-302.9146)<0.12,
+  'Gallium approximately 29.8 C melting point');
+assert.equal(quizById.get('fact-gallium-hand')?.answer,'Gallium',
+  'Quiz warm-hand melting fact points to gallium');
+assert.deepEqual(detailed.filter(e=>e.standardState==='Liquid').map(e=>e.atomicNumber),
+  [35,80],'Only bromine and mercury are listed liquid at 20 C');
+assert.equal(quizById.get('fact-bromine-liquid')?.answer,'Bromine',
+  'Only non-metallic 20 C liquid');
+assert.equal(quizById.get('fact-mercury-liquid')?.answer,'Mercury',
+  'Metallic 20 C liquid');
+assert.ok(detailUi.includes('bulk physical state has not been established by direct measurement'),
+  'Superheavy detail explanation must label uncertainty rather than claim measured phase');
 
 // Second-stage PubChem extension: Z=31..60; source units and missing values
 // as detailed in the preceding Z=1..30 numeric fixture.
