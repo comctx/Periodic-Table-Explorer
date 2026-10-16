@@ -565,6 +565,36 @@ assert.ok(detailUi.includes(' (estimated)'),
   assert.equal(state20({z:29}),'solid','Copper 20°C solid');
 }
 
+// Curated factual quiz questions (not the automatic name/symbol/Z questions):
+// independently checked against the RSC element-history/uses pages and BIPM.
+// Details/sources in audit/SCIENCE_RARE_PHASES_AND_QUIZ_2026_10_15.md.
+// Matching IDs to exact intended answers protects against regression, but
+// external reading—not an assertion—is the basis for scientific validation.
+const curatedFactAnswerKeys={
+  'fact-helium-sun':'Helium',
+  'fact-gallium-hand':'Gallium',
+  'fact-bromine-liquid':'Bromine',
+  'fact-tungsten-melting':'Tungsten',
+  'fact-technetium-artificial':'Technetium',
+  'fact-carbon-allotropes':'Carbon',
+  'fact-cesium-second':'Cesium',
+  'fact-mercury-liquid':'Mercury',
+  'history-francium-perey':'Francium',
+  'history-iodine-seaweed':'Iodine',
+  'history-niobium-columbium':'Niobium',
+  'history-polonium-poland':'Polonium',
+  'history-technetium-irradiated':'Technetium',
+  'history-berzelius-thorium':'Thorium',
+  'science-og-118':'Oganesson'
+};
+assert.equal(Object.keys(curatedFactAnswerKeys).length,15,'Reviewed hand-written fact question count');
+for(const [id,correct] of Object.entries(curatedFactAnswerKeys)){
+  const matches=questionPool.filter(q=>q.id===id);
+  assert.equal(matches.length,1,'Reviewed hand-written quiz fact exists uniquely '+id);
+  assert.equal(matches[0].answer,correct,'Source-checked quiz premise and answer '+id);
+  assert.ok(matches[0].question.length>=28,'Curated question is substantive '+id);
+}
+
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
 const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
