@@ -440,6 +440,40 @@ assert.equal(narrativeNumbers.length,118,'All 118 distinct history entries must 
 assert.equal(new Set(narrativeNumbers).size,118,'No duplicate individual history keys');
 assert.deepEqual(narrativeNumbers.slice().sort((a,b)=>a-b),Array.from({length:118},(_,i)=>i+1),
   'Every element has its own authored history account');
+// Cross-field historical-year consistency, including discoveries with rival
+// production/publication dates. This tests consistency; independent source
+// research is still needed for the actual historical interpretation.
+for(const entry of detailed){
+  const narrative=historySection.split('  '+entry.atomicNumber+':"')[1]?.split('"')[0]||'';
+  assert.ok(narrative.length>30,'Substantive individual history '+entry.atomicNumber);
+  const recordedYears=String(entry.yearDiscovered||'').match(/\d{4}/g)||[];
+  if(recordedYears.length){
+    assert.ok(recordedYears.some(year=>narrative.includes(year)),
+      'All explicitly dated discoveries must have a matching authored story milestone '+entry.atomicNumber);
+  }
+}
+// Royal Society of Chemistry original element articles, individually verified:
+// https://periodic-table.rsc.org/element/1/hydrogen
+// https://periodic-table.rsc.org/element/7/nitrogen
+// https://periodic-table.rsc.org/element/8/oxygen
+// https://periodic-table.rsc.org/element/10/neon
+// https://periodic-table.rsc.org/element/18/argon
+// https://periodic-table.rsc.org/element/27/cobalt
+const historicalMilestones={
+  1:['1766','Cavendish','Lavoisier'],
+  7:['1772','Rutherford','thesis'],
+  8:['1771','1774','Scheele','Priestley','Lavoisier'],
+  10:['1898','Ramsay','Travers','electrical discharge'],
+  18:['1785','1894','Cavendish','Rayleigh','Ramsay'],
+  27:['1735','1739','Brandt','metal']
+};
+for(const [z,markers] of Object.entries(historicalMilestones)){
+  const narrative=historySection.split('  '+z+':"')[1]?.split('"')[0]||'';
+  for(const token of markers){
+    assert.ok(narrative.includes(token),
+      'Source-supported discovery milestone '+z+': '+token);
+  }
+}
 const newHistories={
   3:['Arfvedson','1817','Brande','1855'],
   4:['Vauquelin','1798','Wöhler','Bussy','1828'],
