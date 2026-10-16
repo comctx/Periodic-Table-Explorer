@@ -1547,7 +1547,7 @@ for(const reference of ["https://periodic-table.rsc.org/","https://ciaaw.org/abr
 assert.ok(indexSource.includes('href="about.html"'),'About page reachable from main table');
 assert.ok(readFileSync('element.html','utf8').includes('href="about.html"'),'About page reachable from element details');
 assert.ok(offlineSource.includes("'./about.html'"),'About page pre-cached offline');
-assert.ok(offlineSource.includes("pte-core-v3"),'Cache updated for new all-photo offline support');
+assert.ok(offlineSource.includes("pte-core-v4"),'Cache updated for new all-photo offline support');
 assert.ok(offlineSource.includes("precacheApp()"),'Service worker preloads offline image allowlist');
 assert.ok(offlineSource.includes("manifest.photos.length !== 92"),'Service worker refuses partial photo allowlist');
 assert.ok(offlineSource.includes("await cache.addAll(manifest.photos.slice("),'Service worker preloads all staged photos');
