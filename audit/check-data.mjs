@@ -519,7 +519,7 @@ const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
 const subshellCapacity={s:2,p:6,d:10,f:14,g:18};
 for(const entry of detailed){
   const config=entry.electronConfiguration;
-  const coreMatch=/^\\[([A-Za-z]+)\\]/.exec(config);
+  const coreMatch=/^\[([A-Za-z]+)\]/.exec(config);
   let total=0;
   let rest=config;
   if(coreMatch){
@@ -528,7 +528,7 @@ for(const entry of detailed){
     total+=nobleCoreElectrons[coreMatch[1]];
     rest=rest.slice(coreMatch[0].length).trim();
   }
-  const terms=[...rest.matchAll(/(\\d+)([spdfg])(\\d+)/g)];
+  const terms=[...rest.matchAll(/(\d+)([spdfg])(\d+)/g)];
   assert.ok(terms.length,'Electron subshells for '+entry.atomicNumber);
   for(const part of terms){
     const occupants=Number(part[3]);
@@ -536,7 +536,7 @@ for(const entry of detailed){
       'Valid electron subshell occupancy '+entry.atomicNumber+' '+part[0]);
     total+=occupants;
   }
-  const leftovers=rest.replace(/(\\d+)([spdfg])(\\d+)/g,'').trim();
+  const leftovers=rest.replace(/(\d+)([spdfg])(\d+)/g,'').trim();
   assert.equal(leftovers,'','No unparsed configuration notation '+entry.atomicNumber);
   assert.equal(total,entry.atomicNumber,
     'Neutral-atom electron total '+entry.atomicNumber);
