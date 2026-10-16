@@ -27,7 +27,7 @@ RSC cobalt's main history prose dates the investigation to 1730 and publication 
 - **Actual science and packaging check on changed app commit:** [38832258582](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832258582) **success**.
 - **Actual Chromium browser smoke:** [38832258567](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832258567) **success**.
 - **Actual genuine HTTPS offline browser:** [38832258570](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832258570) **success**.
-- **Expanded 118-year regression:** [38832425608](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832425608) **initially queued; inspect actual final conclusion**.
+- **Expanded 118-year regression:** [38832425608](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832425608) **completed successfully** on guard-only commit `334d2c0`; this does not imply a new app binary.
 - Latest unsigned iPhone simulator [38832258835](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38832258835) **initially running; do not call passed until completed**.
 
 ## Limitations and next scientifically meaningful scope
