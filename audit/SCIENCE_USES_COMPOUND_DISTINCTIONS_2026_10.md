@@ -1,0 +1,32 @@
+# Periodic Table Explorer — scientific-use wording reconciliation
+
+**Audit date:** 2026-10-15 local / 2026-10-16 UTC.
+**Scope:** one targeted **new** review of 11 short-form element-use descriptions still conflating the element with its compounds, alloys or doped materials. Previous numerical and historic 118-element audit stays complete. **Source of truth:** live `elements-data.js` in audit branch.
+
+## Specific science correction and cited Royal Society of Chemistry evidence
+
+| Atomic number | Defect in previous wording | Scientifically distinguished revised statement | Primary source |
+|---:|---|---|---|
+| **32 Ge** | “Semiconductors, fiber optics, infrared optics” obscured distinction between element and oxide. | Elemental Ge is a semiconductor/infrared optical material; germanium dioxide appears in optical glass and fibre optics. | [RSC Germanium](https://periodic-table.rsc.org/element/32/germanium) |
+| **34 Se** | “Nutritional supplements” lacked explanation that excess selenium is toxic, and grouped element and compounds. | Elemental selenium has photoconductivity and glass uses; selenium compounds appear in pigments, electronics and controlled dietary supplements. | [RSC Selenium](https://periodic-table.rsc.org/element/34/selenium) |
+| **39 Y** | “LED phosphors, lasers, ceramics, superconductors” could falsely imply these are uses of pure metal. | Elemental yttrium is an alloy addition; yttrium-aluminium garnet (YAG), yttrium oxide and yttrium-containing superconducting oxides have specialised uses. | [RSC Yttrium](https://periodic-table.rsc.org/element/39/yttrium) |
+| **49 In** | “Touchscreens” omitted transparent conductive compound. | Indium tin oxide (ITO) is the transparent conductive material used in touchscreens; indium metal/alloys are separately used for solders/coatings, and compounds for semiconductors. | [RSC Indium](https://periodic-table.rsc.org/element/49/indium) |
+| **59 Pr** | Glass-colouring usage incorrectly sounded like plain metal. | Praseodymium salts colour glasses, its oxide occurs in didymium glass; some praseodymium alloys are useful in magnets/aircraft. | [RSC Praseodymium](https://periodic-table.rsc.org/element/59/praseodymium) |
+| **68 Er** | “Fiber optic amplifiers, lasers, glass colouring” did not distinguish erbium dopants from bulk metal. | Erbium-doped optical fibres amplify light; erbium oxide affects glass; pure Er mainly sees specialised alloy uses. | [RSC Erbium](https://periodic-table.rsc.org/element/68/erbium) |
+| **75 Re** | Rhenium superalloys, catalysts and thermocouples lumped together. | Rhenium-containing turbine superalloys and tungsten/molybdenum alloys distinguished from rhenium catalytic materials and contact/thermocouple alloys. | [RSC Rhenium](https://periodic-table.rsc.org/element/75/rhenium) |
+| **41 Nb** | “Superconducting magnets” lacked niobium-containing alloy identity. | Special steels/niobium superalloys distinguished from niobium-titanium/tin superconducting magnet materials. | [RSC Niobium](https://periodic-table.rsc.org/element/41/niobium) |
+| **42 Mo** | “Lubricants” implied molybdenum metal instead of molybdenum disulfide compound. | Molybdenum alloys for steel/tools versus molybdenum disulfide (MoS2) solid-lubricant additives and catalysts. | [RSC Molybdenum](https://periodic-table.rsc.org/element/42/molybdenum) |
+| **55 Cs** | “Drilling fluids” omitted that fluids use a caesium *compound*, unlike caesium-133 atomic clocks. | Caesium-133 hyperfine transition drives atomic clock definition; caesium formate solutions are specialty drilling fluids. | [RSC Caesium](https://periodic-table.rsc.org/element/55/caesium), [BIPM SI second](https://www.bipm.org/en/si-base-units/second) |
+| **60 Nd** | “Magnets, lasers, glass colouring” neglected neodymium-iron-boron alloy and dopant identities. | Neodymium–iron–boron permanent magnets, neodymium-doped Nd:YAG lasers and neodymium glass colour/dopant applications distinguished. | [RSC Neodymium](https://periodic-table.rsc.org/element/60/neodymium) |
+
+## Exact changes and regression
+
+- Updated **only** `typicalUses` in **11 element records**: 32, 34, 39, 41, 42, 49, 55, 59, 60, 68, 75. No weights, positions, configurations, temperature data, density, histories, screenshots, images, licensing or package selection changed.
+- First seven wording fixes: [`8f8b0bc`](https://github.com/comctx/Periodic-Table-Explorer/commit/8f8b0bc0ed9789c5ead89e3771d2a4e9e235b000). Four more: [`b60fdf0`](https://github.com/comctx/Periodic-Table-Explorer/commit/b60fdf0e405888f02d0c4ea927ad83ac3bccec4c).
+- Added persistent source-informed wording assertions for all 11 in `audit/check-data.mjs`: [`f0f16be`](https://github.com/comctx/Periodic-Table-Explorer/commit/f0f16be231e73038c610d5f1c7dc1d88250d5da1), [`18ab957`](https://github.com/comctx/Periodic-Table-Explorer/commit/18ab957003a91fd7c92ea3577318865433b9118c).
+- Intermediate runs [38830241804](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830241804) and [38830315724](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830315724) failed because an exact-case substring assertion for **indium** was stricter than the correct text (source wrote lowercase “indium metal and alloys”). The test was corrected to compare case-insensitively in [`b1eb82c`](https://github.com/comctx/Periodic-Table-Explorer/commit/b1eb82c58cc840a8da7174a465e9c5ba20e55164). **Actual post-fix science and image packaging run [38830349756](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830349756) completed with success.**
+- Browser run [38830218822](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830218822) completed successfully on first seven wording changes. Later four-change browser run [38830299418](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830299418) and simulator [38830299469](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38830299469) require checking actual final conclusions before declaring complete. Those CI jobs run against app commits; later assertion-only changes do not affect runtime UI.
+
+## Science and release scope remaining
+
+This was an evidence-backed correction of 11 short descriptions, **not** an exhaustive independent sentence-by-sentence review of all 118 appearance/use/history fields, not legal photo clearance, and not a signed Windows or iOS distributable. Other scientific free text merits similar targeted scrutiny using citations and audit records. Only audit branch updated, **main unchanged**.
