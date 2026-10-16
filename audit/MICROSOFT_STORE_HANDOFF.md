@@ -10,6 +10,27 @@
 - **Verified GitHub Actions success:** [run 38833258437](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38833258437), source commit [`7543e57`](https://github.com/comctx/Periodic-Table-Explorer/commit/7543e570aacda410bff13245c225cd8c4f7b5698). Job steps included `Microsoft Store PWA manifest / content readiness`, `Inspect actual staged PWA source byte-for-byte`, `Prepare engineering-only source archive and check it`, and `Upload build candidate sources` — all **success**. This is **not a real MSIX, .msixbundle, appx, signed Store deliverable, or an installed Windows test**.
 - GitHub repository previously contained no actual MS Store Windows package recipe. This workflow is the PWA *source preparation* route, not a false claim to have compiled Windows binaries.
 
+## Authentic Microsoft Store screenshot assets — now generated
+
+**Source:** six real Chromium 1366×768 PNG screenshots of **updated audit-branch app**, not stock art, mocked-up UI or public old `main` website. Capture script [`audit/capture_ms_store_screens.mjs`](capture_ms_store_screens.mjs) drives the **audited filtered PWA**, verifying all 118 element cells, carbon search results, uncertainty-aware temperature states, actual copper element detail, functional four-answer quiz, and 118/118 credit records.
+
+**Actual Actions success:** [run 38834020701](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38834020701) on [`1c659c4`](https://github.com/comctx/Periodic-Table-Explorer/commit/1c659c4d1b80bb5bf37486670bb484de314391e6). All steps succeeded; the workflow created a **7-day review-only artifact** called `PTE-MS-STORE-SCREENSHOTS-REVIEW-ONLY` (GitHub artifact **12017628635**). It contains:
+- `screenshots/01-periodic-table.png`
+- `screenshots/02-element-search.png`
+- `screenshots/03-temperature-explorer.png`
+- `screenshots/04-copper-details.png`
+- `screenshots/05-element-quiz.png`
+- `screenshots/06-scientific-credits.png`
+- `store-icon-300.png` — 300×300 source-app tile icon, not a newly invented branding asset
+
+**Official Microsoft specification:** [screenshots and images for MSIX](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/screenshots-and-images) requires at least **1 screenshot**, recommends **4+**, permits up to **10 Desktop PNGs**, minimum desktop pixels **1366×768** and maximum **50 MB each**. The generated assets passed dimension and format checks. The Store can also accept a recommended **300×300** tile icon.
+
+**Not cleared for publishing yet:** This is an internal GitHub Actions review artifact of the **web/PWA user interface**, not a screenshot of an installed Windows `.msixbundle`. After building/installing the final Store Windows package, re-capture or confirm screenshots accurately represent that package. Some screenshot views may show artwork whose commercial redistribution still needs source-specific permission and attribution verification. Do not send screenshots or archives to Microsoft before that clearance.
+
+**No third-party access or host deploy:** Screenshot artifacts remain under user's GitHub workflow run; workflow did not modify `main`, alter public GitHub Pages or touch Partner Center.
+
+**Store signing clarification:** [Microsoft's current Get started FAQ](https://learn.microsoft.com/en-us/windows/apps/publish/get-started) says Microsoft Store **re-signs qualifying submitted MSIX/AppX during Store publishing**, so an independently purchased CA-trusted signing certificate is **not required for an MSIX submission**. Signing is still relevant for external sideload/testing; the store submission package **must** carry the correct actual product identity.
+
 ## Microsoft-supported shortest distribution route
 
 Use Microsoft Edge's [official Publish a PWA to Microsoft Store instructions](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store), [MS Store Get started](https://learn.microsoft.com/en-us/windows/apps/publish/get-started), and [PWABuilder](https://www.pwabuilder.com/).
