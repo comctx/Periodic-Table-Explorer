@@ -25,8 +25,8 @@ try {
   assert.equal(await page.locator('#ptable button.element').count(),118,'Online install page must load');
   await page.waitForFunction(async() => {
     const records=await caches.keys();
-    if(!records.includes('pte-core-v3')) return false;
-    const cache=await caches.open('pte-core-v3');
+    if(!records.includes('pte-core-v4')) return false;
+    const cache=await caches.open('pte-core-v4');
     const urls=(await cache.keys()).map(x=>new URL(x.url).pathname);
     return urls.filter(x=>x.includes('/images/elements/')).length===92 &&
            urls.some(x=>x.endsWith('/images/bay-city-city-hall.jpg')) &&
@@ -39,7 +39,7 @@ try {
   await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller),
     null, {timeout:60000});
   const cacheReport=await page.evaluate(async()=>{
-    const cache=await caches.open('pte-core-v3');
+    const cache=await caches.open('pte-core-v4');
     const keys=await cache.keys();
     return {controlled:!!navigator.serviceWorker.controller,
       photos:keys.map(x=>new URL(x.url).pathname).filter(x=>x.includes('/images/elements/')),
