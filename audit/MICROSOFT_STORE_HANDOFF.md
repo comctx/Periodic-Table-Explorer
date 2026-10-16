@@ -49,6 +49,12 @@ The owner supplied their real `Periodic Table Explorer..msixbundle`. Offline, re
 
 **Remaining safety gates:** staged 92/JPEG and Bay City image rights, explicit owner release approval for public host update, installed Windows behavior/offline/cache verification, and justified `runFullTrust` approval in Submission options. Do **not** click submit while the hosted URL may still display the old science facts.
 
+## DONCO logo ownership — owner's direct statement
+
+The app owner confirmed in this conversation on **2026-10-15**: **“its my design”** when specifically asked whether the **DONCO logo used in Periodic Table Explorer** was their own creation or commercially licensed. Record as **owner-declared original authorship** of the DONCO logo, not as independently verified chain-of-title or permission for unrelated graphic assets. **No separate third-party license request appears necessary for that owner-created logo**, assuming it contains no embedded third-party material.
+
+This statement **does not** approve public deployment, establish ownership of the separate **Bay City City Hall photograph by Andrew Jameson**, confirm ownership of every Windows tile/app icon asset, or clear the 92 element images. The combined `bay_city_image_and_logo_rights_reviewed` gate remains **false** until the Bay City image and any distinct icon components are reviewed; `owner_approved_public_deployment` also remains false until explicitly requested.
+
 ## Existing Microsoft Store submission package — user-verified (2026-10-15)
 
 The **Packages** screen for the already-created product (Submission 1, In draft) visibly displays **`Periodic Table Explorer.msixbundle`, 1.3 MB**, and the overview marked its Packages section **Complete / Validated**. **Correction to earlier repository-only status:** a *real-looking uploaded package exists in Partner Center*, even though we have **not retrieved, inspected, installed or matched its contents** and there is no Windows packaging source/recipe currently checked in to this repository. Do not falsely claim that Partner Center has no package or that the uploaded bundle contains the latest audited corrections.
