@@ -403,6 +403,7 @@ if(!e){
    fact("Melting point"+(e.phaseNote&&e.meltingPoint!=null?" (estimated)":""),kelvinToC(e.meltingPoint))+
    fact("Boiling point"+(e.phaseNote&&e.boilingPoint!=null?" (estimated)":""),kelvinToC(e.boilingPoint))+
    (e.phaseNote?fact("Phase / temperature evidence",e.phaseNote):"")+
+   (e.temperatureReference?fact("Temperature reference",e.temperatureReference):"")+
    (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
    fact("Electronegativity (Pauling)",e.electronegativity??"—")+
    fact("Van der Waals atomic radius",e.atomicRadius==null?"Not available":e.atomicRadius+" pm")+
