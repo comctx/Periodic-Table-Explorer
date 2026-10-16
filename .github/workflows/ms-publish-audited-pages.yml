@@ -1,0 +1,68 @@
+name: Publish corrected PTE website to GitHub Pages (manual, approval required)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: "Type PUBLISH_AUDITED_PERIODIC_TABLE to confirm actual public release"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: periodic-table-gh-pages-release
+  cancel-in-progress: false
+
+jobs:
+  release-gates:
+    if: ${{ github.ref_name == 'scientific-audit-2026-10' && inputs.confirmation == 'PUBLISH_AUDITED_PERIODIC_TABLE' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Explicit legal and owner release authorization
+        run: |
+          python3 audit/check_ms_release_gate.py
+      - name: Scientific, manifest and public resource checks
+        run: |
+          node audit/check-data.mjs
+          node --check sw.js
+          python3 audit/check_offline_manifest.py
+      - name: Stage latest audited website with 26 withheld element photos excluded
+        run: |
+          python3 audit/package_web_assets.py "${RUNNER_TEMP}/pte-release-site/Web"
+          python3 audit/check_ms_pwa.py "${RUNNER_TEMP}/pte-release-site/Web"
+          python3 audit/verify_distribution_package.py "${RUNNER_TEMP}/pte-release-site/Web"
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload exact verified site payload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/pte-release-site/Web
+
+  deploy:
+    needs: release-gates
+    if: ${{ needs.release-gates.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy audited website to existing GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Important post-deployment checks
+        run: |
+          {
+            echo "### Audited website has been released to GitHub Pages"
+            echo "Verify https://comctx.github.io/Periodic-Table-Explorer/ now shows corrected CIAAW labels and element 110/111 histories."
+            echo "Test the installed Microsoft Edge PWA, service-worker v4 upgrade, all 118 elements, quiz and offline data."
+            echo "Review the existing Partner Center draft runFullTrust warning and submit only after actual Windows checks."
+          } >> "${GITHUB_STEP_SUMMARY}"
