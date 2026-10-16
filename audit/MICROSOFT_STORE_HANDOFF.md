@@ -18,6 +18,16 @@ These three identity strings must be **copied exactly** into the real Windows pa
 
 **Status:** Product identity gate **complete**. Still missing: the authorized HTTPS deployment of this **updated audit branch**, resolved third-party commercial image reuse rights, a genuine PWABuilder Windows MSIX package with those precise identity fields, installed-Windows testing, and final Store submission. `main` and the public app **remain unchanged** pending explicit release approval.
 
+## Uploaded 1.0.1.0 bundle verified — executable package, website-driven content
+
+**Actual nested bundle inspection:** [`ACTUAL_MSIXBUNDLE_INSPECTION_2026_10.md`](ACTUAL_MSIXBUNDLE_INSPECTION_2026_10.md).
+
+The owner supplied their real `Periodic Table Explorer..msixbundle`. Offline, read-only ZIP/AppxManifest analysis confirmed a genuine MSIX bundle structure with a neutral APPX launcher and **version `1.0.1.0`**. Exact Product Identity Name, Publisher CN, and PublisherDisplayName **match Partner Center**. It declares `runFullTrust`, so the Partner Center warning is real. The launcher opens **`https://comctx.github.io/Periodic-Table-Explorer/`** in Microsoft Edge; it packages **no HTML, JavaScript, element database, element photographs, or quiz** — only Windows icon/splash assets and the app's launch manifest. The file was not installed on Windows and byte equivalence to the file currently stored in Partner Center was not proven.
+
+**Critical implication:** Changing source code in GitHub's **audit branch alone cannot change what this PWA launcher displays**. At last check `main` still has older scientific HTML, while the audited `element.html` has the corrected atomic weights and histories. The exact `manifest.webmanifest` text is **identical on audit and main**. [Microsoft officially explains](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store#make-updates-to-your-app) that PWA *HTML/JS/other content updates* usually do **not** require regenerating the Windows package, whereas *web app manifest changes* do. Therefore **prioritize authorized, legally cleared deployment of the corrected audited website**, then validate the installed Windows app, and only regenerate the MSIX if actually necessary.
+
+**Remaining safety gates:** staged 92/JPEG and Bay City image rights, explicit owner release approval for public host update, installed Windows behavior/offline/cache verification, and justified `runFullTrust` approval in Submission options. Do **not** click submit while the hosted URL may still display the old science facts.
+
 ## Existing Microsoft Store submission package — user-verified (2026-10-15)
 
 The **Packages** screen for the already-created product (Submission 1, In draft) visibly displays **`Periodic Table Explorer.msixbundle`, 1.3 MB**, and the overview marked its Packages section **Complete / Validated**. **Correction to earlier repository-only status:** a *real-looking uploaded package exists in Partner Center*, even though we have **not retrieved, inspected, installed or matched its contents** and there is no Windows packaging source/recipe currently checked in to this repository. Do not falsely claim that Partner Center has no package or that the uploaded bundle contains the latest audited corrections.
