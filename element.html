@@ -400,8 +400,9 @@ if(!e){
    fact("Electron configuration"+(e.atomicNumber>=104?" (calculated)":""),
      e.electronConfiguration||"—")+
    fact("Density"+(e.densityBasis?" ("+e.densityBasis+")":""),e.density==null?"—":e.density+" g/cm³")+
-   fact("Melting point",kelvinToC(e.meltingPoint))+
-   fact("Boiling point",kelvinToC(e.boilingPoint))+
+   fact("Melting point"+(e.phaseNote&&e.meltingPoint!=null?" (estimated)":"),kelvinToC(e.meltingPoint))+
+   fact("Boiling point"+(e.phaseNote&&e.boilingPoint!=null?" (estimated)":"),kelvinToC(e.boilingPoint))+
+   (e.phaseNote?fact("Phase / temperature evidence",e.phaseNote):"")+
    (e.sublimationPoint!=null ? fact("Sublimation point (near 1 atm)",kelvinToC(e.sublimationPoint)) : "")+
    fact("Electronegativity (Pauling)",e.electronegativity??"—")+
    fact("Van der Waals atomic radius",e.atomicRadius==null?"Not available":e.atomicRadius+" pm")+
