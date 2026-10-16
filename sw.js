@@ -3,7 +3,7 @@
  * Installation fails rather than silently saving only a subset of the 92 images.
  */
 'use strict';
-const CORE_CACHE = 'pte-core-v3';
+const CORE_CACHE = 'pte-core-v4';
 const PHOTO_MANIFEST = './offline-photos.json';
 const CORE_FILES = [
   './', './index.html', './element.html', './quiz.html', './about.html',
