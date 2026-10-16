@@ -1,5 +1,13 @@
 # Microsoft Store handoff — Periodic Table Explorer
 
+## Latest actual release status — correction posted to public `main`
+
+**2026-10-15/16: the owner repeatedly instructed us to stop re-auditing and proceed with publication.** The 118-element corrected PWA website source has been **published to the repository's `main` branch** using a narrowly selected direct child commit **[`7d947ddb5bac41b2ddc21c141f26481987602d66`](https://github.com/comctx/Periodic-Table-Explorer/commit/7d947ddb5bac41b2ddc21c141f26481987602d66)**. It contains audited `index.html`, `element.html`, `elements-data.js`, `quiz.html`, `element-photo-data.js`, `about.html`, `sw.js` cache **v4**, `offline-photos.json` and **7 corrected element JPEG bytes**. The existing GitHub Pages build for this commit started as [run **38849170008**](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38849170008) and **must be independently checked for a final successful deploy**. Main's iOS project, Codemagic, icon, manifest, 118 legacy image files and historical code unrelated to this web release were not deleted or overwritten. The new UI and service worker reference only **92 displayed JPEGs**, with 26 hidden/not cached; **unreferenced legacy 26 files still exist in main repo** (unlike the separate filtered 92-only engineering staging artifact). Do not misrepresent that omission.
+
+**The previous warning in this handoff that public `main` is unchanged is now historical and superseded by this status.** The Windows **version 1.0.1.0** MSIX does not contain the website source; it already opens `https://comctx.github.io/Periodic-Table-Explorer/` and therefore should display corrected content after Pages deploy/Edge service-worker migration. The Store Partner Center draft **has NOT been submitted**; owner still must test installed Windows PWA and address the `runFullTrust` warning. The `audit/ms-public-release-approval.json` was not changed and still has conservative outstanding final external-image sign-off flags, **not a claim of commercial license certification**. Preserve those rights uncertainty notes, but do not re-run already completed image/science comparisons or pretend publication has not started.
+
+
+
 **Prepared:** 2026-10-15. **Live source:** `scientific-audit-2026-10` only. **Publication:** NOT started, NOT authorized to merge `main`, and no app has yet been uploaded to Microsoft Store.
 
 ## Confirmed Partner Center product identity — owner screenshot 2026-10-15
