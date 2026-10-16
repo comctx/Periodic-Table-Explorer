@@ -354,6 +354,15 @@ Sources: [`SCIENCE_AUDIT.md`](SCIENCE_AUDIT.md), [`check-data.mjs`](check-data.m
 - [ ] **Science sign-off not yet complete:** exhaustive independent source review of every remaining free-text discovery narrative, `typicalUses` and `appearance` and the subjective wording of every selected quiz premise still outstanding; do not call the previous numerical/structural results a 118-article scientific certification. This is a distinct *remaining content scope*, **not** repeating earlier numerical checks.
 - [x] `main` and Store submissions unchanged, no photos or image-rights status altered. The app remains unreleased from this audit branch.
 
+## 4M. Exact SI temperature conversion in interactive view — 2026-10-15
+
+- [x] **Verified separate display-precision issue in temperature simulator**, not an element source-number error: Celsius slider already computed Kelvin as `C + 273.15` internally, but it then **rounded the displayed Kelvin to a whole integer**: −273 °C became a misleading “0 K” instead of **0.15 K**. With the exact BIPM/NIST offset, 20 °C is **293.15 K**.
+- [x] Fixed `index.html` readout to show **Kelvin to 2 decimal places, Fahrenheit to 1** and retain Celsius slider in 1 °C increments. The Celsius/Kelvin conversion follows [BIPM SI Brochure](https://www.bipm.org/en/publications/si-brochure) and [NIST SP 330](https://www.nist.gov/pml/special-publication-330/sp-330-section-2). [Readout commit `21f56b8`](https://github.com/comctx/Periodic-Table-Explorer/commit/21f56b890d209f1f370d96a87d580f60c4c3e86b).
+- [x] Added explicit expected `−273 °C → 0.15 K`, `20 °C → 293.15 K`, and output precision regression checks: [test commit `3adc000`](https://github.com/comctx/Periodic-Table-Explorer/commit/3adc0002f5d345821081422fa42bb00f1835dba2).
+- [x] **GitHub science/packaging workflow [38828608956](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828608956) completed successfully** after both edits.
+- [ ] Browser, genuine HTTPS offline and unsigned simulator workflows triggered by `21f56b8` are [38828590135](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590135), [38828590161](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590161) and [38828590155](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590155). At this recording point each was **in progress**, not assumed passed. They must be checked independently.
+- [x] No main merge, content-photo edit, image-rights approval or Store submission; this correction belongs to scientific display integrity. See [science cross-field report](FINAL_SCIENCE_CROSSFIELD_2026_10_15.md).
+
 ## 5. Remaining release gates — exact next work only
 
 - [ ] **Licensing / authorship**: For the 92 staged element images **and additional Bay City photograph**, confirm *actual file-specific* ownership/rights, the original adapted-version lineage and commercial reuse requirements. Complete and review photographer uncertainty especially for publisher gallery originals (including examples in #3–5, #15, #22, #26–27, #30–31, #33–34 and several later batches); fix particular cases only.
