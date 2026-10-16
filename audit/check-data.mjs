@@ -513,6 +513,17 @@ for(const question of questionPool){
 
 
 
+// BIPM / NIST define the Celsius-Kelvin relation exactly: K = C + 273.15.
+// The UI must not misleadingly display -273 C as 0 K (it is 0.15 K).
+assert.ok(indexSource.includes('k.toFixed(2)'),
+  'Temperature readout keeps two Kelvin decimals to distinguish near absolute zero');
+assert.ok(indexSource.includes('f.toFixed(1)'),
+  'Temperature readout indicates the Fahrenheit fractional value');
+assert.equal(((-273)+273.15).toFixed(2),'0.15',
+  'BIPM offset: -273 C remains 0.15 K');
+assert.equal((20+273.15).toFixed(2),'293.15',
+  'BIPM offset: 20 C equals 293.15 K');
+
 // Final scientific cross-field safeguards (not a second source audit).
 // Correct electron totals alone can hide impossible subshell occupancies.
 const nobleCoreElectrons={He:2,Ne:10,Ar:18,Kr:36,Xe:54,Rn:86};
