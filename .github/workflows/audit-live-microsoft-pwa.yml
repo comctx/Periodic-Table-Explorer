@@ -1,0 +1,63 @@
+name: Verify live Microsoft PWA website matches audited scientific files
+
+on:
+  push:
+    branches:
+      - scientific-audit-2026-10
+    paths:
+      - .github/workflows/audit-live-microsoft-pwa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live-pwa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check live HTTPS files against audited GitHub sources
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, urllib.request, urllib.error, time, sys
+          from pathlib import Path
+          base='https://comctx.github.io/Periodic-Table-Explorer/'
+          files=[
+            'index.html', 'element.html', 'elements-data.js',
+            'element-photo-data.js','quiz.html','about.html',
+            'sw.js','offline-photos.json','manifest.webmanifest',
+          ]
+          for name in files:
+              original=Path(name).read_bytes()
+              url=base+name+'?live-audit-check=20261016'
+              last=None
+              for attempt in range(4):
+                  try:
+                      req=urllib.request.Request(url,headers={
+                          'User-Agent':'Periodic-Table-Explorer-release-verification/1.0',
+                          'Accept-Encoding':'identity',
+                          'Cache-Control':'no-cache',
+                      })
+                      with urllib.request.urlopen(req,timeout=20) as res:
+                          live=res.read()
+                          status=res.status
+                          effective_url=res.url
+                      if status!=200 or live!=original:
+                          raise AssertionError(
+                            f'MISMATCH {name} status={status} expected_sha256='+
+                            hashlib.sha256(original).hexdigest()+
+                            ' live_sha256='+hashlib.sha256(live).hexdigest()+
+                            ' url='+effective_url)
+                      print(f'PASS {name}: HTTPS 200, byte-for-byte matching audit source, sha256={hashlib.sha256(live).hexdigest()}',flush=True)
+                      break
+                  except Exception as exc:
+                      last=exc
+                      if attempt<3: time.sleep(3)
+              else:
+                  print(f'FAIL {name}: {last}',file=sys.stderr)
+                  sys.exit(1)
+          print('PASS: all NINE live Microsoft PWA files equal audited source bytes.',flush=True)
+          PY
