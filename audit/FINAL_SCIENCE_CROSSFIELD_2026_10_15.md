@@ -31,6 +31,17 @@
 
 **Automated result:** [GitHub Actions science/packaging run 38828376454](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828376454) completed with conclusion **success** on cross-field test-fix commit [`8cf37d559f786cbc809fe8dac0e78d2216f097b9`](https://github.com/comctx/Periodic-Table-Explorer/commit/8cf37d559f786cbc809fe8dac0e78d2216f097b9). Earlier runs [38828280165](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828280165) and [38828336990](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828336990) failed because the old state fixture and an incorrectly escaped new-regex assertion did not match the corrected science QA; both were fixed before run 38828376454. These are transparent CI history, **not separate evidence that the chemistry was wrong**.
 
+## SI temperature display precision — second verified correction
+
+The original `index.html` temperature slider converted Celsius to Kelvin correctly internally (`K = °C + 273.15`) but **rounded Kelvin to a whole integer in the displayed readout**. As a result its lowest slider value `−273 °C` incorrectly *appeared* as **0 K** instead of **0.15 K**, and `20 °C` appeared as `293 K` rather than the exact conversion **293.15 K**. These are display precision issues, not bad chemistry source data.
+
+Source: [BIPM SI Brochure, ninth edition](https://www.bipm.org/en/publications/si-brochure) and [NIST SP 330](https://www.nist.gov/pml/special-publication-330/sp-330-section-2) define the Celsius relation exactly as `t/°C = T/K − 273.15`.
+
+- Changed **only** the `index.html` temperature readout from whole Kelvin/Fahrenheit rounding to **two decimal Kelvin** and **one decimal Fahrenheit**, retaining integer slider Celsius increments: [`21f56b8`](https://github.com/comctx/Periodic-Table-Explorer/commit/21f56b890d209f1f370d96a87d580f60c4c3e86b).
+- Added explicit `−273 °C → 0.15 K` and `20 °C → 293.15 K` regression assertions to `audit/check-data.mjs`: [`3adc000`](https://github.com/comctx/Periodic-Table-Explorer/commit/3adc0002f5d345821081422fa42bb00f1835dba2).
+- Post-change science/package CI [38828608956](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828608956), browser [38828590135](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590135), genuine HTTPS offline [38828590161](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590161) and unsigned iPhone simulator [38828590155](https://github.com/comctx/Periodic-Table-Explorer/actions/runs/38828590155) were initially running; inspect **actual completed GitHub conclusions** before marking passed.
+- No element property measurements, 92/26 photo selection, release configurations or `main` branch changes.
+
 ## What this review does NOT certify
 
 - No claim every element's full `appearance`, `typicalUses`, history and narrative paragraph has received an independent fresh primary-source comparison in this pass; those are the remaining scientific-content review, **not a need to repeat all 118 numerical fixtures**.
