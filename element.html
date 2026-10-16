@@ -390,7 +390,7 @@ if(!e){
  document.getElementById("basicGrid").innerHTML=
    fact("Atomic number",e.atomicNumber)+
    fact("Symbol",e.symbol)+
-   fact(e.atomicMass==null?"Standard atomic weight":"Atomic mass",e.atomicMass==null?"Not assigned":e.atomicMass)+
+   fact("Standard atomic weight (CIAAW 2024, abridged)",e.atomicMass==null?"Not assigned":e.atomicMass)+
    (e.referenceMassNumber!=null?fact("Reference isotope mass number (not atomic weight)","["+e.referenceMassNumber+"]"):"")+
    fact("Category",e.groupBlock||"—")+
    fact("State",e.standardState||"—")+
