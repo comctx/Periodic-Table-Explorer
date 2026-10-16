@@ -82,7 +82,7 @@ jobs:
           assert len(offline['photos'])==92 and len(set(offline['photos']))==92
           assert {root/n for n in offline['photos']}==expected
           sw=(root/'sw.js').read_text()
-          assert 'pte-core-v3' in sw and 'precacheApp()' in sw
+          assert 'pte-core-v4' in sw and 'precacheApp()' in sw
           assert 'offline-photos.json' in sw
 
 
