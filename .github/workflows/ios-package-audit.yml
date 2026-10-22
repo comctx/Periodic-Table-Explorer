@@ -1,0 +1,64 @@
+name: Inspect actual iOS Web package
+on:
+  push:
+    branches: [ios-packaging-audit-2026-10-22]
+    paths:
+      - ".github/workflows/ios-package-audit.yml"
+      - "scripts/**"
+      - "ios/**"
+      - "*.html"
+      - "*.js"
+      - "*.json"
+      - "*.webmanifest"
+      - "images/**"
+      - "icons/**"
+permissions:
+  contents: read
+jobs:
+  inspect-ios-package:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test package validation
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Compile actual iPhone app without signing
+        run: |
+          set -euo pipefail
+          xcodebuild archive \
+            -project ios/PeriodicTableExplorer.xcodeproj \
+            -scheme PeriodicTableExplorer \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/PeriodicTableExplorer.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            2>&1 | tee "$RUNNER_TEMP/ios-package-build.log"
+      - name: Inspect compiled app Web payload
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/package/Payload"
+          cp -R "$RUNNER_TEMP/PeriodicTableExplorer.xcarchive/Products/Applications/PeriodicTableExplorer.app" "$RUNNER_TEMP/package/Payload/"
+          (cd "$RUNNER_TEMP/package" && /usr/bin/zip -qry "$RUNNER_TEMP/PeriodicTableExplorer-UNSIGNED.ipa" Payload)
+          python3 scripts/web_package.py --ipa "$RUNNER_TEMP/PeriodicTableExplorer-UNSIGNED.ipa" | tee "$RUNNER_TEMP/ios-package-verification.txt"
+          python3 - <<'PY'
+          import os, plistlib
+          from pathlib import Path
+          path = Path(os.environ['RUNNER_TEMP']) / 'package/Payload/PeriodicTableExplorer.app/Info.plist'
+          info = plistlib.loads(path.read_bytes())
+          assert info['CFBundleIdentifier'] == 'com.donaldreckman.periodictableexplorer'
+          assert info['UIDeviceFamily'] == [1], info.get('UIDeviceFamily')
+          assert str(info['MinimumOSVersion']).startswith('18.'), info.get('MinimumOSVersion')
+          print('Verified compiled iPhone bundle identifier, device family and minimum iOS.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ios-package-audit-unsigned
+          path: |
+            ${{ runner.temp }}/PeriodicTableExplorer-UNSIGNED.ipa
+            ${{ runner.temp }}/ios-package-build.log
+            ${{ runner.temp }}/ios-package-verification.txt
+          retention-days: 14
