@@ -25,7 +25,8 @@ workflows:
           test -f element.html
           test -f quiz.html
           test -d images/elements
-          echo "Native Periodic Table Explorer project found."
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          echo "Native Periodic Table Explorer project and packaging checks passed."
 
       - name: Create iPhone app icon and finalize iOS settings
         script: |
@@ -224,12 +225,15 @@ workflows:
           python3 <<'PY'
           import glob
           import plistlib
+          import subprocess
           import zipfile
 
           archives = glob.glob('build/ios/ipa/*.ipa')
           if not archives:
               archives = glob.glob('**/*.ipa', recursive=True)
           assert len(archives) == 1, f'Expected one IPA, got {archives}'
+
+          subprocess.run(['python3', 'scripts/web_package.py', '--ipa', archives[0]], check=True)
 
           with zipfile.ZipFile(archives[0]) as archive:
               names = archive.namelist()
@@ -248,22 +252,10 @@ workflows:
               families = metadata.get('UIDeviceFamily', [])
               assert families == [1] or families == (1,), f'Expected iPhone only, got {families}'
 
-              assert root + 'Web/index.html' in names
-              assert root + 'Web/element.html' in names
-              assert root + 'Web/quiz.html' in names
-              element_images = [
-                  n for n in names
-                  if n.startswith(root + 'Web/images/elements/')
-                  and n.lower().endswith(('.jpg', '.png'))
-              ]
-              assert len(element_images) >= 118, f'Expected 118 element images, got {len(element_images)}'
-              assert root + 'Web/images/bay-city-city-hall.jpg' in names
-
               print('Verified Periodic Table Explorer IPA')
               print('Bundle:', metadata['CFBundleIdentifier'])
               print('Minimum iOS:', minimum)
               print('iPhone-only device family:', families)
-              print('Element images:', len(element_images))
           PY
 
     artifacts:
